@@ -1,0 +1,17 @@
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "LoginAnonymousRequestProto";
+
+message LoginAnonymousRequest {
+   required string version = 1;
+   required int32 deviceType = 2;
+   required string imei = 3;
+   required bool isRoot=4;
+   required int32 requestTime=5;
+   required string nonce=6;
+   required string deviceModel=7;
+   required string screenSize=8;
+   required string sdkVersion=9;
+   required int32 mid =10;
+}
