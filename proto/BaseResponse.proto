@@ -1,0 +1,14 @@
+syntax = "proto3";
+package fanxi;
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "BaseResponseProto";
+
+message BaseResponse {
+    int32 mid =1;
+    int32 code = 2;
+    string des=3;
+}
+
+
+
+
