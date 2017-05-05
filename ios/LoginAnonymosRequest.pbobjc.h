@@ -27,7 +27,7 @@
 
 CF_EXTERN_C_BEGIN
 
-@class BaseRequest;
+@class RestfulBaseRequest;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -51,15 +51,18 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(LoginAnonymousRequest_FieldNumber) {
   LoginAnonymousRequest_FieldNumber_BaseReq = 1,
   LoginAnonymousRequest_FieldNumber_GcmId = 2,
+  LoginAnonymousRequest_FieldNumber_PartnerId = 3,
 };
 
 @interface LoginAnonymousRequest : GPBMessage
 
-@property(nonatomic, readwrite, strong, null_resettable) BaseRequest *baseReq;
+@property(nonatomic, readwrite, strong, null_resettable) RestfulBaseRequest *baseReq;
 /** Test to see if @c baseReq has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *gcmId;
+
+@property(nonatomic, readwrite) int32_t partnerId;
 
 @end
 

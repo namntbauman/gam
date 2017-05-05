@@ -47,37 +47,28 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - BaseRequest
 
 typedef GPB_ENUM(BaseRequest_FieldNumber) {
-  BaseRequest_FieldNumber_Version = 1,
-  BaseRequest_FieldNumber_DeviceType = 2,
-  BaseRequest_FieldNumber_Imei = 3,
-  BaseRequest_FieldNumber_IsRoot = 4,
-  BaseRequest_FieldNumber_RequestTime = 5,
-  BaseRequest_FieldNumber_Nonce = 6,
-  BaseRequest_FieldNumber_DeviceModel = 7,
-  BaseRequest_FieldNumber_ScreenSize = 8,
-  BaseRequest_FieldNumber_SdkVersion = 9,
-  BaseRequest_FieldNumber_Mid = 10,
+  BaseRequest_FieldNumber_DeviceType = 1,
+  BaseRequest_FieldNumber_Imei = 2,
+  BaseRequest_FieldNumber_Nonce = 3,
+  BaseRequest_FieldNumber_DeviceModel = 4,
+  BaseRequest_FieldNumber_Token = 5,
+  BaseRequest_FieldNumber_Name = 6,
+  BaseRequest_FieldNumber_Mid = 7,
 };
 
 @interface BaseRequest : GPBMessage
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *version;
 
 @property(nonatomic, readwrite) int32_t deviceType;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *imei;
 
-@property(nonatomic, readwrite) BOOL isRoot;
-
-@property(nonatomic, readwrite) int32_t requestTime;
-
 @property(nonatomic, readwrite, copy, null_resettable) NSString *nonce;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceModel;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *screenSize;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *sdkVersion;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
 
 @property(nonatomic, readwrite) int32_t mid;
 

@@ -46,28 +46,23 @@ static GPBFileDescriptor *BaseRequestRoot_FileDescriptor(void) {
 
 @implementation BaseRequest
 
-@dynamic version;
 @dynamic deviceType;
 @dynamic imei;
-@dynamic isRoot;
-@dynamic requestTime;
 @dynamic nonce;
 @dynamic deviceModel;
-@dynamic screenSize;
-@dynamic sdkVersion;
+@dynamic token;
+@dynamic name;
 @dynamic mid;
 
 typedef struct BaseRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t deviceType;
-  int32_t requestTime;
   int32_t mid;
-  NSString *version;
   NSString *imei;
   NSString *nonce;
   NSString *deviceModel;
-  NSString *screenSize;
-  NSString *sdkVersion;
+  NSString *token;
+  NSString *name;
 } BaseRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -77,19 +72,10 @@ typedef struct BaseRequest__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
-        .name = "version",
-        .dataTypeSpecific.className = NULL,
-        .number = BaseRequest_FieldNumber_Version,
-        .hasIndex = 0,
-        .offset = (uint32_t)offsetof(BaseRequest__storage_, version),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "deviceType",
         .dataTypeSpecific.className = NULL,
         .number = BaseRequest_FieldNumber_DeviceType,
-        .hasIndex = 1,
+        .hasIndex = 0,
         .offset = (uint32_t)offsetof(BaseRequest__storage_, deviceType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -98,34 +84,16 @@ typedef struct BaseRequest__storage_ {
         .name = "imei",
         .dataTypeSpecific.className = NULL,
         .number = BaseRequest_FieldNumber_Imei,
-        .hasIndex = 2,
+        .hasIndex = 1,
         .offset = (uint32_t)offsetof(BaseRequest__storage_, imei),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "isRoot",
-        .dataTypeSpecific.className = NULL,
-        .number = BaseRequest_FieldNumber_IsRoot,
-        .hasIndex = 3,
-        .offset = 4,  // Stored in _has_storage_ to save space.
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeBool,
-      },
-      {
-        .name = "requestTime",
-        .dataTypeSpecific.className = NULL,
-        .number = BaseRequest_FieldNumber_RequestTime,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(BaseRequest__storage_, requestTime),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
-      },
-      {
         .name = "nonce",
         .dataTypeSpecific.className = NULL,
         .number = BaseRequest_FieldNumber_Nonce,
-        .hasIndex = 6,
+        .hasIndex = 2,
         .offset = (uint32_t)offsetof(BaseRequest__storage_, nonce),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -134,34 +102,34 @@ typedef struct BaseRequest__storage_ {
         .name = "deviceModel",
         .dataTypeSpecific.className = NULL,
         .number = BaseRequest_FieldNumber_DeviceModel,
-        .hasIndex = 7,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(BaseRequest__storage_, deviceModel),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "screenSize",
+        .name = "token",
         .dataTypeSpecific.className = NULL,
-        .number = BaseRequest_FieldNumber_ScreenSize,
-        .hasIndex = 8,
-        .offset = (uint32_t)offsetof(BaseRequest__storage_, screenSize),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .number = BaseRequest_FieldNumber_Token,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(BaseRequest__storage_, token),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "sdkVersion",
+        .name = "name",
         .dataTypeSpecific.className = NULL,
-        .number = BaseRequest_FieldNumber_SdkVersion,
-        .hasIndex = 9,
-        .offset = (uint32_t)offsetof(BaseRequest__storage_, sdkVersion),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .number = BaseRequest_FieldNumber_Name,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(BaseRequest__storage_, name),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
       {
         .name = "mid",
         .dataTypeSpecific.className = NULL,
         .number = BaseRequest_FieldNumber_Mid,
-        .hasIndex = 10,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(BaseRequest__storage_, mid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
@@ -177,7 +145,7 @@ typedef struct BaseRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\002\n\000\004\006\000\005\013\000\007\013\000\010\n\000\t\n\000";
+        "\002\001\n\000\004\013\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
