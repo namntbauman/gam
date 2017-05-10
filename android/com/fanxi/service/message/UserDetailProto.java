@@ -82,6 +82,11 @@ public final class UserDetailProto {
      */
     com.google.protobuf.ByteString
         getAvatarUrlBytes();
+
+    /**
+     * <code>int64 cash = 8;</code>
+     */
+    long getCash();
   }
   /**
    * Protobuf type {@code fanxi.UserDetail}
@@ -102,6 +107,7 @@ public final class UserDetailProto {
       token_ = "";
       server_ = "";
       avatarUrl_ = "";
+      cash_ = 0L;
     }
 
     @java.lang.Override
@@ -168,6 +174,11 @@ public final class UserDetailProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               avatarUrl_ = s;
+              break;
+            }
+            case 64: {
+
+              cash_ = input.readInt64();
               break;
             }
           }
@@ -406,6 +417,15 @@ public final class UserDetailProto {
       }
     }
 
+    public static final int CASH_FIELD_NUMBER = 8;
+    private long cash_;
+    /**
+     * <code>int64 cash = 8;</code>
+     */
+    public long getCash() {
+      return cash_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -439,6 +459,9 @@ public final class UserDetailProto {
       if (!getAvatarUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, avatarUrl_);
       }
+      if (cash_ != 0L) {
+        output.writeInt64(8, cash_);
+      }
     }
 
     public int getSerializedSize() {
@@ -467,6 +490,10 @@ public final class UserDetailProto {
       }
       if (!getAvatarUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, avatarUrl_);
+      }
+      if (cash_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, cash_);
       }
       memoizedSize = size;
       return size;
@@ -498,6 +525,8 @@ public final class UserDetailProto {
           .equals(other.getServer());
       result = result && getAvatarUrl()
           .equals(other.getAvatarUrl());
+      result = result && (getCash()
+          == other.getCash());
       return result;
     }
 
@@ -522,6 +551,9 @@ public final class UserDetailProto {
       hash = (53 * hash) + getServer().hashCode();
       hash = (37 * hash) + AVATARURL_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarUrl().hashCode();
+      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCash());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -654,6 +686,8 @@ public final class UserDetailProto {
 
         avatarUrl_ = "";
 
+        cash_ = 0L;
+
         return this;
       }
 
@@ -683,6 +717,7 @@ public final class UserDetailProto {
         result.token_ = token_;
         result.server_ = server_;
         result.avatarUrl_ = avatarUrl_;
+        result.cash_ = cash_;
         onBuilt();
         return result;
       }
@@ -750,6 +785,9 @@ public final class UserDetailProto {
         if (!other.getAvatarUrl().isEmpty()) {
           avatarUrl_ = other.avatarUrl_;
           onChanged();
+        }
+        if (other.getCash() != 0L) {
+          setCash(other.getCash());
         }
         onChanged();
         return this;
@@ -1216,6 +1254,32 @@ public final class UserDetailProto {
         onChanged();
         return this;
       }
+
+      private long cash_ ;
+      /**
+       * <code>int64 cash = 8;</code>
+       */
+      public long getCash() {
+        return cash_;
+      }
+      /**
+       * <code>int64 cash = 8;</code>
+       */
+      public Builder setCash(long value) {
+        
+        cash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 cash = 8;</code>
+       */
+      public Builder clearCash() {
+        
+        cash_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1279,12 +1343,12 @@ public final class UserDetailProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020UserDetail.proto\022\005fanxi\"\203\001\n\nUserDetail" +
+      "\n\020UserDetail.proto\022\005fanxi\"\221\001\n\nUserDetail" +
       "\022\016\n\006userId\030\001 \001(\t\022\014\n\004type\030\002 \001(\005\022\020\n\010userNa" +
       "me\030\003 \001(\t\022\023\n\013displayName\030\004 \001(\t\022\r\n\005token\030\005" +
-      " \001(\t\022\016\n\006server\030\006 \001(\t\022\021\n\tavatarUrl\030\007 \001(\tB" +
-      ",\n\031com.fanxi.service.messageB\017UserDetail" +
-      "Protob\006proto3"
+      " \001(\t\022\016\n\006server\030\006 \001(\t\022\021\n\tavatarUrl\030\007 \001(\t\022" +
+      "\014\n\004cash\030\010 \001(\003B,\n\031com.fanxi.service.messa" +
+      "geB\017UserDetailProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1303,7 +1367,7 @@ public final class UserDetailProto {
     internal_static_fanxi_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_UserDetail_descriptor,
-        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", });
+        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

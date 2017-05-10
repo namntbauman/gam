@@ -53,6 +53,7 @@ static GPBFileDescriptor *UserDetailRoot_FileDescriptor(void) {
 @dynamic token;
 @dynamic server;
 @dynamic avatarURL;
+@dynamic cash;
 
 typedef struct UserDetail__storage_ {
   uint32_t _has_storage_[1];
@@ -63,6 +64,7 @@ typedef struct UserDetail__storage_ {
   NSString *token;
   NSString *server;
   NSString *avatarURL;
+  int64_t cash;
 } UserDetail__storage_;
 
 // This method is threadsafe because it is initially called
@@ -133,6 +135,15 @@ typedef struct UserDetail__storage_ {
         .offset = (uint32_t)offsetof(UserDetail__storage_, avatarURL),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "cash",
+        .dataTypeSpecific.className = NULL,
+        .number = UserDetail_FieldNumber_Cash,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(UserDetail__storage_, cash),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =

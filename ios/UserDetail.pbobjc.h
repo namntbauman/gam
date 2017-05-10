@@ -54,6 +54,7 @@ typedef GPB_ENUM(UserDetail_FieldNumber) {
   UserDetail_FieldNumber_Token = 5,
   UserDetail_FieldNumber_Server = 6,
   UserDetail_FieldNumber_AvatarURL = 7,
+  UserDetail_FieldNumber_Cash = 8,
 };
 
 @interface UserDetail : GPBMessage
@@ -71,6 +72,8 @@ typedef GPB_ENUM(UserDetail_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *server;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *avatarURL;
+
+@property(nonatomic, readwrite) int64_t cash;
 
 @end
 
