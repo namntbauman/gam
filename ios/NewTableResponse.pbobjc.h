@@ -50,9 +50,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(NewTableResponse_FieldNumber) {
   NewTableResponse_FieldNumber_BaseResponse = 1,
-  NewTableResponse_FieldNumber_ZoneId = 2,
-  NewTableResponse_FieldNumber_TableIndex = 3,
-  NewTableResponse_FieldNumber_MatchId = 4,
+  NewTableResponse_FieldNumber_ZoneId = 4,
+  NewTableResponse_FieldNumber_TableIndex = 5,
+  NewTableResponse_FieldNumber_MatchId = 6,
 };
 
 @interface NewTableResponse : GPBMessage

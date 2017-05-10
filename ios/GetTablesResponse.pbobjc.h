@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(GetTablesResponse_FieldNumber) {
   GetTablesResponse_FieldNumber_BaseResponse = 1,
-  GetTablesResponse_FieldNumber_TablesArray = 2,
+  GetTablesResponse_FieldNumber_TablesArray = 4,
 };
 
 @interface GetTablesResponse : GPBMessage

@@ -51,11 +51,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(JoinTableResponse_FieldNumber) {
   JoinTableResponse_FieldNumber_BaseResponse = 1,
-  JoinTableResponse_FieldNumber_ZoneId = 2,
-  JoinTableResponse_FieldNumber_TableIndex = 3,
-  JoinTableResponse_FieldNumber_MatchId = 4,
-  JoinTableResponse_FieldNumber_IsPlaying = 5,
-  JoinTableResponse_FieldNumber_PlayersArray = 6,
+  JoinTableResponse_FieldNumber_ZoneId = 4,
+  JoinTableResponse_FieldNumber_TableIndex = 5,
+  JoinTableResponse_FieldNumber_MatchId = 6,
+  JoinTableResponse_FieldNumber_IsPlaying = 7,
+  JoinTableResponse_FieldNumber_PlayersArray = 8,
 };
 
 @interface JoinTableResponse : GPBMessage

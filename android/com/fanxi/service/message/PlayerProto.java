@@ -49,9 +49,14 @@ public final class PlayerProto {
         getAvatarUrlBytes();
 
     /**
-     * <code>int32 cash = 4;</code>
+     * <code>int64 cash = 4;</code>
      */
-    int getCash();
+    long getCash();
+
+    /**
+     * <code>int32 numHand = 5;</code>
+     */
+    int getNumHand();
   }
   /**
    * Protobuf type {@code fanxi.Player}
@@ -68,7 +73,8 @@ public final class PlayerProto {
       userId_ = "";
       userName_ = "";
       avatarUrl_ = "";
-      cash_ = 0;
+      cash_ = 0L;
+      numHand_ = 0;
     }
 
     @java.lang.Override
@@ -116,7 +122,12 @@ public final class PlayerProto {
             }
             case 32: {
 
-              cash_ = input.readInt32();
+              cash_ = input.readInt64();
+              break;
+            }
+            case 40: {
+
+              numHand_ = input.readInt32();
               break;
             }
           }
@@ -245,12 +256,21 @@ public final class PlayerProto {
     }
 
     public static final int CASH_FIELD_NUMBER = 4;
-    private int cash_;
+    private long cash_;
     /**
-     * <code>int32 cash = 4;</code>
+     * <code>int64 cash = 4;</code>
      */
-    public int getCash() {
+    public long getCash() {
       return cash_;
+    }
+
+    public static final int NUMHAND_FIELD_NUMBER = 5;
+    private int numHand_;
+    /**
+     * <code>int32 numHand = 5;</code>
+     */
+    public int getNumHand() {
+      return numHand_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -274,8 +294,11 @@ public final class PlayerProto {
       if (!getAvatarUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, avatarUrl_);
       }
-      if (cash_ != 0) {
-        output.writeInt32(4, cash_);
+      if (cash_ != 0L) {
+        output.writeInt64(4, cash_);
+      }
+      if (numHand_ != 0) {
+        output.writeInt32(5, numHand_);
       }
     }
 
@@ -293,9 +316,13 @@ public final class PlayerProto {
       if (!getAvatarUrlBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, avatarUrl_);
       }
-      if (cash_ != 0) {
+      if (cash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(4, cash_);
+          .computeInt64Size(4, cash_);
+      }
+      if (numHand_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, numHand_);
       }
       memoizedSize = size;
       return size;
@@ -321,6 +348,8 @@ public final class PlayerProto {
           .equals(other.getAvatarUrl());
       result = result && (getCash()
           == other.getCash());
+      result = result && (getNumHand()
+          == other.getNumHand());
       return result;
     }
 
@@ -338,7 +367,10 @@ public final class PlayerProto {
       hash = (37 * hash) + AVATARURL_FIELD_NUMBER;
       hash = (53 * hash) + getAvatarUrl().hashCode();
       hash = (37 * hash) + CASH_FIELD_NUMBER;
-      hash = (53 * hash) + getCash();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCash());
+      hash = (37 * hash) + NUMHAND_FIELD_NUMBER;
+      hash = (53 * hash) + getNumHand();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -463,7 +495,9 @@ public final class PlayerProto {
 
         avatarUrl_ = "";
 
-        cash_ = 0;
+        cash_ = 0L;
+
+        numHand_ = 0;
 
         return this;
       }
@@ -491,6 +525,7 @@ public final class PlayerProto {
         result.userName_ = userName_;
         result.avatarUrl_ = avatarUrl_;
         result.cash_ = cash_;
+        result.numHand_ = numHand_;
         onBuilt();
         return result;
       }
@@ -544,8 +579,11 @@ public final class PlayerProto {
           avatarUrl_ = other.avatarUrl_;
           onChanged();
         }
-        if (other.getCash() != 0) {
+        if (other.getCash() != 0L) {
           setCash(other.getCash());
+        }
+        if (other.getNumHand() != 0) {
+          setNumHand(other.getNumHand());
         }
         onChanged();
         return this;
@@ -780,28 +818,54 @@ public final class PlayerProto {
         return this;
       }
 
-      private int cash_ ;
+      private long cash_ ;
       /**
-       * <code>int32 cash = 4;</code>
+       * <code>int64 cash = 4;</code>
        */
-      public int getCash() {
+      public long getCash() {
         return cash_;
       }
       /**
-       * <code>int32 cash = 4;</code>
+       * <code>int64 cash = 4;</code>
        */
-      public Builder setCash(int value) {
+      public Builder setCash(long value) {
         
         cash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 cash = 4;</code>
+       * <code>int64 cash = 4;</code>
        */
       public Builder clearCash() {
         
-        cash_ = 0;
+        cash_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int numHand_ ;
+      /**
+       * <code>int32 numHand = 5;</code>
+       */
+      public int getNumHand() {
+        return numHand_;
+      }
+      /**
+       * <code>int32 numHand = 5;</code>
+       */
+      public Builder setNumHand(int value) {
+        
+        numHand_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numHand = 5;</code>
+       */
+      public Builder clearNumHand() {
+        
+        numHand_ = 0;
         onChanged();
         return this;
       }
@@ -868,10 +932,11 @@ public final class PlayerProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Player.proto\022\005fanxi\"K\n\006Player\022\016\n\006userI" +
+      "\n\014Player.proto\022\005fanxi\"\\\n\006Player\022\016\n\006userI" +
       "d\030\001 \001(\t\022\020\n\010userName\030\002 \001(\t\022\021\n\tavatarUrl\030\003" +
-      " \001(\t\022\014\n\004cash\030\004 \001(\005B(\n\031com.fanxi.service." +
-      "messageB\013PlayerProtob\006proto3"
+      " \001(\t\022\014\n\004cash\030\004 \001(\003\022\017\n\007numHand\030\005 \001(\005B(\n\031c" +
+      "om.fanxi.service.messageB\013PlayerProtob\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -890,7 +955,7 @@ public final class PlayerProto {
     internal_static_fanxi_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_Player_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", });
+        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

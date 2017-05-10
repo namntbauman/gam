@@ -32,25 +32,25 @@ public final class GetTablesResponseProto {
     com.fanxi.service.message.BaseResponseProto.BaseResponseOrBuilder getBaseResponseOrBuilder();
 
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     java.util.List<com.fanxi.service.message.TableProto.Table> 
         getTablesList();
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     com.fanxi.service.message.TableProto.Table getTables(int index);
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     int getTablesCount();
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     java.util.List<? extends com.fanxi.service.message.TableProto.TableOrBuilder> 
         getTablesOrBuilderList();
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     com.fanxi.service.message.TableProto.TableOrBuilder getTablesOrBuilder(
         int index);
@@ -108,7 +108,7 @@ public final class GetTablesResponseProto {
 
               break;
             }
-            case 18: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 tables_ = new java.util.ArrayList<com.fanxi.service.message.TableProto.Table>();
                 mutable_bitField0_ |= 0x00000002;
@@ -165,35 +165,35 @@ public final class GetTablesResponseProto {
       return getBaseResponse();
     }
 
-    public static final int TABLES_FIELD_NUMBER = 2;
+    public static final int TABLES_FIELD_NUMBER = 4;
     private java.util.List<com.fanxi.service.message.TableProto.Table> tables_;
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     public java.util.List<com.fanxi.service.message.TableProto.Table> getTablesList() {
       return tables_;
     }
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.TableProto.TableOrBuilder> 
         getTablesOrBuilderList() {
       return tables_;
     }
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     public int getTablesCount() {
       return tables_.size();
     }
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     public com.fanxi.service.message.TableProto.Table getTables(int index) {
       return tables_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Table tables = 2;</code>
+     * <code>repeated .fanxi.Table tables = 4;</code>
      */
     public com.fanxi.service.message.TableProto.TableOrBuilder getTablesOrBuilder(
         int index) {
@@ -216,7 +216,7 @@ public final class GetTablesResponseProto {
         output.writeMessage(1, getBaseResponse());
       }
       for (int i = 0; i < tables_.size(); i++) {
-        output.writeMessage(2, tables_.get(i));
+        output.writeMessage(4, tables_.get(i));
       }
     }
 
@@ -231,7 +231,7 @@ public final class GetTablesResponseProto {
       }
       for (int i = 0; i < tables_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, tables_.get(i));
+          .computeMessageSize(4, tables_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -671,7 +671,7 @@ public final class GetTablesResponseProto {
           com.fanxi.service.message.TableProto.Table, com.fanxi.service.message.TableProto.Table.Builder, com.fanxi.service.message.TableProto.TableOrBuilder> tablesBuilder_;
 
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public java.util.List<com.fanxi.service.message.TableProto.Table> getTablesList() {
         if (tablesBuilder_ == null) {
@@ -681,7 +681,7 @@ public final class GetTablesResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public int getTablesCount() {
         if (tablesBuilder_ == null) {
@@ -691,7 +691,7 @@ public final class GetTablesResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public com.fanxi.service.message.TableProto.Table getTables(int index) {
         if (tablesBuilder_ == null) {
@@ -701,7 +701,7 @@ public final class GetTablesResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder setTables(
           int index, com.fanxi.service.message.TableProto.Table value) {
@@ -718,7 +718,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder setTables(
           int index, com.fanxi.service.message.TableProto.Table.Builder builderForValue) {
@@ -732,7 +732,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder addTables(com.fanxi.service.message.TableProto.Table value) {
         if (tablesBuilder_ == null) {
@@ -748,7 +748,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder addTables(
           int index, com.fanxi.service.message.TableProto.Table value) {
@@ -765,7 +765,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder addTables(
           com.fanxi.service.message.TableProto.Table.Builder builderForValue) {
@@ -779,7 +779,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder addTables(
           int index, com.fanxi.service.message.TableProto.Table.Builder builderForValue) {
@@ -793,7 +793,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder addAllTables(
           java.lang.Iterable<? extends com.fanxi.service.message.TableProto.Table> values) {
@@ -808,7 +808,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder clearTables() {
         if (tablesBuilder_ == null) {
@@ -821,7 +821,7 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public Builder removeTables(int index) {
         if (tablesBuilder_ == null) {
@@ -834,14 +834,14 @@ public final class GetTablesResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public com.fanxi.service.message.TableProto.Table.Builder getTablesBuilder(
           int index) {
         return getTablesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public com.fanxi.service.message.TableProto.TableOrBuilder getTablesOrBuilder(
           int index) {
@@ -851,7 +851,7 @@ public final class GetTablesResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.TableProto.TableOrBuilder> 
            getTablesOrBuilderList() {
@@ -862,14 +862,14 @@ public final class GetTablesResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public com.fanxi.service.message.TableProto.Table.Builder addTablesBuilder() {
         return getTablesFieldBuilder().addBuilder(
             com.fanxi.service.message.TableProto.Table.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public com.fanxi.service.message.TableProto.Table.Builder addTablesBuilder(
           int index) {
@@ -877,7 +877,7 @@ public final class GetTablesResponseProto {
             index, com.fanxi.service.message.TableProto.Table.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Table tables = 2;</code>
+       * <code>repeated .fanxi.Table tables = 4;</code>
        */
       public java.util.List<com.fanxi.service.message.TableProto.Table.Builder> 
            getTablesBuilderList() {
@@ -963,7 +963,7 @@ public final class GetTablesResponseProto {
       "\n\027GetTablesResponse.proto\022\005fanxi\032\022BaseRe" +
       "sponse.proto\032\013Table.proto\"\\\n\021GetTablesRe" +
       "sponse\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.Bas" +
-      "eResponse\022\034\n\006tables\030\002 \003(\0132\014.fanxi.TableB" +
+      "eResponse\022\034\n\006tables\030\004 \003(\0132\014.fanxi.TableB" +
       "3\n\031com.fanxi.service.messageB\026GetTablesR" +
       "esponseProtob\006proto3"
     };
