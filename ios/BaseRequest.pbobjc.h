@@ -52,7 +52,7 @@ typedef GPB_ENUM(BaseRequest_FieldNumber) {
   BaseRequest_FieldNumber_Nonce = 3,
   BaseRequest_FieldNumber_DeviceModel = 4,
   BaseRequest_FieldNumber_Token = 5,
-  BaseRequest_FieldNumber_Name = 6,
+  BaseRequest_FieldNumber_UserId = 6,
   BaseRequest_FieldNumber_Mid = 7,
 };
 
@@ -68,7 +68,7 @@ typedef GPB_ENUM(BaseRequest_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *name;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
 @property(nonatomic, readwrite) int32_t mid;
 

@@ -64,14 +64,14 @@ public final class BaseRequestProto {
         getTokenBytes();
 
     /**
-     * <code>string name = 6;</code>
+     * <code>string userId = 6;</code>
      */
-    java.lang.String getName();
+    java.lang.String getUserId();
     /**
-     * <code>string name = 6;</code>
+     * <code>string userId = 6;</code>
      */
     com.google.protobuf.ByteString
-        getNameBytes();
+        getUserIdBytes();
 
     /**
      * <code>int32 mid = 7;</code>
@@ -95,7 +95,7 @@ public final class BaseRequestProto {
       nonce_ = "";
       deviceModel_ = "";
       token_ = "";
-      name_ = "";
+      userId_ = "";
       mid_ = 0;
     }
 
@@ -156,7 +156,7 @@ public final class BaseRequestProto {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              name_ = s;
+              userId_ = s;
               break;
             }
             case 56: {
@@ -332,34 +332,34 @@ public final class BaseRequestProto {
       }
     }
 
-    public static final int NAME_FIELD_NUMBER = 6;
-    private volatile java.lang.Object name_;
+    public static final int USERID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object userId_;
     /**
-     * <code>string name = 6;</code>
+     * <code>string userId = 6;</code>
      */
-    public java.lang.String getName() {
-      java.lang.Object ref = name_;
+    public java.lang.String getUserId() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        name_ = s;
+        userId_ = s;
         return s;
       }
     }
     /**
-     * <code>string name = 6;</code>
+     * <code>string userId = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getNameBytes() {
-      java.lang.Object ref = name_;
+        getUserIdBytes() {
+      java.lang.Object ref = userId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        name_ = b;
+        userId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -402,8 +402,8 @@ public final class BaseRequestProto {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, token_);
       }
-      if (!getNameBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, name_);
+      if (!getUserIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userId_);
       }
       if (mid_ != 0) {
         output.writeInt32(7, mid_);
@@ -431,8 +431,8 @@ public final class BaseRequestProto {
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, token_);
       }
-      if (!getNameBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, name_);
+      if (!getUserIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, userId_);
       }
       if (mid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -464,8 +464,8 @@ public final class BaseRequestProto {
           .equals(other.getDeviceModel());
       result = result && getToken()
           .equals(other.getToken());
-      result = result && getName()
-          .equals(other.getName());
+      result = result && getUserId()
+          .equals(other.getUserId());
       result = result && (getMid()
           == other.getMid());
       return result;
@@ -488,8 +488,8 @@ public final class BaseRequestProto {
       hash = (53 * hash) + getDeviceModel().hashCode();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + NAME_FIELD_NUMBER;
-      hash = (53 * hash) + getName().hashCode();
+      hash = (37 * hash) + USERID_FIELD_NUMBER;
+      hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + MID_FIELD_NUMBER;
       hash = (53 * hash) + getMid();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -620,7 +620,7 @@ public final class BaseRequestProto {
 
         token_ = "";
 
-        name_ = "";
+        userId_ = "";
 
         mid_ = 0;
 
@@ -651,7 +651,7 @@ public final class BaseRequestProto {
         result.nonce_ = nonce_;
         result.deviceModel_ = deviceModel_;
         result.token_ = token_;
-        result.name_ = name_;
+        result.userId_ = userId_;
         result.mid_ = mid_;
         onBuilt();
         return result;
@@ -713,8 +713,8 @@ public final class BaseRequestProto {
           token_ = other.token_;
           onChanged();
         }
-        if (!other.getName().isEmpty()) {
-          name_ = other.name_;
+        if (!other.getUserId().isEmpty()) {
+          userId_ = other.userId_;
           onChanged();
         }
         if (other.getMid() != 0) {
@@ -1048,71 +1048,71 @@ public final class BaseRequestProto {
         return this;
       }
 
-      private java.lang.Object name_ = "";
+      private java.lang.Object userId_ = "";
       /**
-       * <code>string name = 6;</code>
+       * <code>string userId = 6;</code>
        */
-      public java.lang.String getName() {
-        java.lang.Object ref = name_;
+      public java.lang.String getUserId() {
+        java.lang.Object ref = userId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          name_ = s;
+          userId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string name = 6;</code>
+       * <code>string userId = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getNameBytes() {
-        java.lang.Object ref = name_;
+          getUserIdBytes() {
+        java.lang.Object ref = userId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          name_ = b;
+          userId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string name = 6;</code>
+       * <code>string userId = 6;</code>
        */
-      public Builder setName(
+      public Builder setUserId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        name_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 6;</code>
+       * <code>string userId = 6;</code>
        */
-      public Builder clearName() {
+      public Builder clearUserId() {
         
-        name_ = getDefaultInstance().getName();
+        userId_ = getDefaultInstance().getUserId();
         onChanged();
         return this;
       }
       /**
-       * <code>string name = 6;</code>
+       * <code>string userId = 6;</code>
        */
-      public Builder setNameBytes(
+      public Builder setUserIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        name_ = value;
+        userId_ = value;
         onChanged();
         return this;
       }
@@ -1205,12 +1205,12 @@ public final class BaseRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BaseRequest.proto\022\005fanxi\"}\n\013BaseReques" +
+      "\n\021BaseRequest.proto\022\005fanxi\"\177\n\013BaseReques" +
       "t\022\022\n\ndeviceType\030\001 \001(\005\022\014\n\004imei\030\002 \001(\t\022\r\n\005n" +
       "once\030\003 \001(\t\022\023\n\013deviceModel\030\004 \001(\t\022\r\n\005token" +
-      "\030\005 \001(\t\022\014\n\004name\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005B-\n\031com" +
-      ".fanxi.service.messageB\020BaseRequestProto" +
-      "b\006proto3"
+      "\030\005 \001(\t\022\016\n\006userId\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005B-\n\031c" +
+      "om.fanxi.service.messageB\020BaseRequestPro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1229,7 +1229,7 @@ public final class BaseRequestProto {
     internal_static_fanxi_BaseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BaseRequest_descriptor,
-        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "Name", "Mid", });
+        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

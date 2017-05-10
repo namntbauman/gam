@@ -51,7 +51,7 @@ static GPBFileDescriptor *BaseRequestRoot_FileDescriptor(void) {
 @dynamic nonce;
 @dynamic deviceModel;
 @dynamic token;
-@dynamic name;
+@dynamic userId;
 @dynamic mid;
 
 typedef struct BaseRequest__storage_ {
@@ -62,7 +62,7 @@ typedef struct BaseRequest__storage_ {
   NSString *nonce;
   NSString *deviceModel;
   NSString *token;
-  NSString *name;
+  NSString *userId;
 } BaseRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -117,12 +117,12 @@ typedef struct BaseRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "name",
+        .name = "userId",
         .dataTypeSpecific.className = NULL,
-        .number = BaseRequest_FieldNumber_Name,
+        .number = BaseRequest_FieldNumber_UserId,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(BaseRequest__storage_, name),
-        .flags = GPBFieldOptional,
+        .offset = (uint32_t)offsetof(BaseRequest__storage_, userId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
@@ -145,7 +145,7 @@ typedef struct BaseRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\n\000\004\013\000";
+        "\003\001\n\000\004\013\000\006\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
