@@ -50,13 +50,15 @@ static GPBFileDescriptor *PlayerRoot_FileDescriptor(void) {
 @dynamic userName;
 @dynamic avatarURL;
 @dynamic cash;
+@dynamic numHand;
 
 typedef struct Player__storage_ {
   uint32_t _has_storage_[1];
-  int32_t cash;
+  int32_t numHand;
   NSString *userId;
   NSString *userName;
   NSString *avatarURL;
+  int64_t cash;
 } Player__storage_;
 
 // This method is threadsafe because it is initially called
@@ -99,6 +101,15 @@ typedef struct Player__storage_ {
         .hasIndex = 3,
         .offset = (uint32_t)offsetof(Player__storage_, cash),
         .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "numHand",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_NumHand,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(Player__storage_, numHand),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
     };
@@ -112,7 +123,7 @@ typedef struct Player__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\006\000\002\010\000\003\007!!\000";
+        "\004\001\006\000\002\010\000\003\007!!\000\005\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

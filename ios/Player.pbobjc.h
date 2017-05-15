@@ -51,6 +51,7 @@ typedef GPB_ENUM(Player_FieldNumber) {
   Player_FieldNumber_UserName = 2,
   Player_FieldNumber_AvatarURL = 3,
   Player_FieldNumber_Cash = 4,
+  Player_FieldNumber_NumHand = 5,
 };
 
 @interface Player : GPBMessage
@@ -61,7 +62,9 @@ typedef GPB_ENUM(Player_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *avatarURL;
 
-@property(nonatomic, readwrite) int32_t cash;
+@property(nonatomic, readwrite) int64_t cash;
+
+@property(nonatomic, readwrite) int32_t numHand;
 
 @end
 
