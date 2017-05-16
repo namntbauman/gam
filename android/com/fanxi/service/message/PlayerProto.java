@@ -57,6 +57,36 @@ public final class PlayerProto {
      * <code>int32 numHand = 5;</code>
      */
     int getNumHand();
+
+    /**
+     * <code>string note = 6;</code>
+     */
+    java.lang.String getNote();
+    /**
+     * <code>string note = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getNoteBytes();
+
+    /**
+     * <code>string cards = 7;</code>
+     */
+    java.lang.String getCards();
+    /**
+     * <code>string cards = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getCardsBytes();
+
+    /**
+     * <code>bool isOut = 8;</code>
+     */
+    boolean getIsOut();
+
+    /**
+     * <code>bool isHetTien = 9;</code>
+     */
+    boolean getIsHetTien();
   }
   /**
    * Protobuf type {@code fanxi.Player}
@@ -75,6 +105,10 @@ public final class PlayerProto {
       avatarUrl_ = "";
       cash_ = 0L;
       numHand_ = 0;
+      note_ = "";
+      cards_ = "";
+      isOut_ = false;
+      isHetTien_ = false;
     }
 
     @java.lang.Override
@@ -128,6 +162,28 @@ public final class PlayerProto {
             case 40: {
 
               numHand_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              note_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cards_ = s;
+              break;
+            }
+            case 64: {
+
+              isOut_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              isHetTien_ = input.readBool();
               break;
             }
           }
@@ -273,6 +329,92 @@ public final class PlayerProto {
       return numHand_;
     }
 
+    public static final int NOTE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object note_;
+    /**
+     * <code>string note = 6;</code>
+     */
+    public java.lang.String getNote() {
+      java.lang.Object ref = note_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        note_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string note = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNoteBytes() {
+      java.lang.Object ref = note_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        note_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CARDS_FIELD_NUMBER = 7;
+    private volatile java.lang.Object cards_;
+    /**
+     * <code>string cards = 7;</code>
+     */
+    public java.lang.String getCards() {
+      java.lang.Object ref = cards_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cards_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cards = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCardsBytes() {
+      java.lang.Object ref = cards_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cards_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ISOUT_FIELD_NUMBER = 8;
+    private boolean isOut_;
+    /**
+     * <code>bool isOut = 8;</code>
+     */
+    public boolean getIsOut() {
+      return isOut_;
+    }
+
+    public static final int ISHETTIEN_FIELD_NUMBER = 9;
+    private boolean isHetTien_;
+    /**
+     * <code>bool isHetTien = 9;</code>
+     */
+    public boolean getIsHetTien() {
+      return isHetTien_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -300,6 +442,18 @@ public final class PlayerProto {
       if (numHand_ != 0) {
         output.writeInt32(5, numHand_);
       }
+      if (!getNoteBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, note_);
+      }
+      if (!getCardsBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, cards_);
+      }
+      if (isOut_ != false) {
+        output.writeBool(8, isOut_);
+      }
+      if (isHetTien_ != false) {
+        output.writeBool(9, isHetTien_);
+      }
     }
 
     public int getSerializedSize() {
@@ -323,6 +477,20 @@ public final class PlayerProto {
       if (numHand_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, numHand_);
+      }
+      if (!getNoteBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, note_);
+      }
+      if (!getCardsBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, cards_);
+      }
+      if (isOut_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isOut_);
+      }
+      if (isHetTien_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isHetTien_);
       }
       memoizedSize = size;
       return size;
@@ -350,6 +518,14 @@ public final class PlayerProto {
           == other.getCash());
       result = result && (getNumHand()
           == other.getNumHand());
+      result = result && getNote()
+          .equals(other.getNote());
+      result = result && getCards()
+          .equals(other.getCards());
+      result = result && (getIsOut()
+          == other.getIsOut());
+      result = result && (getIsHetTien()
+          == other.getIsHetTien());
       return result;
     }
 
@@ -371,6 +547,16 @@ public final class PlayerProto {
           getCash());
       hash = (37 * hash) + NUMHAND_FIELD_NUMBER;
       hash = (53 * hash) + getNumHand();
+      hash = (37 * hash) + NOTE_FIELD_NUMBER;
+      hash = (53 * hash) + getNote().hashCode();
+      hash = (37 * hash) + CARDS_FIELD_NUMBER;
+      hash = (53 * hash) + getCards().hashCode();
+      hash = (37 * hash) + ISOUT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOut());
+      hash = (37 * hash) + ISHETTIEN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsHetTien());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -499,6 +685,14 @@ public final class PlayerProto {
 
         numHand_ = 0;
 
+        note_ = "";
+
+        cards_ = "";
+
+        isOut_ = false;
+
+        isHetTien_ = false;
+
         return this;
       }
 
@@ -526,6 +720,10 @@ public final class PlayerProto {
         result.avatarUrl_ = avatarUrl_;
         result.cash_ = cash_;
         result.numHand_ = numHand_;
+        result.note_ = note_;
+        result.cards_ = cards_;
+        result.isOut_ = isOut_;
+        result.isHetTien_ = isHetTien_;
         onBuilt();
         return result;
       }
@@ -584,6 +782,20 @@ public final class PlayerProto {
         }
         if (other.getNumHand() != 0) {
           setNumHand(other.getNumHand());
+        }
+        if (!other.getNote().isEmpty()) {
+          note_ = other.note_;
+          onChanged();
+        }
+        if (!other.getCards().isEmpty()) {
+          cards_ = other.cards_;
+          onChanged();
+        }
+        if (other.getIsOut() != false) {
+          setIsOut(other.getIsOut());
+        }
+        if (other.getIsHetTien() != false) {
+          setIsHetTien(other.getIsHetTien());
         }
         onChanged();
         return this;
@@ -869,6 +1081,196 @@ public final class PlayerProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object note_ = "";
+      /**
+       * <code>string note = 6;</code>
+       */
+      public java.lang.String getNote() {
+        java.lang.Object ref = note_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          note_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string note = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNoteBytes() {
+        java.lang.Object ref = note_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          note_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string note = 6;</code>
+       */
+      public Builder setNote(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        note_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string note = 6;</code>
+       */
+      public Builder clearNote() {
+        
+        note_ = getDefaultInstance().getNote();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string note = 6;</code>
+       */
+      public Builder setNoteBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        note_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object cards_ = "";
+      /**
+       * <code>string cards = 7;</code>
+       */
+      public java.lang.String getCards() {
+        java.lang.Object ref = cards_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cards_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cards = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCardsBytes() {
+        java.lang.Object ref = cards_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cards_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cards = 7;</code>
+       */
+      public Builder setCards(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cards_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cards = 7;</code>
+       */
+      public Builder clearCards() {
+        
+        cards_ = getDefaultInstance().getCards();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cards = 7;</code>
+       */
+      public Builder setCardsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cards_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isOut_ ;
+      /**
+       * <code>bool isOut = 8;</code>
+       */
+      public boolean getIsOut() {
+        return isOut_;
+      }
+      /**
+       * <code>bool isOut = 8;</code>
+       */
+      public Builder setIsOut(boolean value) {
+        
+        isOut_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isOut = 8;</code>
+       */
+      public Builder clearIsOut() {
+        
+        isOut_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean isHetTien_ ;
+      /**
+       * <code>bool isHetTien = 9;</code>
+       */
+      public boolean getIsHetTien() {
+        return isHetTien_;
+      }
+      /**
+       * <code>bool isHetTien = 9;</code>
+       */
+      public Builder setIsHetTien(boolean value) {
+        
+        isHetTien_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isHetTien = 9;</code>
+       */
+      public Builder clearIsHetTien() {
+        
+        isHetTien_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -932,11 +1334,12 @@ public final class PlayerProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Player.proto\022\005fanxi\"\\\n\006Player\022\016\n\006userI" +
-      "d\030\001 \001(\t\022\020\n\010userName\030\002 \001(\t\022\021\n\tavatarUrl\030\003" +
-      " \001(\t\022\014\n\004cash\030\004 \001(\003\022\017\n\007numHand\030\005 \001(\005B(\n\031c" +
-      "om.fanxi.service.messageB\013PlayerProtob\006p" +
-      "roto3"
+      "\n\014Player.proto\022\005fanxi\"\233\001\n\006Player\022\016\n\006user" +
+      "Id\030\001 \001(\t\022\020\n\010userName\030\002 \001(\t\022\021\n\tavatarUrl\030" +
+      "\003 \001(\t\022\014\n\004cash\030\004 \001(\003\022\017\n\007numHand\030\005 \001(\005\022\014\n\004" +
+      "note\030\006 \001(\t\022\r\n\005cards\030\007 \001(\t\022\r\n\005isOut\030\010 \001(\010" +
+      "\022\021\n\tisHetTien\030\t \001(\010B(\n\031com.fanxi.service" +
+      ".messageB\013PlayerProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -955,7 +1358,7 @@ public final class PlayerProto {
     internal_static_fanxi_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_Player_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", });
+        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", "Note", "Cards", "IsOut", "IsHetTien", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

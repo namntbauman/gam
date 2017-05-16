@@ -51,6 +51,10 @@ static GPBFileDescriptor *PlayerRoot_FileDescriptor(void) {
 @dynamic avatarURL;
 @dynamic cash;
 @dynamic numHand;
+@dynamic note;
+@dynamic cards;
+@dynamic isOut;
+@dynamic isHetTien;
 
 typedef struct Player__storage_ {
   uint32_t _has_storage_[1];
@@ -58,6 +62,8 @@ typedef struct Player__storage_ {
   NSString *userId;
   NSString *userName;
   NSString *avatarURL;
+  NSString *note;
+  NSString *cards;
   int64_t cash;
 } Player__storage_;
 
@@ -112,6 +118,42 @@ typedef struct Player__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "note",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_Note,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(Player__storage_, note),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "cards",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_Cards,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(Player__storage_, cards),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "isOut",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_IsOut,
+        .hasIndex = 7,
+        .offset = 8,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "isHetTien",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_IsHetTien,
+        .hasIndex = 9,
+        .offset = 10,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeBool,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[Player class]
@@ -123,7 +165,7 @@ typedef struct Player__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\006\000\002\010\000\003\007!!\000\005\007\000";
+        "\006\001\006\000\002\010\000\003\007!!\000\005\007\000\010\005\000\t\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
