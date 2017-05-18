@@ -128,6 +128,30 @@ public final class EndResponseProto {
      */
     com.google.protobuf.ByteString
         getFightInfoBytes(int index);
+
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    java.util.List<com.fanxi.service.message.PlayerProto.Player> 
+        getNextPlayingList();
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    com.fanxi.service.message.PlayerProto.Player getNextPlaying(int index);
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    int getNextPlayingCount();
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+        getNextPlayingOrBuilderList();
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    com.fanxi.service.message.PlayerProto.PlayerOrBuilder getNextPlayingOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code fanxi.EndResponse}
@@ -150,6 +174,7 @@ public final class EndResponseProto {
       lastCards_ = "";
       results_ = java.util.Collections.emptyList();
       fightInfo_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      nextPlaying_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -247,6 +272,15 @@ public final class EndResponseProto {
               fightInfo_.add(s);
               break;
             }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                nextPlaying_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              nextPlaying_.add(
+                  input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -260,6 +294,9 @@ public final class EndResponseProto {
         }
         if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
           fightInfo_ = fightInfo_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          nextPlaying_ = java.util.Collections.unmodifiableList(nextPlaying_);
         }
         makeExtensionsImmutable();
       }
@@ -525,6 +562,41 @@ public final class EndResponseProto {
       return fightInfo_.getByteString(index);
     }
 
+    public static final int NEXTPLAYING_FIELD_NUMBER = 13;
+    private java.util.List<com.fanxi.service.message.PlayerProto.Player> nextPlaying_;
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    public java.util.List<com.fanxi.service.message.PlayerProto.Player> getNextPlayingList() {
+      return nextPlaying_;
+    }
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+        getNextPlayingOrBuilderList() {
+      return nextPlaying_;
+    }
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    public int getNextPlayingCount() {
+      return nextPlaying_.size();
+    }
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    public com.fanxi.service.message.PlayerProto.Player getNextPlaying(int index) {
+      return nextPlaying_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+     */
+    public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getNextPlayingOrBuilder(
+        int index) {
+      return nextPlaying_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -566,6 +638,9 @@ public final class EndResponseProto {
       }
       for (int i = 0; i < fightInfo_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, fightInfo_.getRaw(i));
+      }
+      for (int i = 0; i < nextPlaying_.size(); i++) {
+        output.writeMessage(13, nextPlaying_.get(i));
       }
     }
 
@@ -614,6 +689,10 @@ public final class EndResponseProto {
         size += dataSize;
         size += 1 * getFightInfoList().size();
       }
+      for (int i = 0; i < nextPlaying_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, nextPlaying_.get(i));
+      }
       memoizedSize = size;
       return size;
     }
@@ -653,6 +732,8 @@ public final class EndResponseProto {
           .equals(other.getResultsList());
       result = result && getFightInfoList()
           .equals(other.getFightInfoList());
+      result = result && getNextPlayingList()
+          .equals(other.getNextPlayingList());
       return result;
     }
 
@@ -688,6 +769,10 @@ public final class EndResponseProto {
       if (getFightInfoCount() > 0) {
         hash = (37 * hash) + FIGHTINFO_FIELD_NUMBER;
         hash = (53 * hash) + getFightInfoList().hashCode();
+      }
+      if (getNextPlayingCount() > 0) {
+        hash = (37 * hash) + NEXTPLAYING_FIELD_NUMBER;
+        hash = (53 * hash) + getNextPlayingList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -804,6 +889,7 @@ public final class EndResponseProto {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
           getResultsFieldBuilder();
+          getNextPlayingFieldBuilder();
         }
       }
       public Builder clear() {
@@ -836,6 +922,12 @@ public final class EndResponseProto {
         }
         fightInfo_ = com.google.protobuf.LazyStringArrayList.EMPTY;
         bitField0_ = (bitField0_ & ~0x00000200);
+        if (nextPlayingBuilder_ == null) {
+          nextPlaying_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          nextPlayingBuilder_.clear();
+        }
         return this;
       }
 
@@ -886,6 +978,15 @@ public final class EndResponseProto {
           bitField0_ = (bitField0_ & ~0x00000200);
         }
         result.fightInfo_ = fightInfo_;
+        if (nextPlayingBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            nextPlaying_ = java.util.Collections.unmodifiableList(nextPlaying_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.nextPlaying_ = nextPlaying_;
+        } else {
+          result.nextPlaying_ = nextPlayingBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -991,6 +1092,32 @@ public final class EndResponseProto {
             fightInfo_.addAll(other.fightInfo_);
           }
           onChanged();
+        }
+        if (nextPlayingBuilder_ == null) {
+          if (!other.nextPlaying_.isEmpty()) {
+            if (nextPlaying_.isEmpty()) {
+              nextPlaying_ = other.nextPlaying_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensureNextPlayingIsMutable();
+              nextPlaying_.addAll(other.nextPlaying_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.nextPlaying_.isEmpty()) {
+            if (nextPlayingBuilder_.isEmpty()) {
+              nextPlayingBuilder_.dispose();
+              nextPlayingBuilder_ = null;
+              nextPlaying_ = other.nextPlaying_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              nextPlayingBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getNextPlayingFieldBuilder() : null;
+            } else {
+              nextPlayingBuilder_.addAllMessages(other.nextPlaying_);
+            }
+          }
         }
         onChanged();
         return this;
@@ -1823,6 +1950,246 @@ public final class EndResponseProto {
         onChanged();
         return this;
       }
+
+      private java.util.List<com.fanxi.service.message.PlayerProto.Player> nextPlaying_ =
+        java.util.Collections.emptyList();
+      private void ensureNextPlayingIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          nextPlaying_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(nextPlaying_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> nextPlayingBuilder_;
+
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public java.util.List<com.fanxi.service.message.PlayerProto.Player> getNextPlayingList() {
+        if (nextPlayingBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(nextPlaying_);
+        } else {
+          return nextPlayingBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public int getNextPlayingCount() {
+        if (nextPlayingBuilder_ == null) {
+          return nextPlaying_.size();
+        } else {
+          return nextPlayingBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player getNextPlaying(int index) {
+        if (nextPlayingBuilder_ == null) {
+          return nextPlaying_.get(index);
+        } else {
+          return nextPlayingBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder setNextPlaying(
+          int index, com.fanxi.service.message.PlayerProto.Player value) {
+        if (nextPlayingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNextPlayingIsMutable();
+          nextPlaying_.set(index, value);
+          onChanged();
+        } else {
+          nextPlayingBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder setNextPlaying(
+          int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
+        if (nextPlayingBuilder_ == null) {
+          ensureNextPlayingIsMutable();
+          nextPlaying_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          nextPlayingBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder addNextPlaying(com.fanxi.service.message.PlayerProto.Player value) {
+        if (nextPlayingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNextPlayingIsMutable();
+          nextPlaying_.add(value);
+          onChanged();
+        } else {
+          nextPlayingBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder addNextPlaying(
+          int index, com.fanxi.service.message.PlayerProto.Player value) {
+        if (nextPlayingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureNextPlayingIsMutable();
+          nextPlaying_.add(index, value);
+          onChanged();
+        } else {
+          nextPlayingBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder addNextPlaying(
+          com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
+        if (nextPlayingBuilder_ == null) {
+          ensureNextPlayingIsMutable();
+          nextPlaying_.add(builderForValue.build());
+          onChanged();
+        } else {
+          nextPlayingBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder addNextPlaying(
+          int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
+        if (nextPlayingBuilder_ == null) {
+          ensureNextPlayingIsMutable();
+          nextPlaying_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          nextPlayingBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder addAllNextPlaying(
+          java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
+        if (nextPlayingBuilder_ == null) {
+          ensureNextPlayingIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, nextPlaying_);
+          onChanged();
+        } else {
+          nextPlayingBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder clearNextPlaying() {
+        if (nextPlayingBuilder_ == null) {
+          nextPlaying_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          nextPlayingBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public Builder removeNextPlaying(int index) {
+        if (nextPlayingBuilder_ == null) {
+          ensureNextPlayingIsMutable();
+          nextPlaying_.remove(index);
+          onChanged();
+        } else {
+          nextPlayingBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player.Builder getNextPlayingBuilder(
+          int index) {
+        return getNextPlayingFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getNextPlayingOrBuilder(
+          int index) {
+        if (nextPlayingBuilder_ == null) {
+          return nextPlaying_.get(index);  } else {
+          return nextPlayingBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+           getNextPlayingOrBuilderList() {
+        if (nextPlayingBuilder_ != null) {
+          return nextPlayingBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(nextPlaying_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player.Builder addNextPlayingBuilder() {
+        return getNextPlayingFieldBuilder().addBuilder(
+            com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player.Builder addNextPlayingBuilder(
+          int index) {
+        return getNextPlayingFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.Player nextPlaying = 13;</code>
+       */
+      public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
+           getNextPlayingBuilderList() {
+        return getNextPlayingFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+          getNextPlayingFieldBuilder() {
+        if (nextPlayingBuilder_ == null) {
+          nextPlayingBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
+                  nextPlaying_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          nextPlaying_ = null;
+        }
+        return nextPlayingBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1887,14 +2254,15 @@ public final class EndResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\021EndResponse.proto\022\005fanxi\032\022BaseResponse" +
-      ".proto\032\014Player.proto\"\344\001\n\013EndResponse\022)\n\014" +
+      ".proto\032\014Player.proto\"\210\002\n\013EndResponse\022)\n\014" +
       "baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse\022" +
       "\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007m" +
       "atchId\030\006 \001(\t\022\r\n\005idWin\030\007 \001(\t\022\023\n\013perfectTy" +
       "pe\030\010 \001(\005\022\013\n\003uid\030\t \001(\t\022\021\n\tlastCards\030\n \001(\t" +
       "\022\036\n\007results\030\013 \003(\0132\r.fanxi.Player\022\021\n\tfigh" +
-      "tInfo\030\014 \003(\tB-\n\031com.fanxi.service.message" +
-      "B\020EndResponseProtob\006proto3"
+      "tInfo\030\014 \003(\t\022\"\n\013nextPlaying\030\r \003(\0132\r.fanxi" +
+      ".PlayerB-\n\031com.fanxi.service.messageB\020En" +
+      "dResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1915,7 +2283,7 @@ public final class EndResponseProto {
     internal_static_fanxi_EndResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_EndResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IdWin", "PerfectType", "Uid", "LastCards", "Results", "FightInfo", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IdWin", "PerfectType", "Uid", "LastCards", "Results", "FightInfo", "NextPlaying", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }
