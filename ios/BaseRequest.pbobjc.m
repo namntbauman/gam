@@ -53,6 +53,7 @@ static GPBFileDescriptor *BaseRequestRoot_FileDescriptor(void) {
 @dynamic token;
 @dynamic userId;
 @dynamic mid;
+@dynamic lang;
 
 typedef struct BaseRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -63,6 +64,7 @@ typedef struct BaseRequest__storage_ {
   NSString *deviceModel;
   NSString *token;
   NSString *userId;
+  NSString *lang;
 } BaseRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -133,6 +135,15 @@ typedef struct BaseRequest__storage_ {
         .offset = (uint32_t)offsetof(BaseRequest__storage_, mid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "lang",
+        .dataTypeSpecific.className = NULL,
+        .number = BaseRequest_FieldNumber_Lang,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(BaseRequest__storage_, lang),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =

@@ -50,11 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(BetRequest_FieldNumber) {
   BetRequest_FieldNumber_BaseReq = 1,
-  BetRequest_FieldNumber_ZoneId = 8,
-  BetRequest_FieldNumber_LevelId = 9,
-  BetRequest_FieldNumber_TableIndex = 10,
-  BetRequest_FieldNumber_MatchId = 11,
-  BetRequest_FieldNumber_Cash = 12,
+  BetRequest_FieldNumber_ZoneId = 10,
+  BetRequest_FieldNumber_LevelId = 11,
+  BetRequest_FieldNumber_TableIndex = 12,
+  BetRequest_FieldNumber_MatchId = 13,
+  BetRequest_FieldNumber_Cash = 14,
 };
 
 @interface BetRequest : GPBMessage

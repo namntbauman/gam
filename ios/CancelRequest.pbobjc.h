@@ -50,10 +50,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(CancelRequest_FieldNumber) {
   CancelRequest_FieldNumber_BaseReq = 1,
-  CancelRequest_FieldNumber_ZoneId = 8,
-  CancelRequest_FieldNumber_LevelId = 9,
-  CancelRequest_FieldNumber_TableIndex = 10,
-  CancelRequest_FieldNumber_MatchId = 11,
+  CancelRequest_FieldNumber_ZoneId = 10,
+  CancelRequest_FieldNumber_LevelId = 11,
+  CancelRequest_FieldNumber_TableIndex = 12,
+  CancelRequest_FieldNumber_MatchId = 13,
 };
 
 @interface CancelRequest : GPBMessage

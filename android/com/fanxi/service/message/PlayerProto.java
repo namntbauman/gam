@@ -87,6 +87,11 @@ public final class PlayerProto {
      * <code>bool isHetTien = 9;</code>
      */
     boolean getIsHetTien();
+
+    /**
+     * <code>bool isObserver = 10;</code>
+     */
+    boolean getIsObserver();
   }
   /**
    * Protobuf type {@code fanxi.Player}
@@ -109,6 +114,7 @@ public final class PlayerProto {
       cards_ = "";
       isOut_ = false;
       isHetTien_ = false;
+      isObserver_ = false;
     }
 
     @java.lang.Override
@@ -184,6 +190,11 @@ public final class PlayerProto {
             case 72: {
 
               isHetTien_ = input.readBool();
+              break;
+            }
+            case 80: {
+
+              isObserver_ = input.readBool();
               break;
             }
           }
@@ -415,6 +426,15 @@ public final class PlayerProto {
       return isHetTien_;
     }
 
+    public static final int ISOBSERVER_FIELD_NUMBER = 10;
+    private boolean isObserver_;
+    /**
+     * <code>bool isObserver = 10;</code>
+     */
+    public boolean getIsObserver() {
+      return isObserver_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -454,6 +474,9 @@ public final class PlayerProto {
       if (isHetTien_ != false) {
         output.writeBool(9, isHetTien_);
       }
+      if (isObserver_ != false) {
+        output.writeBool(10, isObserver_);
+      }
     }
 
     public int getSerializedSize() {
@@ -492,6 +515,10 @@ public final class PlayerProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, isHetTien_);
       }
+      if (isObserver_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(10, isObserver_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -526,6 +553,8 @@ public final class PlayerProto {
           == other.getIsOut());
       result = result && (getIsHetTien()
           == other.getIsHetTien());
+      result = result && (getIsObserver()
+          == other.getIsObserver());
       return result;
     }
 
@@ -557,6 +586,9 @@ public final class PlayerProto {
       hash = (37 * hash) + ISHETTIEN_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsHetTien());
+      hash = (37 * hash) + ISOBSERVER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsObserver());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -693,6 +725,8 @@ public final class PlayerProto {
 
         isHetTien_ = false;
 
+        isObserver_ = false;
+
         return this;
       }
 
@@ -724,6 +758,7 @@ public final class PlayerProto {
         result.cards_ = cards_;
         result.isOut_ = isOut_;
         result.isHetTien_ = isHetTien_;
+        result.isObserver_ = isObserver_;
         onBuilt();
         return result;
       }
@@ -796,6 +831,9 @@ public final class PlayerProto {
         }
         if (other.getIsHetTien() != false) {
           setIsHetTien(other.getIsHetTien());
+        }
+        if (other.getIsObserver() != false) {
+          setIsObserver(other.getIsObserver());
         }
         onChanged();
         return this;
@@ -1271,6 +1309,32 @@ public final class PlayerProto {
         onChanged();
         return this;
       }
+
+      private boolean isObserver_ ;
+      /**
+       * <code>bool isObserver = 10;</code>
+       */
+      public boolean getIsObserver() {
+        return isObserver_;
+      }
+      /**
+       * <code>bool isObserver = 10;</code>
+       */
+      public Builder setIsObserver(boolean value) {
+        
+        isObserver_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isObserver = 10;</code>
+       */
+      public Builder clearIsObserver() {
+        
+        isObserver_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1334,12 +1398,13 @@ public final class PlayerProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Player.proto\022\005fanxi\"\233\001\n\006Player\022\016\n\006user" +
+      "\n\014Player.proto\022\005fanxi\"\257\001\n\006Player\022\016\n\006user" +
       "Id\030\001 \001(\t\022\020\n\010userName\030\002 \001(\t\022\021\n\tavatarUrl\030" +
       "\003 \001(\t\022\014\n\004cash\030\004 \001(\003\022\017\n\007numHand\030\005 \001(\005\022\014\n\004" +
       "note\030\006 \001(\t\022\r\n\005cards\030\007 \001(\t\022\r\n\005isOut\030\010 \001(\010" +
-      "\022\021\n\tisHetTien\030\t \001(\010B(\n\031com.fanxi.service" +
-      ".messageB\013PlayerProtob\006proto3"
+      "\022\021\n\tisHetTien\030\t \001(\010\022\022\n\nisObserver\030\n \001(\010B" +
+      "(\n\031com.fanxi.service.messageB\013PlayerProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1358,7 +1423,7 @@ public final class PlayerProto {
     internal_static_fanxi_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_Player_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", "Note", "Cards", "IsOut", "IsHetTien", });
+        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", "Note", "Cards", "IsOut", "IsHetTien", "IsObserver", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

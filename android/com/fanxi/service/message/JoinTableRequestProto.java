@@ -32,26 +32,26 @@ public final class JoinTableRequestProto {
     com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder getBaseReqOrBuilder();
 
     /**
-     * <code>int32 zoneId = 8;</code>
+     * <code>int32 zoneId = 10;</code>
      */
     int getZoneId();
 
     /**
-     * <code>int32 levelId = 9;</code>
+     * <code>int32 levelId = 11;</code>
      */
     int getLevelId();
 
     /**
-     * <code>int32 tableIndex = 10;</code>
+     * <code>int32 tableIndex = 12;</code>
      */
     int getTableIndex();
 
     /**
-     * <code>string matchId = 11;</code>
+     * <code>string matchId = 13;</code>
      */
     java.lang.String getMatchId();
     /**
-     * <code>string matchId = 11;</code>
+     * <code>string matchId = 13;</code>
      */
     com.google.protobuf.ByteString
         getMatchIdBytes();
@@ -112,22 +112,22 @@ public final class JoinTableRequestProto {
 
               break;
             }
-            case 64: {
+            case 80: {
 
               zoneId_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 88: {
 
               levelId_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 96: {
 
               tableIndex_ = input.readInt32();
               break;
             }
-            case 90: {
+            case 106: {
               java.lang.String s = input.readStringRequireUtf8();
 
               matchId_ = s;
@@ -177,37 +177,37 @@ public final class JoinTableRequestProto {
       return getBaseReq();
     }
 
-    public static final int ZONEID_FIELD_NUMBER = 8;
+    public static final int ZONEID_FIELD_NUMBER = 10;
     private int zoneId_;
     /**
-     * <code>int32 zoneId = 8;</code>
+     * <code>int32 zoneId = 10;</code>
      */
     public int getZoneId() {
       return zoneId_;
     }
 
-    public static final int LEVELID_FIELD_NUMBER = 9;
+    public static final int LEVELID_FIELD_NUMBER = 11;
     private int levelId_;
     /**
-     * <code>int32 levelId = 9;</code>
+     * <code>int32 levelId = 11;</code>
      */
     public int getLevelId() {
       return levelId_;
     }
 
-    public static final int TABLEINDEX_FIELD_NUMBER = 10;
+    public static final int TABLEINDEX_FIELD_NUMBER = 12;
     private int tableIndex_;
     /**
-     * <code>int32 tableIndex = 10;</code>
+     * <code>int32 tableIndex = 12;</code>
      */
     public int getTableIndex() {
       return tableIndex_;
     }
 
-    public static final int MATCHID_FIELD_NUMBER = 11;
+    public static final int MATCHID_FIELD_NUMBER = 13;
     private volatile java.lang.Object matchId_;
     /**
-     * <code>string matchId = 11;</code>
+     * <code>string matchId = 13;</code>
      */
     public java.lang.String getMatchId() {
       java.lang.Object ref = matchId_;
@@ -222,7 +222,7 @@ public final class JoinTableRequestProto {
       }
     }
     /**
-     * <code>string matchId = 11;</code>
+     * <code>string matchId = 13;</code>
      */
     public com.google.protobuf.ByteString
         getMatchIdBytes() {
@@ -254,16 +254,16 @@ public final class JoinTableRequestProto {
         output.writeMessage(1, getBaseReq());
       }
       if (zoneId_ != 0) {
-        output.writeInt32(8, zoneId_);
+        output.writeInt32(10, zoneId_);
       }
       if (levelId_ != 0) {
-        output.writeInt32(9, levelId_);
+        output.writeInt32(11, levelId_);
       }
       if (tableIndex_ != 0) {
-        output.writeInt32(10, tableIndex_);
+        output.writeInt32(12, tableIndex_);
       }
       if (!getMatchIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, matchId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, matchId_);
       }
     }
 
@@ -278,18 +278,18 @@ public final class JoinTableRequestProto {
       }
       if (zoneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, zoneId_);
+          .computeInt32Size(10, zoneId_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, levelId_);
+          .computeInt32Size(11, levelId_);
       }
       if (tableIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, tableIndex_);
+          .computeInt32Size(12, tableIndex_);
       }
       if (!getMatchIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, matchId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, matchId_);
       }
       memoizedSize = size;
       return size;
@@ -707,13 +707,13 @@ public final class JoinTableRequestProto {
 
       private int zoneId_ ;
       /**
-       * <code>int32 zoneId = 8;</code>
+       * <code>int32 zoneId = 10;</code>
        */
       public int getZoneId() {
         return zoneId_;
       }
       /**
-       * <code>int32 zoneId = 8;</code>
+       * <code>int32 zoneId = 10;</code>
        */
       public Builder setZoneId(int value) {
         
@@ -722,7 +722,7 @@ public final class JoinTableRequestProto {
         return this;
       }
       /**
-       * <code>int32 zoneId = 8;</code>
+       * <code>int32 zoneId = 10;</code>
        */
       public Builder clearZoneId() {
         
@@ -733,13 +733,13 @@ public final class JoinTableRequestProto {
 
       private int levelId_ ;
       /**
-       * <code>int32 levelId = 9;</code>
+       * <code>int32 levelId = 11;</code>
        */
       public int getLevelId() {
         return levelId_;
       }
       /**
-       * <code>int32 levelId = 9;</code>
+       * <code>int32 levelId = 11;</code>
        */
       public Builder setLevelId(int value) {
         
@@ -748,7 +748,7 @@ public final class JoinTableRequestProto {
         return this;
       }
       /**
-       * <code>int32 levelId = 9;</code>
+       * <code>int32 levelId = 11;</code>
        */
       public Builder clearLevelId() {
         
@@ -759,13 +759,13 @@ public final class JoinTableRequestProto {
 
       private int tableIndex_ ;
       /**
-       * <code>int32 tableIndex = 10;</code>
+       * <code>int32 tableIndex = 12;</code>
        */
       public int getTableIndex() {
         return tableIndex_;
       }
       /**
-       * <code>int32 tableIndex = 10;</code>
+       * <code>int32 tableIndex = 12;</code>
        */
       public Builder setTableIndex(int value) {
         
@@ -774,7 +774,7 @@ public final class JoinTableRequestProto {
         return this;
       }
       /**
-       * <code>int32 tableIndex = 10;</code>
+       * <code>int32 tableIndex = 12;</code>
        */
       public Builder clearTableIndex() {
         
@@ -785,7 +785,7 @@ public final class JoinTableRequestProto {
 
       private java.lang.Object matchId_ = "";
       /**
-       * <code>string matchId = 11;</code>
+       * <code>string matchId = 13;</code>
        */
       public java.lang.String getMatchId() {
         java.lang.Object ref = matchId_;
@@ -800,7 +800,7 @@ public final class JoinTableRequestProto {
         }
       }
       /**
-       * <code>string matchId = 11;</code>
+       * <code>string matchId = 13;</code>
        */
       public com.google.protobuf.ByteString
           getMatchIdBytes() {
@@ -816,7 +816,7 @@ public final class JoinTableRequestProto {
         }
       }
       /**
-       * <code>string matchId = 11;</code>
+       * <code>string matchId = 13;</code>
        */
       public Builder setMatchId(
           java.lang.String value) {
@@ -829,7 +829,7 @@ public final class JoinTableRequestProto {
         return this;
       }
       /**
-       * <code>string matchId = 11;</code>
+       * <code>string matchId = 13;</code>
        */
       public Builder clearMatchId() {
         
@@ -838,7 +838,7 @@ public final class JoinTableRequestProto {
         return this;
       }
       /**
-       * <code>string matchId = 11;</code>
+       * <code>string matchId = 13;</code>
        */
       public Builder setMatchIdBytes(
           com.google.protobuf.ByteString value) {
@@ -916,9 +916,9 @@ public final class JoinTableRequestProto {
     java.lang.String[] descriptorData = {
       "\n\026JoinTableRequest.proto\022\005fanxi\032\021BaseReq" +
       "uest.proto\"}\n\020JoinTableRequest\022#\n\007baseRe" +
-      "q\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\010 " +
-      "\001(\005\022\017\n\007levelId\030\t \001(\005\022\022\n\ntableIndex\030\n \001(\005" +
-      "\022\017\n\007matchId\030\013 \001(\tB2\n\031com.fanxi.service.m" +
+      "q\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n " +
+      "\001(\005\022\017\n\007levelId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005" +
+      "\022\017\n\007matchId\030\r \001(\tB2\n\031com.fanxi.service.m" +
       "essageB\025JoinTableRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

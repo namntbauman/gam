@@ -56,6 +56,7 @@ static GPBFileDescriptor *RestfulBaseRequestRoot_FileDescriptor(void) {
 @dynamic screenSize;
 @dynamic sdkVersion;
 @dynamic mid;
+@dynamic lang;
 
 typedef struct RestfulBaseRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -68,6 +69,7 @@ typedef struct RestfulBaseRequest__storage_ {
   NSString *deviceModel;
   NSString *screenSize;
   NSString *sdkVersion;
+  NSString *lang;
 } RestfulBaseRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -165,6 +167,15 @@ typedef struct RestfulBaseRequest__storage_ {
         .offset = (uint32_t)offsetof(RestfulBaseRequest__storage_, mid),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "lang",
+        .dataTypeSpecific.className = NULL,
+        .number = RestfulBaseRequest_FieldNumber_Lang,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(RestfulBaseRequest__storage_, lang),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =

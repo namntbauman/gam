@@ -50,9 +50,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(NewTableRequest_FieldNumber) {
   NewTableRequest_FieldNumber_BaseReq = 1,
-  NewTableRequest_FieldNumber_ZoneId = 8,
-  NewTableRequest_FieldNumber_LevelId = 9,
-  NewTableRequest_FieldNumber_TableIndex = 10,
+  NewTableRequest_FieldNumber_ZoneId = 10,
+  NewTableRequest_FieldNumber_LevelId = 11,
+  NewTableRequest_FieldNumber_TableIndex = 12,
 };
 
 @interface NewTableRequest : GPBMessage

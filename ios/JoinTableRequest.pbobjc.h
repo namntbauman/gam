@@ -50,10 +50,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(JoinTableRequest_FieldNumber) {
   JoinTableRequest_FieldNumber_BaseReq = 1,
-  JoinTableRequest_FieldNumber_ZoneId = 8,
-  JoinTableRequest_FieldNumber_LevelId = 9,
-  JoinTableRequest_FieldNumber_TableIndex = 10,
-  JoinTableRequest_FieldNumber_MatchId = 11,
+  JoinTableRequest_FieldNumber_ZoneId = 10,
+  JoinTableRequest_FieldNumber_LevelId = 11,
+  JoinTableRequest_FieldNumber_TableIndex = 12,
+  JoinTableRequest_FieldNumber_MatchId = 13,
 };
 
 @interface JoinTableRequest : GPBMessage

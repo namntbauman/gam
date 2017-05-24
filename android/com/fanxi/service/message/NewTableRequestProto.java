@@ -32,17 +32,17 @@ public final class NewTableRequestProto {
     com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder getBaseReqOrBuilder();
 
     /**
-     * <code>int32 zoneId = 8;</code>
+     * <code>int32 zoneId = 10;</code>
      */
     int getZoneId();
 
     /**
-     * <code>int32 levelId = 9;</code>
+     * <code>int32 levelId = 11;</code>
      */
     int getLevelId();
 
     /**
-     * <code>int32 tableIndex = 10;</code>
+     * <code>int32 tableIndex = 12;</code>
      */
     int getTableIndex();
   }
@@ -101,17 +101,17 @@ public final class NewTableRequestProto {
 
               break;
             }
-            case 64: {
+            case 80: {
 
               zoneId_ = input.readInt32();
               break;
             }
-            case 72: {
+            case 88: {
 
               levelId_ = input.readInt32();
               break;
             }
-            case 80: {
+            case 96: {
 
               tableIndex_ = input.readInt32();
               break;
@@ -160,28 +160,28 @@ public final class NewTableRequestProto {
       return getBaseReq();
     }
 
-    public static final int ZONEID_FIELD_NUMBER = 8;
+    public static final int ZONEID_FIELD_NUMBER = 10;
     private int zoneId_;
     /**
-     * <code>int32 zoneId = 8;</code>
+     * <code>int32 zoneId = 10;</code>
      */
     public int getZoneId() {
       return zoneId_;
     }
 
-    public static final int LEVELID_FIELD_NUMBER = 9;
+    public static final int LEVELID_FIELD_NUMBER = 11;
     private int levelId_;
     /**
-     * <code>int32 levelId = 9;</code>
+     * <code>int32 levelId = 11;</code>
      */
     public int getLevelId() {
       return levelId_;
     }
 
-    public static final int TABLEINDEX_FIELD_NUMBER = 10;
+    public static final int TABLEINDEX_FIELD_NUMBER = 12;
     private int tableIndex_;
     /**
-     * <code>int32 tableIndex = 10;</code>
+     * <code>int32 tableIndex = 12;</code>
      */
     public int getTableIndex() {
       return tableIndex_;
@@ -203,13 +203,13 @@ public final class NewTableRequestProto {
         output.writeMessage(1, getBaseReq());
       }
       if (zoneId_ != 0) {
-        output.writeInt32(8, zoneId_);
+        output.writeInt32(10, zoneId_);
       }
       if (levelId_ != 0) {
-        output.writeInt32(9, levelId_);
+        output.writeInt32(11, levelId_);
       }
       if (tableIndex_ != 0) {
-        output.writeInt32(10, tableIndex_);
+        output.writeInt32(12, tableIndex_);
       }
     }
 
@@ -224,15 +224,15 @@ public final class NewTableRequestProto {
       }
       if (zoneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, zoneId_);
+          .computeInt32Size(10, zoneId_);
       }
       if (levelId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, levelId_);
+          .computeInt32Size(11, levelId_);
       }
       if (tableIndex_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(10, tableIndex_);
+          .computeInt32Size(12, tableIndex_);
       }
       memoizedSize = size;
       return size;
@@ -639,13 +639,13 @@ public final class NewTableRequestProto {
 
       private int zoneId_ ;
       /**
-       * <code>int32 zoneId = 8;</code>
+       * <code>int32 zoneId = 10;</code>
        */
       public int getZoneId() {
         return zoneId_;
       }
       /**
-       * <code>int32 zoneId = 8;</code>
+       * <code>int32 zoneId = 10;</code>
        */
       public Builder setZoneId(int value) {
         
@@ -654,7 +654,7 @@ public final class NewTableRequestProto {
         return this;
       }
       /**
-       * <code>int32 zoneId = 8;</code>
+       * <code>int32 zoneId = 10;</code>
        */
       public Builder clearZoneId() {
         
@@ -665,13 +665,13 @@ public final class NewTableRequestProto {
 
       private int levelId_ ;
       /**
-       * <code>int32 levelId = 9;</code>
+       * <code>int32 levelId = 11;</code>
        */
       public int getLevelId() {
         return levelId_;
       }
       /**
-       * <code>int32 levelId = 9;</code>
+       * <code>int32 levelId = 11;</code>
        */
       public Builder setLevelId(int value) {
         
@@ -680,7 +680,7 @@ public final class NewTableRequestProto {
         return this;
       }
       /**
-       * <code>int32 levelId = 9;</code>
+       * <code>int32 levelId = 11;</code>
        */
       public Builder clearLevelId() {
         
@@ -691,13 +691,13 @@ public final class NewTableRequestProto {
 
       private int tableIndex_ ;
       /**
-       * <code>int32 tableIndex = 10;</code>
+       * <code>int32 tableIndex = 12;</code>
        */
       public int getTableIndex() {
         return tableIndex_;
       }
       /**
-       * <code>int32 tableIndex = 10;</code>
+       * <code>int32 tableIndex = 12;</code>
        */
       public Builder setTableIndex(int value) {
         
@@ -706,7 +706,7 @@ public final class NewTableRequestProto {
         return this;
       }
       /**
-       * <code>int32 tableIndex = 10;</code>
+       * <code>int32 tableIndex = 12;</code>
        */
       public Builder clearTableIndex() {
         
@@ -779,8 +779,8 @@ public final class NewTableRequestProto {
     java.lang.String[] descriptorData = {
       "\n\026NewTableRequest .proto\022\005fanxi\032\021BaseReq" +
       "uest.proto\"k\n\017NewTableRequest\022#\n\007baseReq" +
-      "\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\010 \001" +
-      "(\005\022\017\n\007levelId\030\t \001(\005\022\022\n\ntableIndex\030\n \001(\005B" +
+      "\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001" +
+      "(\005\022\017\n\007levelId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005B" +
       "1\n\031com.fanxi.service.messageB\024NewTableRe" +
       "questProtob\006proto3"
     };

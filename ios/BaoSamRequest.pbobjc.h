@@ -50,11 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(BaoSamRequest_FieldNumber) {
   BaoSamRequest_FieldNumber_BaseReq = 1,
-  BaoSamRequest_FieldNumber_ZoneId = 8,
-  BaoSamRequest_FieldNumber_LevelId = 9,
-  BaoSamRequest_FieldNumber_TableIndex = 10,
-  BaoSamRequest_FieldNumber_MatchId = 11,
-  BaoSamRequest_FieldNumber_IsBaoSam = 12,
+  BaoSamRequest_FieldNumber_ZoneId = 10,
+  BaoSamRequest_FieldNumber_LevelId = 11,
+  BaoSamRequest_FieldNumber_TableIndex = 12,
+  BaoSamRequest_FieldNumber_MatchId = 13,
+  BaoSamRequest_FieldNumber_IsBaoSam = 14,
 };
 
 @interface BaoSamRequest : GPBMessage

@@ -77,6 +77,16 @@ public final class BaseRequestProto {
      * <code>int32 mid = 7;</code>
      */
     int getMid();
+
+    /**
+     * <code>string lang = 8;</code>
+     */
+    java.lang.String getLang();
+    /**
+     * <code>string lang = 8;</code>
+     */
+    com.google.protobuf.ByteString
+        getLangBytes();
   }
   /**
    * Protobuf type {@code fanxi.BaseRequest}
@@ -97,6 +107,7 @@ public final class BaseRequestProto {
       token_ = "";
       userId_ = "";
       mid_ = 0;
+      lang_ = "";
     }
 
     @java.lang.Override
@@ -162,6 +173,12 @@ public final class BaseRequestProto {
             case 56: {
 
               mid_ = input.readInt32();
+              break;
+            }
+            case 66: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              lang_ = s;
               break;
             }
           }
@@ -375,6 +392,40 @@ public final class BaseRequestProto {
       return mid_;
     }
 
+    public static final int LANG_FIELD_NUMBER = 8;
+    private volatile java.lang.Object lang_;
+    /**
+     * <code>string lang = 8;</code>
+     */
+    public java.lang.String getLang() {
+      java.lang.Object ref = lang_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        lang_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string lang = 8;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLangBytes() {
+      java.lang.Object ref = lang_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        lang_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -408,6 +459,9 @@ public final class BaseRequestProto {
       if (mid_ != 0) {
         output.writeInt32(7, mid_);
       }
+      if (!getLangBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, lang_);
+      }
     }
 
     public int getSerializedSize() {
@@ -437,6 +491,9 @@ public final class BaseRequestProto {
       if (mid_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(7, mid_);
+      }
+      if (!getLangBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, lang_);
       }
       memoizedSize = size;
       return size;
@@ -468,6 +525,8 @@ public final class BaseRequestProto {
           .equals(other.getUserId());
       result = result && (getMid()
           == other.getMid());
+      result = result && getLang()
+          .equals(other.getLang());
       return result;
     }
 
@@ -492,6 +551,8 @@ public final class BaseRequestProto {
       hash = (53 * hash) + getUserId().hashCode();
       hash = (37 * hash) + MID_FIELD_NUMBER;
       hash = (53 * hash) + getMid();
+      hash = (37 * hash) + LANG_FIELD_NUMBER;
+      hash = (53 * hash) + getLang().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -624,6 +685,8 @@ public final class BaseRequestProto {
 
         mid_ = 0;
 
+        lang_ = "";
+
         return this;
       }
 
@@ -653,6 +716,7 @@ public final class BaseRequestProto {
         result.token_ = token_;
         result.userId_ = userId_;
         result.mid_ = mid_;
+        result.lang_ = lang_;
         onBuilt();
         return result;
       }
@@ -719,6 +783,10 @@ public final class BaseRequestProto {
         }
         if (other.getMid() != 0) {
           setMid(other.getMid());
+        }
+        if (!other.getLang().isEmpty()) {
+          lang_ = other.lang_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1142,6 +1210,75 @@ public final class BaseRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object lang_ = "";
+      /**
+       * <code>string lang = 8;</code>
+       */
+      public java.lang.String getLang() {
+        java.lang.Object ref = lang_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          lang_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string lang = 8;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLangBytes() {
+        java.lang.Object ref = lang_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          lang_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string lang = 8;</code>
+       */
+      public Builder setLang(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        lang_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string lang = 8;</code>
+       */
+      public Builder clearLang() {
+        
+        lang_ = getDefaultInstance().getLang();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string lang = 8;</code>
+       */
+      public Builder setLangBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        lang_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1205,12 +1342,12 @@ public final class BaseRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BaseRequest.proto\022\005fanxi\"\177\n\013BaseReques" +
-      "t\022\022\n\ndeviceType\030\001 \001(\005\022\014\n\004imei\030\002 \001(\t\022\r\n\005n" +
-      "once\030\003 \001(\t\022\023\n\013deviceModel\030\004 \001(\t\022\r\n\005token" +
-      "\030\005 \001(\t\022\016\n\006userId\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005B-\n\031c" +
-      "om.fanxi.service.messageB\020BaseRequestPro" +
-      "tob\006proto3"
+      "\n\021BaseRequest.proto\022\005fanxi\"\215\001\n\013BaseReque" +
+      "st\022\022\n\ndeviceType\030\001 \001(\005\022\014\n\004imei\030\002 \001(\t\022\r\n\005" +
+      "nonce\030\003 \001(\t\022\023\n\013deviceModel\030\004 \001(\t\022\r\n\005toke" +
+      "n\030\005 \001(\t\022\016\n\006userId\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005\022\014\n\004" +
+      "lang\030\010 \001(\tB-\n\031com.fanxi.service.messageB" +
+      "\020BaseRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1229,7 +1366,7 @@ public final class BaseRequestProto {
     internal_static_fanxi_BaseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BaseRequest_descriptor,
-        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", });
+        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
