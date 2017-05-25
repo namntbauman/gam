@@ -53,6 +53,7 @@ static GPBFileDescriptor *BaoSamResponseRoot_FileDescriptor(void) {
 @dynamic matchId;
 @dynamic uid;
 @dynamic isBaoSam;
+@dynamic beginUid;
 
 typedef struct BaoSamResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -61,6 +62,7 @@ typedef struct BaoSamResponse__storage_ {
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *uid;
+  NSString *beginUid;
 } BaoSamResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -123,6 +125,15 @@ typedef struct BaoSamResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "beginUid",
+        .dataTypeSpecific.className = NULL,
+        .number = BaoSamResponse_FieldNumber_BeginUid,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(BaoSamResponse__storage_, beginUid),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[BaoSamResponse class]
@@ -134,7 +145,7 @@ typedef struct BaoSamResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\014\000\004\006\000\005\n\000\006\007\000\010\010\000";
+        "\006\001\014\000\004\006\000\005\n\000\006\007\000\010\010\000\t\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

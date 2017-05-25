@@ -65,6 +65,16 @@ public final class BaoSamResponseProto {
      * <code>bool isBaoSam = 8;</code>
      */
     boolean getIsBaoSam();
+
+    /**
+     * <code>string beginUid = 9;</code>
+     */
+    java.lang.String getBeginUid();
+    /**
+     * <code>string beginUid = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getBeginUidBytes();
   }
   /**
    * Protobuf type {@code fanxi.BaoSamResponse}
@@ -83,6 +93,7 @@ public final class BaoSamResponseProto {
       matchId_ = "";
       uid_ = "";
       isBaoSam_ = false;
+      beginUid_ = "";
     }
 
     @java.lang.Override
@@ -148,6 +159,12 @@ public final class BaoSamResponseProto {
             case 64: {
 
               isBaoSam_ = input.readBool();
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              beginUid_ = s;
               break;
             }
           }
@@ -289,6 +306,40 @@ public final class BaoSamResponseProto {
       return isBaoSam_;
     }
 
+    public static final int BEGINUID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object beginUid_;
+    /**
+     * <code>string beginUid = 9;</code>
+     */
+    public java.lang.String getBeginUid() {
+      java.lang.Object ref = beginUid_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        beginUid_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string beginUid = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBeginUidBytes() {
+      java.lang.Object ref = beginUid_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        beginUid_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -319,6 +370,9 @@ public final class BaoSamResponseProto {
       if (isBaoSam_ != false) {
         output.writeBool(8, isBaoSam_);
       }
+      if (!getBeginUidBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, beginUid_);
+      }
     }
 
     public int getSerializedSize() {
@@ -347,6 +401,9 @@ public final class BaoSamResponseProto {
       if (isBaoSam_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isBaoSam_);
+      }
+      if (!getBeginUidBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, beginUid_);
       }
       memoizedSize = size;
       return size;
@@ -379,6 +436,8 @@ public final class BaoSamResponseProto {
           .equals(other.getUid());
       result = result && (getIsBaoSam()
           == other.getIsBaoSam());
+      result = result && getBeginUid()
+          .equals(other.getBeginUid());
       return result;
     }
 
@@ -404,6 +463,8 @@ public final class BaoSamResponseProto {
       hash = (37 * hash) + ISBAOSAM_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsBaoSam());
+      hash = (37 * hash) + BEGINUID_FIELD_NUMBER;
+      hash = (53 * hash) + getBeginUid().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -538,6 +599,8 @@ public final class BaoSamResponseProto {
 
         isBaoSam_ = false;
 
+        beginUid_ = "";
+
         return this;
       }
 
@@ -570,6 +633,7 @@ public final class BaoSamResponseProto {
         result.matchId_ = matchId_;
         result.uid_ = uid_;
         result.isBaoSam_ = isBaoSam_;
+        result.beginUid_ = beginUid_;
         onBuilt();
         return result;
       }
@@ -630,6 +694,10 @@ public final class BaoSamResponseProto {
         }
         if (other.getIsBaoSam() != false) {
           setIsBaoSam(other.getIsBaoSam());
+        }
+        if (!other.getBeginUid().isEmpty()) {
+          beginUid_ = other.beginUid_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -989,6 +1057,75 @@ public final class BaoSamResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object beginUid_ = "";
+      /**
+       * <code>string beginUid = 9;</code>
+       */
+      public java.lang.String getBeginUid() {
+        java.lang.Object ref = beginUid_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          beginUid_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string beginUid = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBeginUidBytes() {
+        java.lang.Object ref = beginUid_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          beginUid_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string beginUid = 9;</code>
+       */
+      public Builder setBeginUid(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        beginUid_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string beginUid = 9;</code>
+       */
+      public Builder clearBeginUid() {
+        
+        beginUid_ = getDefaultInstance().getBeginUid();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string beginUid = 9;</code>
+       */
+      public Builder setBeginUidBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        beginUid_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1053,12 +1190,12 @@ public final class BaoSamResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\024BaoSamResponse.proto\022\005fanxi\032\022BaseRespo" +
-      "nse.proto\"\217\001\n\016BaoSamResponse\022)\n\014baseResp" +
+      "nse.proto\"\241\001\n\016BaoSamResponse\022)\n\014baseResp" +
       "onse\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneI" +
       "d\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006" +
-      " \001(\t\022\013\n\003uid\030\007 \001(\t\022\020\n\010isBaoSam\030\010 \001(\010B0\n\031c" +
-      "om.fanxi.service.messageB\023BaoSamResponse" +
-      "Protob\006proto3"
+      " \001(\t\022\013\n\003uid\030\007 \001(\t\022\020\n\010isBaoSam\030\010 \001(\010\022\020\n\010b" +
+      "eginUid\030\t \001(\tB0\n\031com.fanxi.service.messa" +
+      "geB\023BaoSamResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1078,7 +1215,7 @@ public final class BaoSamResponseProto {
     internal_static_fanxi_BaoSamResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BaoSamResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Uid", "IsBaoSam", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Uid", "IsBaoSam", "BeginUid", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

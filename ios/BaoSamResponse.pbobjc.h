@@ -55,6 +55,7 @@ typedef GPB_ENUM(BaoSamResponse_FieldNumber) {
   BaoSamResponse_FieldNumber_MatchId = 6,
   BaoSamResponse_FieldNumber_Uid = 7,
   BaoSamResponse_FieldNumber_IsBaoSam = 8,
+  BaoSamResponse_FieldNumber_BeginUid = 9,
 };
 
 @interface BaoSamResponse : GPBMessage
@@ -72,6 +73,8 @@ typedef GPB_ENUM(BaoSamResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uid;
 
 @property(nonatomic, readwrite) BOOL isBaoSam;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *beginUid;
 
 @end
 
