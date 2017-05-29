@@ -37,25 +37,30 @@ public final class FreeListResponseProto {
     int getZoneId();
 
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>int32 tableIndex = 5;</code>
+     */
+    int getTableIndex();
+
+    /**
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     java.util.List<com.fanxi.service.message.PlayerProto.Player> 
         getPlayersList();
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     com.fanxi.service.message.PlayerProto.Player getPlayers(int index);
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     int getPlayersCount();
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList();
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index);
@@ -73,6 +78,7 @@ public final class FreeListResponseProto {
     }
     private FreeListResponse() {
       zoneId_ = 0;
+      tableIndex_ = 0;
       players_ = java.util.Collections.emptyList();
     }
 
@@ -119,10 +125,15 @@ public final class FreeListResponseProto {
               zoneId_ = input.readInt32();
               break;
             }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+            case 40: {
+
+              tableIndex_ = input.readInt32();
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               players_.add(
                   input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
@@ -136,7 +147,7 @@ public final class FreeListResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           players_ = java.util.Collections.unmodifiableList(players_);
         }
         makeExtensionsImmutable();
@@ -185,35 +196,44 @@ public final class FreeListResponseProto {
       return zoneId_;
     }
 
-    public static final int PLAYERS_FIELD_NUMBER = 5;
+    public static final int TABLEINDEX_FIELD_NUMBER = 5;
+    private int tableIndex_;
+    /**
+     * <code>int32 tableIndex = 5;</code>
+     */
+    public int getTableIndex() {
+      return tableIndex_;
+    }
+
+    public static final int PLAYERS_FIELD_NUMBER = 6;
     private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_;
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     public int getPlayersCount() {
       return players_.size();
     }
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
       return players_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Player players = 5;</code>
+     * <code>repeated .fanxi.Player players = 6;</code>
      */
     public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index) {
@@ -238,8 +258,11 @@ public final class FreeListResponseProto {
       if (zoneId_ != 0) {
         output.writeInt32(4, zoneId_);
       }
+      if (tableIndex_ != 0) {
+        output.writeInt32(5, tableIndex_);
+      }
       for (int i = 0; i < players_.size(); i++) {
-        output.writeMessage(5, players_.get(i));
+        output.writeMessage(6, players_.get(i));
       }
     }
 
@@ -256,9 +279,13 @@ public final class FreeListResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, zoneId_);
       }
+      if (tableIndex_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(5, tableIndex_);
+      }
       for (int i = 0; i < players_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, players_.get(i));
+          .computeMessageSize(6, players_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -283,6 +310,8 @@ public final class FreeListResponseProto {
       }
       result = result && (getZoneId()
           == other.getZoneId());
+      result = result && (getTableIndex()
+          == other.getTableIndex());
       result = result && getPlayersList()
           .equals(other.getPlayersList());
       return result;
@@ -301,6 +330,8 @@ public final class FreeListResponseProto {
       }
       hash = (37 * hash) + ZONEID_FIELD_NUMBER;
       hash = (53 * hash) + getZoneId();
+      hash = (37 * hash) + TABLEINDEX_FIELD_NUMBER;
+      hash = (53 * hash) + getTableIndex();
       if (getPlayersCount() > 0) {
         hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
         hash = (53 * hash) + getPlayersList().hashCode();
@@ -432,9 +463,11 @@ public final class FreeListResponseProto {
         }
         zoneId_ = 0;
 
+        tableIndex_ = 0;
+
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           playersBuilder_.clear();
         }
@@ -468,10 +501,11 @@ public final class FreeListResponseProto {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.zoneId_ = zoneId_;
+        result.tableIndex_ = tableIndex_;
         if (playersBuilder_ == null) {
-          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
             players_ = java.util.Collections.unmodifiableList(players_);
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           }
           result.players_ = players_;
         } else {
@@ -525,11 +559,14 @@ public final class FreeListResponseProto {
         if (other.getZoneId() != 0) {
           setZoneId(other.getZoneId());
         }
+        if (other.getTableIndex() != 0) {
+          setTableIndex(other.getTableIndex());
+        }
         if (playersBuilder_ == null) {
           if (!other.players_.isEmpty()) {
             if (players_.isEmpty()) {
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
             } else {
               ensurePlayersIsMutable();
               players_.addAll(other.players_);
@@ -542,7 +579,7 @@ public final class FreeListResponseProto {
               playersBuilder_.dispose();
               playersBuilder_ = null;
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00000004);
+              bitField0_ = (bitField0_ & ~0x00000008);
               playersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayersFieldBuilder() : null;
@@ -721,12 +758,38 @@ public final class FreeListResponseProto {
         return this;
       }
 
+      private int tableIndex_ ;
+      /**
+       * <code>int32 tableIndex = 5;</code>
+       */
+      public int getTableIndex() {
+        return tableIndex_;
+      }
+      /**
+       * <code>int32 tableIndex = 5;</code>
+       */
+      public Builder setTableIndex(int value) {
+        
+        tableIndex_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 tableIndex = 5;</code>
+       */
+      public Builder clearTableIndex() {
+        
+        tableIndex_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_ =
         java.util.Collections.emptyList();
       private void ensurePlayersIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(players_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
 
@@ -734,7 +797,7 @@ public final class FreeListResponseProto {
           com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> playersBuilder_;
 
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
         if (playersBuilder_ == null) {
@@ -744,7 +807,7 @@ public final class FreeListResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public int getPlayersCount() {
         if (playersBuilder_ == null) {
@@ -754,7 +817,7 @@ public final class FreeListResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
         if (playersBuilder_ == null) {
@@ -764,7 +827,7 @@ public final class FreeListResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -781,7 +844,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -795,7 +858,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder addPlayers(com.fanxi.service.message.PlayerProto.Player value) {
         if (playersBuilder_ == null) {
@@ -811,7 +874,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -828,7 +891,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder addPlayers(
           com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -842,7 +905,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -856,7 +919,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder addAllPlayers(
           java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
@@ -871,12 +934,12 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder clearPlayers() {
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
           onChanged();
         } else {
           playersBuilder_.clear();
@@ -884,7 +947,7 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public Builder removePlayers(int index) {
         if (playersBuilder_ == null) {
@@ -897,14 +960,14 @@ public final class FreeListResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder getPlayersBuilder(
           int index) {
         return getPlayersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
           int index) {
@@ -914,7 +977,7 @@ public final class FreeListResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
            getPlayersOrBuilderList() {
@@ -925,14 +988,14 @@ public final class FreeListResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder() {
         return getPlayersFieldBuilder().addBuilder(
             com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder(
           int index) {
@@ -940,7 +1003,7 @@ public final class FreeListResponseProto {
             index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 5;</code>
+       * <code>repeated .fanxi.Player players = 6;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
            getPlayersBuilderList() {
@@ -953,7 +1016,7 @@ public final class FreeListResponseProto {
           playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
                   players_,
-                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
                   isClean());
           players_ = null;
@@ -1024,11 +1087,12 @@ public final class FreeListResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026FreeListResponse.proto\022\005fanxi\032\022BaseRes" +
-      "ponse.proto\032\014Player.proto\"m\n\020FreeListRes" +
-      "ponse\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.Base" +
-      "Response\022\016\n\006zoneId\030\004 \001(\005\022\036\n\007players\030\005 \003(" +
-      "\0132\r.fanxi.PlayerB2\n\031com.fanxi.service.me" +
-      "ssageB\025FreeListResponseProtob\006proto3"
+      "ponse.proto\032\014Player.proto\"\201\001\n\020FreeListRe" +
+      "sponse\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.Bas" +
+      "eResponse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030" +
+      "\005 \001(\005\022\036\n\007players\030\006 \003(\0132\r.fanxi.PlayerB2\n" +
+      "\031com.fanxi.service.messageB\025FreeListResp" +
+      "onseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1049,7 +1113,7 @@ public final class FreeListResponseProto {
     internal_static_fanxi_FreeListResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_FreeListResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "Players", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "Players", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }

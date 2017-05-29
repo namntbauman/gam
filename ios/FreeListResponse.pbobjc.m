@@ -50,11 +50,13 @@ static GPBFileDescriptor *FreeListResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic zoneId;
+@dynamic tableIndex;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct FreeListResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
+  int32_t tableIndex;
   BaseResponse *baseResponse;
   NSMutableArray *playersArray;
 } FreeListResponse__storage_;
@@ -84,6 +86,15 @@ typedef struct FreeListResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "tableIndex",
+        .dataTypeSpecific.className = NULL,
+        .number = FreeListResponse_FieldNumber_TableIndex,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(FreeListResponse__storage_, tableIndex),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "playersArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = FreeListResponse_FieldNumber_PlayersArray,
@@ -103,7 +114,7 @@ typedef struct FreeListResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\014\000\004\006\000";
+        "\003\001\014\000\004\006\000\005\n\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

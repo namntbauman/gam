@@ -52,7 +52,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(FreeListResponse_FieldNumber) {
   FreeListResponse_FieldNumber_BaseResponse = 1,
   FreeListResponse_FieldNumber_ZoneId = 4,
-  FreeListResponse_FieldNumber_PlayersArray = 5,
+  FreeListResponse_FieldNumber_TableIndex = 5,
+  FreeListResponse_FieldNumber_PlayersArray = 6,
 };
 
 @interface FreeListResponse : GPBMessage
@@ -62,6 +63,8 @@ typedef GPB_ENUM(FreeListResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseResponse;
 
 @property(nonatomic, readwrite) int32_t zoneId;
+
+@property(nonatomic, readwrite) int32_t tableIndex;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *playersArray;
 /** The number of items in @c playersArray without causing the array to be created. */
