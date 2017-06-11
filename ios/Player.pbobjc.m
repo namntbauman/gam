@@ -56,6 +56,9 @@ static GPBFileDescriptor *PlayerRoot_FileDescriptor(void) {
 @dynamic isOut;
 @dynamic isHetTien;
 @dynamic isObserver;
+@dynamic playingCards;
+@dynamic eatingCards;
+@dynamic haPhomCards;
 
 typedef struct Player__storage_ {
   uint32_t _has_storage_[1];
@@ -65,6 +68,9 @@ typedef struct Player__storage_ {
   NSString *avatarURL;
   NSString *note;
   NSString *cards;
+  NSString *playingCards;
+  NSString *eatingCards;
+  NSString *haPhomCards;
   int64_t cash;
 } Player__storage_;
 
@@ -164,6 +170,33 @@ typedef struct Player__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "playingCards",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_PlayingCards,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(Player__storage_, playingCards),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "eatingCards",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_EatingCards,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(Player__storage_, eatingCards),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "haPhomCards",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_HaPhomCards,
+        .hasIndex = 15,
+        .offset = (uint32_t)offsetof(Player__storage_, haPhomCards),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[Player class]
@@ -175,7 +208,7 @@ typedef struct Player__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\007\001\006\000\002\010\000\003\007!!\000\005\007\000\010\005\000\t\t\000\n\n\000";
+        "\n\001\006\000\002\010\000\003\007!!\000\005\007\000\010\005\000\t\t\000\n\n\000\013\014\000\014\013\000\r\013\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

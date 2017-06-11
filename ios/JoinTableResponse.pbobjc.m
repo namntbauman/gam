@@ -55,12 +55,14 @@ static GPBFileDescriptor *JoinTableResponseRoot_FileDescriptor(void) {
 @dynamic isPlaying;
 @dynamic currTurn;
 @dynamic cards;
+@dynamic deck;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct JoinTableResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t tableIndex;
+  int32_t deck;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *currTurn;
@@ -136,6 +138,15 @@ typedef struct JoinTableResponse__storage_ {
         .offset = (uint32_t)offsetof(JoinTableResponse__storage_, cards),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "deck",
+        .dataTypeSpecific.className = NULL,
+        .number = JoinTableResponse_FieldNumber_Deck,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, deck),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
       },
       {
         .name = "playersArray",
