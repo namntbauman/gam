@@ -1,0 +1,19 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RestfulBaseRequestProto";
+
+message RestfulBaseRequest{
+    string version = 1;
+    int32 deviceType = 2;
+    string imei = 3;
+    bool isRoot=4;
+    int32 requestTime=5;
+    string nonce=6;
+    string deviceModel=7;
+    string screenSize=8;
+    string sdkVersion=9;
+    int32 mid =10;
+	string lang=11;
+}

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "UserToProto";
+
+message UserTo{
+    string userId =1;
+    int32 typeTo = 2;
+    int64 callMoney = 3;
+    int64 minCall= 4;
+    int64 totalCall = 5;
+}
+
+
+

@@ -1,0 +1,20 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+import "Player.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "InviteResponseProto";
+
+message InviteResponse {
+   BaseResponse baseResponse=1;
+   int32 zoneId=4;
+   int32 levelId=5;
+   int32 tableIndex=6;
+   string matchId=7;
+   Player source=8;
+   
+}
+
+
+
+

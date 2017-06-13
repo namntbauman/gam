@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ConnectFacebookRequestProto";
+
+message ConnectFacebookRequest {
+   RestfulBaseRequest baseReq=1;
+   string userName=13;
+   string token=14;
+   string facebookToken=15;
+   
+}

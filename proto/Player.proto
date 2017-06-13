@@ -1,0 +1,24 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "PlayerProto";
+
+message Player{
+    string userId =1;
+    string userName = 2;
+	string avatarUrl=3;
+	int64 cash=4;
+	int32 numHand=5;
+	string note=6;
+	string cards=7;
+	bool isOut=8;
+	bool isHetTien=9;
+	bool isObserver=10;
+	string playingCards=11;
+	string eatingCards=12;
+	string haPhomCards=13;
+}
+
+
+

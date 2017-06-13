@@ -1,0 +1,24 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+import "Player.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "EndResponseProto";
+
+message EndResponse {
+   BaseResponse baseResponse=1;
+   int32 zoneId=4;
+   int32 tableIndex=5;
+   string matchId=6;
+   string idWin=7;
+   int32 perfectType=8;
+   string uid=9;
+   string lastCards=10;
+   repeated Player results=11;
+   repeated string fightInfo=12;
+   repeated Player nextPlaying=13;
+}
+
+
+
+

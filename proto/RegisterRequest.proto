@@ -2,10 +2,12 @@ syntax = "proto3";
 package fanxi;
 import "RestfulBaseRequest.proto";
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "LoginAnonymousRequestProto";
+option java_outer_classname = "RegisterRequestProto";
 
-message LoginAnonymousRequest {
+message RegisterRequest {
    RestfulBaseRequest baseReq=1;
    string gcmId=2;
-   int32 partnerId=3;
+   string userName=3;
+   string password=4;
+   int32 partnerId=5;
 }

@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "FastPlayResponseProto";
+
+message FastPlayResponse {
+   BaseResponse baseResponse=1;
+}
+
+
+
+

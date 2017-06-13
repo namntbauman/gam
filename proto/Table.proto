@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "TableProto";
+
+message Table {
+    int32 index =1;
+    int32 size = 2;
+    int32 cashBet=3;
+	int32 maxPlayer=4;
+	bool isPlaying=5;
+}
+
+
+
+

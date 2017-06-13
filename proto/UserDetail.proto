@@ -1,0 +1,20 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "UserDetailProto";
+
+message UserDetail{
+    string userId =1;
+    int32 type = 2;
+    string userName = 3;
+    string displayName = 4;
+    string token = 5;
+    string server = 6;
+	string avatarUrl=7;
+	int64 cash=8;
+	string facebookId=9;
+}
+
+
+

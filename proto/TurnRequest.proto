@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "TurnRequestProto";
+
+message TurnRequest {
+   BaseRequest baseReq=1;
+   int32 zoneId=8;
+   int32 levelId=9;
+   int32 tableIndex=10;
+   string matchId=11;
+   int32 phomCard=12;
+   string tienlenCards=13;
+   bool isGiveup=14;
+}

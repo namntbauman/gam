@@ -1,0 +1,22 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+import "Player.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "JoinTableResponseProto";
+
+message JoinTableResponse {
+   BaseResponse baseResponse=1;
+   int32 zoneId=4;
+   int32 tableIndex=5;
+   string matchId=6;
+   bool isPlaying=7;
+   string currTurn=8;
+   string cards=9;
+   int32 deck=10;
+   repeated Player players=11;
+}
+
+
+
+

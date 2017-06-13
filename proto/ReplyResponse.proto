@@ -1,0 +1,14 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ReplyResponseProto";
+
+message ReplyResponse {
+   BaseResponse baseResponse=1;
+   bool isAccept=4;
+}
+
+
+
+

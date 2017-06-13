@@ -1,0 +1,25 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "TurnResponseProto";
+
+message TurnResponse {
+   BaseResponse baseResponse=1;
+   int32 zoneId=4;
+   int32 tableIndex=5;
+   string matchId=6;
+   int32 phomCard=7;
+   string nextId=8;
+   string currId=9;
+   string tienlenCards=10;
+   bool isDuty=11;
+   bool isGiveup=12;
+   bool isNewRound=13;
+   repeated string fightInfo=14;
+}
+
+
+
+

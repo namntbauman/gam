@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "BaoSamRequestProto";
+
+message BaoSamRequest {
+   BaseRequest baseReq=1;
+   int32 zoneId=10;
+   int32 levelId=11;
+   int32 tableIndex=12;
+   string matchId=13;
+   bool isBaoSam=14;
+   
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+import "Table.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "GetTablesResponseProto";
+
+message GetTablesResponse {
+   BaseResponse baseResponse=1;
+   repeated Table tables= 4;
+}
+
+
+
+
