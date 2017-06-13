@@ -15,6 +15,7 @@
 
  #import "BetResponse.pbobjc.h"
  #import "BaseResponse.pbobjc.h"
+ #import "UserTo.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -52,6 +53,9 @@ static GPBFileDescriptor *BetResponseRoot_FileDescriptor(void) {
 @dynamic tableIndex;
 @dynamic matchId;
 @dynamic cash;
+@dynamic allTotalCall;
+@dynamic hasCurrUser, currUser;
+@dynamic hasNextUser, nextUser;
 
 typedef struct BetResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -59,7 +63,10 @@ typedef struct BetResponse__storage_ {
   int32_t tableIndex;
   BaseResponse *baseResponse;
   NSString *matchId;
+  UserTo *currUser;
+  UserTo *nextUser;
   int64_t cash;
+  int64_t allTotalCall;
 } BetResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -113,6 +120,33 @@ typedef struct BetResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
+      {
+        .name = "allTotalCall",
+        .dataTypeSpecific.className = NULL,
+        .number = BetResponse_FieldNumber_AllTotalCall,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(BetResponse__storage_, allTotalCall),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "currUser",
+        .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
+        .number = BetResponse_FieldNumber_CurrUser,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(BetResponse__storage_, currUser),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "nextUser",
+        .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
+        .number = BetResponse_FieldNumber_NextUser,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(BetResponse__storage_, nextUser),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[BetResponse class]
@@ -124,7 +158,7 @@ typedef struct BetResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\004\006\000\005\n\000\006\007\000";
+        "\007\001\014\000\004\006\000\005\n\000\006\007\000\010\014\000\t\010\000\n\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

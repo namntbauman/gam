@@ -55,6 +55,37 @@ public final class BetResponseProto {
      * <code>int64 cash = 7;</code>
      */
     long getCash();
+
+    /**
+     * <code>int64 allTotalCall = 8;</code>
+     */
+    long getAllTotalCall();
+
+    /**
+     * <code>.fanxi.UserTo currUser = 9;</code>
+     */
+    boolean hasCurrUser();
+    /**
+     * <code>.fanxi.UserTo currUser = 9;</code>
+     */
+    com.fanxi.service.message.UserToProto.UserTo getCurrUser();
+    /**
+     * <code>.fanxi.UserTo currUser = 9;</code>
+     */
+    com.fanxi.service.message.UserToProto.UserToOrBuilder getCurrUserOrBuilder();
+
+    /**
+     * <code>.fanxi.UserTo nextUser = 10;</code>
+     */
+    boolean hasNextUser();
+    /**
+     * <code>.fanxi.UserTo nextUser = 10;</code>
+     */
+    com.fanxi.service.message.UserToProto.UserTo getNextUser();
+    /**
+     * <code>.fanxi.UserTo nextUser = 10;</code>
+     */
+    com.fanxi.service.message.UserToProto.UserToOrBuilder getNextUserOrBuilder();
   }
   /**
    * Protobuf type {@code fanxi.BetResponse}
@@ -72,6 +103,7 @@ public final class BetResponseProto {
       tableIndex_ = 0;
       matchId_ = "";
       cash_ = 0L;
+      allTotalCall_ = 0L;
     }
 
     @java.lang.Override
@@ -131,6 +163,37 @@ public final class BetResponseProto {
             case 56: {
 
               cash_ = input.readInt64();
+              break;
+            }
+            case 64: {
+
+              allTotalCall_ = input.readInt64();
+              break;
+            }
+            case 74: {
+              com.fanxi.service.message.UserToProto.UserTo.Builder subBuilder = null;
+              if (currUser_ != null) {
+                subBuilder = currUser_.toBuilder();
+              }
+              currUser_ = input.readMessage(com.fanxi.service.message.UserToProto.UserTo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(currUser_);
+                currUser_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 82: {
+              com.fanxi.service.message.UserToProto.UserTo.Builder subBuilder = null;
+              if (nextUser_ != null) {
+                subBuilder = nextUser_.toBuilder();
+              }
+              nextUser_ = input.readMessage(com.fanxi.service.message.UserToProto.UserTo.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(nextUser_);
+                nextUser_ = subBuilder.buildPartial();
+              }
+
               break;
             }
           }
@@ -238,6 +301,57 @@ public final class BetResponseProto {
       return cash_;
     }
 
+    public static final int ALLTOTALCALL_FIELD_NUMBER = 8;
+    private long allTotalCall_;
+    /**
+     * <code>int64 allTotalCall = 8;</code>
+     */
+    public long getAllTotalCall() {
+      return allTotalCall_;
+    }
+
+    public static final int CURRUSER_FIELD_NUMBER = 9;
+    private com.fanxi.service.message.UserToProto.UserTo currUser_;
+    /**
+     * <code>.fanxi.UserTo currUser = 9;</code>
+     */
+    public boolean hasCurrUser() {
+      return currUser_ != null;
+    }
+    /**
+     * <code>.fanxi.UserTo currUser = 9;</code>
+     */
+    public com.fanxi.service.message.UserToProto.UserTo getCurrUser() {
+      return currUser_ == null ? com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : currUser_;
+    }
+    /**
+     * <code>.fanxi.UserTo currUser = 9;</code>
+     */
+    public com.fanxi.service.message.UserToProto.UserToOrBuilder getCurrUserOrBuilder() {
+      return getCurrUser();
+    }
+
+    public static final int NEXTUSER_FIELD_NUMBER = 10;
+    private com.fanxi.service.message.UserToProto.UserTo nextUser_;
+    /**
+     * <code>.fanxi.UserTo nextUser = 10;</code>
+     */
+    public boolean hasNextUser() {
+      return nextUser_ != null;
+    }
+    /**
+     * <code>.fanxi.UserTo nextUser = 10;</code>
+     */
+    public com.fanxi.service.message.UserToProto.UserTo getNextUser() {
+      return nextUser_ == null ? com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : nextUser_;
+    }
+    /**
+     * <code>.fanxi.UserTo nextUser = 10;</code>
+     */
+    public com.fanxi.service.message.UserToProto.UserToOrBuilder getNextUserOrBuilder() {
+      return getNextUser();
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -265,6 +379,15 @@ public final class BetResponseProto {
       if (cash_ != 0L) {
         output.writeInt64(7, cash_);
       }
+      if (allTotalCall_ != 0L) {
+        output.writeInt64(8, allTotalCall_);
+      }
+      if (currUser_ != null) {
+        output.writeMessage(9, getCurrUser());
+      }
+      if (nextUser_ != null) {
+        output.writeMessage(10, getNextUser());
+      }
     }
 
     public int getSerializedSize() {
@@ -290,6 +413,18 @@ public final class BetResponseProto {
       if (cash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, cash_);
+      }
+      if (allTotalCall_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(8, allTotalCall_);
+      }
+      if (currUser_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(9, getCurrUser());
+      }
+      if (nextUser_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(10, getNextUser());
       }
       memoizedSize = size;
       return size;
@@ -320,6 +455,18 @@ public final class BetResponseProto {
           .equals(other.getMatchId());
       result = result && (getCash()
           == other.getCash());
+      result = result && (getAllTotalCall()
+          == other.getAllTotalCall());
+      result = result && (hasCurrUser() == other.hasCurrUser());
+      if (hasCurrUser()) {
+        result = result && getCurrUser()
+            .equals(other.getCurrUser());
+      }
+      result = result && (hasNextUser() == other.hasNextUser());
+      if (hasNextUser()) {
+        result = result && getNextUser()
+            .equals(other.getNextUser());
+      }
       return result;
     }
 
@@ -343,6 +490,17 @@ public final class BetResponseProto {
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
+      hash = (37 * hash) + ALLTOTALCALL_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getAllTotalCall());
+      if (hasCurrUser()) {
+        hash = (37 * hash) + CURRUSER_FIELD_NUMBER;
+        hash = (53 * hash) + getCurrUser().hashCode();
+      }
+      if (hasNextUser()) {
+        hash = (37 * hash) + NEXTUSER_FIELD_NUMBER;
+        hash = (53 * hash) + getNextUser().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -475,6 +633,20 @@ public final class BetResponseProto {
 
         cash_ = 0L;
 
+        allTotalCall_ = 0L;
+
+        if (currUserBuilder_ == null) {
+          currUser_ = null;
+        } else {
+          currUser_ = null;
+          currUserBuilder_ = null;
+        }
+        if (nextUserBuilder_ == null) {
+          nextUser_ = null;
+        } else {
+          nextUser_ = null;
+          nextUserBuilder_ = null;
+        }
         return this;
       }
 
@@ -506,6 +678,17 @@ public final class BetResponseProto {
         result.tableIndex_ = tableIndex_;
         result.matchId_ = matchId_;
         result.cash_ = cash_;
+        result.allTotalCall_ = allTotalCall_;
+        if (currUserBuilder_ == null) {
+          result.currUser_ = currUser_;
+        } else {
+          result.currUser_ = currUserBuilder_.build();
+        }
+        if (nextUserBuilder_ == null) {
+          result.nextUser_ = nextUser_;
+        } else {
+          result.nextUser_ = nextUserBuilder_.build();
+        }
         onBuilt();
         return result;
       }
@@ -562,6 +745,15 @@ public final class BetResponseProto {
         }
         if (other.getCash() != 0L) {
           setCash(other.getCash());
+        }
+        if (other.getAllTotalCall() != 0L) {
+          setAllTotalCall(other.getAllTotalCall());
+        }
+        if (other.hasCurrUser()) {
+          mergeCurrUser(other.getCurrUser());
+        }
+        if (other.hasNextUser()) {
+          mergeNextUser(other.getNextUser());
         }
         onChanged();
         return this;
@@ -852,6 +1044,266 @@ public final class BetResponseProto {
         onChanged();
         return this;
       }
+
+      private long allTotalCall_ ;
+      /**
+       * <code>int64 allTotalCall = 8;</code>
+       */
+      public long getAllTotalCall() {
+        return allTotalCall_;
+      }
+      /**
+       * <code>int64 allTotalCall = 8;</code>
+       */
+      public Builder setAllTotalCall(long value) {
+        
+        allTotalCall_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 allTotalCall = 8;</code>
+       */
+      public Builder clearAllTotalCall() {
+        
+        allTotalCall_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.fanxi.service.message.UserToProto.UserTo currUser_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> currUserBuilder_;
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public boolean hasCurrUser() {
+        return currUserBuilder_ != null || currUser_ != null;
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public com.fanxi.service.message.UserToProto.UserTo getCurrUser() {
+        if (currUserBuilder_ == null) {
+          return currUser_ == null ? com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : currUser_;
+        } else {
+          return currUserBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public Builder setCurrUser(com.fanxi.service.message.UserToProto.UserTo value) {
+        if (currUserBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          currUser_ = value;
+          onChanged();
+        } else {
+          currUserBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public Builder setCurrUser(
+          com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
+        if (currUserBuilder_ == null) {
+          currUser_ = builderForValue.build();
+          onChanged();
+        } else {
+          currUserBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public Builder mergeCurrUser(com.fanxi.service.message.UserToProto.UserTo value) {
+        if (currUserBuilder_ == null) {
+          if (currUser_ != null) {
+            currUser_ =
+              com.fanxi.service.message.UserToProto.UserTo.newBuilder(currUser_).mergeFrom(value).buildPartial();
+          } else {
+            currUser_ = value;
+          }
+          onChanged();
+        } else {
+          currUserBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public Builder clearCurrUser() {
+        if (currUserBuilder_ == null) {
+          currUser_ = null;
+          onChanged();
+        } else {
+          currUser_ = null;
+          currUserBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public com.fanxi.service.message.UserToProto.UserTo.Builder getCurrUserBuilder() {
+        
+        onChanged();
+        return getCurrUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      public com.fanxi.service.message.UserToProto.UserToOrBuilder getCurrUserOrBuilder() {
+        if (currUserBuilder_ != null) {
+          return currUserBuilder_.getMessageOrBuilder();
+        } else {
+          return currUser_ == null ?
+              com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : currUser_;
+        }
+      }
+      /**
+       * <code>.fanxi.UserTo currUser = 9;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> 
+          getCurrUserFieldBuilder() {
+        if (currUserBuilder_ == null) {
+          currUserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder>(
+                  getCurrUser(),
+                  getParentForChildren(),
+                  isClean());
+          currUser_ = null;
+        }
+        return currUserBuilder_;
+      }
+
+      private com.fanxi.service.message.UserToProto.UserTo nextUser_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> nextUserBuilder_;
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public boolean hasNextUser() {
+        return nextUserBuilder_ != null || nextUser_ != null;
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public com.fanxi.service.message.UserToProto.UserTo getNextUser() {
+        if (nextUserBuilder_ == null) {
+          return nextUser_ == null ? com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : nextUser_;
+        } else {
+          return nextUserBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public Builder setNextUser(com.fanxi.service.message.UserToProto.UserTo value) {
+        if (nextUserBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          nextUser_ = value;
+          onChanged();
+        } else {
+          nextUserBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public Builder setNextUser(
+          com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
+        if (nextUserBuilder_ == null) {
+          nextUser_ = builderForValue.build();
+          onChanged();
+        } else {
+          nextUserBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public Builder mergeNextUser(com.fanxi.service.message.UserToProto.UserTo value) {
+        if (nextUserBuilder_ == null) {
+          if (nextUser_ != null) {
+            nextUser_ =
+              com.fanxi.service.message.UserToProto.UserTo.newBuilder(nextUser_).mergeFrom(value).buildPartial();
+          } else {
+            nextUser_ = value;
+          }
+          onChanged();
+        } else {
+          nextUserBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public Builder clearNextUser() {
+        if (nextUserBuilder_ == null) {
+          nextUser_ = null;
+          onChanged();
+        } else {
+          nextUser_ = null;
+          nextUserBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public com.fanxi.service.message.UserToProto.UserTo.Builder getNextUserBuilder() {
+        
+        onChanged();
+        return getNextUserFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      public com.fanxi.service.message.UserToProto.UserToOrBuilder getNextUserOrBuilder() {
+        if (nextUserBuilder_ != null) {
+          return nextUserBuilder_.getMessageOrBuilder();
+        } else {
+          return nextUser_ == null ?
+              com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : nextUser_;
+        }
+      }
+      /**
+       * <code>.fanxi.UserTo nextUser = 10;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> 
+          getNextUserFieldBuilder() {
+        if (nextUserBuilder_ == null) {
+          nextUserBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder>(
+                  getNextUser(),
+                  getParentForChildren(),
+                  isClean());
+          nextUser_ = null;
+        }
+        return nextUserBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -916,11 +1368,14 @@ public final class BetResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BetResponse.proto\022\005fanxi\032\022BaseResponse" +
-      ".proto\"{\n\013BetResponse\022)\n\014baseResponse\030\001 " +
-      "\001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneId\030\004 \001(\005" +
-      "\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006 \001(\t\022\014\n" +
-      "\004cash\030\007 \001(\003B-\n\031com.fanxi.service.message" +
-      "B\020BetResponseProtob\006proto3"
+      ".proto\032\014UserTo.proto\"\323\001\n\013BetResponse\022)\n\014" +
+      "baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse\022" +
+      "\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007m" +
+      "atchId\030\006 \001(\t\022\014\n\004cash\030\007 \001(\003\022\024\n\014allTotalCa" +
+      "ll\030\010 \001(\003\022\037\n\010currUser\030\t \001(\0132\r.fanxi.UserT" +
+      "o\022\037\n\010nextUser\030\n \001(\0132\r.fanxi.UserToB-\n\031co" +
+      "m.fanxi.service.messageB\020BetResponseProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -934,14 +1389,16 @@ public final class BetResponseProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.fanxi.service.message.BaseResponseProto.getDescriptor(),
+          com.fanxi.service.message.UserToProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_BetResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_BetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BetResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", "AllTotalCall", "CurrUser", "NextUser", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
+    com.fanxi.service.message.UserToProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class BaseResponse;
+@class UserTo;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -54,6 +55,9 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
   BetResponse_FieldNumber_TableIndex = 5,
   BetResponse_FieldNumber_MatchId = 6,
   BetResponse_FieldNumber_Cash = 7,
+  BetResponse_FieldNumber_AllTotalCall = 8,
+  BetResponse_FieldNumber_CurrUser = 9,
+  BetResponse_FieldNumber_NextUser = 10,
 };
 
 @interface BetResponse : GPBMessage
@@ -69,6 +73,16 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
 
 @property(nonatomic, readwrite) int64_t cash;
+
+@property(nonatomic, readwrite) int64_t allTotalCall;
+
+@property(nonatomic, readwrite, strong, null_resettable) UserTo *currUser;
+/** Test to see if @c currUser has been set. */
+@property(nonatomic, readwrite) BOOL hasCurrUser;
+
+@property(nonatomic, readwrite, strong, null_resettable) UserTo *nextUser;
+/** Test to see if @c nextUser has been set. */
+@property(nonatomic, readwrite) BOOL hasNextUser;
 
 @end
 
