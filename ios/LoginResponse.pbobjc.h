@@ -55,6 +55,9 @@ typedef GPB_ENUM(LoginResponse_FieldNumber) {
   LoginResponse_FieldNumber_Server = 3,
   LoginResponse_FieldNumber_IsForceUpdate = 4,
   LoginResponse_FieldNumber_URLDownload = 5,
+  LoginResponse_FieldNumber_ContentNewVersion = 9,
+  LoginResponse_FieldNumber_Adv = 10,
+  LoginResponse_FieldNumber_Type = 11,
 };
 
 @interface LoginResponse : GPBMessage
@@ -72,6 +75,12 @@ typedef GPB_ENUM(LoginResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isForceUpdate;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URLDownload;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *contentNewVersion;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *adv;
+
+@property(nonatomic, readwrite) int32_t type;
 
 @end
 

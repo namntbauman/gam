@@ -68,6 +68,31 @@ public final class LoginResponseProto {
      */
     com.google.protobuf.ByteString
         getUrlDownloadBytes();
+
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    java.lang.String getContentNewVersion();
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getContentNewVersionBytes();
+
+    /**
+     * <code>string adv = 10;</code>
+     */
+    java.lang.String getAdv();
+    /**
+     * <code>string adv = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdvBytes();
+
+    /**
+     * <code>int32 type = 11;</code>
+     */
+    int getType();
   }
   /**
    * Protobuf type {@code fanxi.LoginResponse}
@@ -84,6 +109,9 @@ public final class LoginResponseProto {
       server_ = "";
       isForceUpdate_ = false;
       urlDownload_ = "";
+      contentNewVersion_ = "";
+      adv_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -152,6 +180,23 @@ public final class LoginResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               urlDownload_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentNewVersion_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              adv_ = s;
+              break;
+            }
+            case 88: {
+
+              type_ = input.readInt32();
               break;
             }
           }
@@ -296,6 +341,83 @@ public final class LoginResponseProto {
       }
     }
 
+    public static final int CONTENTNEWVERSION_FIELD_NUMBER = 9;
+    private volatile java.lang.Object contentNewVersion_;
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    public java.lang.String getContentNewVersion() {
+      java.lang.Object ref = contentNewVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentNewVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContentNewVersionBytes() {
+      java.lang.Object ref = contentNewVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentNewVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADV_FIELD_NUMBER = 10;
+    private volatile java.lang.Object adv_;
+    /**
+     * <code>string adv = 10;</code>
+     */
+    public java.lang.String getAdv() {
+      java.lang.Object ref = adv_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adv_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string adv = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdvBytes() {
+      java.lang.Object ref = adv_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        adv_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 11;
+    private int type_;
+    /**
+     * <code>int32 type = 11;</code>
+     */
+    public int getType() {
+      return type_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -323,6 +445,15 @@ public final class LoginResponseProto {
       if (!getUrlDownloadBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, urlDownload_);
       }
+      if (!getContentNewVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, contentNewVersion_);
+      }
+      if (!getAdvBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, adv_);
+      }
+      if (type_ != 0) {
+        output.writeInt32(11, type_);
+      }
     }
 
     public int getSerializedSize() {
@@ -347,6 +478,16 @@ public final class LoginResponseProto {
       }
       if (!getUrlDownloadBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, urlDownload_);
+      }
+      if (!getContentNewVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, contentNewVersion_);
+      }
+      if (!getAdvBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, adv_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, type_);
       }
       memoizedSize = size;
       return size;
@@ -380,6 +521,12 @@ public final class LoginResponseProto {
           == other.getIsForceUpdate());
       result = result && getUrlDownload()
           .equals(other.getUrlDownload());
+      result = result && getContentNewVersion()
+          .equals(other.getContentNewVersion());
+      result = result && getAdv()
+          .equals(other.getAdv());
+      result = result && (getType()
+          == other.getType());
       return result;
     }
 
@@ -405,6 +552,12 @@ public final class LoginResponseProto {
           getIsForceUpdate());
       hash = (37 * hash) + URLDOWNLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getUrlDownload().hashCode();
+      hash = (37 * hash) + CONTENTNEWVERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getContentNewVersion().hashCode();
+      hash = (37 * hash) + ADV_FIELD_NUMBER;
+      hash = (53 * hash) + getAdv().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -541,6 +694,12 @@ public final class LoginResponseProto {
 
         urlDownload_ = "";
 
+        contentNewVersion_ = "";
+
+        adv_ = "";
+
+        type_ = 0;
+
         return this;
       }
 
@@ -576,6 +735,9 @@ public final class LoginResponseProto {
         result.server_ = server_;
         result.isForceUpdate_ = isForceUpdate_;
         result.urlDownload_ = urlDownload_;
+        result.contentNewVersion_ = contentNewVersion_;
+        result.adv_ = adv_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -633,6 +795,17 @@ public final class LoginResponseProto {
         if (!other.getUrlDownload().isEmpty()) {
           urlDownload_ = other.urlDownload_;
           onChanged();
+        }
+        if (!other.getContentNewVersion().isEmpty()) {
+          contentNewVersion_ = other.contentNewVersion_;
+          onChanged();
+        }
+        if (!other.getAdv().isEmpty()) {
+          adv_ = other.adv_;
+          onChanged();
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         onChanged();
         return this;
@@ -1057,6 +1230,170 @@ public final class LoginResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object contentNewVersion_ = "";
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public java.lang.String getContentNewVersion() {
+        java.lang.Object ref = contentNewVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentNewVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContentNewVersionBytes() {
+        java.lang.Object ref = contentNewVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentNewVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public Builder setContentNewVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contentNewVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public Builder clearContentNewVersion() {
+        
+        contentNewVersion_ = getDefaultInstance().getContentNewVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public Builder setContentNewVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contentNewVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object adv_ = "";
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public java.lang.String getAdv() {
+        java.lang.Object ref = adv_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          adv_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdvBytes() {
+        java.lang.Object ref = adv_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          adv_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public Builder setAdv(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        adv_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public Builder clearAdv() {
+        
+        adv_ = getDefaultInstance().getAdv();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public Builder setAdvBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        adv_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <code>int32 type = 11;</code>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>int32 type = 11;</code>
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 type = 11;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1121,13 +1458,14 @@ public final class LoginResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023LoginResponse.proto\022\005fanxi\032\020UserDetail" +
-      ".proto\032\031RestfulBaseResponse.proto\"\236\001\n\rLo" +
+      ".proto\032\031RestfulBaseResponse.proto\"\324\001\n\rLo" +
       "ginResponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanx" +
       "i.RestfulBaseResponse\022\037\n\004user\030\002 \001(\0132\021.fa" +
       "nxi.UserDetail\022\016\n\006server\030\003 \001(\t\022\025\n\risForc" +
-      "eUpdate\030\004 \001(\010\022\023\n\013urlDownload\030\005 \001(\tB/\n\031co" +
-      "m.fanxi.service.messageB\022LoginResponsePr" +
-      "otob\006proto3"
+      "eUpdate\030\004 \001(\010\022\023\n\013urlDownload\030\005 \001(\t\022\031\n\021co" +
+      "ntentNewVersion\030\t \001(\t\022\013\n\003adv\030\n \001(\t\022\014\n\004ty" +
+      "pe\030\013 \001(\005B/\n\031com.fanxi.service.messageB\022L" +
+      "oginResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1148,7 +1486,7 @@ public final class LoginResponseProto {
     internal_static_fanxi_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
