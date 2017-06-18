@@ -32,42 +32,67 @@ public final class LoginATResponseProto {
     com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponseOrBuilder getBaseResponseOrBuilder();
 
     /**
-     * <code>.fanxi.UserDetail user = 2;</code>
+     * <code>.fanxi.UserDetail user = 5;</code>
      */
     boolean hasUser();
     /**
-     * <code>.fanxi.UserDetail user = 2;</code>
+     * <code>.fanxi.UserDetail user = 5;</code>
      */
     com.fanxi.service.message.UserDetailProto.UserDetail getUser();
     /**
-     * <code>.fanxi.UserDetail user = 2;</code>
+     * <code>.fanxi.UserDetail user = 5;</code>
      */
     com.fanxi.service.message.UserDetailProto.UserDetailOrBuilder getUserOrBuilder();
 
     /**
-     * <code>string server = 3;</code>
+     * <code>string server = 6;</code>
      */
     java.lang.String getServer();
     /**
-     * <code>string server = 3;</code>
+     * <code>string server = 6;</code>
      */
     com.google.protobuf.ByteString
         getServerBytes();
 
     /**
-     * <code>bool isForceUpdate = 4;</code>
+     * <code>bool isForceUpdate = 7;</code>
      */
     boolean getIsForceUpdate();
 
     /**
-     * <code>string urlDownload = 5;</code>
+     * <code>string urlDownload = 8;</code>
      */
     java.lang.String getUrlDownload();
     /**
-     * <code>string urlDownload = 5;</code>
+     * <code>string urlDownload = 8;</code>
      */
     com.google.protobuf.ByteString
         getUrlDownloadBytes();
+
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    java.lang.String getContentNewVersion();
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getContentNewVersionBytes();
+
+    /**
+     * <code>string adv = 10;</code>
+     */
+    java.lang.String getAdv();
+    /**
+     * <code>string adv = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdvBytes();
+
+    /**
+     * <code>int32 type = 11;</code>
+     */
+    int getType();
   }
   /**
    * Protobuf type {@code fanxi.LoginATResponse}
@@ -84,6 +109,9 @@ public final class LoginATResponseProto {
       server_ = "";
       isForceUpdate_ = false;
       urlDownload_ = "";
+      contentNewVersion_ = "";
+      adv_ = "";
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -124,7 +152,7 @@ public final class LoginATResponseProto {
 
               break;
             }
-            case 18: {
+            case 42: {
               com.fanxi.service.message.UserDetailProto.UserDetail.Builder subBuilder = null;
               if (user_ != null) {
                 subBuilder = user_.toBuilder();
@@ -137,21 +165,38 @@ public final class LoginATResponseProto {
 
               break;
             }
-            case 26: {
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
               server_ = s;
               break;
             }
-            case 32: {
+            case 56: {
 
               isForceUpdate_ = input.readBool();
               break;
             }
-            case 42: {
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               urlDownload_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              contentNewVersion_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              adv_ = s;
+              break;
+            }
+            case 88: {
+
+              type_ = input.readInt32();
               break;
             }
           }
@@ -198,31 +243,31 @@ public final class LoginATResponseProto {
       return getBaseResponse();
     }
 
-    public static final int USER_FIELD_NUMBER = 2;
+    public static final int USER_FIELD_NUMBER = 5;
     private com.fanxi.service.message.UserDetailProto.UserDetail user_;
     /**
-     * <code>.fanxi.UserDetail user = 2;</code>
+     * <code>.fanxi.UserDetail user = 5;</code>
      */
     public boolean hasUser() {
       return user_ != null;
     }
     /**
-     * <code>.fanxi.UserDetail user = 2;</code>
+     * <code>.fanxi.UserDetail user = 5;</code>
      */
     public com.fanxi.service.message.UserDetailProto.UserDetail getUser() {
       return user_ == null ? com.fanxi.service.message.UserDetailProto.UserDetail.getDefaultInstance() : user_;
     }
     /**
-     * <code>.fanxi.UserDetail user = 2;</code>
+     * <code>.fanxi.UserDetail user = 5;</code>
      */
     public com.fanxi.service.message.UserDetailProto.UserDetailOrBuilder getUserOrBuilder() {
       return getUser();
     }
 
-    public static final int SERVER_FIELD_NUMBER = 3;
+    public static final int SERVER_FIELD_NUMBER = 6;
     private volatile java.lang.Object server_;
     /**
-     * <code>string server = 3;</code>
+     * <code>string server = 6;</code>
      */
     public java.lang.String getServer() {
       java.lang.Object ref = server_;
@@ -237,7 +282,7 @@ public final class LoginATResponseProto {
       }
     }
     /**
-     * <code>string server = 3;</code>
+     * <code>string server = 6;</code>
      */
     public com.google.protobuf.ByteString
         getServerBytes() {
@@ -253,19 +298,19 @@ public final class LoginATResponseProto {
       }
     }
 
-    public static final int ISFORCEUPDATE_FIELD_NUMBER = 4;
+    public static final int ISFORCEUPDATE_FIELD_NUMBER = 7;
     private boolean isForceUpdate_;
     /**
-     * <code>bool isForceUpdate = 4;</code>
+     * <code>bool isForceUpdate = 7;</code>
      */
     public boolean getIsForceUpdate() {
       return isForceUpdate_;
     }
 
-    public static final int URLDOWNLOAD_FIELD_NUMBER = 5;
+    public static final int URLDOWNLOAD_FIELD_NUMBER = 8;
     private volatile java.lang.Object urlDownload_;
     /**
-     * <code>string urlDownload = 5;</code>
+     * <code>string urlDownload = 8;</code>
      */
     public java.lang.String getUrlDownload() {
       java.lang.Object ref = urlDownload_;
@@ -280,7 +325,7 @@ public final class LoginATResponseProto {
       }
     }
     /**
-     * <code>string urlDownload = 5;</code>
+     * <code>string urlDownload = 8;</code>
      */
     public com.google.protobuf.ByteString
         getUrlDownloadBytes() {
@@ -294,6 +339,83 @@ public final class LoginATResponseProto {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int CONTENTNEWVERSION_FIELD_NUMBER = 9;
+    private volatile java.lang.Object contentNewVersion_;
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    public java.lang.String getContentNewVersion() {
+      java.lang.Object ref = contentNewVersion_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contentNewVersion_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string contentNewVersion = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContentNewVersionBytes() {
+      java.lang.Object ref = contentNewVersion_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contentNewVersion_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADV_FIELD_NUMBER = 10;
+    private volatile java.lang.Object adv_;
+    /**
+     * <code>string adv = 10;</code>
+     */
+    public java.lang.String getAdv() {
+      java.lang.Object ref = adv_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        adv_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string adv = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdvBytes() {
+      java.lang.Object ref = adv_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        adv_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 11;
+    private int type_;
+    /**
+     * <code>int32 type = 11;</code>
+     */
+    public int getType() {
+      return type_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -312,16 +434,25 @@ public final class LoginATResponseProto {
         output.writeMessage(1, getBaseResponse());
       }
       if (user_ != null) {
-        output.writeMessage(2, getUser());
+        output.writeMessage(5, getUser());
       }
       if (!getServerBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, server_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, server_);
       }
       if (isForceUpdate_ != false) {
-        output.writeBool(4, isForceUpdate_);
+        output.writeBool(7, isForceUpdate_);
       }
       if (!getUrlDownloadBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, urlDownload_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, urlDownload_);
+      }
+      if (!getContentNewVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, contentNewVersion_);
+      }
+      if (!getAdvBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, adv_);
+      }
+      if (type_ != 0) {
+        output.writeInt32(11, type_);
       }
     }
 
@@ -336,17 +467,27 @@ public final class LoginATResponseProto {
       }
       if (user_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, getUser());
+          .computeMessageSize(5, getUser());
       }
       if (!getServerBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, server_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, server_);
       }
       if (isForceUpdate_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, isForceUpdate_);
+          .computeBoolSize(7, isForceUpdate_);
       }
       if (!getUrlDownloadBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, urlDownload_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, urlDownload_);
+      }
+      if (!getContentNewVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, contentNewVersion_);
+      }
+      if (!getAdvBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, adv_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, type_);
       }
       memoizedSize = size;
       return size;
@@ -380,6 +521,12 @@ public final class LoginATResponseProto {
           == other.getIsForceUpdate());
       result = result && getUrlDownload()
           .equals(other.getUrlDownload());
+      result = result && getContentNewVersion()
+          .equals(other.getContentNewVersion());
+      result = result && getAdv()
+          .equals(other.getAdv());
+      result = result && (getType()
+          == other.getType());
       return result;
     }
 
@@ -405,6 +552,12 @@ public final class LoginATResponseProto {
           getIsForceUpdate());
       hash = (37 * hash) + URLDOWNLOAD_FIELD_NUMBER;
       hash = (53 * hash) + getUrlDownload().hashCode();
+      hash = (37 * hash) + CONTENTNEWVERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getContentNewVersion().hashCode();
+      hash = (37 * hash) + ADV_FIELD_NUMBER;
+      hash = (53 * hash) + getAdv().hashCode();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -541,6 +694,12 @@ public final class LoginATResponseProto {
 
         urlDownload_ = "";
 
+        contentNewVersion_ = "";
+
+        adv_ = "";
+
+        type_ = 0;
+
         return this;
       }
 
@@ -576,6 +735,9 @@ public final class LoginATResponseProto {
         result.server_ = server_;
         result.isForceUpdate_ = isForceUpdate_;
         result.urlDownload_ = urlDownload_;
+        result.contentNewVersion_ = contentNewVersion_;
+        result.adv_ = adv_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -633,6 +795,17 @@ public final class LoginATResponseProto {
         if (!other.getUrlDownload().isEmpty()) {
           urlDownload_ = other.urlDownload_;
           onChanged();
+        }
+        if (!other.getContentNewVersion().isEmpty()) {
+          contentNewVersion_ = other.contentNewVersion_;
+          onChanged();
+        }
+        if (!other.getAdv().isEmpty()) {
+          adv_ = other.adv_;
+          onChanged();
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         onChanged();
         return this;
@@ -781,13 +954,13 @@ public final class LoginATResponseProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.fanxi.service.message.UserDetailProto.UserDetail, com.fanxi.service.message.UserDetailProto.UserDetail.Builder, com.fanxi.service.message.UserDetailProto.UserDetailOrBuilder> userBuilder_;
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public boolean hasUser() {
         return userBuilder_ != null || user_ != null;
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public com.fanxi.service.message.UserDetailProto.UserDetail getUser() {
         if (userBuilder_ == null) {
@@ -797,7 +970,7 @@ public final class LoginATResponseProto {
         }
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public Builder setUser(com.fanxi.service.message.UserDetailProto.UserDetail value) {
         if (userBuilder_ == null) {
@@ -813,7 +986,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public Builder setUser(
           com.fanxi.service.message.UserDetailProto.UserDetail.Builder builderForValue) {
@@ -827,7 +1000,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public Builder mergeUser(com.fanxi.service.message.UserDetailProto.UserDetail value) {
         if (userBuilder_ == null) {
@@ -845,7 +1018,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public Builder clearUser() {
         if (userBuilder_ == null) {
@@ -859,7 +1032,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public com.fanxi.service.message.UserDetailProto.UserDetail.Builder getUserBuilder() {
         
@@ -867,7 +1040,7 @@ public final class LoginATResponseProto {
         return getUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       public com.fanxi.service.message.UserDetailProto.UserDetailOrBuilder getUserOrBuilder() {
         if (userBuilder_ != null) {
@@ -878,7 +1051,7 @@ public final class LoginATResponseProto {
         }
       }
       /**
-       * <code>.fanxi.UserDetail user = 2;</code>
+       * <code>.fanxi.UserDetail user = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.fanxi.service.message.UserDetailProto.UserDetail, com.fanxi.service.message.UserDetailProto.UserDetail.Builder, com.fanxi.service.message.UserDetailProto.UserDetailOrBuilder> 
@@ -896,7 +1069,7 @@ public final class LoginATResponseProto {
 
       private java.lang.Object server_ = "";
       /**
-       * <code>string server = 3;</code>
+       * <code>string server = 6;</code>
        */
       public java.lang.String getServer() {
         java.lang.Object ref = server_;
@@ -911,7 +1084,7 @@ public final class LoginATResponseProto {
         }
       }
       /**
-       * <code>string server = 3;</code>
+       * <code>string server = 6;</code>
        */
       public com.google.protobuf.ByteString
           getServerBytes() {
@@ -927,7 +1100,7 @@ public final class LoginATResponseProto {
         }
       }
       /**
-       * <code>string server = 3;</code>
+       * <code>string server = 6;</code>
        */
       public Builder setServer(
           java.lang.String value) {
@@ -940,7 +1113,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>string server = 3;</code>
+       * <code>string server = 6;</code>
        */
       public Builder clearServer() {
         
@@ -949,7 +1122,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>string server = 3;</code>
+       * <code>string server = 6;</code>
        */
       public Builder setServerBytes(
           com.google.protobuf.ByteString value) {
@@ -965,13 +1138,13 @@ public final class LoginATResponseProto {
 
       private boolean isForceUpdate_ ;
       /**
-       * <code>bool isForceUpdate = 4;</code>
+       * <code>bool isForceUpdate = 7;</code>
        */
       public boolean getIsForceUpdate() {
         return isForceUpdate_;
       }
       /**
-       * <code>bool isForceUpdate = 4;</code>
+       * <code>bool isForceUpdate = 7;</code>
        */
       public Builder setIsForceUpdate(boolean value) {
         
@@ -980,7 +1153,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>bool isForceUpdate = 4;</code>
+       * <code>bool isForceUpdate = 7;</code>
        */
       public Builder clearIsForceUpdate() {
         
@@ -991,7 +1164,7 @@ public final class LoginATResponseProto {
 
       private java.lang.Object urlDownload_ = "";
       /**
-       * <code>string urlDownload = 5;</code>
+       * <code>string urlDownload = 8;</code>
        */
       public java.lang.String getUrlDownload() {
         java.lang.Object ref = urlDownload_;
@@ -1006,7 +1179,7 @@ public final class LoginATResponseProto {
         }
       }
       /**
-       * <code>string urlDownload = 5;</code>
+       * <code>string urlDownload = 8;</code>
        */
       public com.google.protobuf.ByteString
           getUrlDownloadBytes() {
@@ -1022,7 +1195,7 @@ public final class LoginATResponseProto {
         }
       }
       /**
-       * <code>string urlDownload = 5;</code>
+       * <code>string urlDownload = 8;</code>
        */
       public Builder setUrlDownload(
           java.lang.String value) {
@@ -1035,7 +1208,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>string urlDownload = 5;</code>
+       * <code>string urlDownload = 8;</code>
        */
       public Builder clearUrlDownload() {
         
@@ -1044,7 +1217,7 @@ public final class LoginATResponseProto {
         return this;
       }
       /**
-       * <code>string urlDownload = 5;</code>
+       * <code>string urlDownload = 8;</code>
        */
       public Builder setUrlDownloadBytes(
           com.google.protobuf.ByteString value) {
@@ -1054,6 +1227,170 @@ public final class LoginATResponseProto {
   checkByteStringIsUtf8(value);
         
         urlDownload_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contentNewVersion_ = "";
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public java.lang.String getContentNewVersion() {
+        java.lang.Object ref = contentNewVersion_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contentNewVersion_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContentNewVersionBytes() {
+        java.lang.Object ref = contentNewVersion_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contentNewVersion_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public Builder setContentNewVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        contentNewVersion_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public Builder clearContentNewVersion() {
+        
+        contentNewVersion_ = getDefaultInstance().getContentNewVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string contentNewVersion = 9;</code>
+       */
+      public Builder setContentNewVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        contentNewVersion_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object adv_ = "";
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public java.lang.String getAdv() {
+        java.lang.Object ref = adv_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          adv_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdvBytes() {
+        java.lang.Object ref = adv_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          adv_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public Builder setAdv(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        adv_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public Builder clearAdv() {
+        
+        adv_ = getDefaultInstance().getAdv();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string adv = 10;</code>
+       */
+      public Builder setAdvBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        adv_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <code>int32 type = 11;</code>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>int32 type = 11;</code>
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 type = 11;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
         onChanged();
         return this;
       }
@@ -1121,13 +1458,14 @@ public final class LoginATResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025LoginATResponse.proto\022\005fanxi\032\020UserDeta" +
-      "il.proto\032\031RestfulBaseResponse.proto\"\240\001\n\017" +
+      "il.proto\032\031RestfulBaseResponse.proto\"\326\001\n\017" +
       "LoginATResponse\0220\n\014baseResponse\030\001 \001(\0132\032." +
-      "fanxi.RestfulBaseResponse\022\037\n\004user\030\002 \001(\0132" +
-      "\021.fanxi.UserDetail\022\016\n\006server\030\003 \001(\t\022\025\n\ris" +
-      "ForceUpdate\030\004 \001(\010\022\023\n\013urlDownload\030\005 \001(\tB1" +
-      "\n\031com.fanxi.service.messageB\024LoginATResp" +
-      "onseProtob\006proto3"
+      "fanxi.RestfulBaseResponse\022\037\n\004user\030\005 \001(\0132" +
+      "\021.fanxi.UserDetail\022\016\n\006server\030\006 \001(\t\022\025\n\ris" +
+      "ForceUpdate\030\007 \001(\010\022\023\n\013urlDownload\030\010 \001(\t\022\031" +
+      "\n\021contentNewVersion\030\t \001(\t\022\013\n\003adv\030\n \001(\t\022\014" +
+      "\n\004type\030\013 \001(\005B1\n\031com.fanxi.service.messag" +
+      "eB\024LoginATResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1148,7 +1486,7 @@ public final class LoginATResponseProto {
     internal_static_fanxi_LoginATResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginATResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

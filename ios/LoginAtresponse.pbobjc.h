@@ -51,10 +51,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(LoginATResponse_FieldNumber) {
   LoginATResponse_FieldNumber_BaseResponse = 1,
-  LoginATResponse_FieldNumber_User = 2,
-  LoginATResponse_FieldNumber_Server = 3,
-  LoginATResponse_FieldNumber_IsForceUpdate = 4,
-  LoginATResponse_FieldNumber_URLDownload = 5,
+  LoginATResponse_FieldNumber_User = 5,
+  LoginATResponse_FieldNumber_Server = 6,
+  LoginATResponse_FieldNumber_IsForceUpdate = 7,
+  LoginATResponse_FieldNumber_URLDownload = 8,
+  LoginATResponse_FieldNumber_ContentNewVersion = 9,
+  LoginATResponse_FieldNumber_Adv = 10,
+  LoginATResponse_FieldNumber_Type = 11,
 };
 
 @interface LoginATResponse : GPBMessage
@@ -72,6 +75,12 @@ typedef GPB_ENUM(LoginATResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isForceUpdate;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URLDownload;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *contentNewVersion;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *adv;
+
+@property(nonatomic, readwrite) int32_t type;
 
 @end
 

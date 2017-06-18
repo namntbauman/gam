@@ -51,10 +51,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(LoginFacebookResponse_FieldNumber) {
   LoginFacebookResponse_FieldNumber_BaseResponse = 1,
-  LoginFacebookResponse_FieldNumber_User = 2,
-  LoginFacebookResponse_FieldNumber_Server = 3,
-  LoginFacebookResponse_FieldNumber_IsForceUpdate = 4,
-  LoginFacebookResponse_FieldNumber_URLDownload = 5,
+  LoginFacebookResponse_FieldNumber_User = 5,
+  LoginFacebookResponse_FieldNumber_Server = 6,
+  LoginFacebookResponse_FieldNumber_IsForceUpdate = 7,
+  LoginFacebookResponse_FieldNumber_URLDownload = 8,
+  LoginFacebookResponse_FieldNumber_ContentNewVersion = 9,
+  LoginFacebookResponse_FieldNumber_Adv = 10,
+  LoginFacebookResponse_FieldNumber_Type = 11,
+  LoginFacebookResponse_FieldNumber_ServerChallenge = 12,
 };
 
 @interface LoginFacebookResponse : GPBMessage
@@ -72,6 +76,14 @@ typedef GPB_ENUM(LoginFacebookResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isForceUpdate;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URLDownload;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *contentNewVersion;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *adv;
+
+@property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
 
 @end
 

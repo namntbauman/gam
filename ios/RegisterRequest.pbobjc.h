@@ -50,10 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(RegisterRequest_FieldNumber) {
   RegisterRequest_FieldNumber_BaseReq = 1,
-  RegisterRequest_FieldNumber_GcmId = 2,
-  RegisterRequest_FieldNumber_UserName = 3,
-  RegisterRequest_FieldNumber_Password = 4,
-  RegisterRequest_FieldNumber_PartnerId = 5,
+  RegisterRequest_FieldNumber_GcmId = 20,
+  RegisterRequest_FieldNumber_UserName = 21,
+  RegisterRequest_FieldNumber_Password = 22,
+  RegisterRequest_FieldNumber_PartnerId = 23,
+  RegisterRequest_FieldNumber_ServerChallenger = 24,
 };
 
 @interface RegisterRequest : GPBMessage
@@ -69,6 +70,8 @@ typedef GPB_ENUM(RegisterRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *password;
 
 @property(nonatomic, readwrite) int32_t partnerId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenger;
 
 @end
 

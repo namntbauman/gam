@@ -52,6 +52,7 @@ static GPBFileDescriptor *LoginRequestRoot_FileDescriptor(void) {
 @dynamic userName;
 @dynamic password;
 @dynamic partnerId;
+@dynamic serverChallenge;
 
 typedef struct LoginRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -60,6 +61,7 @@ typedef struct LoginRequest__storage_ {
   NSString *gcmId;
   NSString *userName;
   NSString *password;
+  NSString *serverChallenge;
 } LoginRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -113,6 +115,15 @@ typedef struct LoginRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "serverChallenge",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginRequest_FieldNumber_ServerChallenge,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(LoginRequest__storage_, serverChallenge),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[LoginRequest class]
@@ -124,7 +135,7 @@ typedef struct LoginRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\007\000\002\005\000\003\010\000\005\t\000";
+        "\005\001\007\000\024\005\000\025\010\000\027\t\000\030\017\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

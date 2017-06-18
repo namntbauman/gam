@@ -53,13 +53,21 @@ static GPBFileDescriptor *LoginFacebookResponseRoot_FileDescriptor(void) {
 @dynamic server;
 @dynamic isForceUpdate;
 @dynamic URLDownload;
+@dynamic contentNewVersion;
+@dynamic adv;
+@dynamic type;
+@dynamic serverChallenge;
 
 typedef struct LoginFacebookResponse__storage_ {
   uint32_t _has_storage_[1];
+  int32_t type;
   RestfulBaseResponse *baseResponse;
   UserDetail *user;
   NSString *server;
   NSString *URLDownload;
+  NSString *contentNewVersion;
+  NSString *adv;
+  NSString *serverChallenge;
 } LoginFacebookResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -113,6 +121,42 @@ typedef struct LoginFacebookResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "contentNewVersion",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginFacebookResponse_FieldNumber_ContentNewVersion,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(LoginFacebookResponse__storage_, contentNewVersion),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "adv",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginFacebookResponse_FieldNumber_Adv,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(LoginFacebookResponse__storage_, adv),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginFacebookResponse_FieldNumber_Type,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(LoginFacebookResponse__storage_, type),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "serverChallenge",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginFacebookResponse_FieldNumber_ServerChallenge,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(LoginFacebookResponse__storage_, serverChallenge),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[LoginFacebookResponse class]
@@ -124,7 +168,7 @@ typedef struct LoginFacebookResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\004\r\000\005!!)\000";
+        "\005\001\014\000\007\r\000\010!!)\000\t\021\000\014\017\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

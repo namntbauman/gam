@@ -51,10 +51,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(RegisterResponse_FieldNumber) {
   RegisterResponse_FieldNumber_BaseResponse = 1,
-  RegisterResponse_FieldNumber_User = 2,
-  RegisterResponse_FieldNumber_Server = 3,
-  RegisterResponse_FieldNumber_IsForceUpdate = 4,
-  RegisterResponse_FieldNumber_URLDownload = 5,
+  RegisterResponse_FieldNumber_User = 5,
+  RegisterResponse_FieldNumber_Server = 6,
+  RegisterResponse_FieldNumber_IsForceUpdate = 7,
+  RegisterResponse_FieldNumber_URLDownload = 8,
+  RegisterResponse_FieldNumber_ContentNewVersion = 9,
+  RegisterResponse_FieldNumber_Adv = 10,
+  RegisterResponse_FieldNumber_Type = 11,
+  RegisterResponse_FieldNumber_ServerChallenge = 12,
 };
 
 @interface RegisterResponse : GPBMessage
@@ -72,6 +76,14 @@ typedef GPB_ENUM(RegisterResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isForceUpdate;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *URLDownload;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *contentNewVersion;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *adv;
+
+@property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
 
 @end
 
