@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(GetBetMoneyRequest_FieldNumber) {
   GetBetMoneyRequest_FieldNumber_BaseReq = 1,
   GetBetMoneyRequest_FieldNumber_IsGold = 10,
+  GetBetMoneyRequest_FieldNumber_ZoneId = 11,
 };
 
 @interface GetBetMoneyRequest : GPBMessage
@@ -60,6 +61,8 @@ typedef GPB_ENUM(GetBetMoneyRequest_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
 @property(nonatomic, readwrite) BOOL isGold;
+
+@property(nonatomic, readwrite) int32_t zoneId;
 
 @end
 

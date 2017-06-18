@@ -35,6 +35,11 @@ public final class GetBetMoneyRequestProto {
      * <code>bool isGold = 10;</code>
      */
     boolean getIsGold();
+
+    /**
+     * <code>int32 zoneId = 11;</code>
+     */
+    int getZoneId();
   }
   /**
    * Protobuf type {@code fanxi.GetBetMoneyRequest}
@@ -49,6 +54,7 @@ public final class GetBetMoneyRequestProto {
     }
     private GetBetMoneyRequest() {
       isGold_ = false;
+      zoneId_ = 0;
     }
 
     @java.lang.Override
@@ -92,6 +98,11 @@ public final class GetBetMoneyRequestProto {
             case 80: {
 
               isGold_ = input.readBool();
+              break;
+            }
+            case 88: {
+
+              zoneId_ = input.readInt32();
               break;
             }
           }
@@ -147,6 +158,15 @@ public final class GetBetMoneyRequestProto {
       return isGold_;
     }
 
+    public static final int ZONEID_FIELD_NUMBER = 11;
+    private int zoneId_;
+    /**
+     * <code>int32 zoneId = 11;</code>
+     */
+    public int getZoneId() {
+      return zoneId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -165,6 +185,9 @@ public final class GetBetMoneyRequestProto {
       if (isGold_ != false) {
         output.writeBool(10, isGold_);
       }
+      if (zoneId_ != 0) {
+        output.writeInt32(11, zoneId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -179,6 +202,10 @@ public final class GetBetMoneyRequestProto {
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(10, isGold_);
+      }
+      if (zoneId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, zoneId_);
       }
       memoizedSize = size;
       return size;
@@ -203,6 +230,8 @@ public final class GetBetMoneyRequestProto {
       }
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && (getZoneId()
+          == other.getZoneId());
       return result;
     }
 
@@ -220,6 +249,8 @@ public final class GetBetMoneyRequestProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + ZONEID_FIELD_NUMBER;
+      hash = (53 * hash) + getZoneId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,6 +377,8 @@ public final class GetBetMoneyRequestProto {
         }
         isGold_ = false;
 
+        zoneId_ = 0;
+
         return this;
       }
 
@@ -374,6 +407,7 @@ public final class GetBetMoneyRequestProto {
           result.baseReq_ = baseReqBuilder_.build();
         }
         result.isGold_ = isGold_;
+        result.zoneId_ = zoneId_;
         onBuilt();
         return result;
       }
@@ -420,6 +454,9 @@ public final class GetBetMoneyRequestProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (other.getZoneId() != 0) {
+          setZoneId(other.getZoneId());
         }
         onChanged();
         return this;
@@ -589,6 +626,32 @@ public final class GetBetMoneyRequestProto {
         onChanged();
         return this;
       }
+
+      private int zoneId_ ;
+      /**
+       * <code>int32 zoneId = 11;</code>
+       */
+      public int getZoneId() {
+        return zoneId_;
+      }
+      /**
+       * <code>int32 zoneId = 11;</code>
+       */
+      public Builder setZoneId(int value) {
+        
+        zoneId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 zoneId = 11;</code>
+       */
+      public Builder clearZoneId() {
+        
+        zoneId_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -653,10 +716,11 @@ public final class GetBetMoneyRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\030GetBetMoneyRequest.proto\022\005fanxi\032\021BaseR" +
-      "equest.proto\"I\n\022GetBetMoneyRequest\022#\n\007ba" +
+      "equest.proto\"Y\n\022GetBetMoneyRequest\022#\n\007ba" +
       "seReq\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006isGol" +
-      "d\030\n \001(\010B4\n\031com.fanxi.service.messageB\027Ge" +
-      "tBetMoneyRequestProtob\006proto3"
+      "d\030\n \001(\010\022\016\n\006zoneId\030\013 \001(\005B4\n\031com.fanxi.ser" +
+      "vice.messageB\027GetBetMoneyRequestProtob\006p" +
+      "roto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -676,7 +740,7 @@ public final class GetBetMoneyRequestProto {
     internal_static_fanxi_GetBetMoneyRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_GetBetMoneyRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "IsGold", });
+        new java.lang.String[] { "BaseReq", "IsGold", "ZoneId", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

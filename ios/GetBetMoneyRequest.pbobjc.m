@@ -49,9 +49,11 @@ static GPBFileDescriptor *GetBetMoneyRequestRoot_FileDescriptor(void) {
 
 @dynamic hasBaseReq, baseReq;
 @dynamic isGold;
+@dynamic zoneId;
 
 typedef struct GetBetMoneyRequest__storage_ {
   uint32_t _has_storage_[1];
+  int32_t zoneId;
   BaseRequest *baseReq;
 } GetBetMoneyRequest__storage_;
 
@@ -79,6 +81,15 @@ typedef struct GetBetMoneyRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "zoneId",
+        .dataTypeSpecific.className = NULL,
+        .number = GetBetMoneyRequest_FieldNumber_ZoneId,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(GetBetMoneyRequest__storage_, zoneId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[GetBetMoneyRequest class]
@@ -90,7 +101,7 @@ typedef struct GetBetMoneyRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\007\000\n\006\000";
+        "\003\001\007\000\n\006\000\013\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
