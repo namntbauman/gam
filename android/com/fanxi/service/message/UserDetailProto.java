@@ -89,11 +89,16 @@ public final class UserDetailProto {
     long getCash();
 
     /**
-     * <code>string facebookId = 9;</code>
+     * <code>int64 gold = 9;</code>
+     */
+    long getGold();
+
+    /**
+     * <code>string facebookId = 10;</code>
      */
     java.lang.String getFacebookId();
     /**
-     * <code>string facebookId = 9;</code>
+     * <code>string facebookId = 10;</code>
      */
     com.google.protobuf.ByteString
         getFacebookIdBytes();
@@ -118,6 +123,7 @@ public final class UserDetailProto {
       server_ = "";
       avatarUrl_ = "";
       cash_ = 0L;
+      gold_ = 0L;
       facebookId_ = "";
     }
 
@@ -192,7 +198,12 @@ public final class UserDetailProto {
               cash_ = input.readInt64();
               break;
             }
-            case 74: {
+            case 72: {
+
+              gold_ = input.readInt64();
+              break;
+            }
+            case 82: {
               java.lang.String s = input.readStringRequireUtf8();
 
               facebookId_ = s;
@@ -443,10 +454,19 @@ public final class UserDetailProto {
       return cash_;
     }
 
-    public static final int FACEBOOKID_FIELD_NUMBER = 9;
+    public static final int GOLD_FIELD_NUMBER = 9;
+    private long gold_;
+    /**
+     * <code>int64 gold = 9;</code>
+     */
+    public long getGold() {
+      return gold_;
+    }
+
+    public static final int FACEBOOKID_FIELD_NUMBER = 10;
     private volatile java.lang.Object facebookId_;
     /**
-     * <code>string facebookId = 9;</code>
+     * <code>string facebookId = 10;</code>
      */
     public java.lang.String getFacebookId() {
       java.lang.Object ref = facebookId_;
@@ -461,7 +481,7 @@ public final class UserDetailProto {
       }
     }
     /**
-     * <code>string facebookId = 9;</code>
+     * <code>string facebookId = 10;</code>
      */
     public com.google.protobuf.ByteString
         getFacebookIdBytes() {
@@ -513,8 +533,11 @@ public final class UserDetailProto {
       if (cash_ != 0L) {
         output.writeInt64(8, cash_);
       }
+      if (gold_ != 0L) {
+        output.writeInt64(9, gold_);
+      }
       if (!getFacebookIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, facebookId_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, facebookId_);
       }
     }
 
@@ -549,8 +572,12 @@ public final class UserDetailProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, cash_);
       }
+      if (gold_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, gold_);
+      }
       if (!getFacebookIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, facebookId_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, facebookId_);
       }
       memoizedSize = size;
       return size;
@@ -584,6 +611,8 @@ public final class UserDetailProto {
           .equals(other.getAvatarUrl());
       result = result && (getCash()
           == other.getCash());
+      result = result && (getGold()
+          == other.getGold());
       result = result && getFacebookId()
           .equals(other.getFacebookId());
       return result;
@@ -613,6 +642,9 @@ public final class UserDetailProto {
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
+      hash = (37 * hash) + GOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGold());
       hash = (37 * hash) + FACEBOOKID_FIELD_NUMBER;
       hash = (53 * hash) + getFacebookId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -749,6 +781,8 @@ public final class UserDetailProto {
 
         cash_ = 0L;
 
+        gold_ = 0L;
+
         facebookId_ = "";
 
         return this;
@@ -781,6 +815,7 @@ public final class UserDetailProto {
         result.server_ = server_;
         result.avatarUrl_ = avatarUrl_;
         result.cash_ = cash_;
+        result.gold_ = gold_;
         result.facebookId_ = facebookId_;
         onBuilt();
         return result;
@@ -852,6 +887,9 @@ public final class UserDetailProto {
         }
         if (other.getCash() != 0L) {
           setCash(other.getCash());
+        }
+        if (other.getGold() != 0L) {
+          setGold(other.getGold());
         }
         if (!other.getFacebookId().isEmpty()) {
           facebookId_ = other.facebookId_;
@@ -1349,9 +1387,35 @@ public final class UserDetailProto {
         return this;
       }
 
+      private long gold_ ;
+      /**
+       * <code>int64 gold = 9;</code>
+       */
+      public long getGold() {
+        return gold_;
+      }
+      /**
+       * <code>int64 gold = 9;</code>
+       */
+      public Builder setGold(long value) {
+        
+        gold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 gold = 9;</code>
+       */
+      public Builder clearGold() {
+        
+        gold_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object facebookId_ = "";
       /**
-       * <code>string facebookId = 9;</code>
+       * <code>string facebookId = 10;</code>
        */
       public java.lang.String getFacebookId() {
         java.lang.Object ref = facebookId_;
@@ -1366,7 +1430,7 @@ public final class UserDetailProto {
         }
       }
       /**
-       * <code>string facebookId = 9;</code>
+       * <code>string facebookId = 10;</code>
        */
       public com.google.protobuf.ByteString
           getFacebookIdBytes() {
@@ -1382,7 +1446,7 @@ public final class UserDetailProto {
         }
       }
       /**
-       * <code>string facebookId = 9;</code>
+       * <code>string facebookId = 10;</code>
        */
       public Builder setFacebookId(
           java.lang.String value) {
@@ -1395,7 +1459,7 @@ public final class UserDetailProto {
         return this;
       }
       /**
-       * <code>string facebookId = 9;</code>
+       * <code>string facebookId = 10;</code>
        */
       public Builder clearFacebookId() {
         
@@ -1404,7 +1468,7 @@ public final class UserDetailProto {
         return this;
       }
       /**
-       * <code>string facebookId = 9;</code>
+       * <code>string facebookId = 10;</code>
        */
       public Builder setFacebookIdBytes(
           com.google.protobuf.ByteString value) {
@@ -1480,13 +1544,13 @@ public final class UserDetailProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020UserDetail.proto\022\005fanxi\"\245\001\n\nUserDetail" +
+      "\n\020UserDetail.proto\022\005fanxi\"\263\001\n\nUserDetail" +
       "\022\016\n\006userId\030\001 \001(\t\022\014\n\004type\030\002 \001(\005\022\020\n\010userNa" +
       "me\030\003 \001(\t\022\023\n\013displayName\030\004 \001(\t\022\r\n\005token\030\005" +
       " \001(\t\022\016\n\006server\030\006 \001(\t\022\021\n\tavatarUrl\030\007 \001(\t\022" +
-      "\014\n\004cash\030\010 \001(\003\022\022\n\nfacebookId\030\t \001(\tB,\n\031com" +
-      ".fanxi.service.messageB\017UserDetailProtob" +
-      "\006proto3"
+      "\014\n\004cash\030\010 \001(\003\022\014\n\004gold\030\t \001(\003\022\022\n\nfacebookI" +
+      "d\030\n \001(\tB,\n\031com.fanxi.service.messageB\017Us" +
+      "erDetailProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1505,7 +1569,7 @@ public final class UserDetailProto {
     internal_static_fanxi_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_UserDetail_descriptor,
-        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "FacebookId", });
+        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

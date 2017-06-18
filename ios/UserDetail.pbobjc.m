@@ -54,6 +54,7 @@ static GPBFileDescriptor *UserDetailRoot_FileDescriptor(void) {
 @dynamic server;
 @dynamic avatarURL;
 @dynamic cash;
+@dynamic gold;
 @dynamic facebookId;
 
 typedef struct UserDetail__storage_ {
@@ -67,6 +68,7 @@ typedef struct UserDetail__storage_ {
   NSString *avatarURL;
   NSString *facebookId;
   int64_t cash;
+  int64_t gold;
 } UserDetail__storage_;
 
 // This method is threadsafe because it is initially called
@@ -148,10 +150,19 @@ typedef struct UserDetail__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "gold",
+        .dataTypeSpecific.className = NULL,
+        .number = UserDetail_FieldNumber_Gold,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(UserDetail__storage_, gold),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
         .name = "facebookId",
         .dataTypeSpecific.className = NULL,
         .number = UserDetail_FieldNumber_FacebookId,
-        .hasIndex = 8,
+        .hasIndex = 9,
         .offset = (uint32_t)offsetof(UserDetail__storage_, facebookId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -167,7 +178,7 @@ typedef struct UserDetail__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\006\000\003\010\000\004\013\000\007\007!!\000\t\n\000";
+        "\005\001\006\000\003\010\000\004\013\000\007\007!!\000\n\n\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
