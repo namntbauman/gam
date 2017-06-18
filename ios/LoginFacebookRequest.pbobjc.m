@@ -51,6 +51,7 @@ static GPBFileDescriptor *LoginFacebookRequestRoot_FileDescriptor(void) {
 @dynamic gcmId;
 @dynamic partnerId;
 @dynamic facebookToken;
+@dynamic serverChallenge;
 
 typedef struct LoginFacebookRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -58,6 +59,7 @@ typedef struct LoginFacebookRequest__storage_ {
   RestfulBaseRequest *baseReq;
   NSString *gcmId;
   NSString *facebookToken;
+  NSString *serverChallenge;
 } LoginFacebookRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -102,6 +104,15 @@ typedef struct LoginFacebookRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "serverChallenge",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginFacebookRequest_FieldNumber_ServerChallenge,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(LoginFacebookRequest__storage_, serverChallenge),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[LoginFacebookRequest class]
@@ -113,7 +124,7 @@ typedef struct LoginFacebookRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\007\000\r\005\000\016\t\000\017\r\000";
+        "\005\001\007\000\r\005\000\016\t\000\017\r\000\020\017\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

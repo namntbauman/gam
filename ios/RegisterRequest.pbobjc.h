@@ -54,7 +54,7 @@ typedef GPB_ENUM(RegisterRequest_FieldNumber) {
   RegisterRequest_FieldNumber_UserName = 21,
   RegisterRequest_FieldNumber_Password = 22,
   RegisterRequest_FieldNumber_PartnerId = 23,
-  RegisterRequest_FieldNumber_ServerChallenger = 24,
+  RegisterRequest_FieldNumber_ServerChallenge = 24,
 };
 
 @interface RegisterRequest : GPBMessage
@@ -71,7 +71,7 @@ typedef GPB_ENUM(RegisterRequest_FieldNumber) {
 
 @property(nonatomic, readwrite) int32_t partnerId;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenger;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
 
 @end
 
