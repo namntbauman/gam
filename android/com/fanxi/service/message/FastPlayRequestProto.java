@@ -35,6 +35,16 @@ public final class FastPlayRequestProto {
      * <code>int32 zoneId = 10;</code>
      */
     int getZoneId();
+
+    /**
+     * <code>int32 cash = 11;</code>
+     */
+    int getCash();
+
+    /**
+     * <code>bool isGold = 12;</code>
+     */
+    boolean getIsGold();
   }
   /**
    * Protobuf type {@code fanxi.FastPlayRequest}
@@ -49,6 +59,8 @@ public final class FastPlayRequestProto {
     }
     private FastPlayRequest() {
       zoneId_ = 0;
+      cash_ = 0;
+      isGold_ = false;
     }
 
     @java.lang.Override
@@ -92,6 +104,16 @@ public final class FastPlayRequestProto {
             case 80: {
 
               zoneId_ = input.readInt32();
+              break;
+            }
+            case 88: {
+
+              cash_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              isGold_ = input.readBool();
               break;
             }
           }
@@ -147,6 +169,24 @@ public final class FastPlayRequestProto {
       return zoneId_;
     }
 
+    public static final int CASH_FIELD_NUMBER = 11;
+    private int cash_;
+    /**
+     * <code>int32 cash = 11;</code>
+     */
+    public int getCash() {
+      return cash_;
+    }
+
+    public static final int ISGOLD_FIELD_NUMBER = 12;
+    private boolean isGold_;
+    /**
+     * <code>bool isGold = 12;</code>
+     */
+    public boolean getIsGold() {
+      return isGold_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -165,6 +205,12 @@ public final class FastPlayRequestProto {
       if (zoneId_ != 0) {
         output.writeInt32(10, zoneId_);
       }
+      if (cash_ != 0) {
+        output.writeInt32(11, cash_);
+      }
+      if (isGold_ != false) {
+        output.writeBool(12, isGold_);
+      }
     }
 
     public int getSerializedSize() {
@@ -179,6 +225,14 @@ public final class FastPlayRequestProto {
       if (zoneId_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(10, zoneId_);
+      }
+      if (cash_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, cash_);
+      }
+      if (isGold_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(12, isGold_);
       }
       memoizedSize = size;
       return size;
@@ -203,6 +257,10 @@ public final class FastPlayRequestProto {
       }
       result = result && (getZoneId()
           == other.getZoneId());
+      result = result && (getCash()
+          == other.getCash());
+      result = result && (getIsGold()
+          == other.getIsGold());
       return result;
     }
 
@@ -219,6 +277,11 @@ public final class FastPlayRequestProto {
       }
       hash = (37 * hash) + ZONEID_FIELD_NUMBER;
       hash = (53 * hash) + getZoneId();
+      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (53 * hash) + getCash();
+      hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsGold());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -345,6 +408,10 @@ public final class FastPlayRequestProto {
         }
         zoneId_ = 0;
 
+        cash_ = 0;
+
+        isGold_ = false;
+
         return this;
       }
 
@@ -373,6 +440,8 @@ public final class FastPlayRequestProto {
           result.baseReq_ = baseReqBuilder_.build();
         }
         result.zoneId_ = zoneId_;
+        result.cash_ = cash_;
+        result.isGold_ = isGold_;
         onBuilt();
         return result;
       }
@@ -419,6 +488,12 @@ public final class FastPlayRequestProto {
         }
         if (other.getZoneId() != 0) {
           setZoneId(other.getZoneId());
+        }
+        if (other.getCash() != 0) {
+          setCash(other.getCash());
+        }
+        if (other.getIsGold() != false) {
+          setIsGold(other.getIsGold());
         }
         onChanged();
         return this;
@@ -588,6 +663,58 @@ public final class FastPlayRequestProto {
         onChanged();
         return this;
       }
+
+      private int cash_ ;
+      /**
+       * <code>int32 cash = 11;</code>
+       */
+      public int getCash() {
+        return cash_;
+      }
+      /**
+       * <code>int32 cash = 11;</code>
+       */
+      public Builder setCash(int value) {
+        
+        cash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 cash = 11;</code>
+       */
+      public Builder clearCash() {
+        
+        cash_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isGold_ ;
+      /**
+       * <code>bool isGold = 12;</code>
+       */
+      public boolean getIsGold() {
+        return isGold_;
+      }
+      /**
+       * <code>bool isGold = 12;</code>
+       */
+      public Builder setIsGold(boolean value) {
+        
+        isGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isGold = 12;</code>
+       */
+      public Builder clearIsGold() {
+        
+        isGold_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -652,10 +779,11 @@ public final class FastPlayRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025FastPlayRequest.proto\022\005fanxi\032\021BaseRequ" +
-      "est.proto\"F\n\017FastPlayRequest\022#\n\007baseReq\030" +
+      "est.proto\"d\n\017FastPlayRequest\022#\n\007baseReq\030" +
       "\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001(" +
-      "\005B1\n\031com.fanxi.service.messageB\024FastPlay" +
-      "RequestProtob\006proto3"
+      "\005\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 \001(\010B1\n\031com.f" +
+      "anxi.service.messageB\024FastPlayRequestPro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -675,7 +803,7 @@ public final class FastPlayRequestProto {
     internal_static_fanxi_FastPlayRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_FastPlayRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "Cash", "IsGold", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

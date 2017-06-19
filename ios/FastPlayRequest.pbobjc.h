@@ -51,6 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(FastPlayRequest_FieldNumber) {
   FastPlayRequest_FieldNumber_BaseReq = 1,
   FastPlayRequest_FieldNumber_ZoneId = 10,
+  FastPlayRequest_FieldNumber_Cash = 11,
+  FastPlayRequest_FieldNumber_IsGold = 12,
 };
 
 @interface FastPlayRequest : GPBMessage
@@ -60,6 +62,10 @@ typedef GPB_ENUM(FastPlayRequest_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
 @property(nonatomic, readwrite) int32_t zoneId;
+
+@property(nonatomic, readwrite) int32_t cash;
+
+@property(nonatomic, readwrite) BOOL isGold;
 
 @end
 
