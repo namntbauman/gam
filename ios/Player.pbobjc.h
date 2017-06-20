@@ -60,6 +60,7 @@ typedef GPB_ENUM(Player_FieldNumber) {
   Player_FieldNumber_PlayingCards = 11,
   Player_FieldNumber_EatingCards = 12,
   Player_FieldNumber_HaPhomCards = 13,
+  Player_FieldNumber_IsOwner = 14,
 };
 
 @interface Player : GPBMessage
@@ -89,6 +90,8 @@ typedef GPB_ENUM(Player_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *eatingCards;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *haPhomCards;
+
+@property(nonatomic, readwrite) BOOL isOwner;
 
 @end
 

@@ -59,6 +59,7 @@ static GPBFileDescriptor *PlayerRoot_FileDescriptor(void) {
 @dynamic playingCards;
 @dynamic eatingCards;
 @dynamic haPhomCards;
+@dynamic isOwner;
 
 typedef struct Player__storage_ {
   uint32_t _has_storage_[1];
@@ -197,6 +198,15 @@ typedef struct Player__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "isOwner",
+        .dataTypeSpecific.className = NULL,
+        .number = Player_FieldNumber_IsOwner,
+        .hasIndex = 16,
+        .offset = 17,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeBool,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[Player class]
@@ -208,7 +218,7 @@ typedef struct Player__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\n\001\006\000\002\010\000\003\007!!\000\005\007\000\010\005\000\t\t\000\n\n\000\013\014\000\014\013\000\r\013\000";
+        "\013\001\006\000\002\010\000\003\007!!\000\005\007\000\010\005\000\t\t\000\n\n\000\013\014\000\014\013\000\r\013\000\016\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

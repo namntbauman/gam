@@ -122,6 +122,11 @@ public final class PlayerProto {
      */
     com.google.protobuf.ByteString
         getHaPhomCardsBytes();
+
+    /**
+     * <code>bool isOwner = 14;</code>
+     */
+    boolean getIsOwner();
   }
   /**
    * Protobuf type {@code fanxi.Player}
@@ -148,6 +153,7 @@ public final class PlayerProto {
       playingCards_ = "";
       eatingCards_ = "";
       haPhomCards_ = "";
+      isOwner_ = false;
     }
 
     @java.lang.Override
@@ -246,6 +252,11 @@ public final class PlayerProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               haPhomCards_ = s;
+              break;
+            }
+            case 112: {
+
+              isOwner_ = input.readBool();
               break;
             }
           }
@@ -588,6 +599,15 @@ public final class PlayerProto {
       }
     }
 
+    public static final int ISOWNER_FIELD_NUMBER = 14;
+    private boolean isOwner_;
+    /**
+     * <code>bool isOwner = 14;</code>
+     */
+    public boolean getIsOwner() {
+      return isOwner_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -638,6 +658,9 @@ public final class PlayerProto {
       }
       if (!getHaPhomCardsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, haPhomCards_);
+      }
+      if (isOwner_ != false) {
+        output.writeBool(14, isOwner_);
       }
     }
 
@@ -690,6 +713,10 @@ public final class PlayerProto {
       if (!getHaPhomCardsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, haPhomCards_);
       }
+      if (isOwner_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isOwner_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -732,6 +759,8 @@ public final class PlayerProto {
           .equals(other.getEatingCards());
       result = result && getHaPhomCards()
           .equals(other.getHaPhomCards());
+      result = result && (getIsOwner()
+          == other.getIsOwner());
       return result;
     }
 
@@ -772,6 +801,9 @@ public final class PlayerProto {
       hash = (53 * hash) + getEatingCards().hashCode();
       hash = (37 * hash) + HAPHOMCARDS_FIELD_NUMBER;
       hash = (53 * hash) + getHaPhomCards().hashCode();
+      hash = (37 * hash) + ISOWNER_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOwner());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -916,6 +948,8 @@ public final class PlayerProto {
 
         haPhomCards_ = "";
 
+        isOwner_ = false;
+
         return this;
       }
 
@@ -951,6 +985,7 @@ public final class PlayerProto {
         result.playingCards_ = playingCards_;
         result.eatingCards_ = eatingCards_;
         result.haPhomCards_ = haPhomCards_;
+        result.isOwner_ = isOwner_;
         onBuilt();
         return result;
       }
@@ -1038,6 +1073,9 @@ public final class PlayerProto {
         if (!other.getHaPhomCards().isEmpty()) {
           haPhomCards_ = other.haPhomCards_;
           onChanged();
+        }
+        if (other.getIsOwner() != false) {
+          setIsOwner(other.getIsOwner());
         }
         onChanged();
         return this;
@@ -1746,6 +1784,32 @@ public final class PlayerProto {
         onChanged();
         return this;
       }
+
+      private boolean isOwner_ ;
+      /**
+       * <code>bool isOwner = 14;</code>
+       */
+      public boolean getIsOwner() {
+        return isOwner_;
+      }
+      /**
+       * <code>bool isOwner = 14;</code>
+       */
+      public Builder setIsOwner(boolean value) {
+        
+        isOwner_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isOwner = 14;</code>
+       */
+      public Builder clearIsOwner() {
+        
+        isOwner_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1809,14 +1873,15 @@ public final class PlayerProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014Player.proto\022\005fanxi\"\357\001\n\006Player\022\016\n\006user" +
+      "\n\014Player.proto\022\005fanxi\"\200\002\n\006Player\022\016\n\006user" +
       "Id\030\001 \001(\t\022\020\n\010userName\030\002 \001(\t\022\021\n\tavatarUrl\030" +
       "\003 \001(\t\022\014\n\004cash\030\004 \001(\003\022\017\n\007numHand\030\005 \001(\005\022\014\n\004" +
       "note\030\006 \001(\t\022\r\n\005cards\030\007 \001(\t\022\r\n\005isOut\030\010 \001(\010" +
       "\022\021\n\tisHetTien\030\t \001(\010\022\022\n\nisObserver\030\n \001(\010\022" +
       "\024\n\014playingCards\030\013 \001(\t\022\023\n\013eatingCards\030\014 \001" +
-      "(\t\022\023\n\013haPhomCards\030\r \001(\tB(\n\031com.fanxi.ser" +
-      "vice.messageB\013PlayerProtob\006proto3"
+      "(\t\022\023\n\013haPhomCards\030\r \001(\t\022\017\n\007isOwner\030\016 \001(\010" +
+      "B(\n\031com.fanxi.service.messageB\013PlayerPro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1835,7 +1900,7 @@ public final class PlayerProto {
     internal_static_fanxi_Player_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_Player_descriptor,
-        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", "Note", "Cards", "IsOut", "IsHetTien", "IsObserver", "PlayingCards", "EatingCards", "HaPhomCards", });
+        new java.lang.String[] { "UserId", "UserName", "AvatarUrl", "Cash", "NumHand", "Note", "Cards", "IsOut", "IsHetTien", "IsObserver", "PlayingCards", "EatingCards", "HaPhomCards", "IsOwner", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
