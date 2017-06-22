@@ -1,0 +1,17 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "InitRegisterResponseProto";
+
+message InitRegisterResponse {
+   RestfulBaseResponse baseResponse=1;
+   string registerToken= 5;
+   string serverChallenge=6;
+   string captcha=7;
+   repeated string variant=8;
+}
+
+
+
+

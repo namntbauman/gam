@@ -6,6 +6,7 @@ option java_outer_classname = "LoginAnonymousRequestProto";
 
 message LoginAnonymousRequest {
    RestfulBaseRequest baseReq=1;
-   string gcmId=2;
-   int32 partnerId=3;
+   string gcmId=20;
+   int32 partnerId=21;
+   string serverChallenge=22;
 }

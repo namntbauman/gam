@@ -6,8 +6,9 @@ option java_outer_classname = "LoginRequestProto";
 
 message LoginRequest {
    RestfulBaseRequest baseReq=1;
-   string gcmId=2;
-   string userName=3;
-   string password=4;
-   int32 partnerId=5;
+   string gcmId=20;
+   string userName=21;
+   string password=22;
+   int32 partnerId=23;
+   string serverChallenge=24;
 }

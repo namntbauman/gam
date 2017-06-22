@@ -18,6 +18,7 @@ message Player{
 	string playingCards=11;
 	string eatingCards=12;
 	string haPhomCards=13;
+	bool isOwner=14;
 }
 
 

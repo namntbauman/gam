@@ -7,10 +7,16 @@ option java_outer_classname = "RegisterResponseProto";
 
 message RegisterResponse {
    RestfulBaseResponse baseResponse=1;
-   UserDetail user= 2;
-   string server = 3;
-   bool isForceUpdate=4;
-   string urlDownload=5;
+   UserDetail user= 5;
+   string server = 6;
+   bool isForceUpdate=7;
+   string urlDownload=8;
+   string contentNewVersion=9;
+   string adv=10;
+   int32 type=11;
+   string serverChallenge=12;
+   string captcha=13;
+   repeated string variant=14;
 }
 
 

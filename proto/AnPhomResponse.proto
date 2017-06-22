@@ -1,0 +1,24 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "AnPhomResponseProto";
+
+message AnPhomResponse {
+   BaseResponse baseResponse=1;
+   int32 zoneId=4;
+   int32 tableIndex=5;
+   string matchId=6;
+   string uid=7;
+   int32 card=8;
+   bool isChot=9;
+   bool isHa=10;
+   int64 moneyWin =11;
+   int64 money=12;
+   string preId = 13;
+}
+
+
+
+

@@ -1,0 +1,14 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ChatEntityProto";
+
+message ChatEntity{
+    string displayName =1;
+    string content =2;
+	
+}
+
+
+

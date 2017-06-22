@@ -13,7 +13,9 @@ message UserDetail{
     string server = 6;
 	string avatarUrl=7;
 	int64 cash=8;
-	string facebookId=9;
+	int64 gold=9;
+	string facebookId=10;
+	
 }
 
 
