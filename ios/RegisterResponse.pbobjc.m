@@ -57,6 +57,8 @@ static GPBFileDescriptor *RegisterResponseRoot_FileDescriptor(void) {
 @dynamic adv;
 @dynamic type;
 @dynamic serverChallenge;
+@dynamic captcha;
+@dynamic variantArray, variantArray_Count;
 
 typedef struct RegisterResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -68,6 +70,8 @@ typedef struct RegisterResponse__storage_ {
   NSString *contentNewVersion;
   NSString *adv;
   NSString *serverChallenge;
+  NSString *captcha;
+  NSMutableArray *variantArray;
 } RegisterResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -155,6 +159,24 @@ typedef struct RegisterResponse__storage_ {
         .hasIndex = 9,
         .offset = (uint32_t)offsetof(RegisterResponse__storage_, serverChallenge),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "captcha",
+        .dataTypeSpecific.className = NULL,
+        .number = RegisterResponse_FieldNumber_Captcha,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(RegisterResponse__storage_, captcha),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "variantArray",
+        .dataTypeSpecific.className = NULL,
+        .number = RegisterResponse_FieldNumber_VariantArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(RegisterResponse__storage_, variantArray),
+        .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeString,
       },
     };

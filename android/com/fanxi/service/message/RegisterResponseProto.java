@@ -103,6 +103,35 @@ public final class RegisterResponseProto {
      */
     com.google.protobuf.ByteString
         getServerChallengeBytes();
+
+    /**
+     * <code>string captcha = 13;</code>
+     */
+    java.lang.String getCaptcha();
+    /**
+     * <code>string captcha = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getCaptchaBytes();
+
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    java.util.List<java.lang.String>
+        getVariantList();
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    int getVariantCount();
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    java.lang.String getVariant(int index);
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    com.google.protobuf.ByteString
+        getVariantBytes(int index);
   }
   /**
    * Protobuf type {@code fanxi.RegisterResponse}
@@ -123,6 +152,8 @@ public final class RegisterResponseProto {
       adv_ = "";
       type_ = 0;
       serverChallenge_ = "";
+      captcha_ = "";
+      variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -216,6 +247,21 @@ public final class RegisterResponseProto {
               serverChallenge_ = s;
               break;
             }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              captcha_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                variant_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              variant_.add(s);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -224,6 +270,9 @@ public final class RegisterResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          variant_ = variant_.getUnmodifiableView();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -239,6 +288,7 @@ public final class RegisterResponseProto {
               com.fanxi.service.message.RegisterResponseProto.RegisterResponse.class, com.fanxi.service.message.RegisterResponseProto.RegisterResponse.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BASERESPONSE_FIELD_NUMBER = 1;
     private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_;
     /**
@@ -469,6 +519,69 @@ public final class RegisterResponseProto {
       }
     }
 
+    public static final int CAPTCHA_FIELD_NUMBER = 13;
+    private volatile java.lang.Object captcha_;
+    /**
+     * <code>string captcha = 13;</code>
+     */
+    public java.lang.String getCaptcha() {
+      java.lang.Object ref = captcha_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        captcha_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string captcha = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCaptchaBytes() {
+      java.lang.Object ref = captcha_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        captcha_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VARIANT_FIELD_NUMBER = 14;
+    private com.google.protobuf.LazyStringList variant_;
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getVariantList() {
+      return variant_;
+    }
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    public int getVariantCount() {
+      return variant_.size();
+    }
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    public java.lang.String getVariant(int index) {
+      return variant_.get(index);
+    }
+    /**
+     * <code>repeated string variant = 14;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVariantBytes(int index) {
+      return variant_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -508,6 +621,12 @@ public final class RegisterResponseProto {
       if (!getServerChallengeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, serverChallenge_);
       }
+      if (!getCaptchaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, captcha_);
+      }
+      for (int i = 0; i < variant_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, variant_.getRaw(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -545,6 +664,17 @@ public final class RegisterResponseProto {
       }
       if (!getServerChallengeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, serverChallenge_);
+      }
+      if (!getCaptchaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, captcha_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < variant_.size(); i++) {
+          dataSize += computeStringSizeNoTag(variant_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getVariantList().size();
       }
       memoizedSize = size;
       return size;
@@ -586,6 +716,10 @@ public final class RegisterResponseProto {
           == other.getType());
       result = result && getServerChallenge()
           .equals(other.getServerChallenge());
+      result = result && getCaptcha()
+          .equals(other.getCaptcha());
+      result = result && getVariantList()
+          .equals(other.getVariantList());
       return result;
     }
 
@@ -619,6 +753,12 @@ public final class RegisterResponseProto {
       hash = (53 * hash) + getType();
       hash = (37 * hash) + SERVERCHALLENGE_FIELD_NUMBER;
       hash = (53 * hash) + getServerChallenge().hashCode();
+      hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
+      hash = (53 * hash) + getCaptcha().hashCode();
+      if (getVariantCount() > 0) {
+        hash = (37 * hash) + VARIANT_FIELD_NUMBER;
+        hash = (53 * hash) + getVariantList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -763,6 +903,10 @@ public final class RegisterResponseProto {
 
         serverChallenge_ = "";
 
+        captcha_ = "";
+
+        variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -785,6 +929,8 @@ public final class RegisterResponseProto {
 
       public com.fanxi.service.message.RegisterResponseProto.RegisterResponse buildPartial() {
         com.fanxi.service.message.RegisterResponseProto.RegisterResponse result = new com.fanxi.service.message.RegisterResponseProto.RegisterResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (baseResponseBuilder_ == null) {
           result.baseResponse_ = baseResponse_;
         } else {
@@ -802,6 +948,13 @@ public final class RegisterResponseProto {
         result.adv_ = adv_;
         result.type_ = type_;
         result.serverChallenge_ = serverChallenge_;
+        result.captcha_ = captcha_;
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          variant_ = variant_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        }
+        result.variant_ = variant_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -875,6 +1028,20 @@ public final class RegisterResponseProto {
           serverChallenge_ = other.serverChallenge_;
           onChanged();
         }
+        if (!other.getCaptcha().isEmpty()) {
+          captcha_ = other.captcha_;
+          onChanged();
+        }
+        if (!other.variant_.isEmpty()) {
+          if (variant_.isEmpty()) {
+            variant_ = other.variant_;
+            bitField0_ = (bitField0_ & ~0x00000400);
+          } else {
+            ensureVariantIsMutable();
+            variant_.addAll(other.variant_);
+          }
+          onChanged();
+        }
         onChanged();
         return this;
       }
@@ -900,6 +1067,7 @@ public final class RegisterResponseProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1531,6 +1699,169 @@ public final class RegisterResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object captcha_ = "";
+      /**
+       * <code>string captcha = 13;</code>
+       */
+      public java.lang.String getCaptcha() {
+        java.lang.Object ref = captcha_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          captcha_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string captcha = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCaptchaBytes() {
+        java.lang.Object ref = captcha_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          captcha_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string captcha = 13;</code>
+       */
+      public Builder setCaptcha(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        captcha_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string captcha = 13;</code>
+       */
+      public Builder clearCaptcha() {
+        
+        captcha_ = getDefaultInstance().getCaptcha();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string captcha = 13;</code>
+       */
+      public Builder setCaptchaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        captcha_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureVariantIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          variant_ = new com.google.protobuf.LazyStringArrayList(variant_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getVariantList() {
+        return variant_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public int getVariantCount() {
+        return variant_.size();
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public java.lang.String getVariant(int index) {
+        return variant_.get(index);
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVariantBytes(int index) {
+        return variant_.getByteString(index);
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public Builder setVariant(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVariantIsMutable();
+        variant_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public Builder addVariant(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVariantIsMutable();
+        variant_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public Builder addAllVariant(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureVariantIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, variant_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public Builder clearVariant() {
+        variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000400);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 14;</code>
+       */
+      public Builder addVariantBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureVariantIsMutable();
+        variant_.add(value);
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1595,15 +1926,16 @@ public final class RegisterResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026RegisterResponse.proto\022\005fanxi\032\020UserDet" +
-      "ail.proto\032\031RestfulBaseResponse.proto\"\360\001\n" +
+      "ail.proto\032\031RestfulBaseResponse.proto\"\222\002\n" +
       "\020RegisterResponse\0220\n\014baseResponse\030\001 \001(\0132" +
       "\032.fanxi.RestfulBaseResponse\022\037\n\004user\030\005 \001(" +
       "\0132\021.fanxi.UserDetail\022\016\n\006server\030\006 \001(\t\022\025\n\r" +
       "isForceUpdate\030\007 \001(\010\022\023\n\013urlDownload\030\010 \001(\t" +
       "\022\031\n\021contentNewVersion\030\t \001(\t\022\013\n\003adv\030\n \001(\t" +
-      "\022\014\n\004type\030\013 \001(\005\022\027\n\017serverChallenge\030\014 \001(\tB" +
-      "2\n\031com.fanxi.service.messageB\025RegisterRe" +
-      "sponseProtob\006proto3"
+      "\022\014\n\004type\030\013 \001(\005\022\027\n\017serverChallenge\030\014 \001(\t\022" +
+      "\017\n\007captcha\030\r \001(\t\022\017\n\007variant\030\016 \003(\tB2\n\031com" +
+      ".fanxi.service.messageB\025RegisterResponse",
+      "Protob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1624,7 +1956,7 @@ public final class RegisterResponseProto {
     internal_static_fanxi_RegisterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegisterResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "ServerChallenge", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "ServerChallenge", "Captcha", "Variant", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

@@ -59,6 +59,8 @@ typedef GPB_ENUM(RegisterResponse_FieldNumber) {
   RegisterResponse_FieldNumber_Adv = 10,
   RegisterResponse_FieldNumber_Type = 11,
   RegisterResponse_FieldNumber_ServerChallenge = 12,
+  RegisterResponse_FieldNumber_Captcha = 13,
+  RegisterResponse_FieldNumber_VariantArray = 14,
 };
 
 @interface RegisterResponse : GPBMessage
@@ -84,6 +86,12 @@ typedef GPB_ENUM(RegisterResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t type;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *captcha;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *variantArray;
+/** The number of items in @c variantArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger variantArray_Count;
 
 @end
 
