@@ -75,6 +75,26 @@ public final class RegisterRequestProto {
      */
     com.google.protobuf.ByteString
         getServerChallengeBytes();
+
+    /**
+     * <code>string registerToken = 25;</code>
+     */
+    java.lang.String getRegisterToken();
+    /**
+     * <code>string registerToken = 25;</code>
+     */
+    com.google.protobuf.ByteString
+        getRegisterTokenBytes();
+
+    /**
+     * <code>string variant = 26;</code>
+     */
+    java.lang.String getVariant();
+    /**
+     * <code>string variant = 26;</code>
+     */
+    com.google.protobuf.ByteString
+        getVariantBytes();
   }
   /**
    * Protobuf type {@code fanxi.RegisterRequest}
@@ -93,6 +113,8 @@ public final class RegisterRequestProto {
       password_ = "";
       partnerId_ = 0;
       serverChallenge_ = "";
+      registerToken_ = "";
+      variant_ = "";
     }
 
     @java.lang.Override
@@ -160,6 +182,18 @@ public final class RegisterRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               serverChallenge_ = s;
+              break;
+            }
+            case 202: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              registerToken_ = s;
+              break;
+            }
+            case 210: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              variant_ = s;
               break;
             }
           }
@@ -351,6 +385,74 @@ public final class RegisterRequestProto {
       }
     }
 
+    public static final int REGISTERTOKEN_FIELD_NUMBER = 25;
+    private volatile java.lang.Object registerToken_;
+    /**
+     * <code>string registerToken = 25;</code>
+     */
+    public java.lang.String getRegisterToken() {
+      java.lang.Object ref = registerToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        registerToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string registerToken = 25;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRegisterTokenBytes() {
+      java.lang.Object ref = registerToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        registerToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VARIANT_FIELD_NUMBER = 26;
+    private volatile java.lang.Object variant_;
+    /**
+     * <code>string variant = 26;</code>
+     */
+    public java.lang.String getVariant() {
+      java.lang.Object ref = variant_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        variant_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string variant = 26;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVariantBytes() {
+      java.lang.Object ref = variant_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        variant_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -381,6 +483,12 @@ public final class RegisterRequestProto {
       if (!getServerChallengeBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 24, serverChallenge_);
       }
+      if (!getRegisterTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, registerToken_);
+      }
+      if (!getVariantBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, variant_);
+      }
     }
 
     public int getSerializedSize() {
@@ -407,6 +515,12 @@ public final class RegisterRequestProto {
       }
       if (!getServerChallengeBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, serverChallenge_);
+      }
+      if (!getRegisterTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, registerToken_);
+      }
+      if (!getVariantBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, variant_);
       }
       memoizedSize = size;
       return size;
@@ -439,6 +553,10 @@ public final class RegisterRequestProto {
           == other.getPartnerId());
       result = result && getServerChallenge()
           .equals(other.getServerChallenge());
+      result = result && getRegisterToken()
+          .equals(other.getRegisterToken());
+      result = result && getVariant()
+          .equals(other.getVariant());
       return result;
     }
 
@@ -463,6 +581,10 @@ public final class RegisterRequestProto {
       hash = (53 * hash) + getPartnerId();
       hash = (37 * hash) + SERVERCHALLENGE_FIELD_NUMBER;
       hash = (53 * hash) + getServerChallenge().hashCode();
+      hash = (37 * hash) + REGISTERTOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getRegisterToken().hashCode();
+      hash = (37 * hash) + VARIANT_FIELD_NUMBER;
+      hash = (53 * hash) + getVariant().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -597,6 +719,10 @@ public final class RegisterRequestProto {
 
         serverChallenge_ = "";
 
+        registerToken_ = "";
+
+        variant_ = "";
+
         return this;
       }
 
@@ -629,6 +755,8 @@ public final class RegisterRequestProto {
         result.password_ = password_;
         result.partnerId_ = partnerId_;
         result.serverChallenge_ = serverChallenge_;
+        result.registerToken_ = registerToken_;
+        result.variant_ = variant_;
         onBuilt();
         return result;
       }
@@ -690,6 +818,14 @@ public final class RegisterRequestProto {
         }
         if (!other.getServerChallenge().isEmpty()) {
           serverChallenge_ = other.serverChallenge_;
+          onChanged();
+        }
+        if (!other.getRegisterToken().isEmpty()) {
+          registerToken_ = other.registerToken_;
+          onChanged();
+        }
+        if (!other.getVariant().isEmpty()) {
+          variant_ = other.variant_;
           onChanged();
         }
         onChanged();
@@ -1136,6 +1272,144 @@ public final class RegisterRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object registerToken_ = "";
+      /**
+       * <code>string registerToken = 25;</code>
+       */
+      public java.lang.String getRegisterToken() {
+        java.lang.Object ref = registerToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          registerToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string registerToken = 25;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRegisterTokenBytes() {
+        java.lang.Object ref = registerToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          registerToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string registerToken = 25;</code>
+       */
+      public Builder setRegisterToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        registerToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string registerToken = 25;</code>
+       */
+      public Builder clearRegisterToken() {
+        
+        registerToken_ = getDefaultInstance().getRegisterToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string registerToken = 25;</code>
+       */
+      public Builder setRegisterTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        registerToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object variant_ = "";
+      /**
+       * <code>string variant = 26;</code>
+       */
+      public java.lang.String getVariant() {
+        java.lang.Object ref = variant_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          variant_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string variant = 26;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVariantBytes() {
+        java.lang.Object ref = variant_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          variant_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string variant = 26;</code>
+       */
+      public Builder setVariant(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        variant_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant = 26;</code>
+       */
+      public Builder clearVariant() {
+        
+        variant_ = getDefaultInstance().getVariant();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string variant = 26;</code>
+       */
+      public Builder setVariantBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        variant_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1200,11 +1474,12 @@ public final class RegisterRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025RegisterRequest.proto\022\005fanxi\032\030RestfulB" +
-      "aseRequest.proto\"\234\001\n\017RegisterRequest\022*\n\007" +
+      "aseRequest.proto\"\304\001\n\017RegisterRequest\022*\n\007" +
       "baseReq\030\001 \001(\0132\031.fanxi.RestfulBaseRequest" +
       "\022\r\n\005gcmId\030\024 \001(\t\022\020\n\010userName\030\025 \001(\t\022\020\n\010pas" +
       "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\027\n\017server" +
-      "Challenge\030\030 \001(\tB1\n\031com.fanxi.service.mes" +
+      "Challenge\030\030 \001(\t\022\025\n\rregisterToken\030\031 \001(\t\022\017" +
+      "\n\007variant\030\032 \001(\tB1\n\031com.fanxi.service.mes" +
       "sageB\024RegisterRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -1225,7 +1500,7 @@ public final class RegisterRequestProto {
     internal_static_fanxi_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegisterRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "ServerChallenge", });
+        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "ServerChallenge", "RegisterToken", "Variant", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 

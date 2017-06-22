@@ -53,6 +53,8 @@ static GPBFileDescriptor *RegisterRequestRoot_FileDescriptor(void) {
 @dynamic password;
 @dynamic partnerId;
 @dynamic serverChallenge;
+@dynamic registerToken;
+@dynamic variant;
 
 typedef struct RegisterRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -62,6 +64,8 @@ typedef struct RegisterRequest__storage_ {
   NSString *userName;
   NSString *password;
   NSString *serverChallenge;
+  NSString *registerToken;
+  NSString *variant;
 } RegisterRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -124,6 +128,24 @@ typedef struct RegisterRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "registerToken",
+        .dataTypeSpecific.className = NULL,
+        .number = RegisterRequest_FieldNumber_RegisterToken,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(RegisterRequest__storage_, registerToken),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "variant",
+        .dataTypeSpecific.className = NULL,
+        .number = RegisterRequest_FieldNumber_Variant,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(RegisterRequest__storage_, variant),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[RegisterRequest class]
@@ -135,7 +157,7 @@ typedef struct RegisterRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\007\000\024\005\000\025\010\000\027\t\000\030\017\000";
+        "\006\001\007\000\024\005\000\025\010\000\027\t\000\030\017\000\031\r\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
