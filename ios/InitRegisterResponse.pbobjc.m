@@ -49,7 +49,7 @@ static GPBFileDescriptor *InitRegisterResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic registerToken;
-@dynamic serverChallenge;
+@dynamic deviceId;
 @dynamic captcha;
 @dynamic variantArray, variantArray_Count;
 
@@ -57,7 +57,7 @@ typedef struct InitRegisterResponse__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseResponse *baseResponse;
   NSString *registerToken;
-  NSString *serverChallenge;
+  NSString *deviceId;
   NSString *captcha;
   NSMutableArray *variantArray;
 } InitRegisterResponse__storage_;
@@ -87,11 +87,11 @@ typedef struct InitRegisterResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "serverChallenge",
+        .name = "deviceId",
         .dataTypeSpecific.className = NULL,
-        .number = InitRegisterResponse_FieldNumber_ServerChallenge,
+        .number = InitRegisterResponse_FieldNumber_DeviceId,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(InitRegisterResponse__storage_, serverChallenge),
+        .offset = (uint32_t)offsetof(InitRegisterResponse__storage_, deviceId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
@@ -124,7 +124,7 @@ typedef struct InitRegisterResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\005\r\000\006\017\000";
+        "\003\001\014\000\005\r\000\006\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

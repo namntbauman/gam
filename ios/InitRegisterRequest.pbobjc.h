@@ -50,7 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(InitRegisterRequest_FieldNumber) {
   InitRegisterRequest_FieldNumber_BaseReq = 1,
-  InitRegisterRequest_FieldNumber_ServerChallenge = 24,
+  InitRegisterRequest_FieldNumber_DeviceId = 24,
 };
 
 @interface InitRegisterRequest : GPBMessage
@@ -59,7 +59,7 @@ typedef GPB_ENUM(InitRegisterRequest_FieldNumber) {
 /** Test to see if @c baseReq has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @end
 

@@ -67,14 +67,14 @@ public final class RegisterRequestProto {
     int getPartnerId();
 
     /**
-     * <code>string serverChallenge = 24;</code>
+     * <code>string deviceId = 24;</code>
      */
-    java.lang.String getServerChallenge();
+    java.lang.String getDeviceId();
     /**
-     * <code>string serverChallenge = 24;</code>
+     * <code>string deviceId = 24;</code>
      */
     com.google.protobuf.ByteString
-        getServerChallengeBytes();
+        getDeviceIdBytes();
 
     /**
      * <code>string registerToken = 25;</code>
@@ -112,7 +112,7 @@ public final class RegisterRequestProto {
       userName_ = "";
       password_ = "";
       partnerId_ = 0;
-      serverChallenge_ = "";
+      deviceId_ = "";
       registerToken_ = "";
       variant_ = "";
     }
@@ -181,7 +181,7 @@ public final class RegisterRequestProto {
             case 194: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              serverChallenge_ = s;
+              deviceId_ = s;
               break;
             }
             case 202: {
@@ -351,34 +351,34 @@ public final class RegisterRequestProto {
       return partnerId_;
     }
 
-    public static final int SERVERCHALLENGE_FIELD_NUMBER = 24;
-    private volatile java.lang.Object serverChallenge_;
+    public static final int DEVICEID_FIELD_NUMBER = 24;
+    private volatile java.lang.Object deviceId_;
     /**
-     * <code>string serverChallenge = 24;</code>
+     * <code>string deviceId = 24;</code>
      */
-    public java.lang.String getServerChallenge() {
-      java.lang.Object ref = serverChallenge_;
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        serverChallenge_ = s;
+        deviceId_ = s;
         return s;
       }
     }
     /**
-     * <code>string serverChallenge = 24;</code>
+     * <code>string deviceId = 24;</code>
      */
     public com.google.protobuf.ByteString
-        getServerChallengeBytes() {
-      java.lang.Object ref = serverChallenge_;
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        serverChallenge_ = b;
+        deviceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -480,8 +480,8 @@ public final class RegisterRequestProto {
       if (partnerId_ != 0) {
         output.writeInt32(23, partnerId_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, serverChallenge_);
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, deviceId_);
       }
       if (!getRegisterTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 25, registerToken_);
@@ -513,8 +513,8 @@ public final class RegisterRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(23, partnerId_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, serverChallenge_);
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, deviceId_);
       }
       if (!getRegisterTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, registerToken_);
@@ -551,8 +551,8 @@ public final class RegisterRequestProto {
           .equals(other.getPassword());
       result = result && (getPartnerId()
           == other.getPartnerId());
-      result = result && getServerChallenge()
-          .equals(other.getServerChallenge());
+      result = result && getDeviceId()
+          .equals(other.getDeviceId());
       result = result && getRegisterToken()
           .equals(other.getRegisterToken());
       result = result && getVariant()
@@ -579,8 +579,8 @@ public final class RegisterRequestProto {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + PARTNERID_FIELD_NUMBER;
       hash = (53 * hash) + getPartnerId();
-      hash = (37 * hash) + SERVERCHALLENGE_FIELD_NUMBER;
-      hash = (53 * hash) + getServerChallenge().hashCode();
+      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (37 * hash) + REGISTERTOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getRegisterToken().hashCode();
       hash = (37 * hash) + VARIANT_FIELD_NUMBER;
@@ -717,7 +717,7 @@ public final class RegisterRequestProto {
 
         partnerId_ = 0;
 
-        serverChallenge_ = "";
+        deviceId_ = "";
 
         registerToken_ = "";
 
@@ -754,7 +754,7 @@ public final class RegisterRequestProto {
         result.userName_ = userName_;
         result.password_ = password_;
         result.partnerId_ = partnerId_;
-        result.serverChallenge_ = serverChallenge_;
+        result.deviceId_ = deviceId_;
         result.registerToken_ = registerToken_;
         result.variant_ = variant_;
         onBuilt();
@@ -816,8 +816,8 @@ public final class RegisterRequestProto {
         if (other.getPartnerId() != 0) {
           setPartnerId(other.getPartnerId());
         }
-        if (!other.getServerChallenge().isEmpty()) {
-          serverChallenge_ = other.serverChallenge_;
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
           onChanged();
         }
         if (!other.getRegisterToken().isEmpty()) {
@@ -1204,71 +1204,71 @@ public final class RegisterRequestProto {
         return this;
       }
 
-      private java.lang.Object serverChallenge_ = "";
+      private java.lang.Object deviceId_ = "";
       /**
-       * <code>string serverChallenge = 24;</code>
+       * <code>string deviceId = 24;</code>
        */
-      public java.lang.String getServerChallenge() {
-        java.lang.Object ref = serverChallenge_;
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          serverChallenge_ = s;
+          deviceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string serverChallenge = 24;</code>
+       * <code>string deviceId = 24;</code>
        */
       public com.google.protobuf.ByteString
-          getServerChallengeBytes() {
-        java.lang.Object ref = serverChallenge_;
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          serverChallenge_ = b;
+          deviceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string serverChallenge = 24;</code>
+       * <code>string deviceId = 24;</code>
        */
-      public Builder setServerChallenge(
+      public Builder setDeviceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        serverChallenge_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string serverChallenge = 24;</code>
+       * <code>string deviceId = 24;</code>
        */
-      public Builder clearServerChallenge() {
+      public Builder clearDeviceId() {
         
-        serverChallenge_ = getDefaultInstance().getServerChallenge();
+        deviceId_ = getDefaultInstance().getDeviceId();
         onChanged();
         return this;
       }
       /**
-       * <code>string serverChallenge = 24;</code>
+       * <code>string deviceId = 24;</code>
        */
-      public Builder setServerChallengeBytes(
+      public Builder setDeviceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        serverChallenge_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
@@ -1474,13 +1474,13 @@ public final class RegisterRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025RegisterRequest.proto\022\005fanxi\032\030RestfulB" +
-      "aseRequest.proto\"\304\001\n\017RegisterRequest\022*\n\007" +
+      "aseRequest.proto\"\275\001\n\017RegisterRequest\022*\n\007" +
       "baseReq\030\001 \001(\0132\031.fanxi.RestfulBaseRequest" +
       "\022\r\n\005gcmId\030\024 \001(\t\022\020\n\010userName\030\025 \001(\t\022\020\n\010pas" +
-      "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\027\n\017server" +
-      "Challenge\030\030 \001(\t\022\025\n\rregisterToken\030\031 \001(\t\022\017" +
-      "\n\007variant\030\032 \001(\tB1\n\031com.fanxi.service.mes" +
-      "sageB\024RegisterRequestProtob\006proto3"
+      "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\020\n\010device" +
+      "Id\030\030 \001(\t\022\025\n\rregisterToken\030\031 \001(\t\022\017\n\007varia" +
+      "nt\030\032 \001(\tB1\n\031com.fanxi.service.messageB\024R" +
+      "egisterRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1500,7 +1500,7 @@ public final class RegisterRequestProto {
     internal_static_fanxi_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegisterRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "ServerChallenge", "RegisterToken", "Variant", });
+        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "DeviceId", "RegisterToken", "Variant", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 

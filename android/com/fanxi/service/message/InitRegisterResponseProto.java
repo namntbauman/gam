@@ -42,14 +42,14 @@ public final class InitRegisterResponseProto {
         getRegisterTokenBytes();
 
     /**
-     * <code>string serverChallenge = 6;</code>
+     * <code>string deviceId = 6;</code>
      */
-    java.lang.String getServerChallenge();
+    java.lang.String getDeviceId();
     /**
-     * <code>string serverChallenge = 6;</code>
+     * <code>string deviceId = 6;</code>
      */
     com.google.protobuf.ByteString
-        getServerChallengeBytes();
+        getDeviceIdBytes();
 
     /**
      * <code>string captcha = 7;</code>
@@ -93,7 +93,7 @@ public final class InitRegisterResponseProto {
     }
     private InitRegisterResponse() {
       registerToken_ = "";
-      serverChallenge_ = "";
+      deviceId_ = "";
       captcha_ = "";
       variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
@@ -145,7 +145,7 @@ public final class InitRegisterResponseProto {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              serverChallenge_ = s;
+              deviceId_ = s;
               break;
             }
             case 58: {
@@ -245,34 +245,34 @@ public final class InitRegisterResponseProto {
       }
     }
 
-    public static final int SERVERCHALLENGE_FIELD_NUMBER = 6;
-    private volatile java.lang.Object serverChallenge_;
+    public static final int DEVICEID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object deviceId_;
     /**
-     * <code>string serverChallenge = 6;</code>
+     * <code>string deviceId = 6;</code>
      */
-    public java.lang.String getServerChallenge() {
-      java.lang.Object ref = serverChallenge_;
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        serverChallenge_ = s;
+        deviceId_ = s;
         return s;
       }
     }
     /**
-     * <code>string serverChallenge = 6;</code>
+     * <code>string deviceId = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getServerChallengeBytes() {
-      java.lang.Object ref = serverChallenge_;
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        serverChallenge_ = b;
+        deviceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -360,8 +360,8 @@ public final class InitRegisterResponseProto {
       if (!getRegisterTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, registerToken_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, serverChallenge_);
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, deviceId_);
       }
       if (!getCaptchaBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, captcha_);
@@ -383,8 +383,8 @@ public final class InitRegisterResponseProto {
       if (!getRegisterTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, registerToken_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, serverChallenge_);
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, deviceId_);
       }
       if (!getCaptchaBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, captcha_);
@@ -420,8 +420,8 @@ public final class InitRegisterResponseProto {
       }
       result = result && getRegisterToken()
           .equals(other.getRegisterToken());
-      result = result && getServerChallenge()
-          .equals(other.getServerChallenge());
+      result = result && getDeviceId()
+          .equals(other.getDeviceId());
       result = result && getCaptcha()
           .equals(other.getCaptcha());
       result = result && getVariantList()
@@ -442,8 +442,8 @@ public final class InitRegisterResponseProto {
       }
       hash = (37 * hash) + REGISTERTOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getRegisterToken().hashCode();
-      hash = (37 * hash) + SERVERCHALLENGE_FIELD_NUMBER;
-      hash = (53 * hash) + getServerChallenge().hashCode();
+      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
       hash = (53 * hash) + getCaptcha().hashCode();
       if (getVariantCount() > 0) {
@@ -576,7 +576,7 @@ public final class InitRegisterResponseProto {
         }
         registerToken_ = "";
 
-        serverChallenge_ = "";
+        deviceId_ = "";
 
         captcha_ = "";
 
@@ -612,7 +612,7 @@ public final class InitRegisterResponseProto {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.registerToken_ = registerToken_;
-        result.serverChallenge_ = serverChallenge_;
+        result.deviceId_ = deviceId_;
         result.captcha_ = captcha_;
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
           variant_ = variant_.getUnmodifiableView();
@@ -668,8 +668,8 @@ public final class InitRegisterResponseProto {
           registerToken_ = other.registerToken_;
           onChanged();
         }
-        if (!other.getServerChallenge().isEmpty()) {
-          serverChallenge_ = other.serverChallenge_;
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
           onChanged();
         }
         if (!other.getCaptcha().isEmpty()) {
@@ -899,71 +899,71 @@ public final class InitRegisterResponseProto {
         return this;
       }
 
-      private java.lang.Object serverChallenge_ = "";
+      private java.lang.Object deviceId_ = "";
       /**
-       * <code>string serverChallenge = 6;</code>
+       * <code>string deviceId = 6;</code>
        */
-      public java.lang.String getServerChallenge() {
-        java.lang.Object ref = serverChallenge_;
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          serverChallenge_ = s;
+          deviceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string serverChallenge = 6;</code>
+       * <code>string deviceId = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getServerChallengeBytes() {
-        java.lang.Object ref = serverChallenge_;
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          serverChallenge_ = b;
+          deviceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string serverChallenge = 6;</code>
+       * <code>string deviceId = 6;</code>
        */
-      public Builder setServerChallenge(
+      public Builder setDeviceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        serverChallenge_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string serverChallenge = 6;</code>
+       * <code>string deviceId = 6;</code>
        */
-      public Builder clearServerChallenge() {
+      public Builder clearDeviceId() {
         
-        serverChallenge_ = getDefaultInstance().getServerChallenge();
+        deviceId_ = getDefaultInstance().getDeviceId();
         onChanged();
         return this;
       }
       /**
-       * <code>string serverChallenge = 6;</code>
+       * <code>string deviceId = 6;</code>
        */
-      public Builder setServerChallengeBytes(
+      public Builder setDeviceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        serverChallenge_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
@@ -1194,13 +1194,12 @@ public final class InitRegisterResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032InitRegisterResponse.proto\022\005fanxi\032\031Res" +
-      "tfulBaseResponse.proto\"\232\001\n\024InitRegisterR" +
+      "tfulBaseResponse.proto\"\223\001\n\024InitRegisterR" +
       "esponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.Re" +
       "stfulBaseResponse\022\025\n\rregisterToken\030\005 \001(\t" +
-      "\022\027\n\017serverChallenge\030\006 \001(\t\022\017\n\007captcha\030\007 \001" +
-      "(\t\022\017\n\007variant\030\010 \003(\tB6\n\031com.fanxi.service" +
-      ".messageB\031InitRegisterResponseProtob\006pro" +
-      "to3"
+      "\022\020\n\010deviceId\030\006 \001(\t\022\017\n\007captcha\030\007 \001(\t\022\017\n\007v" +
+      "ariant\030\010 \003(\tB6\n\031com.fanxi.service.messag" +
+      "eB\031InitRegisterResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1220,7 +1219,7 @@ public final class InitRegisterResponseProto {
     internal_static_fanxi_InitRegisterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_InitRegisterResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "RegisterToken", "ServerChallenge", "Captcha", "Variant", });
+        new java.lang.String[] { "BaseResponse", "RegisterToken", "DeviceId", "Captcha", "Variant", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

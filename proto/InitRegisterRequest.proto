@@ -6,6 +6,6 @@ option java_outer_classname = "InitRegisterRequestProto";
 
 message InitRegisterRequest {
    RestfulBaseRequest baseReq=1;
-   string serverChallenge=24;
+   string deviceId=24;
    
 }

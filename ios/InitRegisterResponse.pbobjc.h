@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(InitRegisterResponse_FieldNumber) {
   InitRegisterResponse_FieldNumber_BaseResponse = 1,
   InitRegisterResponse_FieldNumber_RegisterToken = 5,
-  InitRegisterResponse_FieldNumber_ServerChallenge = 6,
+  InitRegisterResponse_FieldNumber_DeviceId = 6,
   InitRegisterResponse_FieldNumber_Captcha = 7,
   InitRegisterResponse_FieldNumber_VariantArray = 8,
 };
@@ -64,7 +64,7 @@ typedef GPB_ENUM(InitRegisterResponse_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *registerToken;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *captcha;
 
