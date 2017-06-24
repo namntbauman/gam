@@ -103,6 +103,45 @@ public final class LoginResponseProto {
      */
     com.google.protobuf.ByteString
         getDeviceIdBytes();
+
+    /**
+     * <code>string loginToken = 28;</code>
+     */
+    java.lang.String getLoginToken();
+    /**
+     * <code>string loginToken = 28;</code>
+     */
+    com.google.protobuf.ByteString
+        getLoginTokenBytes();
+
+    /**
+     * <code>string captcha = 29;</code>
+     */
+    java.lang.String getCaptcha();
+    /**
+     * <code>string captcha = 29;</code>
+     */
+    com.google.protobuf.ByteString
+        getCaptchaBytes();
+
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    java.util.List<java.lang.String>
+        getVariantList();
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    int getVariantCount();
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    java.lang.String getVariant(int index);
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    com.google.protobuf.ByteString
+        getVariantBytes(int index);
   }
   /**
    * Protobuf type {@code fanxi.LoginResponse}
@@ -123,6 +162,9 @@ public final class LoginResponseProto {
       adv_ = "";
       type_ = 0;
       deviceId_ = "";
+      loginToken_ = "";
+      captcha_ = "";
+      variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -216,6 +258,27 @@ public final class LoginResponseProto {
               deviceId_ = s;
               break;
             }
+            case 226: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              loginToken_ = s;
+              break;
+            }
+            case 234: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              captcha_ = s;
+              break;
+            }
+            case 242: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                variant_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              variant_.add(s);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -224,6 +287,9 @@ public final class LoginResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+          variant_ = variant_.getUnmodifiableView();
+        }
         makeExtensionsImmutable();
       }
     }
@@ -239,6 +305,7 @@ public final class LoginResponseProto {
               com.fanxi.service.message.LoginResponseProto.LoginResponse.class, com.fanxi.service.message.LoginResponseProto.LoginResponse.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BASERESPONSE_FIELD_NUMBER = 1;
     private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_;
     /**
@@ -469,6 +536,103 @@ public final class LoginResponseProto {
       }
     }
 
+    public static final int LOGINTOKEN_FIELD_NUMBER = 28;
+    private volatile java.lang.Object loginToken_;
+    /**
+     * <code>string loginToken = 28;</code>
+     */
+    public java.lang.String getLoginToken() {
+      java.lang.Object ref = loginToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        loginToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string loginToken = 28;</code>
+     */
+    public com.google.protobuf.ByteString
+        getLoginTokenBytes() {
+      java.lang.Object ref = loginToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        loginToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CAPTCHA_FIELD_NUMBER = 29;
+    private volatile java.lang.Object captcha_;
+    /**
+     * <code>string captcha = 29;</code>
+     */
+    public java.lang.String getCaptcha() {
+      java.lang.Object ref = captcha_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        captcha_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string captcha = 29;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCaptchaBytes() {
+      java.lang.Object ref = captcha_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        captcha_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int VARIANT_FIELD_NUMBER = 30;
+    private com.google.protobuf.LazyStringList variant_;
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getVariantList() {
+      return variant_;
+    }
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    public int getVariantCount() {
+      return variant_.size();
+    }
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    public java.lang.String getVariant(int index) {
+      return variant_.get(index);
+    }
+    /**
+     * <code>repeated string variant = 30;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVariantBytes(int index) {
+      return variant_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -508,6 +672,15 @@ public final class LoginResponseProto {
       if (!getDeviceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 27, deviceId_);
       }
+      if (!getLoginTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 28, loginToken_);
+      }
+      if (!getCaptchaBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 29, captcha_);
+      }
+      for (int i = 0; i < variant_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 30, variant_.getRaw(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -545,6 +718,20 @@ public final class LoginResponseProto {
       }
       if (!getDeviceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, deviceId_);
+      }
+      if (!getLoginTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, loginToken_);
+      }
+      if (!getCaptchaBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, captcha_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < variant_.size(); i++) {
+          dataSize += computeStringSizeNoTag(variant_.getRaw(i));
+        }
+        size += dataSize;
+        size += 2 * getVariantList().size();
       }
       memoizedSize = size;
       return size;
@@ -586,6 +773,12 @@ public final class LoginResponseProto {
           == other.getType());
       result = result && getDeviceId()
           .equals(other.getDeviceId());
+      result = result && getLoginToken()
+          .equals(other.getLoginToken());
+      result = result && getCaptcha()
+          .equals(other.getCaptcha());
+      result = result && getVariantList()
+          .equals(other.getVariantList());
       return result;
     }
 
@@ -619,6 +812,14 @@ public final class LoginResponseProto {
       hash = (53 * hash) + getType();
       hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + LOGINTOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getLoginToken().hashCode();
+      hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
+      hash = (53 * hash) + getCaptcha().hashCode();
+      if (getVariantCount() > 0) {
+        hash = (37 * hash) + VARIANT_FIELD_NUMBER;
+        hash = (53 * hash) + getVariantList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -763,6 +964,12 @@ public final class LoginResponseProto {
 
         deviceId_ = "";
 
+        loginToken_ = "";
+
+        captcha_ = "";
+
+        variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000800);
         return this;
       }
 
@@ -785,6 +992,8 @@ public final class LoginResponseProto {
 
       public com.fanxi.service.message.LoginResponseProto.LoginResponse buildPartial() {
         com.fanxi.service.message.LoginResponseProto.LoginResponse result = new com.fanxi.service.message.LoginResponseProto.LoginResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (baseResponseBuilder_ == null) {
           result.baseResponse_ = baseResponse_;
         } else {
@@ -802,6 +1011,14 @@ public final class LoginResponseProto {
         result.adv_ = adv_;
         result.type_ = type_;
         result.deviceId_ = deviceId_;
+        result.loginToken_ = loginToken_;
+        result.captcha_ = captcha_;
+        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+          variant_ = variant_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000800);
+        }
+        result.variant_ = variant_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -875,6 +1092,24 @@ public final class LoginResponseProto {
           deviceId_ = other.deviceId_;
           onChanged();
         }
+        if (!other.getLoginToken().isEmpty()) {
+          loginToken_ = other.loginToken_;
+          onChanged();
+        }
+        if (!other.getCaptcha().isEmpty()) {
+          captcha_ = other.captcha_;
+          onChanged();
+        }
+        if (!other.variant_.isEmpty()) {
+          if (variant_.isEmpty()) {
+            variant_ = other.variant_;
+            bitField0_ = (bitField0_ & ~0x00000800);
+          } else {
+            ensureVariantIsMutable();
+            variant_.addAll(other.variant_);
+          }
+          onChanged();
+        }
         onChanged();
         return this;
       }
@@ -900,6 +1135,7 @@ public final class LoginResponseProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1531,6 +1767,238 @@ public final class LoginResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object loginToken_ = "";
+      /**
+       * <code>string loginToken = 28;</code>
+       */
+      public java.lang.String getLoginToken() {
+        java.lang.Object ref = loginToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          loginToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string loginToken = 28;</code>
+       */
+      public com.google.protobuf.ByteString
+          getLoginTokenBytes() {
+        java.lang.Object ref = loginToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          loginToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string loginToken = 28;</code>
+       */
+      public Builder setLoginToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        loginToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string loginToken = 28;</code>
+       */
+      public Builder clearLoginToken() {
+        
+        loginToken_ = getDefaultInstance().getLoginToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string loginToken = 28;</code>
+       */
+      public Builder setLoginTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        loginToken_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object captcha_ = "";
+      /**
+       * <code>string captcha = 29;</code>
+       */
+      public java.lang.String getCaptcha() {
+        java.lang.Object ref = captcha_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          captcha_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string captcha = 29;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCaptchaBytes() {
+        java.lang.Object ref = captcha_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          captcha_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string captcha = 29;</code>
+       */
+      public Builder setCaptcha(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        captcha_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string captcha = 29;</code>
+       */
+      public Builder clearCaptcha() {
+        
+        captcha_ = getDefaultInstance().getCaptcha();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string captcha = 29;</code>
+       */
+      public Builder setCaptchaBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        captcha_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureVariantIsMutable() {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+          variant_ = new com.google.protobuf.LazyStringArrayList(variant_);
+          bitField0_ |= 0x00000800;
+         }
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getVariantList() {
+        return variant_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public int getVariantCount() {
+        return variant_.size();
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public java.lang.String getVariant(int index) {
+        return variant_.get(index);
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVariantBytes(int index) {
+        return variant_.getByteString(index);
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public Builder setVariant(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVariantIsMutable();
+        variant_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public Builder addVariant(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureVariantIsMutable();
+        variant_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public Builder addAllVariant(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureVariantIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, variant_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public Builder clearVariant() {
+        variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000800);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string variant = 30;</code>
+       */
+      public Builder addVariantBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureVariantIsMutable();
+        variant_.add(value);
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1595,15 +2063,16 @@ public final class LoginResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023LoginResponse.proto\022\005fanxi\032\020UserDetail" +
-      ".proto\032\031RestfulBaseResponse.proto\"\346\001\n\rLo" +
+      ".proto\032\031RestfulBaseResponse.proto\"\234\002\n\rLo" +
       "ginResponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanx" +
       "i.RestfulBaseResponse\022\037\n\004user\030\024 \001(\0132\021.fa" +
       "nxi.UserDetail\022\016\n\006server\030\025 \001(\t\022\025\n\risForc" +
       "eUpdate\030\026 \001(\010\022\023\n\013urlDownload\030\027 \001(\t\022\031\n\021co" +
       "ntentNewVersion\030\030 \001(\t\022\013\n\003adv\030\031 \001(\t\022\014\n\004ty" +
-      "pe\030\032 \001(\005\022\020\n\010deviceId\030\033 \001(\tB/\n\031com.fanxi." +
-      "service.messageB\022LoginResponseProtob\006pro" +
-      "to3"
+      "pe\030\032 \001(\005\022\020\n\010deviceId\030\033 \001(\t\022\022\n\nloginToken" +
+      "\030\034 \001(\t\022\017\n\007captcha\030\035 \001(\t\022\017\n\007variant\030\036 \003(\t" +
+      "B/\n\031com.fanxi.service.messageB\022LoginResp",
+      "onseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1624,7 +2093,7 @@ public final class LoginResponseProto {
     internal_static_fanxi_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", "LoginToken", "Captcha", "Variant", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

@@ -58,7 +58,7 @@ typedef GPB_ENUM(LoginAnonymousResponse_FieldNumber) {
   LoginAnonymousResponse_FieldNumber_ContentNewVersion = 9,
   LoginAnonymousResponse_FieldNumber_Adv = 10,
   LoginAnonymousResponse_FieldNumber_Type = 11,
-  LoginAnonymousResponse_FieldNumber_ServerChallenge = 12,
+  LoginAnonymousResponse_FieldNumber_DeviceId = 12,
 };
 
 @interface LoginAnonymousResponse : GPBMessage
@@ -83,7 +83,7 @@ typedef GPB_ENUM(LoginAnonymousResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int32_t type;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @end
 

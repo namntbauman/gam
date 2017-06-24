@@ -56,7 +56,10 @@ static GPBFileDescriptor *LoginResponseRoot_FileDescriptor(void) {
 @dynamic contentNewVersion;
 @dynamic adv;
 @dynamic type;
-@dynamic serverChallenge;
+@dynamic deviceId;
+@dynamic loginToken;
+@dynamic captcha;
+@dynamic variantArray, variantArray_Count;
 
 typedef struct LoginResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -67,7 +70,10 @@ typedef struct LoginResponse__storage_ {
   NSString *URLDownload;
   NSString *contentNewVersion;
   NSString *adv;
-  NSString *serverChallenge;
+  NSString *deviceId;
+  NSString *loginToken;
+  NSString *captcha;
+  NSMutableArray *variantArray;
 } LoginResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -149,12 +155,39 @@ typedef struct LoginResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "serverChallenge",
+        .name = "deviceId",
         .dataTypeSpecific.className = NULL,
-        .number = LoginResponse_FieldNumber_ServerChallenge,
+        .number = LoginResponse_FieldNumber_DeviceId,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(LoginResponse__storage_, serverChallenge),
+        .offset = (uint32_t)offsetof(LoginResponse__storage_, deviceId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "loginToken",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginResponse_FieldNumber_LoginToken,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(LoginResponse__storage_, loginToken),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "captcha",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginResponse_FieldNumber_Captcha,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(LoginResponse__storage_, captcha),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "variantArray",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginResponse_FieldNumber_VariantArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(LoginResponse__storage_, variantArray),
+        .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeString,
       },
     };
@@ -168,7 +201,7 @@ typedef struct LoginResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\014\000\026\r\000\027!!)\000\030\021\000\033\017\000";
+        "\006\001\014\000\026\r\000\027!!)\000\030\021\000\033\010\000\034\n\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

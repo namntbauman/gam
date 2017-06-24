@@ -58,7 +58,10 @@ typedef GPB_ENUM(LoginResponse_FieldNumber) {
   LoginResponse_FieldNumber_ContentNewVersion = 24,
   LoginResponse_FieldNumber_Adv = 25,
   LoginResponse_FieldNumber_Type = 26,
-  LoginResponse_FieldNumber_ServerChallenge = 27,
+  LoginResponse_FieldNumber_DeviceId = 27,
+  LoginResponse_FieldNumber_LoginToken = 28,
+  LoginResponse_FieldNumber_Captcha = 29,
+  LoginResponse_FieldNumber_VariantArray = 30,
 };
 
 @interface LoginResponse : GPBMessage
@@ -83,7 +86,15 @@ typedef GPB_ENUM(LoginResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int32_t type;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *loginToken;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *captcha;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *variantArray;
+/** The number of items in @c variantArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger variantArray_Count;
 
 @end
 

@@ -54,7 +54,6 @@ typedef GPB_ENUM(LoginATRequest_FieldNumber) {
   LoginATRequest_FieldNumber_UserName = 21,
   LoginATRequest_FieldNumber_PartnerId = 22,
   LoginATRequest_FieldNumber_Token = 23,
-  LoginATRequest_FieldNumber_ServerChallenge = 24,
 };
 
 @interface LoginATRequest : GPBMessage
@@ -70,8 +69,6 @@ typedef GPB_ENUM(LoginATRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t partnerId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
 
 @end
 

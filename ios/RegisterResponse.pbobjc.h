@@ -58,8 +58,9 @@ typedef GPB_ENUM(RegisterResponse_FieldNumber) {
   RegisterResponse_FieldNumber_ContentNewVersion = 9,
   RegisterResponse_FieldNumber_Adv = 10,
   RegisterResponse_FieldNumber_Type = 11,
-  RegisterResponse_FieldNumber_Captcha = 12,
-  RegisterResponse_FieldNumber_VariantArray = 13,
+  RegisterResponse_FieldNumber_RegisterToken = 12,
+  RegisterResponse_FieldNumber_Captcha = 13,
+  RegisterResponse_FieldNumber_VariantArray = 14,
 };
 
 @interface RegisterResponse : GPBMessage
@@ -83,6 +84,8 @@ typedef GPB_ENUM(RegisterResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *adv;
 
 @property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *registerToken;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *captcha;
 

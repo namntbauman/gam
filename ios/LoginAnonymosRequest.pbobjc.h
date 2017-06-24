@@ -52,7 +52,6 @@ typedef GPB_ENUM(LoginAnonymousRequest_FieldNumber) {
   LoginAnonymousRequest_FieldNumber_BaseReq = 1,
   LoginAnonymousRequest_FieldNumber_GcmId = 20,
   LoginAnonymousRequest_FieldNumber_PartnerId = 21,
-  LoginAnonymousRequest_FieldNumber_ServerChallenge = 22,
 };
 
 @interface LoginAnonymousRequest : GPBMessage
@@ -64,8 +63,6 @@ typedef GPB_ENUM(LoginAnonymousRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *gcmId;
 
 @property(nonatomic, readwrite) int32_t partnerId;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
 
 @end
 

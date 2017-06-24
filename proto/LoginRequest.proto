@@ -10,5 +10,7 @@ message LoginRequest {
    string userName=21;
    string password=22;
    int32 partnerId=23;
+   string loginToken=24;
+   string variant=25;
    
 }

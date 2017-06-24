@@ -52,7 +52,6 @@ static GPBFileDescriptor *RegisterRequestRoot_FileDescriptor(void) {
 @dynamic userName;
 @dynamic password;
 @dynamic partnerId;
-@dynamic deviceId;
 @dynamic registerToken;
 @dynamic variant;
 
@@ -63,7 +62,6 @@ typedef struct RegisterRequest__storage_ {
   NSString *gcmId;
   NSString *userName;
   NSString *password;
-  NSString *deviceId;
   NSString *registerToken;
   NSString *variant;
 } RegisterRequest__storage_;
@@ -120,19 +118,10 @@ typedef struct RegisterRequest__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "deviceId",
-        .dataTypeSpecific.className = NULL,
-        .number = RegisterRequest_FieldNumber_DeviceId,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(RegisterRequest__storage_, deviceId),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "registerToken",
         .dataTypeSpecific.className = NULL,
         .number = RegisterRequest_FieldNumber_RegisterToken,
-        .hasIndex = 6,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(RegisterRequest__storage_, registerToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -141,7 +130,7 @@ typedef struct RegisterRequest__storage_ {
         .name = "variant",
         .dataTypeSpecific.className = NULL,
         .number = RegisterRequest_FieldNumber_Variant,
-        .hasIndex = 7,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(RegisterRequest__storage_, variant),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
@@ -157,7 +146,7 @@ typedef struct RegisterRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\001\007\000\024\005\000\025\010\000\027\t\000\030\010\000\031\r\000";
+        "\005\001\007\000\024\005\000\025\010\000\027\t\000\030\r\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

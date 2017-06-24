@@ -50,14 +50,12 @@ static GPBFileDescriptor *LoginAnonymosRequestRoot_FileDescriptor(void) {
 @dynamic hasBaseReq, baseReq;
 @dynamic gcmId;
 @dynamic partnerId;
-@dynamic serverChallenge;
 
 typedef struct LoginAnonymousRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t partnerId;
   RestfulBaseRequest *baseReq;
   NSString *gcmId;
-  NSString *serverChallenge;
 } LoginAnonymousRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -93,15 +91,6 @@ typedef struct LoginAnonymousRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
-      {
-        .name = "serverChallenge",
-        .dataTypeSpecific.className = NULL,
-        .number = LoginAnonymousRequest_FieldNumber_ServerChallenge,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(LoginAnonymousRequest__storage_, serverChallenge),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[LoginAnonymousRequest class]
@@ -113,7 +102,7 @@ typedef struct LoginAnonymousRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\007\000\024\005\000\025\t\000\026\017\000";
+        "\003\001\007\000\024\005\000\025\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

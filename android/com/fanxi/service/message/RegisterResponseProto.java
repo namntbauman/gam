@@ -95,30 +95,40 @@ public final class RegisterResponseProto {
     int getType();
 
     /**
-     * <code>string captcha = 12;</code>
+     * <code>string registerToken = 12;</code>
+     */
+    java.lang.String getRegisterToken();
+    /**
+     * <code>string registerToken = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getRegisterTokenBytes();
+
+    /**
+     * <code>string captcha = 13;</code>
      */
     java.lang.String getCaptcha();
     /**
-     * <code>string captcha = 12;</code>
+     * <code>string captcha = 13;</code>
      */
     com.google.protobuf.ByteString
         getCaptchaBytes();
 
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     java.util.List<java.lang.String>
         getVariantList();
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     int getVariantCount();
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     java.lang.String getVariant(int index);
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     com.google.protobuf.ByteString
         getVariantBytes(int index);
@@ -141,6 +151,7 @@ public final class RegisterResponseProto {
       contentNewVersion_ = "";
       adv_ = "";
       type_ = 0;
+      registerToken_ = "";
       captcha_ = "";
       variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
@@ -233,14 +244,20 @@ public final class RegisterResponseProto {
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              captcha_ = s;
+              registerToken_ = s;
               break;
             }
             case 106: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+
+              captcha_ = s;
+              break;
+            }
+            case 114: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 variant_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               variant_.add(s);
               break;
@@ -253,7 +270,7 @@ public final class RegisterResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           variant_ = variant_.getUnmodifiableView();
         }
         makeExtensionsImmutable();
@@ -468,10 +485,44 @@ public final class RegisterResponseProto {
       return type_;
     }
 
-    public static final int CAPTCHA_FIELD_NUMBER = 12;
+    public static final int REGISTERTOKEN_FIELD_NUMBER = 12;
+    private volatile java.lang.Object registerToken_;
+    /**
+     * <code>string registerToken = 12;</code>
+     */
+    public java.lang.String getRegisterToken() {
+      java.lang.Object ref = registerToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        registerToken_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string registerToken = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getRegisterTokenBytes() {
+      java.lang.Object ref = registerToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        registerToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CAPTCHA_FIELD_NUMBER = 13;
     private volatile java.lang.Object captcha_;
     /**
-     * <code>string captcha = 12;</code>
+     * <code>string captcha = 13;</code>
      */
     public java.lang.String getCaptcha() {
       java.lang.Object ref = captcha_;
@@ -486,7 +537,7 @@ public final class RegisterResponseProto {
       }
     }
     /**
-     * <code>string captcha = 12;</code>
+     * <code>string captcha = 13;</code>
      */
     public com.google.protobuf.ByteString
         getCaptchaBytes() {
@@ -502,29 +553,29 @@ public final class RegisterResponseProto {
       }
     }
 
-    public static final int VARIANT_FIELD_NUMBER = 13;
+    public static final int VARIANT_FIELD_NUMBER = 14;
     private com.google.protobuf.LazyStringList variant_;
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getVariantList() {
       return variant_;
     }
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     public int getVariantCount() {
       return variant_.size();
     }
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     public java.lang.String getVariant(int index) {
       return variant_.get(index);
     }
     /**
-     * <code>repeated string variant = 13;</code>
+     * <code>repeated string variant = 14;</code>
      */
     public com.google.protobuf.ByteString
         getVariantBytes(int index) {
@@ -567,11 +618,14 @@ public final class RegisterResponseProto {
       if (type_ != 0) {
         output.writeInt32(11, type_);
       }
+      if (!getRegisterTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, registerToken_);
+      }
       if (!getCaptchaBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, captcha_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, captcha_);
       }
       for (int i = 0; i < variant_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, variant_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, variant_.getRaw(i));
       }
     }
 
@@ -608,8 +662,11 @@ public final class RegisterResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, type_);
       }
+      if (!getRegisterTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, registerToken_);
+      }
       if (!getCaptchaBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, captcha_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, captcha_);
       }
       {
         int dataSize = 0;
@@ -657,6 +714,8 @@ public final class RegisterResponseProto {
           .equals(other.getAdv());
       result = result && (getType()
           == other.getType());
+      result = result && getRegisterToken()
+          .equals(other.getRegisterToken());
       result = result && getCaptcha()
           .equals(other.getCaptcha());
       result = result && getVariantList()
@@ -692,6 +751,8 @@ public final class RegisterResponseProto {
       hash = (53 * hash) + getAdv().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
+      hash = (37 * hash) + REGISTERTOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getRegisterToken().hashCode();
       hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
       hash = (53 * hash) + getCaptcha().hashCode();
       if (getVariantCount() > 0) {
@@ -840,10 +901,12 @@ public final class RegisterResponseProto {
 
         type_ = 0;
 
+        registerToken_ = "";
+
         captcha_ = "";
 
         variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         return this;
       }
 
@@ -884,10 +947,11 @@ public final class RegisterResponseProto {
         result.contentNewVersion_ = contentNewVersion_;
         result.adv_ = adv_;
         result.type_ = type_;
+        result.registerToken_ = registerToken_;
         result.captcha_ = captcha_;
-        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((bitField0_ & 0x00000400) == 0x00000400)) {
           variant_ = variant_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         }
         result.variant_ = variant_;
         result.bitField0_ = to_bitField0_;
@@ -960,6 +1024,10 @@ public final class RegisterResponseProto {
         if (other.getType() != 0) {
           setType(other.getType());
         }
+        if (!other.getRegisterToken().isEmpty()) {
+          registerToken_ = other.registerToken_;
+          onChanged();
+        }
         if (!other.getCaptcha().isEmpty()) {
           captcha_ = other.captcha_;
           onChanged();
@@ -967,7 +1035,7 @@ public final class RegisterResponseProto {
         if (!other.variant_.isEmpty()) {
           if (variant_.isEmpty()) {
             variant_ = other.variant_;
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           } else {
             ensureVariantIsMutable();
             variant_.addAll(other.variant_);
@@ -1563,9 +1631,78 @@ public final class RegisterResponseProto {
         return this;
       }
 
+      private java.lang.Object registerToken_ = "";
+      /**
+       * <code>string registerToken = 12;</code>
+       */
+      public java.lang.String getRegisterToken() {
+        java.lang.Object ref = registerToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          registerToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string registerToken = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getRegisterTokenBytes() {
+        java.lang.Object ref = registerToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          registerToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string registerToken = 12;</code>
+       */
+      public Builder setRegisterToken(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        registerToken_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string registerToken = 12;</code>
+       */
+      public Builder clearRegisterToken() {
+        
+        registerToken_ = getDefaultInstance().getRegisterToken();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string registerToken = 12;</code>
+       */
+      public Builder setRegisterTokenBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        registerToken_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object captcha_ = "";
       /**
-       * <code>string captcha = 12;</code>
+       * <code>string captcha = 13;</code>
        */
       public java.lang.String getCaptcha() {
         java.lang.Object ref = captcha_;
@@ -1580,7 +1717,7 @@ public final class RegisterResponseProto {
         }
       }
       /**
-       * <code>string captcha = 12;</code>
+       * <code>string captcha = 13;</code>
        */
       public com.google.protobuf.ByteString
           getCaptchaBytes() {
@@ -1596,7 +1733,7 @@ public final class RegisterResponseProto {
         }
       }
       /**
-       * <code>string captcha = 12;</code>
+       * <code>string captcha = 13;</code>
        */
       public Builder setCaptcha(
           java.lang.String value) {
@@ -1609,7 +1746,7 @@ public final class RegisterResponseProto {
         return this;
       }
       /**
-       * <code>string captcha = 12;</code>
+       * <code>string captcha = 13;</code>
        */
       public Builder clearCaptcha() {
         
@@ -1618,7 +1755,7 @@ public final class RegisterResponseProto {
         return this;
       }
       /**
-       * <code>string captcha = 12;</code>
+       * <code>string captcha = 13;</code>
        */
       public Builder setCaptchaBytes(
           com.google.protobuf.ByteString value) {
@@ -1634,39 +1771,39 @@ public final class RegisterResponseProto {
 
       private com.google.protobuf.LazyStringList variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureVariantIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           variant_ = new com.google.protobuf.LazyStringArrayList(variant_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
          }
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getVariantList() {
         return variant_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public int getVariantCount() {
         return variant_.size();
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public java.lang.String getVariant(int index) {
         return variant_.get(index);
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public com.google.protobuf.ByteString
           getVariantBytes(int index) {
         return variant_.getByteString(index);
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public Builder setVariant(
           int index, java.lang.String value) {
@@ -1679,7 +1816,7 @@ public final class RegisterResponseProto {
         return this;
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public Builder addVariant(
           java.lang.String value) {
@@ -1692,7 +1829,7 @@ public final class RegisterResponseProto {
         return this;
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public Builder addAllVariant(
           java.lang.Iterable<java.lang.String> values) {
@@ -1703,16 +1840,16 @@ public final class RegisterResponseProto {
         return this;
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public Builder clearVariant() {
         variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000400);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string variant = 13;</code>
+       * <code>repeated string variant = 14;</code>
        */
       public Builder addVariantBytes(
           com.google.protobuf.ByteString value) {
@@ -1789,15 +1926,16 @@ public final class RegisterResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026RegisterResponse.proto\022\005fanxi\032\020UserDet" +
-      "ail.proto\032\031RestfulBaseResponse.proto\"\371\001\n" +
+      "ail.proto\032\031RestfulBaseResponse.proto\"\220\002\n" +
       "\020RegisterResponse\0220\n\014baseResponse\030\001 \001(\0132" +
       "\032.fanxi.RestfulBaseResponse\022\037\n\004user\030\005 \001(" +
       "\0132\021.fanxi.UserDetail\022\016\n\006server\030\006 \001(\t\022\025\n\r" +
       "isForceUpdate\030\007 \001(\010\022\023\n\013urlDownload\030\010 \001(\t" +
       "\022\031\n\021contentNewVersion\030\t \001(\t\022\013\n\003adv\030\n \001(\t" +
-      "\022\014\n\004type\030\013 \001(\005\022\017\n\007captcha\030\014 \001(\t\022\017\n\007varia" +
-      "nt\030\r \003(\tB2\n\031com.fanxi.service.messageB\025R" +
-      "egisterResponseProtob\006proto3"
+      "\022\014\n\004type\030\013 \001(\005\022\025\n\rregisterToken\030\014 \001(\t\022\017\n" +
+      "\007captcha\030\r \001(\t\022\017\n\007variant\030\016 \003(\tB2\n\031com.f" +
+      "anxi.service.messageB\025RegisterResponsePr",
+      "otob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1818,7 +1956,7 @@ public final class RegisterResponseProto {
     internal_static_fanxi_RegisterResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegisterResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "Captcha", "Variant", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "RegisterToken", "Captcha", "Variant", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

@@ -53,7 +53,6 @@ typedef GPB_ENUM(LoginFacebookRequest_FieldNumber) {
   LoginFacebookRequest_FieldNumber_GcmId = 13,
   LoginFacebookRequest_FieldNumber_PartnerId = 14,
   LoginFacebookRequest_FieldNumber_FacebookToken = 15,
-  LoginFacebookRequest_FieldNumber_ServerChallenge = 16,
 };
 
 @interface LoginFacebookRequest : GPBMessage
@@ -67,8 +66,6 @@ typedef GPB_ENUM(LoginFacebookRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t partnerId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *facebookToken;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
 
 @end
 

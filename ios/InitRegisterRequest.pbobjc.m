@@ -48,12 +48,10 @@ static GPBFileDescriptor *InitRegisterRequestRoot_FileDescriptor(void) {
 @implementation InitRegisterRequest
 
 @dynamic hasBaseReq, baseReq;
-@dynamic deviceId;
 
 typedef struct InitRegisterRequest__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseRequest *baseReq;
-  NSString *deviceId;
 } InitRegisterRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -71,15 +69,6 @@ typedef struct InitRegisterRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
-      {
-        .name = "deviceId",
-        .dataTypeSpecific.className = NULL,
-        .number = InitRegisterRequest_FieldNumber_DeviceId,
-        .hasIndex = 1,
-        .offset = (uint32_t)offsetof(InitRegisterRequest__storage_, deviceId),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[InitRegisterRequest class]
@@ -91,7 +80,7 @@ typedef struct InitRegisterRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\007\000\030\010\000";
+        "\001\001\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

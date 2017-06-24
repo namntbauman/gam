@@ -58,6 +58,7 @@ typedef GPB_ENUM(RestfulBaseRequest_FieldNumber) {
   RestfulBaseRequest_FieldNumber_SdkVersion = 9,
   RestfulBaseRequest_FieldNumber_Mid = 10,
   RestfulBaseRequest_FieldNumber_Lang = 11,
+  RestfulBaseRequest_FieldNumber_DeviceId = 12,
 };
 
 @interface RestfulBaseRequest : GPBMessage
@@ -83,6 +84,8 @@ typedef GPB_ENUM(RestfulBaseRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t mid;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *lang;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @end
 

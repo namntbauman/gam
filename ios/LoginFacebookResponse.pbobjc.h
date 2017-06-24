@@ -58,7 +58,7 @@ typedef GPB_ENUM(LoginFacebookResponse_FieldNumber) {
   LoginFacebookResponse_FieldNumber_ContentNewVersion = 9,
   LoginFacebookResponse_FieldNumber_Adv = 10,
   LoginFacebookResponse_FieldNumber_Type = 11,
-  LoginFacebookResponse_FieldNumber_ServerChallenge = 12,
+  LoginFacebookResponse_FieldNumber_DeviceId = 12,
 };
 
 @interface LoginFacebookResponse : GPBMessage
@@ -83,7 +83,7 @@ typedef GPB_ENUM(LoginFacebookResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int32_t type;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *serverChallenge;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @end
 
