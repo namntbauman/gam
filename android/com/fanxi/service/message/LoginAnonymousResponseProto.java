@@ -95,14 +95,14 @@ public final class LoginAnonymousResponseProto {
     int getType();
 
     /**
-     * <code>string serverChallenge = 12;</code>
+     * <code>string deviceId = 12;</code>
      */
-    java.lang.String getServerChallenge();
+    java.lang.String getDeviceId();
     /**
-     * <code>string serverChallenge = 12;</code>
+     * <code>string deviceId = 12;</code>
      */
     com.google.protobuf.ByteString
-        getServerChallengeBytes();
+        getDeviceIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.LoginAnonymousResponse}
@@ -122,7 +122,7 @@ public final class LoginAnonymousResponseProto {
       contentNewVersion_ = "";
       adv_ = "";
       type_ = 0;
-      serverChallenge_ = "";
+      deviceId_ = "";
     }
 
     @java.lang.Override
@@ -213,7 +213,7 @@ public final class LoginAnonymousResponseProto {
             case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              serverChallenge_ = s;
+              deviceId_ = s;
               break;
             }
           }
@@ -435,34 +435,34 @@ public final class LoginAnonymousResponseProto {
       return type_;
     }
 
-    public static final int SERVERCHALLENGE_FIELD_NUMBER = 12;
-    private volatile java.lang.Object serverChallenge_;
+    public static final int DEVICEID_FIELD_NUMBER = 12;
+    private volatile java.lang.Object deviceId_;
     /**
-     * <code>string serverChallenge = 12;</code>
+     * <code>string deviceId = 12;</code>
      */
-    public java.lang.String getServerChallenge() {
-      java.lang.Object ref = serverChallenge_;
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        serverChallenge_ = s;
+        deviceId_ = s;
         return s;
       }
     }
     /**
-     * <code>string serverChallenge = 12;</code>
+     * <code>string deviceId = 12;</code>
      */
     public com.google.protobuf.ByteString
-        getServerChallengeBytes() {
-      java.lang.Object ref = serverChallenge_;
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        serverChallenge_ = b;
+        deviceId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -505,8 +505,8 @@ public final class LoginAnonymousResponseProto {
       if (type_ != 0) {
         output.writeInt32(11, type_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, serverChallenge_);
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, deviceId_);
       }
     }
 
@@ -543,8 +543,8 @@ public final class LoginAnonymousResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, type_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, serverChallenge_);
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, deviceId_);
       }
       memoizedSize = size;
       return size;
@@ -584,8 +584,8 @@ public final class LoginAnonymousResponseProto {
           .equals(other.getAdv());
       result = result && (getType()
           == other.getType());
-      result = result && getServerChallenge()
-          .equals(other.getServerChallenge());
+      result = result && getDeviceId()
+          .equals(other.getDeviceId());
       return result;
     }
 
@@ -617,8 +617,8 @@ public final class LoginAnonymousResponseProto {
       hash = (53 * hash) + getAdv().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
-      hash = (37 * hash) + SERVERCHALLENGE_FIELD_NUMBER;
-      hash = (53 * hash) + getServerChallenge().hashCode();
+      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -761,7 +761,7 @@ public final class LoginAnonymousResponseProto {
 
         type_ = 0;
 
-        serverChallenge_ = "";
+        deviceId_ = "";
 
         return this;
       }
@@ -801,7 +801,7 @@ public final class LoginAnonymousResponseProto {
         result.contentNewVersion_ = contentNewVersion_;
         result.adv_ = adv_;
         result.type_ = type_;
-        result.serverChallenge_ = serverChallenge_;
+        result.deviceId_ = deviceId_;
         onBuilt();
         return result;
       }
@@ -871,8 +871,8 @@ public final class LoginAnonymousResponseProto {
         if (other.getType() != 0) {
           setType(other.getType());
         }
-        if (!other.getServerChallenge().isEmpty()) {
-          serverChallenge_ = other.serverChallenge_;
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
           onChanged();
         }
         onChanged();
@@ -1463,71 +1463,71 @@ public final class LoginAnonymousResponseProto {
         return this;
       }
 
-      private java.lang.Object serverChallenge_ = "";
+      private java.lang.Object deviceId_ = "";
       /**
-       * <code>string serverChallenge = 12;</code>
+       * <code>string deviceId = 12;</code>
        */
-      public java.lang.String getServerChallenge() {
-        java.lang.Object ref = serverChallenge_;
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          serverChallenge_ = s;
+          deviceId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string serverChallenge = 12;</code>
+       * <code>string deviceId = 12;</code>
        */
       public com.google.protobuf.ByteString
-          getServerChallengeBytes() {
-        java.lang.Object ref = serverChallenge_;
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          serverChallenge_ = b;
+          deviceId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string serverChallenge = 12;</code>
+       * <code>string deviceId = 12;</code>
        */
-      public Builder setServerChallenge(
+      public Builder setDeviceId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        serverChallenge_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string serverChallenge = 12;</code>
+       * <code>string deviceId = 12;</code>
        */
-      public Builder clearServerChallenge() {
+      public Builder clearDeviceId() {
         
-        serverChallenge_ = getDefaultInstance().getServerChallenge();
+        deviceId_ = getDefaultInstance().getDeviceId();
         onChanged();
         return this;
       }
       /**
-       * <code>string serverChallenge = 12;</code>
+       * <code>string deviceId = 12;</code>
        */
-      public Builder setServerChallengeBytes(
+      public Builder setDeviceIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        serverChallenge_ = value;
+        deviceId_ = value;
         onChanged();
         return this;
       }
@@ -1596,14 +1596,14 @@ public final class LoginAnonymousResponseProto {
     java.lang.String[] descriptorData = {
       "\n\033LoginAnonymosResponse.proto\022\005fanxi\032\020Us" +
       "erDetail.proto\032\031RestfulBaseResponse.prot" +
-      "o\"\366\001\n\026LoginAnonymousResponse\0220\n\014baseResp" +
+      "o\"\357\001\n\026LoginAnonymousResponse\0220\n\014baseResp" +
       "onse\030\001 \001(\0132\032.fanxi.RestfulBaseResponse\022\037" +
       "\n\004user\030\005 \001(\0132\021.fanxi.UserDetail\022\016\n\006serve" +
       "r\030\006 \001(\t\022\025\n\risForceUpdate\030\007 \001(\010\022\023\n\013urlDow" +
       "nload\030\010 \001(\t\022\031\n\021contentNewVersion\030\t \001(\t\022\013" +
-      "\n\003adv\030\n \001(\t\022\014\n\004type\030\013 \001(\005\022\027\n\017serverChall" +
-      "enge\030\014 \001(\tB8\n\031com.fanxi.service.messageB" +
-      "\033LoginAnonymousResponseProtob\006proto3"
+      "\n\003adv\030\n \001(\t\022\014\n\004type\030\013 \001(\005\022\020\n\010deviceId\030\014 " +
+      "\001(\tB8\n\031com.fanxi.service.messageB\033LoginA" +
+      "nonymousResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1624,7 +1624,7 @@ public final class LoginAnonymousResponseProto {
     internal_static_fanxi_LoginAnonymousResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginAnonymousResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "ServerChallenge", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

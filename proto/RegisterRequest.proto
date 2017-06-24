@@ -10,8 +10,7 @@ message RegisterRequest {
    string userName=21;
    string password=22;
    int32 partnerId=23;
-   string deviceId=24;
-   string registerToken=25;
-   string variant=26;
+   string registerToken=24;
+   string variant=25;
    
 }

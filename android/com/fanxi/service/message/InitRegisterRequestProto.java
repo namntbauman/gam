@@ -30,16 +30,6 @@ public final class InitRegisterRequestProto {
      * <code>.fanxi.RestfulBaseRequest baseReq = 1;</code>
      */
     com.fanxi.service.message.RestfulBaseRequestProto.RestfulBaseRequestOrBuilder getBaseReqOrBuilder();
-
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    java.lang.String getDeviceId();
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeviceIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.InitRegisterRequest}
@@ -53,7 +43,6 @@ public final class InitRegisterRequestProto {
       super(builder);
     }
     private InitRegisterRequest() {
-      deviceId_ = "";
     }
 
     @java.lang.Override
@@ -92,12 +81,6 @@ public final class InitRegisterRequestProto {
                 baseReq_ = subBuilder.buildPartial();
               }
 
-              break;
-            }
-            case 194: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              deviceId_ = s;
               break;
             }
           }
@@ -144,40 +127,6 @@ public final class InitRegisterRequestProto {
       return getBaseReq();
     }
 
-    public static final int DEVICEID_FIELD_NUMBER = 24;
-    private volatile java.lang.Object deviceId_;
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -193,9 +142,6 @@ public final class InitRegisterRequestProto {
       if (baseReq_ != null) {
         output.writeMessage(1, getBaseReq());
       }
-      if (!getDeviceIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, deviceId_);
-      }
     }
 
     public int getSerializedSize() {
@@ -206,9 +152,6 @@ public final class InitRegisterRequestProto {
       if (baseReq_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseReq());
-      }
-      if (!getDeviceIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, deviceId_);
       }
       memoizedSize = size;
       return size;
@@ -231,8 +174,6 @@ public final class InitRegisterRequestProto {
         result = result && getBaseReq()
             .equals(other.getBaseReq());
       }
-      result = result && getDeviceId()
-          .equals(other.getDeviceId());
       return result;
     }
 
@@ -247,8 +188,6 @@ public final class InitRegisterRequestProto {
         hash = (37 * hash) + BASEREQ_FIELD_NUMBER;
         hash = (53 * hash) + getBaseReq().hashCode();
       }
-      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -373,8 +312,6 @@ public final class InitRegisterRequestProto {
           baseReq_ = null;
           baseReqBuilder_ = null;
         }
-        deviceId_ = "";
-
         return this;
       }
 
@@ -402,7 +339,6 @@ public final class InitRegisterRequestProto {
         } else {
           result.baseReq_ = baseReqBuilder_.build();
         }
-        result.deviceId_ = deviceId_;
         onBuilt();
         return result;
       }
@@ -446,10 +382,6 @@ public final class InitRegisterRequestProto {
         if (other == com.fanxi.service.message.InitRegisterRequestProto.InitRegisterRequest.getDefaultInstance()) return this;
         if (other.hasBaseReq()) {
           mergeBaseReq(other.getBaseReq());
-        }
-        if (!other.getDeviceId().isEmpty()) {
-          deviceId_ = other.deviceId_;
-          onChanged();
         }
         onChanged();
         return this;
@@ -593,75 +525,6 @@ public final class InitRegisterRequestProto {
         }
         return baseReqBuilder_;
       }
-
-      private java.lang.Object deviceId_ = "";
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public java.lang.String getDeviceId() {
-        java.lang.Object ref = deviceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDeviceIdBytes() {
-        java.lang.Object ref = deviceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public Builder setDeviceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deviceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public Builder clearDeviceId() {
-        
-        deviceId_ = getDefaultInstance().getDeviceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public Builder setDeviceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deviceId_ = value;
-        onChanged();
-        return this;
-      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -726,11 +589,10 @@ public final class InitRegisterRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\031InitRegisterRequest.proto\022\005fanxi\032\030Rest" +
-      "fulBaseRequest.proto\"S\n\023InitRegisterRequ" +
+      "fulBaseRequest.proto\"A\n\023InitRegisterRequ" +
       "est\022*\n\007baseReq\030\001 \001(\0132\031.fanxi.RestfulBase" +
-      "Request\022\020\n\010deviceId\030\030 \001(\tB5\n\031com.fanxi.s" +
-      "ervice.messageB\030InitRegisterRequestProto" +
-      "b\006proto3"
+      "RequestB5\n\031com.fanxi.service.messageB\030In" +
+      "itRegisterRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -750,7 +612,7 @@ public final class InitRegisterRequestProto {
     internal_static_fanxi_InitRegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_InitRegisterRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "DeviceId", });
+        new java.lang.String[] { "BaseReq", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 

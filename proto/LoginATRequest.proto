@@ -10,5 +10,4 @@ message LoginATRequest {
    string userName=21;
    int32 partnerId=22;
    string token=23;
-   string serverChallenge=24;
 }

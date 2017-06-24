@@ -87,6 +87,16 @@ public final class BaseRequestProto {
      */
     com.google.protobuf.ByteString
         getLangBytes();
+
+    /**
+     * <code>string deviceId = 9;</code>
+     */
+    java.lang.String getDeviceId();
+    /**
+     * <code>string deviceId = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getDeviceIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.BaseRequest}
@@ -108,6 +118,7 @@ public final class BaseRequestProto {
       userId_ = "";
       mid_ = 0;
       lang_ = "";
+      deviceId_ = "";
     }
 
     @java.lang.Override
@@ -179,6 +190,12 @@ public final class BaseRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               lang_ = s;
+              break;
+            }
+            case 74: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              deviceId_ = s;
               break;
             }
           }
@@ -426,6 +443,40 @@ public final class BaseRequestProto {
       }
     }
 
+    public static final int DEVICEID_FIELD_NUMBER = 9;
+    private volatile java.lang.Object deviceId_;
+    /**
+     * <code>string deviceId = 9;</code>
+     */
+    public java.lang.String getDeviceId() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        deviceId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string deviceId = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDeviceIdBytes() {
+      java.lang.Object ref = deviceId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        deviceId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -462,6 +513,9 @@ public final class BaseRequestProto {
       if (!getLangBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 8, lang_);
       }
+      if (!getDeviceIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, deviceId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -495,6 +549,9 @@ public final class BaseRequestProto {
       if (!getLangBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, lang_);
       }
+      if (!getDeviceIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, deviceId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -527,6 +584,8 @@ public final class BaseRequestProto {
           == other.getMid());
       result = result && getLang()
           .equals(other.getLang());
+      result = result && getDeviceId()
+          .equals(other.getDeviceId());
       return result;
     }
 
@@ -553,6 +612,8 @@ public final class BaseRequestProto {
       hash = (53 * hash) + getMid();
       hash = (37 * hash) + LANG_FIELD_NUMBER;
       hash = (53 * hash) + getLang().hashCode();
+      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
+      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -687,6 +748,8 @@ public final class BaseRequestProto {
 
         lang_ = "";
 
+        deviceId_ = "";
+
         return this;
       }
 
@@ -717,6 +780,7 @@ public final class BaseRequestProto {
         result.userId_ = userId_;
         result.mid_ = mid_;
         result.lang_ = lang_;
+        result.deviceId_ = deviceId_;
         onBuilt();
         return result;
       }
@@ -786,6 +850,10 @@ public final class BaseRequestProto {
         }
         if (!other.getLang().isEmpty()) {
           lang_ = other.lang_;
+          onChanged();
+        }
+        if (!other.getDeviceId().isEmpty()) {
+          deviceId_ = other.deviceId_;
           onChanged();
         }
         onChanged();
@@ -1279,6 +1347,75 @@ public final class BaseRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object deviceId_ = "";
+      /**
+       * <code>string deviceId = 9;</code>
+       */
+      public java.lang.String getDeviceId() {
+        java.lang.Object ref = deviceId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          deviceId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string deviceId = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDeviceIdBytes() {
+        java.lang.Object ref = deviceId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          deviceId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string deviceId = 9;</code>
+       */
+      public Builder setDeviceId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string deviceId = 9;</code>
+       */
+      public Builder clearDeviceId() {
+        
+        deviceId_ = getDefaultInstance().getDeviceId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string deviceId = 9;</code>
+       */
+      public Builder setDeviceIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        deviceId_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1342,12 +1479,13 @@ public final class BaseRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BaseRequest.proto\022\005fanxi\"\215\001\n\013BaseReque" +
+      "\n\021BaseRequest.proto\022\005fanxi\"\237\001\n\013BaseReque" +
       "st\022\022\n\ndeviceType\030\001 \001(\005\022\014\n\004imei\030\002 \001(\t\022\r\n\005" +
       "nonce\030\003 \001(\t\022\023\n\013deviceModel\030\004 \001(\t\022\r\n\005toke" +
       "n\030\005 \001(\t\022\016\n\006userId\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005\022\014\n\004" +
-      "lang\030\010 \001(\tB-\n\031com.fanxi.service.messageB" +
-      "\020BaseRequestProtob\006proto3"
+      "lang\030\010 \001(\t\022\020\n\010deviceId\030\t \001(\tB-\n\031com.fanx" +
+      "i.service.messageB\020BaseRequestProtob\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1366,7 +1504,7 @@ public final class BaseRequestProto {
     internal_static_fanxi_BaseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BaseRequest_descriptor,
-        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", });
+        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", "DeviceId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

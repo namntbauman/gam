@@ -9,6 +9,6 @@ message LoginFacebookRequest {
    string gcmId=13;
    int32 partnerId=14;
    string facebookToken=15;
-  string serverChallenge=16;
+  
    
 }

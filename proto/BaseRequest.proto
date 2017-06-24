@@ -13,4 +13,5 @@ message BaseRequest{
 	string userId=6;
 	int32 mid=7;
 	string lang = 8;
+	string deviceId=9;
 }

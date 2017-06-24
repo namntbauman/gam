@@ -14,7 +14,7 @@ message LoginResponse {
    string contentNewVersion=24;
    string adv=25;
    int32 type=26;
-   string serverChallenge=27;
+   string deviceId=27;
 }
 
 

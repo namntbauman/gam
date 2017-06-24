@@ -65,16 +65,6 @@ public final class LoginATRequestProto {
      */
     com.google.protobuf.ByteString
         getTokenBytes();
-
-    /**
-     * <code>string serverChallenge = 24;</code>
-     */
-    java.lang.String getServerChallenge();
-    /**
-     * <code>string serverChallenge = 24;</code>
-     */
-    com.google.protobuf.ByteString
-        getServerChallengeBytes();
   }
   /**
    * Protobuf type {@code fanxi.LoginATRequest}
@@ -92,7 +82,6 @@ public final class LoginATRequestProto {
       userName_ = "";
       partnerId_ = 0;
       token_ = "";
-      serverChallenge_ = "";
     }
 
     @java.lang.Override
@@ -154,12 +143,6 @@ public final class LoginATRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
-              break;
-            }
-            case 194: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              serverChallenge_ = s;
               break;
             }
           }
@@ -317,40 +300,6 @@ public final class LoginATRequestProto {
       }
     }
 
-    public static final int SERVERCHALLENGE_FIELD_NUMBER = 24;
-    private volatile java.lang.Object serverChallenge_;
-    /**
-     * <code>string serverChallenge = 24;</code>
-     */
-    public java.lang.String getServerChallenge() {
-      java.lang.Object ref = serverChallenge_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        serverChallenge_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string serverChallenge = 24;</code>
-     */
-    public com.google.protobuf.ByteString
-        getServerChallengeBytes() {
-      java.lang.Object ref = serverChallenge_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        serverChallenge_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -378,9 +327,6 @@ public final class LoginATRequestProto {
       if (!getTokenBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 23, token_);
       }
-      if (!getServerChallengeBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, serverChallenge_);
-      }
     }
 
     public int getSerializedSize() {
@@ -404,9 +350,6 @@ public final class LoginATRequestProto {
       }
       if (!getTokenBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, token_);
-      }
-      if (!getServerChallengeBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, serverChallenge_);
       }
       memoizedSize = size;
       return size;
@@ -437,8 +380,6 @@ public final class LoginATRequestProto {
           == other.getPartnerId());
       result = result && getToken()
           .equals(other.getToken());
-      result = result && getServerChallenge()
-          .equals(other.getServerChallenge());
       return result;
     }
 
@@ -461,8 +402,6 @@ public final class LoginATRequestProto {
       hash = (53 * hash) + getPartnerId();
       hash = (37 * hash) + TOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getToken().hashCode();
-      hash = (37 * hash) + SERVERCHALLENGE_FIELD_NUMBER;
-      hash = (53 * hash) + getServerChallenge().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -595,8 +534,6 @@ public final class LoginATRequestProto {
 
         token_ = "";
 
-        serverChallenge_ = "";
-
         return this;
       }
 
@@ -628,7 +565,6 @@ public final class LoginATRequestProto {
         result.userName_ = userName_;
         result.partnerId_ = partnerId_;
         result.token_ = token_;
-        result.serverChallenge_ = serverChallenge_;
         onBuilt();
         return result;
       }
@@ -686,10 +622,6 @@ public final class LoginATRequestProto {
         }
         if (!other.getToken().isEmpty()) {
           token_ = other.token_;
-          onChanged();
-        }
-        if (!other.getServerChallenge().isEmpty()) {
-          serverChallenge_ = other.serverChallenge_;
           onChanged();
         }
         onChanged();
@@ -1067,75 +999,6 @@ public final class LoginATRequestProto {
         onChanged();
         return this;
       }
-
-      private java.lang.Object serverChallenge_ = "";
-      /**
-       * <code>string serverChallenge = 24;</code>
-       */
-      public java.lang.String getServerChallenge() {
-        java.lang.Object ref = serverChallenge_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          serverChallenge_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string serverChallenge = 24;</code>
-       */
-      public com.google.protobuf.ByteString
-          getServerChallengeBytes() {
-        java.lang.Object ref = serverChallenge_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          serverChallenge_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string serverChallenge = 24;</code>
-       */
-      public Builder setServerChallenge(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        serverChallenge_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string serverChallenge = 24;</code>
-       */
-      public Builder clearServerChallenge() {
-        
-        serverChallenge_ = getDefaultInstance().getServerChallenge();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string serverChallenge = 24;</code>
-       */
-      public Builder setServerChallengeBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        serverChallenge_ = value;
-        onChanged();
-        return this;
-      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1200,12 +1063,12 @@ public final class LoginATRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\024LoginATRequest.proto\022\005fanxi\032\030RestfulBa" +
-      "seRequest.proto\"\230\001\n\016LoginATRequest\022*\n\007ba" +
-      "seReq\030\001 \001(\0132\031.fanxi.RestfulBaseRequest\022\r" +
-      "\n\005gcmId\030\024 \001(\t\022\020\n\010userName\030\025 \001(\t\022\021\n\tpartn" +
-      "erId\030\026 \001(\005\022\r\n\005token\030\027 \001(\t\022\027\n\017serverChall" +
-      "enge\030\030 \001(\tB0\n\031com.fanxi.service.messageB" +
-      "\023LoginATRequestProtob\006proto3"
+      "seRequest.proto\"\177\n\016LoginATRequest\022*\n\007bas" +
+      "eReq\030\001 \001(\0132\031.fanxi.RestfulBaseRequest\022\r\n" +
+      "\005gcmId\030\024 \001(\t\022\020\n\010userName\030\025 \001(\t\022\021\n\tpartne" +
+      "rId\030\026 \001(\005\022\r\n\005token\030\027 \001(\tB0\n\031com.fanxi.se" +
+      "rvice.messageB\023LoginATRequestProtob\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1225,7 +1088,7 @@ public final class LoginATRequestProto {
     internal_static_fanxi_LoginATRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginATRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "PartnerId", "Token", "ServerChallenge", });
+        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "PartnerId", "Token", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 

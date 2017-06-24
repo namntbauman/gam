@@ -16,4 +16,5 @@ message RestfulBaseRequest{
     string sdkVersion=9;
     int32 mid =10;
 	string lang=11;
+	string deviceId=12;
 }

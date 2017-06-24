@@ -67,31 +67,21 @@ public final class RegisterRequestProto {
     int getPartnerId();
 
     /**
-     * <code>string deviceId = 24;</code>
-     */
-    java.lang.String getDeviceId();
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    com.google.protobuf.ByteString
-        getDeviceIdBytes();
-
-    /**
-     * <code>string registerToken = 25;</code>
+     * <code>string registerToken = 24;</code>
      */
     java.lang.String getRegisterToken();
     /**
-     * <code>string registerToken = 25;</code>
+     * <code>string registerToken = 24;</code>
      */
     com.google.protobuf.ByteString
         getRegisterTokenBytes();
 
     /**
-     * <code>string variant = 26;</code>
+     * <code>string variant = 25;</code>
      */
     java.lang.String getVariant();
     /**
-     * <code>string variant = 26;</code>
+     * <code>string variant = 25;</code>
      */
     com.google.protobuf.ByteString
         getVariantBytes();
@@ -112,7 +102,6 @@ public final class RegisterRequestProto {
       userName_ = "";
       password_ = "";
       partnerId_ = 0;
-      deviceId_ = "";
       registerToken_ = "";
       variant_ = "";
     }
@@ -181,16 +170,10 @@ public final class RegisterRequestProto {
             case 194: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              deviceId_ = s;
-              break;
-            }
-            case 202: {
-              java.lang.String s = input.readStringRequireUtf8();
-
               registerToken_ = s;
               break;
             }
-            case 210: {
+            case 202: {
               java.lang.String s = input.readStringRequireUtf8();
 
               variant_ = s;
@@ -351,44 +334,10 @@ public final class RegisterRequestProto {
       return partnerId_;
     }
 
-    public static final int DEVICEID_FIELD_NUMBER = 24;
-    private volatile java.lang.Object deviceId_;
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    public java.lang.String getDeviceId() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        deviceId_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string deviceId = 24;</code>
-     */
-    public com.google.protobuf.ByteString
-        getDeviceIdBytes() {
-      java.lang.Object ref = deviceId_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        deviceId_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int REGISTERTOKEN_FIELD_NUMBER = 25;
+    public static final int REGISTERTOKEN_FIELD_NUMBER = 24;
     private volatile java.lang.Object registerToken_;
     /**
-     * <code>string registerToken = 25;</code>
+     * <code>string registerToken = 24;</code>
      */
     public java.lang.String getRegisterToken() {
       java.lang.Object ref = registerToken_;
@@ -403,7 +352,7 @@ public final class RegisterRequestProto {
       }
     }
     /**
-     * <code>string registerToken = 25;</code>
+     * <code>string registerToken = 24;</code>
      */
     public com.google.protobuf.ByteString
         getRegisterTokenBytes() {
@@ -419,10 +368,10 @@ public final class RegisterRequestProto {
       }
     }
 
-    public static final int VARIANT_FIELD_NUMBER = 26;
+    public static final int VARIANT_FIELD_NUMBER = 25;
     private volatile java.lang.Object variant_;
     /**
-     * <code>string variant = 26;</code>
+     * <code>string variant = 25;</code>
      */
     public java.lang.String getVariant() {
       java.lang.Object ref = variant_;
@@ -437,7 +386,7 @@ public final class RegisterRequestProto {
       }
     }
     /**
-     * <code>string variant = 26;</code>
+     * <code>string variant = 25;</code>
      */
     public com.google.protobuf.ByteString
         getVariantBytes() {
@@ -480,14 +429,11 @@ public final class RegisterRequestProto {
       if (partnerId_ != 0) {
         output.writeInt32(23, partnerId_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, deviceId_);
-      }
       if (!getRegisterTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, registerToken_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, registerToken_);
       }
       if (!getVariantBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 26, variant_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 25, variant_);
       }
     }
 
@@ -513,14 +459,11 @@ public final class RegisterRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(23, partnerId_);
       }
-      if (!getDeviceIdBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, deviceId_);
-      }
       if (!getRegisterTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, registerToken_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, registerToken_);
       }
       if (!getVariantBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, variant_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, variant_);
       }
       memoizedSize = size;
       return size;
@@ -551,8 +494,6 @@ public final class RegisterRequestProto {
           .equals(other.getPassword());
       result = result && (getPartnerId()
           == other.getPartnerId());
-      result = result && getDeviceId()
-          .equals(other.getDeviceId());
       result = result && getRegisterToken()
           .equals(other.getRegisterToken());
       result = result && getVariant()
@@ -579,8 +520,6 @@ public final class RegisterRequestProto {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + PARTNERID_FIELD_NUMBER;
       hash = (53 * hash) + getPartnerId();
-      hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
-      hash = (53 * hash) + getDeviceId().hashCode();
       hash = (37 * hash) + REGISTERTOKEN_FIELD_NUMBER;
       hash = (53 * hash) + getRegisterToken().hashCode();
       hash = (37 * hash) + VARIANT_FIELD_NUMBER;
@@ -717,8 +656,6 @@ public final class RegisterRequestProto {
 
         partnerId_ = 0;
 
-        deviceId_ = "";
-
         registerToken_ = "";
 
         variant_ = "";
@@ -754,7 +691,6 @@ public final class RegisterRequestProto {
         result.userName_ = userName_;
         result.password_ = password_;
         result.partnerId_ = partnerId_;
-        result.deviceId_ = deviceId_;
         result.registerToken_ = registerToken_;
         result.variant_ = variant_;
         onBuilt();
@@ -815,10 +751,6 @@ public final class RegisterRequestProto {
         }
         if (other.getPartnerId() != 0) {
           setPartnerId(other.getPartnerId());
-        }
-        if (!other.getDeviceId().isEmpty()) {
-          deviceId_ = other.deviceId_;
-          onChanged();
         }
         if (!other.getRegisterToken().isEmpty()) {
           registerToken_ = other.registerToken_;
@@ -1204,78 +1136,9 @@ public final class RegisterRequestProto {
         return this;
       }
 
-      private java.lang.Object deviceId_ = "";
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public java.lang.String getDeviceId() {
-        java.lang.Object ref = deviceId_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          deviceId_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public com.google.protobuf.ByteString
-          getDeviceIdBytes() {
-        java.lang.Object ref = deviceId_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          deviceId_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public Builder setDeviceId(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        deviceId_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public Builder clearDeviceId() {
-        
-        deviceId_ = getDefaultInstance().getDeviceId();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string deviceId = 24;</code>
-       */
-      public Builder setDeviceIdBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        deviceId_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.lang.Object registerToken_ = "";
       /**
-       * <code>string registerToken = 25;</code>
+       * <code>string registerToken = 24;</code>
        */
       public java.lang.String getRegisterToken() {
         java.lang.Object ref = registerToken_;
@@ -1290,7 +1153,7 @@ public final class RegisterRequestProto {
         }
       }
       /**
-       * <code>string registerToken = 25;</code>
+       * <code>string registerToken = 24;</code>
        */
       public com.google.protobuf.ByteString
           getRegisterTokenBytes() {
@@ -1306,7 +1169,7 @@ public final class RegisterRequestProto {
         }
       }
       /**
-       * <code>string registerToken = 25;</code>
+       * <code>string registerToken = 24;</code>
        */
       public Builder setRegisterToken(
           java.lang.String value) {
@@ -1319,7 +1182,7 @@ public final class RegisterRequestProto {
         return this;
       }
       /**
-       * <code>string registerToken = 25;</code>
+       * <code>string registerToken = 24;</code>
        */
       public Builder clearRegisterToken() {
         
@@ -1328,7 +1191,7 @@ public final class RegisterRequestProto {
         return this;
       }
       /**
-       * <code>string registerToken = 25;</code>
+       * <code>string registerToken = 24;</code>
        */
       public Builder setRegisterTokenBytes(
           com.google.protobuf.ByteString value) {
@@ -1344,7 +1207,7 @@ public final class RegisterRequestProto {
 
       private java.lang.Object variant_ = "";
       /**
-       * <code>string variant = 26;</code>
+       * <code>string variant = 25;</code>
        */
       public java.lang.String getVariant() {
         java.lang.Object ref = variant_;
@@ -1359,7 +1222,7 @@ public final class RegisterRequestProto {
         }
       }
       /**
-       * <code>string variant = 26;</code>
+       * <code>string variant = 25;</code>
        */
       public com.google.protobuf.ByteString
           getVariantBytes() {
@@ -1375,7 +1238,7 @@ public final class RegisterRequestProto {
         }
       }
       /**
-       * <code>string variant = 26;</code>
+       * <code>string variant = 25;</code>
        */
       public Builder setVariant(
           java.lang.String value) {
@@ -1388,7 +1251,7 @@ public final class RegisterRequestProto {
         return this;
       }
       /**
-       * <code>string variant = 26;</code>
+       * <code>string variant = 25;</code>
        */
       public Builder clearVariant() {
         
@@ -1397,7 +1260,7 @@ public final class RegisterRequestProto {
         return this;
       }
       /**
-       * <code>string variant = 26;</code>
+       * <code>string variant = 25;</code>
        */
       public Builder setVariantBytes(
           com.google.protobuf.ByteString value) {
@@ -1474,13 +1337,13 @@ public final class RegisterRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025RegisterRequest.proto\022\005fanxi\032\030RestfulB" +
-      "aseRequest.proto\"\275\001\n\017RegisterRequest\022*\n\007" +
+      "aseRequest.proto\"\253\001\n\017RegisterRequest\022*\n\007" +
       "baseReq\030\001 \001(\0132\031.fanxi.RestfulBaseRequest" +
       "\022\r\n\005gcmId\030\024 \001(\t\022\020\n\010userName\030\025 \001(\t\022\020\n\010pas" +
-      "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\020\n\010device" +
-      "Id\030\030 \001(\t\022\025\n\rregisterToken\030\031 \001(\t\022\017\n\007varia" +
-      "nt\030\032 \001(\tB1\n\031com.fanxi.service.messageB\024R" +
-      "egisterRequestProtob\006proto3"
+      "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\025\n\rregist" +
+      "erToken\030\030 \001(\t\022\017\n\007variant\030\031 \001(\tB1\n\031com.fa" +
+      "nxi.service.messageB\024RegisterRequestProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1500,7 +1363,7 @@ public final class RegisterRequestProto {
     internal_static_fanxi_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegisterRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "DeviceId", "RegisterToken", "Variant", });
+        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "RegisterToken", "Variant", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 
