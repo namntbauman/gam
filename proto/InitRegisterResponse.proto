@@ -6,7 +6,7 @@ option java_outer_classname = "InitRegisterResponseProto";
 
 message InitRegisterResponse {
    RestfulBaseResponse baseResponse=1;
-   string registerToken= 5;
+   string captchaToken= 5;
    string deviceId=6;
    string captcha=7;
    repeated string variant=8;

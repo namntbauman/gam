@@ -67,14 +67,14 @@ public final class RegisterRequestProto {
     int getPartnerId();
 
     /**
-     * <code>string registerToken = 24;</code>
+     * <code>string captchaToken = 24;</code>
      */
-    java.lang.String getRegisterToken();
+    java.lang.String getCaptchaToken();
     /**
-     * <code>string registerToken = 24;</code>
+     * <code>string captchaToken = 24;</code>
      */
     com.google.protobuf.ByteString
-        getRegisterTokenBytes();
+        getCaptchaTokenBytes();
 
     /**
      * <code>string variant = 25;</code>
@@ -102,7 +102,7 @@ public final class RegisterRequestProto {
       userName_ = "";
       password_ = "";
       partnerId_ = 0;
-      registerToken_ = "";
+      captchaToken_ = "";
       variant_ = "";
     }
 
@@ -170,7 +170,7 @@ public final class RegisterRequestProto {
             case 194: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              registerToken_ = s;
+              captchaToken_ = s;
               break;
             }
             case 202: {
@@ -334,34 +334,34 @@ public final class RegisterRequestProto {
       return partnerId_;
     }
 
-    public static final int REGISTERTOKEN_FIELD_NUMBER = 24;
-    private volatile java.lang.Object registerToken_;
+    public static final int CAPTCHATOKEN_FIELD_NUMBER = 24;
+    private volatile java.lang.Object captchaToken_;
     /**
-     * <code>string registerToken = 24;</code>
+     * <code>string captchaToken = 24;</code>
      */
-    public java.lang.String getRegisterToken() {
-      java.lang.Object ref = registerToken_;
+    public java.lang.String getCaptchaToken() {
+      java.lang.Object ref = captchaToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        registerToken_ = s;
+        captchaToken_ = s;
         return s;
       }
     }
     /**
-     * <code>string registerToken = 24;</code>
+     * <code>string captchaToken = 24;</code>
      */
     public com.google.protobuf.ByteString
-        getRegisterTokenBytes() {
-      java.lang.Object ref = registerToken_;
+        getCaptchaTokenBytes() {
+      java.lang.Object ref = captchaToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        registerToken_ = b;
+        captchaToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -429,8 +429,8 @@ public final class RegisterRequestProto {
       if (partnerId_ != 0) {
         output.writeInt32(23, partnerId_);
       }
-      if (!getRegisterTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, registerToken_);
+      if (!getCaptchaTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 24, captchaToken_);
       }
       if (!getVariantBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 25, variant_);
@@ -459,8 +459,8 @@ public final class RegisterRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(23, partnerId_);
       }
-      if (!getRegisterTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, registerToken_);
+      if (!getCaptchaTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, captchaToken_);
       }
       if (!getVariantBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, variant_);
@@ -494,8 +494,8 @@ public final class RegisterRequestProto {
           .equals(other.getPassword());
       result = result && (getPartnerId()
           == other.getPartnerId());
-      result = result && getRegisterToken()
-          .equals(other.getRegisterToken());
+      result = result && getCaptchaToken()
+          .equals(other.getCaptchaToken());
       result = result && getVariant()
           .equals(other.getVariant());
       return result;
@@ -520,8 +520,8 @@ public final class RegisterRequestProto {
       hash = (53 * hash) + getPassword().hashCode();
       hash = (37 * hash) + PARTNERID_FIELD_NUMBER;
       hash = (53 * hash) + getPartnerId();
-      hash = (37 * hash) + REGISTERTOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getRegisterToken().hashCode();
+      hash = (37 * hash) + CAPTCHATOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getCaptchaToken().hashCode();
       hash = (37 * hash) + VARIANT_FIELD_NUMBER;
       hash = (53 * hash) + getVariant().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -656,7 +656,7 @@ public final class RegisterRequestProto {
 
         partnerId_ = 0;
 
-        registerToken_ = "";
+        captchaToken_ = "";
 
         variant_ = "";
 
@@ -691,7 +691,7 @@ public final class RegisterRequestProto {
         result.userName_ = userName_;
         result.password_ = password_;
         result.partnerId_ = partnerId_;
-        result.registerToken_ = registerToken_;
+        result.captchaToken_ = captchaToken_;
         result.variant_ = variant_;
         onBuilt();
         return result;
@@ -752,8 +752,8 @@ public final class RegisterRequestProto {
         if (other.getPartnerId() != 0) {
           setPartnerId(other.getPartnerId());
         }
-        if (!other.getRegisterToken().isEmpty()) {
-          registerToken_ = other.registerToken_;
+        if (!other.getCaptchaToken().isEmpty()) {
+          captchaToken_ = other.captchaToken_;
           onChanged();
         }
         if (!other.getVariant().isEmpty()) {
@@ -1136,71 +1136,71 @@ public final class RegisterRequestProto {
         return this;
       }
 
-      private java.lang.Object registerToken_ = "";
+      private java.lang.Object captchaToken_ = "";
       /**
-       * <code>string registerToken = 24;</code>
+       * <code>string captchaToken = 24;</code>
        */
-      public java.lang.String getRegisterToken() {
-        java.lang.Object ref = registerToken_;
+      public java.lang.String getCaptchaToken() {
+        java.lang.Object ref = captchaToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          registerToken_ = s;
+          captchaToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string registerToken = 24;</code>
+       * <code>string captchaToken = 24;</code>
        */
       public com.google.protobuf.ByteString
-          getRegisterTokenBytes() {
-        java.lang.Object ref = registerToken_;
+          getCaptchaTokenBytes() {
+        java.lang.Object ref = captchaToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          registerToken_ = b;
+          captchaToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string registerToken = 24;</code>
+       * <code>string captchaToken = 24;</code>
        */
-      public Builder setRegisterToken(
+      public Builder setCaptchaToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        registerToken_ = value;
+        captchaToken_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string registerToken = 24;</code>
+       * <code>string captchaToken = 24;</code>
        */
-      public Builder clearRegisterToken() {
+      public Builder clearCaptchaToken() {
         
-        registerToken_ = getDefaultInstance().getRegisterToken();
+        captchaToken_ = getDefaultInstance().getCaptchaToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string registerToken = 24;</code>
+       * <code>string captchaToken = 24;</code>
        */
-      public Builder setRegisterTokenBytes(
+      public Builder setCaptchaTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        registerToken_ = value;
+        captchaToken_ = value;
         onChanged();
         return this;
       }
@@ -1337,13 +1337,13 @@ public final class RegisterRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025RegisterRequest.proto\022\005fanxi\032\030RestfulB" +
-      "aseRequest.proto\"\253\001\n\017RegisterRequest\022*\n\007" +
+      "aseRequest.proto\"\252\001\n\017RegisterRequest\022*\n\007" +
       "baseReq\030\001 \001(\0132\031.fanxi.RestfulBaseRequest" +
       "\022\r\n\005gcmId\030\024 \001(\t\022\020\n\010userName\030\025 \001(\t\022\020\n\010pas" +
-      "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\025\n\rregist" +
-      "erToken\030\030 \001(\t\022\017\n\007variant\030\031 \001(\tB1\n\031com.fa" +
-      "nxi.service.messageB\024RegisterRequestProt" +
-      "ob\006proto3"
+      "sword\030\026 \001(\t\022\021\n\tpartnerId\030\027 \001(\005\022\024\n\014captch" +
+      "aToken\030\030 \001(\t\022\017\n\007variant\030\031 \001(\tB1\n\031com.fan" +
+      "xi.service.messageB\024RegisterRequestProto" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1363,7 +1363,7 @@ public final class RegisterRequestProto {
     internal_static_fanxi_RegisterRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegisterRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "RegisterToken", "Variant", });
+        new java.lang.String[] { "BaseReq", "GcmId", "UserName", "Password", "PartnerId", "CaptchaToken", "Variant", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 

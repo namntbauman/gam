@@ -105,14 +105,14 @@ public final class LoginResponseProto {
         getDeviceIdBytes();
 
     /**
-     * <code>string loginToken = 28;</code>
+     * <code>string captchaToken = 28;</code>
      */
-    java.lang.String getLoginToken();
+    java.lang.String getCaptchaToken();
     /**
-     * <code>string loginToken = 28;</code>
+     * <code>string captchaToken = 28;</code>
      */
     com.google.protobuf.ByteString
-        getLoginTokenBytes();
+        getCaptchaTokenBytes();
 
     /**
      * <code>string captcha = 29;</code>
@@ -162,7 +162,7 @@ public final class LoginResponseProto {
       adv_ = "";
       type_ = 0;
       deviceId_ = "";
-      loginToken_ = "";
+      captchaToken_ = "";
       captcha_ = "";
       variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
@@ -261,7 +261,7 @@ public final class LoginResponseProto {
             case 226: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              loginToken_ = s;
+              captchaToken_ = s;
               break;
             }
             case 234: {
@@ -536,34 +536,34 @@ public final class LoginResponseProto {
       }
     }
 
-    public static final int LOGINTOKEN_FIELD_NUMBER = 28;
-    private volatile java.lang.Object loginToken_;
+    public static final int CAPTCHATOKEN_FIELD_NUMBER = 28;
+    private volatile java.lang.Object captchaToken_;
     /**
-     * <code>string loginToken = 28;</code>
+     * <code>string captchaToken = 28;</code>
      */
-    public java.lang.String getLoginToken() {
-      java.lang.Object ref = loginToken_;
+    public java.lang.String getCaptchaToken() {
+      java.lang.Object ref = captchaToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        loginToken_ = s;
+        captchaToken_ = s;
         return s;
       }
     }
     /**
-     * <code>string loginToken = 28;</code>
+     * <code>string captchaToken = 28;</code>
      */
     public com.google.protobuf.ByteString
-        getLoginTokenBytes() {
-      java.lang.Object ref = loginToken_;
+        getCaptchaTokenBytes() {
+      java.lang.Object ref = captchaToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        loginToken_ = b;
+        captchaToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -672,8 +672,8 @@ public final class LoginResponseProto {
       if (!getDeviceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 27, deviceId_);
       }
-      if (!getLoginTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 28, loginToken_);
+      if (!getCaptchaTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 28, captchaToken_);
       }
       if (!getCaptchaBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 29, captcha_);
@@ -719,8 +719,8 @@ public final class LoginResponseProto {
       if (!getDeviceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(27, deviceId_);
       }
-      if (!getLoginTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, loginToken_);
+      if (!getCaptchaTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(28, captchaToken_);
       }
       if (!getCaptchaBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, captcha_);
@@ -773,8 +773,8 @@ public final class LoginResponseProto {
           == other.getType());
       result = result && getDeviceId()
           .equals(other.getDeviceId());
-      result = result && getLoginToken()
-          .equals(other.getLoginToken());
+      result = result && getCaptchaToken()
+          .equals(other.getCaptchaToken());
       result = result && getCaptcha()
           .equals(other.getCaptcha());
       result = result && getVariantList()
@@ -812,8 +812,8 @@ public final class LoginResponseProto {
       hash = (53 * hash) + getType();
       hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceId().hashCode();
-      hash = (37 * hash) + LOGINTOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getLoginToken().hashCode();
+      hash = (37 * hash) + CAPTCHATOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getCaptchaToken().hashCode();
       hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
       hash = (53 * hash) + getCaptcha().hashCode();
       if (getVariantCount() > 0) {
@@ -964,7 +964,7 @@ public final class LoginResponseProto {
 
         deviceId_ = "";
 
-        loginToken_ = "";
+        captchaToken_ = "";
 
         captcha_ = "";
 
@@ -1011,7 +1011,7 @@ public final class LoginResponseProto {
         result.adv_ = adv_;
         result.type_ = type_;
         result.deviceId_ = deviceId_;
-        result.loginToken_ = loginToken_;
+        result.captchaToken_ = captchaToken_;
         result.captcha_ = captcha_;
         if (((bitField0_ & 0x00000800) == 0x00000800)) {
           variant_ = variant_.getUnmodifiableView();
@@ -1092,8 +1092,8 @@ public final class LoginResponseProto {
           deviceId_ = other.deviceId_;
           onChanged();
         }
-        if (!other.getLoginToken().isEmpty()) {
-          loginToken_ = other.loginToken_;
+        if (!other.getCaptchaToken().isEmpty()) {
+          captchaToken_ = other.captchaToken_;
           onChanged();
         }
         if (!other.getCaptcha().isEmpty()) {
@@ -1768,71 +1768,71 @@ public final class LoginResponseProto {
         return this;
       }
 
-      private java.lang.Object loginToken_ = "";
+      private java.lang.Object captchaToken_ = "";
       /**
-       * <code>string loginToken = 28;</code>
+       * <code>string captchaToken = 28;</code>
        */
-      public java.lang.String getLoginToken() {
-        java.lang.Object ref = loginToken_;
+      public java.lang.String getCaptchaToken() {
+        java.lang.Object ref = captchaToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          loginToken_ = s;
+          captchaToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string loginToken = 28;</code>
+       * <code>string captchaToken = 28;</code>
        */
       public com.google.protobuf.ByteString
-          getLoginTokenBytes() {
-        java.lang.Object ref = loginToken_;
+          getCaptchaTokenBytes() {
+        java.lang.Object ref = captchaToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          loginToken_ = b;
+          captchaToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string loginToken = 28;</code>
+       * <code>string captchaToken = 28;</code>
        */
-      public Builder setLoginToken(
+      public Builder setCaptchaToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        loginToken_ = value;
+        captchaToken_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string loginToken = 28;</code>
+       * <code>string captchaToken = 28;</code>
        */
-      public Builder clearLoginToken() {
+      public Builder clearCaptchaToken() {
         
-        loginToken_ = getDefaultInstance().getLoginToken();
+        captchaToken_ = getDefaultInstance().getCaptchaToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string loginToken = 28;</code>
+       * <code>string captchaToken = 28;</code>
        */
-      public Builder setLoginTokenBytes(
+      public Builder setCaptchaTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        loginToken_ = value;
+        captchaToken_ = value;
         onChanged();
         return this;
       }
@@ -2063,16 +2063,16 @@ public final class LoginResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023LoginResponse.proto\022\005fanxi\032\020UserDetail" +
-      ".proto\032\031RestfulBaseResponse.proto\"\234\002\n\rLo" +
+      ".proto\032\031RestfulBaseResponse.proto\"\236\002\n\rLo" +
       "ginResponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanx" +
       "i.RestfulBaseResponse\022\037\n\004user\030\024 \001(\0132\021.fa" +
       "nxi.UserDetail\022\016\n\006server\030\025 \001(\t\022\025\n\risForc" +
       "eUpdate\030\026 \001(\010\022\023\n\013urlDownload\030\027 \001(\t\022\031\n\021co" +
       "ntentNewVersion\030\030 \001(\t\022\013\n\003adv\030\031 \001(\t\022\014\n\004ty" +
-      "pe\030\032 \001(\005\022\020\n\010deviceId\030\033 \001(\t\022\022\n\nloginToken" +
-      "\030\034 \001(\t\022\017\n\007captcha\030\035 \001(\t\022\017\n\007variant\030\036 \003(\t" +
-      "B/\n\031com.fanxi.service.messageB\022LoginResp",
-      "onseProtob\006proto3"
+      "pe\030\032 \001(\005\022\020\n\010deviceId\030\033 \001(\t\022\024\n\014captchaTok" +
+      "en\030\034 \001(\t\022\017\n\007captcha\030\035 \001(\t\022\017\n\007variant\030\036 \003" +
+      "(\tB/\n\031com.fanxi.service.messageB\022LoginRe",
+      "sponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2093,7 +2093,7 @@ public final class LoginResponseProto {
     internal_static_fanxi_LoginResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", "LoginToken", "Captcha", "Variant", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", "CaptchaToken", "Captcha", "Variant", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

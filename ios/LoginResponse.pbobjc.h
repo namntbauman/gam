@@ -59,7 +59,7 @@ typedef GPB_ENUM(LoginResponse_FieldNumber) {
   LoginResponse_FieldNumber_Adv = 25,
   LoginResponse_FieldNumber_Type = 26,
   LoginResponse_FieldNumber_DeviceId = 27,
-  LoginResponse_FieldNumber_LoginToken = 28,
+  LoginResponse_FieldNumber_CaptchaToken = 28,
   LoginResponse_FieldNumber_Captcha = 29,
   LoginResponse_FieldNumber_VariantArray = 30,
 };
@@ -88,7 +88,7 @@ typedef GPB_ENUM(LoginResponse_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *loginToken;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *captchaToken;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *captcha;
 

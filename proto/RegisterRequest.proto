@@ -10,7 +10,7 @@ message RegisterRequest {
    string userName=21;
    string password=22;
    int32 partnerId=23;
-   string registerToken=24;
+   string captchaToken=24;
    string variant=25;
    
 }
