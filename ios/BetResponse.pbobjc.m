@@ -54,6 +54,7 @@ static GPBFileDescriptor *BetResponseRoot_FileDescriptor(void) {
 @dynamic matchId;
 @dynamic cash;
 @dynamic allTotalCall;
+@dynamic uid;
 @dynamic hasCurrUser, currUser;
 @dynamic hasNextUser, nextUser;
 
@@ -63,6 +64,7 @@ typedef struct BetResponse__storage_ {
   int32_t tableIndex;
   BaseResponse *baseResponse;
   NSString *matchId;
+  NSString *uid;
   UserTo *currUser;
   UserTo *nextUser;
   int64_t cash;
@@ -130,10 +132,19 @@ typedef struct BetResponse__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "uid",
+        .dataTypeSpecific.className = NULL,
+        .number = BetResponse_FieldNumber_Uid,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(BetResponse__storage_, uid),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "currUser",
         .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
         .number = BetResponse_FieldNumber_CurrUser,
-        .hasIndex = 6,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(BetResponse__storage_, currUser),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
@@ -142,7 +153,7 @@ typedef struct BetResponse__storage_ {
         .name = "nextUser",
         .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
         .number = BetResponse_FieldNumber_NextUser,
-        .hasIndex = 7,
+        .hasIndex = 8,
         .offset = (uint32_t)offsetof(BetResponse__storage_, nextUser),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
@@ -158,7 +169,7 @@ typedef struct BetResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\007\001\014\000\004\006\000\005\n\000\006\007\000\010\014\000\t\010\000\n\010\000";
+        "\007\001\014\000\004\006\000\005\n\000\006\007\000\010\014\000\n\010\000\013\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
