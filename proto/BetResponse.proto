@@ -12,8 +12,9 @@ message BetResponse {
    string matchId=6;
    int64 cash=7;
    int64 allTotalCall=8;
-   UserTo currUser=9;
-   UserTo nextUser=10;
+   string uid=9;
+   UserTo currUser=10;
+   UserTo nextUser=11;
 }
 
 
