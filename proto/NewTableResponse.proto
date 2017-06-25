@@ -10,6 +10,8 @@ message NewTableResponse {
    int32 zoneId=4;
    int32 tableIndex=5;
    string matchId=6;
+   int32 cash=7;
+   bool isGold =8;
 }
 
 

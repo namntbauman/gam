@@ -9,4 +9,6 @@ message NewTableRequest {
    int32 zoneId=10;
    int32 levelId=11;
    int32 tableIndex=12;
+   int32 cash=13;
+   bool isGold = 14;
 }

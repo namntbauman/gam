@@ -53,6 +53,8 @@ typedef GPB_ENUM(NewTableRequest_FieldNumber) {
   NewTableRequest_FieldNumber_ZoneId = 10,
   NewTableRequest_FieldNumber_LevelId = 11,
   NewTableRequest_FieldNumber_TableIndex = 12,
+  NewTableRequest_FieldNumber_Cash = 13,
+  NewTableRequest_FieldNumber_IsGold = 14,
 };
 
 @interface NewTableRequest : GPBMessage
@@ -66,6 +68,10 @@ typedef GPB_ENUM(NewTableRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t levelId;
 
 @property(nonatomic, readwrite) int32_t tableIndex;
+
+@property(nonatomic, readwrite) int32_t cash;
+
+@property(nonatomic, readwrite) BOOL isGold;
 
 @end
 

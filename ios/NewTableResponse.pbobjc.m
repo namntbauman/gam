@@ -51,11 +51,14 @@ static GPBFileDescriptor *NewTableResponseRoot_FileDescriptor(void) {
 @dynamic zoneId;
 @dynamic tableIndex;
 @dynamic matchId;
+@dynamic cash;
+@dynamic isGold;
 
 typedef struct NewTableResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t tableIndex;
+  int32_t cash;
   BaseResponse *baseResponse;
   NSString *matchId;
 } NewTableResponse__storage_;
@@ -102,6 +105,24 @@ typedef struct NewTableResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "cash",
+        .dataTypeSpecific.className = NULL,
+        .number = NewTableResponse_FieldNumber_Cash,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(NewTableResponse__storage_, cash),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "isGold",
+        .dataTypeSpecific.className = NULL,
+        .number = NewTableResponse_FieldNumber_IsGold,
+        .hasIndex = 5,
+        .offset = 6,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeBool,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[NewTableResponse class]
@@ -113,7 +134,7 @@ typedef struct NewTableResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\004\006\000\005\n\000\006\007\000";
+        "\005\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

@@ -50,6 +50,16 @@ public final class NewTableResponseProto {
      */
     com.google.protobuf.ByteString
         getMatchIdBytes();
+
+    /**
+     * <code>int32 cash = 7;</code>
+     */
+    int getCash();
+
+    /**
+     * <code>bool isGold = 8;</code>
+     */
+    boolean getIsGold();
   }
   /**
    * Protobuf type {@code fanxi.NewTableResponse}
@@ -66,6 +76,8 @@ public final class NewTableResponseProto {
       zoneId_ = 0;
       tableIndex_ = 0;
       matchId_ = "";
+      cash_ = 0;
+      isGold_ = false;
     }
 
     @java.lang.Override
@@ -120,6 +132,16 @@ public final class NewTableResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               matchId_ = s;
+              break;
+            }
+            case 56: {
+
+              cash_ = input.readInt32();
+              break;
+            }
+            case 64: {
+
+              isGold_ = input.readBool();
               break;
             }
           }
@@ -218,6 +240,24 @@ public final class NewTableResponseProto {
       }
     }
 
+    public static final int CASH_FIELD_NUMBER = 7;
+    private int cash_;
+    /**
+     * <code>int32 cash = 7;</code>
+     */
+    public int getCash() {
+      return cash_;
+    }
+
+    public static final int ISGOLD_FIELD_NUMBER = 8;
+    private boolean isGold_;
+    /**
+     * <code>bool isGold = 8;</code>
+     */
+    public boolean getIsGold() {
+      return isGold_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -242,6 +282,12 @@ public final class NewTableResponseProto {
       if (!getMatchIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, matchId_);
       }
+      if (cash_ != 0) {
+        output.writeInt32(7, cash_);
+      }
+      if (isGold_ != false) {
+        output.writeBool(8, isGold_);
+      }
     }
 
     public int getSerializedSize() {
@@ -263,6 +309,14 @@ public final class NewTableResponseProto {
       }
       if (!getMatchIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, matchId_);
+      }
+      if (cash_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, cash_);
+      }
+      if (isGold_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(8, isGold_);
       }
       memoizedSize = size;
       return size;
@@ -291,6 +345,10 @@ public final class NewTableResponseProto {
           == other.getTableIndex());
       result = result && getMatchId()
           .equals(other.getMatchId());
+      result = result && (getCash()
+          == other.getCash());
+      result = result && (getIsGold()
+          == other.getIsGold());
       return result;
     }
 
@@ -311,6 +369,11 @@ public final class NewTableResponseProto {
       hash = (53 * hash) + getTableIndex();
       hash = (37 * hash) + MATCHID_FIELD_NUMBER;
       hash = (53 * hash) + getMatchId().hashCode();
+      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (53 * hash) + getCash();
+      hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsGold());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -441,6 +504,10 @@ public final class NewTableResponseProto {
 
         matchId_ = "";
 
+        cash_ = 0;
+
+        isGold_ = false;
+
         return this;
       }
 
@@ -471,6 +538,8 @@ public final class NewTableResponseProto {
         result.zoneId_ = zoneId_;
         result.tableIndex_ = tableIndex_;
         result.matchId_ = matchId_;
+        result.cash_ = cash_;
+        result.isGold_ = isGold_;
         onBuilt();
         return result;
       }
@@ -524,6 +593,12 @@ public final class NewTableResponseProto {
         if (!other.getMatchId().isEmpty()) {
           matchId_ = other.matchId_;
           onChanged();
+        }
+        if (other.getCash() != 0) {
+          setCash(other.getCash());
+        }
+        if (other.getIsGold() != false) {
+          setIsGold(other.getIsGold());
         }
         onChanged();
         return this;
@@ -788,6 +863,58 @@ public final class NewTableResponseProto {
         onChanged();
         return this;
       }
+
+      private int cash_ ;
+      /**
+       * <code>int32 cash = 7;</code>
+       */
+      public int getCash() {
+        return cash_;
+      }
+      /**
+       * <code>int32 cash = 7;</code>
+       */
+      public Builder setCash(int value) {
+        
+        cash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 cash = 7;</code>
+       */
+      public Builder clearCash() {
+        
+        cash_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean isGold_ ;
+      /**
+       * <code>bool isGold = 8;</code>
+       */
+      public boolean getIsGold() {
+        return isGold_;
+      }
+      /**
+       * <code>bool isGold = 8;</code>
+       */
+      public Builder setIsGold(boolean value) {
+        
+        isGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isGold = 8;</code>
+       */
+      public Builder clearIsGold() {
+        
+        isGold_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -852,11 +979,12 @@ public final class NewTableResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026NewTableResponse.proto\022\005fanxi\032\022BaseRes" +
-      "ponse.proto\"r\n\020NewTableResponse\022)\n\014baseR" +
-      "esponse\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zo" +
-      "neId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchI" +
-      "d\030\006 \001(\tB2\n\031com.fanxi.service.messageB\025Ne" +
-      "wTableResponseProtob\006proto3"
+      "ponse.proto\"\220\001\n\020NewTableResponse\022)\n\014base" +
+      "Response\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006z" +
+      "oneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007match" +
+      "Id\030\006 \001(\t\022\014\n\004cash\030\007 \001(\005\022\016\n\006isGold\030\010 \001(\010B2" +
+      "\n\031com.fanxi.service.messageB\025NewTableRes" +
+      "ponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -876,7 +1004,7 @@ public final class NewTableResponseProto {
     internal_static_fanxi_NewTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_NewTableResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", "IsGold", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

@@ -53,6 +53,8 @@ typedef GPB_ENUM(NewTableResponse_FieldNumber) {
   NewTableResponse_FieldNumber_ZoneId = 4,
   NewTableResponse_FieldNumber_TableIndex = 5,
   NewTableResponse_FieldNumber_MatchId = 6,
+  NewTableResponse_FieldNumber_Cash = 7,
+  NewTableResponse_FieldNumber_IsGold = 8,
 };
 
 @interface NewTableResponse : GPBMessage
@@ -66,6 +68,10 @@ typedef GPB_ENUM(NewTableResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t tableIndex;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
+
+@property(nonatomic, readwrite) int32_t cash;
+
+@property(nonatomic, readwrite) BOOL isGold;
 
 @end
 
