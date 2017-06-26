@@ -56,7 +56,7 @@ static GPBFileDescriptor *RegisterResponseRoot_FileDescriptor(void) {
 @dynamic contentNewVersion;
 @dynamic adv;
 @dynamic type;
-@dynamic registerToken;
+@dynamic captchaToken;
 @dynamic captcha;
 @dynamic variantArray, variantArray_Count;
 
@@ -69,7 +69,7 @@ typedef struct RegisterResponse__storage_ {
   NSString *URLDownload;
   NSString *contentNewVersion;
   NSString *adv;
-  NSString *registerToken;
+  NSString *captchaToken;
   NSString *captcha;
   NSMutableArray *variantArray;
 } RegisterResponse__storage_;
@@ -153,11 +153,11 @@ typedef struct RegisterResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "registerToken",
+        .name = "captchaToken",
         .dataTypeSpecific.className = NULL,
-        .number = RegisterResponse_FieldNumber_RegisterToken,
+        .number = RegisterResponse_FieldNumber_CaptchaToken,
         .hasIndex = 9,
-        .offset = (uint32_t)offsetof(RegisterResponse__storage_, registerToken),
+        .offset = (uint32_t)offsetof(RegisterResponse__storage_, captchaToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
@@ -190,7 +190,7 @@ typedef struct RegisterResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\014\000\007\r\000\010!!)\000\t\021\000\014\r\000";
+        "\005\001\014\000\007\r\000\010!!)\000\t\021\000\014\014\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

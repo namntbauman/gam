@@ -14,7 +14,7 @@ message RegisterResponse {
    string contentNewVersion=9;
    string adv=10;
    int32 type=11;
-   string registerToken=12;
+   string captchaToken=12;
    string captcha=13;
    repeated string variant=14;
 }
