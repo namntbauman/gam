@@ -1,0 +1,11 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "MiniPokerRequestProto";
+
+message MiniPokerRequest {
+   BaseRequest baseReq=1;
+   bool isGold = 15;
+   int32 cash=16;
+}
