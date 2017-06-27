@@ -42,9 +42,9 @@ public final class MiniPokerResponseProto {
     int getWonCash();
 
     /**
-     * <code>int32 newCash = 6;</code>
+     * <code>int32 cash = 6;</code>
      */
-    int getNewCash();
+    int getCash();
 
     /**
      * <code>bool isGold = 7;</code>
@@ -75,7 +75,7 @@ public final class MiniPokerResponseProto {
     private MiniPokerResponse() {
       timeQuay_ = 0;
       wonCash_ = 0;
-      newCash_ = 0;
+      cash_ = 0;
       isGold_ = false;
       cards_ = "";
     }
@@ -130,7 +130,7 @@ public final class MiniPokerResponseProto {
             }
             case 48: {
 
-              newCash_ = input.readInt32();
+              cash_ = input.readInt32();
               break;
             }
             case 56: {
@@ -206,13 +206,13 @@ public final class MiniPokerResponseProto {
       return wonCash_;
     }
 
-    public static final int NEWCASH_FIELD_NUMBER = 6;
-    private int newCash_;
+    public static final int CASH_FIELD_NUMBER = 6;
+    private int cash_;
     /**
-     * <code>int32 newCash = 6;</code>
+     * <code>int32 cash = 6;</code>
      */
-    public int getNewCash() {
-      return newCash_;
+    public int getCash() {
+      return cash_;
     }
 
     public static final int ISGOLD_FIELD_NUMBER = 7;
@@ -279,8 +279,8 @@ public final class MiniPokerResponseProto {
       if (wonCash_ != 0) {
         output.writeInt32(5, wonCash_);
       }
-      if (newCash_ != 0) {
-        output.writeInt32(6, newCash_);
+      if (cash_ != 0) {
+        output.writeInt32(6, cash_);
       }
       if (isGold_ != false) {
         output.writeBool(7, isGold_);
@@ -307,9 +307,9 @@ public final class MiniPokerResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, wonCash_);
       }
-      if (newCash_ != 0) {
+      if (cash_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, newCash_);
+          .computeInt32Size(6, cash_);
       }
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -343,8 +343,8 @@ public final class MiniPokerResponseProto {
           == other.getTimeQuay());
       result = result && (getWonCash()
           == other.getWonCash());
-      result = result && (getNewCash()
-          == other.getNewCash());
+      result = result && (getCash()
+          == other.getCash());
       result = result && (getIsGold()
           == other.getIsGold());
       result = result && getCards()
@@ -367,8 +367,8 @@ public final class MiniPokerResponseProto {
       hash = (53 * hash) + getTimeQuay();
       hash = (37 * hash) + WONCASH_FIELD_NUMBER;
       hash = (53 * hash) + getWonCash();
-      hash = (37 * hash) + NEWCASH_FIELD_NUMBER;
-      hash = (53 * hash) + getNewCash();
+      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (53 * hash) + getCash();
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
@@ -502,7 +502,7 @@ public final class MiniPokerResponseProto {
 
         wonCash_ = 0;
 
-        newCash_ = 0;
+        cash_ = 0;
 
         isGold_ = false;
 
@@ -537,7 +537,7 @@ public final class MiniPokerResponseProto {
         }
         result.timeQuay_ = timeQuay_;
         result.wonCash_ = wonCash_;
-        result.newCash_ = newCash_;
+        result.cash_ = cash_;
         result.isGold_ = isGold_;
         result.cards_ = cards_;
         onBuilt();
@@ -590,8 +590,8 @@ public final class MiniPokerResponseProto {
         if (other.getWonCash() != 0) {
           setWonCash(other.getWonCash());
         }
-        if (other.getNewCash() != 0) {
-          setNewCash(other.getNewCash());
+        if (other.getCash() != 0) {
+          setCash(other.getCash());
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
@@ -795,28 +795,28 @@ public final class MiniPokerResponseProto {
         return this;
       }
 
-      private int newCash_ ;
+      private int cash_ ;
       /**
-       * <code>int32 newCash = 6;</code>
+       * <code>int32 cash = 6;</code>
        */
-      public int getNewCash() {
-        return newCash_;
+      public int getCash() {
+        return cash_;
       }
       /**
-       * <code>int32 newCash = 6;</code>
+       * <code>int32 cash = 6;</code>
        */
-      public Builder setNewCash(int value) {
+      public Builder setCash(int value) {
         
-        newCash_ = value;
+        cash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 newCash = 6;</code>
+       * <code>int32 cash = 6;</code>
        */
-      public Builder clearNewCash() {
+      public Builder clearCash() {
         
-        newCash_ = 0;
+        cash_ = 0;
         onChanged();
         return this;
       }
@@ -979,12 +979,12 @@ public final class MiniPokerResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027MiniPokerResponse.proto\022\005fanxi\032\031Restfu" +
-      "lBaseResponse.proto\"\230\001\n\021MiniPokerRespons" +
+      "lBaseResponse.proto\"\225\001\n\021MiniPokerRespons" +
       "e\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.RestfulB" +
       "aseResponse\022\020\n\010timeQuay\030\004 \001(\005\022\017\n\007wonCash" +
-      "\030\005 \001(\005\022\017\n\007newCash\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022" +
-      "\r\n\005cards\030\010 \001(\tB3\n\031com.fanxi.service.mess" +
-      "ageB\026MiniPokerResponseProtob\006proto3"
+      "\030\005 \001(\005\022\014\n\004cash\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\r\n\005" +
+      "cards\030\010 \001(\tB3\n\031com.fanxi.service.message" +
+      "B\026MiniPokerResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1004,7 +1004,7 @@ public final class MiniPokerResponseProto {
     internal_static_fanxi_MiniPokerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_MiniPokerResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "TimeQuay", "WonCash", "NewCash", "IsGold", "Cards", });
+        new java.lang.String[] { "BaseResponse", "TimeQuay", "WonCash", "Cash", "IsGold", "Cards", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

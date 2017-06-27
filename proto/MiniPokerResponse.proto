@@ -8,7 +8,7 @@ message MiniPokerResponse {
    RestfulBaseResponse baseResponse=1;
    int32 timeQuay=4;
    int32 wonCash=5;
-   int32 newCash=6;
+   int32 cash=6;
    bool isGold=7;
    string cards=8;
 }

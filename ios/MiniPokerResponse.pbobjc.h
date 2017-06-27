@@ -52,7 +52,7 @@ typedef GPB_ENUM(MiniPokerResponse_FieldNumber) {
   MiniPokerResponse_FieldNumber_BaseResponse = 1,
   MiniPokerResponse_FieldNumber_TimeQuay = 4,
   MiniPokerResponse_FieldNumber_WonCash = 5,
-  MiniPokerResponse_FieldNumber_NewCash = 6,
+  MiniPokerResponse_FieldNumber_Cash = 6,
   MiniPokerResponse_FieldNumber_IsGold = 7,
   MiniPokerResponse_FieldNumber_Cards = 8,
 };
@@ -67,7 +67,7 @@ typedef GPB_ENUM(MiniPokerResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int32_t wonCash;
 
-@property(nonatomic, readwrite) int32_t newCash;
+@property(nonatomic, readwrite) int32_t cash;
 
 @property(nonatomic, readwrite) BOOL isGold;
 

@@ -50,7 +50,7 @@ static GPBFileDescriptor *MiniPokerResponseRoot_FileDescriptor(void) {
 @dynamic hasBaseResponse, baseResponse;
 @dynamic timeQuay;
 @dynamic wonCash;
-@dynamic newCash;
+@dynamic cash;
 @dynamic isGold;
 @dynamic cards;
 
@@ -58,7 +58,7 @@ typedef struct MiniPokerResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t timeQuay;
   int32_t wonCash;
-  int32_t newCash;
+  int32_t cash;
   RestfulBaseResponse *baseResponse;
   NSString *cards;
 } MiniPokerResponse__storage_;
@@ -97,12 +97,12 @@ typedef struct MiniPokerResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "newCash",
+        .name = "cash",
         .dataTypeSpecific.className = NULL,
-        .number = MiniPokerResponse_FieldNumber_NewCash,
+        .number = MiniPokerResponse_FieldNumber_Cash,
         .hasIndex = 3,
-        .offset = (uint32_t)offsetof(MiniPokerResponse__storage_, newCash),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .offset = (uint32_t)offsetof(MiniPokerResponse__storage_, cash),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {
@@ -134,7 +134,7 @@ typedef struct MiniPokerResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\014\000\004\010\000\005\007\000\006\007\000\007\006\000";
+        "\004\001\014\000\004\010\000\005\007\000\007\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
