@@ -19,6 +19,7 @@ message Player{
 	string eatingCards=12;
 	string haPhomCards=13;
 	bool isOwner=14;
+	int32 bonusMoney =15;
 }
 
 

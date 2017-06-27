@@ -102,23 +102,52 @@ public final class TurnResponseProto {
     boolean getIsNewRound();
 
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>int32 autoTime = 14;</code>
+     */
+    int getAutoTime();
+
+    /**
+     * <code>repeated string fightInfo = 15;</code>
      */
     java.util.List<java.lang.String>
         getFightInfoList();
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     int getFightInfoCount();
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     java.lang.String getFightInfo(int index);
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     com.google.protobuf.ByteString
         getFightInfoBytes(int index);
+
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    java.util.List<com.fanxi.service.message.PlayerProto.Player> 
+        getFightPlayersList();
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    com.fanxi.service.message.PlayerProto.Player getFightPlayers(int index);
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    int getFightPlayersCount();
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+        getFightPlayersOrBuilderList();
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    com.fanxi.service.message.PlayerProto.PlayerOrBuilder getFightPlayersOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code fanxi.TurnResponse}
@@ -142,7 +171,9 @@ public final class TurnResponseProto {
       isDuty_ = false;
       isGiveup_ = false;
       isNewRound_ = false;
+      autoTime_ = 0;
       fightInfo_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      fightPlayers_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -237,13 +268,27 @@ public final class TurnResponseProto {
               isNewRound_ = input.readBool();
               break;
             }
-            case 114: {
+            case 112: {
+
+              autoTime_ = input.readInt32();
+              break;
+            }
+            case 122: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
                 fightInfo_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000800;
+                mutable_bitField0_ |= 0x00001000;
               }
               fightInfo_.add(s);
+              break;
+            }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                fightPlayers_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
+                mutable_bitField0_ |= 0x00002000;
+              }
+              fightPlayers_.add(
+                  input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
               break;
             }
           }
@@ -254,8 +299,11 @@ public final class TurnResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+        if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
           fightInfo_ = fightInfo_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+          fightPlayers_ = java.util.Collections.unmodifiableList(fightPlayers_);
         }
         makeExtensionsImmutable();
       }
@@ -484,33 +532,77 @@ public final class TurnResponseProto {
       return isNewRound_;
     }
 
-    public static final int FIGHTINFO_FIELD_NUMBER = 14;
+    public static final int AUTOTIME_FIELD_NUMBER = 14;
+    private int autoTime_;
+    /**
+     * <code>int32 autoTime = 14;</code>
+     */
+    public int getAutoTime() {
+      return autoTime_;
+    }
+
+    public static final int FIGHTINFO_FIELD_NUMBER = 15;
     private com.google.protobuf.LazyStringList fightInfo_;
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getFightInfoList() {
       return fightInfo_;
     }
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     public int getFightInfoCount() {
       return fightInfo_.size();
     }
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     public java.lang.String getFightInfo(int index) {
       return fightInfo_.get(index);
     }
     /**
-     * <code>repeated string fightInfo = 14;</code>
+     * <code>repeated string fightInfo = 15;</code>
      */
     public com.google.protobuf.ByteString
         getFightInfoBytes(int index) {
       return fightInfo_.getByteString(index);
+    }
+
+    public static final int FIGHTPLAYERS_FIELD_NUMBER = 16;
+    private java.util.List<com.fanxi.service.message.PlayerProto.Player> fightPlayers_;
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    public java.util.List<com.fanxi.service.message.PlayerProto.Player> getFightPlayersList() {
+      return fightPlayers_;
+    }
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+        getFightPlayersOrBuilderList() {
+      return fightPlayers_;
+    }
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    public int getFightPlayersCount() {
+      return fightPlayers_.size();
+    }
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    public com.fanxi.service.message.PlayerProto.Player getFightPlayers(int index) {
+      return fightPlayers_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+     */
+    public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getFightPlayersOrBuilder(
+        int index) {
+      return fightPlayers_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -558,8 +650,14 @@ public final class TurnResponseProto {
       if (isNewRound_ != false) {
         output.writeBool(13, isNewRound_);
       }
+      if (autoTime_ != 0) {
+        output.writeInt32(14, autoTime_);
+      }
       for (int i = 0; i < fightInfo_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, fightInfo_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, fightInfo_.getRaw(i));
+      }
+      for (int i = 0; i < fightPlayers_.size(); i++) {
+        output.writeMessage(16, fightPlayers_.get(i));
       }
     }
 
@@ -608,6 +706,10 @@ public final class TurnResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(13, isNewRound_);
       }
+      if (autoTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, autoTime_);
+      }
       {
         int dataSize = 0;
         for (int i = 0; i < fightInfo_.size(); i++) {
@@ -615,6 +717,10 @@ public final class TurnResponseProto {
         }
         size += dataSize;
         size += 1 * getFightInfoList().size();
+      }
+      for (int i = 0; i < fightPlayers_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(16, fightPlayers_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -657,8 +763,12 @@ public final class TurnResponseProto {
           == other.getIsGiveup());
       result = result && (getIsNewRound()
           == other.getIsNewRound());
+      result = result && (getAutoTime()
+          == other.getAutoTime());
       result = result && getFightInfoList()
           .equals(other.getFightInfoList());
+      result = result && getFightPlayersList()
+          .equals(other.getFightPlayersList());
       return result;
     }
 
@@ -696,9 +806,15 @@ public final class TurnResponseProto {
       hash = (37 * hash) + ISNEWROUND_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsNewRound());
+      hash = (37 * hash) + AUTOTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoTime();
       if (getFightInfoCount() > 0) {
         hash = (37 * hash) + FIGHTINFO_FIELD_NUMBER;
         hash = (53 * hash) + getFightInfoList().hashCode();
+      }
+      if (getFightPlayersCount() > 0) {
+        hash = (37 * hash) + FIGHTPLAYERS_FIELD_NUMBER;
+        hash = (53 * hash) + getFightPlayersList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -814,6 +930,7 @@ public final class TurnResponseProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getFightPlayersFieldBuilder();
         }
       }
       public Builder clear() {
@@ -844,8 +961,16 @@ public final class TurnResponseProto {
 
         isNewRound_ = false;
 
+        autoTime_ = 0;
+
         fightInfo_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
+        if (fightPlayersBuilder_ == null) {
+          fightPlayers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+        } else {
+          fightPlayersBuilder_.clear();
+        }
         return this;
       }
 
@@ -885,11 +1010,21 @@ public final class TurnResponseProto {
         result.isDuty_ = isDuty_;
         result.isGiveup_ = isGiveup_;
         result.isNewRound_ = isNewRound_;
-        if (((bitField0_ & 0x00000800) == 0x00000800)) {
+        result.autoTime_ = autoTime_;
+        if (((bitField0_ & 0x00001000) == 0x00001000)) {
           fightInfo_ = fightInfo_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000800);
+          bitField0_ = (bitField0_ & ~0x00001000);
         }
         result.fightInfo_ = fightInfo_;
+        if (fightPlayersBuilder_ == null) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
+            fightPlayers_ = java.util.Collections.unmodifiableList(fightPlayers_);
+            bitField0_ = (bitField0_ & ~0x00002000);
+          }
+          result.fightPlayers_ = fightPlayers_;
+        } else {
+          result.fightPlayers_ = fightPlayersBuilder_.build();
+        }
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -969,15 +1104,44 @@ public final class TurnResponseProto {
         if (other.getIsNewRound() != false) {
           setIsNewRound(other.getIsNewRound());
         }
+        if (other.getAutoTime() != 0) {
+          setAutoTime(other.getAutoTime());
+        }
         if (!other.fightInfo_.isEmpty()) {
           if (fightInfo_.isEmpty()) {
             fightInfo_ = other.fightInfo_;
-            bitField0_ = (bitField0_ & ~0x00000800);
+            bitField0_ = (bitField0_ & ~0x00001000);
           } else {
             ensureFightInfoIsMutable();
             fightInfo_.addAll(other.fightInfo_);
           }
           onChanged();
+        }
+        if (fightPlayersBuilder_ == null) {
+          if (!other.fightPlayers_.isEmpty()) {
+            if (fightPlayers_.isEmpty()) {
+              fightPlayers_ = other.fightPlayers_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+            } else {
+              ensureFightPlayersIsMutable();
+              fightPlayers_.addAll(other.fightPlayers_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.fightPlayers_.isEmpty()) {
+            if (fightPlayersBuilder_.isEmpty()) {
+              fightPlayersBuilder_.dispose();
+              fightPlayersBuilder_ = null;
+              fightPlayers_ = other.fightPlayers_;
+              bitField0_ = (bitField0_ & ~0x00002000);
+              fightPlayersBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getFightPlayersFieldBuilder() : null;
+            } else {
+              fightPlayersBuilder_.addAllMessages(other.fightPlayers_);
+            }
+          }
         }
         onChanged();
         return this;
@@ -1555,41 +1719,67 @@ public final class TurnResponseProto {
         return this;
       }
 
+      private int autoTime_ ;
+      /**
+       * <code>int32 autoTime = 14;</code>
+       */
+      public int getAutoTime() {
+        return autoTime_;
+      }
+      /**
+       * <code>int32 autoTime = 14;</code>
+       */
+      public Builder setAutoTime(int value) {
+        
+        autoTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 autoTime = 14;</code>
+       */
+      public Builder clearAutoTime() {
+        
+        autoTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList fightInfo_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureFightInfoIsMutable() {
-        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
+        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
           fightInfo_ = new com.google.protobuf.LazyStringArrayList(fightInfo_);
-          bitField0_ |= 0x00000800;
+          bitField0_ |= 0x00001000;
          }
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getFightInfoList() {
         return fightInfo_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public int getFightInfoCount() {
         return fightInfo_.size();
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public java.lang.String getFightInfo(int index) {
         return fightInfo_.get(index);
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public com.google.protobuf.ByteString
           getFightInfoBytes(int index) {
         return fightInfo_.getByteString(index);
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public Builder setFightInfo(
           int index, java.lang.String value) {
@@ -1602,7 +1792,7 @@ public final class TurnResponseProto {
         return this;
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public Builder addFightInfo(
           java.lang.String value) {
@@ -1615,7 +1805,7 @@ public final class TurnResponseProto {
         return this;
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public Builder addAllFightInfo(
           java.lang.Iterable<java.lang.String> values) {
@@ -1626,16 +1816,16 @@ public final class TurnResponseProto {
         return this;
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public Builder clearFightInfo() {
         fightInfo_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000800);
+        bitField0_ = (bitField0_ & ~0x00001000);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string fightInfo = 14;</code>
+       * <code>repeated string fightInfo = 15;</code>
        */
       public Builder addFightInfoBytes(
           com.google.protobuf.ByteString value) {
@@ -1647,6 +1837,246 @@ public final class TurnResponseProto {
         fightInfo_.add(value);
         onChanged();
         return this;
+      }
+
+      private java.util.List<com.fanxi.service.message.PlayerProto.Player> fightPlayers_ =
+        java.util.Collections.emptyList();
+      private void ensureFightPlayersIsMutable() {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
+          fightPlayers_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(fightPlayers_);
+          bitField0_ |= 0x00002000;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> fightPlayersBuilder_;
+
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public java.util.List<com.fanxi.service.message.PlayerProto.Player> getFightPlayersList() {
+        if (fightPlayersBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(fightPlayers_);
+        } else {
+          return fightPlayersBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public int getFightPlayersCount() {
+        if (fightPlayersBuilder_ == null) {
+          return fightPlayers_.size();
+        } else {
+          return fightPlayersBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player getFightPlayers(int index) {
+        if (fightPlayersBuilder_ == null) {
+          return fightPlayers_.get(index);
+        } else {
+          return fightPlayersBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder setFightPlayers(
+          int index, com.fanxi.service.message.PlayerProto.Player value) {
+        if (fightPlayersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFightPlayersIsMutable();
+          fightPlayers_.set(index, value);
+          onChanged();
+        } else {
+          fightPlayersBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder setFightPlayers(
+          int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
+        if (fightPlayersBuilder_ == null) {
+          ensureFightPlayersIsMutable();
+          fightPlayers_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          fightPlayersBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder addFightPlayers(com.fanxi.service.message.PlayerProto.Player value) {
+        if (fightPlayersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFightPlayersIsMutable();
+          fightPlayers_.add(value);
+          onChanged();
+        } else {
+          fightPlayersBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder addFightPlayers(
+          int index, com.fanxi.service.message.PlayerProto.Player value) {
+        if (fightPlayersBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureFightPlayersIsMutable();
+          fightPlayers_.add(index, value);
+          onChanged();
+        } else {
+          fightPlayersBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder addFightPlayers(
+          com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
+        if (fightPlayersBuilder_ == null) {
+          ensureFightPlayersIsMutable();
+          fightPlayers_.add(builderForValue.build());
+          onChanged();
+        } else {
+          fightPlayersBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder addFightPlayers(
+          int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
+        if (fightPlayersBuilder_ == null) {
+          ensureFightPlayersIsMutable();
+          fightPlayers_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          fightPlayersBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder addAllFightPlayers(
+          java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
+        if (fightPlayersBuilder_ == null) {
+          ensureFightPlayersIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, fightPlayers_);
+          onChanged();
+        } else {
+          fightPlayersBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder clearFightPlayers() {
+        if (fightPlayersBuilder_ == null) {
+          fightPlayers_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00002000);
+          onChanged();
+        } else {
+          fightPlayersBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public Builder removeFightPlayers(int index) {
+        if (fightPlayersBuilder_ == null) {
+          ensureFightPlayersIsMutable();
+          fightPlayers_.remove(index);
+          onChanged();
+        } else {
+          fightPlayersBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player.Builder getFightPlayersBuilder(
+          int index) {
+        return getFightPlayersFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getFightPlayersOrBuilder(
+          int index) {
+        if (fightPlayersBuilder_ == null) {
+          return fightPlayers_.get(index);  } else {
+          return fightPlayersBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+           getFightPlayersOrBuilderList() {
+        if (fightPlayersBuilder_ != null) {
+          return fightPlayersBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(fightPlayers_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player.Builder addFightPlayersBuilder() {
+        return getFightPlayersFieldBuilder().addBuilder(
+            com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public com.fanxi.service.message.PlayerProto.Player.Builder addFightPlayersBuilder(
+          int index) {
+        return getFightPlayersFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.Player fightPlayers = 16;</code>
+       */
+      public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
+           getFightPlayersBuilderList() {
+        return getFightPlayersFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
+          getFightPlayersFieldBuilder() {
+        if (fightPlayersBuilder_ == null) {
+          fightPlayersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
+                  fightPlayers_,
+                  ((bitField0_ & 0x00002000) == 0x00002000),
+                  getParentForChildren(),
+                  isClean());
+          fightPlayers_ = null;
+        }
+        return fightPlayersBuilder_;
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1712,15 +2142,16 @@ public final class TurnResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022TurnResponse.proto\022\005fanxi\032\022BaseRespons" +
-      "e.proto\"\377\001\n\014TurnResponse\022)\n\014baseResponse" +
-      "\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneId\030\004 " +
-      "\001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006 \001(\t" +
-      "\022\020\n\010phomCard\030\007 \001(\005\022\016\n\006nextId\030\010 \001(\t\022\016\n\006cu" +
-      "rrId\030\t \001(\t\022\024\n\014tienlenCards\030\n \001(\t\022\016\n\006isDu" +
-      "ty\030\013 \001(\010\022\020\n\010isGiveup\030\014 \001(\010\022\022\n\nisNewRound" +
-      "\030\r \001(\010\022\021\n\tfightInfo\030\016 \003(\tB.\n\031com.fanxi.s" +
-      "ervice.messageB\021TurnResponseProtob\006proto" +
-      "3"
+      "e.proto\032\014Player.proto\"\266\002\n\014TurnResponse\022)" +
+      "\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseRespons" +
+      "e\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n" +
+      "\007matchId\030\006 \001(\t\022\020\n\010phomCard\030\007 \001(\005\022\016\n\006next" +
+      "Id\030\010 \001(\t\022\016\n\006currId\030\t \001(\t\022\024\n\014tienlenCards" +
+      "\030\n \001(\t\022\016\n\006isDuty\030\013 \001(\010\022\020\n\010isGiveup\030\014 \001(\010" +
+      "\022\022\n\nisNewRound\030\r \001(\010\022\020\n\010autoTime\030\016 \001(\005\022\021" +
+      "\n\tfightInfo\030\017 \003(\t\022#\n\014fightPlayers\030\020 \003(\0132" +
+      "\r.fanxi.PlayerB.\n\031com.fanxi.service.mess",
+      "ageB\021TurnResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1734,14 +2165,16 @@ public final class TurnResponseProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.fanxi.service.message.BaseResponseProto.getDescriptor(),
+          com.fanxi.service.message.PlayerProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_TurnResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_TurnResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_TurnResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "PhomCard", "NextId", "CurrId", "TienlenCards", "IsDuty", "IsGiveup", "IsNewRound", "FightInfo", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "PhomCard", "NextId", "CurrId", "TienlenCards", "IsDuty", "IsGiveup", "IsNewRound", "AutoTime", "FightInfo", "FightPlayers", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
+    com.fanxi.service.message.PlayerProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

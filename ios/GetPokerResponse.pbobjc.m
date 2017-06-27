@@ -55,6 +55,7 @@ static GPBFileDescriptor *GetPokerResponseRoot_FileDescriptor(void) {
 @dynamic cards;
 @dynamic beginId;
 @dynamic dutyType;
+@dynamic autoTime;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct GetPokerResponse__storage_ {
@@ -62,6 +63,7 @@ typedef struct GetPokerResponse__storage_ {
   int32_t zoneId;
   int32_t tableIndex;
   int32_t dutyType;
+  int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *cards;
@@ -139,6 +141,15 @@ typedef struct GetPokerResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "autoTime",
+        .dataTypeSpecific.className = NULL,
+        .number = GetPokerResponse_FieldNumber_AutoTime,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(GetPokerResponse__storage_, autoTime),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "playersArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = GetPokerResponse_FieldNumber_PlayersArray,
@@ -158,7 +169,7 @@ typedef struct GetPokerResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\001\014\000\004\006\000\005\n\000\006\007\000\010\007\000\t\010\000";
+        "\007\001\014\000\004\006\000\005\n\000\006\007\000\010\007\000\t\010\000\n\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

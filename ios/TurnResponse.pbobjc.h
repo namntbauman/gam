@@ -28,6 +28,7 @@
 CF_EXTERN_C_BEGIN
 
 @class BaseResponse;
+@class Player;
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -60,7 +61,9 @@ typedef GPB_ENUM(TurnResponse_FieldNumber) {
   TurnResponse_FieldNumber_IsDuty = 11,
   TurnResponse_FieldNumber_IsGiveup = 12,
   TurnResponse_FieldNumber_IsNewRound = 13,
-  TurnResponse_FieldNumber_FightInfoArray = 14,
+  TurnResponse_FieldNumber_AutoTime = 14,
+  TurnResponse_FieldNumber_FightInfoArray = 15,
+  TurnResponse_FieldNumber_FightPlayersArray = 16,
 };
 
 @interface TurnResponse : GPBMessage
@@ -89,9 +92,15 @@ typedef GPB_ENUM(TurnResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) BOOL isNewRound;
 
+@property(nonatomic, readwrite) int32_t autoTime;
+
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *fightInfoArray;
 /** The number of items in @c fightInfoArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger fightInfoArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *fightPlayersArray;
+/** The number of items in @c fightPlayersArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger fightPlayersArray_Count;
 
 @end
 

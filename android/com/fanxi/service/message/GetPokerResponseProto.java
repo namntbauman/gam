@@ -77,25 +77,30 @@ public final class GetPokerResponseProto {
     int getDutyType();
 
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>int32 autoTime = 10;</code>
+     */
+    int getAutoTime();
+
+    /**
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     java.util.List<com.fanxi.service.message.PlayerProto.Player> 
         getPlayersList();
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     com.fanxi.service.message.PlayerProto.Player getPlayers(int index);
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     int getPlayersCount();
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList();
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index);
@@ -118,6 +123,7 @@ public final class GetPokerResponseProto {
       cards_ = "";
       beginId_ = "";
       dutyType_ = 0;
+      autoTime_ = 0;
       players_ = java.util.Collections.emptyList();
     }
 
@@ -192,10 +198,15 @@ public final class GetPokerResponseProto {
               dutyType_ = input.readInt32();
               break;
             }
-            case 82: {
-              if (!((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+            case 80: {
+
+              autoTime_ = input.readInt32();
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
                 players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
-                mutable_bitField0_ |= 0x00000080;
+                mutable_bitField0_ |= 0x00000100;
               }
               players_.add(
                   input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
@@ -209,7 +220,7 @@ public final class GetPokerResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           players_ = java.util.Collections.unmodifiableList(players_);
         }
         makeExtensionsImmutable();
@@ -378,35 +389,44 @@ public final class GetPokerResponseProto {
       return dutyType_;
     }
 
-    public static final int PLAYERS_FIELD_NUMBER = 10;
+    public static final int AUTOTIME_FIELD_NUMBER = 10;
+    private int autoTime_;
+    /**
+     * <code>int32 autoTime = 10;</code>
+     */
+    public int getAutoTime() {
+      return autoTime_;
+    }
+
+    public static final int PLAYERS_FIELD_NUMBER = 11;
     private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_;
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     public int getPlayersCount() {
       return players_.size();
     }
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
       return players_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Player players = 10;</code>
+     * <code>repeated .fanxi.Player players = 11;</code>
      */
     public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index) {
@@ -446,8 +466,11 @@ public final class GetPokerResponseProto {
       if (dutyType_ != 0) {
         output.writeInt32(9, dutyType_);
       }
+      if (autoTime_ != 0) {
+        output.writeInt32(10, autoTime_);
+      }
       for (int i = 0; i < players_.size(); i++) {
-        output.writeMessage(10, players_.get(i));
+        output.writeMessage(11, players_.get(i));
       }
     }
 
@@ -481,9 +504,13 @@ public final class GetPokerResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, dutyType_);
       }
+      if (autoTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, autoTime_);
+      }
       for (int i = 0; i < players_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(10, players_.get(i));
+          .computeMessageSize(11, players_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -518,6 +545,8 @@ public final class GetPokerResponseProto {
           .equals(other.getBeginId());
       result = result && (getDutyType()
           == other.getDutyType());
+      result = result && (getAutoTime()
+          == other.getAutoTime());
       result = result && getPlayersList()
           .equals(other.getPlayersList());
       return result;
@@ -546,6 +575,8 @@ public final class GetPokerResponseProto {
       hash = (53 * hash) + getBeginId().hashCode();
       hash = (37 * hash) + DUTYTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getDutyType();
+      hash = (37 * hash) + AUTOTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoTime();
       if (getPlayersCount() > 0) {
         hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
         hash = (53 * hash) + getPlayersList().hashCode();
@@ -687,9 +718,11 @@ public final class GetPokerResponseProto {
 
         dutyType_ = 0;
 
+        autoTime_ = 0;
+
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           playersBuilder_.clear();
         }
@@ -728,10 +761,11 @@ public final class GetPokerResponseProto {
         result.cards_ = cards_;
         result.beginId_ = beginId_;
         result.dutyType_ = dutyType_;
+        result.autoTime_ = autoTime_;
         if (playersBuilder_ == null) {
-          if (((bitField0_ & 0x00000080) == 0x00000080)) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
             players_ = java.util.Collections.unmodifiableList(players_);
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.players_ = players_;
         } else {
@@ -803,11 +837,14 @@ public final class GetPokerResponseProto {
         if (other.getDutyType() != 0) {
           setDutyType(other.getDutyType());
         }
+        if (other.getAutoTime() != 0) {
+          setAutoTime(other.getAutoTime());
+        }
         if (playersBuilder_ == null) {
           if (!other.players_.isEmpty()) {
             if (players_.isEmpty()) {
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensurePlayersIsMutable();
               players_.addAll(other.players_);
@@ -820,7 +857,7 @@ public final class GetPokerResponseProto {
               playersBuilder_.dispose();
               playersBuilder_ = null;
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00000080);
+              bitField0_ = (bitField0_ & ~0x00000100);
               playersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayersFieldBuilder() : null;
@@ -1258,12 +1295,38 @@ public final class GetPokerResponseProto {
         return this;
       }
 
+      private int autoTime_ ;
+      /**
+       * <code>int32 autoTime = 10;</code>
+       */
+      public int getAutoTime() {
+        return autoTime_;
+      }
+      /**
+       * <code>int32 autoTime = 10;</code>
+       */
+      public Builder setAutoTime(int value) {
+        
+        autoTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 autoTime = 10;</code>
+       */
+      public Builder clearAutoTime() {
+        
+        autoTime_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_ =
         java.util.Collections.emptyList();
       private void ensurePlayersIsMutable() {
-        if (!((bitField0_ & 0x00000080) == 0x00000080)) {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
           players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(players_);
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -1271,7 +1334,7 @@ public final class GetPokerResponseProto {
           com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> playersBuilder_;
 
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
         if (playersBuilder_ == null) {
@@ -1281,7 +1344,7 @@ public final class GetPokerResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public int getPlayersCount() {
         if (playersBuilder_ == null) {
@@ -1291,7 +1354,7 @@ public final class GetPokerResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
         if (playersBuilder_ == null) {
@@ -1301,7 +1364,7 @@ public final class GetPokerResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1318,7 +1381,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1332,7 +1395,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder addPlayers(com.fanxi.service.message.PlayerProto.Player value) {
         if (playersBuilder_ == null) {
@@ -1348,7 +1411,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1365,7 +1428,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder addPlayers(
           com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1379,7 +1442,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1393,7 +1456,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder addAllPlayers(
           java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
@@ -1408,12 +1471,12 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder clearPlayers() {
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           playersBuilder_.clear();
@@ -1421,7 +1484,7 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public Builder removePlayers(int index) {
         if (playersBuilder_ == null) {
@@ -1434,14 +1497,14 @@ public final class GetPokerResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder getPlayersBuilder(
           int index) {
         return getPlayersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
           int index) {
@@ -1451,7 +1514,7 @@ public final class GetPokerResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
            getPlayersOrBuilderList() {
@@ -1462,14 +1525,14 @@ public final class GetPokerResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder() {
         return getPlayersFieldBuilder().addBuilder(
             com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder(
           int index) {
@@ -1477,7 +1540,7 @@ public final class GetPokerResponseProto {
             index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 10;</code>
+       * <code>repeated .fanxi.Player players = 11;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
            getPlayersBuilderList() {
@@ -1490,7 +1553,7 @@ public final class GetPokerResponseProto {
           playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
                   players_,
-                  ((bitField0_ & 0x00000080) == 0x00000080),
+                  ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
                   isClean());
           players_ = null;
@@ -1561,14 +1624,14 @@ public final class GetPokerResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026GetPokerResponse.proto\022\005fanxi\032\022BaseRes" +
-      "ponse.proto\032\014Player.proto\"\304\001\n\020GetPokerRe" +
+      "ponse.proto\032\014Player.proto\"\326\001\n\020GetPokerRe" +
       "sponse\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.Bas" +
       "eResponse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030" +
       "\005 \001(\005\022\017\n\007matchId\030\006 \001(\t\022\r\n\005cards\030\007 \001(\t\022\017\n" +
-      "\007beginId\030\010 \001(\t\022\020\n\010dutyType\030\t \001(\005\022\036\n\007play" +
-      "ers\030\n \003(\0132\r.fanxi.PlayerB2\n\031com.fanxi.se" +
-      "rvice.messageB\025GetPokerResponseProtob\006pr" +
-      "oto3"
+      "\007beginId\030\010 \001(\t\022\020\n\010dutyType\030\t \001(\005\022\020\n\010auto" +
+      "Time\030\n \001(\005\022\036\n\007players\030\013 \003(\0132\r.fanxi.Play" +
+      "erB2\n\031com.fanxi.service.messageB\025GetPoke" +
+      "rResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1589,7 +1652,7 @@ public final class GetPokerResponseProto {
     internal_static_fanxi_GetPokerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_GetPokerResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cards", "BeginId", "DutyType", "Players", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cards", "BeginId", "DutyType", "AutoTime", "Players", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }

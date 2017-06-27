@@ -56,6 +56,7 @@ static GPBFileDescriptor *EndResponseRoot_FileDescriptor(void) {
 @dynamic perfectType;
 @dynamic uid;
 @dynamic lastCards;
+@dynamic autoTime;
 @dynamic resultsArray, resultsArray_Count;
 @dynamic fightInfoArray, fightInfoArray_Count;
 @dynamic nextPlayingArray, nextPlayingArray_Count;
@@ -65,6 +66,7 @@ typedef struct EndResponse__storage_ {
   int32_t zoneId;
   int32_t tableIndex;
   int32_t perfectType;
+  int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *idWin;
@@ -154,6 +156,15 @@ typedef struct EndResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "autoTime",
+        .dataTypeSpecific.className = NULL,
+        .number = EndResponse_FieldNumber_AutoTime,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(EndResponse__storage_, autoTime),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "resultsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = EndResponse_FieldNumber_ResultsArray,
@@ -191,8 +202,8 @@ typedef struct EndResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\t\001\014\000\004\006\000\005\n\000\006\007\000\007\005\000\010\013\000\n\t\000\014\000fightInfo\000\r\000next"
-        "Playing\000";
+        "\n\001\014\000\004\006\000\005\n\000\006\007\000\007\005\000\010\013\000\n\t\000\013\010\000\r\000fightInfo\000\016\000n"
+        "extPlaying\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

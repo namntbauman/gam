@@ -15,6 +15,7 @@
 
  #import "TurnResponse.pbobjc.h"
  #import "BaseResponse.pbobjc.h"
+ #import "Player.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -58,19 +59,23 @@ static GPBFileDescriptor *TurnResponseRoot_FileDescriptor(void) {
 @dynamic isDuty;
 @dynamic isGiveup;
 @dynamic isNewRound;
+@dynamic autoTime;
 @dynamic fightInfoArray, fightInfoArray_Count;
+@dynamic fightPlayersArray, fightPlayersArray_Count;
 
 typedef struct TurnResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t tableIndex;
   int32_t phomCard;
+  int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *nextId;
   NSString *currId;
   NSString *tienlenCards;
   NSMutableArray *fightInfoArray;
+  NSMutableArray *fightPlayersArray;
 } TurnResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -179,6 +184,15 @@ typedef struct TurnResponse__storage_ {
         .dataType = GPBDataTypeBool,
       },
       {
+        .name = "autoTime",
+        .dataTypeSpecific.className = NULL,
+        .number = TurnResponse_FieldNumber_AutoTime,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(TurnResponse__storage_, autoTime),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "fightInfoArray",
         .dataTypeSpecific.className = NULL,
         .number = TurnResponse_FieldNumber_FightInfoArray,
@@ -186,6 +200,15 @@ typedef struct TurnResponse__storage_ {
         .offset = (uint32_t)offsetof(TurnResponse__storage_, fightInfoArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "fightPlayersArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(Player),
+        .number = TurnResponse_FieldNumber_FightPlayersArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(TurnResponse__storage_, fightPlayersArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -198,8 +221,8 @@ typedef struct TurnResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\014\001\014\000\004\006\000\005\n\000\006\007\000\007\010\000\010\006\000\t\006\000\n\014\000\013\006\000\014\010\000\r\n\000\016\000figh"
-        "tInfo\000";
+        "\016\001\014\000\004\006\000\005\n\000\006\007\000\007\010\000\010\006\000\t\006\000\n\014\000\013\006\000\014\010\000\r\n\000\016\010\000\017\000f"
+        "ightInfo\000\020\000fightPlayers\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
