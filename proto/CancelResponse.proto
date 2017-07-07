@@ -12,6 +12,7 @@ message CancelResponse {
    string matchId=6;
    string userId=7;
    bool isCancel=8;
+   bool isOut=9;
 }
 
 

@@ -65,6 +65,11 @@ public final class CancelResponseProto {
      * <code>bool isCancel = 8;</code>
      */
     boolean getIsCancel();
+
+    /**
+     * <code>bool isOut = 9;</code>
+     */
+    boolean getIsOut();
   }
   /**
    * Protobuf type {@code fanxi.CancelResponse}
@@ -83,6 +88,7 @@ public final class CancelResponseProto {
       matchId_ = "";
       userId_ = "";
       isCancel_ = false;
+      isOut_ = false;
     }
 
     @java.lang.Override
@@ -148,6 +154,11 @@ public final class CancelResponseProto {
             case 64: {
 
               isCancel_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              isOut_ = input.readBool();
               break;
             }
           }
@@ -289,6 +300,15 @@ public final class CancelResponseProto {
       return isCancel_;
     }
 
+    public static final int ISOUT_FIELD_NUMBER = 9;
+    private boolean isOut_;
+    /**
+     * <code>bool isOut = 9;</code>
+     */
+    public boolean getIsOut() {
+      return isOut_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -319,6 +339,9 @@ public final class CancelResponseProto {
       if (isCancel_ != false) {
         output.writeBool(8, isCancel_);
       }
+      if (isOut_ != false) {
+        output.writeBool(9, isOut_);
+      }
     }
 
     public int getSerializedSize() {
@@ -347,6 +370,10 @@ public final class CancelResponseProto {
       if (isCancel_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isCancel_);
+      }
+      if (isOut_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(9, isOut_);
       }
       memoizedSize = size;
       return size;
@@ -379,6 +406,8 @@ public final class CancelResponseProto {
           .equals(other.getUserId());
       result = result && (getIsCancel()
           == other.getIsCancel());
+      result = result && (getIsOut()
+          == other.getIsOut());
       return result;
     }
 
@@ -404,6 +433,9 @@ public final class CancelResponseProto {
       hash = (37 * hash) + ISCANCEL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsCancel());
+      hash = (37 * hash) + ISOUT_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsOut());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -538,6 +570,8 @@ public final class CancelResponseProto {
 
         isCancel_ = false;
 
+        isOut_ = false;
+
         return this;
       }
 
@@ -570,6 +604,7 @@ public final class CancelResponseProto {
         result.matchId_ = matchId_;
         result.userId_ = userId_;
         result.isCancel_ = isCancel_;
+        result.isOut_ = isOut_;
         onBuilt();
         return result;
       }
@@ -630,6 +665,9 @@ public final class CancelResponseProto {
         }
         if (other.getIsCancel() != false) {
           setIsCancel(other.getIsCancel());
+        }
+        if (other.getIsOut() != false) {
+          setIsOut(other.getIsOut());
         }
         onChanged();
         return this;
@@ -989,6 +1027,32 @@ public final class CancelResponseProto {
         onChanged();
         return this;
       }
+
+      private boolean isOut_ ;
+      /**
+       * <code>bool isOut = 9;</code>
+       */
+      public boolean getIsOut() {
+        return isOut_;
+      }
+      /**
+       * <code>bool isOut = 9;</code>
+       */
+      public Builder setIsOut(boolean value) {
+        
+        isOut_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isOut = 9;</code>
+       */
+      public Builder clearIsOut() {
+        
+        isOut_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1053,12 +1117,12 @@ public final class CancelResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\024CancelResponse.proto\022\005fanxi\032\022BaseRespo" +
-      "nse.proto\"\222\001\n\016CancelResponse\022)\n\014baseResp" +
+      "nse.proto\"\241\001\n\016CancelResponse\022)\n\014baseResp" +
       "onse\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneI" +
       "d\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006" +
-      " \001(\t\022\016\n\006userId\030\007 \001(\t\022\020\n\010isCancel\030\010 \001(\010B0" +
-      "\n\031com.fanxi.service.messageB\023CancelRespo" +
-      "nseProtob\006proto3"
+      " \001(\t\022\016\n\006userId\030\007 \001(\t\022\020\n\010isCancel\030\010 \001(\010\022\r" +
+      "\n\005isOut\030\t \001(\010B0\n\031com.fanxi.service.messa" +
+      "geB\023CancelResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1078,7 +1142,7 @@ public final class CancelResponseProto {
     internal_static_fanxi_CancelResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_CancelResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "UserId", "IsCancel", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "UserId", "IsCancel", "IsOut", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 
