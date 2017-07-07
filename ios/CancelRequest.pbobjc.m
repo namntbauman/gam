@@ -52,6 +52,7 @@ static GPBFileDescriptor *CancelRequestRoot_FileDescriptor(void) {
 @dynamic levelId;
 @dynamic tableIndex;
 @dynamic matchId;
+@dynamic isCancel;
 
 typedef struct CancelRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -113,6 +114,15 @@ typedef struct CancelRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "isCancel",
+        .dataTypeSpecific.className = NULL,
+        .number = CancelRequest_FieldNumber_IsCancel,
+        .hasIndex = 5,
+        .offset = 6,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeBool,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[CancelRequest class]
@@ -124,7 +134,7 @@ typedef struct CancelRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\007\000\n\006\000\013\007\000\014\n\000\r\007\000";
+        "\006\001\007\000\n\006\000\013\007\000\014\n\000\r\007\000\016\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

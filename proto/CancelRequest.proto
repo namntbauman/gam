@@ -10,4 +10,5 @@ message CancelRequest {
    int32 levelId=11;
    int32 tableIndex=12;
    string matchId=13;
+   bool isCancel = 14;
 }
