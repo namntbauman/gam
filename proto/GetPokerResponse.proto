@@ -14,7 +14,8 @@ message GetPokerResponse {
    string beginId=8;
    int32 dutyType=9;
    int32 autoTime =10;
-   repeated Player players=11;
+   int64 reference=11;
+   repeated Player players=12;
 }
 
 

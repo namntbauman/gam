@@ -57,6 +57,7 @@ static GPBFileDescriptor *EndResponseRoot_FileDescriptor(void) {
 @dynamic uid;
 @dynamic lastCards;
 @dynamic autoTime;
+@dynamic reference;
 @dynamic resultsArray, resultsArray_Count;
 @dynamic fightInfoArray, fightInfoArray_Count;
 @dynamic nextPlayingArray, nextPlayingArray_Count;
@@ -75,6 +76,7 @@ typedef struct EndResponse__storage_ {
   NSMutableArray *resultsArray;
   NSMutableArray *fightInfoArray;
   NSMutableArray *nextPlayingArray;
+  int64_t reference;
 } EndResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -165,6 +167,15 @@ typedef struct EndResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "reference",
+        .dataTypeSpecific.className = NULL,
+        .number = EndResponse_FieldNumber_Reference,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(EndResponse__storage_, reference),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
         .name = "resultsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = EndResponse_FieldNumber_ResultsArray,
@@ -202,7 +213,7 @@ typedef struct EndResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\n\001\014\000\004\006\000\005\n\000\006\007\000\007\005\000\010\013\000\n\t\000\013\010\000\r\000fightInfo\000\016\000n"
+        "\n\001\014\000\004\006\000\005\n\000\006\007\000\007\005\000\010\013\000\n\t\000\013\010\000\016\000fightInfo\000\017\000n"
         "extPlaying\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS

@@ -53,6 +53,7 @@ typedef GPB_ENUM(StartResponse_FieldNumber) {
   StartResponse_FieldNumber_ZoneId = 4,
   StartResponse_FieldNumber_TableIndex = 5,
   StartResponse_FieldNumber_MatchId = 6,
+  StartResponse_FieldNumber_Reference = 7,
 };
 
 @interface StartResponse : GPBMessage
@@ -66,6 +67,8 @@ typedef GPB_ENUM(StartResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t tableIndex;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
+
+@property(nonatomic, readwrite) int64_t reference;
 
 @end
 

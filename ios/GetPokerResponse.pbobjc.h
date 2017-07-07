@@ -58,7 +58,8 @@ typedef GPB_ENUM(GetPokerResponse_FieldNumber) {
   GetPokerResponse_FieldNumber_BeginId = 8,
   GetPokerResponse_FieldNumber_DutyType = 9,
   GetPokerResponse_FieldNumber_AutoTime = 10,
-  GetPokerResponse_FieldNumber_PlayersArray = 11,
+  GetPokerResponse_FieldNumber_Reference = 11,
+  GetPokerResponse_FieldNumber_PlayersArray = 12,
 };
 
 @interface GetPokerResponse : GPBMessage
@@ -80,6 +81,8 @@ typedef GPB_ENUM(GetPokerResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t dutyType;
 
 @property(nonatomic, readwrite) int32_t autoTime;
+
+@property(nonatomic, readwrite) int64_t reference;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *playersArray;
 /** The number of items in @c playersArray without causing the array to be created. */

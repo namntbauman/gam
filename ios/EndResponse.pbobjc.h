@@ -59,9 +59,10 @@ typedef GPB_ENUM(EndResponse_FieldNumber) {
   EndResponse_FieldNumber_Uid = 9,
   EndResponse_FieldNumber_LastCards = 10,
   EndResponse_FieldNumber_AutoTime = 11,
-  EndResponse_FieldNumber_ResultsArray = 12,
-  EndResponse_FieldNumber_FightInfoArray = 13,
-  EndResponse_FieldNumber_NextPlayingArray = 14,
+  EndResponse_FieldNumber_Reference = 12,
+  EndResponse_FieldNumber_ResultsArray = 13,
+  EndResponse_FieldNumber_FightInfoArray = 14,
+  EndResponse_FieldNumber_NextPlayingArray = 15,
 };
 
 @interface EndResponse : GPBMessage
@@ -85,6 +86,8 @@ typedef GPB_ENUM(EndResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *lastCards;
 
 @property(nonatomic, readwrite) int32_t autoTime;
+
+@property(nonatomic, readwrite) int64_t reference;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *resultsArray;
 /** The number of items in @c resultsArray without causing the array to be created. */

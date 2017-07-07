@@ -51,6 +51,7 @@ static GPBFileDescriptor *StartResponseRoot_FileDescriptor(void) {
 @dynamic zoneId;
 @dynamic tableIndex;
 @dynamic matchId;
+@dynamic reference;
 
 typedef struct StartResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -58,6 +59,7 @@ typedef struct StartResponse__storage_ {
   int32_t tableIndex;
   BaseResponse *baseResponse;
   NSString *matchId;
+  int64_t reference;
 } StartResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -101,6 +103,15 @@ typedef struct StartResponse__storage_ {
         .offset = (uint32_t)offsetof(StartResponse__storage_, matchId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "reference",
+        .dataTypeSpecific.className = NULL,
+        .number = StartResponse_FieldNumber_Reference,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(StartResponse__storage_, reference),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =

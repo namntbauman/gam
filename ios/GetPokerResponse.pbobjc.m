@@ -56,6 +56,7 @@ static GPBFileDescriptor *GetPokerResponseRoot_FileDescriptor(void) {
 @dynamic beginId;
 @dynamic dutyType;
 @dynamic autoTime;
+@dynamic reference;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct GetPokerResponse__storage_ {
@@ -69,6 +70,7 @@ typedef struct GetPokerResponse__storage_ {
   NSString *cards;
   NSString *beginId;
   NSMutableArray *playersArray;
+  int64_t reference;
 } GetPokerResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -148,6 +150,15 @@ typedef struct GetPokerResponse__storage_ {
         .offset = (uint32_t)offsetof(GetPokerResponse__storage_, autoTime),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "reference",
+        .dataTypeSpecific.className = NULL,
+        .number = GetPokerResponse_FieldNumber_Reference,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(GetPokerResponse__storage_, reference),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
       },
       {
         .name = "playersArray",

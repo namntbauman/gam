@@ -50,6 +50,11 @@ public final class StartResponseProto {
      */
     com.google.protobuf.ByteString
         getMatchIdBytes();
+
+    /**
+     * <code>int64 reference = 7;</code>
+     */
+    long getReference();
   }
   /**
    * Protobuf type {@code fanxi.StartResponse}
@@ -66,6 +71,7 @@ public final class StartResponseProto {
       zoneId_ = 0;
       tableIndex_ = 0;
       matchId_ = "";
+      reference_ = 0L;
     }
 
     @java.lang.Override
@@ -120,6 +126,11 @@ public final class StartResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               matchId_ = s;
+              break;
+            }
+            case 56: {
+
+              reference_ = input.readInt64();
               break;
             }
           }
@@ -218,6 +229,15 @@ public final class StartResponseProto {
       }
     }
 
+    public static final int REFERENCE_FIELD_NUMBER = 7;
+    private long reference_;
+    /**
+     * <code>int64 reference = 7;</code>
+     */
+    public long getReference() {
+      return reference_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -242,6 +262,9 @@ public final class StartResponseProto {
       if (!getMatchIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, matchId_);
       }
+      if (reference_ != 0L) {
+        output.writeInt64(7, reference_);
+      }
     }
 
     public int getSerializedSize() {
@@ -263,6 +286,10 @@ public final class StartResponseProto {
       }
       if (!getMatchIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, matchId_);
+      }
+      if (reference_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(7, reference_);
       }
       memoizedSize = size;
       return size;
@@ -291,6 +318,8 @@ public final class StartResponseProto {
           == other.getTableIndex());
       result = result && getMatchId()
           .equals(other.getMatchId());
+      result = result && (getReference()
+          == other.getReference());
       return result;
     }
 
@@ -311,6 +340,9 @@ public final class StartResponseProto {
       hash = (53 * hash) + getTableIndex();
       hash = (37 * hash) + MATCHID_FIELD_NUMBER;
       hash = (53 * hash) + getMatchId().hashCode();
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getReference());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -441,6 +473,8 @@ public final class StartResponseProto {
 
         matchId_ = "";
 
+        reference_ = 0L;
+
         return this;
       }
 
@@ -471,6 +505,7 @@ public final class StartResponseProto {
         result.zoneId_ = zoneId_;
         result.tableIndex_ = tableIndex_;
         result.matchId_ = matchId_;
+        result.reference_ = reference_;
         onBuilt();
         return result;
       }
@@ -524,6 +559,9 @@ public final class StartResponseProto {
         if (!other.getMatchId().isEmpty()) {
           matchId_ = other.matchId_;
           onChanged();
+        }
+        if (other.getReference() != 0L) {
+          setReference(other.getReference());
         }
         onChanged();
         return this;
@@ -788,6 +826,32 @@ public final class StartResponseProto {
         onChanged();
         return this;
       }
+
+      private long reference_ ;
+      /**
+       * <code>int64 reference = 7;</code>
+       */
+      public long getReference() {
+        return reference_;
+      }
+      /**
+       * <code>int64 reference = 7;</code>
+       */
+      public Builder setReference(long value) {
+        
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 reference = 7;</code>
+       */
+      public Builder clearReference() {
+        
+        reference_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -852,11 +916,11 @@ public final class StartResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023StartResponse.proto\022\005fanxi\032\022BaseRespon" +
-      "se.proto\"o\n\rStartResponse\022)\n\014baseRespons" +
-      "e\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneId\030\004" +
-      " \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006 \001(" +
-      "\tB/\n\031com.fanxi.service.messageB\022StartRes" +
-      "ponseProtob\006proto3"
+      "se.proto\"\202\001\n\rStartResponse\022)\n\014baseRespon" +
+      "se\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneId\030" +
+      "\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006 \001" +
+      "(\t\022\021\n\treference\030\007 \001(\003B/\n\031com.fanxi.servi" +
+      "ce.messageB\022StartResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -876,7 +940,7 @@ public final class StartResponseProto {
     internal_static_fanxi_StartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_StartResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Reference", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

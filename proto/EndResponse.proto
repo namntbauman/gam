@@ -15,9 +15,10 @@ message EndResponse {
    string uid=9;
    string lastCards=10;
    int32 autoTime =11;
-   repeated Player results=12;
-   repeated string fightInfo=13;
-   repeated Player nextPlaying=14;
+   int64 reference =12;
+   repeated Player results=13;
+   repeated string fightInfo=14;
+   repeated Player nextPlaying=15;
 }
 
 
