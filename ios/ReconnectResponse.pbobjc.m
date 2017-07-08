@@ -60,6 +60,7 @@ static GPBFileDescriptor *ReconnectResponseRoot_FileDescriptor(void) {
 @dynamic isGold;
 @dynamic currUserDuty;
 @dynamic dutyType;
+@dynamic deck;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct ReconnectResponse__storage_ {
@@ -68,6 +69,7 @@ typedef struct ReconnectResponse__storage_ {
   int32_t tableIndex;
   int32_t cash;
   int32_t dutyType;
+  int32_t deck;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *currTurn;
@@ -189,6 +191,15 @@ typedef struct ReconnectResponse__storage_ {
         .hasIndex = 13,
         .offset = (uint32_t)offsetof(ReconnectResponse__storage_, dutyType),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "deck",
+        .dataTypeSpecific.className = NULL,
+        .number = ReconnectResponse_FieldNumber_Deck,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(ReconnectResponse__storage_, deck),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
       {

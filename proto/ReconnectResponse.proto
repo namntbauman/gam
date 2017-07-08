@@ -18,7 +18,8 @@ message ReconnectResponse {
    bool isGold=12;
    string currUserDuty=13;
    int32 dutyType=14;
-   repeated Player players=15;
+   int32 deck=15;
+   repeated Player players=16;
 }
 
 

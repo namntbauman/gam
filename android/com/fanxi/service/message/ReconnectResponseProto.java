@@ -112,25 +112,30 @@ public final class ReconnectResponseProto {
     int getDutyType();
 
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>int32 deck = 15;</code>
+     */
+    int getDeck();
+
+    /**
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     java.util.List<com.fanxi.service.message.PlayerProto.Player> 
         getPlayersList();
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     com.fanxi.service.message.PlayerProto.Player getPlayers(int index);
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     int getPlayersCount();
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList();
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index);
@@ -158,6 +163,7 @@ public final class ReconnectResponseProto {
       isGold_ = false;
       currUserDuty_ = "";
       dutyType_ = 0;
+      deck_ = 0;
       players_ = java.util.Collections.emptyList();
     }
 
@@ -259,10 +265,15 @@ public final class ReconnectResponseProto {
               dutyType_ = input.readInt32();
               break;
             }
-            case 122: {
-              if (!((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+            case 120: {
+
+              deck_ = input.readInt32();
+              break;
+            }
+            case 130: {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
                 players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
-                mutable_bitField0_ |= 0x00001000;
+                mutable_bitField0_ |= 0x00002000;
               }
               players_.add(
                   input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
@@ -276,7 +287,7 @@ public final class ReconnectResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00001000) == 0x00001000)) {
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
           players_ = java.util.Collections.unmodifiableList(players_);
         }
         makeExtensionsImmutable();
@@ -540,35 +551,44 @@ public final class ReconnectResponseProto {
       return dutyType_;
     }
 
-    public static final int PLAYERS_FIELD_NUMBER = 15;
+    public static final int DECK_FIELD_NUMBER = 15;
+    private int deck_;
+    /**
+     * <code>int32 deck = 15;</code>
+     */
+    public int getDeck() {
+      return deck_;
+    }
+
+    public static final int PLAYERS_FIELD_NUMBER = 16;
     private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_;
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public int getPlayersCount() {
       return players_.size();
     }
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
       return players_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Player players = 15;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index) {
@@ -623,8 +643,11 @@ public final class ReconnectResponseProto {
       if (dutyType_ != 0) {
         output.writeInt32(14, dutyType_);
       }
+      if (deck_ != 0) {
+        output.writeInt32(15, deck_);
+      }
       for (int i = 0; i < players_.size(); i++) {
-        output.writeMessage(15, players_.get(i));
+        output.writeMessage(16, players_.get(i));
       }
     }
 
@@ -676,9 +699,13 @@ public final class ReconnectResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(14, dutyType_);
       }
+      if (deck_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, deck_);
+      }
       for (int i = 0; i < players_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(15, players_.get(i));
+          .computeMessageSize(16, players_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -723,6 +750,8 @@ public final class ReconnectResponseProto {
           .equals(other.getCurrUserDuty());
       result = result && (getDutyType()
           == other.getDutyType());
+      result = result && (getDeck()
+          == other.getDeck());
       result = result && getPlayersList()
           .equals(other.getPlayersList());
       return result;
@@ -763,6 +792,8 @@ public final class ReconnectResponseProto {
       hash = (53 * hash) + getCurrUserDuty().hashCode();
       hash = (37 * hash) + DUTYTYPE_FIELD_NUMBER;
       hash = (53 * hash) + getDutyType();
+      hash = (37 * hash) + DECK_FIELD_NUMBER;
+      hash = (53 * hash) + getDeck();
       if (getPlayersCount() > 0) {
         hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
         hash = (53 * hash) + getPlayersList().hashCode();
@@ -914,9 +945,11 @@ public final class ReconnectResponseProto {
 
         dutyType_ = 0;
 
+        deck_ = 0;
+
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           playersBuilder_.clear();
         }
@@ -960,10 +993,11 @@ public final class ReconnectResponseProto {
         result.isGold_ = isGold_;
         result.currUserDuty_ = currUserDuty_;
         result.dutyType_ = dutyType_;
+        result.deck_ = deck_;
         if (playersBuilder_ == null) {
-          if (((bitField0_ & 0x00001000) == 0x00001000)) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
             players_ = java.util.Collections.unmodifiableList(players_);
-            bitField0_ = (bitField0_ & ~0x00001000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           }
           result.players_ = players_;
         } else {
@@ -1052,11 +1086,14 @@ public final class ReconnectResponseProto {
         if (other.getDutyType() != 0) {
           setDutyType(other.getDutyType());
         }
+        if (other.getDeck() != 0) {
+          setDeck(other.getDeck());
+        }
         if (playersBuilder_ == null) {
           if (!other.players_.isEmpty()) {
             if (players_.isEmpty()) {
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00002000);
             } else {
               ensurePlayersIsMutable();
               players_.addAll(other.players_);
@@ -1069,7 +1106,7 @@ public final class ReconnectResponseProto {
               playersBuilder_.dispose();
               playersBuilder_ = null;
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00001000);
+              bitField0_ = (bitField0_ & ~0x00002000);
               playersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayersFieldBuilder() : null;
@@ -1723,12 +1760,38 @@ public final class ReconnectResponseProto {
         return this;
       }
 
+      private int deck_ ;
+      /**
+       * <code>int32 deck = 15;</code>
+       */
+      public int getDeck() {
+        return deck_;
+      }
+      /**
+       * <code>int32 deck = 15;</code>
+       */
+      public Builder setDeck(int value) {
+        
+        deck_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 deck = 15;</code>
+       */
+      public Builder clearDeck() {
+        
+        deck_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_ =
         java.util.Collections.emptyList();
       private void ensurePlayersIsMutable() {
-        if (!((bitField0_ & 0x00001000) == 0x00001000)) {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
           players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(players_);
-          bitField0_ |= 0x00001000;
+          bitField0_ |= 0x00002000;
          }
       }
 
@@ -1736,7 +1799,7 @@ public final class ReconnectResponseProto {
           com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> playersBuilder_;
 
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
         if (playersBuilder_ == null) {
@@ -1746,7 +1809,7 @@ public final class ReconnectResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public int getPlayersCount() {
         if (playersBuilder_ == null) {
@@ -1756,7 +1819,7 @@ public final class ReconnectResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
         if (playersBuilder_ == null) {
@@ -1766,7 +1829,7 @@ public final class ReconnectResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1783,7 +1846,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1797,7 +1860,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(com.fanxi.service.message.PlayerProto.Player value) {
         if (playersBuilder_ == null) {
@@ -1813,7 +1876,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1830,7 +1893,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(
           com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1844,7 +1907,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1858,7 +1921,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addAllPlayers(
           java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
@@ -1873,12 +1936,12 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder clearPlayers() {
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00001000);
+          bitField0_ = (bitField0_ & ~0x00002000);
           onChanged();
         } else {
           playersBuilder_.clear();
@@ -1886,7 +1949,7 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder removePlayers(int index) {
         if (playersBuilder_ == null) {
@@ -1899,14 +1962,14 @@ public final class ReconnectResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder getPlayersBuilder(
           int index) {
         return getPlayersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
           int index) {
@@ -1916,7 +1979,7 @@ public final class ReconnectResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
            getPlayersOrBuilderList() {
@@ -1927,14 +1990,14 @@ public final class ReconnectResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder() {
         return getPlayersFieldBuilder().addBuilder(
             com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder(
           int index) {
@@ -1942,7 +2005,7 @@ public final class ReconnectResponseProto {
             index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 15;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
            getPlayersBuilderList() {
@@ -1955,7 +2018,7 @@ public final class ReconnectResponseProto {
           playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
                   players_,
-                  ((bitField0_ & 0x00001000) == 0x00001000),
+                  ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
                   isClean());
           players_ = null;
@@ -2026,16 +2089,16 @@ public final class ReconnectResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027ReconnectResponse.proto\022\005fanxi\032\022BaseRe" +
-      "sponse.proto\032\014Player.proto\"\236\002\n\021Reconnect" +
+      "sponse.proto\032\014Player.proto\"\254\002\n\021Reconnect" +
       "Response\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.B" +
       "aseResponse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableInde" +
       "x\030\005 \001(\005\022\017\n\007matchId\030\006 \001(\t\022\021\n\tisPlaying\030\007 " +
       "\001(\010\022\020\n\010currTurn\030\010 \001(\t\022\r\n\005cards\030\t \001(\t\022\017\n\007" +
       "myCards\030\n \001(\t\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 " +
       "\001(\010\022\024\n\014currUserDuty\030\r \001(\t\022\020\n\010dutyType\030\016 " +
-      "\001(\005\022\036\n\007players\030\017 \003(\0132\r.fanxi.PlayerB3\n\031c" +
-      "om.fanxi.service.messageB\026ReconnectRespo",
-      "nseProtob\006proto3"
+      "\001(\005\022\014\n\004deck\030\017 \001(\005\022\036\n\007players\030\020 \003(\0132\r.fan" +
+      "xi.PlayerB3\n\031com.fanxi.service.messageB\026",
+      "ReconnectResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2056,7 +2119,7 @@ public final class ReconnectResponseProto {
     internal_static_fanxi_ReconnectResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_ReconnectResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "MyCards", "Cash", "IsGold", "CurrUserDuty", "DutyType", "Players", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "MyCards", "Cash", "IsGold", "CurrUserDuty", "DutyType", "Deck", "Players", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }

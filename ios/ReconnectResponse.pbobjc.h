@@ -62,7 +62,8 @@ typedef GPB_ENUM(ReconnectResponse_FieldNumber) {
   ReconnectResponse_FieldNumber_IsGold = 12,
   ReconnectResponse_FieldNumber_CurrUserDuty = 13,
   ReconnectResponse_FieldNumber_DutyType = 14,
-  ReconnectResponse_FieldNumber_PlayersArray = 15,
+  ReconnectResponse_FieldNumber_Deck = 15,
+  ReconnectResponse_FieldNumber_PlayersArray = 16,
 };
 
 @interface ReconnectResponse : GPBMessage
@@ -92,6 +93,8 @@ typedef GPB_ENUM(ReconnectResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *currUserDuty;
 
 @property(nonatomic, readwrite) int32_t dutyType;
+
+@property(nonatomic, readwrite) int32_t deck;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *playersArray;
 /** The number of items in @c playersArray without causing the array to be created. */
