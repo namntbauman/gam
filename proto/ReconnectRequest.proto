@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ReconnectRequestProto";
+
+message ReconnectRequest {
+   BaseRequest baseReq=1;
+   int32 zoneId=10;
+   int32 tableIndex=11;
+   string matchId=12;
+   int64 reference=13;
+}
