@@ -55,6 +55,7 @@ typedef GPB_ENUM(HaPhomRequest_FieldNumber) {
   HaPhomRequest_FieldNumber_TableIndex = 12,
   HaPhomRequest_FieldNumber_MatchId = 13,
   HaPhomRequest_FieldNumber_Cards = 14,
+  HaPhomRequest_FieldNumber_IsAuto = 15,
 };
 
 @interface HaPhomRequest : GPBMessage
@@ -72,6 +73,8 @@ typedef GPB_ENUM(HaPhomRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *cards;
+
+@property(nonatomic, readwrite) BOOL isAuto;
 
 @end
 

@@ -11,4 +11,5 @@ message HaPhomRequest {
    int32 tableIndex=12;
    string matchId=13;
    string cards=14;
+   bool isAuto=15;
 }

@@ -53,6 +53,7 @@ static GPBFileDescriptor *HaPhomRequestRoot_FileDescriptor(void) {
 @dynamic tableIndex;
 @dynamic matchId;
 @dynamic cards;
+@dynamic isAuto;
 
 typedef struct HaPhomRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -124,6 +125,15 @@ typedef struct HaPhomRequest__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "isAuto",
+        .dataTypeSpecific.className = NULL,
+        .number = HaPhomRequest_FieldNumber_IsAuto,
+        .hasIndex = 6,
+        .offset = 7,  // Stored in _has_storage_ to save space.
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeBool,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[HaPhomRequest class]
@@ -135,7 +145,7 @@ typedef struct HaPhomRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\007\000\n\006\000\013\007\000\014\n\000\r\007\000";
+        "\006\001\007\000\n\006\000\013\007\000\014\n\000\r\007\000\017\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

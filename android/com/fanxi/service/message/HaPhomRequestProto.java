@@ -65,6 +65,11 @@ public final class HaPhomRequestProto {
      */
     com.google.protobuf.ByteString
         getCardsBytes();
+
+    /**
+     * <code>bool isAuto = 15;</code>
+     */
+    boolean getIsAuto();
   }
   /**
    * Protobuf type {@code fanxi.HaPhomRequest}
@@ -83,6 +88,7 @@ public final class HaPhomRequestProto {
       tableIndex_ = 0;
       matchId_ = "";
       cards_ = "";
+      isAuto_ = false;
     }
 
     @java.lang.Override
@@ -148,6 +154,11 @@ public final class HaPhomRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               cards_ = s;
+              break;
+            }
+            case 120: {
+
+              isAuto_ = input.readBool();
               break;
             }
           }
@@ -289,6 +300,15 @@ public final class HaPhomRequestProto {
       }
     }
 
+    public static final int ISAUTO_FIELD_NUMBER = 15;
+    private boolean isAuto_;
+    /**
+     * <code>bool isAuto = 15;</code>
+     */
+    public boolean getIsAuto() {
+      return isAuto_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -319,6 +339,9 @@ public final class HaPhomRequestProto {
       if (!getCardsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 14, cards_);
       }
+      if (isAuto_ != false) {
+        output.writeBool(15, isAuto_);
+      }
     }
 
     public int getSerializedSize() {
@@ -347,6 +370,10 @@ public final class HaPhomRequestProto {
       }
       if (!getCardsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, cards_);
+      }
+      if (isAuto_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(15, isAuto_);
       }
       memoizedSize = size;
       return size;
@@ -379,6 +406,8 @@ public final class HaPhomRequestProto {
           .equals(other.getMatchId());
       result = result && getCards()
           .equals(other.getCards());
+      result = result && (getIsAuto()
+          == other.getIsAuto());
       return result;
     }
 
@@ -403,6 +432,9 @@ public final class HaPhomRequestProto {
       hash = (53 * hash) + getMatchId().hashCode();
       hash = (37 * hash) + CARDS_FIELD_NUMBER;
       hash = (53 * hash) + getCards().hashCode();
+      hash = (37 * hash) + ISAUTO_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAuto());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -537,6 +569,8 @@ public final class HaPhomRequestProto {
 
         cards_ = "";
 
+        isAuto_ = false;
+
         return this;
       }
 
@@ -569,6 +603,7 @@ public final class HaPhomRequestProto {
         result.tableIndex_ = tableIndex_;
         result.matchId_ = matchId_;
         result.cards_ = cards_;
+        result.isAuto_ = isAuto_;
         onBuilt();
         return result;
       }
@@ -629,6 +664,9 @@ public final class HaPhomRequestProto {
         if (!other.getCards().isEmpty()) {
           cards_ = other.cards_;
           onChanged();
+        }
+        if (other.getIsAuto() != false) {
+          setIsAuto(other.getIsAuto());
         }
         onChanged();
         return this;
@@ -988,6 +1026,32 @@ public final class HaPhomRequestProto {
         onChanged();
         return this;
       }
+
+      private boolean isAuto_ ;
+      /**
+       * <code>bool isAuto = 15;</code>
+       */
+      public boolean getIsAuto() {
+        return isAuto_;
+      }
+      /**
+       * <code>bool isAuto = 15;</code>
+       */
+      public Builder setIsAuto(boolean value) {
+        
+        isAuto_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isAuto = 15;</code>
+       */
+      public Builder clearIsAuto() {
+        
+        isAuto_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1052,12 +1116,12 @@ public final class HaPhomRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023HaPhomRequest.proto\022\005fanxi\032\021BaseReques" +
-      "t.proto\"\211\001\n\rHaPhomRequest\022#\n\007baseReq\030\001 \001" +
+      "t.proto\"\231\001\n\rHaPhomRequest\022#\n\007baseReq\030\001 \001" +
       "(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001(\005\022\017" +
       "\n\007levelId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005\022\017\n\007m" +
-      "atchId\030\r \001(\t\022\r\n\005cards\030\016 \001(\tB/\n\031com.fanxi" +
-      ".service.messageB\022HaPhomRequestProtob\006pr" +
-      "oto3"
+      "atchId\030\r \001(\t\022\r\n\005cards\030\016 \001(\t\022\016\n\006isAuto\030\017 " +
+      "\001(\010B/\n\031com.fanxi.service.messageB\022HaPhom" +
+      "RequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1077,7 +1141,7 @@ public final class HaPhomRequestProto {
     internal_static_fanxi_HaPhomRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_HaPhomRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Cards", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Cards", "IsAuto", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 
