@@ -52,12 +52,14 @@ static GPBFileDescriptor *LatBaiRequestRoot_FileDescriptor(void) {
 @dynamic levelId;
 @dynamic tableIndex;
 @dynamic matchId;
+@dynamic card;
 
 typedef struct LatBaiRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t levelId;
   int32_t tableIndex;
+  int32_t card;
   BaseRequest *baseReq;
   NSString *matchId;
 } LatBaiRequest__storage_;
@@ -112,6 +114,15 @@ typedef struct LatBaiRequest__storage_ {
         .offset = (uint32_t)offsetof(LatBaiRequest__storage_, matchId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "card",
+        .dataTypeSpecific.className = NULL,
+        .number = LatBaiRequest_FieldNumber_Card,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(LatBaiRequest__storage_, card),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =

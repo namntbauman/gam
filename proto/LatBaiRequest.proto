@@ -10,5 +10,6 @@ message LatBaiRequest {
    int32 levelId=11;
    int32 tableIndex=12;
    string matchId=13;
+   int32 card=14;
    
 }

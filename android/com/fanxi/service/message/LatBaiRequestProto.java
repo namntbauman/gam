@@ -55,6 +55,11 @@ public final class LatBaiRequestProto {
      */
     com.google.protobuf.ByteString
         getMatchIdBytes();
+
+    /**
+     * <code>int32 card = 14;</code>
+     */
+    int getCard();
   }
   /**
    * Protobuf type {@code fanxi.LatBaiRequest}
@@ -72,6 +77,7 @@ public final class LatBaiRequestProto {
       levelId_ = 0;
       tableIndex_ = 0;
       matchId_ = "";
+      card_ = 0;
     }
 
     @java.lang.Override
@@ -131,6 +137,11 @@ public final class LatBaiRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               matchId_ = s;
+              break;
+            }
+            case 112: {
+
+              card_ = input.readInt32();
               break;
             }
           }
@@ -238,6 +249,15 @@ public final class LatBaiRequestProto {
       }
     }
 
+    public static final int CARD_FIELD_NUMBER = 14;
+    private int card_;
+    /**
+     * <code>int32 card = 14;</code>
+     */
+    public int getCard() {
+      return card_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -265,6 +285,9 @@ public final class LatBaiRequestProto {
       if (!getMatchIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, matchId_);
       }
+      if (card_ != 0) {
+        output.writeInt32(14, card_);
+      }
     }
 
     public int getSerializedSize() {
@@ -290,6 +313,10 @@ public final class LatBaiRequestProto {
       }
       if (!getMatchIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, matchId_);
+      }
+      if (card_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, card_);
       }
       memoizedSize = size;
       return size;
@@ -320,6 +347,8 @@ public final class LatBaiRequestProto {
           == other.getTableIndex());
       result = result && getMatchId()
           .equals(other.getMatchId());
+      result = result && (getCard()
+          == other.getCard());
       return result;
     }
 
@@ -342,6 +371,8 @@ public final class LatBaiRequestProto {
       hash = (53 * hash) + getTableIndex();
       hash = (37 * hash) + MATCHID_FIELD_NUMBER;
       hash = (53 * hash) + getMatchId().hashCode();
+      hash = (37 * hash) + CARD_FIELD_NUMBER;
+      hash = (53 * hash) + getCard();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -474,6 +505,8 @@ public final class LatBaiRequestProto {
 
         matchId_ = "";
 
+        card_ = 0;
+
         return this;
       }
 
@@ -505,6 +538,7 @@ public final class LatBaiRequestProto {
         result.levelId_ = levelId_;
         result.tableIndex_ = tableIndex_;
         result.matchId_ = matchId_;
+        result.card_ = card_;
         onBuilt();
         return result;
       }
@@ -561,6 +595,9 @@ public final class LatBaiRequestProto {
         if (!other.getMatchId().isEmpty()) {
           matchId_ = other.matchId_;
           onChanged();
+        }
+        if (other.getCard() != 0) {
+          setCard(other.getCard());
         }
         onChanged();
         return this;
@@ -851,6 +888,32 @@ public final class LatBaiRequestProto {
         onChanged();
         return this;
       }
+
+      private int card_ ;
+      /**
+       * <code>int32 card = 14;</code>
+       */
+      public int getCard() {
+        return card_;
+      }
+      /**
+       * <code>int32 card = 14;</code>
+       */
+      public Builder setCard(int value) {
+        
+        card_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 card = 14;</code>
+       */
+      public Builder clearCard() {
+        
+        card_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -915,11 +978,12 @@ public final class LatBaiRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023LatBaiRequest.proto\022\005fanxi\032\021BaseReques" +
-      "t.proto\"z\n\rLatBaiRequest\022#\n\007baseReq\030\001 \001(" +
-      "\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001(\005\022\017\n" +
-      "\007levelId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005\022\017\n\007ma" +
-      "tchId\030\r \001(\tB/\n\031com.fanxi.service.message" +
-      "B\022LatBaiRequestProtob\006proto3"
+      "t.proto\"\210\001\n\rLatBaiRequest\022#\n\007baseReq\030\001 \001" +
+      "(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001(\005\022\017" +
+      "\n\007levelId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005\022\017\n\007m" +
+      "atchId\030\r \001(\t\022\014\n\004card\030\016 \001(\005B/\n\031com.fanxi." +
+      "service.messageB\022LatBaiRequestProtob\006pro" +
+      "to3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -939,7 +1003,7 @@ public final class LatBaiRequestProto {
     internal_static_fanxi_LatBaiRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LatBaiRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Card", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

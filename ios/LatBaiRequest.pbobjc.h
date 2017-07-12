@@ -54,6 +54,7 @@ typedef GPB_ENUM(LatBaiRequest_FieldNumber) {
   LatBaiRequest_FieldNumber_LevelId = 11,
   LatBaiRequest_FieldNumber_TableIndex = 12,
   LatBaiRequest_FieldNumber_MatchId = 13,
+  LatBaiRequest_FieldNumber_Card = 14,
 };
 
 @interface LatBaiRequest : GPBMessage
@@ -69,6 +70,8 @@ typedef GPB_ENUM(LatBaiRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t tableIndex;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
+
+@property(nonatomic, readwrite) int32_t card;
 
 @end
 
