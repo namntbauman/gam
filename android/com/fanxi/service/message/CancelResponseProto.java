@@ -70,6 +70,16 @@ public final class CancelResponseProto {
      * <code>bool isOut = 9;</code>
      */
     boolean getIsOut();
+
+    /**
+     * <code>string ownerId = 10;</code>
+     */
+    java.lang.String getOwnerId();
+    /**
+     * <code>string ownerId = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getOwnerIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.CancelResponse}
@@ -89,6 +99,7 @@ public final class CancelResponseProto {
       userId_ = "";
       isCancel_ = false;
       isOut_ = false;
+      ownerId_ = "";
     }
 
     @java.lang.Override
@@ -159,6 +170,12 @@ public final class CancelResponseProto {
             case 72: {
 
               isOut_ = input.readBool();
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ownerId_ = s;
               break;
             }
           }
@@ -309,6 +326,40 @@ public final class CancelResponseProto {
       return isOut_;
     }
 
+    public static final int OWNERID_FIELD_NUMBER = 10;
+    private volatile java.lang.Object ownerId_;
+    /**
+     * <code>string ownerId = 10;</code>
+     */
+    public java.lang.String getOwnerId() {
+      java.lang.Object ref = ownerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ownerId = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOwnerIdBytes() {
+      java.lang.Object ref = ownerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -341,6 +392,9 @@ public final class CancelResponseProto {
       }
       if (isOut_ != false) {
         output.writeBool(9, isOut_);
+      }
+      if (!getOwnerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, ownerId_);
       }
     }
 
@@ -375,6 +429,9 @@ public final class CancelResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(9, isOut_);
       }
+      if (!getOwnerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, ownerId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -408,6 +465,8 @@ public final class CancelResponseProto {
           == other.getIsCancel());
       result = result && (getIsOut()
           == other.getIsOut());
+      result = result && getOwnerId()
+          .equals(other.getOwnerId());
       return result;
     }
 
@@ -436,6 +495,8 @@ public final class CancelResponseProto {
       hash = (37 * hash) + ISOUT_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOut());
+      hash = (37 * hash) + OWNERID_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -572,6 +633,8 @@ public final class CancelResponseProto {
 
         isOut_ = false;
 
+        ownerId_ = "";
+
         return this;
       }
 
@@ -605,6 +668,7 @@ public final class CancelResponseProto {
         result.userId_ = userId_;
         result.isCancel_ = isCancel_;
         result.isOut_ = isOut_;
+        result.ownerId_ = ownerId_;
         onBuilt();
         return result;
       }
@@ -668,6 +732,10 @@ public final class CancelResponseProto {
         }
         if (other.getIsOut() != false) {
           setIsOut(other.getIsOut());
+        }
+        if (!other.getOwnerId().isEmpty()) {
+          ownerId_ = other.ownerId_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1053,6 +1121,75 @@ public final class CancelResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object ownerId_ = "";
+      /**
+       * <code>string ownerId = 10;</code>
+       */
+      public java.lang.String getOwnerId() {
+        java.lang.Object ref = ownerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ownerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ownerId = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOwnerIdBytes() {
+        java.lang.Object ref = ownerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ownerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ownerId = 10;</code>
+       */
+      public Builder setOwnerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ownerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ownerId = 10;</code>
+       */
+      public Builder clearOwnerId() {
+        
+        ownerId_ = getDefaultInstance().getOwnerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ownerId = 10;</code>
+       */
+      public Builder setOwnerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ownerId_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1117,12 +1254,13 @@ public final class CancelResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\024CancelResponse.proto\022\005fanxi\032\022BaseRespo" +
-      "nse.proto\"\241\001\n\016CancelResponse\022)\n\014baseResp" +
+      "nse.proto\"\262\001\n\016CancelResponse\022)\n\014baseResp" +
       "onse\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006zoneI" +
       "d\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007matchId\030\006" +
       " \001(\t\022\016\n\006userId\030\007 \001(\t\022\020\n\010isCancel\030\010 \001(\010\022\r" +
-      "\n\005isOut\030\t \001(\010B0\n\031com.fanxi.service.messa" +
-      "geB\023CancelResponseProtob\006proto3"
+      "\n\005isOut\030\t \001(\010\022\017\n\007ownerId\030\n \001(\tB0\n\031com.fa" +
+      "nxi.service.messageB\023CancelResponseProto" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1142,7 +1280,7 @@ public final class CancelResponseProto {
     internal_static_fanxi_CancelResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_CancelResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "UserId", "IsCancel", "IsOut", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "UserId", "IsCancel", "IsOut", "OwnerId", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

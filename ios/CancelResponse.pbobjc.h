@@ -56,6 +56,7 @@ typedef GPB_ENUM(CancelResponse_FieldNumber) {
   CancelResponse_FieldNumber_UserId = 7,
   CancelResponse_FieldNumber_IsCancel = 8,
   CancelResponse_FieldNumber_IsOut = 9,
+  CancelResponse_FieldNumber_OwnerId = 10,
 };
 
 @interface CancelResponse : GPBMessage
@@ -75,6 +76,8 @@ typedef GPB_ENUM(CancelResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isCancel;
 
 @property(nonatomic, readwrite) BOOL isOut;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *ownerId;
 
 @end
 

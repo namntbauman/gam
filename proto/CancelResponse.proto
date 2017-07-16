@@ -13,6 +13,7 @@ message CancelResponse {
    string userId=7;
    bool isCancel=8;
    bool isOut=9;
+   string ownerId=10;
 }
 
 

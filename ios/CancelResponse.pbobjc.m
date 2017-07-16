@@ -54,6 +54,7 @@ static GPBFileDescriptor *CancelResponseRoot_FileDescriptor(void) {
 @dynamic userId;
 @dynamic isCancel;
 @dynamic isOut;
+@dynamic ownerId;
 
 typedef struct CancelResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -62,6 +63,7 @@ typedef struct CancelResponse__storage_ {
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *userId;
+  NSString *ownerId;
 } CancelResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -133,6 +135,15 @@ typedef struct CancelResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "ownerId",
+        .dataTypeSpecific.className = NULL,
+        .number = CancelResponse_FieldNumber_OwnerId,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(CancelResponse__storage_, ownerId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[CancelResponse class]
@@ -144,7 +155,7 @@ typedef struct CancelResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\007\001\014\000\004\006\000\005\n\000\006\007\000\007\006\000\010\010\000\t\005\000";
+        "\010\001\014\000\004\006\000\005\n\000\006\007\000\007\006\000\010\010\000\t\005\000\n\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
