@@ -58,6 +58,7 @@ static GPBFileDescriptor *JoinTableResponseRoot_FileDescriptor(void) {
 @dynamic deck;
 @dynamic cash;
 @dynamic isGold;
+@dynamic ownerId;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct JoinTableResponse__storage_ {
@@ -70,6 +71,7 @@ typedef struct JoinTableResponse__storage_ {
   NSString *matchId;
   NSString *currTurn;
   NSString *cards;
+  NSString *ownerId;
   NSMutableArray *playersArray;
 } JoinTableResponse__storage_;
 
@@ -170,6 +172,15 @@ typedef struct JoinTableResponse__storage_ {
         .dataType = GPBDataTypeBool,
       },
       {
+        .name = "ownerId",
+        .dataTypeSpecific.className = NULL,
+        .number = JoinTableResponse_FieldNumber_OwnerId,
+        .hasIndex = 12,
+        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, ownerId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "playersArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = JoinTableResponse_FieldNumber_PlayersArray,
@@ -189,7 +200,7 @@ typedef struct JoinTableResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\007\001\014\000\004\006\000\005\n\000\006\007\000\007\t\000\010\010\000\014\006\000";
+        "\010\001\014\000\004\006\000\005\n\000\006\007\000\007\t\000\010\010\000\014\006\000\r\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

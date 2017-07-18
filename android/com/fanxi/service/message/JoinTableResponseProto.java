@@ -92,25 +92,35 @@ public final class JoinTableResponseProto {
     boolean getIsGold();
 
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>string ownerId = 13;</code>
+     */
+    java.lang.String getOwnerId();
+    /**
+     * <code>string ownerId = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getOwnerIdBytes();
+
+    /**
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     java.util.List<com.fanxi.service.message.PlayerProto.Player> 
         getPlayersList();
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     com.fanxi.service.message.PlayerProto.Player getPlayers(int index);
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     int getPlayersCount();
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList();
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index);
@@ -136,6 +146,7 @@ public final class JoinTableResponseProto {
       deck_ = 0;
       cash_ = 0;
       isGold_ = false;
+      ownerId_ = "";
       players_ = java.util.Collections.emptyList();
     }
 
@@ -226,9 +237,15 @@ public final class JoinTableResponseProto {
               break;
             }
             case 106: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              ownerId_ = s;
+              break;
+            }
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
                 players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               players_.add(
                   input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
@@ -242,7 +259,7 @@ public final class JoinTableResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
           players_ = java.util.Collections.unmodifiableList(players_);
         }
         makeExtensionsImmutable();
@@ -438,35 +455,69 @@ public final class JoinTableResponseProto {
       return isGold_;
     }
 
-    public static final int PLAYERS_FIELD_NUMBER = 13;
+    public static final int OWNERID_FIELD_NUMBER = 13;
+    private volatile java.lang.Object ownerId_;
+    /**
+     * <code>string ownerId = 13;</code>
+     */
+    public java.lang.String getOwnerId() {
+      java.lang.Object ref = ownerId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        ownerId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string ownerId = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getOwnerIdBytes() {
+      java.lang.Object ref = ownerId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        ownerId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLAYERS_FIELD_NUMBER = 14;
     private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_;
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     public int getPlayersCount() {
       return players_.size();
     }
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
       return players_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Player players = 13;</code>
+     * <code>repeated .fanxi.Player players = 14;</code>
      */
     public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index) {
@@ -515,8 +566,11 @@ public final class JoinTableResponseProto {
       if (isGold_ != false) {
         output.writeBool(12, isGold_);
       }
+      if (!getOwnerIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, ownerId_);
+      }
       for (int i = 0; i < players_.size(); i++) {
-        output.writeMessage(13, players_.get(i));
+        output.writeMessage(14, players_.get(i));
       }
     }
 
@@ -562,9 +616,12 @@ public final class JoinTableResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(12, isGold_);
       }
+      if (!getOwnerIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, ownerId_);
+      }
       for (int i = 0; i < players_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, players_.get(i));
+          .computeMessageSize(14, players_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -605,6 +662,8 @@ public final class JoinTableResponseProto {
           == other.getCash());
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && getOwnerId()
+          .equals(other.getOwnerId());
       result = result && getPlayersList()
           .equals(other.getPlayersList());
       return result;
@@ -641,6 +700,8 @@ public final class JoinTableResponseProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + OWNERID_FIELD_NUMBER;
+      hash = (53 * hash) + getOwnerId().hashCode();
       if (getPlayersCount() > 0) {
         hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
         hash = (53 * hash) + getPlayersList().hashCode();
@@ -788,9 +849,11 @@ public final class JoinTableResponseProto {
 
         isGold_ = false;
 
+        ownerId_ = "";
+
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           playersBuilder_.clear();
         }
@@ -832,10 +895,11 @@ public final class JoinTableResponseProto {
         result.deck_ = deck_;
         result.cash_ = cash_;
         result.isGold_ = isGold_;
+        result.ownerId_ = ownerId_;
         if (playersBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          if (((bitField0_ & 0x00000800) == 0x00000800)) {
             players_ = java.util.Collections.unmodifiableList(players_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           }
           result.players_ = players_;
         } else {
@@ -916,11 +980,15 @@ public final class JoinTableResponseProto {
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
         }
+        if (!other.getOwnerId().isEmpty()) {
+          ownerId_ = other.ownerId_;
+          onChanged();
+        }
         if (playersBuilder_ == null) {
           if (!other.players_.isEmpty()) {
             if (players_.isEmpty()) {
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000800);
             } else {
               ensurePlayersIsMutable();
               players_.addAll(other.players_);
@@ -933,7 +1001,7 @@ public final class JoinTableResponseProto {
               playersBuilder_.dispose();
               playersBuilder_ = null;
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000800);
               playersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayersFieldBuilder() : null;
@@ -1449,12 +1517,81 @@ public final class JoinTableResponseProto {
         return this;
       }
 
+      private java.lang.Object ownerId_ = "";
+      /**
+       * <code>string ownerId = 13;</code>
+       */
+      public java.lang.String getOwnerId() {
+        java.lang.Object ref = ownerId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          ownerId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string ownerId = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getOwnerIdBytes() {
+        java.lang.Object ref = ownerId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          ownerId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string ownerId = 13;</code>
+       */
+      public Builder setOwnerId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        ownerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ownerId = 13;</code>
+       */
+      public Builder clearOwnerId() {
+        
+        ownerId_ = getDefaultInstance().getOwnerId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string ownerId = 13;</code>
+       */
+      public Builder setOwnerIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        ownerId_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_ =
         java.util.Collections.emptyList();
       private void ensurePlayersIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
           players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(players_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
          }
       }
 
@@ -1462,7 +1599,7 @@ public final class JoinTableResponseProto {
           com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> playersBuilder_;
 
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
         if (playersBuilder_ == null) {
@@ -1472,7 +1609,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public int getPlayersCount() {
         if (playersBuilder_ == null) {
@@ -1482,7 +1619,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
         if (playersBuilder_ == null) {
@@ -1492,7 +1629,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1509,7 +1646,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1523,7 +1660,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder addPlayers(com.fanxi.service.message.PlayerProto.Player value) {
         if (playersBuilder_ == null) {
@@ -1539,7 +1676,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1556,7 +1693,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder addPlayers(
           com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1570,7 +1707,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1584,7 +1721,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder addAllPlayers(
           java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
@@ -1599,12 +1736,12 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder clearPlayers() {
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
           onChanged();
         } else {
           playersBuilder_.clear();
@@ -1612,7 +1749,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public Builder removePlayers(int index) {
         if (playersBuilder_ == null) {
@@ -1625,14 +1762,14 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder getPlayersBuilder(
           int index) {
         return getPlayersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
           int index) {
@@ -1642,7 +1779,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
            getPlayersOrBuilderList() {
@@ -1653,14 +1790,14 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder() {
         return getPlayersFieldBuilder().addBuilder(
             com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder(
           int index) {
@@ -1668,7 +1805,7 @@ public final class JoinTableResponseProto {
             index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 13;</code>
+       * <code>repeated .fanxi.Player players = 14;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
            getPlayersBuilderList() {
@@ -1681,7 +1818,7 @@ public final class JoinTableResponseProto {
           playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
                   players_,
-                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  ((bitField0_ & 0x00000800) == 0x00000800),
                   getParentForChildren(),
                   isClean());
           players_ = null;
@@ -1752,15 +1889,15 @@ public final class JoinTableResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027JoinTableResponse.proto\022\005fanxi\032\022BaseRe" +
-      "sponse.proto\032\014Player.proto\"\363\001\n\021JoinTable" +
+      "sponse.proto\032\014Player.proto\"\204\002\n\021JoinTable" +
       "Response\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.B" +
       "aseResponse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableInde" +
       "x\030\005 \001(\005\022\017\n\007matchId\030\006 \001(\t\022\021\n\tisPlaying\030\007 " +
       "\001(\010\022\020\n\010currTurn\030\010 \001(\t\022\r\n\005cards\030\t \001(\t\022\014\n\004" +
       "deck\030\n \001(\005\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 \001(\010" +
-      "\022\036\n\007players\030\r \003(\0132\r.fanxi.PlayerB3\n\031com." +
-      "fanxi.service.messageB\026JoinTableResponse" +
-      "Protob\006proto3"
+      "\022\017\n\007ownerId\030\r \001(\t\022\036\n\007players\030\016 \003(\0132\r.fan" +
+      "xi.PlayerB3\n\031com.fanxi.service.messageB\026" +
+      "JoinTableResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1781,7 +1918,7 @@ public final class JoinTableResponseProto {
     internal_static_fanxi_JoinTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_JoinTableResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "Deck", "Cash", "IsGold", "Players", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "Deck", "Cash", "IsGold", "OwnerId", "Players", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }

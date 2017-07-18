@@ -16,7 +16,8 @@ message JoinTableResponse {
    int32 deck=10;
    int32 cash=11;
    bool isGold=12;
-   repeated Player players=13;
+   string ownerId=13;
+   repeated Player players=14;
 }
 
 
