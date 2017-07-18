@@ -59,7 +59,7 @@ static GPBFileDescriptor *JoinTableResponseRoot_FileDescriptor(void) {
 @dynamic cash;
 @dynamic isGold;
 @dynamic ownerId;
-@dynamic timeWaiting;
+@dynamic timeAuto;
 @dynamic reference;
 @dynamic playersArray, playersArray_Count;
 
@@ -69,7 +69,7 @@ typedef struct JoinTableResponse__storage_ {
   int32_t tableIndex;
   int32_t deck;
   int32_t cash;
-  int32_t timeWaiting;
+  int32_t timeAuto;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *currTurn;
@@ -185,11 +185,11 @@ typedef struct JoinTableResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "timeWaiting",
+        .name = "timeAuto",
         .dataTypeSpecific.className = NULL,
-        .number = JoinTableResponse_FieldNumber_TimeWaiting,
+        .number = JoinTableResponse_FieldNumber_TimeAuto,
         .hasIndex = 13,
-        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, timeWaiting),
+        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, timeAuto),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
@@ -222,7 +222,7 @@ typedef struct JoinTableResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\t\001\014\000\004\006\000\005\n\000\006\007\000\007\t\000\010\010\000\014\006\000\r\007\000\016\013\000";
+        "\t\001\014\000\004\006\000\005\n\000\006\007\000\007\t\000\010\010\000\014\006\000\r\007\000\016\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

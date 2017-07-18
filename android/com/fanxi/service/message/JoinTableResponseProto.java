@@ -102,9 +102,9 @@ public final class JoinTableResponseProto {
         getOwnerIdBytes();
 
     /**
-     * <code>int32 timeWaiting = 14;</code>
+     * <code>int32 timeAuto = 14;</code>
      */
-    int getTimeWaiting();
+    int getTimeAuto();
 
     /**
      * <code>int64 reference = 15;</code>
@@ -157,7 +157,7 @@ public final class JoinTableResponseProto {
       cash_ = 0;
       isGold_ = false;
       ownerId_ = "";
-      timeWaiting_ = 0;
+      timeAuto_ = 0;
       reference_ = 0L;
       players_ = java.util.Collections.emptyList();
     }
@@ -256,7 +256,7 @@ public final class JoinTableResponseProto {
             }
             case 112: {
 
-              timeWaiting_ = input.readInt32();
+              timeAuto_ = input.readInt32();
               break;
             }
             case 120: {
@@ -511,13 +511,13 @@ public final class JoinTableResponseProto {
       }
     }
 
-    public static final int TIMEWAITING_FIELD_NUMBER = 14;
-    private int timeWaiting_;
+    public static final int TIMEAUTO_FIELD_NUMBER = 14;
+    private int timeAuto_;
     /**
-     * <code>int32 timeWaiting = 14;</code>
+     * <code>int32 timeAuto = 14;</code>
      */
-    public int getTimeWaiting() {
-      return timeWaiting_;
+    public int getTimeAuto() {
+      return timeAuto_;
     }
 
     public static final int REFERENCE_FIELD_NUMBER = 15;
@@ -609,8 +609,8 @@ public final class JoinTableResponseProto {
       if (!getOwnerIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, ownerId_);
       }
-      if (timeWaiting_ != 0) {
-        output.writeInt32(14, timeWaiting_);
+      if (timeAuto_ != 0) {
+        output.writeInt32(14, timeAuto_);
       }
       if (reference_ != 0L) {
         output.writeInt64(15, reference_);
@@ -665,9 +665,9 @@ public final class JoinTableResponseProto {
       if (!getOwnerIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, ownerId_);
       }
-      if (timeWaiting_ != 0) {
+      if (timeAuto_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(14, timeWaiting_);
+          .computeInt32Size(14, timeAuto_);
       }
       if (reference_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -718,8 +718,8 @@ public final class JoinTableResponseProto {
           == other.getIsGold());
       result = result && getOwnerId()
           .equals(other.getOwnerId());
-      result = result && (getTimeWaiting()
-          == other.getTimeWaiting());
+      result = result && (getTimeAuto()
+          == other.getTimeAuto());
       result = result && (getReference()
           == other.getReference());
       result = result && getPlayersList()
@@ -760,8 +760,8 @@ public final class JoinTableResponseProto {
           getIsGold());
       hash = (37 * hash) + OWNERID_FIELD_NUMBER;
       hash = (53 * hash) + getOwnerId().hashCode();
-      hash = (37 * hash) + TIMEWAITING_FIELD_NUMBER;
-      hash = (53 * hash) + getTimeWaiting();
+      hash = (37 * hash) + TIMEAUTO_FIELD_NUMBER;
+      hash = (53 * hash) + getTimeAuto();
       hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getReference());
@@ -914,7 +914,7 @@ public final class JoinTableResponseProto {
 
         ownerId_ = "";
 
-        timeWaiting_ = 0;
+        timeAuto_ = 0;
 
         reference_ = 0L;
 
@@ -963,7 +963,7 @@ public final class JoinTableResponseProto {
         result.cash_ = cash_;
         result.isGold_ = isGold_;
         result.ownerId_ = ownerId_;
-        result.timeWaiting_ = timeWaiting_;
+        result.timeAuto_ = timeAuto_;
         result.reference_ = reference_;
         if (playersBuilder_ == null) {
           if (((bitField0_ & 0x00002000) == 0x00002000)) {
@@ -1053,8 +1053,8 @@ public final class JoinTableResponseProto {
           ownerId_ = other.ownerId_;
           onChanged();
         }
-        if (other.getTimeWaiting() != 0) {
-          setTimeWaiting(other.getTimeWaiting());
+        if (other.getTimeAuto() != 0) {
+          setTimeAuto(other.getTimeAuto());
         }
         if (other.getReference() != 0L) {
           setReference(other.getReference());
@@ -1661,28 +1661,28 @@ public final class JoinTableResponseProto {
         return this;
       }
 
-      private int timeWaiting_ ;
+      private int timeAuto_ ;
       /**
-       * <code>int32 timeWaiting = 14;</code>
+       * <code>int32 timeAuto = 14;</code>
        */
-      public int getTimeWaiting() {
-        return timeWaiting_;
+      public int getTimeAuto() {
+        return timeAuto_;
       }
       /**
-       * <code>int32 timeWaiting = 14;</code>
+       * <code>int32 timeAuto = 14;</code>
        */
-      public Builder setTimeWaiting(int value) {
+      public Builder setTimeAuto(int value) {
         
-        timeWaiting_ = value;
+        timeAuto_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 timeWaiting = 14;</code>
+       * <code>int32 timeAuto = 14;</code>
        */
-      public Builder clearTimeWaiting() {
+      public Builder clearTimeAuto() {
         
-        timeWaiting_ = 0;
+        timeAuto_ = 0;
         onChanged();
         return this;
       }
@@ -2016,16 +2016,16 @@ public final class JoinTableResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027JoinTableResponse.proto\022\005fanxi\032\022BaseRe" +
-      "sponse.proto\032\014Player.proto\"\254\002\n\021JoinTable" +
+      "sponse.proto\032\014Player.proto\"\251\002\n\021JoinTable" +
       "Response\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.B" +
       "aseResponse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableInde" +
       "x\030\005 \001(\005\022\017\n\007matchId\030\006 \001(\t\022\021\n\tisPlaying\030\007 " +
       "\001(\010\022\020\n\010currTurn\030\010 \001(\t\022\r\n\005cards\030\t \001(\t\022\014\n\004" +
       "deck\030\n \001(\005\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 \001(\010" +
-      "\022\017\n\007ownerId\030\r \001(\t\022\023\n\013timeWaiting\030\016 \001(\005\022\021" +
-      "\n\treference\030\017 \001(\003\022\036\n\007players\030\020 \003(\0132\r.fan" +
-      "xi.PlayerB3\n\031com.fanxi.service.messageB\026",
-      "JoinTableResponseProtob\006proto3"
+      "\022\017\n\007ownerId\030\r \001(\t\022\020\n\010timeAuto\030\016 \001(\005\022\021\n\tr" +
+      "eference\030\017 \001(\003\022\036\n\007players\030\020 \003(\0132\r.fanxi." +
+      "PlayerB3\n\031com.fanxi.service.messageB\026Joi",
+      "nTableResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2046,7 +2046,7 @@ public final class JoinTableResponseProto {
     internal_static_fanxi_JoinTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_JoinTableResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "Deck", "Cash", "IsGold", "OwnerId", "TimeWaiting", "Reference", "Players", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "Deck", "Cash", "IsGold", "OwnerId", "TimeAuto", "Reference", "Players", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }
