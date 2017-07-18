@@ -55,6 +55,11 @@ public final class NewTableRequestProto {
      * <code>bool isGold = 14;</code>
      */
     boolean getIsGold();
+
+    /**
+     * <code>int32 maxBet = 15;</code>
+     */
+    int getMaxBet();
   }
   /**
    * Protobuf type {@code fanxi.NewTableRequest}
@@ -73,6 +78,7 @@ public final class NewTableRequestProto {
       tableIndex_ = 0;
       cash_ = 0;
       isGold_ = false;
+      maxBet_ = 0;
     }
 
     @java.lang.Override
@@ -136,6 +142,11 @@ public final class NewTableRequestProto {
             case 112: {
 
               isGold_ = input.readBool();
+              break;
+            }
+            case 120: {
+
+              maxBet_ = input.readInt32();
               break;
             }
           }
@@ -227,6 +238,15 @@ public final class NewTableRequestProto {
       return isGold_;
     }
 
+    public static final int MAXBET_FIELD_NUMBER = 15;
+    private int maxBet_;
+    /**
+     * <code>int32 maxBet = 15;</code>
+     */
+    public int getMaxBet() {
+      return maxBet_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -256,6 +276,9 @@ public final class NewTableRequestProto {
       }
       if (isGold_ != false) {
         output.writeBool(14, isGold_);
+      }
+      if (maxBet_ != 0) {
+        output.writeInt32(15, maxBet_);
       }
     }
 
@@ -288,6 +311,10 @@ public final class NewTableRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isGold_);
       }
+      if (maxBet_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(15, maxBet_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -319,6 +346,8 @@ public final class NewTableRequestProto {
           == other.getCash());
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && (getMaxBet()
+          == other.getMaxBet());
       return result;
     }
 
@@ -344,6 +373,8 @@ public final class NewTableRequestProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + MAXBET_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxBet();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -478,6 +509,8 @@ public final class NewTableRequestProto {
 
         isGold_ = false;
 
+        maxBet_ = 0;
+
         return this;
       }
 
@@ -510,6 +543,7 @@ public final class NewTableRequestProto {
         result.tableIndex_ = tableIndex_;
         result.cash_ = cash_;
         result.isGold_ = isGold_;
+        result.maxBet_ = maxBet_;
         onBuilt();
         return result;
       }
@@ -568,6 +602,9 @@ public final class NewTableRequestProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (other.getMaxBet() != 0) {
+          setMaxBet(other.getMaxBet());
         }
         onChanged();
         return this;
@@ -841,6 +878,32 @@ public final class NewTableRequestProto {
         onChanged();
         return this;
       }
+
+      private int maxBet_ ;
+      /**
+       * <code>int32 maxBet = 15;</code>
+       */
+      public int getMaxBet() {
+        return maxBet_;
+      }
+      /**
+       * <code>int32 maxBet = 15;</code>
+       */
+      public Builder setMaxBet(int value) {
+        
+        maxBet_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 maxBet = 15;</code>
+       */
+      public Builder clearMaxBet() {
+        
+        maxBet_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -905,12 +968,12 @@ public final class NewTableRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026NewTableRequest .proto\022\005fanxi\032\021BaseReq" +
-      "uest.proto\"\211\001\n\017NewTableRequest\022#\n\007baseRe" +
+      "uest.proto\"\231\001\n\017NewTableRequest\022#\n\007baseRe" +
       "q\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n " +
       "\001(\005\022\017\n\007levelId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005" +
-      "\022\014\n\004cash\030\r \001(\005\022\016\n\006isGold\030\016 \001(\010B1\n\031com.fa" +
-      "nxi.service.messageB\024NewTableRequestProt" +
-      "ob\006proto3"
+      "\022\014\n\004cash\030\r \001(\005\022\016\n\006isGold\030\016 \001(\010\022\016\n\006maxBet" +
+      "\030\017 \001(\005B1\n\031com.fanxi.service.messageB\024New" +
+      "TableRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -930,7 +993,7 @@ public final class NewTableRequestProto {
     internal_static_fanxi_NewTableRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_NewTableRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "Cash", "IsGold", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "Cash", "IsGold", "MaxBet", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

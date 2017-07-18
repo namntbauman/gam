@@ -53,6 +53,7 @@ static GPBFileDescriptor *NewTableRequestRoot_FileDescriptor(void) {
 @dynamic tableIndex;
 @dynamic cash;
 @dynamic isGold;
+@dynamic maxBet;
 
 typedef struct NewTableRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -60,6 +61,7 @@ typedef struct NewTableRequest__storage_ {
   int32_t levelId;
   int32_t tableIndex;
   int32_t cash;
+  int32_t maxBet;
   BaseRequest *baseReq;
 } NewTableRequest__storage_;
 
@@ -123,6 +125,15 @@ typedef struct NewTableRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "maxBet",
+        .dataTypeSpecific.className = NULL,
+        .number = NewTableRequest_FieldNumber_MaxBet,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(NewTableRequest__storage_, maxBet),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[NewTableRequest class]
@@ -134,7 +145,7 @@ typedef struct NewTableRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\007\000\n\006\000\013\007\000\014\n\000\016\006\000";
+        "\006\001\007\000\n\006\000\013\007\000\014\n\000\016\006\000\017\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
