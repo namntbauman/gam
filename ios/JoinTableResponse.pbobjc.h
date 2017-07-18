@@ -61,7 +61,9 @@ typedef GPB_ENUM(JoinTableResponse_FieldNumber) {
   JoinTableResponse_FieldNumber_Cash = 11,
   JoinTableResponse_FieldNumber_IsGold = 12,
   JoinTableResponse_FieldNumber_OwnerId = 13,
-  JoinTableResponse_FieldNumber_PlayersArray = 14,
+  JoinTableResponse_FieldNumber_TimeWaiting = 14,
+  JoinTableResponse_FieldNumber_Reference = 15,
+  JoinTableResponse_FieldNumber_PlayersArray = 16,
 };
 
 @interface JoinTableResponse : GPBMessage
@@ -89,6 +91,10 @@ typedef GPB_ENUM(JoinTableResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isGold;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *ownerId;
+
+@property(nonatomic, readwrite) int32_t timeWaiting;
+
+@property(nonatomic, readwrite) int64_t reference;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *playersArray;
 /** The number of items in @c playersArray without causing the array to be created. */

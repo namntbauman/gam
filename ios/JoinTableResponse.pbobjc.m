@@ -59,6 +59,8 @@ static GPBFileDescriptor *JoinTableResponseRoot_FileDescriptor(void) {
 @dynamic cash;
 @dynamic isGold;
 @dynamic ownerId;
+@dynamic timeWaiting;
+@dynamic reference;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct JoinTableResponse__storage_ {
@@ -67,12 +69,14 @@ typedef struct JoinTableResponse__storage_ {
   int32_t tableIndex;
   int32_t deck;
   int32_t cash;
+  int32_t timeWaiting;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *currTurn;
   NSString *cards;
   NSString *ownerId;
   NSMutableArray *playersArray;
+  int64_t reference;
 } JoinTableResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -181,6 +185,24 @@ typedef struct JoinTableResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "timeWaiting",
+        .dataTypeSpecific.className = NULL,
+        .number = JoinTableResponse_FieldNumber_TimeWaiting,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, timeWaiting),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "reference",
+        .dataTypeSpecific.className = NULL,
+        .number = JoinTableResponse_FieldNumber_Reference,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, reference),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
         .name = "playersArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = JoinTableResponse_FieldNumber_PlayersArray,
@@ -200,7 +222,7 @@ typedef struct JoinTableResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\010\001\014\000\004\006\000\005\n\000\006\007\000\007\t\000\010\010\000\014\006\000\r\007\000";
+        "\t\001\014\000\004\006\000\005\n\000\006\007\000\007\t\000\010\010\000\014\006\000\r\007\000\016\013\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
