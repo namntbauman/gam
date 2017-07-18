@@ -55,7 +55,6 @@ typedef GPB_ENUM(NewTableRequest_FieldNumber) {
   NewTableRequest_FieldNumber_TableIndex = 12,
   NewTableRequest_FieldNumber_Cash = 13,
   NewTableRequest_FieldNumber_IsGold = 14,
-  NewTableRequest_FieldNumber_MaxBet = 15,
 };
 
 @interface NewTableRequest : GPBMessage
@@ -73,8 +72,6 @@ typedef GPB_ENUM(NewTableRequest_FieldNumber) {
 @property(nonatomic, readwrite) int32_t cash;
 
 @property(nonatomic, readwrite) BOOL isGold;
-
-@property(nonatomic, readwrite) int32_t maxBet;
 
 @end
 

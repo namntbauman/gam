@@ -9,5 +9,6 @@ message FastPlayRequest {
    int32 zoneId=10;
    int32 cash=11;
    bool isGold = 12;
+   int32 maxBet=13;
    
 }

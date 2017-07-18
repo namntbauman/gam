@@ -51,11 +51,13 @@ static GPBFileDescriptor *FastPlayRequestRoot_FileDescriptor(void) {
 @dynamic zoneId;
 @dynamic cash;
 @dynamic isGold;
+@dynamic maxBet;
 
 typedef struct FastPlayRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t cash;
+  int32_t maxBet;
   BaseRequest *baseReq;
 } FastPlayRequest__storage_;
 
@@ -101,6 +103,15 @@ typedef struct FastPlayRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "maxBet",
+        .dataTypeSpecific.className = NULL,
+        .number = FastPlayRequest_FieldNumber_MaxBet,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(FastPlayRequest__storage_, maxBet),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[FastPlayRequest class]
@@ -112,7 +123,7 @@ typedef struct FastPlayRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\007\000\n\006\000\014\006\000";
+        "\004\001\007\000\n\006\000\014\006\000\r\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
