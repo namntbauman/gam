@@ -1,0 +1,20 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "SetMaxBetResponseProto";
+
+message SetMaxBetResponse {
+   BaseResponse baseResponse=1;
+   int32 zoneId=4;
+   int32 tableIndex=5;
+   string matchId=6;
+   int64 maxBet=7;
+   string userId=8;
+   
+}
+
+
+
+
