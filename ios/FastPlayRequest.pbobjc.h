@@ -54,6 +54,7 @@ typedef GPB_ENUM(FastPlayRequest_FieldNumber) {
   FastPlayRequest_FieldNumber_Cash = 11,
   FastPlayRequest_FieldNumber_IsGold = 12,
   FastPlayRequest_FieldNumber_MaxBet = 13,
+  FastPlayRequest_FieldNumber_IsAutoSetMoney = 14,
 };
 
 @interface FastPlayRequest : GPBMessage
@@ -69,6 +70,8 @@ typedef GPB_ENUM(FastPlayRequest_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isGold;
 
 @property(nonatomic, readwrite) int32_t maxBet;
+
+@property(nonatomic, readwrite) BOOL isAutoSetMoney;
 
 @end
 

@@ -50,6 +50,11 @@ public final class FastPlayRequestProto {
      * <code>int32 maxBet = 13;</code>
      */
     int getMaxBet();
+
+    /**
+     * <code>bool isAutoSetMoney = 14;</code>
+     */
+    boolean getIsAutoSetMoney();
   }
   /**
    * Protobuf type {@code fanxi.FastPlayRequest}
@@ -67,6 +72,7 @@ public final class FastPlayRequestProto {
       cash_ = 0;
       isGold_ = false;
       maxBet_ = 0;
+      isAutoSetMoney_ = false;
     }
 
     @java.lang.Override
@@ -125,6 +131,11 @@ public final class FastPlayRequestProto {
             case 104: {
 
               maxBet_ = input.readInt32();
+              break;
+            }
+            case 112: {
+
+              isAutoSetMoney_ = input.readBool();
               break;
             }
           }
@@ -207,6 +218,15 @@ public final class FastPlayRequestProto {
       return maxBet_;
     }
 
+    public static final int ISAUTOSETMONEY_FIELD_NUMBER = 14;
+    private boolean isAutoSetMoney_;
+    /**
+     * <code>bool isAutoSetMoney = 14;</code>
+     */
+    public boolean getIsAutoSetMoney() {
+      return isAutoSetMoney_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -234,6 +254,9 @@ public final class FastPlayRequestProto {
       if (maxBet_ != 0) {
         output.writeInt32(13, maxBet_);
       }
+      if (isAutoSetMoney_ != false) {
+        output.writeBool(14, isAutoSetMoney_);
+      }
     }
 
     public int getSerializedSize() {
@@ -260,6 +283,10 @@ public final class FastPlayRequestProto {
       if (maxBet_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(13, maxBet_);
+      }
+      if (isAutoSetMoney_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(14, isAutoSetMoney_);
       }
       memoizedSize = size;
       return size;
@@ -290,6 +317,8 @@ public final class FastPlayRequestProto {
           == other.getIsGold());
       result = result && (getMaxBet()
           == other.getMaxBet());
+      result = result && (getIsAutoSetMoney()
+          == other.getIsAutoSetMoney());
       return result;
     }
 
@@ -313,6 +342,9 @@ public final class FastPlayRequestProto {
           getIsGold());
       hash = (37 * hash) + MAXBET_FIELD_NUMBER;
       hash = (53 * hash) + getMaxBet();
+      hash = (37 * hash) + ISAUTOSETMONEY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
+          getIsAutoSetMoney());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -445,6 +477,8 @@ public final class FastPlayRequestProto {
 
         maxBet_ = 0;
 
+        isAutoSetMoney_ = false;
+
         return this;
       }
 
@@ -476,6 +510,7 @@ public final class FastPlayRequestProto {
         result.cash_ = cash_;
         result.isGold_ = isGold_;
         result.maxBet_ = maxBet_;
+        result.isAutoSetMoney_ = isAutoSetMoney_;
         onBuilt();
         return result;
       }
@@ -531,6 +566,9 @@ public final class FastPlayRequestProto {
         }
         if (other.getMaxBet() != 0) {
           setMaxBet(other.getMaxBet());
+        }
+        if (other.getIsAutoSetMoney() != false) {
+          setIsAutoSetMoney(other.getIsAutoSetMoney());
         }
         onChanged();
         return this;
@@ -778,6 +816,32 @@ public final class FastPlayRequestProto {
         onChanged();
         return this;
       }
+
+      private boolean isAutoSetMoney_ ;
+      /**
+       * <code>bool isAutoSetMoney = 14;</code>
+       */
+      public boolean getIsAutoSetMoney() {
+        return isAutoSetMoney_;
+      }
+      /**
+       * <code>bool isAutoSetMoney = 14;</code>
+       */
+      public Builder setIsAutoSetMoney(boolean value) {
+        
+        isAutoSetMoney_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>bool isAutoSetMoney = 14;</code>
+       */
+      public Builder clearIsAutoSetMoney() {
+        
+        isAutoSetMoney_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -842,11 +906,12 @@ public final class FastPlayRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025FastPlayRequest.proto\022\005fanxi\032\021BaseRequ" +
-      "est.proto\"t\n\017FastPlayRequest\022#\n\007baseReq\030" +
-      "\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001(" +
-      "\005\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 \001(\010\022\016\n\006maxBe" +
-      "t\030\r \001(\005B1\n\031com.fanxi.service.messageB\024Fa" +
-      "stPlayRequestProtob\006proto3"
+      "est.proto\"\214\001\n\017FastPlayRequest\022#\n\007baseReq" +
+      "\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006zoneId\030\n \001" +
+      "(\005\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 \001(\010\022\016\n\006maxB" +
+      "et\030\r \001(\005\022\026\n\016isAutoSetMoney\030\016 \001(\010B1\n\031com." +
+      "fanxi.service.messageB\024FastPlayRequestPr" +
+      "otob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -866,7 +931,7 @@ public final class FastPlayRequestProto {
     internal_static_fanxi_FastPlayRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_FastPlayRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", "Cash", "IsGold", "MaxBet", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "Cash", "IsGold", "MaxBet", "IsAutoSetMoney", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 
