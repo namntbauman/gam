@@ -1,0 +1,14 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "OutMiniPokerResponseProto";
+
+message OutMiniPokerResponse {
+    RestfulBaseResponse baseResponse=1;
+   
+}
+
+
+
+

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RegMiniPokerResponseProto";
+
+message RegMiniPokerResponse {
+   RestfulBaseResponse baseResponse=1;
+   int32 timeQuay=4;
+   int64 hu=5;
+   bool isGold=7;
+}
+
+
+
+
