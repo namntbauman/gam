@@ -55,10 +55,11 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
   BetResponse_FieldNumber_TableIndex = 5,
   BetResponse_FieldNumber_MatchId = 6,
   BetResponse_FieldNumber_Cash = 7,
-  BetResponse_FieldNumber_AllTotalCall = 8,
-  BetResponse_FieldNumber_Uid = 9,
-  BetResponse_FieldNumber_CurrUser = 10,
-  BetResponse_FieldNumber_NextUser = 11,
+  BetResponse_FieldNumber_TypeTo = 8,
+  BetResponse_FieldNumber_AllTotalCall = 9,
+  BetResponse_FieldNumber_Uid = 10,
+  BetResponse_FieldNumber_CurrUser = 11,
+  BetResponse_FieldNumber_NextUser = 12,
 };
 
 @interface BetResponse : GPBMessage
@@ -74,6 +75,8 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
 
 @property(nonatomic, readwrite) int64_t cash;
+
+@property(nonatomic, readwrite) int32_t typeTo;
 
 @property(nonatomic, readwrite) int64_t allTotalCall;
 

@@ -11,10 +11,11 @@ message BetResponse {
    int32 tableIndex=5;
    string matchId=6;
    int64 cash=7;
-   int64 allTotalCall=8;
-   string uid=9;
-   UserTo currUser=10;
-   UserTo nextUser=11;
+   int32 typeTo=8;
+   int64 allTotalCall=9;
+   string uid=10;
+   UserTo currUser=11;
+   UserTo nextUser=12;
 }
 
 
