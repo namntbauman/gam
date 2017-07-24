@@ -56,10 +56,12 @@ static GPBFileDescriptor *LoginAtresponseRoot_FileDescriptor(void) {
 @dynamic contentNewVersion;
 @dynamic adv;
 @dynamic type;
+@dynamic timesQuay;
 
 typedef struct LoginATResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t type;
+  int32_t timesQuay;
   RestfulBaseResponse *baseResponse;
   UserDetail *user;
   NSString *server;
@@ -146,6 +148,15 @@ typedef struct LoginATResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "timesQuay",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginATResponse_FieldNumber_TimesQuay,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(LoginATResponse__storage_, timesQuay),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[LoginATResponse class]
@@ -157,7 +168,7 @@ typedef struct LoginATResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\007\r\000\010!!)\000\t\021\000";
+        "\005\001\014\000\007\r\000\010!!)\000\t\021\000\014\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

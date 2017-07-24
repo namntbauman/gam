@@ -93,6 +93,11 @@ public final class LoginATResponseProto {
      * <code>int32 type = 11;</code>
      */
     int getType();
+
+    /**
+     * <code>int32 timesQuay = 12;</code>
+     */
+    int getTimesQuay();
   }
   /**
    * Protobuf type {@code fanxi.LoginATResponse}
@@ -112,6 +117,7 @@ public final class LoginATResponseProto {
       contentNewVersion_ = "";
       adv_ = "";
       type_ = 0;
+      timesQuay_ = 0;
     }
 
     @java.lang.Override
@@ -197,6 +203,11 @@ public final class LoginATResponseProto {
             case 88: {
 
               type_ = input.readInt32();
+              break;
+            }
+            case 96: {
+
+              timesQuay_ = input.readInt32();
               break;
             }
           }
@@ -418,6 +429,15 @@ public final class LoginATResponseProto {
       return type_;
     }
 
+    public static final int TIMESQUAY_FIELD_NUMBER = 12;
+    private int timesQuay_;
+    /**
+     * <code>int32 timesQuay = 12;</code>
+     */
+    public int getTimesQuay() {
+      return timesQuay_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -454,6 +474,9 @@ public final class LoginATResponseProto {
       if (type_ != 0) {
         output.writeInt32(11, type_);
       }
+      if (timesQuay_ != 0) {
+        output.writeInt32(12, timesQuay_);
+      }
     }
 
     public int getSerializedSize() {
@@ -488,6 +511,10 @@ public final class LoginATResponseProto {
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, type_);
+      }
+      if (timesQuay_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, timesQuay_);
       }
       memoizedSize = size;
       return size;
@@ -527,6 +554,8 @@ public final class LoginATResponseProto {
           .equals(other.getAdv());
       result = result && (getType()
           == other.getType());
+      result = result && (getTimesQuay()
+          == other.getTimesQuay());
       return result;
     }
 
@@ -558,6 +587,8 @@ public final class LoginATResponseProto {
       hash = (53 * hash) + getAdv().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
+      hash = (37 * hash) + TIMESQUAY_FIELD_NUMBER;
+      hash = (53 * hash) + getTimesQuay();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -700,6 +731,8 @@ public final class LoginATResponseProto {
 
         type_ = 0;
 
+        timesQuay_ = 0;
+
         return this;
       }
 
@@ -738,6 +771,7 @@ public final class LoginATResponseProto {
         result.contentNewVersion_ = contentNewVersion_;
         result.adv_ = adv_;
         result.type_ = type_;
+        result.timesQuay_ = timesQuay_;
         onBuilt();
         return result;
       }
@@ -806,6 +840,9 @@ public final class LoginATResponseProto {
         }
         if (other.getType() != 0) {
           setType(other.getType());
+        }
+        if (other.getTimesQuay() != 0) {
+          setTimesQuay(other.getTimesQuay());
         }
         onChanged();
         return this;
@@ -1394,6 +1431,32 @@ public final class LoginATResponseProto {
         onChanged();
         return this;
       }
+
+      private int timesQuay_ ;
+      /**
+       * <code>int32 timesQuay = 12;</code>
+       */
+      public int getTimesQuay() {
+        return timesQuay_;
+      }
+      /**
+       * <code>int32 timesQuay = 12;</code>
+       */
+      public Builder setTimesQuay(int value) {
+        
+        timesQuay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 timesQuay = 12;</code>
+       */
+      public Builder clearTimesQuay() {
+        
+        timesQuay_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1458,14 +1521,15 @@ public final class LoginATResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025LoginATResponse.proto\022\005fanxi\032\020UserDeta" +
-      "il.proto\032\031RestfulBaseResponse.proto\"\326\001\n\017" +
+      "il.proto\032\031RestfulBaseResponse.proto\"\351\001\n\017" +
       "LoginATResponse\0220\n\014baseResponse\030\001 \001(\0132\032." +
       "fanxi.RestfulBaseResponse\022\037\n\004user\030\005 \001(\0132" +
       "\021.fanxi.UserDetail\022\016\n\006server\030\006 \001(\t\022\025\n\ris" +
       "ForceUpdate\030\007 \001(\010\022\023\n\013urlDownload\030\010 \001(\t\022\031" +
       "\n\021contentNewVersion\030\t \001(\t\022\013\n\003adv\030\n \001(\t\022\014" +
-      "\n\004type\030\013 \001(\005B1\n\031com.fanxi.service.messag" +
-      "eB\024LoginATResponseProtob\006proto3"
+      "\n\004type\030\013 \001(\005\022\021\n\ttimesQuay\030\014 \001(\005B1\n\031com.f" +
+      "anxi.service.messageB\024LoginATResponsePro" +
+      "tob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1486,7 +1550,7 @@ public final class LoginATResponseProto {
     internal_static_fanxi_LoginATResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginATResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "TimesQuay", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

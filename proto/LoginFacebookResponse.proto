@@ -15,6 +15,7 @@ message LoginFacebookResponse {
    string adv=10;
    int32 type=11;
    string deviceId=12;
+   int32 timesQuay=13;
 }
 
 

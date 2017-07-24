@@ -103,6 +103,11 @@ public final class LoginFacebookResponseProto {
      */
     com.google.protobuf.ByteString
         getDeviceIdBytes();
+
+    /**
+     * <code>int32 timesQuay = 13;</code>
+     */
+    int getTimesQuay();
   }
   /**
    * Protobuf type {@code fanxi.LoginFacebookResponse}
@@ -123,6 +128,7 @@ public final class LoginFacebookResponseProto {
       adv_ = "";
       type_ = 0;
       deviceId_ = "";
+      timesQuay_ = 0;
     }
 
     @java.lang.Override
@@ -214,6 +220,11 @@ public final class LoginFacebookResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               deviceId_ = s;
+              break;
+            }
+            case 104: {
+
+              timesQuay_ = input.readInt32();
               break;
             }
           }
@@ -469,6 +480,15 @@ public final class LoginFacebookResponseProto {
       }
     }
 
+    public static final int TIMESQUAY_FIELD_NUMBER = 13;
+    private int timesQuay_;
+    /**
+     * <code>int32 timesQuay = 13;</code>
+     */
+    public int getTimesQuay() {
+      return timesQuay_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -508,6 +528,9 @@ public final class LoginFacebookResponseProto {
       if (!getDeviceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, deviceId_);
       }
+      if (timesQuay_ != 0) {
+        output.writeInt32(13, timesQuay_);
+      }
     }
 
     public int getSerializedSize() {
@@ -545,6 +568,10 @@ public final class LoginFacebookResponseProto {
       }
       if (!getDeviceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, deviceId_);
+      }
+      if (timesQuay_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(13, timesQuay_);
       }
       memoizedSize = size;
       return size;
@@ -586,6 +613,8 @@ public final class LoginFacebookResponseProto {
           == other.getType());
       result = result && getDeviceId()
           .equals(other.getDeviceId());
+      result = result && (getTimesQuay()
+          == other.getTimesQuay());
       return result;
     }
 
@@ -619,6 +648,8 @@ public final class LoginFacebookResponseProto {
       hash = (53 * hash) + getType();
       hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + TIMESQUAY_FIELD_NUMBER;
+      hash = (53 * hash) + getTimesQuay();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -763,6 +794,8 @@ public final class LoginFacebookResponseProto {
 
         deviceId_ = "";
 
+        timesQuay_ = 0;
+
         return this;
       }
 
@@ -802,6 +835,7 @@ public final class LoginFacebookResponseProto {
         result.adv_ = adv_;
         result.type_ = type_;
         result.deviceId_ = deviceId_;
+        result.timesQuay_ = timesQuay_;
         onBuilt();
         return result;
       }
@@ -874,6 +908,9 @@ public final class LoginFacebookResponseProto {
         if (!other.getDeviceId().isEmpty()) {
           deviceId_ = other.deviceId_;
           onChanged();
+        }
+        if (other.getTimesQuay() != 0) {
+          setTimesQuay(other.getTimesQuay());
         }
         onChanged();
         return this;
@@ -1531,6 +1568,32 @@ public final class LoginFacebookResponseProto {
         onChanged();
         return this;
       }
+
+      private int timesQuay_ ;
+      /**
+       * <code>int32 timesQuay = 13;</code>
+       */
+      public int getTimesQuay() {
+        return timesQuay_;
+      }
+      /**
+       * <code>int32 timesQuay = 13;</code>
+       */
+      public Builder setTimesQuay(int value) {
+        
+        timesQuay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 timesQuay = 13;</code>
+       */
+      public Builder clearTimesQuay() {
+        
+        timesQuay_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1596,14 +1659,15 @@ public final class LoginFacebookResponseProto {
     java.lang.String[] descriptorData = {
       "\n\033LoginFacebookResponse.proto\022\005fanxi\032\020Us" +
       "erDetail.proto\032\031RestfulBaseResponse.prot" +
-      "o\"\356\001\n\025LoginFacebookResponse\0220\n\014baseRespo" +
+      "o\"\201\002\n\025LoginFacebookResponse\0220\n\014baseRespo" +
       "nse\030\001 \001(\0132\032.fanxi.RestfulBaseResponse\022\037\n" +
       "\004user\030\005 \001(\0132\021.fanxi.UserDetail\022\016\n\006server" +
       "\030\006 \001(\t\022\025\n\risForceUpdate\030\007 \001(\010\022\023\n\013urlDown" +
       "load\030\010 \001(\t\022\031\n\021contentNewVersion\030\t \001(\t\022\013\n" +
       "\003adv\030\n \001(\t\022\014\n\004type\030\013 \001(\005\022\020\n\010deviceId\030\014 \001" +
-      "(\tB7\n\031com.fanxi.service.messageB\032LoginFa" +
-      "cebookResponseProtob\006proto3"
+      "(\t\022\021\n\ttimesQuay\030\r \001(\005B7\n\031com.fanxi.servi" +
+      "ce.messageB\032LoginFacebookResponseProtob\006",
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1624,7 +1688,7 @@ public final class LoginFacebookResponseProto {
     internal_static_fanxi_LoginFacebookResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LoginFacebookResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", });
+        new java.lang.String[] { "BaseResponse", "User", "Server", "IsForceUpdate", "UrlDownload", "ContentNewVersion", "Adv", "Type", "DeviceId", "TimesQuay", });
     com.fanxi.service.message.UserDetailProto.getDescriptor();
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }

@@ -17,7 +17,8 @@ message LoginResponse {
    string deviceId=27;
    string captchaToken=28;
    string captcha=29;
-   repeated string variant=30;
+   int32 timesQuay=30;
+   repeated string variant=31;
 }
 
 
