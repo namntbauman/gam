@@ -1,0 +1,17 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RealTimeTaiSuuResponseProto";
+
+message RealTimeTaiSuuResponse {
+   BaseResponse baseResponse=1;
+   int64 reference=4;
+   bool isGold=5;
+   int64 moneyTai=6;
+   int64 moneySuu=7;
+}
+
+
+
+
