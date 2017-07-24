@@ -54,6 +54,8 @@ typedef GPB_ENUM(RealTimeTaiSuuResponse_FieldNumber) {
   RealTimeTaiSuuResponse_FieldNumber_IsGold = 5,
   RealTimeTaiSuuResponse_FieldNumber_MoneyTai = 6,
   RealTimeTaiSuuResponse_FieldNumber_MoneySuu = 7,
+  RealTimeTaiSuuResponse_FieldNumber_NumTai = 8,
+  RealTimeTaiSuuResponse_FieldNumber_NumSuu = 9,
 };
 
 @interface RealTimeTaiSuuResponse : GPBMessage
@@ -69,6 +71,10 @@ typedef GPB_ENUM(RealTimeTaiSuuResponse_FieldNumber) {
 @property(nonatomic, readwrite) int64_t moneyTai;
 
 @property(nonatomic, readwrite) int64_t moneySuu;
+
+@property(nonatomic, readwrite) int32_t numTai;
+
+@property(nonatomic, readwrite) int32_t numSuu;
 
 @end
 

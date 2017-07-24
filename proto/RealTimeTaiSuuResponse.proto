@@ -10,6 +10,8 @@ message RealTimeTaiSuuResponse {
    bool isGold=5;
    int64 moneyTai=6;
    int64 moneySuu=7;
+   int32 numTai=8;
+   int32 numSuu=9;
 }
 
 

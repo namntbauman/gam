@@ -52,9 +52,13 @@ static GPBFileDescriptor *RealTimeTaiSuuResponseRoot_FileDescriptor(void) {
 @dynamic isGold;
 @dynamic moneyTai;
 @dynamic moneySuu;
+@dynamic numTai;
+@dynamic numSuu;
 
 typedef struct RealTimeTaiSuuResponse__storage_ {
   uint32_t _has_storage_[1];
+  int32_t numTai;
+  int32_t numSuu;
   BaseResponse *baseResponse;
   int64_t reference;
   int64_t moneyTai;
@@ -112,6 +116,24 @@ typedef struct RealTimeTaiSuuResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
+      {
+        .name = "numTai",
+        .dataTypeSpecific.className = NULL,
+        .number = RealTimeTaiSuuResponse_FieldNumber_NumTai,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(RealTimeTaiSuuResponse__storage_, numTai),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "numSuu",
+        .dataTypeSpecific.className = NULL,
+        .number = RealTimeTaiSuuResponse_FieldNumber_NumSuu,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(RealTimeTaiSuuResponse__storage_, numSuu),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[RealTimeTaiSuuResponse class]
@@ -123,7 +145,7 @@ typedef struct RealTimeTaiSuuResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\005\006\000\006\010\000\007\010\000";
+        "\006\001\014\000\005\006\000\006\010\000\007\010\000\010\006\000\t\006\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

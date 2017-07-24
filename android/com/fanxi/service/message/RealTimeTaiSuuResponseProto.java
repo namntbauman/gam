@@ -50,6 +50,16 @@ public final class RealTimeTaiSuuResponseProto {
      * <code>int64 moneySuu = 7;</code>
      */
     long getMoneySuu();
+
+    /**
+     * <code>int32 numTai = 8;</code>
+     */
+    int getNumTai();
+
+    /**
+     * <code>int32 numSuu = 9;</code>
+     */
+    int getNumSuu();
   }
   /**
    * Protobuf type {@code fanxi.RealTimeTaiSuuResponse}
@@ -67,6 +77,8 @@ public final class RealTimeTaiSuuResponseProto {
       isGold_ = false;
       moneyTai_ = 0L;
       moneySuu_ = 0L;
+      numTai_ = 0;
+      numSuu_ = 0;
     }
 
     @java.lang.Override
@@ -125,6 +137,16 @@ public final class RealTimeTaiSuuResponseProto {
             case 56: {
 
               moneySuu_ = input.readInt64();
+              break;
+            }
+            case 64: {
+
+              numTai_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              numSuu_ = input.readInt32();
               break;
             }
           }
@@ -207,6 +229,24 @@ public final class RealTimeTaiSuuResponseProto {
       return moneySuu_;
     }
 
+    public static final int NUMTAI_FIELD_NUMBER = 8;
+    private int numTai_;
+    /**
+     * <code>int32 numTai = 8;</code>
+     */
+    public int getNumTai() {
+      return numTai_;
+    }
+
+    public static final int NUMSUU_FIELD_NUMBER = 9;
+    private int numSuu_;
+    /**
+     * <code>int32 numSuu = 9;</code>
+     */
+    public int getNumSuu() {
+      return numSuu_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -234,6 +274,12 @@ public final class RealTimeTaiSuuResponseProto {
       if (moneySuu_ != 0L) {
         output.writeInt64(7, moneySuu_);
       }
+      if (numTai_ != 0) {
+        output.writeInt32(8, numTai_);
+      }
+      if (numSuu_ != 0) {
+        output.writeInt32(9, numSuu_);
+      }
     }
 
     public int getSerializedSize() {
@@ -260,6 +306,14 @@ public final class RealTimeTaiSuuResponseProto {
       if (moneySuu_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(7, moneySuu_);
+      }
+      if (numTai_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(8, numTai_);
+      }
+      if (numSuu_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, numSuu_);
       }
       memoizedSize = size;
       return size;
@@ -290,6 +344,10 @@ public final class RealTimeTaiSuuResponseProto {
           == other.getMoneyTai());
       result = result && (getMoneySuu()
           == other.getMoneySuu());
+      result = result && (getNumTai()
+          == other.getNumTai());
+      result = result && (getNumSuu()
+          == other.getNumSuu());
       return result;
     }
 
@@ -316,6 +374,10 @@ public final class RealTimeTaiSuuResponseProto {
       hash = (37 * hash) + MONEYSUU_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getMoneySuu());
+      hash = (37 * hash) + NUMTAI_FIELD_NUMBER;
+      hash = (53 * hash) + getNumTai();
+      hash = (37 * hash) + NUMSUU_FIELD_NUMBER;
+      hash = (53 * hash) + getNumSuu();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -448,6 +510,10 @@ public final class RealTimeTaiSuuResponseProto {
 
         moneySuu_ = 0L;
 
+        numTai_ = 0;
+
+        numSuu_ = 0;
+
         return this;
       }
 
@@ -479,6 +545,8 @@ public final class RealTimeTaiSuuResponseProto {
         result.isGold_ = isGold_;
         result.moneyTai_ = moneyTai_;
         result.moneySuu_ = moneySuu_;
+        result.numTai_ = numTai_;
+        result.numSuu_ = numSuu_;
         onBuilt();
         return result;
       }
@@ -534,6 +602,12 @@ public final class RealTimeTaiSuuResponseProto {
         }
         if (other.getMoneySuu() != 0L) {
           setMoneySuu(other.getMoneySuu());
+        }
+        if (other.getNumTai() != 0) {
+          setNumTai(other.getNumTai());
+        }
+        if (other.getNumSuu() != 0) {
+          setNumSuu(other.getNumSuu());
         }
         onChanged();
         return this;
@@ -781,6 +855,58 @@ public final class RealTimeTaiSuuResponseProto {
         onChanged();
         return this;
       }
+
+      private int numTai_ ;
+      /**
+       * <code>int32 numTai = 8;</code>
+       */
+      public int getNumTai() {
+        return numTai_;
+      }
+      /**
+       * <code>int32 numTai = 8;</code>
+       */
+      public Builder setNumTai(int value) {
+        
+        numTai_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numTai = 8;</code>
+       */
+      public Builder clearNumTai() {
+        
+        numTai_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int numSuu_ ;
+      /**
+       * <code>int32 numSuu = 9;</code>
+       */
+      public int getNumSuu() {
+        return numSuu_;
+      }
+      /**
+       * <code>int32 numSuu = 9;</code>
+       */
+      public Builder setNumSuu(int value) {
+        
+        numSuu_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numSuu = 9;</code>
+       */
+      public Builder clearNumSuu() {
+        
+        numSuu_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -845,12 +971,13 @@ public final class RealTimeTaiSuuResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\034RealTimeTaiSuuResponse.proto\022\005fanxi\032\022B" +
-      "aseResponse.proto\"\212\001\n\026RealTimeTaiSuuResp" +
+      "aseResponse.proto\"\252\001\n\026RealTimeTaiSuuResp" +
       "onse\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseR" +
       "esponse\022\021\n\treference\030\004 \001(\003\022\016\n\006isGold\030\005 \001" +
-      "(\010\022\020\n\010moneyTai\030\006 \001(\003\022\020\n\010moneySuu\030\007 \001(\003B8" +
-      "\n\031com.fanxi.service.messageB\033RealTimeTai" +
-      "SuuResponseProtob\006proto3"
+      "(\010\022\020\n\010moneyTai\030\006 \001(\003\022\020\n\010moneySuu\030\007 \001(\003\022\016" +
+      "\n\006numTai\030\010 \001(\005\022\016\n\006numSuu\030\t \001(\005B8\n\031com.fa" +
+      "nxi.service.messageB\033RealTimeTaiSuuRespo" +
+      "nseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -870,7 +997,7 @@ public final class RealTimeTaiSuuResponseProto {
     internal_static_fanxi_RealTimeTaiSuuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RealTimeTaiSuuResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Reference", "IsGold", "MoneyTai", "MoneySuu", });
+        new java.lang.String[] { "BaseResponse", "Reference", "IsGold", "MoneyTai", "MoneySuu", "NumTai", "NumSuu", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 
