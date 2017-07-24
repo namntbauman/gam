@@ -15,6 +15,7 @@
 
  #import "StartResponse.pbobjc.h"
  #import "BaseResponse.pbobjc.h"
+ #import "Player.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -52,6 +53,7 @@ static GPBFileDescriptor *StartResponseRoot_FileDescriptor(void) {
 @dynamic tableIndex;
 @dynamic matchId;
 @dynamic reference;
+@dynamic playingArray, playingArray_Count;
 
 typedef struct StartResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -59,6 +61,7 @@ typedef struct StartResponse__storage_ {
   int32_t tableIndex;
   BaseResponse *baseResponse;
   NSString *matchId;
+  NSMutableArray *playingArray;
   int64_t reference;
 } StartResponse__storage_;
 
@@ -112,6 +115,15 @@ typedef struct StartResponse__storage_ {
         .offset = (uint32_t)offsetof(StartResponse__storage_, reference),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "playingArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(Player),
+        .number = StartResponse_FieldNumber_PlayingArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(StartResponse__storage_, playingArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =
