@@ -50,9 +50,7 @@ static GPBFileDescriptor *RegTaiSuuResponseRoot_FileDescriptor(void) {
 @dynamic hasBaseResponse, baseResponse;
 @dynamic reference;
 @dynamic numTai;
-@dynamic numTaiGold;
 @dynamic numSuu;
-@dynamic numSuuGold;
 @dynamic isGold;
 @dynamic moneyTai;
 @dynamic moneySuu;
@@ -63,9 +61,7 @@ static GPBFileDescriptor *RegTaiSuuResponseRoot_FileDescriptor(void) {
 typedef struct RegTaiSuuResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t numTai;
-  int32_t numTaiGold;
   int32_t numSuu;
-  int32_t numSuuGold;
   int32_t timeRemaining;
   int32_t state;
   RestfulBaseResponse *baseResponse;
@@ -109,29 +105,11 @@ typedef struct RegTaiSuuResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "numTaiGold",
-        .dataTypeSpecific.className = NULL,
-        .number = RegTaiSuuResponse_FieldNumber_NumTaiGold,
-        .hasIndex = 3,
-        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, numTaiGold),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
-      },
-      {
         .name = "numSuu",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_NumSuu,
-        .hasIndex = 4,
+        .hasIndex = 3,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, numSuu),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
-      },
-      {
-        .name = "numSuuGold",
-        .dataTypeSpecific.className = NULL,
-        .number = RegTaiSuuResponse_FieldNumber_NumSuuGold,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, numSuuGold),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
@@ -139,8 +117,8 @@ typedef struct RegTaiSuuResponse__storage_ {
         .name = "isGold",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_IsGold,
-        .hasIndex = 6,
-        .offset = 7,  // Stored in _has_storage_ to save space.
+        .hasIndex = 4,
+        .offset = 5,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
@@ -148,7 +126,7 @@ typedef struct RegTaiSuuResponse__storage_ {
         .name = "moneyTai",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_MoneyTai,
-        .hasIndex = 8,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, moneyTai),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
@@ -157,7 +135,7 @@ typedef struct RegTaiSuuResponse__storage_ {
         .name = "moneySuu",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_MoneySuu,
-        .hasIndex = 9,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, moneySuu),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
@@ -166,7 +144,7 @@ typedef struct RegTaiSuuResponse__storage_ {
         .name = "timeRemaining",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_TimeRemaining,
-        .hasIndex = 10,
+        .hasIndex = 8,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, timeRemaining),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -175,7 +153,7 @@ typedef struct RegTaiSuuResponse__storage_ {
         .name = "state",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_State,
-        .hasIndex = 11,
+        .hasIndex = 9,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, state),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
@@ -184,7 +162,7 @@ typedef struct RegTaiSuuResponse__storage_ {
         .name = "betMoneys",
         .dataTypeSpecific.className = NULL,
         .number = RegTaiSuuResponse_FieldNumber_BetMoneys,
-        .hasIndex = 12,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, betMoneys),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -200,7 +178,7 @@ typedef struct RegTaiSuuResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\n\001\014\000\005\006\000\006\n\000\007\006\000\010\n\000\t\006\000\n\010\000\013\010\000\014\r\000\016\t\000";
+        "\010\001\014\000\005\006\000\006\006\000\007\006\000\010\010\000\t\010\000\n\r\000\014\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

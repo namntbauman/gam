@@ -42,51 +42,41 @@ public final class RegTaiSuuResponseProto {
     int getNumTai();
 
     /**
-     * <code>int32 numTaiGold = 6;</code>
-     */
-    int getNumTaiGold();
-
-    /**
-     * <code>int32 numSuu = 7;</code>
+     * <code>int32 numSuu = 6;</code>
      */
     int getNumSuu();
 
     /**
-     * <code>int32 numSuuGold = 8;</code>
-     */
-    int getNumSuuGold();
-
-    /**
-     * <code>bool isGold = 9;</code>
+     * <code>bool isGold = 7;</code>
      */
     boolean getIsGold();
 
     /**
-     * <code>int64 moneyTai = 10;</code>
+     * <code>int64 moneyTai = 8;</code>
      */
     long getMoneyTai();
 
     /**
-     * <code>int64 moneySuu = 11;</code>
+     * <code>int64 moneySuu = 9;</code>
      */
     long getMoneySuu();
 
     /**
-     * <code>int32 timeRemaining = 12;</code>
+     * <code>int32 timeRemaining = 10;</code>
      */
     int getTimeRemaining();
 
     /**
-     * <code>int32 state = 13;</code>
+     * <code>int32 state = 11;</code>
      */
     int getState();
 
     /**
-     * <code>string betMoneys = 14;</code>
+     * <code>string betMoneys = 12;</code>
      */
     java.lang.String getBetMoneys();
     /**
-     * <code>string betMoneys = 14;</code>
+     * <code>string betMoneys = 12;</code>
      */
     com.google.protobuf.ByteString
         getBetMoneysBytes();
@@ -105,9 +95,7 @@ public final class RegTaiSuuResponseProto {
     private RegTaiSuuResponse() {
       reference_ = 0L;
       numTai_ = 0;
-      numTaiGold_ = 0;
       numSuu_ = 0;
-      numSuuGold_ = 0;
       isGold_ = false;
       moneyTai_ = 0L;
       moneySuu_ = 0L;
@@ -166,45 +154,35 @@ public final class RegTaiSuuResponseProto {
             }
             case 48: {
 
-              numTaiGold_ = input.readInt32();
+              numSuu_ = input.readInt32();
               break;
             }
             case 56: {
 
-              numSuu_ = input.readInt32();
+              isGold_ = input.readBool();
               break;
             }
             case 64: {
 
-              numSuuGold_ = input.readInt32();
+              moneyTai_ = input.readInt64();
               break;
             }
             case 72: {
 
-              isGold_ = input.readBool();
+              moneySuu_ = input.readInt64();
               break;
             }
             case 80: {
 
-              moneyTai_ = input.readInt64();
+              timeRemaining_ = input.readInt32();
               break;
             }
             case 88: {
 
-              moneySuu_ = input.readInt64();
-              break;
-            }
-            case 96: {
-
-              timeRemaining_ = input.readInt32();
-              break;
-            }
-            case 104: {
-
               state_ = input.readInt32();
               break;
             }
-            case 114: {
+            case 98: {
               java.lang.String s = input.readStringRequireUtf8();
 
               betMoneys_ = s;
@@ -272,82 +250,64 @@ public final class RegTaiSuuResponseProto {
       return numTai_;
     }
 
-    public static final int NUMTAIGOLD_FIELD_NUMBER = 6;
-    private int numTaiGold_;
-    /**
-     * <code>int32 numTaiGold = 6;</code>
-     */
-    public int getNumTaiGold() {
-      return numTaiGold_;
-    }
-
-    public static final int NUMSUU_FIELD_NUMBER = 7;
+    public static final int NUMSUU_FIELD_NUMBER = 6;
     private int numSuu_;
     /**
-     * <code>int32 numSuu = 7;</code>
+     * <code>int32 numSuu = 6;</code>
      */
     public int getNumSuu() {
       return numSuu_;
     }
 
-    public static final int NUMSUUGOLD_FIELD_NUMBER = 8;
-    private int numSuuGold_;
-    /**
-     * <code>int32 numSuuGold = 8;</code>
-     */
-    public int getNumSuuGold() {
-      return numSuuGold_;
-    }
-
-    public static final int ISGOLD_FIELD_NUMBER = 9;
+    public static final int ISGOLD_FIELD_NUMBER = 7;
     private boolean isGold_;
     /**
-     * <code>bool isGold = 9;</code>
+     * <code>bool isGold = 7;</code>
      */
     public boolean getIsGold() {
       return isGold_;
     }
 
-    public static final int MONEYTAI_FIELD_NUMBER = 10;
+    public static final int MONEYTAI_FIELD_NUMBER = 8;
     private long moneyTai_;
     /**
-     * <code>int64 moneyTai = 10;</code>
+     * <code>int64 moneyTai = 8;</code>
      */
     public long getMoneyTai() {
       return moneyTai_;
     }
 
-    public static final int MONEYSUU_FIELD_NUMBER = 11;
+    public static final int MONEYSUU_FIELD_NUMBER = 9;
     private long moneySuu_;
     /**
-     * <code>int64 moneySuu = 11;</code>
+     * <code>int64 moneySuu = 9;</code>
      */
     public long getMoneySuu() {
       return moneySuu_;
     }
 
-    public static final int TIMEREMAINING_FIELD_NUMBER = 12;
+    public static final int TIMEREMAINING_FIELD_NUMBER = 10;
     private int timeRemaining_;
     /**
-     * <code>int32 timeRemaining = 12;</code>
+     * <code>int32 timeRemaining = 10;</code>
      */
     public int getTimeRemaining() {
       return timeRemaining_;
     }
 
-    public static final int STATE_FIELD_NUMBER = 13;
+    public static final int STATE_FIELD_NUMBER = 11;
     private int state_;
     /**
-     * <code>int32 state = 13;</code>
+     * <code>int32 state = 11;</code>
      */
     public int getState() {
       return state_;
     }
 
-    public static final int BETMONEYS_FIELD_NUMBER = 14;
+    public static final int BETMONEYS_FIELD_NUMBER = 12;
     private volatile java.lang.Object betMoneys_;
     /**
-     * <code>string betMoneys = 14;</code>
+     * <code>string betMoneys = 12;</code>
      */
     public java.lang.String getBetMoneys() {
       java.lang.Object ref = betMoneys_;
@@ -362,7 +322,7 @@ public final class RegTaiSuuResponseProto {
       }
     }
     /**
-     * <code>string betMoneys = 14;</code>
+     * <code>string betMoneys = 12;</code>
      */
     public com.google.protobuf.ByteString
         getBetMoneysBytes() {
@@ -399,32 +359,26 @@ public final class RegTaiSuuResponseProto {
       if (numTai_ != 0) {
         output.writeInt32(5, numTai_);
       }
-      if (numTaiGold_ != 0) {
-        output.writeInt32(6, numTaiGold_);
-      }
       if (numSuu_ != 0) {
-        output.writeInt32(7, numSuu_);
-      }
-      if (numSuuGold_ != 0) {
-        output.writeInt32(8, numSuuGold_);
+        output.writeInt32(6, numSuu_);
       }
       if (isGold_ != false) {
-        output.writeBool(9, isGold_);
+        output.writeBool(7, isGold_);
       }
       if (moneyTai_ != 0L) {
-        output.writeInt64(10, moneyTai_);
+        output.writeInt64(8, moneyTai_);
       }
       if (moneySuu_ != 0L) {
-        output.writeInt64(11, moneySuu_);
+        output.writeInt64(9, moneySuu_);
       }
       if (timeRemaining_ != 0) {
-        output.writeInt32(12, timeRemaining_);
+        output.writeInt32(10, timeRemaining_);
       }
       if (state_ != 0) {
-        output.writeInt32(13, state_);
+        output.writeInt32(11, state_);
       }
       if (!getBetMoneysBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 14, betMoneys_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, betMoneys_);
       }
     }
 
@@ -445,40 +399,32 @@ public final class RegTaiSuuResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, numTai_);
       }
-      if (numTaiGold_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, numTaiGold_);
-      }
       if (numSuu_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(7, numSuu_);
-      }
-      if (numSuuGold_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, numSuuGold_);
+          .computeInt32Size(6, numSuu_);
       }
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(9, isGold_);
+          .computeBoolSize(7, isGold_);
       }
       if (moneyTai_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(10, moneyTai_);
+          .computeInt64Size(8, moneyTai_);
       }
       if (moneySuu_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(11, moneySuu_);
+          .computeInt64Size(9, moneySuu_);
       }
       if (timeRemaining_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(12, timeRemaining_);
+          .computeInt32Size(10, timeRemaining_);
       }
       if (state_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(13, state_);
+          .computeInt32Size(11, state_);
       }
       if (!getBetMoneysBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(14, betMoneys_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, betMoneys_);
       }
       memoizedSize = size;
       return size;
@@ -505,12 +451,8 @@ public final class RegTaiSuuResponseProto {
           == other.getReference());
       result = result && (getNumTai()
           == other.getNumTai());
-      result = result && (getNumTaiGold()
-          == other.getNumTaiGold());
       result = result && (getNumSuu()
           == other.getNumSuu());
-      result = result && (getNumSuuGold()
-          == other.getNumSuuGold());
       result = result && (getIsGold()
           == other.getIsGold());
       result = result && (getMoneyTai()
@@ -542,12 +484,8 @@ public final class RegTaiSuuResponseProto {
           getReference());
       hash = (37 * hash) + NUMTAI_FIELD_NUMBER;
       hash = (53 * hash) + getNumTai();
-      hash = (37 * hash) + NUMTAIGOLD_FIELD_NUMBER;
-      hash = (53 * hash) + getNumTaiGold();
       hash = (37 * hash) + NUMSUU_FIELD_NUMBER;
       hash = (53 * hash) + getNumSuu();
-      hash = (37 * hash) + NUMSUUGOLD_FIELD_NUMBER;
-      hash = (53 * hash) + getNumSuuGold();
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
@@ -691,11 +629,7 @@ public final class RegTaiSuuResponseProto {
 
         numTai_ = 0;
 
-        numTaiGold_ = 0;
-
         numSuu_ = 0;
-
-        numSuuGold_ = 0;
 
         isGold_ = false;
 
@@ -738,9 +672,7 @@ public final class RegTaiSuuResponseProto {
         }
         result.reference_ = reference_;
         result.numTai_ = numTai_;
-        result.numTaiGold_ = numTaiGold_;
         result.numSuu_ = numSuu_;
-        result.numSuuGold_ = numSuuGold_;
         result.isGold_ = isGold_;
         result.moneyTai_ = moneyTai_;
         result.moneySuu_ = moneySuu_;
@@ -797,14 +729,8 @@ public final class RegTaiSuuResponseProto {
         if (other.getNumTai() != 0) {
           setNumTai(other.getNumTai());
         }
-        if (other.getNumTaiGold() != 0) {
-          setNumTaiGold(other.getNumTaiGold());
-        }
         if (other.getNumSuu() != 0) {
           setNumSuu(other.getNumSuu());
-        }
-        if (other.getNumSuuGold() != 0) {
-          setNumSuuGold(other.getNumSuuGold());
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
@@ -1020,41 +946,15 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
 
-      private int numTaiGold_ ;
-      /**
-       * <code>int32 numTaiGold = 6;</code>
-       */
-      public int getNumTaiGold() {
-        return numTaiGold_;
-      }
-      /**
-       * <code>int32 numTaiGold = 6;</code>
-       */
-      public Builder setNumTaiGold(int value) {
-        
-        numTaiGold_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 numTaiGold = 6;</code>
-       */
-      public Builder clearNumTaiGold() {
-        
-        numTaiGold_ = 0;
-        onChanged();
-        return this;
-      }
-
       private int numSuu_ ;
       /**
-       * <code>int32 numSuu = 7;</code>
+       * <code>int32 numSuu = 6;</code>
        */
       public int getNumSuu() {
         return numSuu_;
       }
       /**
-       * <code>int32 numSuu = 7;</code>
+       * <code>int32 numSuu = 6;</code>
        */
       public Builder setNumSuu(int value) {
         
@@ -1063,7 +963,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>int32 numSuu = 7;</code>
+       * <code>int32 numSuu = 6;</code>
        */
       public Builder clearNumSuu() {
         
@@ -1072,41 +972,15 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
 
-      private int numSuuGold_ ;
-      /**
-       * <code>int32 numSuuGold = 8;</code>
-       */
-      public int getNumSuuGold() {
-        return numSuuGold_;
-      }
-      /**
-       * <code>int32 numSuuGold = 8;</code>
-       */
-      public Builder setNumSuuGold(int value) {
-        
-        numSuuGold_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int32 numSuuGold = 8;</code>
-       */
-      public Builder clearNumSuuGold() {
-        
-        numSuuGold_ = 0;
-        onChanged();
-        return this;
-      }
-
       private boolean isGold_ ;
       /**
-       * <code>bool isGold = 9;</code>
+       * <code>bool isGold = 7;</code>
        */
       public boolean getIsGold() {
         return isGold_;
       }
       /**
-       * <code>bool isGold = 9;</code>
+       * <code>bool isGold = 7;</code>
        */
       public Builder setIsGold(boolean value) {
         
@@ -1115,7 +989,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>bool isGold = 9;</code>
+       * <code>bool isGold = 7;</code>
        */
       public Builder clearIsGold() {
         
@@ -1126,13 +1000,13 @@ public final class RegTaiSuuResponseProto {
 
       private long moneyTai_ ;
       /**
-       * <code>int64 moneyTai = 10;</code>
+       * <code>int64 moneyTai = 8;</code>
        */
       public long getMoneyTai() {
         return moneyTai_;
       }
       /**
-       * <code>int64 moneyTai = 10;</code>
+       * <code>int64 moneyTai = 8;</code>
        */
       public Builder setMoneyTai(long value) {
         
@@ -1141,7 +1015,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>int64 moneyTai = 10;</code>
+       * <code>int64 moneyTai = 8;</code>
        */
       public Builder clearMoneyTai() {
         
@@ -1152,13 +1026,13 @@ public final class RegTaiSuuResponseProto {
 
       private long moneySuu_ ;
       /**
-       * <code>int64 moneySuu = 11;</code>
+       * <code>int64 moneySuu = 9;</code>
        */
       public long getMoneySuu() {
         return moneySuu_;
       }
       /**
-       * <code>int64 moneySuu = 11;</code>
+       * <code>int64 moneySuu = 9;</code>
        */
       public Builder setMoneySuu(long value) {
         
@@ -1167,7 +1041,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>int64 moneySuu = 11;</code>
+       * <code>int64 moneySuu = 9;</code>
        */
       public Builder clearMoneySuu() {
         
@@ -1178,13 +1052,13 @@ public final class RegTaiSuuResponseProto {
 
       private int timeRemaining_ ;
       /**
-       * <code>int32 timeRemaining = 12;</code>
+       * <code>int32 timeRemaining = 10;</code>
        */
       public int getTimeRemaining() {
         return timeRemaining_;
       }
       /**
-       * <code>int32 timeRemaining = 12;</code>
+       * <code>int32 timeRemaining = 10;</code>
        */
       public Builder setTimeRemaining(int value) {
         
@@ -1193,7 +1067,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>int32 timeRemaining = 12;</code>
+       * <code>int32 timeRemaining = 10;</code>
        */
       public Builder clearTimeRemaining() {
         
@@ -1204,13 +1078,13 @@ public final class RegTaiSuuResponseProto {
 
       private int state_ ;
       /**
-       * <code>int32 state = 13;</code>
+       * <code>int32 state = 11;</code>
        */
       public int getState() {
         return state_;
       }
       /**
-       * <code>int32 state = 13;</code>
+       * <code>int32 state = 11;</code>
        */
       public Builder setState(int value) {
         
@@ -1219,7 +1093,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>int32 state = 13;</code>
+       * <code>int32 state = 11;</code>
        */
       public Builder clearState() {
         
@@ -1230,7 +1104,7 @@ public final class RegTaiSuuResponseProto {
 
       private java.lang.Object betMoneys_ = "";
       /**
-       * <code>string betMoneys = 14;</code>
+       * <code>string betMoneys = 12;</code>
        */
       public java.lang.String getBetMoneys() {
         java.lang.Object ref = betMoneys_;
@@ -1245,7 +1119,7 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>string betMoneys = 14;</code>
+       * <code>string betMoneys = 12;</code>
        */
       public com.google.protobuf.ByteString
           getBetMoneysBytes() {
@@ -1261,7 +1135,7 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>string betMoneys = 14;</code>
+       * <code>string betMoneys = 12;</code>
        */
       public Builder setBetMoneys(
           java.lang.String value) {
@@ -1274,7 +1148,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>string betMoneys = 14;</code>
+       * <code>string betMoneys = 12;</code>
        */
       public Builder clearBetMoneys() {
         
@@ -1283,7 +1157,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>string betMoneys = 14;</code>
+       * <code>string betMoneys = 12;</code>
        */
       public Builder setBetMoneysBytes(
           com.google.protobuf.ByteString value) {
@@ -1360,14 +1234,13 @@ public final class RegTaiSuuResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027RegTaiSuuResponse.proto\022\005fanxi\032\031Restfu" +
-      "lBaseResponse.proto\"\215\002\n\021RegTaiSuuRespons" +
+      "lBaseResponse.proto\"\345\001\n\021RegTaiSuuRespons" +
       "e\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.RestfulB" +
       "aseResponse\022\021\n\treference\030\004 \001(\003\022\016\n\006numTai" +
-      "\030\005 \001(\005\022\022\n\nnumTaiGold\030\006 \001(\005\022\016\n\006numSuu\030\007 \001" +
-      "(\005\022\022\n\nnumSuuGold\030\010 \001(\005\022\016\n\006isGold\030\t \001(\010\022\020" +
-      "\n\010moneyTai\030\n \001(\003\022\020\n\010moneySuu\030\013 \001(\003\022\025\n\rti" +
-      "meRemaining\030\014 \001(\005\022\r\n\005state\030\r \001(\005\022\021\n\tbetM" +
-      "oneys\030\016 \001(\tB3\n\031com.fanxi.service.message" +
+      "\030\005 \001(\005\022\016\n\006numSuu\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\020" +
+      "\n\010moneyTai\030\010 \001(\003\022\020\n\010moneySuu\030\t \001(\003\022\025\n\rti" +
+      "meRemaining\030\n \001(\005\022\r\n\005state\030\013 \001(\005\022\021\n\tbetM" +
+      "oneys\030\014 \001(\tB3\n\031com.fanxi.service.message" +
       "B\026RegTaiSuuResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
@@ -1388,7 +1261,7 @@ public final class RegTaiSuuResponseProto {
     internal_static_fanxi_RegTaiSuuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegTaiSuuResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Reference", "NumTai", "NumTaiGold", "NumSuu", "NumSuuGold", "IsGold", "MoneyTai", "MoneySuu", "TimeRemaining", "State", "BetMoneys", });
+        new java.lang.String[] { "BaseResponse", "Reference", "NumTai", "NumSuu", "IsGold", "MoneyTai", "MoneySuu", "TimeRemaining", "State", "BetMoneys", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

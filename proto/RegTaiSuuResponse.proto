@@ -8,15 +8,13 @@ message RegTaiSuuResponse {
    RestfulBaseResponse baseResponse=1;
    int64 reference=4;
    int32 numTai=5;
-   int32 numTaiGold=6;
-   int32 numSuu=7;
-   int32 numSuuGold=8;
-   bool isGold=9;
-   int64 moneyTai=10;
-   int64 moneySuu=11;
-   int32 timeRemaining=12;
-   int32 state=13;
-   string betMoneys=14;
+   int32 numSuu=6;
+   bool isGold=7;
+   int64 moneyTai=8;
+   int64 moneySuu=9;
+   int32 timeRemaining=10;
+   int32 state=11;
+   string betMoneys=12;
 }
 
 

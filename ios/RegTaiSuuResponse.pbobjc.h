@@ -52,15 +52,13 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
   RegTaiSuuResponse_FieldNumber_BaseResponse = 1,
   RegTaiSuuResponse_FieldNumber_Reference = 4,
   RegTaiSuuResponse_FieldNumber_NumTai = 5,
-  RegTaiSuuResponse_FieldNumber_NumTaiGold = 6,
-  RegTaiSuuResponse_FieldNumber_NumSuu = 7,
-  RegTaiSuuResponse_FieldNumber_NumSuuGold = 8,
-  RegTaiSuuResponse_FieldNumber_IsGold = 9,
-  RegTaiSuuResponse_FieldNumber_MoneyTai = 10,
-  RegTaiSuuResponse_FieldNumber_MoneySuu = 11,
-  RegTaiSuuResponse_FieldNumber_TimeRemaining = 12,
-  RegTaiSuuResponse_FieldNumber_State = 13,
-  RegTaiSuuResponse_FieldNumber_BetMoneys = 14,
+  RegTaiSuuResponse_FieldNumber_NumSuu = 6,
+  RegTaiSuuResponse_FieldNumber_IsGold = 7,
+  RegTaiSuuResponse_FieldNumber_MoneyTai = 8,
+  RegTaiSuuResponse_FieldNumber_MoneySuu = 9,
+  RegTaiSuuResponse_FieldNumber_TimeRemaining = 10,
+  RegTaiSuuResponse_FieldNumber_State = 11,
+  RegTaiSuuResponse_FieldNumber_BetMoneys = 12,
 };
 
 @interface RegTaiSuuResponse : GPBMessage
@@ -73,11 +71,7 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int32_t numTai;
 
-@property(nonatomic, readwrite) int32_t numTaiGold;
-
 @property(nonatomic, readwrite) int32_t numSuu;
-
-@property(nonatomic, readwrite) int32_t numSuuGold;
 
 @property(nonatomic, readwrite) BOOL isGold;
 
