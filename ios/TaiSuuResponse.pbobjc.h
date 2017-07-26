@@ -63,7 +63,7 @@ typedef GPB_ENUM(TaiSuuResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int64_t reference;
 
-@property(nonatomic, readwrite) int32_t cash;
+@property(nonatomic, readwrite) int64_t cash;
 
 @property(nonatomic, readwrite) BOOL isGold;
 

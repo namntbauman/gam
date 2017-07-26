@@ -54,9 +54,9 @@ static GPBFileDescriptor *TaiSuuResponseRoot_FileDescriptor(void) {
 
 typedef struct TaiSuuResponse__storage_ {
   uint32_t _has_storage_[1];
-  int32_t cash;
   RestfulBaseResponse *baseResponse;
   int64_t reference;
+  int64_t cash;
 } TaiSuuResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -90,7 +90,7 @@ typedef struct TaiSuuResponse__storage_ {
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(TaiSuuResponse__storage_, cash),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeInt64,
       },
       {
         .name = "isGold",

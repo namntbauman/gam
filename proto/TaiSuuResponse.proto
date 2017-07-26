@@ -7,7 +7,7 @@ option java_outer_classname = "TaiSuuResponseProto";
 message TaiSuuResponse {
    RestfulBaseResponse baseResponse=1;
    int64 reference=4;
-   int32 cash=5;
+   int64 cash=5;
    bool isGold=6;
    
 }

@@ -37,9 +37,9 @@ public final class TaiSuuResponseProto {
     long getReference();
 
     /**
-     * <code>int32 cash = 5;</code>
+     * <code>int64 cash = 5;</code>
      */
-    int getCash();
+    long getCash();
 
     /**
      * <code>bool isGold = 6;</code>
@@ -59,7 +59,7 @@ public final class TaiSuuResponseProto {
     }
     private TaiSuuResponse() {
       reference_ = 0L;
-      cash_ = 0;
+      cash_ = 0L;
       isGold_ = false;
     }
 
@@ -108,7 +108,7 @@ public final class TaiSuuResponseProto {
             }
             case 40: {
 
-              cash_ = input.readInt32();
+              cash_ = input.readInt64();
               break;
             }
             case 48: {
@@ -170,11 +170,11 @@ public final class TaiSuuResponseProto {
     }
 
     public static final int CASH_FIELD_NUMBER = 5;
-    private int cash_;
+    private long cash_;
     /**
-     * <code>int32 cash = 5;</code>
+     * <code>int64 cash = 5;</code>
      */
-    public int getCash() {
+    public long getCash() {
       return cash_;
     }
 
@@ -205,8 +205,8 @@ public final class TaiSuuResponseProto {
       if (reference_ != 0L) {
         output.writeInt64(4, reference_);
       }
-      if (cash_ != 0) {
-        output.writeInt32(5, cash_);
+      if (cash_ != 0L) {
+        output.writeInt64(5, cash_);
       }
       if (isGold_ != false) {
         output.writeBool(6, isGold_);
@@ -226,9 +226,9 @@ public final class TaiSuuResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, reference_);
       }
-      if (cash_ != 0) {
+      if (cash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, cash_);
+          .computeInt64Size(5, cash_);
       }
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
@@ -279,7 +279,8 @@ public final class TaiSuuResponseProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getReference());
       hash = (37 * hash) + CASH_FIELD_NUMBER;
-      hash = (53 * hash) + getCash();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCash());
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
@@ -409,7 +410,7 @@ public final class TaiSuuResponseProto {
         }
         reference_ = 0L;
 
-        cash_ = 0;
+        cash_ = 0L;
 
         isGold_ = false;
 
@@ -490,7 +491,7 @@ public final class TaiSuuResponseProto {
         if (other.getReference() != 0L) {
           setReference(other.getReference());
         }
-        if (other.getCash() != 0) {
+        if (other.getCash() != 0L) {
           setCash(other.getCash());
         }
         if (other.getIsGold() != false) {
@@ -665,28 +666,28 @@ public final class TaiSuuResponseProto {
         return this;
       }
 
-      private int cash_ ;
+      private long cash_ ;
       /**
-       * <code>int32 cash = 5;</code>
+       * <code>int64 cash = 5;</code>
        */
-      public int getCash() {
+      public long getCash() {
         return cash_;
       }
       /**
-       * <code>int32 cash = 5;</code>
+       * <code>int64 cash = 5;</code>
        */
-      public Builder setCash(int value) {
+      public Builder setCash(long value) {
         
         cash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 cash = 5;</code>
+       * <code>int64 cash = 5;</code>
        */
       public Builder clearCash() {
         
-        cash_ = 0;
+        cash_ = 0L;
         onChanged();
         return this;
       }
@@ -782,7 +783,7 @@ public final class TaiSuuResponseProto {
       "\n\024TaiSuuResponse.proto\022\005fanxi\032\031RestfulBa" +
       "seResponse.proto\"s\n\016TaiSuuResponse\0220\n\014ba" +
       "seResponse\030\001 \001(\0132\032.fanxi.RestfulBaseResp" +
-      "onse\022\021\n\treference\030\004 \001(\003\022\014\n\004cash\030\005 \001(\005\022\016\n" +
+      "onse\022\021\n\treference\030\004 \001(\003\022\014\n\004cash\030\005 \001(\003\022\016\n" +
       "\006isGold\030\006 \001(\010B0\n\031com.fanxi.service.messa" +
       "geB\023TaiSuuResponseProtob\006proto3"
     };
