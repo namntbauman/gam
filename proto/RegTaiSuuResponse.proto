@@ -1,6 +1,7 @@
 syntax = "proto3";
 package fanxi;
 import "RestfulBaseResponse.proto";
+import "ChatEntity.proto";
 option java_package = "com.fanxi.service.message";
 option java_outer_classname = "RegTaiSuuResponseProto";
 
@@ -15,6 +16,7 @@ message RegTaiSuuResponse {
    int32 timeRemaining=10;
    int32 state=11;
    string betMoneys=12;
+   repeated ChatEntity chats =13;
 }
 
 

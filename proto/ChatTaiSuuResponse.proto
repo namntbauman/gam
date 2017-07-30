@@ -2,14 +2,12 @@ syntax = "proto3";
 package fanxi;
 import "BaseResponse.proto";
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "EndTaiSuuResponseResponseProto";
+option java_outer_classname = "ChatTaiSuuResponseProto";
 
-message EndTaiSuuResponseResponse {
+message ChatTaiSuuResponse {
    BaseResponse baseResponse=1;
+   string content=4;
    
-   bool isGold=4;
-   int32 wonMoney=5;
-   int64 cash=6;
 }
 
 

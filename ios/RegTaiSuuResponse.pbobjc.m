@@ -15,6 +15,7 @@
 
  #import "RegTaiSuuResponse.pbobjc.h"
  #import "RestfulBaseResponse.pbobjc.h"
+ #import "ChatEntity.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -57,6 +58,7 @@ static GPBFileDescriptor *RegTaiSuuResponseRoot_FileDescriptor(void) {
 @dynamic timeRemaining;
 @dynamic state;
 @dynamic betMoneys;
+@dynamic chatsArray, chatsArray_Count;
 
 typedef struct RegTaiSuuResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -66,6 +68,7 @@ typedef struct RegTaiSuuResponse__storage_ {
   int32_t state;
   RestfulBaseResponse *baseResponse;
   NSString *betMoneys;
+  NSMutableArray *chatsArray;
   int64_t reference;
   int64_t moneyTai;
   int64_t moneySuu;
@@ -166,6 +169,15 @@ typedef struct RegTaiSuuResponse__storage_ {
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, betMoneys),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "chatsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(ChatEntity),
+        .number = RegTaiSuuResponse_FieldNumber_ChatsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, chatsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =

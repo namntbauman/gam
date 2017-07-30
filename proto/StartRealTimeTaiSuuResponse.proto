@@ -1,0 +1,17 @@
+syntax = "proto3";
+package fanxi;
+
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "StartRealTimeTaiSuuResponseProto";
+
+message StartRealTimeTaiSuuResponse {
+   BaseResponse baseResponse=1;
+   int32 timeRemaining=4;
+   repeated string userids =5;
+   
+}
+
+
+
+

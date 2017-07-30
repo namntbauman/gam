@@ -80,6 +80,30 @@ public final class RegTaiSuuResponseProto {
      */
     com.google.protobuf.ByteString
         getBetMoneysBytes();
+
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> 
+        getChatsList();
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    com.fanxi.service.message.ChatEntityProto.ChatEntity getChats(int index);
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    int getChatsCount();
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
+        getChatsOrBuilderList();
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder getChatsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code fanxi.RegTaiSuuResponse}
@@ -102,6 +126,7 @@ public final class RegTaiSuuResponseProto {
       timeRemaining_ = 0;
       state_ = 0;
       betMoneys_ = "";
+      chats_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -188,6 +213,15 @@ public final class RegTaiSuuResponseProto {
               betMoneys_ = s;
               break;
             }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+                chats_ = new java.util.ArrayList<com.fanxi.service.message.ChatEntityProto.ChatEntity>();
+                mutable_bitField0_ |= 0x00000400;
+              }
+              chats_.add(
+                  input.readMessage(com.fanxi.service.message.ChatEntityProto.ChatEntity.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -196,6 +230,9 @@ public final class RegTaiSuuResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+          chats_ = java.util.Collections.unmodifiableList(chats_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -211,6 +248,7 @@ public final class RegTaiSuuResponseProto {
               com.fanxi.service.message.RegTaiSuuResponseProto.RegTaiSuuResponse.class, com.fanxi.service.message.RegTaiSuuResponseProto.RegTaiSuuResponse.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BASERESPONSE_FIELD_NUMBER = 1;
     private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_;
     /**
@@ -338,6 +376,41 @@ public final class RegTaiSuuResponseProto {
       }
     }
 
+    public static final int CHATS_FIELD_NUMBER = 13;
+    private java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> chats_;
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    public java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> getChatsList() {
+      return chats_;
+    }
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
+        getChatsOrBuilderList() {
+      return chats_;
+    }
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    public int getChatsCount() {
+      return chats_.size();
+    }
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    public com.fanxi.service.message.ChatEntityProto.ChatEntity getChats(int index) {
+      return chats_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     */
+    public com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder getChatsOrBuilder(
+        int index) {
+      return chats_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -379,6 +452,9 @@ public final class RegTaiSuuResponseProto {
       }
       if (!getBetMoneysBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, betMoneys_);
+      }
+      for (int i = 0; i < chats_.size(); i++) {
+        output.writeMessage(13, chats_.get(i));
       }
     }
 
@@ -426,6 +502,10 @@ public final class RegTaiSuuResponseProto {
       if (!getBetMoneysBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, betMoneys_);
       }
+      for (int i = 0; i < chats_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(13, chats_.get(i));
+      }
       memoizedSize = size;
       return size;
     }
@@ -465,6 +545,8 @@ public final class RegTaiSuuResponseProto {
           == other.getState());
       result = result && getBetMoneys()
           .equals(other.getBetMoneys());
+      result = result && getChatsList()
+          .equals(other.getChatsList());
       return result;
     }
 
@@ -501,6 +583,10 @@ public final class RegTaiSuuResponseProto {
       hash = (53 * hash) + getState();
       hash = (37 * hash) + BETMONEYS_FIELD_NUMBER;
       hash = (53 * hash) + getBetMoneys().hashCode();
+      if (getChatsCount() > 0) {
+        hash = (37 * hash) + CHATS_FIELD_NUMBER;
+        hash = (53 * hash) + getChatsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -615,6 +701,7 @@ public final class RegTaiSuuResponseProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getChatsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -643,6 +730,12 @@ public final class RegTaiSuuResponseProto {
 
         betMoneys_ = "";
 
+        if (chatsBuilder_ == null) {
+          chats_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+        } else {
+          chatsBuilder_.clear();
+        }
         return this;
       }
 
@@ -665,6 +758,8 @@ public final class RegTaiSuuResponseProto {
 
       public com.fanxi.service.message.RegTaiSuuResponseProto.RegTaiSuuResponse buildPartial() {
         com.fanxi.service.message.RegTaiSuuResponseProto.RegTaiSuuResponse result = new com.fanxi.service.message.RegTaiSuuResponseProto.RegTaiSuuResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (baseResponseBuilder_ == null) {
           result.baseResponse_ = baseResponse_;
         } else {
@@ -679,6 +774,16 @@ public final class RegTaiSuuResponseProto {
         result.timeRemaining_ = timeRemaining_;
         result.state_ = state_;
         result.betMoneys_ = betMoneys_;
+        if (chatsBuilder_ == null) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+            chats_ = java.util.Collections.unmodifiableList(chats_);
+            bitField0_ = (bitField0_ & ~0x00000400);
+          }
+          result.chats_ = chats_;
+        } else {
+          result.chats_ = chatsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -751,6 +856,32 @@ public final class RegTaiSuuResponseProto {
           betMoneys_ = other.betMoneys_;
           onChanged();
         }
+        if (chatsBuilder_ == null) {
+          if (!other.chats_.isEmpty()) {
+            if (chats_.isEmpty()) {
+              chats_ = other.chats_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+            } else {
+              ensureChatsIsMutable();
+              chats_.addAll(other.chats_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.chats_.isEmpty()) {
+            if (chatsBuilder_.isEmpty()) {
+              chatsBuilder_.dispose();
+              chatsBuilder_ = null;
+              chats_ = other.chats_;
+              bitField0_ = (bitField0_ & ~0x00000400);
+              chatsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getChatsFieldBuilder() : null;
+            } else {
+              chatsBuilder_.addAllMessages(other.chats_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -776,6 +907,7 @@ public final class RegTaiSuuResponseProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1170,6 +1302,246 @@ public final class RegTaiSuuResponseProto {
         onChanged();
         return this;
       }
+
+      private java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> chats_ =
+        java.util.Collections.emptyList();
+      private void ensureChatsIsMutable() {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+          chats_ = new java.util.ArrayList<com.fanxi.service.message.ChatEntityProto.ChatEntity>(chats_);
+          bitField0_ |= 0x00000400;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.ChatEntityProto.ChatEntity, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder, com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> chatsBuilder_;
+
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> getChatsList() {
+        if (chatsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(chats_);
+        } else {
+          return chatsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public int getChatsCount() {
+        if (chatsBuilder_ == null) {
+          return chats_.size();
+        } else {
+          return chatsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public com.fanxi.service.message.ChatEntityProto.ChatEntity getChats(int index) {
+        if (chatsBuilder_ == null) {
+          return chats_.get(index);
+        } else {
+          return chatsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder setChats(
+          int index, com.fanxi.service.message.ChatEntityProto.ChatEntity value) {
+        if (chatsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChatsIsMutable();
+          chats_.set(index, value);
+          onChanged();
+        } else {
+          chatsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder setChats(
+          int index, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder builderForValue) {
+        if (chatsBuilder_ == null) {
+          ensureChatsIsMutable();
+          chats_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          chatsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder addChats(com.fanxi.service.message.ChatEntityProto.ChatEntity value) {
+        if (chatsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChatsIsMutable();
+          chats_.add(value);
+          onChanged();
+        } else {
+          chatsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder addChats(
+          int index, com.fanxi.service.message.ChatEntityProto.ChatEntity value) {
+        if (chatsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureChatsIsMutable();
+          chats_.add(index, value);
+          onChanged();
+        } else {
+          chatsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder addChats(
+          com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder builderForValue) {
+        if (chatsBuilder_ == null) {
+          ensureChatsIsMutable();
+          chats_.add(builderForValue.build());
+          onChanged();
+        } else {
+          chatsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder addChats(
+          int index, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder builderForValue) {
+        if (chatsBuilder_ == null) {
+          ensureChatsIsMutable();
+          chats_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          chatsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder addAllChats(
+          java.lang.Iterable<? extends com.fanxi.service.message.ChatEntityProto.ChatEntity> values) {
+        if (chatsBuilder_ == null) {
+          ensureChatsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, chats_);
+          onChanged();
+        } else {
+          chatsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder clearChats() {
+        if (chatsBuilder_ == null) {
+          chats_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000400);
+          onChanged();
+        } else {
+          chatsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public Builder removeChats(int index) {
+        if (chatsBuilder_ == null) {
+          ensureChatsIsMutable();
+          chats_.remove(index);
+          onChanged();
+        } else {
+          chatsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder getChatsBuilder(
+          int index) {
+        return getChatsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder getChatsOrBuilder(
+          int index) {
+        if (chatsBuilder_ == null) {
+          return chats_.get(index);  } else {
+          return chatsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
+           getChatsOrBuilderList() {
+        if (chatsBuilder_ != null) {
+          return chatsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(chats_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder addChatsBuilder() {
+        return getChatsFieldBuilder().addBuilder(
+            com.fanxi.service.message.ChatEntityProto.ChatEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder addChatsBuilder(
+          int index) {
+        return getChatsFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.ChatEntityProto.ChatEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       */
+      public java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder> 
+           getChatsBuilderList() {
+        return getChatsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.ChatEntityProto.ChatEntity, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder, com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
+          getChatsFieldBuilder() {
+        if (chatsBuilder_ == null) {
+          chatsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.ChatEntityProto.ChatEntity, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder, com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder>(
+                  chats_,
+                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  getParentForChildren(),
+                  isClean());
+          chats_ = null;
+        }
+        return chatsBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1234,14 +1606,16 @@ public final class RegTaiSuuResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027RegTaiSuuResponse.proto\022\005fanxi\032\031Restfu" +
-      "lBaseResponse.proto\"\345\001\n\021RegTaiSuuRespons" +
-      "e\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.RestfulB" +
-      "aseResponse\022\021\n\treference\030\004 \001(\003\022\016\n\006numTai" +
-      "\030\005 \001(\005\022\016\n\006numSuu\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\020" +
-      "\n\010moneyTai\030\010 \001(\003\022\020\n\010moneySuu\030\t \001(\003\022\025\n\rti" +
-      "meRemaining\030\n \001(\005\022\r\n\005state\030\013 \001(\005\022\021\n\tbetM" +
-      "oneys\030\014 \001(\tB3\n\031com.fanxi.service.message" +
-      "B\026RegTaiSuuResponseProtob\006proto3"
+      "lBaseResponse.proto\032\020ChatEntity.proto\"\207\002" +
+      "\n\021RegTaiSuuResponse\0220\n\014baseResponse\030\001 \001(" +
+      "\0132\032.fanxi.RestfulBaseResponse\022\021\n\treferen" +
+      "ce\030\004 \001(\003\022\016\n\006numTai\030\005 \001(\005\022\016\n\006numSuu\030\006 \001(\005" +
+      "\022\016\n\006isGold\030\007 \001(\010\022\020\n\010moneyTai\030\010 \001(\003\022\020\n\010mo" +
+      "neySuu\030\t \001(\003\022\025\n\rtimeRemaining\030\n \001(\005\022\r\n\005s" +
+      "tate\030\013 \001(\005\022\021\n\tbetMoneys\030\014 \001(\t\022 \n\005chats\030\r" +
+      " \003(\0132\021.fanxi.ChatEntityB3\n\031com.fanxi.ser" +
+      "vice.messageB\026RegTaiSuuResponseProtob\006pr",
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1255,14 +1629,16 @@ public final class RegTaiSuuResponseProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor(),
+          com.fanxi.service.message.ChatEntityProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_RegTaiSuuResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_RegTaiSuuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegTaiSuuResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Reference", "NumTai", "NumSuu", "IsGold", "MoneyTai", "MoneySuu", "TimeRemaining", "State", "BetMoneys", });
+        new java.lang.String[] { "BaseResponse", "Reference", "NumTai", "NumSuu", "IsGold", "MoneyTai", "MoneySuu", "TimeRemaining", "State", "BetMoneys", "Chats", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
+    com.fanxi.service.message.ChatEntityProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

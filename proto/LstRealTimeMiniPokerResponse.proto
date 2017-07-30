@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+import "RealTimeMiniPokerResponse.proto";
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "LstRealTimeMiniPokerResponseProto";
+
+message LstRealTimeMiniPokerResponse {
+   BaseResponse baseResponse=1;
+   repeated string userids =4;
+   RealTimeMiniPokerResponse realtime=5;
+}
+
+
+
+

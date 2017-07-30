@@ -27,6 +27,7 @@
 
 CF_EXTERN_C_BEGIN
 
+@class ChatEntity;
 @class RestfulBaseResponse;
 
 NS_ASSUME_NONNULL_BEGIN
@@ -59,6 +60,7 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
   RegTaiSuuResponse_FieldNumber_TimeRemaining = 10,
   RegTaiSuuResponse_FieldNumber_State = 11,
   RegTaiSuuResponse_FieldNumber_BetMoneys = 12,
+  RegTaiSuuResponse_FieldNumber_ChatsArray = 13,
 };
 
 @interface RegTaiSuuResponse : GPBMessage
@@ -84,6 +86,10 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t state;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *betMoneys;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ChatEntity*> *chatsArray;
+/** The number of items in @c chatsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger chatsArray_Count;
 
 @end
 
