@@ -7,4 +7,5 @@ option java_outer_classname = "RegMiniPokerRequestProto";
 message RegMiniPokerRequest {
    BaseRequest baseReq=1;
    bool isGold = 15;
+   int32 cash=16;
 }

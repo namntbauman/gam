@@ -49,9 +49,11 @@ static GPBFileDescriptor *RegMiniPokerRequestRoot_FileDescriptor(void) {
 
 @dynamic hasBaseReq, baseReq;
 @dynamic isGold;
+@dynamic cash;
 
 typedef struct RegMiniPokerRequest__storage_ {
   uint32_t _has_storage_[1];
+  int32_t cash;
   BaseRequest *baseReq;
 } RegMiniPokerRequest__storage_;
 
@@ -78,6 +80,15 @@ typedef struct RegMiniPokerRequest__storage_ {
         .offset = 2,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "cash",
+        .dataTypeSpecific.className = NULL,
+        .number = RegMiniPokerRequest_FieldNumber_Cash,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(RegMiniPokerRequest__storage_, cash),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =

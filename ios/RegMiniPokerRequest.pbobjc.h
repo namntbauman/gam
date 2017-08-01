@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(RegMiniPokerRequest_FieldNumber) {
   RegMiniPokerRequest_FieldNumber_BaseReq = 1,
   RegMiniPokerRequest_FieldNumber_IsGold = 15,
+  RegMiniPokerRequest_FieldNumber_Cash = 16,
 };
 
 @interface RegMiniPokerRequest : GPBMessage
@@ -60,6 +61,8 @@ typedef GPB_ENUM(RegMiniPokerRequest_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
 @property(nonatomic, readwrite) BOOL isGold;
+
+@property(nonatomic, readwrite) int32_t cash;
 
 @end
 

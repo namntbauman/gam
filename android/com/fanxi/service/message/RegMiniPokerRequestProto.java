@@ -35,6 +35,11 @@ public final class RegMiniPokerRequestProto {
      * <code>bool isGold = 15;</code>
      */
     boolean getIsGold();
+
+    /**
+     * <code>int32 cash = 16;</code>
+     */
+    int getCash();
   }
   /**
    * Protobuf type {@code fanxi.RegMiniPokerRequest}
@@ -49,6 +54,7 @@ public final class RegMiniPokerRequestProto {
     }
     private RegMiniPokerRequest() {
       isGold_ = false;
+      cash_ = 0;
     }
 
     @java.lang.Override
@@ -92,6 +98,11 @@ public final class RegMiniPokerRequestProto {
             case 120: {
 
               isGold_ = input.readBool();
+              break;
+            }
+            case 128: {
+
+              cash_ = input.readInt32();
               break;
             }
           }
@@ -147,6 +158,15 @@ public final class RegMiniPokerRequestProto {
       return isGold_;
     }
 
+    public static final int CASH_FIELD_NUMBER = 16;
+    private int cash_;
+    /**
+     * <code>int32 cash = 16;</code>
+     */
+    public int getCash() {
+      return cash_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -165,6 +185,9 @@ public final class RegMiniPokerRequestProto {
       if (isGold_ != false) {
         output.writeBool(15, isGold_);
       }
+      if (cash_ != 0) {
+        output.writeInt32(16, cash_);
+      }
     }
 
     public int getSerializedSize() {
@@ -179,6 +202,10 @@ public final class RegMiniPokerRequestProto {
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(15, isGold_);
+      }
+      if (cash_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(16, cash_);
       }
       memoizedSize = size;
       return size;
@@ -203,6 +230,8 @@ public final class RegMiniPokerRequestProto {
       }
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && (getCash()
+          == other.getCash());
       return result;
     }
 
@@ -220,6 +249,8 @@ public final class RegMiniPokerRequestProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (53 * hash) + getCash();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -346,6 +377,8 @@ public final class RegMiniPokerRequestProto {
         }
         isGold_ = false;
 
+        cash_ = 0;
+
         return this;
       }
 
@@ -374,6 +407,7 @@ public final class RegMiniPokerRequestProto {
           result.baseReq_ = baseReqBuilder_.build();
         }
         result.isGold_ = isGold_;
+        result.cash_ = cash_;
         onBuilt();
         return result;
       }
@@ -420,6 +454,9 @@ public final class RegMiniPokerRequestProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (other.getCash() != 0) {
+          setCash(other.getCash());
         }
         onChanged();
         return this;
@@ -589,6 +626,32 @@ public final class RegMiniPokerRequestProto {
         onChanged();
         return this;
       }
+
+      private int cash_ ;
+      /**
+       * <code>int32 cash = 16;</code>
+       */
+      public int getCash() {
+        return cash_;
+      }
+      /**
+       * <code>int32 cash = 16;</code>
+       */
+      public Builder setCash(int value) {
+        
+        cash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 cash = 16;</code>
+       */
+      public Builder clearCash() {
+        
+        cash_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -653,10 +716,11 @@ public final class RegMiniPokerRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\031RegMiniPokerRequest.proto\022\005fanxi\032\021Base" +
-      "Request.proto\"J\n\023RegMiniPokerRequest\022#\n\007" +
+      "Request.proto\"X\n\023RegMiniPokerRequest\022#\n\007" +
       "baseReq\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006isG" +
-      "old\030\017 \001(\010B5\n\031com.fanxi.service.messageB\030" +
-      "RegMiniPokerRequestProtob\006proto3"
+      "old\030\017 \001(\010\022\014\n\004cash\030\020 \001(\005B5\n\031com.fanxi.ser" +
+      "vice.messageB\030RegMiniPokerRequestProtob\006" +
+      "proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -676,7 +740,7 @@ public final class RegMiniPokerRequestProto {
     internal_static_fanxi_RegMiniPokerRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegMiniPokerRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "IsGold", });
+        new java.lang.String[] { "BaseReq", "IsGold", "Cash", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

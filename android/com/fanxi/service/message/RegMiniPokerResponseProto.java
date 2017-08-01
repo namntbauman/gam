@@ -47,11 +47,16 @@ public final class RegMiniPokerResponseProto {
     boolean getIsGold();
 
     /**
-     * <code>string betMoneys = 7;</code>
+     * <code>int32 currBetMoney = 7;</code>
+     */
+    int getCurrBetMoney();
+
+    /**
+     * <code>string betMoneys = 8;</code>
      */
     java.lang.String getBetMoneys();
     /**
-     * <code>string betMoneys = 7;</code>
+     * <code>string betMoneys = 8;</code>
      */
     com.google.protobuf.ByteString
         getBetMoneysBytes();
@@ -71,6 +76,7 @@ public final class RegMiniPokerResponseProto {
       timeQuay_ = 0;
       hu_ = 0L;
       isGold_ = false;
+      currBetMoney_ = 0;
       betMoneys_ = "";
     }
 
@@ -127,7 +133,12 @@ public final class RegMiniPokerResponseProto {
               isGold_ = input.readBool();
               break;
             }
-            case 58: {
+            case 56: {
+
+              currBetMoney_ = input.readInt32();
+              break;
+            }
+            case 66: {
               java.lang.String s = input.readStringRequireUtf8();
 
               betMoneys_ = s;
@@ -204,10 +215,19 @@ public final class RegMiniPokerResponseProto {
       return isGold_;
     }
 
-    public static final int BETMONEYS_FIELD_NUMBER = 7;
+    public static final int CURRBETMONEY_FIELD_NUMBER = 7;
+    private int currBetMoney_;
+    /**
+     * <code>int32 currBetMoney = 7;</code>
+     */
+    public int getCurrBetMoney() {
+      return currBetMoney_;
+    }
+
+    public static final int BETMONEYS_FIELD_NUMBER = 8;
     private volatile java.lang.Object betMoneys_;
     /**
-     * <code>string betMoneys = 7;</code>
+     * <code>string betMoneys = 8;</code>
      */
     public java.lang.String getBetMoneys() {
       java.lang.Object ref = betMoneys_;
@@ -222,7 +242,7 @@ public final class RegMiniPokerResponseProto {
       }
     }
     /**
-     * <code>string betMoneys = 7;</code>
+     * <code>string betMoneys = 8;</code>
      */
     public com.google.protobuf.ByteString
         getBetMoneysBytes() {
@@ -262,8 +282,11 @@ public final class RegMiniPokerResponseProto {
       if (isGold_ != false) {
         output.writeBool(6, isGold_);
       }
+      if (currBetMoney_ != 0) {
+        output.writeInt32(7, currBetMoney_);
+      }
       if (!getBetMoneysBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, betMoneys_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 8, betMoneys_);
       }
     }
 
@@ -288,8 +311,12 @@ public final class RegMiniPokerResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isGold_);
       }
+      if (currBetMoney_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, currBetMoney_);
+      }
       if (!getBetMoneysBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, betMoneys_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, betMoneys_);
       }
       memoizedSize = size;
       return size;
@@ -318,6 +345,8 @@ public final class RegMiniPokerResponseProto {
           == other.getHu());
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && (getCurrBetMoney()
+          == other.getCurrBetMoney());
       result = result && getBetMoneys()
           .equals(other.getBetMoneys());
       return result;
@@ -342,6 +371,8 @@ public final class RegMiniPokerResponseProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + CURRBETMONEY_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrBetMoney();
       hash = (37 * hash) + BETMONEYS_FIELD_NUMBER;
       hash = (53 * hash) + getBetMoneys().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -474,6 +505,8 @@ public final class RegMiniPokerResponseProto {
 
         isGold_ = false;
 
+        currBetMoney_ = 0;
+
         betMoneys_ = "";
 
         return this;
@@ -506,6 +539,7 @@ public final class RegMiniPokerResponseProto {
         result.timeQuay_ = timeQuay_;
         result.hu_ = hu_;
         result.isGold_ = isGold_;
+        result.currBetMoney_ = currBetMoney_;
         result.betMoneys_ = betMoneys_;
         onBuilt();
         return result;
@@ -559,6 +593,9 @@ public final class RegMiniPokerResponseProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (other.getCurrBetMoney() != 0) {
+          setCurrBetMoney(other.getCurrBetMoney());
         }
         if (!other.getBetMoneys().isEmpty()) {
           betMoneys_ = other.betMoneys_;
@@ -785,9 +822,35 @@ public final class RegMiniPokerResponseProto {
         return this;
       }
 
+      private int currBetMoney_ ;
+      /**
+       * <code>int32 currBetMoney = 7;</code>
+       */
+      public int getCurrBetMoney() {
+        return currBetMoney_;
+      }
+      /**
+       * <code>int32 currBetMoney = 7;</code>
+       */
+      public Builder setCurrBetMoney(int value) {
+        
+        currBetMoney_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 currBetMoney = 7;</code>
+       */
+      public Builder clearCurrBetMoney() {
+        
+        currBetMoney_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object betMoneys_ = "";
       /**
-       * <code>string betMoneys = 7;</code>
+       * <code>string betMoneys = 8;</code>
        */
       public java.lang.String getBetMoneys() {
         java.lang.Object ref = betMoneys_;
@@ -802,7 +865,7 @@ public final class RegMiniPokerResponseProto {
         }
       }
       /**
-       * <code>string betMoneys = 7;</code>
+       * <code>string betMoneys = 8;</code>
        */
       public com.google.protobuf.ByteString
           getBetMoneysBytes() {
@@ -818,7 +881,7 @@ public final class RegMiniPokerResponseProto {
         }
       }
       /**
-       * <code>string betMoneys = 7;</code>
+       * <code>string betMoneys = 8;</code>
        */
       public Builder setBetMoneys(
           java.lang.String value) {
@@ -831,7 +894,7 @@ public final class RegMiniPokerResponseProto {
         return this;
       }
       /**
-       * <code>string betMoneys = 7;</code>
+       * <code>string betMoneys = 8;</code>
        */
       public Builder clearBetMoneys() {
         
@@ -840,7 +903,7 @@ public final class RegMiniPokerResponseProto {
         return this;
       }
       /**
-       * <code>string betMoneys = 7;</code>
+       * <code>string betMoneys = 8;</code>
        */
       public Builder setBetMoneysBytes(
           com.google.protobuf.ByteString value) {
@@ -917,12 +980,13 @@ public final class RegMiniPokerResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032RegMiniPokerResponse.proto\022\005fanxi\032\031Res" +
-      "tfulBaseResponse.proto\"\211\001\n\024RegMiniPokerR" +
+      "tfulBaseResponse.proto\"\237\001\n\024RegMiniPokerR" +
       "esponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.Re" +
       "stfulBaseResponse\022\020\n\010timeQuay\030\004 \001(\005\022\n\n\002h" +
-      "u\030\005 \001(\003\022\016\n\006isGold\030\006 \001(\010\022\021\n\tbetMoneys\030\007 \001" +
-      "(\tB6\n\031com.fanxi.service.messageB\031RegMini" +
-      "PokerResponseProtob\006proto3"
+      "u\030\005 \001(\003\022\016\n\006isGold\030\006 \001(\010\022\024\n\014currBetMoney\030" +
+      "\007 \001(\005\022\021\n\tbetMoneys\030\010 \001(\tB6\n\031com.fanxi.se" +
+      "rvice.messageB\031RegMiniPokerResponseProto" +
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -942,7 +1006,7 @@ public final class RegMiniPokerResponseProto {
     internal_static_fanxi_RegMiniPokerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegMiniPokerResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "TimeQuay", "Hu", "IsGold", "BetMoneys", });
+        new java.lang.String[] { "BaseResponse", "TimeQuay", "Hu", "IsGold", "CurrBetMoney", "BetMoneys", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

@@ -56,6 +56,7 @@ typedef GPB_ENUM(MiniPokerResponse_FieldNumber) {
   MiniPokerResponse_FieldNumber_IsGold = 7,
   MiniPokerResponse_FieldNumber_Cards = 8,
   MiniPokerResponse_FieldNumber_Type = 9,
+  MiniPokerResponse_FieldNumber_Hu = 10,
 };
 
 @interface MiniPokerResponse : GPBMessage
@@ -75,6 +76,8 @@ typedef GPB_ENUM(MiniPokerResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *cards;
 
 @property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite) int64_t hu;
 
 @end
 

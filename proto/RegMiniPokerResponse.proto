@@ -9,7 +9,8 @@ message RegMiniPokerResponse {
    int32 timeQuay=4;
    int64 hu=5;
    bool isGold=6;
-   string betMoneys=7;
+   int32 currBetMoney=7;
+   string betMoneys=8;
 }
 
 

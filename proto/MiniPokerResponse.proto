@@ -12,6 +12,7 @@ message MiniPokerResponse {
    bool isGold=7;
    string cards=8;
    int32 type=9;
+   int64 hu=10;
 }
 
 

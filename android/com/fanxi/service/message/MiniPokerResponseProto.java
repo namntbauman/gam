@@ -65,6 +65,11 @@ public final class MiniPokerResponseProto {
      * <code>int32 type = 9;</code>
      */
     int getType();
+
+    /**
+     * <code>int64 hu = 10;</code>
+     */
+    long getHu();
   }
   /**
    * Protobuf type {@code fanxi.MiniPokerResponse}
@@ -84,6 +89,7 @@ public final class MiniPokerResponseProto {
       isGold_ = false;
       cards_ = "";
       type_ = 0;
+      hu_ = 0L;
     }
 
     @java.lang.Override
@@ -153,6 +159,11 @@ public final class MiniPokerResponseProto {
             case 72: {
 
               type_ = input.readInt32();
+              break;
+            }
+            case 80: {
+
+              hu_ = input.readInt64();
               break;
             }
           }
@@ -278,6 +289,15 @@ public final class MiniPokerResponseProto {
       return type_;
     }
 
+    public static final int HU_FIELD_NUMBER = 10;
+    private long hu_;
+    /**
+     * <code>int64 hu = 10;</code>
+     */
+    public long getHu() {
+      return hu_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -310,6 +330,9 @@ public final class MiniPokerResponseProto {
       }
       if (type_ != 0) {
         output.writeInt32(9, type_);
+      }
+      if (hu_ != 0L) {
+        output.writeInt64(10, hu_);
       }
     }
 
@@ -345,6 +368,10 @@ public final class MiniPokerResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(9, type_);
       }
+      if (hu_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(10, hu_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -378,6 +405,8 @@ public final class MiniPokerResponseProto {
           .equals(other.getCards());
       result = result && (getType()
           == other.getType());
+      result = result && (getHu()
+          == other.getHu());
       return result;
     }
 
@@ -406,6 +435,9 @@ public final class MiniPokerResponseProto {
       hash = (53 * hash) + getCards().hashCode();
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
+      hash = (37 * hash) + HU_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getHu());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -542,6 +574,8 @@ public final class MiniPokerResponseProto {
 
         type_ = 0;
 
+        hu_ = 0L;
+
         return this;
       }
 
@@ -575,6 +609,7 @@ public final class MiniPokerResponseProto {
         result.isGold_ = isGold_;
         result.cards_ = cards_;
         result.type_ = type_;
+        result.hu_ = hu_;
         onBuilt();
         return result;
       }
@@ -637,6 +672,9 @@ public final class MiniPokerResponseProto {
         }
         if (other.getType() != 0) {
           setType(other.getType());
+        }
+        if (other.getHu() != 0L) {
+          setHu(other.getHu());
         }
         onChanged();
         return this;
@@ -979,6 +1017,32 @@ public final class MiniPokerResponseProto {
         onChanged();
         return this;
       }
+
+      private long hu_ ;
+      /**
+       * <code>int64 hu = 10;</code>
+       */
+      public long getHu() {
+        return hu_;
+      }
+      /**
+       * <code>int64 hu = 10;</code>
+       */
+      public Builder setHu(long value) {
+        
+        hu_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 hu = 10;</code>
+       */
+      public Builder clearHu() {
+        
+        hu_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1043,13 +1107,13 @@ public final class MiniPokerResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027MiniPokerResponse.proto\022\005fanxi\032\031Restfu" +
-      "lBaseResponse.proto\"\244\001\n\021MiniPokerRespons" +
+      "lBaseResponse.proto\"\260\001\n\021MiniPokerRespons" +
       "e\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.RestfulB" +
       "aseResponse\022\021\n\treference\030\004 \001(\003\022\017\n\007wonCas" +
       "h\030\005 \001(\005\022\014\n\004cash\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\r\n" +
-      "\005cards\030\010 \001(\t\022\014\n\004type\030\t \001(\005B3\n\031com.fanxi." +
-      "service.messageB\026MiniPokerResponseProtob" +
-      "\006proto3"
+      "\005cards\030\010 \001(\t\022\014\n\004type\030\t \001(\005\022\n\n\002hu\030\n \001(\003B3" +
+      "\n\031com.fanxi.service.messageB\026MiniPokerRe" +
+      "sponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1069,7 +1133,7 @@ public final class MiniPokerResponseProto {
     internal_static_fanxi_MiniPokerResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_MiniPokerResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Reference", "WonCash", "Cash", "IsGold", "Cards", "Type", });
+        new java.lang.String[] { "BaseResponse", "Reference", "WonCash", "Cash", "IsGold", "Cards", "Type", "Hu", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 
