@@ -54,6 +54,7 @@ typedef GPB_ENUM(QuayResponse_FieldNumber) {
   QuayResponse_FieldNumber_Cash = 6,
   QuayResponse_FieldNumber_IsGold = 7,
   QuayResponse_FieldNumber_Type = 8,
+  QuayResponse_FieldNumber_TimesQuay = 9,
 };
 
 @interface QuayResponse : GPBMessage
@@ -69,6 +70,8 @@ typedef GPB_ENUM(QuayResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL isGold;
 
 @property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite) int32_t timesQuay;
 
 @end
 

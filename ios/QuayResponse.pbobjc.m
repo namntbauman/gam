@@ -52,11 +52,13 @@ static GPBFileDescriptor *QuayResponseRoot_FileDescriptor(void) {
 @dynamic cash;
 @dynamic isGold;
 @dynamic type;
+@dynamic timesQuay;
 
 typedef struct QuayResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t wonCash;
   int32_t type;
+  int32_t timesQuay;
   RestfulBaseResponse *baseResponse;
   int64_t cash;
 } QuayResponse__storage_;
@@ -112,6 +114,15 @@ typedef struct QuayResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "timesQuay",
+        .dataTypeSpecific.className = NULL,
+        .number = QuayResponse_FieldNumber_TimesQuay,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, timesQuay),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[QuayResponse class]
@@ -123,7 +134,7 @@ typedef struct QuayResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\005\007\000\007\006\000";
+        "\004\001\014\000\005\007\000\007\006\000\t\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

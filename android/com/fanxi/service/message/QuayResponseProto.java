@@ -50,6 +50,11 @@ public final class QuayResponseProto {
      * <code>int32 type = 8;</code>
      */
     int getType();
+
+    /**
+     * <code>int32 timesQuay = 9;</code>
+     */
+    int getTimesQuay();
   }
   /**
    * Protobuf type {@code fanxi.QuayResponse}
@@ -67,6 +72,7 @@ public final class QuayResponseProto {
       cash_ = 0L;
       isGold_ = false;
       type_ = 0;
+      timesQuay_ = 0;
     }
 
     @java.lang.Override
@@ -125,6 +131,11 @@ public final class QuayResponseProto {
             case 64: {
 
               type_ = input.readInt32();
+              break;
+            }
+            case 72: {
+
+              timesQuay_ = input.readInt32();
               break;
             }
           }
@@ -207,6 +218,15 @@ public final class QuayResponseProto {
       return type_;
     }
 
+    public static final int TIMESQUAY_FIELD_NUMBER = 9;
+    private int timesQuay_;
+    /**
+     * <code>int32 timesQuay = 9;</code>
+     */
+    public int getTimesQuay() {
+      return timesQuay_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -234,6 +254,9 @@ public final class QuayResponseProto {
       if (type_ != 0) {
         output.writeInt32(8, type_);
       }
+      if (timesQuay_ != 0) {
+        output.writeInt32(9, timesQuay_);
+      }
     }
 
     public int getSerializedSize() {
@@ -260,6 +283,10 @@ public final class QuayResponseProto {
       if (type_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, type_);
+      }
+      if (timesQuay_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, timesQuay_);
       }
       memoizedSize = size;
       return size;
@@ -290,6 +317,8 @@ public final class QuayResponseProto {
           == other.getIsGold());
       result = result && (getType()
           == other.getType());
+      result = result && (getTimesQuay()
+          == other.getTimesQuay());
       return result;
     }
 
@@ -314,6 +343,8 @@ public final class QuayResponseProto {
           getIsGold());
       hash = (37 * hash) + TYPE_FIELD_NUMBER;
       hash = (53 * hash) + getType();
+      hash = (37 * hash) + TIMESQUAY_FIELD_NUMBER;
+      hash = (53 * hash) + getTimesQuay();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -446,6 +477,8 @@ public final class QuayResponseProto {
 
         type_ = 0;
 
+        timesQuay_ = 0;
+
         return this;
       }
 
@@ -477,6 +510,7 @@ public final class QuayResponseProto {
         result.cash_ = cash_;
         result.isGold_ = isGold_;
         result.type_ = type_;
+        result.timesQuay_ = timesQuay_;
         onBuilt();
         return result;
       }
@@ -532,6 +566,9 @@ public final class QuayResponseProto {
         }
         if (other.getType() != 0) {
           setType(other.getType());
+        }
+        if (other.getTimesQuay() != 0) {
+          setTimesQuay(other.getTimesQuay());
         }
         onChanged();
         return this;
@@ -779,6 +816,32 @@ public final class QuayResponseProto {
         onChanged();
         return this;
       }
+
+      private int timesQuay_ ;
+      /**
+       * <code>int32 timesQuay = 9;</code>
+       */
+      public int getTimesQuay() {
+        return timesQuay_;
+      }
+      /**
+       * <code>int32 timesQuay = 9;</code>
+       */
+      public Builder setTimesQuay(int value) {
+        
+        timesQuay_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 timesQuay = 9;</code>
+       */
+      public Builder clearTimesQuay() {
+        
+        timesQuay_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -843,11 +906,12 @@ public final class QuayResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022QuayResponse.proto\022\005fanxi\032\031RestfulBase" +
-      "Response.proto\"}\n\014QuayResponse\0220\n\014baseRe" +
-      "sponse\030\001 \001(\0132\032.fanxi.RestfulBaseResponse" +
-      "\022\017\n\007wonCash\030\005 \001(\005\022\014\n\004cash\030\006 \001(\003\022\016\n\006isGol" +
-      "d\030\007 \001(\010\022\014\n\004type\030\010 \001(\005B.\n\031com.fanxi.servi" +
-      "ce.messageB\021QuayResponseProtob\006proto3"
+      "Response.proto\"\220\001\n\014QuayResponse\0220\n\014baseR" +
+      "esponse\030\001 \001(\0132\032.fanxi.RestfulBaseRespons" +
+      "e\022\017\n\007wonCash\030\005 \001(\005\022\014\n\004cash\030\006 \001(\003\022\016\n\006isGo" +
+      "ld\030\007 \001(\010\022\014\n\004type\030\010 \001(\005\022\021\n\ttimesQuay\030\t \001(" +
+      "\005B.\n\031com.fanxi.service.messageB\021QuayResp" +
+      "onseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -867,7 +931,7 @@ public final class QuayResponseProto {
     internal_static_fanxi_QuayResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_QuayResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "WonCash", "Cash", "IsGold", "Type", });
+        new java.lang.String[] { "BaseResponse", "WonCash", "Cash", "IsGold", "Type", "TimesQuay", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

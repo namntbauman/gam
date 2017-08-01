@@ -10,6 +10,7 @@ message QuayResponse {
    int64 cash=6;
    bool isGold=7;
    int32 type=8;
+   int32 timesQuay=9;
    
 }
 
