@@ -53,7 +53,8 @@ typedef GPB_ENUM(RegMiniPokerResponse_FieldNumber) {
   RegMiniPokerResponse_FieldNumber_TimeQuay = 4,
   RegMiniPokerResponse_FieldNumber_Hu = 5,
   RegMiniPokerResponse_FieldNumber_IsGold = 6,
-  RegMiniPokerResponse_FieldNumber_BetMoneys = 7,
+  RegMiniPokerResponse_FieldNumber_CurrBetMoney = 7,
+  RegMiniPokerResponse_FieldNumber_BetMoneys = 8,
 };
 
 @interface RegMiniPokerResponse : GPBMessage
@@ -67,6 +68,8 @@ typedef GPB_ENUM(RegMiniPokerResponse_FieldNumber) {
 @property(nonatomic, readwrite) int64_t hu;
 
 @property(nonatomic, readwrite) BOOL isGold;
+
+@property(nonatomic, readwrite) int32_t currBetMoney;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *betMoneys;
 
