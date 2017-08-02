@@ -48,19 +48,24 @@ static GPBFileDescriptor *QuayResponseRoot_FileDescriptor(void) {
 @implementation QuayResponse
 
 @dynamic hasBaseResponse, baseResponse;
-@dynamic wonCash;
-@dynamic cash;
-@dynamic isGold;
-@dynamic type;
+@dynamic wonCashXu;
+@dynamic cashXu;
+@dynamic typeXu;
+@dynamic wonCashGold;
+@dynamic cashGold;
+@dynamic typeGold;
 @dynamic timesQuay;
 
 typedef struct QuayResponse__storage_ {
   uint32_t _has_storage_[1];
-  int32_t wonCash;
-  int32_t type;
+  int32_t wonCashXu;
+  int32_t typeXu;
+  int32_t wonCashGold;
+  int32_t typeGold;
   int32_t timesQuay;
   RestfulBaseResponse *baseResponse;
-  int64_t cash;
+  int64_t cashXu;
+  int64_t cashGold;
 } QuayResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -79,46 +84,64 @@ typedef struct QuayResponse__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "wonCash",
+        .name = "wonCashXu",
         .dataTypeSpecific.className = NULL,
-        .number = QuayResponse_FieldNumber_WonCash,
+        .number = QuayResponse_FieldNumber_WonCashXu,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(QuayResponse__storage_, wonCash),
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, wonCashXu),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "cash",
+        .name = "cashXu",
         .dataTypeSpecific.className = NULL,
-        .number = QuayResponse_FieldNumber_Cash,
+        .number = QuayResponse_FieldNumber_CashXu,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(QuayResponse__storage_, cash),
-        .flags = GPBFieldOptional,
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, cashXu),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
       },
       {
-        .name = "isGold",
+        .name = "typeXu",
         .dataTypeSpecific.className = NULL,
-        .number = QuayResponse_FieldNumber_IsGold,
+        .number = QuayResponse_FieldNumber_TypeXu,
         .hasIndex = 3,
-        .offset = 4,  // Stored in _has_storage_ to save space.
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, typeXu),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeInt32,
       },
       {
-        .name = "type",
+        .name = "wonCashGold",
         .dataTypeSpecific.className = NULL,
-        .number = QuayResponse_FieldNumber_Type,
+        .number = QuayResponse_FieldNumber_WonCashGold,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, wonCashGold),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "cashGold",
+        .dataTypeSpecific.className = NULL,
+        .number = QuayResponse_FieldNumber_CashGold,
         .hasIndex = 5,
-        .offset = (uint32_t)offsetof(QuayResponse__storage_, type),
-        .flags = GPBFieldOptional,
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, cashGold),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "typeGold",
+        .dataTypeSpecific.className = NULL,
+        .number = QuayResponse_FieldNumber_TypeGold,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(QuayResponse__storage_, typeGold),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
       {
         .name = "timesQuay",
         .dataTypeSpecific.className = NULL,
         .number = QuayResponse_FieldNumber_TimesQuay,
-        .hasIndex = 6,
+        .hasIndex = 7,
         .offset = (uint32_t)offsetof(QuayResponse__storage_, timesQuay),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -134,7 +157,7 @@ typedef struct QuayResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\005\007\000\007\006\000\t\t\000";
+        "\010\001\014\000\005\t\000\006\006\000\007\006\000\010\013\000\t\010\000\n\010\000\013\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

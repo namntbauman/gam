@@ -32,27 +32,37 @@ public final class QuayResponseProto {
     com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponseOrBuilder getBaseResponseOrBuilder();
 
     /**
-     * <code>int32 wonCash = 5;</code>
+     * <code>int32 wonCashXu = 5;</code>
      */
-    int getWonCash();
+    int getWonCashXu();
 
     /**
-     * <code>int64 cash = 6;</code>
+     * <code>int64 cashXu = 6;</code>
      */
-    long getCash();
+    long getCashXu();
 
     /**
-     * <code>bool isGold = 7;</code>
+     * <code>int32 typeXu = 7;</code>
      */
-    boolean getIsGold();
+    int getTypeXu();
 
     /**
-     * <code>int32 type = 8;</code>
+     * <code>int32 wonCashGold = 8;</code>
      */
-    int getType();
+    int getWonCashGold();
 
     /**
-     * <code>int32 timesQuay = 9;</code>
+     * <code>int64 cashGold = 9;</code>
+     */
+    long getCashGold();
+
+    /**
+     * <code>int32 typeGold = 10;</code>
+     */
+    int getTypeGold();
+
+    /**
+     * <code>int32 timesQuay = 11;</code>
      */
     int getTimesQuay();
   }
@@ -68,10 +78,12 @@ public final class QuayResponseProto {
       super(builder);
     }
     private QuayResponse() {
-      wonCash_ = 0;
-      cash_ = 0L;
-      isGold_ = false;
-      type_ = 0;
+      wonCashXu_ = 0;
+      cashXu_ = 0L;
+      typeXu_ = 0;
+      wonCashGold_ = 0;
+      cashGold_ = 0L;
+      typeGold_ = 0;
       timesQuay_ = 0;
     }
 
@@ -115,25 +127,35 @@ public final class QuayResponseProto {
             }
             case 40: {
 
-              wonCash_ = input.readInt32();
+              wonCashXu_ = input.readInt32();
               break;
             }
             case 48: {
 
-              cash_ = input.readInt64();
+              cashXu_ = input.readInt64();
               break;
             }
             case 56: {
 
-              isGold_ = input.readBool();
+              typeXu_ = input.readInt32();
               break;
             }
             case 64: {
 
-              type_ = input.readInt32();
+              wonCashGold_ = input.readInt32();
               break;
             }
             case 72: {
+
+              cashGold_ = input.readInt64();
+              break;
+            }
+            case 80: {
+
+              typeGold_ = input.readInt32();
+              break;
+            }
+            case 88: {
 
               timesQuay_ = input.readInt32();
               break;
@@ -182,46 +204,64 @@ public final class QuayResponseProto {
       return getBaseResponse();
     }
 
-    public static final int WONCASH_FIELD_NUMBER = 5;
-    private int wonCash_;
+    public static final int WONCASHXU_FIELD_NUMBER = 5;
+    private int wonCashXu_;
     /**
-     * <code>int32 wonCash = 5;</code>
+     * <code>int32 wonCashXu = 5;</code>
      */
-    public int getWonCash() {
-      return wonCash_;
+    public int getWonCashXu() {
+      return wonCashXu_;
     }
 
-    public static final int CASH_FIELD_NUMBER = 6;
-    private long cash_;
+    public static final int CASHXU_FIELD_NUMBER = 6;
+    private long cashXu_;
     /**
-     * <code>int64 cash = 6;</code>
+     * <code>int64 cashXu = 6;</code>
      */
-    public long getCash() {
-      return cash_;
+    public long getCashXu() {
+      return cashXu_;
     }
 
-    public static final int ISGOLD_FIELD_NUMBER = 7;
-    private boolean isGold_;
+    public static final int TYPEXU_FIELD_NUMBER = 7;
+    private int typeXu_;
     /**
-     * <code>bool isGold = 7;</code>
+     * <code>int32 typeXu = 7;</code>
      */
-    public boolean getIsGold() {
-      return isGold_;
+    public int getTypeXu() {
+      return typeXu_;
     }
 
-    public static final int TYPE_FIELD_NUMBER = 8;
-    private int type_;
+    public static final int WONCASHGOLD_FIELD_NUMBER = 8;
+    private int wonCashGold_;
     /**
-     * <code>int32 type = 8;</code>
+     * <code>int32 wonCashGold = 8;</code>
      */
-    public int getType() {
-      return type_;
+    public int getWonCashGold() {
+      return wonCashGold_;
     }
 
-    public static final int TIMESQUAY_FIELD_NUMBER = 9;
+    public static final int CASHGOLD_FIELD_NUMBER = 9;
+    private long cashGold_;
+    /**
+     * <code>int64 cashGold = 9;</code>
+     */
+    public long getCashGold() {
+      return cashGold_;
+    }
+
+    public static final int TYPEGOLD_FIELD_NUMBER = 10;
+    private int typeGold_;
+    /**
+     * <code>int32 typeGold = 10;</code>
+     */
+    public int getTypeGold() {
+      return typeGold_;
+    }
+
+    public static final int TIMESQUAY_FIELD_NUMBER = 11;
     private int timesQuay_;
     /**
-     * <code>int32 timesQuay = 9;</code>
+     * <code>int32 timesQuay = 11;</code>
      */
     public int getTimesQuay() {
       return timesQuay_;
@@ -242,20 +282,26 @@ public final class QuayResponseProto {
       if (baseResponse_ != null) {
         output.writeMessage(1, getBaseResponse());
       }
-      if (wonCash_ != 0) {
-        output.writeInt32(5, wonCash_);
+      if (wonCashXu_ != 0) {
+        output.writeInt32(5, wonCashXu_);
       }
-      if (cash_ != 0L) {
-        output.writeInt64(6, cash_);
+      if (cashXu_ != 0L) {
+        output.writeInt64(6, cashXu_);
       }
-      if (isGold_ != false) {
-        output.writeBool(7, isGold_);
+      if (typeXu_ != 0) {
+        output.writeInt32(7, typeXu_);
       }
-      if (type_ != 0) {
-        output.writeInt32(8, type_);
+      if (wonCashGold_ != 0) {
+        output.writeInt32(8, wonCashGold_);
+      }
+      if (cashGold_ != 0L) {
+        output.writeInt64(9, cashGold_);
+      }
+      if (typeGold_ != 0) {
+        output.writeInt32(10, typeGold_);
       }
       if (timesQuay_ != 0) {
-        output.writeInt32(9, timesQuay_);
+        output.writeInt32(11, timesQuay_);
       }
     }
 
@@ -268,25 +314,33 @@ public final class QuayResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseResponse());
       }
-      if (wonCash_ != 0) {
+      if (wonCashXu_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, wonCash_);
+          .computeInt32Size(5, wonCashXu_);
       }
-      if (cash_ != 0L) {
+      if (cashXu_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(6, cash_);
+          .computeInt64Size(6, cashXu_);
       }
-      if (isGold_ != false) {
+      if (typeXu_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(7, isGold_);
+          .computeInt32Size(7, typeXu_);
       }
-      if (type_ != 0) {
+      if (wonCashGold_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(8, type_);
+          .computeInt32Size(8, wonCashGold_);
+      }
+      if (cashGold_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, cashGold_);
+      }
+      if (typeGold_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(10, typeGold_);
       }
       if (timesQuay_ != 0) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(9, timesQuay_);
+          .computeInt32Size(11, timesQuay_);
       }
       memoizedSize = size;
       return size;
@@ -309,14 +363,18 @@ public final class QuayResponseProto {
         result = result && getBaseResponse()
             .equals(other.getBaseResponse());
       }
-      result = result && (getWonCash()
-          == other.getWonCash());
-      result = result && (getCash()
-          == other.getCash());
-      result = result && (getIsGold()
-          == other.getIsGold());
-      result = result && (getType()
-          == other.getType());
+      result = result && (getWonCashXu()
+          == other.getWonCashXu());
+      result = result && (getCashXu()
+          == other.getCashXu());
+      result = result && (getTypeXu()
+          == other.getTypeXu());
+      result = result && (getWonCashGold()
+          == other.getWonCashGold());
+      result = result && (getCashGold()
+          == other.getCashGold());
+      result = result && (getTypeGold()
+          == other.getTypeGold());
       result = result && (getTimesQuay()
           == other.getTimesQuay());
       return result;
@@ -333,16 +391,20 @@ public final class QuayResponseProto {
         hash = (37 * hash) + BASERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getBaseResponse().hashCode();
       }
-      hash = (37 * hash) + WONCASH_FIELD_NUMBER;
-      hash = (53 * hash) + getWonCash();
-      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (37 * hash) + WONCASHXU_FIELD_NUMBER;
+      hash = (53 * hash) + getWonCashXu();
+      hash = (37 * hash) + CASHXU_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getCash());
-      hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsGold());
-      hash = (37 * hash) + TYPE_FIELD_NUMBER;
-      hash = (53 * hash) + getType();
+          getCashXu());
+      hash = (37 * hash) + TYPEXU_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeXu();
+      hash = (37 * hash) + WONCASHGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + getWonCashGold();
+      hash = (37 * hash) + CASHGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCashGold());
+      hash = (37 * hash) + TYPEGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + getTypeGold();
       hash = (37 * hash) + TIMESQUAY_FIELD_NUMBER;
       hash = (53 * hash) + getTimesQuay();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -469,13 +531,17 @@ public final class QuayResponseProto {
           baseResponse_ = null;
           baseResponseBuilder_ = null;
         }
-        wonCash_ = 0;
+        wonCashXu_ = 0;
 
-        cash_ = 0L;
+        cashXu_ = 0L;
 
-        isGold_ = false;
+        typeXu_ = 0;
 
-        type_ = 0;
+        wonCashGold_ = 0;
+
+        cashGold_ = 0L;
+
+        typeGold_ = 0;
 
         timesQuay_ = 0;
 
@@ -506,10 +572,12 @@ public final class QuayResponseProto {
         } else {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
-        result.wonCash_ = wonCash_;
-        result.cash_ = cash_;
-        result.isGold_ = isGold_;
-        result.type_ = type_;
+        result.wonCashXu_ = wonCashXu_;
+        result.cashXu_ = cashXu_;
+        result.typeXu_ = typeXu_;
+        result.wonCashGold_ = wonCashGold_;
+        result.cashGold_ = cashGold_;
+        result.typeGold_ = typeGold_;
         result.timesQuay_ = timesQuay_;
         onBuilt();
         return result;
@@ -555,17 +623,23 @@ public final class QuayResponseProto {
         if (other.hasBaseResponse()) {
           mergeBaseResponse(other.getBaseResponse());
         }
-        if (other.getWonCash() != 0) {
-          setWonCash(other.getWonCash());
+        if (other.getWonCashXu() != 0) {
+          setWonCashXu(other.getWonCashXu());
         }
-        if (other.getCash() != 0L) {
-          setCash(other.getCash());
+        if (other.getCashXu() != 0L) {
+          setCashXu(other.getCashXu());
         }
-        if (other.getIsGold() != false) {
-          setIsGold(other.getIsGold());
+        if (other.getTypeXu() != 0) {
+          setTypeXu(other.getTypeXu());
         }
-        if (other.getType() != 0) {
-          setType(other.getType());
+        if (other.getWonCashGold() != 0) {
+          setWonCashGold(other.getWonCashGold());
+        }
+        if (other.getCashGold() != 0L) {
+          setCashGold(other.getCashGold());
+        }
+        if (other.getTypeGold() != 0) {
+          setTypeGold(other.getTypeGold());
         }
         if (other.getTimesQuay() != 0) {
           setTimesQuay(other.getTimesQuay());
@@ -713,119 +787,171 @@ public final class QuayResponseProto {
         return baseResponseBuilder_;
       }
 
-      private int wonCash_ ;
+      private int wonCashXu_ ;
       /**
-       * <code>int32 wonCash = 5;</code>
+       * <code>int32 wonCashXu = 5;</code>
        */
-      public int getWonCash() {
-        return wonCash_;
+      public int getWonCashXu() {
+        return wonCashXu_;
       }
       /**
-       * <code>int32 wonCash = 5;</code>
+       * <code>int32 wonCashXu = 5;</code>
        */
-      public Builder setWonCash(int value) {
+      public Builder setWonCashXu(int value) {
         
-        wonCash_ = value;
+        wonCashXu_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 wonCash = 5;</code>
+       * <code>int32 wonCashXu = 5;</code>
        */
-      public Builder clearWonCash() {
+      public Builder clearWonCashXu() {
         
-        wonCash_ = 0;
-        onChanged();
-        return this;
-      }
-
-      private long cash_ ;
-      /**
-       * <code>int64 cash = 6;</code>
-       */
-      public long getCash() {
-        return cash_;
-      }
-      /**
-       * <code>int64 cash = 6;</code>
-       */
-      public Builder setCash(long value) {
-        
-        cash_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>int64 cash = 6;</code>
-       */
-      public Builder clearCash() {
-        
-        cash_ = 0L;
+        wonCashXu_ = 0;
         onChanged();
         return this;
       }
 
-      private boolean isGold_ ;
+      private long cashXu_ ;
       /**
-       * <code>bool isGold = 7;</code>
+       * <code>int64 cashXu = 6;</code>
        */
-      public boolean getIsGold() {
-        return isGold_;
+      public long getCashXu() {
+        return cashXu_;
       }
       /**
-       * <code>bool isGold = 7;</code>
+       * <code>int64 cashXu = 6;</code>
        */
-      public Builder setIsGold(boolean value) {
+      public Builder setCashXu(long value) {
         
-        isGold_ = value;
+        cashXu_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool isGold = 7;</code>
+       * <code>int64 cashXu = 6;</code>
        */
-      public Builder clearIsGold() {
+      public Builder clearCashXu() {
         
-        isGold_ = false;
+        cashXu_ = 0L;
         onChanged();
         return this;
       }
 
-      private int type_ ;
+      private int typeXu_ ;
       /**
-       * <code>int32 type = 8;</code>
+       * <code>int32 typeXu = 7;</code>
        */
-      public int getType() {
-        return type_;
+      public int getTypeXu() {
+        return typeXu_;
       }
       /**
-       * <code>int32 type = 8;</code>
+       * <code>int32 typeXu = 7;</code>
        */
-      public Builder setType(int value) {
+      public Builder setTypeXu(int value) {
         
-        type_ = value;
+        typeXu_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 type = 8;</code>
+       * <code>int32 typeXu = 7;</code>
        */
-      public Builder clearType() {
+      public Builder clearTypeXu() {
         
-        type_ = 0;
+        typeXu_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int wonCashGold_ ;
+      /**
+       * <code>int32 wonCashGold = 8;</code>
+       */
+      public int getWonCashGold() {
+        return wonCashGold_;
+      }
+      /**
+       * <code>int32 wonCashGold = 8;</code>
+       */
+      public Builder setWonCashGold(int value) {
+        
+        wonCashGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 wonCashGold = 8;</code>
+       */
+      public Builder clearWonCashGold() {
+        
+        wonCashGold_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private long cashGold_ ;
+      /**
+       * <code>int64 cashGold = 9;</code>
+       */
+      public long getCashGold() {
+        return cashGold_;
+      }
+      /**
+       * <code>int64 cashGold = 9;</code>
+       */
+      public Builder setCashGold(long value) {
+        
+        cashGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 cashGold = 9;</code>
+       */
+      public Builder clearCashGold() {
+        
+        cashGold_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int typeGold_ ;
+      /**
+       * <code>int32 typeGold = 10;</code>
+       */
+      public int getTypeGold() {
+        return typeGold_;
+      }
+      /**
+       * <code>int32 typeGold = 10;</code>
+       */
+      public Builder setTypeGold(int value) {
+        
+        typeGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 typeGold = 10;</code>
+       */
+      public Builder clearTypeGold() {
+        
+        typeGold_ = 0;
         onChanged();
         return this;
       }
 
       private int timesQuay_ ;
       /**
-       * <code>int32 timesQuay = 9;</code>
+       * <code>int32 timesQuay = 11;</code>
        */
       public int getTimesQuay() {
         return timesQuay_;
       }
       /**
-       * <code>int32 timesQuay = 9;</code>
+       * <code>int32 timesQuay = 11;</code>
        */
       public Builder setTimesQuay(int value) {
         
@@ -834,7 +960,7 @@ public final class QuayResponseProto {
         return this;
       }
       /**
-       * <code>int32 timesQuay = 9;</code>
+       * <code>int32 timesQuay = 11;</code>
        */
       public Builder clearTimesQuay() {
         
@@ -906,12 +1032,13 @@ public final class QuayResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\022QuayResponse.proto\022\005fanxi\032\031RestfulBase" +
-      "Response.proto\"\220\001\n\014QuayResponse\0220\n\014baseR" +
+      "Response.proto\"\277\001\n\014QuayResponse\0220\n\014baseR" +
       "esponse\030\001 \001(\0132\032.fanxi.RestfulBaseRespons" +
-      "e\022\017\n\007wonCash\030\005 \001(\005\022\014\n\004cash\030\006 \001(\003\022\016\n\006isGo" +
-      "ld\030\007 \001(\010\022\014\n\004type\030\010 \001(\005\022\021\n\ttimesQuay\030\t \001(" +
-      "\005B.\n\031com.fanxi.service.messageB\021QuayResp" +
-      "onseProtob\006proto3"
+      "e\022\021\n\twonCashXu\030\005 \001(\005\022\016\n\006cashXu\030\006 \001(\003\022\016\n\006" +
+      "typeXu\030\007 \001(\005\022\023\n\013wonCashGold\030\010 \001(\005\022\020\n\010cas" +
+      "hGold\030\t \001(\003\022\020\n\010typeGold\030\n \001(\005\022\021\n\ttimesQu" +
+      "ay\030\013 \001(\005B.\n\031com.fanxi.service.messageB\021Q" +
+      "uayResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -931,7 +1058,7 @@ public final class QuayResponseProto {
     internal_static_fanxi_QuayResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_QuayResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "WonCash", "Cash", "IsGold", "Type", "TimesQuay", });
+        new java.lang.String[] { "BaseResponse", "WonCashXu", "CashXu", "TypeXu", "WonCashGold", "CashGold", "TypeGold", "TimesQuay", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

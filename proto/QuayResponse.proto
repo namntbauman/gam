@@ -6,11 +6,13 @@ option java_outer_classname = "QuayResponseProto";
 
 message QuayResponse {
    RestfulBaseResponse baseResponse=1;
-   int32 wonCash=5;
-   int64 cash=6;
-   bool isGold=7;
-   int32 type=8;
-   int32 timesQuay=9;
+   int32 wonCashXu=5;
+   int64 cashXu=6;
+   int32 typeXu=7;
+   int32 wonCashGold=8;
+   int64 cashGold=9;
+   int32 typeGold=10;
+   int32 timesQuay=11;
    
 }
 

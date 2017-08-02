@@ -50,11 +50,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(QuayResponse_FieldNumber) {
   QuayResponse_FieldNumber_BaseResponse = 1,
-  QuayResponse_FieldNumber_WonCash = 5,
-  QuayResponse_FieldNumber_Cash = 6,
-  QuayResponse_FieldNumber_IsGold = 7,
-  QuayResponse_FieldNumber_Type = 8,
-  QuayResponse_FieldNumber_TimesQuay = 9,
+  QuayResponse_FieldNumber_WonCashXu = 5,
+  QuayResponse_FieldNumber_CashXu = 6,
+  QuayResponse_FieldNumber_TypeXu = 7,
+  QuayResponse_FieldNumber_WonCashGold = 8,
+  QuayResponse_FieldNumber_CashGold = 9,
+  QuayResponse_FieldNumber_TypeGold = 10,
+  QuayResponse_FieldNumber_TimesQuay = 11,
 };
 
 @interface QuayResponse : GPBMessage
@@ -63,13 +65,17 @@ typedef GPB_ENUM(QuayResponse_FieldNumber) {
 /** Test to see if @c baseResponse has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseResponse;
 
-@property(nonatomic, readwrite) int32_t wonCash;
+@property(nonatomic, readwrite) int32_t wonCashXu;
 
-@property(nonatomic, readwrite) int64_t cash;
+@property(nonatomic, readwrite) int64_t cashXu;
 
-@property(nonatomic, readwrite) BOOL isGold;
+@property(nonatomic, readwrite) int32_t typeXu;
 
-@property(nonatomic, readwrite) int32_t type;
+@property(nonatomic, readwrite) int32_t wonCashGold;
+
+@property(nonatomic, readwrite) int64_t cashGold;
+
+@property(nonatomic, readwrite) int32_t typeGold;
 
 @property(nonatomic, readwrite) int32_t timesQuay;
 
