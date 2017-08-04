@@ -54,6 +54,7 @@ static GPBFileDescriptor *MiniPokerResponseRoot_FileDescriptor(void) {
 @dynamic isGold;
 @dynamic cards;
 @dynamic type;
+@dynamic hu;
 
 typedef struct MiniPokerResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -63,6 +64,7 @@ typedef struct MiniPokerResponse__storage_ {
   RestfulBaseResponse *baseResponse;
   NSString *cards;
   int64_t reference;
+  int64_t hu;
 } MiniPokerResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -133,6 +135,15 @@ typedef struct MiniPokerResponse__storage_ {
         .offset = (uint32_t)offsetof(MiniPokerResponse__storage_, type),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "hu",
+        .dataTypeSpecific.className = NULL,
+        .number = MiniPokerResponse_FieldNumber_Hu,
+        .hasIndex = 8,
+        .offset = (uint32_t)offsetof(MiniPokerResponse__storage_, hu),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =
