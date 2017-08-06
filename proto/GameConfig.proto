@@ -1,0 +1,19 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "GameConfigProto";
+
+message GameConfig{
+    string xuBetMoneys=1;
+	string goldBetMoneys=2;
+	string xuEnableBetMoneys=3;
+	string goldEnableBetMoneys=4;
+	bool isEnable=5;
+	int32 zoneId=6;
+	int32 startAutoTime=7;
+	int32 endAutoTime=8;
+}
+
+
+

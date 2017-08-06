@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+import "GameConfig.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "GetConfigResponseProto";
+
+message GetConfigResponse {
+   RestfulBaseResponse baseResponse=1;
+   string tEtag=4;
+   repeated GameConfig games=5;
+}
+
+
+
+
