@@ -55,7 +55,8 @@ typedef GPB_ENUM(StartResponse_FieldNumber) {
   StartResponse_FieldNumber_TableIndex = 5,
   StartResponse_FieldNumber_MatchId = 6,
   StartResponse_FieldNumber_Reference = 7,
-  StartResponse_FieldNumber_PlayingArray = 8,
+  StartResponse_FieldNumber_AutoTime = 8,
+  StartResponse_FieldNumber_PlayingArray = 9,
 };
 
 @interface StartResponse : GPBMessage
@@ -71,6 +72,8 @@ typedef GPB_ENUM(StartResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
 
 @property(nonatomic, readwrite) int64_t reference;
+
+@property(nonatomic, readwrite) int32_t autoTime;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<Player*> *playingArray;
 /** The number of items in @c playingArray without causing the array to be created. */

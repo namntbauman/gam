@@ -53,12 +53,14 @@ static GPBFileDescriptor *StartResponseRoot_FileDescriptor(void) {
 @dynamic tableIndex;
 @dynamic matchId;
 @dynamic reference;
+@dynamic autoTime;
 @dynamic playingArray, playingArray_Count;
 
 typedef struct StartResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t tableIndex;
+  int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSMutableArray *playingArray;
@@ -117,6 +119,15 @@ typedef struct StartResponse__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "autoTime",
+        .dataTypeSpecific.className = NULL,
+        .number = StartResponse_FieldNumber_AutoTime,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(StartResponse__storage_, autoTime),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "playingArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = StartResponse_FieldNumber_PlayingArray,
@@ -136,7 +147,7 @@ typedef struct StartResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\004\006\000\005\n\000\006\007\000";
+        "\005\001\014\000\004\006\000\005\n\000\006\007\000\010\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

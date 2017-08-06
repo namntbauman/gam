@@ -11,7 +11,8 @@ message StartResponse {
    int32 tableIndex=5;
    string matchId=6;
    int64 reference=7;
-   repeated Player playing=8;
+   int32 autoTime =8;
+   repeated Player playing=9;
 }
 
 
