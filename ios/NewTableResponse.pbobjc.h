@@ -55,6 +55,7 @@ typedef GPB_ENUM(NewTableResponse_FieldNumber) {
   NewTableResponse_FieldNumber_MatchId = 6,
   NewTableResponse_FieldNumber_Cash = 7,
   NewTableResponse_FieldNumber_IsGold = 8,
+  NewTableResponse_FieldNumber_AutoTime = 9,
 };
 
 @interface NewTableResponse : GPBMessage
@@ -72,6 +73,8 @@ typedef GPB_ENUM(NewTableResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t cash;
 
 @property(nonatomic, readwrite) BOOL isGold;
+
+@property(nonatomic, readwrite) int32_t autoTime;
 
 @end
 

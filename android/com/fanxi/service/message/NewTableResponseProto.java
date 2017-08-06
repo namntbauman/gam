@@ -60,6 +60,11 @@ public final class NewTableResponseProto {
      * <code>bool isGold = 8;</code>
      */
     boolean getIsGold();
+
+    /**
+     * <code>int32 autoTime = 9;</code>
+     */
+    int getAutoTime();
   }
   /**
    * Protobuf type {@code fanxi.NewTableResponse}
@@ -78,6 +83,7 @@ public final class NewTableResponseProto {
       matchId_ = "";
       cash_ = 0;
       isGold_ = false;
+      autoTime_ = 0;
     }
 
     @java.lang.Override
@@ -142,6 +148,11 @@ public final class NewTableResponseProto {
             case 64: {
 
               isGold_ = input.readBool();
+              break;
+            }
+            case 72: {
+
+              autoTime_ = input.readInt32();
               break;
             }
           }
@@ -258,6 +269,15 @@ public final class NewTableResponseProto {
       return isGold_;
     }
 
+    public static final int AUTOTIME_FIELD_NUMBER = 9;
+    private int autoTime_;
+    /**
+     * <code>int32 autoTime = 9;</code>
+     */
+    public int getAutoTime() {
+      return autoTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -288,6 +308,9 @@ public final class NewTableResponseProto {
       if (isGold_ != false) {
         output.writeBool(8, isGold_);
       }
+      if (autoTime_ != 0) {
+        output.writeInt32(9, autoTime_);
+      }
     }
 
     public int getSerializedSize() {
@@ -317,6 +340,10 @@ public final class NewTableResponseProto {
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(8, isGold_);
+      }
+      if (autoTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(9, autoTime_);
       }
       memoizedSize = size;
       return size;
@@ -349,6 +376,8 @@ public final class NewTableResponseProto {
           == other.getCash());
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && (getAutoTime()
+          == other.getAutoTime());
       return result;
     }
 
@@ -374,6 +403,8 @@ public final class NewTableResponseProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + AUTOTIME_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoTime();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -508,6 +539,8 @@ public final class NewTableResponseProto {
 
         isGold_ = false;
 
+        autoTime_ = 0;
+
         return this;
       }
 
@@ -540,6 +573,7 @@ public final class NewTableResponseProto {
         result.matchId_ = matchId_;
         result.cash_ = cash_;
         result.isGold_ = isGold_;
+        result.autoTime_ = autoTime_;
         onBuilt();
         return result;
       }
@@ -599,6 +633,9 @@ public final class NewTableResponseProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (other.getAutoTime() != 0) {
+          setAutoTime(other.getAutoTime());
         }
         onChanged();
         return this;
@@ -915,6 +952,32 @@ public final class NewTableResponseProto {
         onChanged();
         return this;
       }
+
+      private int autoTime_ ;
+      /**
+       * <code>int32 autoTime = 9;</code>
+       */
+      public int getAutoTime() {
+        return autoTime_;
+      }
+      /**
+       * <code>int32 autoTime = 9;</code>
+       */
+      public Builder setAutoTime(int value) {
+        
+        autoTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 autoTime = 9;</code>
+       */
+      public Builder clearAutoTime() {
+        
+        autoTime_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -979,12 +1042,12 @@ public final class NewTableResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\026NewTableResponse.proto\022\005fanxi\032\022BaseRes" +
-      "ponse.proto\"\220\001\n\020NewTableResponse\022)\n\014base" +
+      "ponse.proto\"\242\001\n\020NewTableResponse\022)\n\014base" +
       "Response\030\001 \001(\0132\023.fanxi.BaseResponse\022\016\n\006z" +
       "oneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007match" +
-      "Id\030\006 \001(\t\022\014\n\004cash\030\007 \001(\005\022\016\n\006isGold\030\010 \001(\010B2" +
-      "\n\031com.fanxi.service.messageB\025NewTableRes" +
-      "ponseProtob\006proto3"
+      "Id\030\006 \001(\t\022\014\n\004cash\030\007 \001(\005\022\016\n\006isGold\030\010 \001(\010\022\020" +
+      "\n\010autoTime\030\t \001(\005B2\n\031com.fanxi.service.me" +
+      "ssageB\025NewTableResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1004,7 +1067,7 @@ public final class NewTableResponseProto {
     internal_static_fanxi_NewTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_NewTableResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", "IsGold", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", "IsGold", "AutoTime", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

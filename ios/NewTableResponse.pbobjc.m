@@ -53,12 +53,14 @@ static GPBFileDescriptor *NewTableResponseRoot_FileDescriptor(void) {
 @dynamic matchId;
 @dynamic cash;
 @dynamic isGold;
+@dynamic autoTime;
 
 typedef struct NewTableResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t zoneId;
   int32_t tableIndex;
   int32_t cash;
+  int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
 } NewTableResponse__storage_;
@@ -123,6 +125,15 @@ typedef struct NewTableResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "autoTime",
+        .dataTypeSpecific.className = NULL,
+        .number = NewTableResponse_FieldNumber_AutoTime,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(NewTableResponse__storage_, autoTime),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[NewTableResponse class]
@@ -134,7 +145,7 @@ typedef struct NewTableResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000";
+        "\006\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000\t\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

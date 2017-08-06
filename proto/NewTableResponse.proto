@@ -12,6 +12,7 @@ message NewTableResponse {
    string matchId=6;
    int32 cash=7;
    bool isGold =8;
+   int32 autoTime=9;
 }
 
 
