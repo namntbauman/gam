@@ -51,10 +51,12 @@ static GPBFileDescriptor *EndTaiSuuResponseRoot_FileDescriptor(void) {
 @dynamic isGold;
 @dynamic wonMoney;
 @dynamic cash;
+@dynamic result;
 
 typedef struct EndTaiSuuResponseResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t wonMoney;
+  int32_t result;
   BaseResponse *baseResponse;
   int64_t cash;
 } EndTaiSuuResponseResponse__storage_;
@@ -100,6 +102,15 @@ typedef struct EndTaiSuuResponseResponse__storage_ {
         .offset = (uint32_t)offsetof(EndTaiSuuResponseResponse__storage_, cash),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "result",
+        .dataTypeSpecific.className = NULL,
+        .number = EndTaiSuuResponseResponse_FieldNumber_Result,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(EndTaiSuuResponseResponse__storage_, result),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =

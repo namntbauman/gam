@@ -53,6 +53,7 @@ typedef GPB_ENUM(EndTaiSuuResponseResponse_FieldNumber) {
   EndTaiSuuResponseResponse_FieldNumber_IsGold = 4,
   EndTaiSuuResponseResponse_FieldNumber_WonMoney = 5,
   EndTaiSuuResponseResponse_FieldNumber_Cash = 6,
+  EndTaiSuuResponseResponse_FieldNumber_Result = 7,
 };
 
 @interface EndTaiSuuResponseResponse : GPBMessage
@@ -66,6 +67,8 @@ typedef GPB_ENUM(EndTaiSuuResponseResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t wonMoney;
 
 @property(nonatomic, readwrite) int64_t cash;
+
+@property(nonatomic, readwrite) int32_t result;
 
 @end
 
