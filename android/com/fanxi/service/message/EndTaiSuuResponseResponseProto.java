@@ -45,6 +45,11 @@ public final class EndTaiSuuResponseResponseProto {
      * <code>int64 cash = 6;</code>
      */
     long getCash();
+
+    /**
+     * <code>int32 result = 7;</code>
+     */
+    int getResult();
   }
   /**
    * Protobuf type {@code fanxi.EndTaiSuuResponseResponse}
@@ -61,6 +66,7 @@ public final class EndTaiSuuResponseResponseProto {
       isGold_ = false;
       wonMoney_ = 0;
       cash_ = 0L;
+      result_ = 0;
     }
 
     @java.lang.Override
@@ -114,6 +120,11 @@ public final class EndTaiSuuResponseResponseProto {
             case 48: {
 
               cash_ = input.readInt64();
+              break;
+            }
+            case 56: {
+
+              result_ = input.readInt32();
               break;
             }
           }
@@ -187,6 +198,15 @@ public final class EndTaiSuuResponseResponseProto {
       return cash_;
     }
 
+    public static final int RESULT_FIELD_NUMBER = 7;
+    private int result_;
+    /**
+     * <code>int32 result = 7;</code>
+     */
+    public int getResult() {
+      return result_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -211,6 +231,9 @@ public final class EndTaiSuuResponseResponseProto {
       if (cash_ != 0L) {
         output.writeInt64(6, cash_);
       }
+      if (result_ != 0) {
+        output.writeInt32(7, result_);
+      }
     }
 
     public int getSerializedSize() {
@@ -233,6 +256,10 @@ public final class EndTaiSuuResponseResponseProto {
       if (cash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(6, cash_);
+      }
+      if (result_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, result_);
       }
       memoizedSize = size;
       return size;
@@ -261,6 +288,8 @@ public final class EndTaiSuuResponseResponseProto {
           == other.getWonMoney());
       result = result && (getCash()
           == other.getCash());
+      result = result && (getResult()
+          == other.getResult());
       return result;
     }
 
@@ -283,6 +312,8 @@ public final class EndTaiSuuResponseResponseProto {
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
+      hash = (37 * hash) + RESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getResult();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -413,6 +444,8 @@ public final class EndTaiSuuResponseResponseProto {
 
         cash_ = 0L;
 
+        result_ = 0;
+
         return this;
       }
 
@@ -443,6 +476,7 @@ public final class EndTaiSuuResponseResponseProto {
         result.isGold_ = isGold_;
         result.wonMoney_ = wonMoney_;
         result.cash_ = cash_;
+        result.result_ = result_;
         onBuilt();
         return result;
       }
@@ -495,6 +529,9 @@ public final class EndTaiSuuResponseResponseProto {
         }
         if (other.getCash() != 0L) {
           setCash(other.getCash());
+        }
+        if (other.getResult() != 0) {
+          setResult(other.getResult());
         }
         onChanged();
         return this;
@@ -716,6 +753,32 @@ public final class EndTaiSuuResponseResponseProto {
         onChanged();
         return this;
       }
+
+      private int result_ ;
+      /**
+       * <code>int32 result = 7;</code>
+       */
+      public int getResult() {
+        return result_;
+      }
+      /**
+       * <code>int32 result = 7;</code>
+       */
+      public Builder setResult(int value) {
+        
+        result_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 result = 7;</code>
+       */
+      public Builder clearResult() {
+        
+        result_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -780,12 +843,12 @@ public final class EndTaiSuuResponseResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027EndTaiSuuResponse.proto\022\005fanxi\032\022BaseRe" +
-      "sponse.proto\"v\n\031EndTaiSuuResponseRespons" +
-      "e\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseResp" +
-      "onse\022\016\n\006isGold\030\004 \001(\010\022\020\n\010wonMoney\030\005 \001(\005\022\014" +
-      "\n\004cash\030\006 \001(\003B;\n\031com.fanxi.service.messag" +
-      "eB\036EndTaiSuuResponseResponseProtob\006proto" +
-      "3"
+      "sponse.proto\"\206\001\n\031EndTaiSuuResponseRespon" +
+      "se\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseRes" +
+      "ponse\022\016\n\006isGold\030\004 \001(\010\022\020\n\010wonMoney\030\005 \001(\005\022" +
+      "\014\n\004cash\030\006 \001(\003\022\016\n\006result\030\007 \001(\005B;\n\031com.fan" +
+      "xi.service.messageB\036EndTaiSuuResponseRes" +
+      "ponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -805,7 +868,7 @@ public final class EndTaiSuuResponseResponseProto {
     internal_static_fanxi_EndTaiSuuResponseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_EndTaiSuuResponseResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "IsGold", "WonMoney", "Cash", });
+        new java.lang.String[] { "BaseResponse", "IsGold", "WonMoney", "Cash", "Result", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 
