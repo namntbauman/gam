@@ -10,7 +10,7 @@ message EndTaiSuuResponseResponse {
    bool isGold=4;
    int32 wonMoney=5;
    int64 cash=6;
-   int32 result=7;
+   string result=7;
 }
 
 

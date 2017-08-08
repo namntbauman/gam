@@ -68,7 +68,7 @@ typedef GPB_ENUM(EndTaiSuuResponseResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int64_t cash;
 
-@property(nonatomic, readwrite) int32_t result;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *result;
 
 @end
 
