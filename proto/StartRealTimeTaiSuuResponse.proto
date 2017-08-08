@@ -8,7 +8,8 @@ option java_outer_classname = "StartRealTimeTaiSuuResponseProto";
 message StartRealTimeTaiSuuResponse {
    BaseResponse baseResponse=1;
    int32 timeRemaining=4;
-   repeated string userids =5;
+   int64 reference=5;
+   repeated string userids =6;
    
 }
 

@@ -37,20 +37,25 @@ public final class StartRealTimeTaiSuuResponseProto {
     int getTimeRemaining();
 
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>int64 reference = 5;</code>
+     */
+    long getReference();
+
+    /**
+     * <code>repeated string userids = 6;</code>
      */
     java.util.List<java.lang.String>
         getUseridsList();
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     int getUseridsCount();
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     java.lang.String getUserids(int index);
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     com.google.protobuf.ByteString
         getUseridsBytes(int index);
@@ -68,6 +73,7 @@ public final class StartRealTimeTaiSuuResponseProto {
     }
     private StartRealTimeTaiSuuResponse() {
       timeRemaining_ = 0;
+      reference_ = 0L;
       userids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
@@ -114,11 +120,16 @@ public final class StartRealTimeTaiSuuResponseProto {
               timeRemaining_ = input.readInt32();
               break;
             }
-            case 42: {
+            case 40: {
+
+              reference_ = input.readInt64();
+              break;
+            }
+            case 50: {
               java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 userids_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000004;
+                mutable_bitField0_ |= 0x00000008;
               }
               userids_.add(s);
               break;
@@ -131,7 +142,7 @@ public final class StartRealTimeTaiSuuResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           userids_ = userids_.getUnmodifiableView();
         }
         makeExtensionsImmutable();
@@ -180,29 +191,38 @@ public final class StartRealTimeTaiSuuResponseProto {
       return timeRemaining_;
     }
 
-    public static final int USERIDS_FIELD_NUMBER = 5;
+    public static final int REFERENCE_FIELD_NUMBER = 5;
+    private long reference_;
+    /**
+     * <code>int64 reference = 5;</code>
+     */
+    public long getReference() {
+      return reference_;
+    }
+
+    public static final int USERIDS_FIELD_NUMBER = 6;
     private com.google.protobuf.LazyStringList userids_;
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     public com.google.protobuf.ProtocolStringList
         getUseridsList() {
       return userids_;
     }
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     public int getUseridsCount() {
       return userids_.size();
     }
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     public java.lang.String getUserids(int index) {
       return userids_.get(index);
     }
     /**
-     * <code>repeated string userids = 5;</code>
+     * <code>repeated string userids = 6;</code>
      */
     public com.google.protobuf.ByteString
         getUseridsBytes(int index) {
@@ -227,8 +247,11 @@ public final class StartRealTimeTaiSuuResponseProto {
       if (timeRemaining_ != 0) {
         output.writeInt32(4, timeRemaining_);
       }
+      if (reference_ != 0L) {
+        output.writeInt64(5, reference_);
+      }
       for (int i = 0; i < userids_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, userids_.getRaw(i));
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, userids_.getRaw(i));
       }
     }
 
@@ -244,6 +267,10 @@ public final class StartRealTimeTaiSuuResponseProto {
       if (timeRemaining_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(4, timeRemaining_);
+      }
+      if (reference_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(5, reference_);
       }
       {
         int dataSize = 0;
@@ -276,6 +303,8 @@ public final class StartRealTimeTaiSuuResponseProto {
       }
       result = result && (getTimeRemaining()
           == other.getTimeRemaining());
+      result = result && (getReference()
+          == other.getReference());
       result = result && getUseridsList()
           .equals(other.getUseridsList());
       return result;
@@ -294,6 +323,9 @@ public final class StartRealTimeTaiSuuResponseProto {
       }
       hash = (37 * hash) + TIMEREMAINING_FIELD_NUMBER;
       hash = (53 * hash) + getTimeRemaining();
+      hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getReference());
       if (getUseridsCount() > 0) {
         hash = (37 * hash) + USERIDS_FIELD_NUMBER;
         hash = (53 * hash) + getUseridsList().hashCode();
@@ -424,8 +456,10 @@ public final class StartRealTimeTaiSuuResponseProto {
         }
         timeRemaining_ = 0;
 
+        reference_ = 0L;
+
         userids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -456,9 +490,10 @@ public final class StartRealTimeTaiSuuResponseProto {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.timeRemaining_ = timeRemaining_;
-        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        result.reference_ = reference_;
+        if (((bitField0_ & 0x00000008) == 0x00000008)) {
           userids_ = userids_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.userids_ = userids_;
         result.bitField0_ = to_bitField0_;
@@ -509,10 +544,13 @@ public final class StartRealTimeTaiSuuResponseProto {
         if (other.getTimeRemaining() != 0) {
           setTimeRemaining(other.getTimeRemaining());
         }
+        if (other.getReference() != 0L) {
+          setReference(other.getReference());
+        }
         if (!other.userids_.isEmpty()) {
           if (userids_.isEmpty()) {
             userids_ = other.userids_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureUseridsIsMutable();
             userids_.addAll(other.userids_);
@@ -689,41 +727,67 @@ public final class StartRealTimeTaiSuuResponseProto {
         return this;
       }
 
+      private long reference_ ;
+      /**
+       * <code>int64 reference = 5;</code>
+       */
+      public long getReference() {
+        return reference_;
+      }
+      /**
+       * <code>int64 reference = 5;</code>
+       */
+      public Builder setReference(long value) {
+        
+        reference_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 reference = 5;</code>
+       */
+      public Builder clearReference() {
+        
+        reference_ = 0L;
+        onChanged();
+        return this;
+      }
+
       private com.google.protobuf.LazyStringList userids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       private void ensureUseridsIsMutable() {
-        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
           userids_ = new com.google.protobuf.LazyStringArrayList(userids_);
-          bitField0_ |= 0x00000004;
+          bitField0_ |= 0x00000008;
          }
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public com.google.protobuf.ProtocolStringList
           getUseridsList() {
         return userids_.getUnmodifiableView();
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public int getUseridsCount() {
         return userids_.size();
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public java.lang.String getUserids(int index) {
         return userids_.get(index);
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public com.google.protobuf.ByteString
           getUseridsBytes(int index) {
         return userids_.getByteString(index);
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public Builder setUserids(
           int index, java.lang.String value) {
@@ -736,7 +800,7 @@ public final class StartRealTimeTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public Builder addUserids(
           java.lang.String value) {
@@ -749,7 +813,7 @@ public final class StartRealTimeTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public Builder addAllUserids(
           java.lang.Iterable<java.lang.String> values) {
@@ -760,16 +824,16 @@ public final class StartRealTimeTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public Builder clearUserids() {
         userids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
         return this;
       }
       /**
-       * <code>repeated string userids = 5;</code>
+       * <code>repeated string userids = 6;</code>
        */
       public Builder addUseridsBytes(
           com.google.protobuf.ByteString value) {
@@ -846,12 +910,12 @@ public final class StartRealTimeTaiSuuResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n!StartRealTimeTaiSuuResponse.proto\022\005fan" +
-      "xi\032\022BaseResponse.proto\"p\n\033StartRealTimeT" +
-      "aiSuuResponse\022)\n\014baseResponse\030\001 \001(\0132\023.fa" +
-      "nxi.BaseResponse\022\025\n\rtimeRemaining\030\004 \001(\005\022" +
-      "\017\n\007userids\030\005 \003(\tB=\n\031com.fanxi.service.me" +
-      "ssageB StartRealTimeTaiSuuResponseProtob" +
-      "\006proto3"
+      "xi\032\022BaseResponse.proto\"\203\001\n\033StartRealTime" +
+      "TaiSuuResponse\022)\n\014baseResponse\030\001 \001(\0132\023.f" +
+      "anxi.BaseResponse\022\025\n\rtimeRemaining\030\004 \001(\005" +
+      "\022\021\n\treference\030\005 \001(\003\022\017\n\007userids\030\006 \003(\tB=\n\031" +
+      "com.fanxi.service.messageB StartRealTime" +
+      "TaiSuuResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -871,7 +935,7 @@ public final class StartRealTimeTaiSuuResponseProto {
     internal_static_fanxi_StartRealTimeTaiSuuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_StartRealTimeTaiSuuResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "TimeRemaining", "Userids", });
+        new java.lang.String[] { "BaseResponse", "TimeRemaining", "Reference", "Userids", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

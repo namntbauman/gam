@@ -51,7 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(StartRealTimeTaiSuuResponse_FieldNumber) {
   StartRealTimeTaiSuuResponse_FieldNumber_BaseResponse = 1,
   StartRealTimeTaiSuuResponse_FieldNumber_TimeRemaining = 4,
-  StartRealTimeTaiSuuResponse_FieldNumber_UseridsArray = 5,
+  StartRealTimeTaiSuuResponse_FieldNumber_Reference = 5,
+  StartRealTimeTaiSuuResponse_FieldNumber_UseridsArray = 6,
 };
 
 @interface StartRealTimeTaiSuuResponse : GPBMessage
@@ -61,6 +62,8 @@ typedef GPB_ENUM(StartRealTimeTaiSuuResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseResponse;
 
 @property(nonatomic, readwrite) int32_t timeRemaining;
+
+@property(nonatomic, readwrite) int64_t reference;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *useridsArray;
 /** The number of items in @c useridsArray without causing the array to be created. */

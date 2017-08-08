@@ -49,6 +49,7 @@ static GPBFileDescriptor *StartRealTimeTaiSuuResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic timeRemaining;
+@dynamic reference;
 @dynamic useridsArray, useridsArray_Count;
 
 typedef struct StartRealTimeTaiSuuResponse__storage_ {
@@ -56,6 +57,7 @@ typedef struct StartRealTimeTaiSuuResponse__storage_ {
   int32_t timeRemaining;
   BaseResponse *baseResponse;
   NSMutableArray *useridsArray;
+  int64_t reference;
 } StartRealTimeTaiSuuResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -81,6 +83,15 @@ typedef struct StartRealTimeTaiSuuResponse__storage_ {
         .offset = (uint32_t)offsetof(StartRealTimeTaiSuuResponse__storage_, timeRemaining),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "reference",
+        .dataTypeSpecific.className = NULL,
+        .number = StartRealTimeTaiSuuResponse_FieldNumber_Reference,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(StartRealTimeTaiSuuResponse__storage_, reference),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
       },
       {
         .name = "useridsArray",
