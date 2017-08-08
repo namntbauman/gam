@@ -49,11 +49,13 @@ static GPBFileDescriptor *ChatTaiSuuResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic content;
+@dynamic displayName;
 
 typedef struct ChatTaiSuuResponse__storage_ {
   uint32_t _has_storage_[1];
   BaseResponse *baseResponse;
   NSString *content;
+  NSString *displayName;
 } ChatTaiSuuResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -80,6 +82,15 @@ typedef struct ChatTaiSuuResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "displayName",
+        .dataTypeSpecific.className = NULL,
+        .number = ChatTaiSuuResponse_FieldNumber_DisplayName,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ChatTaiSuuResponse__storage_, displayName),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ChatTaiSuuResponse class]
@@ -91,7 +102,7 @@ typedef struct ChatTaiSuuResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\001\014\000";
+        "\002\001\014\000\005\013\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

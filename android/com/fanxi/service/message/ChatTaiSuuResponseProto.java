@@ -40,6 +40,16 @@ public final class ChatTaiSuuResponseProto {
      */
     com.google.protobuf.ByteString
         getContentBytes();
+
+    /**
+     * <code>string displayName = 5;</code>
+     */
+    java.lang.String getDisplayName();
+    /**
+     * <code>string displayName = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getDisplayNameBytes();
   }
   /**
    * Protobuf type {@code fanxi.ChatTaiSuuResponse}
@@ -54,6 +64,7 @@ public final class ChatTaiSuuResponseProto {
     }
     private ChatTaiSuuResponse() {
       content_ = "";
+      displayName_ = "";
     }
 
     @java.lang.Override
@@ -98,6 +109,12 @@ public final class ChatTaiSuuResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
+              break;
+            }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              displayName_ = s;
               break;
             }
           }
@@ -178,6 +195,40 @@ public final class ChatTaiSuuResponseProto {
       }
     }
 
+    public static final int DISPLAYNAME_FIELD_NUMBER = 5;
+    private volatile java.lang.Object displayName_;
+    /**
+     * <code>string displayName = 5;</code>
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string displayName = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -196,6 +247,9 @@ public final class ChatTaiSuuResponseProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, content_);
       }
+      if (!getDisplayNameBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
+      }
     }
 
     public int getSerializedSize() {
@@ -209,6 +263,9 @@ public final class ChatTaiSuuResponseProto {
       }
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, content_);
+      }
+      if (!getDisplayNameBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
       }
       memoizedSize = size;
       return size;
@@ -233,6 +290,8 @@ public final class ChatTaiSuuResponseProto {
       }
       result = result && getContent()
           .equals(other.getContent());
+      result = result && getDisplayName()
+          .equals(other.getDisplayName());
       return result;
     }
 
@@ -249,6 +308,8 @@ public final class ChatTaiSuuResponseProto {
       }
       hash = (37 * hash) + CONTENT_FIELD_NUMBER;
       hash = (53 * hash) + getContent().hashCode();
+      hash = (37 * hash) + DISPLAYNAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -375,6 +436,8 @@ public final class ChatTaiSuuResponseProto {
         }
         content_ = "";
 
+        displayName_ = "";
+
         return this;
       }
 
@@ -403,6 +466,7 @@ public final class ChatTaiSuuResponseProto {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.content_ = content_;
+        result.displayName_ = displayName_;
         onBuilt();
         return result;
       }
@@ -449,6 +513,10 @@ public final class ChatTaiSuuResponseProto {
         }
         if (!other.getContent().isEmpty()) {
           content_ = other.content_;
+          onChanged();
+        }
+        if (!other.getDisplayName().isEmpty()) {
+          displayName_ = other.displayName_;
           onChanged();
         }
         onChanged();
@@ -662,6 +730,75 @@ public final class ChatTaiSuuResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object displayName_ = "";
+      /**
+       * <code>string displayName = 5;</code>
+       */
+      public java.lang.String getDisplayName() {
+        java.lang.Object ref = displayName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          displayName_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string displayName = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getDisplayNameBytes() {
+        java.lang.Object ref = displayName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          displayName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string displayName = 5;</code>
+       */
+      public Builder setDisplayName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string displayName = 5;</code>
+       */
+      public Builder clearDisplayName() {
+        
+        displayName_ = getDefaultInstance().getDisplayName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string displayName = 5;</code>
+       */
+      public Builder setDisplayNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        displayName_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -726,10 +863,11 @@ public final class ChatTaiSuuResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\030ChatTaiSuuResponse.proto\022\005fanxi\032\022BaseR" +
-      "esponse.proto\"P\n\022ChatTaiSuuResponse\022)\n\014b" +
+      "esponse.proto\"e\n\022ChatTaiSuuResponse\022)\n\014b" +
       "aseResponse\030\001 \001(\0132\023.fanxi.BaseResponse\022\017" +
-      "\n\007content\030\004 \001(\tB4\n\031com.fanxi.service.mes" +
-      "sageB\027ChatTaiSuuResponseProtob\006proto3"
+      "\n\007content\030\004 \001(\t\022\023\n\013displayName\030\005 \001(\tB4\n\031" +
+      "com.fanxi.service.messageB\027ChatTaiSuuRes" +
+      "ponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -749,7 +887,7 @@ public final class ChatTaiSuuResponseProto {
     internal_static_fanxi_ChatTaiSuuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_ChatTaiSuuResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Content", });
+        new java.lang.String[] { "BaseResponse", "Content", "DisplayName", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

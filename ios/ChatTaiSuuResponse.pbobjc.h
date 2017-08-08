@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(ChatTaiSuuResponse_FieldNumber) {
   ChatTaiSuuResponse_FieldNumber_BaseResponse = 1,
   ChatTaiSuuResponse_FieldNumber_Content = 4,
+  ChatTaiSuuResponse_FieldNumber_DisplayName = 5,
 };
 
 @interface ChatTaiSuuResponse : GPBMessage
@@ -60,6 +61,8 @@ typedef GPB_ENUM(ChatTaiSuuResponse_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseResponse;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *content;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *displayName;
 
 @end
 
