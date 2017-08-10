@@ -72,9 +72,9 @@ typedef struct RegTaiSuuResponse__storage_ {
   int32_t numSuu;
   int32_t timeRemaining;
   int32_t state;
-  int32_t currResult;
   RestfulBaseResponse *baseResponse;
   NSString *betMoneys;
+  NSString *currResult;
   NSString *resultHistories;
   NSMutableArray *chatsArray;
   int64_t reference;
@@ -225,7 +225,7 @@ typedef struct RegTaiSuuResponse__storage_ {
         .hasIndex = 15,
         .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, currResult),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "resultHistories",

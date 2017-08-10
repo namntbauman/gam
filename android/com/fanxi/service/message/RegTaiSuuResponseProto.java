@@ -102,9 +102,14 @@ public final class RegTaiSuuResponseProto {
     long getYourSuuXu();
 
     /**
-     * <code>int32 currResult = 17;</code>
+     * <code>string currResult = 17;</code>
      */
-    int getCurrResult();
+    java.lang.String getCurrResult();
+    /**
+     * <code>string currResult = 17;</code>
+     */
+    com.google.protobuf.ByteString
+        getCurrResultBytes();
 
     /**
      * <code>string resultHistories = 18;</code>
@@ -165,7 +170,7 @@ public final class RegTaiSuuResponseProto {
       yourTaiGold_ = 0L;
       yourTaiXu_ = 0L;
       yourSuuXu_ = 0L;
-      currResult_ = 0;
+      currResult_ = "";
       resultHistories_ = "";
       chats_ = java.util.Collections.emptyList();
     }
@@ -274,9 +279,10 @@ public final class RegTaiSuuResponseProto {
               yourSuuXu_ = input.readInt64();
               break;
             }
-            case 136: {
+            case 138: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              currResult_ = input.readInt32();
+              currResult_ = s;
               break;
             }
             case 146: {
@@ -485,12 +491,37 @@ public final class RegTaiSuuResponseProto {
     }
 
     public static final int CURRRESULT_FIELD_NUMBER = 17;
-    private int currResult_;
+    private volatile java.lang.Object currResult_;
     /**
-     * <code>int32 currResult = 17;</code>
+     * <code>string currResult = 17;</code>
      */
-    public int getCurrResult() {
-      return currResult_;
+    public java.lang.String getCurrResult() {
+      java.lang.Object ref = currResult_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        currResult_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string currResult = 17;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCurrResultBytes() {
+      java.lang.Object ref = currResult_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        currResult_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int RESULTHISTORIES_FIELD_NUMBER = 18;
@@ -616,8 +647,8 @@ public final class RegTaiSuuResponseProto {
       if (yourSuuXu_ != 0L) {
         output.writeInt64(16, yourSuuXu_);
       }
-      if (currResult_ != 0) {
-        output.writeInt32(17, currResult_);
+      if (!getCurrResultBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, currResult_);
       }
       if (!getResultHistoriesBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 18, resultHistories_);
@@ -687,9 +718,8 @@ public final class RegTaiSuuResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(16, yourSuuXu_);
       }
-      if (currResult_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(17, currResult_);
+      if (!getCurrResultBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, currResult_);
       }
       if (!getResultHistoriesBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, resultHistories_);
@@ -745,8 +775,8 @@ public final class RegTaiSuuResponseProto {
           == other.getYourTaiXu());
       result = result && (getYourSuuXu()
           == other.getYourSuuXu());
-      result = result && (getCurrResult()
-          == other.getCurrResult());
+      result = result && getCurrResult()
+          .equals(other.getCurrResult());
       result = result && getResultHistories()
           .equals(other.getResultHistories());
       result = result && getChatsList()
@@ -800,7 +830,7 @@ public final class RegTaiSuuResponseProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getYourSuuXu());
       hash = (37 * hash) + CURRRESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getCurrResult();
+      hash = (53 * hash) + getCurrResult().hashCode();
       hash = (37 * hash) + RESULTHISTORIES_FIELD_NUMBER;
       hash = (53 * hash) + getResultHistories().hashCode();
       if (getChatsCount() > 0) {
@@ -958,7 +988,7 @@ public final class RegTaiSuuResponseProto {
 
         yourSuuXu_ = 0L;
 
-        currResult_ = 0;
+        currResult_ = "";
 
         resultHistories_ = "";
 
@@ -1106,8 +1136,9 @@ public final class RegTaiSuuResponseProto {
         if (other.getYourSuuXu() != 0L) {
           setYourSuuXu(other.getYourSuuXu());
         }
-        if (other.getCurrResult() != 0) {
-          setCurrResult(other.getCurrResult());
+        if (!other.getCurrResult().isEmpty()) {
+          currResult_ = other.currResult_;
+          onChanged();
         }
         if (!other.getResultHistories().isEmpty()) {
           resultHistories_ = other.resultHistories_;
@@ -1664,28 +1695,71 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
 
-      private int currResult_ ;
+      private java.lang.Object currResult_ = "";
       /**
-       * <code>int32 currResult = 17;</code>
+       * <code>string currResult = 17;</code>
        */
-      public int getCurrResult() {
-        return currResult_;
+      public java.lang.String getCurrResult() {
+        java.lang.Object ref = currResult_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          currResult_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 currResult = 17;</code>
+       * <code>string currResult = 17;</code>
        */
-      public Builder setCurrResult(int value) {
-        
+      public com.google.protobuf.ByteString
+          getCurrResultBytes() {
+        java.lang.Object ref = currResult_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          currResult_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string currResult = 17;</code>
+       */
+      public Builder setCurrResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         currResult_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 currResult = 17;</code>
+       * <code>string currResult = 17;</code>
        */
       public Builder clearCurrResult() {
         
-        currResult_ = 0;
+        currResult_ = getDefaultInstance().getCurrResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string currResult = 17;</code>
+       */
+      public Builder setCurrResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        currResult_ = value;
         onChanged();
         return this;
       }
@@ -2071,7 +2145,7 @@ public final class RegTaiSuuResponseProto {
       "tate\030\013 \001(\005\022\021\n\tbetMoneys\030\014 \001(\t\022\023\n\013yourSuu" +
       "Gold\030\r \001(\003\022\023\n\013yourTaiGold\030\016 \001(\003\022\021\n\tyourT" +
       "aiXu\030\017 \001(\003\022\021\n\tyourSuuXu\030\020 \001(\003\022\022\n\ncurrRes",
-      "ult\030\021 \001(\005\022\027\n\017resultHistories\030\022 \001(\t\022 \n\005ch" +
+      "ult\030\021 \001(\t\022\027\n\017resultHistories\030\022 \001(\t\022 \n\005ch" +
       "ats\030\023 \003(\0132\021.fanxi.ChatEntityB3\n\031com.fanx" +
       "i.service.messageB\026RegTaiSuuResponseProt" +
       "ob\006proto3"

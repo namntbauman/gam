@@ -101,7 +101,7 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int64_t yourSuuXu;
 
-@property(nonatomic, readwrite) int32_t currResult;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *currResult;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *resultHistories;
 
