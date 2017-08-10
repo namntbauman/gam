@@ -16,7 +16,13 @@ message RegTaiSuuResponse {
    int32 timeRemaining=10;
    int32 state=11;
    string betMoneys=12;
-   repeated ChatEntity chats =13;
+   int64 yourSuuGold=13;
+   int64 yourTaiGold=14;
+   int64 yourTaiXu=15;
+   int64 yourSuuXu=16;
+   int32 currResult=17;
+   string resultHistories=18;
+   repeated ChatEntity chats =19;
 }
 
 

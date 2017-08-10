@@ -58,6 +58,12 @@ static GPBFileDescriptor *RegTaiSuuResponseRoot_FileDescriptor(void) {
 @dynamic timeRemaining;
 @dynamic state;
 @dynamic betMoneys;
+@dynamic yourSuuGold;
+@dynamic yourTaiGold;
+@dynamic yourTaiXu;
+@dynamic yourSuuXu;
+@dynamic currResult;
+@dynamic resultHistories;
 @dynamic chatsArray, chatsArray_Count;
 
 typedef struct RegTaiSuuResponse__storage_ {
@@ -66,12 +72,18 @@ typedef struct RegTaiSuuResponse__storage_ {
   int32_t numSuu;
   int32_t timeRemaining;
   int32_t state;
+  int32_t currResult;
   RestfulBaseResponse *baseResponse;
   NSString *betMoneys;
+  NSString *resultHistories;
   NSMutableArray *chatsArray;
   int64_t reference;
   int64_t moneyTai;
   int64_t moneySuu;
+  int64_t yourSuuGold;
+  int64_t yourTaiGold;
+  int64_t yourTaiXu;
+  int64_t yourSuuXu;
 } RegTaiSuuResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -171,6 +183,60 @@ typedef struct RegTaiSuuResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
+        .name = "yourSuuGold",
+        .dataTypeSpecific.className = NULL,
+        .number = RegTaiSuuResponse_FieldNumber_YourSuuGold,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, yourSuuGold),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "yourTaiGold",
+        .dataTypeSpecific.className = NULL,
+        .number = RegTaiSuuResponse_FieldNumber_YourTaiGold,
+        .hasIndex = 12,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, yourTaiGold),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "yourTaiXu",
+        .dataTypeSpecific.className = NULL,
+        .number = RegTaiSuuResponse_FieldNumber_YourTaiXu,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, yourTaiXu),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "yourSuuXu",
+        .dataTypeSpecific.className = NULL,
+        .number = RegTaiSuuResponse_FieldNumber_YourSuuXu,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, yourSuuXu),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "currResult",
+        .dataTypeSpecific.className = NULL,
+        .number = RegTaiSuuResponse_FieldNumber_CurrResult,
+        .hasIndex = 15,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, currResult),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "resultHistories",
+        .dataTypeSpecific.className = NULL,
+        .number = RegTaiSuuResponse_FieldNumber_ResultHistories,
+        .hasIndex = 16,
+        .offset = (uint32_t)offsetof(RegTaiSuuResponse__storage_, resultHistories),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "chatsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(ChatEntity),
         .number = RegTaiSuuResponse_FieldNumber_ChatsArray,
@@ -190,7 +256,8 @@ typedef struct RegTaiSuuResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\010\001\014\000\005\006\000\006\006\000\007\006\000\010\010\000\t\010\000\n\r\000\014\t\000";
+        "\016\001\014\000\005\006\000\006\006\000\007\006\000\010\010\000\t\010\000\n\r\000\014\t\000\r\013\000\016\013\000\017\t\000\020\t\000\021\n\000"
+        "\022\017\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

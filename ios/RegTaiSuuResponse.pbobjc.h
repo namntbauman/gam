@@ -60,7 +60,13 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
   RegTaiSuuResponse_FieldNumber_TimeRemaining = 10,
   RegTaiSuuResponse_FieldNumber_State = 11,
   RegTaiSuuResponse_FieldNumber_BetMoneys = 12,
-  RegTaiSuuResponse_FieldNumber_ChatsArray = 13,
+  RegTaiSuuResponse_FieldNumber_YourSuuGold = 13,
+  RegTaiSuuResponse_FieldNumber_YourTaiGold = 14,
+  RegTaiSuuResponse_FieldNumber_YourTaiXu = 15,
+  RegTaiSuuResponse_FieldNumber_YourSuuXu = 16,
+  RegTaiSuuResponse_FieldNumber_CurrResult = 17,
+  RegTaiSuuResponse_FieldNumber_ResultHistories = 18,
+  RegTaiSuuResponse_FieldNumber_ChatsArray = 19,
 };
 
 @interface RegTaiSuuResponse : GPBMessage
@@ -86,6 +92,18 @@ typedef GPB_ENUM(RegTaiSuuResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t state;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *betMoneys;
+
+@property(nonatomic, readwrite) int64_t yourSuuGold;
+
+@property(nonatomic, readwrite) int64_t yourTaiGold;
+
+@property(nonatomic, readwrite) int64_t yourTaiXu;
+
+@property(nonatomic, readwrite) int64_t yourSuuXu;
+
+@property(nonatomic, readwrite) int32_t currResult;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *resultHistories;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<ChatEntity*> *chatsArray;
 /** The number of items in @c chatsArray without causing the array to be created. */

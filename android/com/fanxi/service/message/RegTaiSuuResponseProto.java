@@ -82,25 +82,60 @@ public final class RegTaiSuuResponseProto {
         getBetMoneysBytes();
 
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>int64 yourSuuGold = 13;</code>
+     */
+    long getYourSuuGold();
+
+    /**
+     * <code>int64 yourTaiGold = 14;</code>
+     */
+    long getYourTaiGold();
+
+    /**
+     * <code>int64 yourTaiXu = 15;</code>
+     */
+    long getYourTaiXu();
+
+    /**
+     * <code>int64 yourSuuXu = 16;</code>
+     */
+    long getYourSuuXu();
+
+    /**
+     * <code>int32 currResult = 17;</code>
+     */
+    int getCurrResult();
+
+    /**
+     * <code>string resultHistories = 18;</code>
+     */
+    java.lang.String getResultHistories();
+    /**
+     * <code>string resultHistories = 18;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultHistoriesBytes();
+
+    /**
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> 
         getChatsList();
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     com.fanxi.service.message.ChatEntityProto.ChatEntity getChats(int index);
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     int getChatsCount();
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     java.util.List<? extends com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
         getChatsOrBuilderList();
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder getChatsOrBuilder(
         int index);
@@ -126,6 +161,12 @@ public final class RegTaiSuuResponseProto {
       timeRemaining_ = 0;
       state_ = 0;
       betMoneys_ = "";
+      yourSuuGold_ = 0L;
+      yourTaiGold_ = 0L;
+      yourTaiXu_ = 0L;
+      yourSuuXu_ = 0L;
+      currResult_ = 0;
+      resultHistories_ = "";
       chats_ = java.util.Collections.emptyList();
     }
 
@@ -213,10 +254,41 @@ public final class RegTaiSuuResponseProto {
               betMoneys_ = s;
               break;
             }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+            case 104: {
+
+              yourSuuGold_ = input.readInt64();
+              break;
+            }
+            case 112: {
+
+              yourTaiGold_ = input.readInt64();
+              break;
+            }
+            case 120: {
+
+              yourTaiXu_ = input.readInt64();
+              break;
+            }
+            case 128: {
+
+              yourSuuXu_ = input.readInt64();
+              break;
+            }
+            case 136: {
+
+              currResult_ = input.readInt32();
+              break;
+            }
+            case 146: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resultHistories_ = s;
+              break;
+            }
+            case 154: {
+              if (!((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
                 chats_ = new java.util.ArrayList<com.fanxi.service.message.ChatEntityProto.ChatEntity>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00010000;
               }
               chats_.add(
                   input.readMessage(com.fanxi.service.message.ChatEntityProto.ChatEntity.parser(), extensionRegistry));
@@ -230,7 +302,7 @@ public final class RegTaiSuuResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((mutable_bitField0_ & 0x00010000) == 0x00010000)) {
           chats_ = java.util.Collections.unmodifiableList(chats_);
         }
         makeExtensionsImmutable();
@@ -376,35 +448,114 @@ public final class RegTaiSuuResponseProto {
       }
     }
 
-    public static final int CHATS_FIELD_NUMBER = 13;
+    public static final int YOURSUUGOLD_FIELD_NUMBER = 13;
+    private long yourSuuGold_;
+    /**
+     * <code>int64 yourSuuGold = 13;</code>
+     */
+    public long getYourSuuGold() {
+      return yourSuuGold_;
+    }
+
+    public static final int YOURTAIGOLD_FIELD_NUMBER = 14;
+    private long yourTaiGold_;
+    /**
+     * <code>int64 yourTaiGold = 14;</code>
+     */
+    public long getYourTaiGold() {
+      return yourTaiGold_;
+    }
+
+    public static final int YOURTAIXU_FIELD_NUMBER = 15;
+    private long yourTaiXu_;
+    /**
+     * <code>int64 yourTaiXu = 15;</code>
+     */
+    public long getYourTaiXu() {
+      return yourTaiXu_;
+    }
+
+    public static final int YOURSUUXU_FIELD_NUMBER = 16;
+    private long yourSuuXu_;
+    /**
+     * <code>int64 yourSuuXu = 16;</code>
+     */
+    public long getYourSuuXu() {
+      return yourSuuXu_;
+    }
+
+    public static final int CURRRESULT_FIELD_NUMBER = 17;
+    private int currResult_;
+    /**
+     * <code>int32 currResult = 17;</code>
+     */
+    public int getCurrResult() {
+      return currResult_;
+    }
+
+    public static final int RESULTHISTORIES_FIELD_NUMBER = 18;
+    private volatile java.lang.Object resultHistories_;
+    /**
+     * <code>string resultHistories = 18;</code>
+     */
+    public java.lang.String getResultHistories() {
+      java.lang.Object ref = resultHistories_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resultHistories_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string resultHistories = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultHistoriesBytes() {
+      java.lang.Object ref = resultHistories_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        resultHistories_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CHATS_FIELD_NUMBER = 19;
     private java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> chats_;
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     public java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> getChatsList() {
       return chats_;
     }
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
         getChatsOrBuilderList() {
       return chats_;
     }
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     public int getChatsCount() {
       return chats_.size();
     }
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     public com.fanxi.service.message.ChatEntityProto.ChatEntity getChats(int index) {
       return chats_.get(index);
     }
     /**
-     * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+     * <code>repeated .fanxi.ChatEntity chats = 19;</code>
      */
     public com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder getChatsOrBuilder(
         int index) {
@@ -453,8 +604,26 @@ public final class RegTaiSuuResponseProto {
       if (!getBetMoneysBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, betMoneys_);
       }
+      if (yourSuuGold_ != 0L) {
+        output.writeInt64(13, yourSuuGold_);
+      }
+      if (yourTaiGold_ != 0L) {
+        output.writeInt64(14, yourTaiGold_);
+      }
+      if (yourTaiXu_ != 0L) {
+        output.writeInt64(15, yourTaiXu_);
+      }
+      if (yourSuuXu_ != 0L) {
+        output.writeInt64(16, yourSuuXu_);
+      }
+      if (currResult_ != 0) {
+        output.writeInt32(17, currResult_);
+      }
+      if (!getResultHistoriesBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, resultHistories_);
+      }
       for (int i = 0; i < chats_.size(); i++) {
-        output.writeMessage(13, chats_.get(i));
+        output.writeMessage(19, chats_.get(i));
       }
     }
 
@@ -502,9 +671,32 @@ public final class RegTaiSuuResponseProto {
       if (!getBetMoneysBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, betMoneys_);
       }
+      if (yourSuuGold_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(13, yourSuuGold_);
+      }
+      if (yourTaiGold_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(14, yourTaiGold_);
+      }
+      if (yourTaiXu_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(15, yourTaiXu_);
+      }
+      if (yourSuuXu_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(16, yourSuuXu_);
+      }
+      if (currResult_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(17, currResult_);
+      }
+      if (!getResultHistoriesBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, resultHistories_);
+      }
       for (int i = 0; i < chats_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, chats_.get(i));
+          .computeMessageSize(19, chats_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -545,6 +737,18 @@ public final class RegTaiSuuResponseProto {
           == other.getState());
       result = result && getBetMoneys()
           .equals(other.getBetMoneys());
+      result = result && (getYourSuuGold()
+          == other.getYourSuuGold());
+      result = result && (getYourTaiGold()
+          == other.getYourTaiGold());
+      result = result && (getYourTaiXu()
+          == other.getYourTaiXu());
+      result = result && (getYourSuuXu()
+          == other.getYourSuuXu());
+      result = result && (getCurrResult()
+          == other.getCurrResult());
+      result = result && getResultHistories()
+          .equals(other.getResultHistories());
       result = result && getChatsList()
           .equals(other.getChatsList());
       return result;
@@ -583,6 +787,22 @@ public final class RegTaiSuuResponseProto {
       hash = (53 * hash) + getState();
       hash = (37 * hash) + BETMONEYS_FIELD_NUMBER;
       hash = (53 * hash) + getBetMoneys().hashCode();
+      hash = (37 * hash) + YOURSUUGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getYourSuuGold());
+      hash = (37 * hash) + YOURTAIGOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getYourTaiGold());
+      hash = (37 * hash) + YOURTAIXU_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getYourTaiXu());
+      hash = (37 * hash) + YOURSUUXU_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getYourSuuXu());
+      hash = (37 * hash) + CURRRESULT_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrResult();
+      hash = (37 * hash) + RESULTHISTORIES_FIELD_NUMBER;
+      hash = (53 * hash) + getResultHistories().hashCode();
       if (getChatsCount() > 0) {
         hash = (37 * hash) + CHATS_FIELD_NUMBER;
         hash = (53 * hash) + getChatsList().hashCode();
@@ -730,9 +950,21 @@ public final class RegTaiSuuResponseProto {
 
         betMoneys_ = "";
 
+        yourSuuGold_ = 0L;
+
+        yourTaiGold_ = 0L;
+
+        yourTaiXu_ = 0L;
+
+        yourSuuXu_ = 0L;
+
+        currResult_ = 0;
+
+        resultHistories_ = "";
+
         if (chatsBuilder_ == null) {
           chats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00010000);
         } else {
           chatsBuilder_.clear();
         }
@@ -774,10 +1006,16 @@ public final class RegTaiSuuResponseProto {
         result.timeRemaining_ = timeRemaining_;
         result.state_ = state_;
         result.betMoneys_ = betMoneys_;
+        result.yourSuuGold_ = yourSuuGold_;
+        result.yourTaiGold_ = yourTaiGold_;
+        result.yourTaiXu_ = yourTaiXu_;
+        result.yourSuuXu_ = yourSuuXu_;
+        result.currResult_ = currResult_;
+        result.resultHistories_ = resultHistories_;
         if (chatsBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          if (((bitField0_ & 0x00010000) == 0x00010000)) {
             chats_ = java.util.Collections.unmodifiableList(chats_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00010000);
           }
           result.chats_ = chats_;
         } else {
@@ -856,11 +1094,30 @@ public final class RegTaiSuuResponseProto {
           betMoneys_ = other.betMoneys_;
           onChanged();
         }
+        if (other.getYourSuuGold() != 0L) {
+          setYourSuuGold(other.getYourSuuGold());
+        }
+        if (other.getYourTaiGold() != 0L) {
+          setYourTaiGold(other.getYourTaiGold());
+        }
+        if (other.getYourTaiXu() != 0L) {
+          setYourTaiXu(other.getYourTaiXu());
+        }
+        if (other.getYourSuuXu() != 0L) {
+          setYourSuuXu(other.getYourSuuXu());
+        }
+        if (other.getCurrResult() != 0) {
+          setCurrResult(other.getCurrResult());
+        }
+        if (!other.getResultHistories().isEmpty()) {
+          resultHistories_ = other.resultHistories_;
+          onChanged();
+        }
         if (chatsBuilder_ == null) {
           if (!other.chats_.isEmpty()) {
             if (chats_.isEmpty()) {
               chats_ = other.chats_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00010000);
             } else {
               ensureChatsIsMutable();
               chats_.addAll(other.chats_);
@@ -873,7 +1130,7 @@ public final class RegTaiSuuResponseProto {
               chatsBuilder_.dispose();
               chatsBuilder_ = null;
               chats_ = other.chats_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00010000);
               chatsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getChatsFieldBuilder() : null;
@@ -1303,12 +1560,211 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
 
+      private long yourSuuGold_ ;
+      /**
+       * <code>int64 yourSuuGold = 13;</code>
+       */
+      public long getYourSuuGold() {
+        return yourSuuGold_;
+      }
+      /**
+       * <code>int64 yourSuuGold = 13;</code>
+       */
+      public Builder setYourSuuGold(long value) {
+        
+        yourSuuGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 yourSuuGold = 13;</code>
+       */
+      public Builder clearYourSuuGold() {
+        
+        yourSuuGold_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long yourTaiGold_ ;
+      /**
+       * <code>int64 yourTaiGold = 14;</code>
+       */
+      public long getYourTaiGold() {
+        return yourTaiGold_;
+      }
+      /**
+       * <code>int64 yourTaiGold = 14;</code>
+       */
+      public Builder setYourTaiGold(long value) {
+        
+        yourTaiGold_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 yourTaiGold = 14;</code>
+       */
+      public Builder clearYourTaiGold() {
+        
+        yourTaiGold_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long yourTaiXu_ ;
+      /**
+       * <code>int64 yourTaiXu = 15;</code>
+       */
+      public long getYourTaiXu() {
+        return yourTaiXu_;
+      }
+      /**
+       * <code>int64 yourTaiXu = 15;</code>
+       */
+      public Builder setYourTaiXu(long value) {
+        
+        yourTaiXu_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 yourTaiXu = 15;</code>
+       */
+      public Builder clearYourTaiXu() {
+        
+        yourTaiXu_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long yourSuuXu_ ;
+      /**
+       * <code>int64 yourSuuXu = 16;</code>
+       */
+      public long getYourSuuXu() {
+        return yourSuuXu_;
+      }
+      /**
+       * <code>int64 yourSuuXu = 16;</code>
+       */
+      public Builder setYourSuuXu(long value) {
+        
+        yourSuuXu_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 yourSuuXu = 16;</code>
+       */
+      public Builder clearYourSuuXu() {
+        
+        yourSuuXu_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private int currResult_ ;
+      /**
+       * <code>int32 currResult = 17;</code>
+       */
+      public int getCurrResult() {
+        return currResult_;
+      }
+      /**
+       * <code>int32 currResult = 17;</code>
+       */
+      public Builder setCurrResult(int value) {
+        
+        currResult_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 currResult = 17;</code>
+       */
+      public Builder clearCurrResult() {
+        
+        currResult_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object resultHistories_ = "";
+      /**
+       * <code>string resultHistories = 18;</code>
+       */
+      public java.lang.String getResultHistories() {
+        java.lang.Object ref = resultHistories_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          resultHistories_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string resultHistories = 18;</code>
+       */
+      public com.google.protobuf.ByteString
+          getResultHistoriesBytes() {
+        java.lang.Object ref = resultHistories_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          resultHistories_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string resultHistories = 18;</code>
+       */
+      public Builder setResultHistories(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        resultHistories_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resultHistories = 18;</code>
+       */
+      public Builder clearResultHistories() {
+        
+        resultHistories_ = getDefaultInstance().getResultHistories();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string resultHistories = 18;</code>
+       */
+      public Builder setResultHistoriesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        resultHistories_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> chats_ =
         java.util.Collections.emptyList();
       private void ensureChatsIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (!((bitField0_ & 0x00010000) == 0x00010000)) {
           chats_ = new java.util.ArrayList<com.fanxi.service.message.ChatEntityProto.ChatEntity>(chats_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00010000;
          }
       }
 
@@ -1316,7 +1772,7 @@ public final class RegTaiSuuResponseProto {
           com.fanxi.service.message.ChatEntityProto.ChatEntity, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder, com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> chatsBuilder_;
 
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity> getChatsList() {
         if (chatsBuilder_ == null) {
@@ -1326,7 +1782,7 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public int getChatsCount() {
         if (chatsBuilder_ == null) {
@@ -1336,7 +1792,7 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public com.fanxi.service.message.ChatEntityProto.ChatEntity getChats(int index) {
         if (chatsBuilder_ == null) {
@@ -1346,7 +1802,7 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder setChats(
           int index, com.fanxi.service.message.ChatEntityProto.ChatEntity value) {
@@ -1363,7 +1819,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder setChats(
           int index, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder builderForValue) {
@@ -1377,7 +1833,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder addChats(com.fanxi.service.message.ChatEntityProto.ChatEntity value) {
         if (chatsBuilder_ == null) {
@@ -1393,7 +1849,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder addChats(
           int index, com.fanxi.service.message.ChatEntityProto.ChatEntity value) {
@@ -1410,7 +1866,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder addChats(
           com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder builderForValue) {
@@ -1424,7 +1880,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder addChats(
           int index, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder builderForValue) {
@@ -1438,7 +1894,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder addAllChats(
           java.lang.Iterable<? extends com.fanxi.service.message.ChatEntityProto.ChatEntity> values) {
@@ -1453,12 +1909,12 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder clearChats() {
         if (chatsBuilder_ == null) {
           chats_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00010000);
           onChanged();
         } else {
           chatsBuilder_.clear();
@@ -1466,7 +1922,7 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public Builder removeChats(int index) {
         if (chatsBuilder_ == null) {
@@ -1479,14 +1935,14 @@ public final class RegTaiSuuResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder getChatsBuilder(
           int index) {
         return getChatsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder getChatsOrBuilder(
           int index) {
@@ -1496,7 +1952,7 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder> 
            getChatsOrBuilderList() {
@@ -1507,14 +1963,14 @@ public final class RegTaiSuuResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder addChatsBuilder() {
         return getChatsFieldBuilder().addBuilder(
             com.fanxi.service.message.ChatEntityProto.ChatEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder addChatsBuilder(
           int index) {
@@ -1522,7 +1978,7 @@ public final class RegTaiSuuResponseProto {
             index, com.fanxi.service.message.ChatEntityProto.ChatEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.ChatEntity chats = 13;</code>
+       * <code>repeated .fanxi.ChatEntity chats = 19;</code>
        */
       public java.util.List<com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder> 
            getChatsBuilderList() {
@@ -1535,7 +1991,7 @@ public final class RegTaiSuuResponseProto {
           chatsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.ChatEntityProto.ChatEntity, com.fanxi.service.message.ChatEntityProto.ChatEntity.Builder, com.fanxi.service.message.ChatEntityProto.ChatEntityOrBuilder>(
                   chats_,
-                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  ((bitField0_ & 0x00010000) == 0x00010000),
                   getParentForChildren(),
                   isClean());
           chats_ = null;
@@ -1606,16 +2062,19 @@ public final class RegTaiSuuResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027RegTaiSuuResponse.proto\022\005fanxi\032\031Restfu" +
-      "lBaseResponse.proto\032\020ChatEntity.proto\"\207\002" +
+      "lBaseResponse.proto\032\020ChatEntity.proto\"\204\003" +
       "\n\021RegTaiSuuResponse\0220\n\014baseResponse\030\001 \001(" +
       "\0132\032.fanxi.RestfulBaseResponse\022\021\n\treferen" +
       "ce\030\004 \001(\003\022\016\n\006numTai\030\005 \001(\005\022\016\n\006numSuu\030\006 \001(\005" +
       "\022\016\n\006isGold\030\007 \001(\010\022\020\n\010moneyTai\030\010 \001(\003\022\020\n\010mo" +
       "neySuu\030\t \001(\003\022\025\n\rtimeRemaining\030\n \001(\005\022\r\n\005s" +
-      "tate\030\013 \001(\005\022\021\n\tbetMoneys\030\014 \001(\t\022 \n\005chats\030\r" +
-      " \003(\0132\021.fanxi.ChatEntityB3\n\031com.fanxi.ser" +
-      "vice.messageB\026RegTaiSuuResponseProtob\006pr",
-      "oto3"
+      "tate\030\013 \001(\005\022\021\n\tbetMoneys\030\014 \001(\t\022\023\n\013yourSuu" +
+      "Gold\030\r \001(\003\022\023\n\013yourTaiGold\030\016 \001(\003\022\021\n\tyourT" +
+      "aiXu\030\017 \001(\003\022\021\n\tyourSuuXu\030\020 \001(\003\022\022\n\ncurrRes",
+      "ult\030\021 \001(\005\022\027\n\017resultHistories\030\022 \001(\t\022 \n\005ch" +
+      "ats\030\023 \003(\0132\021.fanxi.ChatEntityB3\n\031com.fanx" +
+      "i.service.messageB\026RegTaiSuuResponseProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1636,7 +2095,7 @@ public final class RegTaiSuuResponseProto {
     internal_static_fanxi_RegTaiSuuResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegTaiSuuResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Reference", "NumTai", "NumSuu", "IsGold", "MoneyTai", "MoneySuu", "TimeRemaining", "State", "BetMoneys", "Chats", });
+        new java.lang.String[] { "BaseResponse", "Reference", "NumTai", "NumSuu", "IsGold", "MoneyTai", "MoneySuu", "TimeRemaining", "State", "BetMoneys", "YourSuuGold", "YourTaiGold", "YourTaiXu", "YourSuuXu", "CurrResult", "ResultHistories", "Chats", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
     com.fanxi.service.message.ChatEntityProto.getDescriptor();
   }
