@@ -16,6 +16,8 @@ message BetResponse {
    string uid=10;
    UserTo currUser=11;
    UserTo nextUser=12;
+   repeated UserTo refundUsers=13;
+   
 }
 
 

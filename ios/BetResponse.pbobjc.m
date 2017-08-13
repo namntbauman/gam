@@ -58,6 +58,7 @@ static GPBFileDescriptor *BetResponseRoot_FileDescriptor(void) {
 @dynamic uid;
 @dynamic hasCurrUser, currUser;
 @dynamic hasNextUser, nextUser;
+@dynamic refundUsersArray, refundUsersArray_Count;
 
 typedef struct BetResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -69,6 +70,7 @@ typedef struct BetResponse__storage_ {
   NSString *uid;
   UserTo *currUser;
   UserTo *nextUser;
+  NSMutableArray *refundUsersArray;
   int64_t cash;
   int64_t allTotalCall;
 } BetResponse__storage_;
@@ -169,6 +171,15 @@ typedef struct BetResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
+      {
+        .name = "refundUsersArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
+        .number = BetResponse_FieldNumber_RefundUsersArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(BetResponse__storage_, refundUsersArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[BetResponse class]
@@ -180,7 +191,7 @@ typedef struct BetResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\010\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000\t\014\000\013\010\000\014\010\000";
+        "\t\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000\t\014\000\013\010\000\014\010\000\r\000refundUsers\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

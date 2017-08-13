@@ -60,6 +60,7 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
   BetResponse_FieldNumber_Uid = 10,
   BetResponse_FieldNumber_CurrUser = 11,
   BetResponse_FieldNumber_NextUser = 12,
+  BetResponse_FieldNumber_RefundUsersArray = 13,
 };
 
 @interface BetResponse : GPBMessage
@@ -89,6 +90,10 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) UserTo *nextUser;
 /** Test to see if @c nextUser has been set. */
 @property(nonatomic, readwrite) BOOL hasNextUser;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<UserTo*> *refundUsersArray;
+/** The number of items in @c refundUsersArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger refundUsersArray_Count;
 
 @end
 
