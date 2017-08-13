@@ -52,6 +52,7 @@ typedef GPB_ENUM(UserTo_FieldNumber) {
   UserTo_FieldNumber_CallMoney = 3,
   UserTo_FieldNumber_MinCall = 4,
   UserTo_FieldNumber_TotalCall = 5,
+  UserTo_FieldNumber_Cash = 6,
 };
 
 @interface UserTo : GPBMessage
@@ -65,6 +66,8 @@ typedef GPB_ENUM(UserTo_FieldNumber) {
 @property(nonatomic, readwrite) int64_t minCall;
 
 @property(nonatomic, readwrite) int64_t totalCall;
+
+@property(nonatomic, readwrite) int64_t cash;
 
 @end
 

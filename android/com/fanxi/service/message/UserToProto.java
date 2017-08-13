@@ -47,6 +47,11 @@ public final class UserToProto {
      * <code>int64 totalCall = 5;</code>
      */
     long getTotalCall();
+
+    /**
+     * <code>int64 cash = 6;</code>
+     */
+    long getCash();
   }
   /**
    * Protobuf type {@code fanxi.UserTo}
@@ -65,6 +70,7 @@ public final class UserToProto {
       callMoney_ = 0L;
       minCall_ = 0L;
       totalCall_ = 0L;
+      cash_ = 0L;
     }
 
     @java.lang.Override
@@ -116,6 +122,11 @@ public final class UserToProto {
             case 40: {
 
               totalCall_ = input.readInt64();
+              break;
+            }
+            case 48: {
+
+              cash_ = input.readInt64();
               break;
             }
           }
@@ -211,6 +222,15 @@ public final class UserToProto {
       return totalCall_;
     }
 
+    public static final int CASH_FIELD_NUMBER = 6;
+    private long cash_;
+    /**
+     * <code>int64 cash = 6;</code>
+     */
+    public long getCash() {
+      return cash_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -238,6 +258,9 @@ public final class UserToProto {
       if (totalCall_ != 0L) {
         output.writeInt64(5, totalCall_);
       }
+      if (cash_ != 0L) {
+        output.writeInt64(6, cash_);
+      }
     }
 
     public int getSerializedSize() {
@@ -263,6 +286,10 @@ public final class UserToProto {
       if (totalCall_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, totalCall_);
+      }
+      if (cash_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(6, cash_);
       }
       memoizedSize = size;
       return size;
@@ -290,6 +317,8 @@ public final class UserToProto {
           == other.getMinCall());
       result = result && (getTotalCall()
           == other.getTotalCall());
+      result = result && (getCash()
+          == other.getCash());
       return result;
     }
 
@@ -313,6 +342,9 @@ public final class UserToProto {
       hash = (37 * hash) + TOTALCALL_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getTotalCall());
+      hash = (37 * hash) + CASH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCash());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -441,6 +473,8 @@ public final class UserToProto {
 
         totalCall_ = 0L;
 
+        cash_ = 0L;
+
         return this;
       }
 
@@ -468,6 +502,7 @@ public final class UserToProto {
         result.callMoney_ = callMoney_;
         result.minCall_ = minCall_;
         result.totalCall_ = totalCall_;
+        result.cash_ = cash_;
         onBuilt();
         return result;
       }
@@ -524,6 +559,9 @@ public final class UserToProto {
         }
         if (other.getTotalCall() != 0L) {
           setTotalCall(other.getTotalCall());
+        }
+        if (other.getCash() != 0L) {
+          setCash(other.getCash());
         }
         onChanged();
         return this;
@@ -723,6 +761,32 @@ public final class UserToProto {
         onChanged();
         return this;
       }
+
+      private long cash_ ;
+      /**
+       * <code>int64 cash = 6;</code>
+       */
+      public long getCash() {
+        return cash_;
+      }
+      /**
+       * <code>int64 cash = 6;</code>
+       */
+      public Builder setCash(long value) {
+        
+        cash_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 cash = 6;</code>
+       */
+      public Builder clearCash() {
+        
+        cash_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -786,11 +850,11 @@ public final class UserToProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\014UserTo.proto\022\005fanxi\"_\n\006UserTo\022\016\n\006userI" +
+      "\n\014UserTo.proto\022\005fanxi\"m\n\006UserTo\022\016\n\006userI" +
       "d\030\001 \001(\t\022\016\n\006typeTo\030\002 \001(\005\022\021\n\tcallMoney\030\003 \001" +
-      "(\003\022\017\n\007minCall\030\004 \001(\003\022\021\n\ttotalCall\030\005 \001(\003B(" +
-      "\n\031com.fanxi.service.messageB\013UserToProto" +
-      "b\006proto3"
+      "(\003\022\017\n\007minCall\030\004 \001(\003\022\021\n\ttotalCall\030\005 \001(\003\022\014" +
+      "\n\004cash\030\006 \001(\003B(\n\031com.fanxi.service.messag" +
+      "eB\013UserToProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -809,7 +873,7 @@ public final class UserToProto {
     internal_static_fanxi_UserTo_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_UserTo_descriptor,
-        new java.lang.String[] { "UserId", "TypeTo", "CallMoney", "MinCall", "TotalCall", });
+        new java.lang.String[] { "UserId", "TypeTo", "CallMoney", "MinCall", "TotalCall", "Cash", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

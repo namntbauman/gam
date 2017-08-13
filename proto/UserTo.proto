@@ -10,6 +10,7 @@ message UserTo{
     int64 callMoney = 3;
     int64 minCall= 4;
     int64 totalCall = 5;
+	int64 cash=6;
 }
 
 

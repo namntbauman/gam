@@ -51,6 +51,7 @@ static GPBFileDescriptor *UserToRoot_FileDescriptor(void) {
 @dynamic callMoney;
 @dynamic minCall;
 @dynamic totalCall;
+@dynamic cash;
 
 typedef struct UserTo__storage_ {
   uint32_t _has_storage_[1];
@@ -59,6 +60,7 @@ typedef struct UserTo__storage_ {
   int64_t callMoney;
   int64_t minCall;
   int64_t totalCall;
+  int64_t cash;
 } UserTo__storage_;
 
 // This method is threadsafe because it is initially called
@@ -110,6 +112,15 @@ typedef struct UserTo__storage_ {
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(UserTo__storage_, totalCall),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "cash",
+        .dataTypeSpecific.className = NULL,
+        .number = UserTo_FieldNumber_Cash,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(UserTo__storage_, cash),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
     };
