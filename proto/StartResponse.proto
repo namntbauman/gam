@@ -12,7 +12,9 @@ message StartResponse {
    string matchId=6;
    int64 reference=7;
    int32 autoTime =8;
-   repeated Player playing=9;
+   string cau=9;
+   string history=10;
+   repeated Player playing=11;
 }
 
 

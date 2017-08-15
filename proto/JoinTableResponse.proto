@@ -19,7 +19,9 @@ message JoinTableResponse {
    string ownerId=13;
    int32 timeAuto=14;
    int64 reference=15;
-   repeated Player players=16;
+   string cau=16;
+   string history=17;
+   repeated Player players=18;
 }
 
 
