@@ -54,6 +54,8 @@ static GPBFileDescriptor *StartResponseRoot_FileDescriptor(void) {
 @dynamic matchId;
 @dynamic reference;
 @dynamic autoTime;
+@dynamic cau;
+@dynamic history;
 @dynamic playingArray, playingArray_Count;
 
 typedef struct StartResponse__storage_ {
@@ -63,6 +65,8 @@ typedef struct StartResponse__storage_ {
   int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
+  NSString *cau;
+  NSString *history;
   NSMutableArray *playingArray;
   int64_t reference;
 } StartResponse__storage_;
@@ -126,6 +130,24 @@ typedef struct StartResponse__storage_ {
         .offset = (uint32_t)offsetof(StartResponse__storage_, autoTime),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "cau",
+        .dataTypeSpecific.className = NULL,
+        .number = StartResponse_FieldNumber_Cau,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(StartResponse__storage_, cau),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "history",
+        .dataTypeSpecific.className = NULL,
+        .number = StartResponse_FieldNumber_History,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(StartResponse__storage_, history),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "playingArray",

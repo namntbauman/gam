@@ -62,25 +62,45 @@ public final class StartResponseProto {
     int getAutoTime();
 
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>string cau = 9;</code>
+     */
+    java.lang.String getCau();
+    /**
+     * <code>string cau = 9;</code>
+     */
+    com.google.protobuf.ByteString
+        getCauBytes();
+
+    /**
+     * <code>string history = 10;</code>
+     */
+    java.lang.String getHistory();
+    /**
+     * <code>string history = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getHistoryBytes();
+
+    /**
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     java.util.List<com.fanxi.service.message.PlayerProto.Player> 
         getPlayingList();
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     com.fanxi.service.message.PlayerProto.Player getPlaying(int index);
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     int getPlayingCount();
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayingOrBuilderList();
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayingOrBuilder(
         int index);
@@ -102,6 +122,8 @@ public final class StartResponseProto {
       matchId_ = "";
       reference_ = 0L;
       autoTime_ = 0;
+      cau_ = "";
+      history_ = "";
       playing_ = java.util.Collections.emptyList();
     }
 
@@ -170,9 +192,21 @@ public final class StartResponseProto {
               break;
             }
             case 74: {
-              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cau_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              history_ = s;
+              break;
+            }
+            case 90: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
                 playing_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
-                mutable_bitField0_ |= 0x00000040;
+                mutable_bitField0_ |= 0x00000100;
               }
               playing_.add(
                   input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
@@ -186,7 +220,7 @@ public final class StartResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
           playing_ = java.util.Collections.unmodifiableList(playing_);
         }
         makeExtensionsImmutable();
@@ -296,35 +330,103 @@ public final class StartResponseProto {
       return autoTime_;
     }
 
-    public static final int PLAYING_FIELD_NUMBER = 9;
+    public static final int CAU_FIELD_NUMBER = 9;
+    private volatile java.lang.Object cau_;
+    /**
+     * <code>string cau = 9;</code>
+     */
+    public java.lang.String getCau() {
+      java.lang.Object ref = cau_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cau_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cau = 9;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCauBytes() {
+      java.lang.Object ref = cau_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cau_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int HISTORY_FIELD_NUMBER = 10;
+    private volatile java.lang.Object history_;
+    /**
+     * <code>string history = 10;</code>
+     */
+    public java.lang.String getHistory() {
+      java.lang.Object ref = history_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        history_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string history = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHistoryBytes() {
+      java.lang.Object ref = history_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        history_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PLAYING_FIELD_NUMBER = 11;
     private java.util.List<com.fanxi.service.message.PlayerProto.Player> playing_;
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayingList() {
       return playing_;
     }
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayingOrBuilderList() {
       return playing_;
     }
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     public int getPlayingCount() {
       return playing_.size();
     }
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     public com.fanxi.service.message.PlayerProto.Player getPlaying(int index) {
       return playing_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Player playing = 9;</code>
+     * <code>repeated .fanxi.Player playing = 11;</code>
      */
     public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayingOrBuilder(
         int index) {
@@ -361,8 +463,14 @@ public final class StartResponseProto {
       if (autoTime_ != 0) {
         output.writeInt32(8, autoTime_);
       }
+      if (!getCauBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 9, cau_);
+      }
+      if (!getHistoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, history_);
+      }
       for (int i = 0; i < playing_.size(); i++) {
-        output.writeMessage(9, playing_.get(i));
+        output.writeMessage(11, playing_.get(i));
       }
     }
 
@@ -394,9 +502,15 @@ public final class StartResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(8, autoTime_);
       }
+      if (!getCauBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, cau_);
+      }
+      if (!getHistoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, history_);
+      }
       for (int i = 0; i < playing_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, playing_.get(i));
+          .computeMessageSize(11, playing_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -429,6 +543,10 @@ public final class StartResponseProto {
           == other.getReference());
       result = result && (getAutoTime()
           == other.getAutoTime());
+      result = result && getCau()
+          .equals(other.getCau());
+      result = result && getHistory()
+          .equals(other.getHistory());
       result = result && getPlayingList()
           .equals(other.getPlayingList());
       return result;
@@ -456,6 +574,10 @@ public final class StartResponseProto {
           getReference());
       hash = (37 * hash) + AUTOTIME_FIELD_NUMBER;
       hash = (53 * hash) + getAutoTime();
+      hash = (37 * hash) + CAU_FIELD_NUMBER;
+      hash = (53 * hash) + getCau().hashCode();
+      hash = (37 * hash) + HISTORY_FIELD_NUMBER;
+      hash = (53 * hash) + getHistory().hashCode();
       if (getPlayingCount() > 0) {
         hash = (37 * hash) + PLAYING_FIELD_NUMBER;
         hash = (53 * hash) + getPlayingList().hashCode();
@@ -595,9 +717,13 @@ public final class StartResponseProto {
 
         autoTime_ = 0;
 
+        cau_ = "";
+
+        history_ = "";
+
         if (playingBuilder_ == null) {
           playing_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           playingBuilder_.clear();
         }
@@ -635,10 +761,12 @@ public final class StartResponseProto {
         result.matchId_ = matchId_;
         result.reference_ = reference_;
         result.autoTime_ = autoTime_;
+        result.cau_ = cau_;
+        result.history_ = history_;
         if (playingBuilder_ == null) {
-          if (((bitField0_ & 0x00000040) == 0x00000040)) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
             playing_ = java.util.Collections.unmodifiableList(playing_);
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000100);
           }
           result.playing_ = playing_;
         } else {
@@ -705,11 +833,19 @@ public final class StartResponseProto {
         if (other.getAutoTime() != 0) {
           setAutoTime(other.getAutoTime());
         }
+        if (!other.getCau().isEmpty()) {
+          cau_ = other.cau_;
+          onChanged();
+        }
+        if (!other.getHistory().isEmpty()) {
+          history_ = other.history_;
+          onChanged();
+        }
         if (playingBuilder_ == null) {
           if (!other.playing_.isEmpty()) {
             if (playing_.isEmpty()) {
               playing_ = other.playing_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000100);
             } else {
               ensurePlayingIsMutable();
               playing_.addAll(other.playing_);
@@ -722,7 +858,7 @@ public final class StartResponseProto {
               playingBuilder_.dispose();
               playingBuilder_ = null;
               playing_ = other.playing_;
-              bitField0_ = (bitField0_ & ~0x00000040);
+              bitField0_ = (bitField0_ & ~0x00000100);
               playingBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayingFieldBuilder() : null;
@@ -1048,12 +1184,150 @@ public final class StartResponseProto {
         return this;
       }
 
+      private java.lang.Object cau_ = "";
+      /**
+       * <code>string cau = 9;</code>
+       */
+      public java.lang.String getCau() {
+        java.lang.Object ref = cau_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cau_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cau = 9;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCauBytes() {
+        java.lang.Object ref = cau_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cau_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cau = 9;</code>
+       */
+      public Builder setCau(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cau_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cau = 9;</code>
+       */
+      public Builder clearCau() {
+        
+        cau_ = getDefaultInstance().getCau();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cau = 9;</code>
+       */
+      public Builder setCauBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cau_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object history_ = "";
+      /**
+       * <code>string history = 10;</code>
+       */
+      public java.lang.String getHistory() {
+        java.lang.Object ref = history_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          history_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string history = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHistoryBytes() {
+        java.lang.Object ref = history_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          history_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string history = 10;</code>
+       */
+      public Builder setHistory(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        history_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history = 10;</code>
+       */
+      public Builder clearHistory() {
+        
+        history_ = getDefaultInstance().getHistory();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history = 10;</code>
+       */
+      public Builder setHistoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        history_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.PlayerProto.Player> playing_ =
         java.util.Collections.emptyList();
       private void ensurePlayingIsMutable() {
-        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
           playing_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(playing_);
-          bitField0_ |= 0x00000040;
+          bitField0_ |= 0x00000100;
          }
       }
 
@@ -1061,7 +1335,7 @@ public final class StartResponseProto {
           com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> playingBuilder_;
 
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayingList() {
         if (playingBuilder_ == null) {
@@ -1071,7 +1345,7 @@ public final class StartResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public int getPlayingCount() {
         if (playingBuilder_ == null) {
@@ -1081,7 +1355,7 @@ public final class StartResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player getPlaying(int index) {
         if (playingBuilder_ == null) {
@@ -1091,7 +1365,7 @@ public final class StartResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder setPlaying(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1108,7 +1382,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder setPlaying(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1122,7 +1396,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder addPlaying(com.fanxi.service.message.PlayerProto.Player value) {
         if (playingBuilder_ == null) {
@@ -1138,7 +1412,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder addPlaying(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -1155,7 +1429,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder addPlaying(
           com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1169,7 +1443,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder addPlaying(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -1183,7 +1457,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder addAllPlaying(
           java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
@@ -1198,12 +1472,12 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder clearPlaying() {
         if (playingBuilder_ == null) {
           playing_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
         } else {
           playingBuilder_.clear();
@@ -1211,7 +1485,7 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public Builder removePlaying(int index) {
         if (playingBuilder_ == null) {
@@ -1224,14 +1498,14 @@ public final class StartResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder getPlayingBuilder(
           int index) {
         return getPlayingFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayingOrBuilder(
           int index) {
@@ -1241,7 +1515,7 @@ public final class StartResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
            getPlayingOrBuilderList() {
@@ -1252,14 +1526,14 @@ public final class StartResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayingBuilder() {
         return getPlayingFieldBuilder().addBuilder(
             com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayingBuilder(
           int index) {
@@ -1267,7 +1541,7 @@ public final class StartResponseProto {
             index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player playing = 9;</code>
+       * <code>repeated .fanxi.Player playing = 11;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
            getPlayingBuilderList() {
@@ -1280,7 +1554,7 @@ public final class StartResponseProto {
           playingBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
                   playing_,
-                  ((bitField0_ & 0x00000040) == 0x00000040),
+                  ((bitField0_ & 0x00000100) == 0x00000100),
                   getParentForChildren(),
                   isClean());
           playing_ = null;
@@ -1351,13 +1625,14 @@ public final class StartResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\023StartResponse.proto\022\005fanxi\032\022BaseRespon" +
-      "se.proto\032\014Player.proto\"\264\001\n\rStartResponse" +
+      "se.proto\032\014Player.proto\"\322\001\n\rStartResponse" +
       "\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseRespo" +
       "nse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022" +
       "\017\n\007matchId\030\006 \001(\t\022\021\n\treference\030\007 \001(\003\022\020\n\010a" +
-      "utoTime\030\010 \001(\005\022\036\n\007playing\030\t \003(\0132\r.fanxi.P" +
-      "layerB/\n\031com.fanxi.service.messageB\022Star" +
-      "tResponseProtob\006proto3"
+      "utoTime\030\010 \001(\005\022\013\n\003cau\030\t \001(\t\022\017\n\007history\030\n " +
+      "\001(\t\022\036\n\007playing\030\013 \003(\0132\r.fanxi.PlayerB/\n\031c" +
+      "om.fanxi.service.messageB\022StartResponseP" +
+      "rotob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1378,7 +1653,7 @@ public final class StartResponseProto {
     internal_static_fanxi_StartResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_StartResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Reference", "AutoTime", "Playing", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Reference", "AutoTime", "Cau", "History", "Playing", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }

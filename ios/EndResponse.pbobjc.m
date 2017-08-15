@@ -58,6 +58,8 @@ static GPBFileDescriptor *EndResponseRoot_FileDescriptor(void) {
 @dynamic lastCards;
 @dynamic autoTime;
 @dynamic reference;
+@dynamic cau;
+@dynamic history;
 @dynamic resultsArray, resultsArray_Count;
 @dynamic fightInfoArray, fightInfoArray_Count;
 @dynamic nextPlayingArray, nextPlayingArray_Count;
@@ -73,6 +75,8 @@ typedef struct EndResponse__storage_ {
   NSString *idWin;
   NSString *uid;
   NSString *lastCards;
+  NSString *cau;
+  NSString *history;
   NSMutableArray *resultsArray;
   NSMutableArray *fightInfoArray;
   NSMutableArray *nextPlayingArray;
@@ -176,6 +180,24 @@ typedef struct EndResponse__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "cau",
+        .dataTypeSpecific.className = NULL,
+        .number = EndResponse_FieldNumber_Cau,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(EndResponse__storage_, cau),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "history",
+        .dataTypeSpecific.className = NULL,
+        .number = EndResponse_FieldNumber_History,
+        .hasIndex = 11,
+        .offset = (uint32_t)offsetof(EndResponse__storage_, history),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
         .name = "resultsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(Player),
         .number = EndResponse_FieldNumber_ResultsArray,
@@ -213,7 +235,7 @@ typedef struct EndResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\n\001\014\000\004\006\000\005\n\000\006\007\000\007\005\000\010\013\000\n\t\000\013\010\000\016\000fightInfo\000\017\000n"
+        "\n\001\014\000\004\006\000\005\n\000\006\007\000\007\005\000\010\013\000\n\t\000\013\010\000\020\000fightInfo\000\021\000n"
         "extPlaying\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
