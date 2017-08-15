@@ -56,6 +56,7 @@ typedef GPB_ENUM(BetRequest_FieldNumber) {
   BetRequest_FieldNumber_MatchId = 13,
   BetRequest_FieldNumber_Cash = 14,
   BetRequest_FieldNumber_TypeTo = 15,
+  BetRequest_FieldNumber_NumWhite = 16,
 };
 
 @interface BetRequest : GPBMessage
@@ -75,6 +76,8 @@ typedef GPB_ENUM(BetRequest_FieldNumber) {
 @property(nonatomic, readwrite) int64_t cash;
 
 @property(nonatomic, readwrite) int32_t typeTo;
+
+@property(nonatomic, readwrite) int32_t numWhite;
 
 @end
 

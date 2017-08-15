@@ -58,9 +58,10 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
   BetResponse_FieldNumber_TypeTo = 8,
   BetResponse_FieldNumber_AllTotalCall = 9,
   BetResponse_FieldNumber_Uid = 10,
-  BetResponse_FieldNumber_CurrUser = 11,
-  BetResponse_FieldNumber_NextUser = 12,
-  BetResponse_FieldNumber_RefundUsersArray = 13,
+  BetResponse_FieldNumber_NumWhite = 11,
+  BetResponse_FieldNumber_CurrUser = 12,
+  BetResponse_FieldNumber_NextUser = 13,
+  BetResponse_FieldNumber_RefundUsersArray = 14,
 };
 
 @interface BetResponse : GPBMessage
@@ -82,6 +83,8 @@ typedef GPB_ENUM(BetResponse_FieldNumber) {
 @property(nonatomic, readwrite) int64_t allTotalCall;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *uid;
+
+@property(nonatomic, readwrite) int32_t numWhite;
 
 @property(nonatomic, readwrite, strong, null_resettable) UserTo *currUser;
 /** Test to see if @c currUser has been set. */

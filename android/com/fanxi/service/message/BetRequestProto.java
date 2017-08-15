@@ -65,6 +65,11 @@ public final class BetRequestProto {
      * <code>int32 typeTo = 15;</code>
      */
     int getTypeTo();
+
+    /**
+     * <code>int32 numWhite = 16;</code>
+     */
+    int getNumWhite();
   }
   /**
    * Protobuf type {@code fanxi.BetRequest}
@@ -84,6 +89,7 @@ public final class BetRequestProto {
       matchId_ = "";
       cash_ = 0L;
       typeTo_ = 0;
+      numWhite_ = 0;
     }
 
     @java.lang.Override
@@ -153,6 +159,11 @@ public final class BetRequestProto {
             case 120: {
 
               typeTo_ = input.readInt32();
+              break;
+            }
+            case 128: {
+
+              numWhite_ = input.readInt32();
               break;
             }
           }
@@ -278,6 +289,15 @@ public final class BetRequestProto {
       return typeTo_;
     }
 
+    public static final int NUMWHITE_FIELD_NUMBER = 16;
+    private int numWhite_;
+    /**
+     * <code>int32 numWhite = 16;</code>
+     */
+    public int getNumWhite() {
+      return numWhite_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -310,6 +330,9 @@ public final class BetRequestProto {
       }
       if (typeTo_ != 0) {
         output.writeInt32(15, typeTo_);
+      }
+      if (numWhite_ != 0) {
+        output.writeInt32(16, numWhite_);
       }
     }
 
@@ -345,6 +368,10 @@ public final class BetRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, typeTo_);
       }
+      if (numWhite_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(16, numWhite_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -378,6 +405,8 @@ public final class BetRequestProto {
           == other.getCash());
       result = result && (getTypeTo()
           == other.getTypeTo());
+      result = result && (getNumWhite()
+          == other.getNumWhite());
       return result;
     }
 
@@ -405,6 +434,8 @@ public final class BetRequestProto {
           getCash());
       hash = (37 * hash) + TYPETO_FIELD_NUMBER;
       hash = (53 * hash) + getTypeTo();
+      hash = (37 * hash) + NUMWHITE_FIELD_NUMBER;
+      hash = (53 * hash) + getNumWhite();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -541,6 +572,8 @@ public final class BetRequestProto {
 
         typeTo_ = 0;
 
+        numWhite_ = 0;
+
         return this;
       }
 
@@ -574,6 +607,7 @@ public final class BetRequestProto {
         result.matchId_ = matchId_;
         result.cash_ = cash_;
         result.typeTo_ = typeTo_;
+        result.numWhite_ = numWhite_;
         onBuilt();
         return result;
       }
@@ -636,6 +670,9 @@ public final class BetRequestProto {
         }
         if (other.getTypeTo() != 0) {
           setTypeTo(other.getTypeTo());
+        }
+        if (other.getNumWhite() != 0) {
+          setNumWhite(other.getNumWhite());
         }
         onChanged();
         return this;
@@ -978,6 +1015,32 @@ public final class BetRequestProto {
         onChanged();
         return this;
       }
+
+      private int numWhite_ ;
+      /**
+       * <code>int32 numWhite = 16;</code>
+       */
+      public int getNumWhite() {
+        return numWhite_;
+      }
+      /**
+       * <code>int32 numWhite = 16;</code>
+       */
+      public Builder setNumWhite(int value) {
+        
+        numWhite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numWhite = 16;</code>
+       */
+      public Builder clearNumWhite() {
+        
+        numWhite_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1042,12 +1105,12 @@ public final class BetRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\020BetRequest.proto\022\005fanxi\032\021BaseRequest.p" +
-      "roto\"\225\001\n\nBetRequest\022#\n\007baseReq\030\001 \001(\0132\022.f" +
+      "roto\"\247\001\n\nBetRequest\022#\n\007baseReq\030\001 \001(\0132\022.f" +
       "anxi.BaseRequest\022\016\n\006zoneId\030\n \001(\005\022\017\n\007leve" +
       "lId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005\022\017\n\007matchId" +
-      "\030\r \001(\t\022\014\n\004cash\030\016 \001(\003\022\016\n\006typeTo\030\017 \001(\005B,\n\031" +
-      "com.fanxi.service.messageB\017BetRequestPro" +
-      "tob\006proto3"
+      "\030\r \001(\t\022\014\n\004cash\030\016 \001(\003\022\016\n\006typeTo\030\017 \001(\005\022\020\n\010" +
+      "numWhite\030\020 \001(\005B,\n\031com.fanxi.service.mess" +
+      "ageB\017BetRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1067,7 +1130,7 @@ public final class BetRequestProto {
     internal_static_fanxi_BetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BetRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Cash", "TypeTo", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Cash", "TypeTo", "NumWhite", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

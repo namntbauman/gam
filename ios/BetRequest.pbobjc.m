@@ -54,6 +54,7 @@ static GPBFileDescriptor *BetRequestRoot_FileDescriptor(void) {
 @dynamic matchId;
 @dynamic cash;
 @dynamic typeTo;
+@dynamic numWhite;
 
 typedef struct BetRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -61,6 +62,7 @@ typedef struct BetRequest__storage_ {
   int32_t levelId;
   int32_t tableIndex;
   int32_t typeTo;
+  int32_t numWhite;
   BaseRequest *baseReq;
   NSString *matchId;
   int64_t cash;
@@ -135,6 +137,15 @@ typedef struct BetRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "numWhite",
+        .dataTypeSpecific.className = NULL,
+        .number = BetRequest_FieldNumber_NumWhite,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(BetRequest__storage_, numWhite),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[BetRequest class]
@@ -146,7 +157,7 @@ typedef struct BetRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\001\007\000\n\006\000\013\007\000\014\n\000\r\007\000\017\006\000";
+        "\007\001\007\000\n\006\000\013\007\000\014\n\000\r\007\000\017\006\000\020\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

@@ -14,9 +14,10 @@ message BetResponse {
    int32 typeTo=8;
    int64 allTotalCall=9;
    string uid=10;
-   UserTo currUser=11;
-   UserTo nextUser=12;
-   repeated UserTo refundUsers=13;
+   int32 numWhite=11;
+   UserTo currUser=12;
+   UserTo nextUser=13;
+   repeated UserTo refundUsers=14;
    
 }
 

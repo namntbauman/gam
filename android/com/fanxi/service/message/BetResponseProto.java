@@ -77,51 +77,56 @@ public final class BetResponseProto {
         getUidBytes();
 
     /**
-     * <code>.fanxi.UserTo currUser = 11;</code>
+     * <code>int32 numWhite = 11;</code>
+     */
+    int getNumWhite();
+
+    /**
+     * <code>.fanxi.UserTo currUser = 12;</code>
      */
     boolean hasCurrUser();
     /**
-     * <code>.fanxi.UserTo currUser = 11;</code>
+     * <code>.fanxi.UserTo currUser = 12;</code>
      */
     com.fanxi.service.message.UserToProto.UserTo getCurrUser();
     /**
-     * <code>.fanxi.UserTo currUser = 11;</code>
+     * <code>.fanxi.UserTo currUser = 12;</code>
      */
     com.fanxi.service.message.UserToProto.UserToOrBuilder getCurrUserOrBuilder();
 
     /**
-     * <code>.fanxi.UserTo nextUser = 12;</code>
+     * <code>.fanxi.UserTo nextUser = 13;</code>
      */
     boolean hasNextUser();
     /**
-     * <code>.fanxi.UserTo nextUser = 12;</code>
+     * <code>.fanxi.UserTo nextUser = 13;</code>
      */
     com.fanxi.service.message.UserToProto.UserTo getNextUser();
     /**
-     * <code>.fanxi.UserTo nextUser = 12;</code>
+     * <code>.fanxi.UserTo nextUser = 13;</code>
      */
     com.fanxi.service.message.UserToProto.UserToOrBuilder getNextUserOrBuilder();
 
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     java.util.List<com.fanxi.service.message.UserToProto.UserTo> 
         getRefundUsersList();
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     com.fanxi.service.message.UserToProto.UserTo getRefundUsers(int index);
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     int getRefundUsersCount();
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     java.util.List<? extends com.fanxi.service.message.UserToProto.UserToOrBuilder> 
         getRefundUsersOrBuilderList();
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     com.fanxi.service.message.UserToProto.UserToOrBuilder getRefundUsersOrBuilder(
         int index);
@@ -145,6 +150,7 @@ public final class BetResponseProto {
       typeTo_ = 0;
       allTotalCall_ = 0L;
       uid_ = "";
+      numWhite_ = 0;
       refundUsers_ = java.util.Collections.emptyList();
     }
 
@@ -223,7 +229,12 @@ public final class BetResponseProto {
               uid_ = s;
               break;
             }
-            case 90: {
+            case 88: {
+
+              numWhite_ = input.readInt32();
+              break;
+            }
+            case 98: {
               com.fanxi.service.message.UserToProto.UserTo.Builder subBuilder = null;
               if (currUser_ != null) {
                 subBuilder = currUser_.toBuilder();
@@ -236,7 +247,7 @@ public final class BetResponseProto {
 
               break;
             }
-            case 98: {
+            case 106: {
               com.fanxi.service.message.UserToProto.UserTo.Builder subBuilder = null;
               if (nextUser_ != null) {
                 subBuilder = nextUser_.toBuilder();
@@ -249,10 +260,10 @@ public final class BetResponseProto {
 
               break;
             }
-            case 106: {
-              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+            case 114: {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
                 refundUsers_ = new java.util.ArrayList<com.fanxi.service.message.UserToProto.UserTo>();
-                mutable_bitField0_ |= 0x00000400;
+                mutable_bitField0_ |= 0x00000800;
               }
               refundUsers_.add(
                   input.readMessage(com.fanxi.service.message.UserToProto.UserTo.parser(), extensionRegistry));
@@ -266,7 +277,7 @@ public final class BetResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
+        if (((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
           refundUsers_ = java.util.Collections.unmodifiableList(refundUsers_);
         }
         makeExtensionsImmutable();
@@ -419,77 +430,86 @@ public final class BetResponseProto {
       }
     }
 
-    public static final int CURRUSER_FIELD_NUMBER = 11;
+    public static final int NUMWHITE_FIELD_NUMBER = 11;
+    private int numWhite_;
+    /**
+     * <code>int32 numWhite = 11;</code>
+     */
+    public int getNumWhite() {
+      return numWhite_;
+    }
+
+    public static final int CURRUSER_FIELD_NUMBER = 12;
     private com.fanxi.service.message.UserToProto.UserTo currUser_;
     /**
-     * <code>.fanxi.UserTo currUser = 11;</code>
+     * <code>.fanxi.UserTo currUser = 12;</code>
      */
     public boolean hasCurrUser() {
       return currUser_ != null;
     }
     /**
-     * <code>.fanxi.UserTo currUser = 11;</code>
+     * <code>.fanxi.UserTo currUser = 12;</code>
      */
     public com.fanxi.service.message.UserToProto.UserTo getCurrUser() {
       return currUser_ == null ? com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : currUser_;
     }
     /**
-     * <code>.fanxi.UserTo currUser = 11;</code>
+     * <code>.fanxi.UserTo currUser = 12;</code>
      */
     public com.fanxi.service.message.UserToProto.UserToOrBuilder getCurrUserOrBuilder() {
       return getCurrUser();
     }
 
-    public static final int NEXTUSER_FIELD_NUMBER = 12;
+    public static final int NEXTUSER_FIELD_NUMBER = 13;
     private com.fanxi.service.message.UserToProto.UserTo nextUser_;
     /**
-     * <code>.fanxi.UserTo nextUser = 12;</code>
+     * <code>.fanxi.UserTo nextUser = 13;</code>
      */
     public boolean hasNextUser() {
       return nextUser_ != null;
     }
     /**
-     * <code>.fanxi.UserTo nextUser = 12;</code>
+     * <code>.fanxi.UserTo nextUser = 13;</code>
      */
     public com.fanxi.service.message.UserToProto.UserTo getNextUser() {
       return nextUser_ == null ? com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance() : nextUser_;
     }
     /**
-     * <code>.fanxi.UserTo nextUser = 12;</code>
+     * <code>.fanxi.UserTo nextUser = 13;</code>
      */
     public com.fanxi.service.message.UserToProto.UserToOrBuilder getNextUserOrBuilder() {
       return getNextUser();
     }
 
-    public static final int REFUNDUSERS_FIELD_NUMBER = 13;
+    public static final int REFUNDUSERS_FIELD_NUMBER = 14;
     private java.util.List<com.fanxi.service.message.UserToProto.UserTo> refundUsers_;
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     public java.util.List<com.fanxi.service.message.UserToProto.UserTo> getRefundUsersList() {
       return refundUsers_;
     }
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.UserToProto.UserToOrBuilder> 
         getRefundUsersOrBuilderList() {
       return refundUsers_;
     }
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     public int getRefundUsersCount() {
       return refundUsers_.size();
     }
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     public com.fanxi.service.message.UserToProto.UserTo getRefundUsers(int index) {
       return refundUsers_.get(index);
     }
     /**
-     * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+     * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
      */
     public com.fanxi.service.message.UserToProto.UserToOrBuilder getRefundUsersOrBuilder(
         int index) {
@@ -532,14 +552,17 @@ public final class BetResponseProto {
       if (!getUidBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 10, uid_);
       }
+      if (numWhite_ != 0) {
+        output.writeInt32(11, numWhite_);
+      }
       if (currUser_ != null) {
-        output.writeMessage(11, getCurrUser());
+        output.writeMessage(12, getCurrUser());
       }
       if (nextUser_ != null) {
-        output.writeMessage(12, getNextUser());
+        output.writeMessage(13, getNextUser());
       }
       for (int i = 0; i < refundUsers_.size(); i++) {
-        output.writeMessage(13, refundUsers_.get(i));
+        output.writeMessage(14, refundUsers_.get(i));
       }
     }
 
@@ -578,17 +601,21 @@ public final class BetResponseProto {
       if (!getUidBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, uid_);
       }
+      if (numWhite_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(11, numWhite_);
+      }
       if (currUser_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(11, getCurrUser());
+          .computeMessageSize(12, getCurrUser());
       }
       if (nextUser_ != null) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, getNextUser());
+          .computeMessageSize(13, getNextUser());
       }
       for (int i = 0; i < refundUsers_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(13, refundUsers_.get(i));
+          .computeMessageSize(14, refundUsers_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -625,6 +652,8 @@ public final class BetResponseProto {
           == other.getAllTotalCall());
       result = result && getUid()
           .equals(other.getUid());
+      result = result && (getNumWhite()
+          == other.getNumWhite());
       result = result && (hasCurrUser() == other.hasCurrUser());
       if (hasCurrUser()) {
         result = result && getCurrUser()
@@ -667,6 +696,8 @@ public final class BetResponseProto {
           getAllTotalCall());
       hash = (37 * hash) + UID_FIELD_NUMBER;
       hash = (53 * hash) + getUid().hashCode();
+      hash = (37 * hash) + NUMWHITE_FIELD_NUMBER;
+      hash = (53 * hash) + getNumWhite();
       if (hasCurrUser()) {
         hash = (37 * hash) + CURRUSER_FIELD_NUMBER;
         hash = (53 * hash) + getCurrUser().hashCode();
@@ -818,6 +849,8 @@ public final class BetResponseProto {
 
         uid_ = "";
 
+        numWhite_ = 0;
+
         if (currUserBuilder_ == null) {
           currUser_ = null;
         } else {
@@ -832,7 +865,7 @@ public final class BetResponseProto {
         }
         if (refundUsersBuilder_ == null) {
           refundUsers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
         } else {
           refundUsersBuilder_.clear();
         }
@@ -872,6 +905,7 @@ public final class BetResponseProto {
         result.typeTo_ = typeTo_;
         result.allTotalCall_ = allTotalCall_;
         result.uid_ = uid_;
+        result.numWhite_ = numWhite_;
         if (currUserBuilder_ == null) {
           result.currUser_ = currUser_;
         } else {
@@ -883,9 +917,9 @@ public final class BetResponseProto {
           result.nextUser_ = nextUserBuilder_.build();
         }
         if (refundUsersBuilder_ == null) {
-          if (((bitField0_ & 0x00000400) == 0x00000400)) {
+          if (((bitField0_ & 0x00000800) == 0x00000800)) {
             refundUsers_ = java.util.Collections.unmodifiableList(refundUsers_);
-            bitField0_ = (bitField0_ & ~0x00000400);
+            bitField0_ = (bitField0_ & ~0x00000800);
           }
           result.refundUsers_ = refundUsers_;
         } else {
@@ -959,6 +993,9 @@ public final class BetResponseProto {
           uid_ = other.uid_;
           onChanged();
         }
+        if (other.getNumWhite() != 0) {
+          setNumWhite(other.getNumWhite());
+        }
         if (other.hasCurrUser()) {
           mergeCurrUser(other.getCurrUser());
         }
@@ -969,7 +1006,7 @@ public final class BetResponseProto {
           if (!other.refundUsers_.isEmpty()) {
             if (refundUsers_.isEmpty()) {
               refundUsers_ = other.refundUsers_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000800);
             } else {
               ensureRefundUsersIsMutable();
               refundUsers_.addAll(other.refundUsers_);
@@ -982,7 +1019,7 @@ public final class BetResponseProto {
               refundUsersBuilder_.dispose();
               refundUsersBuilder_ = null;
               refundUsers_ = other.refundUsers_;
-              bitField0_ = (bitField0_ & ~0x00000400);
+              bitField0_ = (bitField0_ & ~0x00000800);
               refundUsersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getRefundUsersFieldBuilder() : null;
@@ -1403,17 +1440,43 @@ public final class BetResponseProto {
         return this;
       }
 
+      private int numWhite_ ;
+      /**
+       * <code>int32 numWhite = 11;</code>
+       */
+      public int getNumWhite() {
+        return numWhite_;
+      }
+      /**
+       * <code>int32 numWhite = 11;</code>
+       */
+      public Builder setNumWhite(int value) {
+        
+        numWhite_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numWhite = 11;</code>
+       */
+      public Builder clearNumWhite() {
+        
+        numWhite_ = 0;
+        onChanged();
+        return this;
+      }
+
       private com.fanxi.service.message.UserToProto.UserTo currUser_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
           com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> currUserBuilder_;
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public boolean hasCurrUser() {
         return currUserBuilder_ != null || currUser_ != null;
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo getCurrUser() {
         if (currUserBuilder_ == null) {
@@ -1423,7 +1486,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public Builder setCurrUser(com.fanxi.service.message.UserToProto.UserTo value) {
         if (currUserBuilder_ == null) {
@@ -1439,7 +1502,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public Builder setCurrUser(
           com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
@@ -1453,7 +1516,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public Builder mergeCurrUser(com.fanxi.service.message.UserToProto.UserTo value) {
         if (currUserBuilder_ == null) {
@@ -1471,7 +1534,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public Builder clearCurrUser() {
         if (currUserBuilder_ == null) {
@@ -1485,7 +1548,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo.Builder getCurrUserBuilder() {
         
@@ -1493,7 +1556,7 @@ public final class BetResponseProto {
         return getCurrUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       public com.fanxi.service.message.UserToProto.UserToOrBuilder getCurrUserOrBuilder() {
         if (currUserBuilder_ != null) {
@@ -1504,7 +1567,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>.fanxi.UserTo currUser = 11;</code>
+       * <code>.fanxi.UserTo currUser = 12;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> 
@@ -1524,13 +1587,13 @@ public final class BetResponseProto {
       private com.google.protobuf.SingleFieldBuilderV3<
           com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> nextUserBuilder_;
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public boolean hasNextUser() {
         return nextUserBuilder_ != null || nextUser_ != null;
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo getNextUser() {
         if (nextUserBuilder_ == null) {
@@ -1540,7 +1603,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public Builder setNextUser(com.fanxi.service.message.UserToProto.UserTo value) {
         if (nextUserBuilder_ == null) {
@@ -1556,7 +1619,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public Builder setNextUser(
           com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
@@ -1570,7 +1633,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public Builder mergeNextUser(com.fanxi.service.message.UserToProto.UserTo value) {
         if (nextUserBuilder_ == null) {
@@ -1588,7 +1651,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public Builder clearNextUser() {
         if (nextUserBuilder_ == null) {
@@ -1602,7 +1665,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo.Builder getNextUserBuilder() {
         
@@ -1610,7 +1673,7 @@ public final class BetResponseProto {
         return getNextUserFieldBuilder().getBuilder();
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       public com.fanxi.service.message.UserToProto.UserToOrBuilder getNextUserOrBuilder() {
         if (nextUserBuilder_ != null) {
@@ -1621,7 +1684,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>.fanxi.UserTo nextUser = 12;</code>
+       * <code>.fanxi.UserTo nextUser = 13;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> 
@@ -1640,9 +1703,9 @@ public final class BetResponseProto {
       private java.util.List<com.fanxi.service.message.UserToProto.UserTo> refundUsers_ =
         java.util.Collections.emptyList();
       private void ensureRefundUsersIsMutable() {
-        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
+        if (!((bitField0_ & 0x00000800) == 0x00000800)) {
           refundUsers_ = new java.util.ArrayList<com.fanxi.service.message.UserToProto.UserTo>(refundUsers_);
-          bitField0_ |= 0x00000400;
+          bitField0_ |= 0x00000800;
          }
       }
 
@@ -1650,7 +1713,7 @@ public final class BetResponseProto {
           com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder> refundUsersBuilder_;
 
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public java.util.List<com.fanxi.service.message.UserToProto.UserTo> getRefundUsersList() {
         if (refundUsersBuilder_ == null) {
@@ -1660,7 +1723,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public int getRefundUsersCount() {
         if (refundUsersBuilder_ == null) {
@@ -1670,7 +1733,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo getRefundUsers(int index) {
         if (refundUsersBuilder_ == null) {
@@ -1680,7 +1743,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder setRefundUsers(
           int index, com.fanxi.service.message.UserToProto.UserTo value) {
@@ -1697,7 +1760,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder setRefundUsers(
           int index, com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
@@ -1711,7 +1774,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder addRefundUsers(com.fanxi.service.message.UserToProto.UserTo value) {
         if (refundUsersBuilder_ == null) {
@@ -1727,7 +1790,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder addRefundUsers(
           int index, com.fanxi.service.message.UserToProto.UserTo value) {
@@ -1744,7 +1807,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder addRefundUsers(
           com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
@@ -1758,7 +1821,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder addRefundUsers(
           int index, com.fanxi.service.message.UserToProto.UserTo.Builder builderForValue) {
@@ -1772,7 +1835,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder addAllRefundUsers(
           java.lang.Iterable<? extends com.fanxi.service.message.UserToProto.UserTo> values) {
@@ -1787,12 +1850,12 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder clearRefundUsers() {
         if (refundUsersBuilder_ == null) {
           refundUsers_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000400);
+          bitField0_ = (bitField0_ & ~0x00000800);
           onChanged();
         } else {
           refundUsersBuilder_.clear();
@@ -1800,7 +1863,7 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public Builder removeRefundUsers(int index) {
         if (refundUsersBuilder_ == null) {
@@ -1813,14 +1876,14 @@ public final class BetResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo.Builder getRefundUsersBuilder(
           int index) {
         return getRefundUsersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public com.fanxi.service.message.UserToProto.UserToOrBuilder getRefundUsersOrBuilder(
           int index) {
@@ -1830,7 +1893,7 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.UserToProto.UserToOrBuilder> 
            getRefundUsersOrBuilderList() {
@@ -1841,14 +1904,14 @@ public final class BetResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo.Builder addRefundUsersBuilder() {
         return getRefundUsersFieldBuilder().addBuilder(
             com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public com.fanxi.service.message.UserToProto.UserTo.Builder addRefundUsersBuilder(
           int index) {
@@ -1856,7 +1919,7 @@ public final class BetResponseProto {
             index, com.fanxi.service.message.UserToProto.UserTo.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.UserTo refundUsers = 13;</code>
+       * <code>repeated .fanxi.UserTo refundUsers = 14;</code>
        */
       public java.util.List<com.fanxi.service.message.UserToProto.UserTo.Builder> 
            getRefundUsersBuilderList() {
@@ -1869,7 +1932,7 @@ public final class BetResponseProto {
           refundUsersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.UserToProto.UserTo, com.fanxi.service.message.UserToProto.UserTo.Builder, com.fanxi.service.message.UserToProto.UserToOrBuilder>(
                   refundUsers_,
-                  ((bitField0_ & 0x00000400) == 0x00000400),
+                  ((bitField0_ & 0x00000800) == 0x00000800),
                   getParentForChildren(),
                   isClean());
           refundUsers_ = null;
@@ -1940,15 +2003,16 @@ public final class BetResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\021BetResponse.proto\022\005fanxi\032\022BaseResponse" +
-      ".proto\032\014UserTo.proto\"\224\002\n\013BetResponse\022)\n\014" +
+      ".proto\032\014UserTo.proto\"\246\002\n\013BetResponse\022)\n\014" +
       "baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse\022" +
       "\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableIndex\030\005 \001(\005\022\017\n\007m" +
       "atchId\030\006 \001(\t\022\014\n\004cash\030\007 \001(\003\022\016\n\006typeTo\030\010 \001" +
-      "(\005\022\024\n\014allTotalCall\030\t \001(\003\022\013\n\003uid\030\n \001(\t\022\037\n" +
-      "\010currUser\030\013 \001(\0132\r.fanxi.UserTo\022\037\n\010nextUs" +
-      "er\030\014 \001(\0132\r.fanxi.UserTo\022\"\n\013refundUsers\030\r" +
-      " \003(\0132\r.fanxi.UserToB-\n\031com.fanxi.service" +
-      ".messageB\020BetResponseProtob\006proto3"
+      "(\005\022\024\n\014allTotalCall\030\t \001(\003\022\013\n\003uid\030\n \001(\t\022\020\n" +
+      "\010numWhite\030\013 \001(\005\022\037\n\010currUser\030\014 \001(\0132\r.fanx" +
+      "i.UserTo\022\037\n\010nextUser\030\r \001(\0132\r.fanxi.UserT" +
+      "o\022\"\n\013refundUsers\030\016 \003(\0132\r.fanxi.UserToB-\n" +
+      "\031com.fanxi.service.messageB\020BetResponseP",
+      "rotob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1969,7 +2033,7 @@ public final class BetResponseProto {
     internal_static_fanxi_BetResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BetResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", "TypeTo", "AllTotalCall", "Uid", "CurrUser", "NextUser", "RefundUsers", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "Cash", "TypeTo", "AllTotalCall", "Uid", "NumWhite", "CurrUser", "NextUser", "RefundUsers", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.UserToProto.getDescriptor();
   }
