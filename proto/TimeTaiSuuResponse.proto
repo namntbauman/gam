@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "TimeTaiSuuResponseProto";
+
+message TimeTaiSuuResponse {
+   RestfulBaseResponse baseResponse=1;
+   int32 timeRemaining=10;
+   int32 state=11;
+}
+
+
+
+
