@@ -1,0 +1,17 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "SmsTariffEntityProto";
+
+message SmsTariffEntity{
+    string keyword=1;
+	string dauso=2;
+	string description=3;
+	int64 tariff=4;
+	int64 cash=5;
+	bool isGold=6;
+}
+
+
+

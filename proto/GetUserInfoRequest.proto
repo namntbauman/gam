@@ -2,10 +2,9 @@ syntax = "proto3";
 package fanxi;
 import "BaseRequest.proto";
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "GetHistoryRequestProto";
+option java_outer_classname = "GetUserInfoRequestProto";
 
-message GetHistoryRequest {
+message GetUserInfoRequest {
    BaseRequest baseReq=1;
-   int32 type =10;
    
 }

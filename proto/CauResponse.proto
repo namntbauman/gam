@@ -1,0 +1,21 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "CauResponseProto";
+
+message CauResponse {
+   BaseResponse baseResponse=1;
+   
+   string cau=4;
+   string history=5;
+   int32 zoneId=6;
+   int32 tableIndex=7;
+   string matchId=8;
+  
+}
+
+
+
+

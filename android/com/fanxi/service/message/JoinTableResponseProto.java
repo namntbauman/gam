@@ -112,45 +112,25 @@ public final class JoinTableResponseProto {
     long getReference();
 
     /**
-     * <code>string cau = 16;</code>
-     */
-    java.lang.String getCau();
-    /**
-     * <code>string cau = 16;</code>
-     */
-    com.google.protobuf.ByteString
-        getCauBytes();
-
-    /**
-     * <code>string history = 17;</code>
-     */
-    java.lang.String getHistory();
-    /**
-     * <code>string history = 17;</code>
-     */
-    com.google.protobuf.ByteString
-        getHistoryBytes();
-
-    /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     java.util.List<com.fanxi.service.message.PlayerProto.Player> 
         getPlayersList();
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     com.fanxi.service.message.PlayerProto.Player getPlayers(int index);
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     int getPlayersCount();
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList();
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index);
@@ -179,8 +159,6 @@ public final class JoinTableResponseProto {
       ownerId_ = "";
       timeAuto_ = 0;
       reference_ = 0L;
-      cau_ = "";
-      history_ = "";
       players_ = java.util.Collections.emptyList();
     }
 
@@ -287,21 +265,9 @@ public final class JoinTableResponseProto {
               break;
             }
             case 130: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              cau_ = s;
-              break;
-            }
-            case 138: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              history_ = s;
-              break;
-            }
-            case 146: {
-              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
                 players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>();
-                mutable_bitField0_ |= 0x00008000;
+                mutable_bitField0_ |= 0x00002000;
               }
               players_.add(
                   input.readMessage(com.fanxi.service.message.PlayerProto.Player.parser(), extensionRegistry));
@@ -315,7 +281,7 @@ public final class JoinTableResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+        if (((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
           players_ = java.util.Collections.unmodifiableList(players_);
         }
         makeExtensionsImmutable();
@@ -563,103 +529,35 @@ public final class JoinTableResponseProto {
       return reference_;
     }
 
-    public static final int CAU_FIELD_NUMBER = 16;
-    private volatile java.lang.Object cau_;
-    /**
-     * <code>string cau = 16;</code>
-     */
-    public java.lang.String getCau() {
-      java.lang.Object ref = cau_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        cau_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string cau = 16;</code>
-     */
-    public com.google.protobuf.ByteString
-        getCauBytes() {
-      java.lang.Object ref = cau_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        cau_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int HISTORY_FIELD_NUMBER = 17;
-    private volatile java.lang.Object history_;
-    /**
-     * <code>string history = 17;</code>
-     */
-    public java.lang.String getHistory() {
-      java.lang.Object ref = history_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        history_ = s;
-        return s;
-      }
-    }
-    /**
-     * <code>string history = 17;</code>
-     */
-    public com.google.protobuf.ByteString
-        getHistoryBytes() {
-      java.lang.Object ref = history_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        history_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    public static final int PLAYERS_FIELD_NUMBER = 18;
+    public static final int PLAYERS_FIELD_NUMBER = 16;
     private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_;
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
         getPlayersOrBuilderList() {
       return players_;
     }
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public int getPlayersCount() {
       return players_.size();
     }
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
       return players_.get(index);
     }
     /**
-     * <code>repeated .fanxi.Player players = 18;</code>
+     * <code>repeated .fanxi.Player players = 16;</code>
      */
     public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
         int index) {
@@ -717,14 +615,8 @@ public final class JoinTableResponseProto {
       if (reference_ != 0L) {
         output.writeInt64(15, reference_);
       }
-      if (!getCauBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 16, cau_);
-      }
-      if (!getHistoryBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 17, history_);
-      }
       for (int i = 0; i < players_.size(); i++) {
-        output.writeMessage(18, players_.get(i));
+        output.writeMessage(16, players_.get(i));
       }
     }
 
@@ -781,15 +673,9 @@ public final class JoinTableResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(15, reference_);
       }
-      if (!getCauBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, cau_);
-      }
-      if (!getHistoryBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, history_);
-      }
       for (int i = 0; i < players_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(18, players_.get(i));
+          .computeMessageSize(16, players_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -836,10 +722,6 @@ public final class JoinTableResponseProto {
           == other.getTimeAuto());
       result = result && (getReference()
           == other.getReference());
-      result = result && getCau()
-          .equals(other.getCau());
-      result = result && getHistory()
-          .equals(other.getHistory());
       result = result && getPlayersList()
           .equals(other.getPlayersList());
       return result;
@@ -883,10 +765,6 @@ public final class JoinTableResponseProto {
       hash = (37 * hash) + REFERENCE_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getReference());
-      hash = (37 * hash) + CAU_FIELD_NUMBER;
-      hash = (53 * hash) + getCau().hashCode();
-      hash = (37 * hash) + HISTORY_FIELD_NUMBER;
-      hash = (53 * hash) + getHistory().hashCode();
       if (getPlayersCount() > 0) {
         hash = (37 * hash) + PLAYERS_FIELD_NUMBER;
         hash = (53 * hash) + getPlayersList().hashCode();
@@ -1040,13 +918,9 @@ public final class JoinTableResponseProto {
 
         reference_ = 0L;
 
-        cau_ = "";
-
-        history_ = "";
-
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00002000);
         } else {
           playersBuilder_.clear();
         }
@@ -1091,12 +965,10 @@ public final class JoinTableResponseProto {
         result.ownerId_ = ownerId_;
         result.timeAuto_ = timeAuto_;
         result.reference_ = reference_;
-        result.cau_ = cau_;
-        result.history_ = history_;
         if (playersBuilder_ == null) {
-          if (((bitField0_ & 0x00008000) == 0x00008000)) {
+          if (((bitField0_ & 0x00002000) == 0x00002000)) {
             players_ = java.util.Collections.unmodifiableList(players_);
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00002000);
           }
           result.players_ = players_;
         } else {
@@ -1187,19 +1059,11 @@ public final class JoinTableResponseProto {
         if (other.getReference() != 0L) {
           setReference(other.getReference());
         }
-        if (!other.getCau().isEmpty()) {
-          cau_ = other.cau_;
-          onChanged();
-        }
-        if (!other.getHistory().isEmpty()) {
-          history_ = other.history_;
-          onChanged();
-        }
         if (playersBuilder_ == null) {
           if (!other.players_.isEmpty()) {
             if (players_.isEmpty()) {
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00008000);
+              bitField0_ = (bitField0_ & ~0x00002000);
             } else {
               ensurePlayersIsMutable();
               players_.addAll(other.players_);
@@ -1212,7 +1076,7 @@ public final class JoinTableResponseProto {
               playersBuilder_.dispose();
               playersBuilder_ = null;
               players_ = other.players_;
-              bitField0_ = (bitField0_ & ~0x00008000);
+              bitField0_ = (bitField0_ & ~0x00002000);
               playersBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getPlayersFieldBuilder() : null;
@@ -1849,150 +1713,12 @@ public final class JoinTableResponseProto {
         return this;
       }
 
-      private java.lang.Object cau_ = "";
-      /**
-       * <code>string cau = 16;</code>
-       */
-      public java.lang.String getCau() {
-        java.lang.Object ref = cau_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          cau_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string cau = 16;</code>
-       */
-      public com.google.protobuf.ByteString
-          getCauBytes() {
-        java.lang.Object ref = cau_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          cau_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string cau = 16;</code>
-       */
-      public Builder setCau(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        cau_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cau = 16;</code>
-       */
-      public Builder clearCau() {
-        
-        cau_ = getDefaultInstance().getCau();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string cau = 16;</code>
-       */
-      public Builder setCauBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        cau_ = value;
-        onChanged();
-        return this;
-      }
-
-      private java.lang.Object history_ = "";
-      /**
-       * <code>string history = 17;</code>
-       */
-      public java.lang.String getHistory() {
-        java.lang.Object ref = history_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          history_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <code>string history = 17;</code>
-       */
-      public com.google.protobuf.ByteString
-          getHistoryBytes() {
-        java.lang.Object ref = history_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          history_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <code>string history = 17;</code>
-       */
-      public Builder setHistory(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  
-        history_ = value;
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string history = 17;</code>
-       */
-      public Builder clearHistory() {
-        
-        history_ = getDefaultInstance().getHistory();
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>string history = 17;</code>
-       */
-      public Builder setHistoryBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
-        history_ = value;
-        onChanged();
-        return this;
-      }
-
       private java.util.List<com.fanxi.service.message.PlayerProto.Player> players_ =
         java.util.Collections.emptyList();
       private void ensurePlayersIsMutable() {
-        if (!((bitField0_ & 0x00008000) == 0x00008000)) {
+        if (!((bitField0_ & 0x00002000) == 0x00002000)) {
           players_ = new java.util.ArrayList<com.fanxi.service.message.PlayerProto.Player>(players_);
-          bitField0_ |= 0x00008000;
+          bitField0_ |= 0x00002000;
          }
       }
 
@@ -2000,7 +1726,7 @@ public final class JoinTableResponseProto {
           com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder> playersBuilder_;
 
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player> getPlayersList() {
         if (playersBuilder_ == null) {
@@ -2010,7 +1736,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public int getPlayersCount() {
         if (playersBuilder_ == null) {
@@ -2020,7 +1746,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player getPlayers(int index) {
         if (playersBuilder_ == null) {
@@ -2030,7 +1756,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -2047,7 +1773,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder setPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -2061,7 +1787,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(com.fanxi.service.message.PlayerProto.Player value) {
         if (playersBuilder_ == null) {
@@ -2077,7 +1803,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player value) {
@@ -2094,7 +1820,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(
           com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -2108,7 +1834,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addPlayers(
           int index, com.fanxi.service.message.PlayerProto.Player.Builder builderForValue) {
@@ -2122,7 +1848,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder addAllPlayers(
           java.lang.Iterable<? extends com.fanxi.service.message.PlayerProto.Player> values) {
@@ -2137,12 +1863,12 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder clearPlayers() {
         if (playersBuilder_ == null) {
           players_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00002000);
           onChanged();
         } else {
           playersBuilder_.clear();
@@ -2150,7 +1876,7 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public Builder removePlayers(int index) {
         if (playersBuilder_ == null) {
@@ -2163,14 +1889,14 @@ public final class JoinTableResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder getPlayersBuilder(
           int index) {
         return getPlayersFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.PlayerOrBuilder getPlayersOrBuilder(
           int index) {
@@ -2180,7 +1906,7 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.PlayerProto.PlayerOrBuilder> 
            getPlayersOrBuilderList() {
@@ -2191,14 +1917,14 @@ public final class JoinTableResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder() {
         return getPlayersFieldBuilder().addBuilder(
             com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public com.fanxi.service.message.PlayerProto.Player.Builder addPlayersBuilder(
           int index) {
@@ -2206,7 +1932,7 @@ public final class JoinTableResponseProto {
             index, com.fanxi.service.message.PlayerProto.Player.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.Player players = 18;</code>
+       * <code>repeated .fanxi.Player players = 16;</code>
        */
       public java.util.List<com.fanxi.service.message.PlayerProto.Player.Builder> 
            getPlayersBuilderList() {
@@ -2219,7 +1945,7 @@ public final class JoinTableResponseProto {
           playersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.PlayerProto.Player, com.fanxi.service.message.PlayerProto.Player.Builder, com.fanxi.service.message.PlayerProto.PlayerOrBuilder>(
                   players_,
-                  ((bitField0_ & 0x00008000) == 0x00008000),
+                  ((bitField0_ & 0x00002000) == 0x00002000),
                   getParentForChildren(),
                   isClean());
           players_ = null;
@@ -2290,17 +2016,16 @@ public final class JoinTableResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\027JoinTableResponse.proto\022\005fanxi\032\022BaseRe" +
-      "sponse.proto\032\014Player.proto\"\307\002\n\021JoinTable" +
+      "sponse.proto\032\014Player.proto\"\251\002\n\021JoinTable" +
       "Response\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.B" +
       "aseResponse\022\016\n\006zoneId\030\004 \001(\005\022\022\n\ntableInde" +
       "x\030\005 \001(\005\022\017\n\007matchId\030\006 \001(\t\022\021\n\tisPlaying\030\007 " +
       "\001(\010\022\020\n\010currTurn\030\010 \001(\t\022\r\n\005cards\030\t \001(\t\022\014\n\004" +
       "deck\030\n \001(\005\022\014\n\004cash\030\013 \001(\005\022\016\n\006isGold\030\014 \001(\010" +
       "\022\017\n\007ownerId\030\r \001(\t\022\020\n\010timeAuto\030\016 \001(\005\022\021\n\tr" +
-      "eference\030\017 \001(\003\022\013\n\003cau\030\020 \001(\t\022\017\n\007history\030\021" +
-      " \001(\t\022\036\n\007players\030\022 \003(\0132\r.fanxi.PlayerB3\n\031",
-      "com.fanxi.service.messageB\026JoinTableResp" +
-      "onseProtob\006proto3"
+      "eference\030\017 \001(\003\022\036\n\007players\030\020 \003(\0132\r.fanxi." +
+      "PlayerB3\n\031com.fanxi.service.messageB\026Joi",
+      "nTableResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -2321,7 +2046,7 @@ public final class JoinTableResponseProto {
     internal_static_fanxi_JoinTableResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_JoinTableResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "Deck", "Cash", "IsGold", "OwnerId", "TimeAuto", "Reference", "Cau", "History", "Players", });
+        new java.lang.String[] { "BaseResponse", "ZoneId", "TableIndex", "MatchId", "IsPlaying", "CurrTurn", "Cards", "Deck", "Cash", "IsGold", "OwnerId", "TimeAuto", "Reference", "Players", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
     com.fanxi.service.message.PlayerProto.getDescriptor();
   }

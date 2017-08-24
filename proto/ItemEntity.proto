@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ItemEntityProto";
+
+message ItemEntity{
+    int32 itemId=1;
+	string name =2;
+    string url =3;
+	int64 cash=4;
+	
+}
+
+
+

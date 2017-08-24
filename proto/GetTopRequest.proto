@@ -7,4 +7,5 @@ option java_outer_classname = "GetTopRequestProto";
 message GetTopRequest {
    BaseRequest baseReq=1;
    bool isGold =10;
+   int32 zoneId=11;
 }

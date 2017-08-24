@@ -20,7 +20,7 @@ message RegTaiSuuResponse {
    int64 yourTaiGold=14;
    int64 yourTaiXu=15;
    int64 yourSuuXu=16;
-   int32 currResult=17;
+   string currResult=17;
    string resultHistories=18;
    repeated ChatEntity chats =19;
 }

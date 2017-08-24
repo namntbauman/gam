@@ -1,0 +1,17 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "InitCardResponseProto";
+
+message InitCardResponse {
+   RestfulBaseResponse baseResponse=1;
+   string captchaToken= 5;
+ 
+   string captcha=6;
+   repeated string variant=7;
+}
+
+
+
+

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "CardTariffEntityProto";
+
+message CardTariffEntity{
+	int64 tariff=1;
+	int64 cash=2;
+	int64 cashGold=3;
+	string description=4;
+}
+
+
+
