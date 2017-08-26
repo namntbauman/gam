@@ -55,6 +55,7 @@ typedef GPB_ENUM(CardRequest_FieldNumber) {
   CardRequest_FieldNumber_Masothe = 12,
   CardRequest_FieldNumber_Soseri = 13,
   CardRequest_FieldNumber_IsGold = 14,
+  CardRequest_FieldNumber_CardType = 15,
 };
 
 @interface CardRequest : GPBMessage
@@ -72,6 +73,8 @@ typedef GPB_ENUM(CardRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *soseri;
 
 @property(nonatomic, readwrite) BOOL isGold;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *cardType;
 
 @end
 

@@ -53,6 +53,7 @@ static GPBFileDescriptor *CardRequestRoot_FileDescriptor(void) {
 @dynamic masothe;
 @dynamic soseri;
 @dynamic isGold;
+@dynamic cardType;
 
 typedef struct CardRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -61,6 +62,7 @@ typedef struct CardRequest__storage_ {
   NSString *variant;
   NSString *masothe;
   NSString *soseri;
+  NSString *cardType;
 } CardRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -123,6 +125,15 @@ typedef struct CardRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "cardType",
+        .dataTypeSpecific.className = NULL,
+        .number = CardRequest_FieldNumber_CardType,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(CardRequest__storage_, cardType),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[CardRequest class]
@@ -134,7 +145,7 @@ typedef struct CardRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\007\000\n\014\000\016\006\000";
+        "\004\001\007\000\n\014\000\016\006\000\017\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

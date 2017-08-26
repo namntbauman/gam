@@ -52,9 +52,11 @@ static GPBFileDescriptor *SmsTariffEntityRoot_FileDescriptor(void) {
 @dynamic tariff;
 @dynamic cash;
 @dynamic isGold;
+@dynamic percent;
 
 typedef struct SmsTariffEntity__storage_ {
   uint32_t _has_storage_[1];
+  int32_t percent;
   NSString *keyword;
   NSString *dauso;
   NSString *description_p;
@@ -121,6 +123,15 @@ typedef struct SmsTariffEntity__storage_ {
         .offset = 6,  // Stored in _has_storage_ to save space.
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeBool,
+      },
+      {
+        .name = "percent",
+        .dataTypeSpecific.className = NULL,
+        .number = SmsTariffEntity_FieldNumber_Percent,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(SmsTariffEntity__storage_, percent),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
       },
     };
     GPBDescriptor *localDescriptor =

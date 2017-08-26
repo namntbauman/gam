@@ -88,6 +88,30 @@ public final class GetTariffResponseProto {
      */
     com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder getCardTariffsOrBuilder(
         int index);
+
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> 
+        getCardTypesList();
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity getCardTypes(int index);
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    int getCardTypesCount();
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
+        getCardTypesOrBuilderList();
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder getCardTypesOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code fanxi.GetTariffResponse}
@@ -104,6 +128,7 @@ public final class GetTariffResponseProto {
       tEtag_ = "";
       smsTariffs_ = java.util.Collections.emptyList();
       cardTariffs_ = java.util.Collections.emptyList();
+      cardTypes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -168,6 +193,15 @@ public final class GetTariffResponseProto {
                   input.readMessage(com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.parser(), extensionRegistry));
               break;
             }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                cardTypes_ = new java.util.ArrayList<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              cardTypes_.add(
+                  input.readMessage(com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -181,6 +215,9 @@ public final class GetTariffResponseProto {
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           cardTariffs_ = java.util.Collections.unmodifiableList(cardTariffs_);
+        }
+        if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          cardTypes_ = java.util.Collections.unmodifiableList(cardTypes_);
         }
         makeExtensionsImmutable();
       }
@@ -323,6 +360,41 @@ public final class GetTariffResponseProto {
       return cardTariffs_.get(index);
     }
 
+    public static final int CARDTYPES_FIELD_NUMBER = 7;
+    private java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> cardTypes_;
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    public java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> getCardTypesList() {
+      return cardTypes_;
+    }
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
+        getCardTypesOrBuilderList() {
+      return cardTypes_;
+    }
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    public int getCardTypesCount() {
+      return cardTypes_.size();
+    }
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity getCardTypes(int index) {
+      return cardTypes_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     */
+    public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder getCardTypesOrBuilder(
+        int index) {
+      return cardTypes_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -347,6 +419,9 @@ public final class GetTariffResponseProto {
       for (int i = 0; i < cardTariffs_.size(); i++) {
         output.writeMessage(6, cardTariffs_.get(i));
       }
+      for (int i = 0; i < cardTypes_.size(); i++) {
+        output.writeMessage(7, cardTypes_.get(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -368,6 +443,10 @@ public final class GetTariffResponseProto {
       for (int i = 0; i < cardTariffs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, cardTariffs_.get(i));
+      }
+      for (int i = 0; i < cardTypes_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, cardTypes_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -396,6 +475,8 @@ public final class GetTariffResponseProto {
           .equals(other.getSmsTariffsList());
       result = result && getCardTariffsList()
           .equals(other.getCardTariffsList());
+      result = result && getCardTypesList()
+          .equals(other.getCardTypesList());
       return result;
     }
 
@@ -419,6 +500,10 @@ public final class GetTariffResponseProto {
       if (getCardTariffsCount() > 0) {
         hash = (37 * hash) + CARDTARIFFS_FIELD_NUMBER;
         hash = (53 * hash) + getCardTariffsList().hashCode();
+      }
+      if (getCardTypesCount() > 0) {
+        hash = (37 * hash) + CARDTYPES_FIELD_NUMBER;
+        hash = (53 * hash) + getCardTypesList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -536,6 +621,7 @@ public final class GetTariffResponseProto {
                 .alwaysUseFieldBuilders) {
           getSmsTariffsFieldBuilder();
           getCardTariffsFieldBuilder();
+          getCardTypesFieldBuilder();
         }
       }
       public Builder clear() {
@@ -559,6 +645,12 @@ public final class GetTariffResponseProto {
           bitField0_ = (bitField0_ & ~0x00000008);
         } else {
           cardTariffsBuilder_.clear();
+        }
+        if (cardTypesBuilder_ == null) {
+          cardTypes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          cardTypesBuilder_.clear();
         }
         return this;
       }
@@ -607,6 +699,15 @@ public final class GetTariffResponseProto {
           result.cardTariffs_ = cardTariffs_;
         } else {
           result.cardTariffs_ = cardTariffsBuilder_.build();
+        }
+        if (cardTypesBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            cardTypes_ = java.util.Collections.unmodifiableList(cardTypes_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.cardTypes_ = cardTypes_;
+        } else {
+          result.cardTypes_ = cardTypesBuilder_.build();
         }
         result.bitField0_ = to_bitField0_;
         onBuilt();
@@ -706,6 +807,32 @@ public final class GetTariffResponseProto {
                    getCardTariffsFieldBuilder() : null;
             } else {
               cardTariffsBuilder_.addAllMessages(other.cardTariffs_);
+            }
+          }
+        }
+        if (cardTypesBuilder_ == null) {
+          if (!other.cardTypes_.isEmpty()) {
+            if (cardTypes_.isEmpty()) {
+              cardTypes_ = other.cardTypes_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureCardTypesIsMutable();
+              cardTypes_.addAll(other.cardTypes_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.cardTypes_.isEmpty()) {
+            if (cardTypesBuilder_.isEmpty()) {
+              cardTypesBuilder_.dispose();
+              cardTypesBuilder_ = null;
+              cardTypes_ = other.cardTypes_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              cardTypesBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getCardTypesFieldBuilder() : null;
+            } else {
+              cardTypesBuilder_.addAllMessages(other.cardTypes_);
             }
           }
         }
@@ -1401,6 +1528,246 @@ public final class GetTariffResponseProto {
         }
         return cardTariffsBuilder_;
       }
+
+      private java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> cardTypes_ =
+        java.util.Collections.emptyList();
+      private void ensureCardTypesIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          cardTypes_ = new java.util.ArrayList<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity>(cardTypes_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> cardTypesBuilder_;
+
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> getCardTypesList() {
+        if (cardTypesBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(cardTypes_);
+        } else {
+          return cardTypesBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public int getCardTypesCount() {
+        if (cardTypesBuilder_ == null) {
+          return cardTypes_.size();
+        } else {
+          return cardTypesBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity getCardTypes(int index) {
+        if (cardTypesBuilder_ == null) {
+          return cardTypes_.get(index);
+        } else {
+          return cardTypesBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder setCardTypes(
+          int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity value) {
+        if (cardTypesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardTypesIsMutable();
+          cardTypes_.set(index, value);
+          onChanged();
+        } else {
+          cardTypesBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder setCardTypes(
+          int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder builderForValue) {
+        if (cardTypesBuilder_ == null) {
+          ensureCardTypesIsMutable();
+          cardTypes_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardTypesBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder addCardTypes(com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity value) {
+        if (cardTypesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardTypesIsMutable();
+          cardTypes_.add(value);
+          onChanged();
+        } else {
+          cardTypesBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder addCardTypes(
+          int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity value) {
+        if (cardTypesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureCardTypesIsMutable();
+          cardTypes_.add(index, value);
+          onChanged();
+        } else {
+          cardTypesBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder addCardTypes(
+          com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder builderForValue) {
+        if (cardTypesBuilder_ == null) {
+          ensureCardTypesIsMutable();
+          cardTypes_.add(builderForValue.build());
+          onChanged();
+        } else {
+          cardTypesBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder addCardTypes(
+          int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder builderForValue) {
+        if (cardTypesBuilder_ == null) {
+          ensureCardTypesIsMutable();
+          cardTypes_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          cardTypesBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder addAllCardTypes(
+          java.lang.Iterable<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> values) {
+        if (cardTypesBuilder_ == null) {
+          ensureCardTypesIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, cardTypes_);
+          onChanged();
+        } else {
+          cardTypesBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder clearCardTypes() {
+        if (cardTypesBuilder_ == null) {
+          cardTypes_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          cardTypesBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public Builder removeCardTypes(int index) {
+        if (cardTypesBuilder_ == null) {
+          ensureCardTypesIsMutable();
+          cardTypes_.remove(index);
+          onChanged();
+        } else {
+          cardTypesBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder getCardTypesBuilder(
+          int index) {
+        return getCardTypesFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder getCardTypesOrBuilder(
+          int index) {
+        if (cardTypesBuilder_ == null) {
+          return cardTypes_.get(index);  } else {
+          return cardTypesBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
+           getCardTypesOrBuilderList() {
+        if (cardTypesBuilder_ != null) {
+          return cardTypesBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(cardTypes_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder addCardTypesBuilder() {
+        return getCardTypesFieldBuilder().addBuilder(
+            com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder addCardTypesBuilder(
+          int index) {
+        return getCardTypesFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       */
+      public java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder> 
+           getCardTypesBuilderList() {
+        return getCardTypesFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
+          getCardTypesFieldBuilder() {
+        if (cardTypesBuilder_ == null) {
+          cardTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder>(
+                  cardTypes_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          cardTypes_ = null;
+        }
+        return cardTypesBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1466,13 +1833,15 @@ public final class GetTariffResponseProto {
     java.lang.String[] descriptorData = {
       "\n\027GetTariffResponse.proto\022\005fanxi\032\031Restfu" +
       "lBaseResponse.proto\032\025SmsTariffEntity.pro" +
-      "to\032\026CardTariffEntity.proto\"\256\001\n\021GetTariff" +
-      "Response\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.R" +
-      "estfulBaseResponse\022\r\n\005tEtag\030\004 \001(\t\022*\n\nsms" +
-      "Tariffs\030\005 \003(\0132\026.fanxi.SmsTariffEntity\022,\n" +
-      "\013cardTariffs\030\006 \003(\0132\027.fanxi.CardTariffEnt" +
-      "ityB3\n\031com.fanxi.service.messageB\026GetTar" +
-      "iffResponseProtob\006proto3"
+      "to\032\026CardTariffEntity.proto\032\024CardTypeEnti" +
+      "ty.proto\"\330\001\n\021GetTariffResponse\0220\n\014baseRe" +
+      "sponse\030\001 \001(\0132\032.fanxi.RestfulBaseResponse" +
+      "\022\r\n\005tEtag\030\004 \001(\t\022*\n\nsmsTariffs\030\005 \003(\0132\026.fa" +
+      "nxi.SmsTariffEntity\022,\n\013cardTariffs\030\006 \003(\013" +
+      "2\027.fanxi.CardTariffEntity\022(\n\tcardTypes\030\007" +
+      " \003(\0132\025.fanxi.CardTypeEntityB3\n\031com.fanxi" +
+      ".service.messageB\026GetTariffResponseProto",
+      "b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1488,16 +1857,18 @@ public final class GetTariffResponseProto {
           com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor(),
           com.fanxi.service.message.SmsTariffEntityProto.getDescriptor(),
           com.fanxi.service.message.CardTariffEntityProto.getDescriptor(),
+          com.fanxi.service.message.CardTypeEntityProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_GetTariffResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_GetTariffResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_GetTariffResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "TEtag", "SmsTariffs", "CardTariffs", });
+        new java.lang.String[] { "BaseResponse", "TEtag", "SmsTariffs", "CardTariffs", "CardTypes", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
     com.fanxi.service.message.SmsTariffEntityProto.getDescriptor();
     com.fanxi.service.message.CardTariffEntityProto.getDescriptor();
+    com.fanxi.service.message.CardTypeEntityProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

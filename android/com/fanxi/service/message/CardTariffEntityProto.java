@@ -34,11 +34,16 @@ public final class CardTariffEntityProto {
     long getCashGold();
 
     /**
-     * <code>string description = 4;</code>
+     * <code>int32 percent = 4;</code>
+     */
+    int getPercent();
+
+    /**
+     * <code>string description = 5;</code>
      */
     java.lang.String getDescription();
     /**
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      */
     com.google.protobuf.ByteString
         getDescriptionBytes();
@@ -58,6 +63,7 @@ public final class CardTariffEntityProto {
       tariff_ = 0L;
       cash_ = 0L;
       cashGold_ = 0L;
+      percent_ = 0;
       description_ = "";
     }
 
@@ -101,7 +107,12 @@ public final class CardTariffEntityProto {
               cashGold_ = input.readInt64();
               break;
             }
-            case 34: {
+            case 32: {
+
+              percent_ = input.readInt32();
+              break;
+            }
+            case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
               description_ = s;
@@ -157,10 +168,19 @@ public final class CardTariffEntityProto {
       return cashGold_;
     }
 
-    public static final int DESCRIPTION_FIELD_NUMBER = 4;
+    public static final int PERCENT_FIELD_NUMBER = 4;
+    private int percent_;
+    /**
+     * <code>int32 percent = 4;</code>
+     */
+    public int getPercent() {
+      return percent_;
+    }
+
+    public static final int DESCRIPTION_FIELD_NUMBER = 5;
     private volatile java.lang.Object description_;
     /**
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      */
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
@@ -175,7 +195,7 @@ public final class CardTariffEntityProto {
       }
     }
     /**
-     * <code>string description = 4;</code>
+     * <code>string description = 5;</code>
      */
     public com.google.protobuf.ByteString
         getDescriptionBytes() {
@@ -212,8 +232,11 @@ public final class CardTariffEntityProto {
       if (cashGold_ != 0L) {
         output.writeInt64(3, cashGold_);
       }
+      if (percent_ != 0) {
+        output.writeInt32(4, percent_);
+      }
       if (!getDescriptionBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, description_);
       }
     }
 
@@ -234,8 +257,12 @@ public final class CardTariffEntityProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(3, cashGold_);
       }
+      if (percent_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, percent_);
+      }
       if (!getDescriptionBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, description_);
       }
       memoizedSize = size;
       return size;
@@ -259,6 +286,8 @@ public final class CardTariffEntityProto {
           == other.getCash());
       result = result && (getCashGold()
           == other.getCashGold());
+      result = result && (getPercent()
+          == other.getPercent());
       result = result && getDescription()
           .equals(other.getDescription());
       return result;
@@ -280,6 +309,8 @@ public final class CardTariffEntityProto {
       hash = (37 * hash) + CASHGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCashGold());
+      hash = (37 * hash) + PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + getPercent();
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -406,6 +437,8 @@ public final class CardTariffEntityProto {
 
         cashGold_ = 0L;
 
+        percent_ = 0;
+
         description_ = "";
 
         return this;
@@ -433,6 +466,7 @@ public final class CardTariffEntityProto {
         result.tariff_ = tariff_;
         result.cash_ = cash_;
         result.cashGold_ = cashGold_;
+        result.percent_ = percent_;
         result.description_ = description_;
         onBuilt();
         return result;
@@ -483,6 +517,9 @@ public final class CardTariffEntityProto {
         }
         if (other.getCashGold() != 0L) {
           setCashGold(other.getCashGold());
+        }
+        if (other.getPercent() != 0) {
+          setPercent(other.getPercent());
         }
         if (!other.getDescription().isEmpty()) {
           description_ = other.description_;
@@ -592,9 +629,35 @@ public final class CardTariffEntityProto {
         return this;
       }
 
+      private int percent_ ;
+      /**
+       * <code>int32 percent = 4;</code>
+       */
+      public int getPercent() {
+        return percent_;
+      }
+      /**
+       * <code>int32 percent = 4;</code>
+       */
+      public Builder setPercent(int value) {
+        
+        percent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 percent = 4;</code>
+       */
+      public Builder clearPercent() {
+        
+        percent_ = 0;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object description_ = "";
       /**
-       * <code>string description = 4;</code>
+       * <code>string description = 5;</code>
        */
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
@@ -609,7 +672,7 @@ public final class CardTariffEntityProto {
         }
       }
       /**
-       * <code>string description = 4;</code>
+       * <code>string description = 5;</code>
        */
       public com.google.protobuf.ByteString
           getDescriptionBytes() {
@@ -625,7 +688,7 @@ public final class CardTariffEntityProto {
         }
       }
       /**
-       * <code>string description = 4;</code>
+       * <code>string description = 5;</code>
        */
       public Builder setDescription(
           java.lang.String value) {
@@ -638,7 +701,7 @@ public final class CardTariffEntityProto {
         return this;
       }
       /**
-       * <code>string description = 4;</code>
+       * <code>string description = 5;</code>
        */
       public Builder clearDescription() {
         
@@ -647,7 +710,7 @@ public final class CardTariffEntityProto {
         return this;
       }
       /**
-       * <code>string description = 4;</code>
+       * <code>string description = 5;</code>
        */
       public Builder setDescriptionBytes(
           com.google.protobuf.ByteString value) {
@@ -723,11 +786,11 @@ public final class CardTariffEntityProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\026CardTariffEntity.proto\022\005fanxi\"W\n\020CardT" +
+      "\n\026CardTariffEntity.proto\022\005fanxi\"h\n\020CardT" +
       "ariffEntity\022\016\n\006tariff\030\001 \001(\003\022\014\n\004cash\030\002 \001(" +
-      "\003\022\020\n\010cashGold\030\003 \001(\003\022\023\n\013description\030\004 \001(\t" +
-      "B2\n\031com.fanxi.service.messageB\025CardTarif" +
-      "fEntityProtob\006proto3"
+      "\003\022\020\n\010cashGold\030\003 \001(\003\022\017\n\007percent\030\004 \001(\005\022\023\n\013" +
+      "description\030\005 \001(\tB2\n\031com.fanxi.service.m" +
+      "essageB\025CardTariffEntityProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -746,7 +809,7 @@ public final class CardTariffEntityProto {
     internal_static_fanxi_CardTariffEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_CardTariffEntity_descriptor,
-        new java.lang.String[] { "Tariff", "Cash", "CashGold", "Description", });
+        new java.lang.String[] { "Tariff", "Cash", "CashGold", "Percent", "Description", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -62,6 +62,11 @@ public final class SmsTariffEntityProto {
      * <code>bool isGold = 6;</code>
      */
     boolean getIsGold();
+
+    /**
+     * <code>int32 percent = 7;</code>
+     */
+    int getPercent();
   }
   /**
    * Protobuf type {@code fanxi.SmsTariffEntity}
@@ -81,6 +86,7 @@ public final class SmsTariffEntityProto {
       tariff_ = 0L;
       cash_ = 0L;
       isGold_ = false;
+      percent_ = 0;
     }
 
     @java.lang.Override
@@ -139,6 +145,11 @@ public final class SmsTariffEntityProto {
             case 48: {
 
               isGold_ = input.readBool();
+              break;
+            }
+            case 56: {
+
+              percent_ = input.readInt32();
               break;
             }
           }
@@ -293,6 +304,15 @@ public final class SmsTariffEntityProto {
       return isGold_;
     }
 
+    public static final int PERCENT_FIELD_NUMBER = 7;
+    private int percent_;
+    /**
+     * <code>int32 percent = 7;</code>
+     */
+    public int getPercent() {
+      return percent_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -323,6 +343,9 @@ public final class SmsTariffEntityProto {
       if (isGold_ != false) {
         output.writeBool(6, isGold_);
       }
+      if (percent_ != 0) {
+        output.writeInt32(7, percent_);
+      }
     }
 
     public int getSerializedSize() {
@@ -350,6 +373,10 @@ public final class SmsTariffEntityProto {
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(6, isGold_);
+      }
+      if (percent_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, percent_);
       }
       memoizedSize = size;
       return size;
@@ -379,6 +406,8 @@ public final class SmsTariffEntityProto {
           == other.getCash());
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && (getPercent()
+          == other.getPercent());
       return result;
     }
 
@@ -404,6 +433,8 @@ public final class SmsTariffEntityProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + PERCENT_FIELD_NUMBER;
+      hash = (53 * hash) + getPercent();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -534,6 +565,8 @@ public final class SmsTariffEntityProto {
 
         isGold_ = false;
 
+        percent_ = 0;
+
         return this;
       }
 
@@ -562,6 +595,7 @@ public final class SmsTariffEntityProto {
         result.tariff_ = tariff_;
         result.cash_ = cash_;
         result.isGold_ = isGold_;
+        result.percent_ = percent_;
         onBuilt();
         return result;
       }
@@ -623,6 +657,9 @@ public final class SmsTariffEntityProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (other.getPercent() != 0) {
+          setPercent(other.getPercent());
         }
         onChanged();
         return this;
@@ -934,6 +971,32 @@ public final class SmsTariffEntityProto {
         onChanged();
         return this;
       }
+
+      private int percent_ ;
+      /**
+       * <code>int32 percent = 7;</code>
+       */
+      public int getPercent() {
+        return percent_;
+      }
+      /**
+       * <code>int32 percent = 7;</code>
+       */
+      public Builder setPercent(int value) {
+        
+        percent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 percent = 7;</code>
+       */
+      public Builder clearPercent() {
+        
+        percent_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -997,12 +1060,12 @@ public final class SmsTariffEntityProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\025SmsTariffEntity.proto\022\005fanxi\"t\n\017SmsTar" +
-      "iffEntity\022\017\n\007keyword\030\001 \001(\t\022\r\n\005dauso\030\002 \001(" +
-      "\t\022\023\n\013description\030\003 \001(\t\022\016\n\006tariff\030\004 \001(\003\022\014" +
-      "\n\004cash\030\005 \001(\003\022\016\n\006isGold\030\006 \001(\010B1\n\031com.fanx" +
-      "i.service.messageB\024SmsTariffEntityProtob" +
-      "\006proto3"
+      "\n\025SmsTariffEntity.proto\022\005fanxi\"\205\001\n\017SmsTa" +
+      "riffEntity\022\017\n\007keyword\030\001 \001(\t\022\r\n\005dauso\030\002 \001" +
+      "(\t\022\023\n\013description\030\003 \001(\t\022\016\n\006tariff\030\004 \001(\003\022" +
+      "\014\n\004cash\030\005 \001(\003\022\016\n\006isGold\030\006 \001(\010\022\017\n\007percent" +
+      "\030\007 \001(\005B1\n\031com.fanxi.service.messageB\024Sms" +
+      "TariffEntityProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1021,7 +1084,7 @@ public final class SmsTariffEntityProto {
     internal_static_fanxi_SmsTariffEntity_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_SmsTariffEntity_descriptor,
-        new java.lang.String[] { "Keyword", "Dauso", "Description", "Tariff", "Cash", "IsGold", });
+        new java.lang.String[] { "Keyword", "Dauso", "Description", "Tariff", "Cash", "IsGold", "Percent", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -49,10 +49,12 @@ static GPBFileDescriptor *CardTariffEntityRoot_FileDescriptor(void) {
 @dynamic tariff;
 @dynamic cash;
 @dynamic cashGold;
+@dynamic percent;
 @dynamic description_p;
 
 typedef struct CardTariffEntity__storage_ {
   uint32_t _has_storage_[1];
+  int32_t percent;
   NSString *description_p;
   int64_t tariff;
   int64_t cash;
@@ -93,10 +95,19 @@ typedef struct CardTariffEntity__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "percent",
+        .dataTypeSpecific.className = NULL,
+        .number = CardTariffEntity_FieldNumber_Percent,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(CardTariffEntity__storage_, percent),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "description_p",
         .dataTypeSpecific.className = NULL,
         .number = CardTariffEntity_FieldNumber_Description_p,
-        .hasIndex = 3,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(CardTariffEntity__storage_, description_p),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,

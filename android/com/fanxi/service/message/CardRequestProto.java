@@ -75,6 +75,16 @@ public final class CardRequestProto {
      * <code>bool isGold = 14;</code>
      */
     boolean getIsGold();
+
+    /**
+     * <code>string cardType = 15;</code>
+     */
+    java.lang.String getCardType();
+    /**
+     * <code>string cardType = 15;</code>
+     */
+    com.google.protobuf.ByteString
+        getCardTypeBytes();
   }
   /**
    * Protobuf type {@code fanxi.CardRequest}
@@ -93,6 +103,7 @@ public final class CardRequestProto {
       masothe_ = "";
       soseri_ = "";
       isGold_ = false;
+      cardType_ = "";
     }
 
     @java.lang.Override
@@ -160,6 +171,12 @@ public final class CardRequestProto {
             case 112: {
 
               isGold_ = input.readBool();
+              break;
+            }
+            case 122: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              cardType_ = s;
               break;
             }
           }
@@ -351,6 +368,40 @@ public final class CardRequestProto {
       return isGold_;
     }
 
+    public static final int CARDTYPE_FIELD_NUMBER = 15;
+    private volatile java.lang.Object cardType_;
+    /**
+     * <code>string cardType = 15;</code>
+     */
+    public java.lang.String getCardType() {
+      java.lang.Object ref = cardType_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        cardType_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string cardType = 15;</code>
+     */
+    public com.google.protobuf.ByteString
+        getCardTypeBytes() {
+      java.lang.Object ref = cardType_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        cardType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -381,6 +432,9 @@ public final class CardRequestProto {
       if (isGold_ != false) {
         output.writeBool(14, isGold_);
       }
+      if (!getCardTypeBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 15, cardType_);
+      }
     }
 
     public int getSerializedSize() {
@@ -407,6 +461,9 @@ public final class CardRequestProto {
       if (isGold_ != false) {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isGold_);
+      }
+      if (!getCardTypeBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, cardType_);
       }
       memoizedSize = size;
       return size;
@@ -439,6 +496,8 @@ public final class CardRequestProto {
           .equals(other.getSoseri());
       result = result && (getIsGold()
           == other.getIsGold());
+      result = result && getCardType()
+          .equals(other.getCardType());
       return result;
     }
 
@@ -464,6 +523,8 @@ public final class CardRequestProto {
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
+      hash = (37 * hash) + CARDTYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getCardType().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -598,6 +659,8 @@ public final class CardRequestProto {
 
         isGold_ = false;
 
+        cardType_ = "";
+
         return this;
       }
 
@@ -630,6 +693,7 @@ public final class CardRequestProto {
         result.masothe_ = masothe_;
         result.soseri_ = soseri_;
         result.isGold_ = isGold_;
+        result.cardType_ = cardType_;
         onBuilt();
         return result;
       }
@@ -692,6 +756,10 @@ public final class CardRequestProto {
         }
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
+        }
+        if (!other.getCardType().isEmpty()) {
+          cardType_ = other.cardType_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1137,6 +1205,75 @@ public final class CardRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object cardType_ = "";
+      /**
+       * <code>string cardType = 15;</code>
+       */
+      public java.lang.String getCardType() {
+        java.lang.Object ref = cardType_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          cardType_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string cardType = 15;</code>
+       */
+      public com.google.protobuf.ByteString
+          getCardTypeBytes() {
+        java.lang.Object ref = cardType_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          cardType_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string cardType = 15;</code>
+       */
+      public Builder setCardType(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        cardType_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cardType = 15;</code>
+       */
+      public Builder clearCardType() {
+        
+        cardType_ = getDefaultInstance().getCardType();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string cardType = 15;</code>
+       */
+      public Builder setCardTypeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        cardType_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1201,12 +1338,12 @@ public final class CardRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\021CardRequest.proto\022\005fanxi\032\021BaseRequest." +
-      "proto\"\212\001\n\013CardRequest\022#\n\007baseReq\030\001 \001(\0132\022" +
+      "proto\"\234\001\n\013CardRequest\022#\n\007baseReq\030\001 \001(\0132\022" +
       ".fanxi.BaseRequest\022\024\n\014captchaToken\030\n \001(\t" +
       "\022\017\n\007variant\030\013 \001(\t\022\017\n\007masothe\030\014 \001(\t\022\016\n\006so" +
-      "seri\030\r \001(\t\022\016\n\006isGold\030\016 \001(\010B-\n\031com.fanxi." +
-      "service.messageB\020CardRequestProtob\006proto" +
-      "3"
+      "seri\030\r \001(\t\022\016\n\006isGold\030\016 \001(\010\022\020\n\010cardType\030\017" +
+      " \001(\tB-\n\031com.fanxi.service.messageB\020CardR" +
+      "equestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1226,7 +1363,7 @@ public final class CardRequestProto {
     internal_static_fanxi_CardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_CardRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "CaptchaToken", "Variant", "Masothe", "Soseri", "IsGold", });
+        new java.lang.String[] { "BaseReq", "CaptchaToken", "Variant", "Masothe", "Soseri", "IsGold", "CardType", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

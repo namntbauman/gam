@@ -50,7 +50,8 @@ typedef GPB_ENUM(CardTariffEntity_FieldNumber) {
   CardTariffEntity_FieldNumber_Tariff = 1,
   CardTariffEntity_FieldNumber_Cash = 2,
   CardTariffEntity_FieldNumber_CashGold = 3,
-  CardTariffEntity_FieldNumber_Description_p = 4,
+  CardTariffEntity_FieldNumber_Percent = 4,
+  CardTariffEntity_FieldNumber_Description_p = 5,
 };
 
 @interface CardTariffEntity : GPBMessage
@@ -60,6 +61,8 @@ typedef GPB_ENUM(CardTariffEntity_FieldNumber) {
 @property(nonatomic, readwrite) int64_t cash;
 
 @property(nonatomic, readwrite) int64_t cashGold;
+
+@property(nonatomic, readwrite) int32_t percent;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *description_p;
 
