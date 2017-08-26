@@ -17,6 +17,7 @@
  #import "RestfulBaseResponse.pbobjc.h"
  #import "SmsTariffEntity.pbobjc.h"
  #import "CardTariffEntity.pbobjc.h"
+ #import "CardTypeEntity.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -53,6 +54,7 @@ static GPBFileDescriptor *GetTariffResponseRoot_FileDescriptor(void) {
 @dynamic tEtag;
 @dynamic smsTariffsArray, smsTariffsArray_Count;
 @dynamic cardTariffsArray, cardTariffsArray_Count;
+@dynamic cardTypesArray, cardTypesArray_Count;
 
 typedef struct GetTariffResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -60,6 +62,7 @@ typedef struct GetTariffResponse__storage_ {
   NSString *tEtag;
   NSMutableArray *smsTariffsArray;
   NSMutableArray *cardTariffsArray;
+  NSMutableArray *cardTypesArray;
 } GetTariffResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -104,6 +107,15 @@ typedef struct GetTariffResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
+      {
+        .name = "cardTypesArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(CardTypeEntity),
+        .number = GetTariffResponse_FieldNumber_CardTypesArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(GetTariffResponse__storage_, cardTypesArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[GetTariffResponse class]
@@ -115,7 +127,8 @@ typedef struct GetTariffResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\004\005\000\005\000smsTariffs\000\006\000cardTariffs\000";
+        "\005\001\014\000\004\005\000\005\000smsTariffs\000\006\000cardTariffs\000\007\000card"
+        "Types\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
