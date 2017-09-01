@@ -52,7 +52,9 @@ static GPBFileDescriptor *GetTariffResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic tEtag;
-@dynamic smsTariffsArray, smsTariffsArray_Count;
+@dynamic smsViettelTariffsArray, smsViettelTariffsArray_Count;
+@dynamic smsMobifoneTariffsArray, smsMobifoneTariffsArray_Count;
+@dynamic smsVinaTariffsArray, smsVinaTariffsArray_Count;
 @dynamic cardTariffsArray, cardTariffsArray_Count;
 @dynamic cardTypesArray, cardTypesArray_Count;
 
@@ -60,7 +62,9 @@ typedef struct GetTariffResponse__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseResponse *baseResponse;
   NSString *tEtag;
-  NSMutableArray *smsTariffsArray;
+  NSMutableArray *smsViettelTariffsArray;
+  NSMutableArray *smsMobifoneTariffsArray;
+  NSMutableArray *smsVinaTariffsArray;
   NSMutableArray *cardTariffsArray;
   NSMutableArray *cardTypesArray;
 } GetTariffResponse__storage_;
@@ -90,11 +94,29 @@ typedef struct GetTariffResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "smsTariffsArray",
+        .name = "smsViettelTariffsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(SmsTariffEntity),
-        .number = GetTariffResponse_FieldNumber_SmsTariffsArray,
+        .number = GetTariffResponse_FieldNumber_SmsViettelTariffsArray,
         .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(GetTariffResponse__storage_, smsTariffsArray),
+        .offset = (uint32_t)offsetof(GetTariffResponse__storage_, smsViettelTariffsArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "smsMobifoneTariffsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(SmsTariffEntity),
+        .number = GetTariffResponse_FieldNumber_SmsMobifoneTariffsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(GetTariffResponse__storage_, smsMobifoneTariffsArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "smsVinaTariffsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(SmsTariffEntity),
+        .number = GetTariffResponse_FieldNumber_SmsVinaTariffsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(GetTariffResponse__storage_, smsVinaTariffsArray),
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
@@ -127,8 +149,9 @@ typedef struct GetTariffResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001\014\000\004\005\000\005\000smsTariffs\000\006\000cardTariffs\000\007\000card"
-        "Types\000";
+        "\007\001\014\000\004\005\000\005\000smsViettelTariffs\000\006\000smsMobifone"
+        "Tariffs\000\007\000smsVinaTariffs\000\010\000cardTariffs\000\t"
+        "\000cardTypes\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

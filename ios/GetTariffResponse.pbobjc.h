@@ -54,9 +54,11 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(GetTariffResponse_FieldNumber) {
   GetTariffResponse_FieldNumber_BaseResponse = 1,
   GetTariffResponse_FieldNumber_TEtag = 4,
-  GetTariffResponse_FieldNumber_SmsTariffsArray = 5,
-  GetTariffResponse_FieldNumber_CardTariffsArray = 6,
-  GetTariffResponse_FieldNumber_CardTypesArray = 7,
+  GetTariffResponse_FieldNumber_SmsViettelTariffsArray = 5,
+  GetTariffResponse_FieldNumber_SmsMobifoneTariffsArray = 6,
+  GetTariffResponse_FieldNumber_SmsVinaTariffsArray = 7,
+  GetTariffResponse_FieldNumber_CardTariffsArray = 8,
+  GetTariffResponse_FieldNumber_CardTypesArray = 9,
 };
 
 @interface GetTariffResponse : GPBMessage
@@ -67,9 +69,17 @@ typedef GPB_ENUM(GetTariffResponse_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *tEtag;
 
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<SmsTariffEntity*> *smsTariffsArray;
-/** The number of items in @c smsTariffsArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger smsTariffsArray_Count;
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<SmsTariffEntity*> *smsViettelTariffsArray;
+/** The number of items in @c smsViettelTariffsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger smsViettelTariffsArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<SmsTariffEntity*> *smsMobifoneTariffsArray;
+/** The number of items in @c smsMobifoneTariffsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger smsMobifoneTariffsArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<SmsTariffEntity*> *smsVinaTariffsArray;
+/** The number of items in @c smsVinaTariffsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger smsVinaTariffsArray_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<CardTariffEntity*> *cardTariffsArray;
 /** The number of items in @c cardTariffsArray without causing the array to be created. */

@@ -42,73 +42,121 @@ public final class GetTariffResponseProto {
         getTEtagBytes();
 
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
     java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> 
-        getSmsTariffsList();
+        getSmsViettelTariffsList();
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsTariffs(int index);
+    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsViettelTariffs(int index);
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    int getSmsTariffsCount();
+    int getSmsViettelTariffsCount();
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
     java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
-        getSmsTariffsOrBuilderList();
+        getSmsViettelTariffsOrBuilderList();
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsTariffsOrBuilder(
+    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsViettelTariffsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> 
+        getSmsMobifoneTariffsList();
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsMobifoneTariffs(int index);
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    int getSmsMobifoneTariffsCount();
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+        getSmsMobifoneTariffsOrBuilderList();
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsMobifoneTariffsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> 
+        getSmsVinaTariffsList();
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsVinaTariffs(int index);
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    int getSmsVinaTariffsCount();
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+        getSmsVinaTariffsOrBuilderList();
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsVinaTariffsOrBuilder(
+        int index);
+
+    /**
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     java.util.List<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity> 
         getCardTariffsList();
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity getCardTariffs(int index);
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     int getCardTariffsCount();
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     java.util.List<? extends com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder> 
         getCardTariffsOrBuilderList();
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder getCardTariffsOrBuilder(
         int index);
 
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> 
         getCardTypesList();
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity getCardTypes(int index);
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     int getCardTypesCount();
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     java.util.List<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
         getCardTypesOrBuilderList();
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder getCardTypesOrBuilder(
         int index);
@@ -126,7 +174,9 @@ public final class GetTariffResponseProto {
     }
     private GetTariffResponse() {
       tEtag_ = "";
-      smsTariffs_ = java.util.Collections.emptyList();
+      smsViettelTariffs_ = java.util.Collections.emptyList();
+      smsMobifoneTariffs_ = java.util.Collections.emptyList();
+      smsVinaTariffs_ = java.util.Collections.emptyList();
       cardTariffs_ = java.util.Collections.emptyList();
       cardTypes_ = java.util.Collections.emptyList();
     }
@@ -177,26 +227,44 @@ public final class GetTariffResponseProto {
             }
             case 42: {
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-                smsTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>();
+                smsViettelTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>();
                 mutable_bitField0_ |= 0x00000004;
               }
-              smsTariffs_.add(
+              smsViettelTariffs_.add(
                   input.readMessage(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.parser(), extensionRegistry));
               break;
             }
             case 50: {
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                cardTariffs_ = new java.util.ArrayList<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity>();
+                smsMobifoneTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>();
                 mutable_bitField0_ |= 0x00000008;
+              }
+              smsMobifoneTariffs_.add(
+                  input.readMessage(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.parser(), extensionRegistry));
+              break;
+            }
+            case 58: {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                smsVinaTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              smsVinaTariffs_.add(
+                  input.readMessage(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.parser(), extensionRegistry));
+              break;
+            }
+            case 66: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                cardTariffs_ = new java.util.ArrayList<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity>();
+                mutable_bitField0_ |= 0x00000020;
               }
               cardTariffs_.add(
                   input.readMessage(com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.parser(), extensionRegistry));
               break;
             }
-            case 58: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+            case 74: {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
                 cardTypes_ = new java.util.ArrayList<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity>();
-                mutable_bitField0_ |= 0x00000010;
+                mutable_bitField0_ |= 0x00000040;
               }
               cardTypes_.add(
                   input.readMessage(com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.parser(), extensionRegistry));
@@ -211,12 +279,18 @@ public final class GetTariffResponseProto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-          smsTariffs_ = java.util.Collections.unmodifiableList(smsTariffs_);
+          smsViettelTariffs_ = java.util.Collections.unmodifiableList(smsViettelTariffs_);
         }
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          cardTariffs_ = java.util.Collections.unmodifiableList(cardTariffs_);
+          smsMobifoneTariffs_ = java.util.Collections.unmodifiableList(smsMobifoneTariffs_);
         }
         if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+          smsVinaTariffs_ = java.util.Collections.unmodifiableList(smsVinaTariffs_);
+        }
+        if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+          cardTariffs_ = java.util.Collections.unmodifiableList(cardTariffs_);
+        }
+        if (((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
           cardTypes_ = java.util.Collections.unmodifiableList(cardTypes_);
         }
         makeExtensionsImmutable();
@@ -290,105 +364,175 @@ public final class GetTariffResponseProto {
       }
     }
 
-    public static final int SMSTARIFFS_FIELD_NUMBER = 5;
-    private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsTariffs_;
+    public static final int SMSVIETTELTARIFFS_FIELD_NUMBER = 5;
+    private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsViettelTariffs_;
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsTariffsList() {
-      return smsTariffs_;
+    public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsViettelTariffsList() {
+      return smsViettelTariffs_;
     }
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
-        getSmsTariffsOrBuilderList() {
-      return smsTariffs_;
+        getSmsViettelTariffsOrBuilderList() {
+      return smsViettelTariffs_;
     }
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    public int getSmsTariffsCount() {
-      return smsTariffs_.size();
+    public int getSmsViettelTariffsCount() {
+      return smsViettelTariffs_.size();
     }
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsTariffs(int index) {
-      return smsTariffs_.get(index);
+    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsViettelTariffs(int index) {
+      return smsViettelTariffs_.get(index);
     }
     /**
-     * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+     * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
      */
-    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsTariffsOrBuilder(
+    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsViettelTariffsOrBuilder(
         int index) {
-      return smsTariffs_.get(index);
+      return smsViettelTariffs_.get(index);
     }
 
-    public static final int CARDTARIFFS_FIELD_NUMBER = 6;
+    public static final int SMSMOBIFONETARIFFS_FIELD_NUMBER = 6;
+    private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsMobifoneTariffs_;
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsMobifoneTariffsList() {
+      return smsMobifoneTariffs_;
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+        getSmsMobifoneTariffsOrBuilderList() {
+      return smsMobifoneTariffs_;
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    public int getSmsMobifoneTariffsCount() {
+      return smsMobifoneTariffs_.size();
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsMobifoneTariffs(int index) {
+      return smsMobifoneTariffs_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+     */
+    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsMobifoneTariffsOrBuilder(
+        int index) {
+      return smsMobifoneTariffs_.get(index);
+    }
+
+    public static final int SMSVINATARIFFS_FIELD_NUMBER = 7;
+    private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsVinaTariffs_;
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsVinaTariffsList() {
+      return smsVinaTariffs_;
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+        getSmsVinaTariffsOrBuilderList() {
+      return smsVinaTariffs_;
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    public int getSmsVinaTariffsCount() {
+      return smsVinaTariffs_.size();
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsVinaTariffs(int index) {
+      return smsVinaTariffs_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+     */
+    public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsVinaTariffsOrBuilder(
+        int index) {
+      return smsVinaTariffs_.get(index);
+    }
+
+    public static final int CARDTARIFFS_FIELD_NUMBER = 8;
     private java.util.List<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity> cardTariffs_;
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     public java.util.List<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity> getCardTariffsList() {
       return cardTariffs_;
     }
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder> 
         getCardTariffsOrBuilderList() {
       return cardTariffs_;
     }
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     public int getCardTariffsCount() {
       return cardTariffs_.size();
     }
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity getCardTariffs(int index) {
       return cardTariffs_.get(index);
     }
     /**
-     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+     * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
      */
     public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder getCardTariffsOrBuilder(
         int index) {
       return cardTariffs_.get(index);
     }
 
-    public static final int CARDTYPES_FIELD_NUMBER = 7;
+    public static final int CARDTYPES_FIELD_NUMBER = 9;
     private java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> cardTypes_;
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     public java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> getCardTypesList() {
       return cardTypes_;
     }
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
         getCardTypesOrBuilderList() {
       return cardTypes_;
     }
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     public int getCardTypesCount() {
       return cardTypes_.size();
     }
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity getCardTypes(int index) {
       return cardTypes_.get(index);
     }
     /**
-     * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+     * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
      */
     public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder getCardTypesOrBuilder(
         int index) {
@@ -413,14 +557,20 @@ public final class GetTariffResponseProto {
       if (!getTEtagBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tEtag_);
       }
-      for (int i = 0; i < smsTariffs_.size(); i++) {
-        output.writeMessage(5, smsTariffs_.get(i));
+      for (int i = 0; i < smsViettelTariffs_.size(); i++) {
+        output.writeMessage(5, smsViettelTariffs_.get(i));
+      }
+      for (int i = 0; i < smsMobifoneTariffs_.size(); i++) {
+        output.writeMessage(6, smsMobifoneTariffs_.get(i));
+      }
+      for (int i = 0; i < smsVinaTariffs_.size(); i++) {
+        output.writeMessage(7, smsVinaTariffs_.get(i));
       }
       for (int i = 0; i < cardTariffs_.size(); i++) {
-        output.writeMessage(6, cardTariffs_.get(i));
+        output.writeMessage(8, cardTariffs_.get(i));
       }
       for (int i = 0; i < cardTypes_.size(); i++) {
-        output.writeMessage(7, cardTypes_.get(i));
+        output.writeMessage(9, cardTypes_.get(i));
       }
     }
 
@@ -436,17 +586,25 @@ public final class GetTariffResponseProto {
       if (!getTEtagBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tEtag_);
       }
-      for (int i = 0; i < smsTariffs_.size(); i++) {
+      for (int i = 0; i < smsViettelTariffs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, smsTariffs_.get(i));
+          .computeMessageSize(5, smsViettelTariffs_.get(i));
+      }
+      for (int i = 0; i < smsMobifoneTariffs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, smsMobifoneTariffs_.get(i));
+      }
+      for (int i = 0; i < smsVinaTariffs_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(7, smsVinaTariffs_.get(i));
       }
       for (int i = 0; i < cardTariffs_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(6, cardTariffs_.get(i));
+          .computeMessageSize(8, cardTariffs_.get(i));
       }
       for (int i = 0; i < cardTypes_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, cardTypes_.get(i));
+          .computeMessageSize(9, cardTypes_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -471,8 +629,12 @@ public final class GetTariffResponseProto {
       }
       result = result && getTEtag()
           .equals(other.getTEtag());
-      result = result && getSmsTariffsList()
-          .equals(other.getSmsTariffsList());
+      result = result && getSmsViettelTariffsList()
+          .equals(other.getSmsViettelTariffsList());
+      result = result && getSmsMobifoneTariffsList()
+          .equals(other.getSmsMobifoneTariffsList());
+      result = result && getSmsVinaTariffsList()
+          .equals(other.getSmsVinaTariffsList());
       result = result && getCardTariffsList()
           .equals(other.getCardTariffsList());
       result = result && getCardTypesList()
@@ -493,9 +655,17 @@ public final class GetTariffResponseProto {
       }
       hash = (37 * hash) + TETAG_FIELD_NUMBER;
       hash = (53 * hash) + getTEtag().hashCode();
-      if (getSmsTariffsCount() > 0) {
-        hash = (37 * hash) + SMSTARIFFS_FIELD_NUMBER;
-        hash = (53 * hash) + getSmsTariffsList().hashCode();
+      if (getSmsViettelTariffsCount() > 0) {
+        hash = (37 * hash) + SMSVIETTELTARIFFS_FIELD_NUMBER;
+        hash = (53 * hash) + getSmsViettelTariffsList().hashCode();
+      }
+      if (getSmsMobifoneTariffsCount() > 0) {
+        hash = (37 * hash) + SMSMOBIFONETARIFFS_FIELD_NUMBER;
+        hash = (53 * hash) + getSmsMobifoneTariffsList().hashCode();
+      }
+      if (getSmsVinaTariffsCount() > 0) {
+        hash = (37 * hash) + SMSVINATARIFFS_FIELD_NUMBER;
+        hash = (53 * hash) + getSmsVinaTariffsList().hashCode();
       }
       if (getCardTariffsCount() > 0) {
         hash = (37 * hash) + CARDTARIFFS_FIELD_NUMBER;
@@ -619,7 +789,9 @@ public final class GetTariffResponseProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
-          getSmsTariffsFieldBuilder();
+          getSmsViettelTariffsFieldBuilder();
+          getSmsMobifoneTariffsFieldBuilder();
+          getSmsVinaTariffsFieldBuilder();
           getCardTariffsFieldBuilder();
           getCardTypesFieldBuilder();
         }
@@ -634,21 +806,33 @@ public final class GetTariffResponseProto {
         }
         tEtag_ = "";
 
-        if (smsTariffsBuilder_ == null) {
-          smsTariffs_ = java.util.Collections.emptyList();
+        if (smsViettelTariffsBuilder_ == null) {
+          smsViettelTariffs_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
         } else {
-          smsTariffsBuilder_.clear();
+          smsViettelTariffsBuilder_.clear();
+        }
+        if (smsMobifoneTariffsBuilder_ == null) {
+          smsMobifoneTariffs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+        } else {
+          smsMobifoneTariffsBuilder_.clear();
+        }
+        if (smsVinaTariffsBuilder_ == null) {
+          smsVinaTariffs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+        } else {
+          smsVinaTariffsBuilder_.clear();
         }
         if (cardTariffsBuilder_ == null) {
           cardTariffs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
         } else {
           cardTariffsBuilder_.clear();
         }
         if (cardTypesBuilder_ == null) {
           cardTypes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           cardTypesBuilder_.clear();
         }
@@ -682,28 +866,46 @@ public final class GetTariffResponseProto {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.tEtag_ = tEtag_;
-        if (smsTariffsBuilder_ == null) {
+        if (smsViettelTariffsBuilder_ == null) {
           if (((bitField0_ & 0x00000004) == 0x00000004)) {
-            smsTariffs_ = java.util.Collections.unmodifiableList(smsTariffs_);
+            smsViettelTariffs_ = java.util.Collections.unmodifiableList(smsViettelTariffs_);
             bitField0_ = (bitField0_ & ~0x00000004);
           }
-          result.smsTariffs_ = smsTariffs_;
+          result.smsViettelTariffs_ = smsViettelTariffs_;
         } else {
-          result.smsTariffs_ = smsTariffsBuilder_.build();
+          result.smsViettelTariffs_ = smsViettelTariffsBuilder_.build();
+        }
+        if (smsMobifoneTariffsBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+            smsMobifoneTariffs_ = java.util.Collections.unmodifiableList(smsMobifoneTariffs_);
+            bitField0_ = (bitField0_ & ~0x00000008);
+          }
+          result.smsMobifoneTariffs_ = smsMobifoneTariffs_;
+        } else {
+          result.smsMobifoneTariffs_ = smsMobifoneTariffsBuilder_.build();
+        }
+        if (smsVinaTariffsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+            smsVinaTariffs_ = java.util.Collections.unmodifiableList(smsVinaTariffs_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.smsVinaTariffs_ = smsVinaTariffs_;
+        } else {
+          result.smsVinaTariffs_ = smsVinaTariffsBuilder_.build();
         }
         if (cardTariffsBuilder_ == null) {
-          if (((bitField0_ & 0x00000008) == 0x00000008)) {
+          if (((bitField0_ & 0x00000020) == 0x00000020)) {
             cardTariffs_ = java.util.Collections.unmodifiableList(cardTariffs_);
-            bitField0_ = (bitField0_ & ~0x00000008);
+            bitField0_ = (bitField0_ & ~0x00000020);
           }
           result.cardTariffs_ = cardTariffs_;
         } else {
           result.cardTariffs_ = cardTariffsBuilder_.build();
         }
         if (cardTypesBuilder_ == null) {
-          if (((bitField0_ & 0x00000010) == 0x00000010)) {
+          if (((bitField0_ & 0x00000040) == 0x00000040)) {
             cardTypes_ = java.util.Collections.unmodifiableList(cardTypes_);
-            bitField0_ = (bitField0_ & ~0x00000010);
+            bitField0_ = (bitField0_ & ~0x00000040);
           }
           result.cardTypes_ = cardTypes_;
         } else {
@@ -758,29 +960,81 @@ public final class GetTariffResponseProto {
           tEtag_ = other.tEtag_;
           onChanged();
         }
-        if (smsTariffsBuilder_ == null) {
-          if (!other.smsTariffs_.isEmpty()) {
-            if (smsTariffs_.isEmpty()) {
-              smsTariffs_ = other.smsTariffs_;
+        if (smsViettelTariffsBuilder_ == null) {
+          if (!other.smsViettelTariffs_.isEmpty()) {
+            if (smsViettelTariffs_.isEmpty()) {
+              smsViettelTariffs_ = other.smsViettelTariffs_;
               bitField0_ = (bitField0_ & ~0x00000004);
             } else {
-              ensureSmsTariffsIsMutable();
-              smsTariffs_.addAll(other.smsTariffs_);
+              ensureSmsViettelTariffsIsMutable();
+              smsViettelTariffs_.addAll(other.smsViettelTariffs_);
             }
             onChanged();
           }
         } else {
-          if (!other.smsTariffs_.isEmpty()) {
-            if (smsTariffsBuilder_.isEmpty()) {
-              smsTariffsBuilder_.dispose();
-              smsTariffsBuilder_ = null;
-              smsTariffs_ = other.smsTariffs_;
+          if (!other.smsViettelTariffs_.isEmpty()) {
+            if (smsViettelTariffsBuilder_.isEmpty()) {
+              smsViettelTariffsBuilder_.dispose();
+              smsViettelTariffsBuilder_ = null;
+              smsViettelTariffs_ = other.smsViettelTariffs_;
               bitField0_ = (bitField0_ & ~0x00000004);
-              smsTariffsBuilder_ = 
+              smsViettelTariffsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getSmsTariffsFieldBuilder() : null;
+                   getSmsViettelTariffsFieldBuilder() : null;
             } else {
-              smsTariffsBuilder_.addAllMessages(other.smsTariffs_);
+              smsViettelTariffsBuilder_.addAllMessages(other.smsViettelTariffs_);
+            }
+          }
+        }
+        if (smsMobifoneTariffsBuilder_ == null) {
+          if (!other.smsMobifoneTariffs_.isEmpty()) {
+            if (smsMobifoneTariffs_.isEmpty()) {
+              smsMobifoneTariffs_ = other.smsMobifoneTariffs_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+            } else {
+              ensureSmsMobifoneTariffsIsMutable();
+              smsMobifoneTariffs_.addAll(other.smsMobifoneTariffs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.smsMobifoneTariffs_.isEmpty()) {
+            if (smsMobifoneTariffsBuilder_.isEmpty()) {
+              smsMobifoneTariffsBuilder_.dispose();
+              smsMobifoneTariffsBuilder_ = null;
+              smsMobifoneTariffs_ = other.smsMobifoneTariffs_;
+              bitField0_ = (bitField0_ & ~0x00000008);
+              smsMobifoneTariffsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSmsMobifoneTariffsFieldBuilder() : null;
+            } else {
+              smsMobifoneTariffsBuilder_.addAllMessages(other.smsMobifoneTariffs_);
+            }
+          }
+        }
+        if (smsVinaTariffsBuilder_ == null) {
+          if (!other.smsVinaTariffs_.isEmpty()) {
+            if (smsVinaTariffs_.isEmpty()) {
+              smsVinaTariffs_ = other.smsVinaTariffs_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureSmsVinaTariffsIsMutable();
+              smsVinaTariffs_.addAll(other.smsVinaTariffs_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.smsVinaTariffs_.isEmpty()) {
+            if (smsVinaTariffsBuilder_.isEmpty()) {
+              smsVinaTariffsBuilder_.dispose();
+              smsVinaTariffsBuilder_ = null;
+              smsVinaTariffs_ = other.smsVinaTariffs_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              smsVinaTariffsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getSmsVinaTariffsFieldBuilder() : null;
+            } else {
+              smsVinaTariffsBuilder_.addAllMessages(other.smsVinaTariffs_);
             }
           }
         }
@@ -788,7 +1042,7 @@ public final class GetTariffResponseProto {
           if (!other.cardTariffs_.isEmpty()) {
             if (cardTariffs_.isEmpty()) {
               cardTariffs_ = other.cardTariffs_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000020);
             } else {
               ensureCardTariffsIsMutable();
               cardTariffs_.addAll(other.cardTariffs_);
@@ -801,7 +1055,7 @@ public final class GetTariffResponseProto {
               cardTariffsBuilder_.dispose();
               cardTariffsBuilder_ = null;
               cardTariffs_ = other.cardTariffs_;
-              bitField0_ = (bitField0_ & ~0x00000008);
+              bitField0_ = (bitField0_ & ~0x00000020);
               cardTariffsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardTariffsFieldBuilder() : null;
@@ -814,7 +1068,7 @@ public final class GetTariffResponseProto {
           if (!other.cardTypes_.isEmpty()) {
             if (cardTypes_.isEmpty()) {
               cardTypes_ = other.cardTypes_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000040);
             } else {
               ensureCardTypesIsMutable();
               cardTypes_.addAll(other.cardTypes_);
@@ -827,7 +1081,7 @@ public final class GetTariffResponseProto {
               cardTypesBuilder_.dispose();
               cardTypesBuilder_ = null;
               cardTypes_ = other.cardTypes_;
-              bitField0_ = (bitField0_ & ~0x00000010);
+              bitField0_ = (bitField0_ & ~0x00000040);
               cardTypesBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getCardTypesFieldBuilder() : null;
@@ -1049,252 +1303,732 @@ public final class GetTariffResponseProto {
         return this;
       }
 
-      private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsTariffs_ =
+      private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsViettelTariffs_ =
         java.util.Collections.emptyList();
-      private void ensureSmsTariffsIsMutable() {
+      private void ensureSmsViettelTariffsIsMutable() {
         if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-          smsTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>(smsTariffs_);
+          smsViettelTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>(smsViettelTariffs_);
           bitField0_ |= 0x00000004;
          }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> smsTariffsBuilder_;
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> smsViettelTariffsBuilder_;
 
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsTariffsList() {
-        if (smsTariffsBuilder_ == null) {
-          return java.util.Collections.unmodifiableList(smsTariffs_);
+      public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsViettelTariffsList() {
+        if (smsViettelTariffsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(smsViettelTariffs_);
         } else {
-          return smsTariffsBuilder_.getMessageList();
+          return smsViettelTariffsBuilder_.getMessageList();
         }
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public int getSmsTariffsCount() {
-        if (smsTariffsBuilder_ == null) {
-          return smsTariffs_.size();
+      public int getSmsViettelTariffsCount() {
+        if (smsViettelTariffsBuilder_ == null) {
+          return smsViettelTariffs_.size();
         } else {
-          return smsTariffsBuilder_.getCount();
+          return smsViettelTariffsBuilder_.getCount();
         }
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsTariffs(int index) {
-        if (smsTariffsBuilder_ == null) {
-          return smsTariffs_.get(index);
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsViettelTariffs(int index) {
+        if (smsViettelTariffsBuilder_ == null) {
+          return smsViettelTariffs_.get(index);
         } else {
-          return smsTariffsBuilder_.getMessage(index);
+          return smsViettelTariffsBuilder_.getMessage(index);
         }
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder setSmsTariffs(
+      public Builder setSmsViettelTariffs(
           int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
-        if (smsTariffsBuilder_ == null) {
+        if (smsViettelTariffsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.set(index, value);
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.set(index, value);
           onChanged();
         } else {
-          smsTariffsBuilder_.setMessage(index, value);
+          smsViettelTariffsBuilder_.setMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder setSmsTariffs(
+      public Builder setSmsViettelTariffs(
           int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
-        if (smsTariffsBuilder_ == null) {
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.set(index, builderForValue.build());
+        if (smsViettelTariffsBuilder_ == null) {
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.set(index, builderForValue.build());
           onChanged();
         } else {
-          smsTariffsBuilder_.setMessage(index, builderForValue.build());
+          smsViettelTariffsBuilder_.setMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder addSmsTariffs(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
-        if (smsTariffsBuilder_ == null) {
+      public Builder addSmsViettelTariffs(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsViettelTariffsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.add(value);
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.add(value);
           onChanged();
         } else {
-          smsTariffsBuilder_.addMessage(value);
+          smsViettelTariffsBuilder_.addMessage(value);
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder addSmsTariffs(
+      public Builder addSmsViettelTariffs(
           int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
-        if (smsTariffsBuilder_ == null) {
+        if (smsViettelTariffsBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
           }
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.add(index, value);
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.add(index, value);
           onChanged();
         } else {
-          smsTariffsBuilder_.addMessage(index, value);
+          smsViettelTariffsBuilder_.addMessage(index, value);
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder addSmsTariffs(
+      public Builder addSmsViettelTariffs(
           com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
-        if (smsTariffsBuilder_ == null) {
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.add(builderForValue.build());
+        if (smsViettelTariffsBuilder_ == null) {
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.add(builderForValue.build());
           onChanged();
         } else {
-          smsTariffsBuilder_.addMessage(builderForValue.build());
+          smsViettelTariffsBuilder_.addMessage(builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder addSmsTariffs(
+      public Builder addSmsViettelTariffs(
           int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
-        if (smsTariffsBuilder_ == null) {
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.add(index, builderForValue.build());
+        if (smsViettelTariffsBuilder_ == null) {
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.add(index, builderForValue.build());
           onChanged();
         } else {
-          smsTariffsBuilder_.addMessage(index, builderForValue.build());
+          smsViettelTariffsBuilder_.addMessage(index, builderForValue.build());
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder addAllSmsTariffs(
+      public Builder addAllSmsViettelTariffs(
           java.lang.Iterable<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> values) {
-        if (smsTariffsBuilder_ == null) {
-          ensureSmsTariffsIsMutable();
+        if (smsViettelTariffsBuilder_ == null) {
+          ensureSmsViettelTariffsIsMutable();
           com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, smsTariffs_);
+              values, smsViettelTariffs_);
           onChanged();
         } else {
-          smsTariffsBuilder_.addAllMessages(values);
+          smsViettelTariffsBuilder_.addAllMessages(values);
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder clearSmsTariffs() {
-        if (smsTariffsBuilder_ == null) {
-          smsTariffs_ = java.util.Collections.emptyList();
+      public Builder clearSmsViettelTariffs() {
+        if (smsViettelTariffsBuilder_ == null) {
+          smsViettelTariffs_ = java.util.Collections.emptyList();
           bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
-          smsTariffsBuilder_.clear();
+          smsViettelTariffsBuilder_.clear();
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public Builder removeSmsTariffs(int index) {
-        if (smsTariffsBuilder_ == null) {
-          ensureSmsTariffsIsMutable();
-          smsTariffs_.remove(index);
+      public Builder removeSmsViettelTariffs(int index) {
+        if (smsViettelTariffsBuilder_ == null) {
+          ensureSmsViettelTariffsIsMutable();
+          smsViettelTariffs_.remove(index);
           onChanged();
         } else {
-          smsTariffsBuilder_.remove(index);
+          smsViettelTariffsBuilder_.remove(index);
         }
         return this;
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder getSmsTariffsBuilder(
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder getSmsViettelTariffsBuilder(
           int index) {
-        return getSmsTariffsFieldBuilder().getBuilder(index);
+        return getSmsViettelTariffsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsTariffsOrBuilder(
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsViettelTariffsOrBuilder(
           int index) {
-        if (smsTariffsBuilder_ == null) {
-          return smsTariffs_.get(index);  } else {
-          return smsTariffsBuilder_.getMessageOrBuilder(index);
+        if (smsViettelTariffsBuilder_ == null) {
+          return smsViettelTariffs_.get(index);  } else {
+          return smsViettelTariffsBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
-           getSmsTariffsOrBuilderList() {
-        if (smsTariffsBuilder_ != null) {
-          return smsTariffsBuilder_.getMessageOrBuilderList();
+           getSmsViettelTariffsOrBuilderList() {
+        if (smsViettelTariffsBuilder_ != null) {
+          return smsViettelTariffsBuilder_.getMessageOrBuilderList();
         } else {
-          return java.util.Collections.unmodifiableList(smsTariffs_);
+          return java.util.Collections.unmodifiableList(smsViettelTariffs_);
         }
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsTariffsBuilder() {
-        return getSmsTariffsFieldBuilder().addBuilder(
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsViettelTariffsBuilder() {
+        return getSmsViettelTariffsFieldBuilder().addBuilder(
             com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
-      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsTariffsBuilder(
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsViettelTariffsBuilder(
           int index) {
-        return getSmsTariffsFieldBuilder().addBuilder(
+        return getSmsViettelTariffsFieldBuilder().addBuilder(
             index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.SmsTariffEntity smsTariffs = 5;</code>
+       * <code>repeated .fanxi.SmsTariffEntity smsViettelTariffs = 5;</code>
        */
       public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder> 
-           getSmsTariffsBuilderList() {
-        return getSmsTariffsFieldBuilder().getBuilderList();
+           getSmsViettelTariffsBuilderList() {
+        return getSmsViettelTariffsFieldBuilder().getBuilderList();
       }
       private com.google.protobuf.RepeatedFieldBuilderV3<
           com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
-          getSmsTariffsFieldBuilder() {
-        if (smsTariffsBuilder_ == null) {
-          smsTariffsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+          getSmsViettelTariffsFieldBuilder() {
+        if (smsViettelTariffsBuilder_ == null) {
+          smsViettelTariffsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder>(
-                  smsTariffs_,
+                  smsViettelTariffs_,
                   ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
-          smsTariffs_ = null;
+          smsViettelTariffs_ = null;
         }
-        return smsTariffsBuilder_;
+        return smsViettelTariffsBuilder_;
+      }
+
+      private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsMobifoneTariffs_ =
+        java.util.Collections.emptyList();
+      private void ensureSmsMobifoneTariffsIsMutable() {
+        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+          smsMobifoneTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>(smsMobifoneTariffs_);
+          bitField0_ |= 0x00000008;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> smsMobifoneTariffsBuilder_;
+
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsMobifoneTariffsList() {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(smsMobifoneTariffs_);
+        } else {
+          return smsMobifoneTariffsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public int getSmsMobifoneTariffsCount() {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          return smsMobifoneTariffs_.size();
+        } else {
+          return smsMobifoneTariffsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsMobifoneTariffs(int index) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          return smsMobifoneTariffs_.get(index);
+        } else {
+          return smsMobifoneTariffsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder setSmsMobifoneTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.set(index, value);
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder setSmsMobifoneTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder addSmsMobifoneTariffs(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.add(value);
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder addSmsMobifoneTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.add(index, value);
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder addSmsMobifoneTariffs(
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder addSmsMobifoneTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder addAllSmsMobifoneTariffs(
+          java.lang.Iterable<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> values) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          ensureSmsMobifoneTariffsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, smsMobifoneTariffs_);
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder clearSmsMobifoneTariffs() {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          smsMobifoneTariffs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000008);
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public Builder removeSmsMobifoneTariffs(int index) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          ensureSmsMobifoneTariffsIsMutable();
+          smsMobifoneTariffs_.remove(index);
+          onChanged();
+        } else {
+          smsMobifoneTariffsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder getSmsMobifoneTariffsBuilder(
+          int index) {
+        return getSmsMobifoneTariffsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsMobifoneTariffsOrBuilder(
+          int index) {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          return smsMobifoneTariffs_.get(index);  } else {
+          return smsMobifoneTariffsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+           getSmsMobifoneTariffsOrBuilderList() {
+        if (smsMobifoneTariffsBuilder_ != null) {
+          return smsMobifoneTariffsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(smsMobifoneTariffs_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsMobifoneTariffsBuilder() {
+        return getSmsMobifoneTariffsFieldBuilder().addBuilder(
+            com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsMobifoneTariffsBuilder(
+          int index) {
+        return getSmsMobifoneTariffsFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsMobifoneTariffs = 6;</code>
+       */
+      public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder> 
+           getSmsMobifoneTariffsBuilderList() {
+        return getSmsMobifoneTariffsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+          getSmsMobifoneTariffsFieldBuilder() {
+        if (smsMobifoneTariffsBuilder_ == null) {
+          smsMobifoneTariffsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder>(
+                  smsMobifoneTariffs_,
+                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  getParentForChildren(),
+                  isClean());
+          smsMobifoneTariffs_ = null;
+        }
+        return smsMobifoneTariffsBuilder_;
+      }
+
+      private java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> smsVinaTariffs_ =
+        java.util.Collections.emptyList();
+      private void ensureSmsVinaTariffsIsMutable() {
+        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+          smsVinaTariffs_ = new java.util.ArrayList<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity>(smsVinaTariffs_);
+          bitField0_ |= 0x00000010;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> smsVinaTariffsBuilder_;
+
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> getSmsVinaTariffsList() {
+        if (smsVinaTariffsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(smsVinaTariffs_);
+        } else {
+          return smsVinaTariffsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public int getSmsVinaTariffsCount() {
+        if (smsVinaTariffsBuilder_ == null) {
+          return smsVinaTariffs_.size();
+        } else {
+          return smsVinaTariffsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity getSmsVinaTariffs(int index) {
+        if (smsVinaTariffsBuilder_ == null) {
+          return smsVinaTariffs_.get(index);
+        } else {
+          return smsVinaTariffsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder setSmsVinaTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsVinaTariffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.set(index, value);
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder setSmsVinaTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
+        if (smsVinaTariffsBuilder_ == null) {
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder addSmsVinaTariffs(com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsVinaTariffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.add(value);
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder addSmsVinaTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity value) {
+        if (smsVinaTariffsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.add(index, value);
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder addSmsVinaTariffs(
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
+        if (smsVinaTariffsBuilder_ == null) {
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.add(builderForValue.build());
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder addSmsVinaTariffs(
+          int index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder builderForValue) {
+        if (smsVinaTariffsBuilder_ == null) {
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder addAllSmsVinaTariffs(
+          java.lang.Iterable<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity> values) {
+        if (smsVinaTariffsBuilder_ == null) {
+          ensureSmsVinaTariffsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, smsVinaTariffs_);
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder clearSmsVinaTariffs() {
+        if (smsVinaTariffsBuilder_ == null) {
+          smsVinaTariffs_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public Builder removeSmsVinaTariffs(int index) {
+        if (smsVinaTariffsBuilder_ == null) {
+          ensureSmsVinaTariffsIsMutable();
+          smsVinaTariffs_.remove(index);
+          onChanged();
+        } else {
+          smsVinaTariffsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder getSmsVinaTariffsBuilder(
+          int index) {
+        return getSmsVinaTariffsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder getSmsVinaTariffsOrBuilder(
+          int index) {
+        if (smsVinaTariffsBuilder_ == null) {
+          return smsVinaTariffs_.get(index);  } else {
+          return smsVinaTariffsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+           getSmsVinaTariffsOrBuilderList() {
+        if (smsVinaTariffsBuilder_ != null) {
+          return smsVinaTariffsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(smsVinaTariffs_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsVinaTariffsBuilder() {
+        return getSmsVinaTariffsFieldBuilder().addBuilder(
+            com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder addSmsVinaTariffsBuilder(
+          int index) {
+        return getSmsVinaTariffsFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.SmsTariffEntity smsVinaTariffs = 7;</code>
+       */
+      public java.util.List<com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder> 
+           getSmsVinaTariffsBuilderList() {
+        return getSmsVinaTariffsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder> 
+          getSmsVinaTariffsFieldBuilder() {
+        if (smsVinaTariffsBuilder_ == null) {
+          smsVinaTariffsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntity.Builder, com.fanxi.service.message.SmsTariffEntityProto.SmsTariffEntityOrBuilder>(
+                  smsVinaTariffs_,
+                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  getParentForChildren(),
+                  isClean());
+          smsVinaTariffs_ = null;
+        }
+        return smsVinaTariffsBuilder_;
       }
 
       private java.util.List<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity> cardTariffs_ =
         java.util.Collections.emptyList();
       private void ensureCardTariffsIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
+        if (!((bitField0_ & 0x00000020) == 0x00000020)) {
           cardTariffs_ = new java.util.ArrayList<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity>(cardTariffs_);
-          bitField0_ |= 0x00000008;
+          bitField0_ |= 0x00000020;
          }
       }
 
@@ -1302,7 +2036,7 @@ public final class GetTariffResponseProto {
           com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder> cardTariffsBuilder_;
 
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public java.util.List<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity> getCardTariffsList() {
         if (cardTariffsBuilder_ == null) {
@@ -1312,7 +2046,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public int getCardTariffsCount() {
         if (cardTariffsBuilder_ == null) {
@@ -1322,7 +2056,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity getCardTariffs(int index) {
         if (cardTariffsBuilder_ == null) {
@@ -1332,7 +2066,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder setCardTariffs(
           int index, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity value) {
@@ -1349,7 +2083,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder setCardTariffs(
           int index, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder builderForValue) {
@@ -1363,7 +2097,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder addCardTariffs(com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity value) {
         if (cardTariffsBuilder_ == null) {
@@ -1379,7 +2113,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder addCardTariffs(
           int index, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity value) {
@@ -1396,7 +2130,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder addCardTariffs(
           com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder builderForValue) {
@@ -1410,7 +2144,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder addCardTariffs(
           int index, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder builderForValue) {
@@ -1424,7 +2158,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder addAllCardTariffs(
           java.lang.Iterable<? extends com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity> values) {
@@ -1439,12 +2173,12 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder clearCardTariffs() {
         if (cardTariffsBuilder_ == null) {
           cardTariffs_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000008);
+          bitField0_ = (bitField0_ & ~0x00000020);
           onChanged();
         } else {
           cardTariffsBuilder_.clear();
@@ -1452,7 +2186,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public Builder removeCardTariffs(int index) {
         if (cardTariffsBuilder_ == null) {
@@ -1465,14 +2199,14 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder getCardTariffsBuilder(
           int index) {
         return getCardTariffsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder getCardTariffsOrBuilder(
           int index) {
@@ -1482,7 +2216,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder> 
            getCardTariffsOrBuilderList() {
@@ -1493,14 +2227,14 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder addCardTariffsBuilder() {
         return getCardTariffsFieldBuilder().addBuilder(
             com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder addCardTariffsBuilder(
           int index) {
@@ -1508,7 +2242,7 @@ public final class GetTariffResponseProto {
             index, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 6;</code>
+       * <code>repeated .fanxi.CardTariffEntity cardTariffs = 8;</code>
        */
       public java.util.List<com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder> 
            getCardTariffsBuilderList() {
@@ -1521,7 +2255,7 @@ public final class GetTariffResponseProto {
           cardTariffsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntity.Builder, com.fanxi.service.message.CardTariffEntityProto.CardTariffEntityOrBuilder>(
                   cardTariffs_,
-                  ((bitField0_ & 0x00000008) == 0x00000008),
+                  ((bitField0_ & 0x00000020) == 0x00000020),
                   getParentForChildren(),
                   isClean());
           cardTariffs_ = null;
@@ -1532,9 +2266,9 @@ public final class GetTariffResponseProto {
       private java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> cardTypes_ =
         java.util.Collections.emptyList();
       private void ensureCardTypesIsMutable() {
-        if (!((bitField0_ & 0x00000010) == 0x00000010)) {
+        if (!((bitField0_ & 0x00000040) == 0x00000040)) {
           cardTypes_ = new java.util.ArrayList<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity>(cardTypes_);
-          bitField0_ |= 0x00000010;
+          bitField0_ |= 0x00000040;
          }
       }
 
@@ -1542,7 +2276,7 @@ public final class GetTariffResponseProto {
           com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> cardTypesBuilder_;
 
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> getCardTypesList() {
         if (cardTypesBuilder_ == null) {
@@ -1552,7 +2286,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public int getCardTypesCount() {
         if (cardTypesBuilder_ == null) {
@@ -1562,7 +2296,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity getCardTypes(int index) {
         if (cardTypesBuilder_ == null) {
@@ -1572,7 +2306,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder setCardTypes(
           int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity value) {
@@ -1589,7 +2323,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder setCardTypes(
           int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder builderForValue) {
@@ -1603,7 +2337,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder addCardTypes(com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity value) {
         if (cardTypesBuilder_ == null) {
@@ -1619,7 +2353,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder addCardTypes(
           int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity value) {
@@ -1636,7 +2370,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder addCardTypes(
           com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder builderForValue) {
@@ -1650,7 +2384,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder addCardTypes(
           int index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder builderForValue) {
@@ -1664,7 +2398,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder addAllCardTypes(
           java.lang.Iterable<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity> values) {
@@ -1679,12 +2413,12 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder clearCardTypes() {
         if (cardTypesBuilder_ == null) {
           cardTypes_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000010);
+          bitField0_ = (bitField0_ & ~0x00000040);
           onChanged();
         } else {
           cardTypesBuilder_.clear();
@@ -1692,7 +2426,7 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public Builder removeCardTypes(int index) {
         if (cardTypesBuilder_ == null) {
@@ -1705,14 +2439,14 @@ public final class GetTariffResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder getCardTypesBuilder(
           int index) {
         return getCardTypesFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder getCardTypesOrBuilder(
           int index) {
@@ -1722,7 +2456,7 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder> 
            getCardTypesOrBuilderList() {
@@ -1733,14 +2467,14 @@ public final class GetTariffResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder addCardTypesBuilder() {
         return getCardTypesFieldBuilder().addBuilder(
             com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder addCardTypesBuilder(
           int index) {
@@ -1748,7 +2482,7 @@ public final class GetTariffResponseProto {
             index, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.CardTypeEntity cardTypes = 7;</code>
+       * <code>repeated .fanxi.CardTypeEntity cardTypes = 9;</code>
        */
       public java.util.List<com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder> 
            getCardTypesBuilderList() {
@@ -1761,7 +2495,7 @@ public final class GetTariffResponseProto {
           cardTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntity.Builder, com.fanxi.service.message.CardTypeEntityProto.CardTypeEntityOrBuilder>(
                   cardTypes_,
-                  ((bitField0_ & 0x00000010) == 0x00000010),
+                  ((bitField0_ & 0x00000040) == 0x00000040),
                   getParentForChildren(),
                   isClean());
           cardTypes_ = null;
@@ -1834,14 +2568,16 @@ public final class GetTariffResponseProto {
       "\n\027GetTariffResponse.proto\022\005fanxi\032\031Restfu" +
       "lBaseResponse.proto\032\025SmsTariffEntity.pro" +
       "to\032\026CardTariffEntity.proto\032\024CardTypeEnti" +
-      "ty.proto\"\330\001\n\021GetTariffResponse\0220\n\014baseRe" +
+      "ty.proto\"\303\002\n\021GetTariffResponse\0220\n\014baseRe" +
       "sponse\030\001 \001(\0132\032.fanxi.RestfulBaseResponse" +
-      "\022\r\n\005tEtag\030\004 \001(\t\022*\n\nsmsTariffs\030\005 \003(\0132\026.fa" +
-      "nxi.SmsTariffEntity\022,\n\013cardTariffs\030\006 \003(\013" +
-      "2\027.fanxi.CardTariffEntity\022(\n\tcardTypes\030\007" +
-      " \003(\0132\025.fanxi.CardTypeEntityB3\n\031com.fanxi" +
-      ".service.messageB\026GetTariffResponseProto",
-      "b\006proto3"
+      "\022\r\n\005tEtag\030\004 \001(\t\0221\n\021smsViettelTariffs\030\005 \003" +
+      "(\0132\026.fanxi.SmsTariffEntity\0222\n\022smsMobifon" +
+      "eTariffs\030\006 \003(\0132\026.fanxi.SmsTariffEntity\022." +
+      "\n\016smsVinaTariffs\030\007 \003(\0132\026.fanxi.SmsTariff" +
+      "Entity\022,\n\013cardTariffs\030\010 \003(\0132\027.fanxi.Card",
+      "TariffEntity\022(\n\tcardTypes\030\t \003(\0132\025.fanxi." +
+      "CardTypeEntityB3\n\031com.fanxi.service.mess" +
+      "ageB\026GetTariffResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1864,7 +2600,7 @@ public final class GetTariffResponseProto {
     internal_static_fanxi_GetTariffResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_GetTariffResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "TEtag", "SmsTariffs", "CardTariffs", "CardTypes", });
+        new java.lang.String[] { "BaseResponse", "TEtag", "SmsViettelTariffs", "SmsMobifoneTariffs", "SmsVinaTariffs", "CardTariffs", "CardTypes", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
     com.fanxi.service.message.SmsTariffEntityProto.getDescriptor();
     com.fanxi.service.message.CardTariffEntityProto.getDescriptor();

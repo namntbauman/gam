@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "CardTypeEntityProto";
+
+message CardTypeEntity{
+	string name=1;
+	string type=2;
+}
+
+
+

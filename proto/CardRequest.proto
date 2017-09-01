@@ -11,6 +11,6 @@ message CardRequest {
    string masothe=12;
    string soseri=13;
    bool isGold=14;
-   
+   string cardType=15;
    
 }

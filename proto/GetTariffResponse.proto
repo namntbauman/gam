@@ -3,15 +3,18 @@ package fanxi;
 import "RestfulBaseResponse.proto";
 import "SmsTariffEntity.proto";
 import "CardTariffEntity.proto";
+import "CardTypeEntity.proto";
 option java_package = "com.fanxi.service.message";
 option java_outer_classname = "GetTariffResponseProto";
 
 message GetTariffResponse{
    RestfulBaseResponse baseResponse=1;
    string tEtag=4;
-   repeated SmsTariffEntity smsTariffs=5;
-   repeated CardTariffEntity cardTariffs=6;
-   
+   repeated SmsTariffEntity smsViettelTariffs=5;
+   repeated SmsTariffEntity smsMobifoneTariffs=6;
+   repeated SmsTariffEntity smsVinaTariffs=7;
+   repeated CardTariffEntity cardTariffs=8;
+   repeated CardTypeEntity cardTypes=9;
 }
 
 

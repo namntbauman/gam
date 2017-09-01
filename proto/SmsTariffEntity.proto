@@ -11,6 +11,7 @@ message SmsTariffEntity{
 	int64 tariff=4;
 	int64 cash=5;
 	bool isGold=6;
+	int32 percent=7;
 }
 
 
