@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "TransferRequestProto";
+
+message TransferRequest {
+   BaseRequest baseReq=1;
+   string captchaToken=10;
+   string variant=11;
+   string toAccount=12;
+   int64 cash=13;
+}

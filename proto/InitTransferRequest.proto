@@ -1,0 +1,11 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "InitTransferRequestProto";
+
+message InitTransferRequest {
+   BaseRequest baseReq=1;
+   
+   
+}
