@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+import "BannerEntity.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "GetBannerResponseProto";
+
+message GetBannerResponse {
+   RestfulBaseResponse baseResponse=1;
+   repeated BannerEntity banners=5;
+}
+
+
+
+
