@@ -1,0 +1,17 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RealTimeCashResponseProto";
+
+message RealTimeCashResponse {
+   BaseResponse baseResponse=1;
+   string userId=4;
+   int64 cash=5;
+   int64 gold=6;
+   string matchId=7;
+}
+
+
+
+

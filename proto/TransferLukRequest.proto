@@ -1,0 +1,14 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "TransferLukRequestProto";
+
+message TransferLukRequest {
+   BaseRequest baseReq=1;
+   int64 cash=10;
+   string matchId=11;
+    string captchaToken=12;
+   string variant=13;
+   
+}
