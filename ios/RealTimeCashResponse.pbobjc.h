@@ -52,7 +52,8 @@ typedef GPB_ENUM(RealTimeCashResponse_FieldNumber) {
   RealTimeCashResponse_FieldNumber_BaseResponse = 1,
   RealTimeCashResponse_FieldNumber_UserId = 4,
   RealTimeCashResponse_FieldNumber_Cash = 5,
-  RealTimeCashResponse_FieldNumber_IsGold = 6,
+  RealTimeCashResponse_FieldNumber_Gold = 6,
+  RealTimeCashResponse_FieldNumber_MatchId = 7,
 };
 
 @interface RealTimeCashResponse : GPBMessage
@@ -65,7 +66,9 @@ typedef GPB_ENUM(RealTimeCashResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int64_t cash;
 
-@property(nonatomic, readwrite) BOOL isGold;
+@property(nonatomic, readwrite) int64_t gold;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *matchId;
 
 @end
 

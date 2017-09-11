@@ -47,9 +47,19 @@ public final class RealTimeCashResponseProto {
     long getCash();
 
     /**
-     * <code>bool isGold = 6;</code>
+     * <code>int64 gold = 6;</code>
      */
-    boolean getIsGold();
+    long getGold();
+
+    /**
+     * <code>string matchId = 7;</code>
+     */
+    java.lang.String getMatchId();
+    /**
+     * <code>string matchId = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getMatchIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.RealTimeCashResponse}
@@ -65,7 +75,8 @@ public final class RealTimeCashResponseProto {
     private RealTimeCashResponse() {
       userId_ = "";
       cash_ = 0L;
-      isGold_ = false;
+      gold_ = 0L;
+      matchId_ = "";
     }
 
     @java.lang.Override
@@ -119,7 +130,13 @@ public final class RealTimeCashResponseProto {
             }
             case 48: {
 
-              isGold_ = input.readBool();
+              gold_ = input.readInt64();
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              matchId_ = s;
               break;
             }
           }
@@ -209,13 +226,47 @@ public final class RealTimeCashResponseProto {
       return cash_;
     }
 
-    public static final int ISGOLD_FIELD_NUMBER = 6;
-    private boolean isGold_;
+    public static final int GOLD_FIELD_NUMBER = 6;
+    private long gold_;
     /**
-     * <code>bool isGold = 6;</code>
+     * <code>int64 gold = 6;</code>
      */
-    public boolean getIsGold() {
-      return isGold_;
+    public long getGold() {
+      return gold_;
+    }
+
+    public static final int MATCHID_FIELD_NUMBER = 7;
+    private volatile java.lang.Object matchId_;
+    /**
+     * <code>string matchId = 7;</code>
+     */
+    public java.lang.String getMatchId() {
+      java.lang.Object ref = matchId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        matchId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string matchId = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMatchIdBytes() {
+      java.lang.Object ref = matchId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        matchId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -239,8 +290,11 @@ public final class RealTimeCashResponseProto {
       if (cash_ != 0L) {
         output.writeInt64(5, cash_);
       }
-      if (isGold_ != false) {
-        output.writeBool(6, isGold_);
+      if (gold_ != 0L) {
+        output.writeInt64(6, gold_);
+      }
+      if (!getMatchIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, matchId_);
       }
     }
 
@@ -260,9 +314,12 @@ public final class RealTimeCashResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(5, cash_);
       }
-      if (isGold_ != false) {
+      if (gold_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, isGold_);
+          .computeInt64Size(6, gold_);
+      }
+      if (!getMatchIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, matchId_);
       }
       memoizedSize = size;
       return size;
@@ -289,8 +346,10 @@ public final class RealTimeCashResponseProto {
           .equals(other.getUserId());
       result = result && (getCash()
           == other.getCash());
-      result = result && (getIsGold()
-          == other.getIsGold());
+      result = result && (getGold()
+          == other.getGold());
+      result = result && getMatchId()
+          .equals(other.getMatchId());
       return result;
     }
 
@@ -310,9 +369,11 @@ public final class RealTimeCashResponseProto {
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
-      hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getIsGold());
+      hash = (37 * hash) + GOLD_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getGold());
+      hash = (37 * hash) + MATCHID_FIELD_NUMBER;
+      hash = (53 * hash) + getMatchId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -441,7 +502,9 @@ public final class RealTimeCashResponseProto {
 
         cash_ = 0L;
 
-        isGold_ = false;
+        gold_ = 0L;
+
+        matchId_ = "";
 
         return this;
       }
@@ -472,7 +535,8 @@ public final class RealTimeCashResponseProto {
         }
         result.userId_ = userId_;
         result.cash_ = cash_;
-        result.isGold_ = isGold_;
+        result.gold_ = gold_;
+        result.matchId_ = matchId_;
         onBuilt();
         return result;
       }
@@ -524,8 +588,12 @@ public final class RealTimeCashResponseProto {
         if (other.getCash() != 0L) {
           setCash(other.getCash());
         }
-        if (other.getIsGold() != false) {
-          setIsGold(other.getIsGold());
+        if (other.getGold() != 0L) {
+          setGold(other.getGold());
+        }
+        if (!other.getMatchId().isEmpty()) {
+          matchId_ = other.matchId_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -765,28 +833,97 @@ public final class RealTimeCashResponseProto {
         return this;
       }
 
-      private boolean isGold_ ;
+      private long gold_ ;
       /**
-       * <code>bool isGold = 6;</code>
+       * <code>int64 gold = 6;</code>
        */
-      public boolean getIsGold() {
-        return isGold_;
+      public long getGold() {
+        return gold_;
       }
       /**
-       * <code>bool isGold = 6;</code>
+       * <code>int64 gold = 6;</code>
        */
-      public Builder setIsGold(boolean value) {
+      public Builder setGold(long value) {
         
-        isGold_ = value;
+        gold_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>bool isGold = 6;</code>
+       * <code>int64 gold = 6;</code>
        */
-      public Builder clearIsGold() {
+      public Builder clearGold() {
         
-        isGold_ = false;
+        gold_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object matchId_ = "";
+      /**
+       * <code>string matchId = 7;</code>
+       */
+      public java.lang.String getMatchId() {
+        java.lang.Object ref = matchId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          matchId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string matchId = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMatchIdBytes() {
+        java.lang.Object ref = matchId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          matchId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string matchId = 7;</code>
+       */
+      public Builder setMatchId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        matchId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string matchId = 7;</code>
+       */
+      public Builder clearMatchId() {
+        
+        matchId_ = getDefaultInstance().getMatchId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string matchId = 7;</code>
+       */
+      public Builder setMatchIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        matchId_ = value;
         onChanged();
         return this;
       }
@@ -854,11 +991,12 @@ public final class RealTimeCashResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032RealTimeCashResponse.proto\022\005fanxi\032\022Bas" +
-      "eResponse.proto\"o\n\024RealTimeCashResponse\022" +
+      "eResponse.proto\"~\n\024RealTimeCashResponse\022" +
       ")\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseRespon" +
-      "se\022\016\n\006userId\030\004 \001(\t\022\014\n\004cash\030\005 \001(\003\022\016\n\006isGo" +
-      "ld\030\006 \001(\010B6\n\031com.fanxi.service.messageB\031R" +
-      "ealTimeCashResponseProtob\006proto3"
+      "se\022\016\n\006userId\030\004 \001(\t\022\014\n\004cash\030\005 \001(\003\022\014\n\004gold" +
+      "\030\006 \001(\003\022\017\n\007matchId\030\007 \001(\tB6\n\031com.fanxi.ser" +
+      "vice.messageB\031RealTimeCashResponseProtob" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -878,7 +1016,7 @@ public final class RealTimeCashResponseProto {
     internal_static_fanxi_RealTimeCashResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RealTimeCashResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "UserId", "Cash", "IsGold", });
+        new java.lang.String[] { "BaseResponse", "UserId", "Cash", "Gold", "MatchId", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 

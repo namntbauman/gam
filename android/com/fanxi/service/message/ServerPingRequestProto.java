@@ -19,7 +19,20 @@ public final class ServerPingRequestProto {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>int64 serverTime = 1;</code>
+     * <code>.fanxi.BaseRequest baseReq = 1;</code>
+     */
+    boolean hasBaseReq();
+    /**
+     * <code>.fanxi.BaseRequest baseReq = 1;</code>
+     */
+    com.fanxi.service.message.BaseRequestProto.BaseRequest getBaseReq();
+    /**
+     * <code>.fanxi.BaseRequest baseReq = 1;</code>
+     */
+    com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder getBaseReqOrBuilder();
+
+    /**
+     * <code>int64 serverTime = 10;</code>
      */
     long getServerTime();
   }
@@ -63,7 +76,20 @@ public final class ServerPingRequestProto {
               }
               break;
             }
-            case 8: {
+            case 10: {
+              com.fanxi.service.message.BaseRequestProto.BaseRequest.Builder subBuilder = null;
+              if (baseReq_ != null) {
+                subBuilder = baseReq_.toBuilder();
+              }
+              baseReq_ = input.readMessage(com.fanxi.service.message.BaseRequestProto.BaseRequest.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(baseReq_);
+                baseReq_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+            case 80: {
 
               serverTime_ = input.readInt64();
               break;
@@ -91,10 +117,31 @@ public final class ServerPingRequestProto {
               com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest.class, com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest.Builder.class);
     }
 
-    public static final int SERVERTIME_FIELD_NUMBER = 1;
+    public static final int BASEREQ_FIELD_NUMBER = 1;
+    private com.fanxi.service.message.BaseRequestProto.BaseRequest baseReq_;
+    /**
+     * <code>.fanxi.BaseRequest baseReq = 1;</code>
+     */
+    public boolean hasBaseReq() {
+      return baseReq_ != null;
+    }
+    /**
+     * <code>.fanxi.BaseRequest baseReq = 1;</code>
+     */
+    public com.fanxi.service.message.BaseRequestProto.BaseRequest getBaseReq() {
+      return baseReq_ == null ? com.fanxi.service.message.BaseRequestProto.BaseRequest.getDefaultInstance() : baseReq_;
+    }
+    /**
+     * <code>.fanxi.BaseRequest baseReq = 1;</code>
+     */
+    public com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder getBaseReqOrBuilder() {
+      return getBaseReq();
+    }
+
+    public static final int SERVERTIME_FIELD_NUMBER = 10;
     private long serverTime_;
     /**
-     * <code>int64 serverTime = 1;</code>
+     * <code>int64 serverTime = 10;</code>
      */
     public long getServerTime() {
       return serverTime_;
@@ -112,8 +159,11 @@ public final class ServerPingRequestProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
+      if (baseReq_ != null) {
+        output.writeMessage(1, getBaseReq());
+      }
       if (serverTime_ != 0L) {
-        output.writeInt64(1, serverTime_);
+        output.writeInt64(10, serverTime_);
       }
     }
 
@@ -122,9 +172,13 @@ public final class ServerPingRequestProto {
       if (size != -1) return size;
 
       size = 0;
+      if (baseReq_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, getBaseReq());
+      }
       if (serverTime_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(1, serverTime_);
+          .computeInt64Size(10, serverTime_);
       }
       memoizedSize = size;
       return size;
@@ -142,6 +196,11 @@ public final class ServerPingRequestProto {
       com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest other = (com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest) obj;
 
       boolean result = true;
+      result = result && (hasBaseReq() == other.hasBaseReq());
+      if (hasBaseReq()) {
+        result = result && getBaseReq()
+            .equals(other.getBaseReq());
+      }
       result = result && (getServerTime()
           == other.getServerTime());
       return result;
@@ -154,6 +213,10 @@ public final class ServerPingRequestProto {
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasBaseReq()) {
+        hash = (37 * hash) + BASEREQ_FIELD_NUMBER;
+        hash = (53 * hash) + getBaseReq().hashCode();
+      }
       hash = (37 * hash) + SERVERTIME_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getServerTime());
@@ -275,6 +338,12 @@ public final class ServerPingRequestProto {
       }
       public Builder clear() {
         super.clear();
+        if (baseReqBuilder_ == null) {
+          baseReq_ = null;
+        } else {
+          baseReq_ = null;
+          baseReqBuilder_ = null;
+        }
         serverTime_ = 0L;
 
         return this;
@@ -299,6 +368,11 @@ public final class ServerPingRequestProto {
 
       public com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest buildPartial() {
         com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest result = new com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest(this);
+        if (baseReqBuilder_ == null) {
+          result.baseReq_ = baseReq_;
+        } else {
+          result.baseReq_ = baseReqBuilder_.build();
+        }
         result.serverTime_ = serverTime_;
         onBuilt();
         return result;
@@ -341,6 +415,9 @@ public final class ServerPingRequestProto {
 
       public Builder mergeFrom(com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest other) {
         if (other == com.fanxi.service.message.ServerPingRequestProto.ServerPingRequest.getDefaultInstance()) return this;
+        if (other.hasBaseReq()) {
+          mergeBaseReq(other.getBaseReq());
+        }
         if (other.getServerTime() != 0L) {
           setServerTime(other.getServerTime());
         }
@@ -370,15 +447,132 @@ public final class ServerPingRequestProto {
         return this;
       }
 
+      private com.fanxi.service.message.BaseRequestProto.BaseRequest baseReq_ = null;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.fanxi.service.message.BaseRequestProto.BaseRequest, com.fanxi.service.message.BaseRequestProto.BaseRequest.Builder, com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder> baseReqBuilder_;
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public boolean hasBaseReq() {
+        return baseReqBuilder_ != null || baseReq_ != null;
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public com.fanxi.service.message.BaseRequestProto.BaseRequest getBaseReq() {
+        if (baseReqBuilder_ == null) {
+          return baseReq_ == null ? com.fanxi.service.message.BaseRequestProto.BaseRequest.getDefaultInstance() : baseReq_;
+        } else {
+          return baseReqBuilder_.getMessage();
+        }
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public Builder setBaseReq(com.fanxi.service.message.BaseRequestProto.BaseRequest value) {
+        if (baseReqBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          baseReq_ = value;
+          onChanged();
+        } else {
+          baseReqBuilder_.setMessage(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public Builder setBaseReq(
+          com.fanxi.service.message.BaseRequestProto.BaseRequest.Builder builderForValue) {
+        if (baseReqBuilder_ == null) {
+          baseReq_ = builderForValue.build();
+          onChanged();
+        } else {
+          baseReqBuilder_.setMessage(builderForValue.build());
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public Builder mergeBaseReq(com.fanxi.service.message.BaseRequestProto.BaseRequest value) {
+        if (baseReqBuilder_ == null) {
+          if (baseReq_ != null) {
+            baseReq_ =
+              com.fanxi.service.message.BaseRequestProto.BaseRequest.newBuilder(baseReq_).mergeFrom(value).buildPartial();
+          } else {
+            baseReq_ = value;
+          }
+          onChanged();
+        } else {
+          baseReqBuilder_.mergeFrom(value);
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public Builder clearBaseReq() {
+        if (baseReqBuilder_ == null) {
+          baseReq_ = null;
+          onChanged();
+        } else {
+          baseReq_ = null;
+          baseReqBuilder_ = null;
+        }
+
+        return this;
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public com.fanxi.service.message.BaseRequestProto.BaseRequest.Builder getBaseReqBuilder() {
+        
+        onChanged();
+        return getBaseReqFieldBuilder().getBuilder();
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      public com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder getBaseReqOrBuilder() {
+        if (baseReqBuilder_ != null) {
+          return baseReqBuilder_.getMessageOrBuilder();
+        } else {
+          return baseReq_ == null ?
+              com.fanxi.service.message.BaseRequestProto.BaseRequest.getDefaultInstance() : baseReq_;
+        }
+      }
+      /**
+       * <code>.fanxi.BaseRequest baseReq = 1;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          com.fanxi.service.message.BaseRequestProto.BaseRequest, com.fanxi.service.message.BaseRequestProto.BaseRequest.Builder, com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder> 
+          getBaseReqFieldBuilder() {
+        if (baseReqBuilder_ == null) {
+          baseReqBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              com.fanxi.service.message.BaseRequestProto.BaseRequest, com.fanxi.service.message.BaseRequestProto.BaseRequest.Builder, com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder>(
+                  getBaseReq(),
+                  getParentForChildren(),
+                  isClean());
+          baseReq_ = null;
+        }
+        return baseReqBuilder_;
+      }
+
       private long serverTime_ ;
       /**
-       * <code>int64 serverTime = 1;</code>
+       * <code>int64 serverTime = 10;</code>
        */
       public long getServerTime() {
         return serverTime_;
       }
       /**
-       * <code>int64 serverTime = 1;</code>
+       * <code>int64 serverTime = 10;</code>
        */
       public Builder setServerTime(long value) {
         
@@ -387,7 +581,7 @@ public final class ServerPingRequestProto {
         return this;
       }
       /**
-       * <code>int64 serverTime = 1;</code>
+       * <code>int64 serverTime = 10;</code>
        */
       public Builder clearServerTime() {
         
@@ -458,10 +652,11 @@ public final class ServerPingRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\027ServerPingRequest.proto\022\005fanxi\"\'\n\021Serv" +
-      "erPingRequest\022\022\n\nserverTime\030\001 \001(\003B3\n\031com" +
-      ".fanxi.service.messageB\026ServerPingReques" +
-      "tProtob\006proto3"
+      "\n\027ServerPingRequest.proto\022\005fanxi\032\021BaseRe" +
+      "quest.proto\"L\n\021ServerPingRequest\022#\n\007base" +
+      "Req\030\001 \001(\0132\022.fanxi.BaseRequest\022\022\n\nserverT" +
+      "ime\030\n \001(\003B3\n\031com.fanxi.service.messageB\026" +
+      "ServerPingRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -474,13 +669,15 @@ public final class ServerPingRequestProto {
     com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
+          com.fanxi.service.message.BaseRequestProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_ServerPingRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_ServerPingRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_ServerPingRequest_descriptor,
-        new java.lang.String[] { "ServerTime", });
+        new java.lang.String[] { "BaseReq", "ServerTime", });
+    com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

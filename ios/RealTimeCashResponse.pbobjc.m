@@ -50,13 +50,16 @@ static GPBFileDescriptor *RealTimeCashResponseRoot_FileDescriptor(void) {
 @dynamic hasBaseResponse, baseResponse;
 @dynamic userId;
 @dynamic cash;
-@dynamic isGold;
+@dynamic gold;
+@dynamic matchId;
 
 typedef struct RealTimeCashResponse__storage_ {
   uint32_t _has_storage_[1];
   BaseResponse *baseResponse;
   NSString *userId;
+  NSString *matchId;
   int64_t cash;
+  int64_t gold;
 } RealTimeCashResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -93,13 +96,22 @@ typedef struct RealTimeCashResponse__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
-        .name = "isGold",
+        .name = "gold",
         .dataTypeSpecific.className = NULL,
-        .number = RealTimeCashResponse_FieldNumber_IsGold,
+        .number = RealTimeCashResponse_FieldNumber_Gold,
         .hasIndex = 3,
-        .offset = 4,  // Stored in _has_storage_ to save space.
+        .offset = (uint32_t)offsetof(RealTimeCashResponse__storage_, gold),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "matchId",
+        .dataTypeSpecific.className = NULL,
+        .number = RealTimeCashResponse_FieldNumber_MatchId,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(RealTimeCashResponse__storage_, matchId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeBool,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =
@@ -112,7 +124,7 @@ typedef struct RealTimeCashResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\004\006\000\006\006\000";
+        "\003\001\014\000\004\006\000\007\007\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

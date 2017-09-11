@@ -27,6 +27,8 @@
 
 CF_EXTERN_C_BEGIN
 
+@class BaseRequest;
+
 NS_ASSUME_NONNULL_BEGIN
 
 #pragma mark - ServerPingRequestRoot
@@ -47,10 +49,15 @@ NS_ASSUME_NONNULL_BEGIN
 #pragma mark - ServerPingRequest
 
 typedef GPB_ENUM(ServerPingRequest_FieldNumber) {
-  ServerPingRequest_FieldNumber_ServerTime = 1,
+  ServerPingRequest_FieldNumber_BaseReq = 1,
+  ServerPingRequest_FieldNumber_ServerTime = 10,
 };
 
 @interface ServerPingRequest : GPBMessage
+
+@property(nonatomic, readwrite, strong, null_resettable) BaseRequest *baseReq;
+/** Test to see if @c baseReq has been set. */
+@property(nonatomic, readwrite) BOOL hasBaseReq;
 
 @property(nonatomic, readwrite) int64_t serverTime;
 

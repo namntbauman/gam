@@ -14,6 +14,7 @@
 #endif
 
  #import "ServerPingRequest.pbobjc.h"
+ #import "BaseRequest.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -23,8 +24,8 @@
 
 @implementation ServerPingRequestRoot
 
-// No extensions in the file and no imports, so no need to generate
-// +extensionRegistry.
+// No extensions in the file and none of the imports (direct or indirect)
+// defined extensions, so no need to generate +extensionRegistry.
 
 @end
 
@@ -46,10 +47,12 @@ static GPBFileDescriptor *ServerPingRequestRoot_FileDescriptor(void) {
 
 @implementation ServerPingRequest
 
+@dynamic hasBaseReq, baseReq;
 @dynamic serverTime;
 
 typedef struct ServerPingRequest__storage_ {
   uint32_t _has_storage_[1];
+  BaseRequest *baseReq;
   int64_t serverTime;
 } ServerPingRequest__storage_;
 
@@ -60,10 +63,19 @@ typedef struct ServerPingRequest__storage_ {
   if (!descriptor) {
     static GPBMessageFieldDescription fields[] = {
       {
+        .name = "baseReq",
+        .dataTypeSpecific.className = GPBStringifySymbol(BaseRequest),
+        .number = ServerPingRequest_FieldNumber_BaseReq,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ServerPingRequest__storage_, baseReq),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
+      {
         .name = "serverTime",
         .dataTypeSpecific.className = NULL,
         .number = ServerPingRequest_FieldNumber_ServerTime,
-        .hasIndex = 0,
+        .hasIndex = 1,
         .offset = (uint32_t)offsetof(ServerPingRequest__storage_, serverTime),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt64,
@@ -79,7 +91,7 @@ typedef struct ServerPingRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\001\n\000";
+        "\002\001\007\000\n\n\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
