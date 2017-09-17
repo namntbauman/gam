@@ -56,6 +56,7 @@ static GPBFileDescriptor *UserDetailRoot_FileDescriptor(void) {
 @dynamic cash;
 @dynamic gold;
 @dynamic facebookId;
+@dynamic email;
 
 typedef struct UserDetail__storage_ {
   uint32_t _has_storage_[1];
@@ -67,6 +68,7 @@ typedef struct UserDetail__storage_ {
   NSString *server;
   NSString *avatarURL;
   NSString *facebookId;
+  NSString *email;
   int64_t cash;
   int64_t gold;
 } UserDetail__storage_;
@@ -165,6 +167,15 @@ typedef struct UserDetail__storage_ {
         .hasIndex = 9,
         .offset = (uint32_t)offsetof(UserDetail__storage_, facebookId),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "email",
+        .dataTypeSpecific.className = NULL,
+        .number = UserDetail_FieldNumber_Email,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(UserDetail__storage_, email),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };
