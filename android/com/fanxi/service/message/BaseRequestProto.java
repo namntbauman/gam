@@ -97,6 +97,31 @@ public final class BaseRequestProto {
      */
     com.google.protobuf.ByteString
         getDeviceIdBytes();
+
+    /**
+     * <code>string version = 10;</code>
+     */
+    java.lang.String getVersion();
+    /**
+     * <code>string version = 10;</code>
+     */
+    com.google.protobuf.ByteString
+        getVersionBytes();
+
+    /**
+     * <code>string additionalInfo = 11;</code>
+     */
+    java.lang.String getAdditionalInfo();
+    /**
+     * <code>string additionalInfo = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdditionalInfoBytes();
+
+    /**
+     * <code>int32 partnerId = 12;</code>
+     */
+    int getPartnerId();
   }
   /**
    * Protobuf type {@code fanxi.BaseRequest}
@@ -119,6 +144,9 @@ public final class BaseRequestProto {
       mid_ = 0;
       lang_ = "";
       deviceId_ = "";
+      version_ = "";
+      additionalInfo_ = "";
+      partnerId_ = 0;
     }
 
     @java.lang.Override
@@ -196,6 +224,23 @@ public final class BaseRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               deviceId_ = s;
+              break;
+            }
+            case 82: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
+            }
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              additionalInfo_ = s;
+              break;
+            }
+            case 96: {
+
+              partnerId_ = input.readInt32();
               break;
             }
           }
@@ -477,6 +522,83 @@ public final class BaseRequestProto {
       }
     }
 
+    public static final int VERSION_FIELD_NUMBER = 10;
+    private volatile java.lang.Object version_;
+    /**
+     * <code>string version = 10;</code>
+     */
+    public java.lang.String getVersion() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        version_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string version = 10;</code>
+     */
+    public com.google.protobuf.ByteString
+        getVersionBytes() {
+      java.lang.Object ref = version_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        version_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDITIONALINFO_FIELD_NUMBER = 11;
+    private volatile java.lang.Object additionalInfo_;
+    /**
+     * <code>string additionalInfo = 11;</code>
+     */
+    public java.lang.String getAdditionalInfo() {
+      java.lang.Object ref = additionalInfo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        additionalInfo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string additionalInfo = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalInfoBytes() {
+      java.lang.Object ref = additionalInfo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        additionalInfo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int PARTNERID_FIELD_NUMBER = 12;
+    private int partnerId_;
+    /**
+     * <code>int32 partnerId = 12;</code>
+     */
+    public int getPartnerId() {
+      return partnerId_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -516,6 +638,15 @@ public final class BaseRequestProto {
       if (!getDeviceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 9, deviceId_);
       }
+      if (!getVersionBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 10, version_);
+      }
+      if (!getAdditionalInfoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, additionalInfo_);
+      }
+      if (partnerId_ != 0) {
+        output.writeInt32(12, partnerId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -552,6 +683,16 @@ public final class BaseRequestProto {
       if (!getDeviceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, deviceId_);
       }
+      if (!getVersionBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, version_);
+      }
+      if (!getAdditionalInfoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, additionalInfo_);
+      }
+      if (partnerId_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(12, partnerId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -586,6 +727,12 @@ public final class BaseRequestProto {
           .equals(other.getLang());
       result = result && getDeviceId()
           .equals(other.getDeviceId());
+      result = result && getVersion()
+          .equals(other.getVersion());
+      result = result && getAdditionalInfo()
+          .equals(other.getAdditionalInfo());
+      result = result && (getPartnerId()
+          == other.getPartnerId());
       return result;
     }
 
@@ -614,6 +761,12 @@ public final class BaseRequestProto {
       hash = (53 * hash) + getLang().hashCode();
       hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + VERSION_FIELD_NUMBER;
+      hash = (53 * hash) + getVersion().hashCode();
+      hash = (37 * hash) + ADDITIONALINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalInfo().hashCode();
+      hash = (37 * hash) + PARTNERID_FIELD_NUMBER;
+      hash = (53 * hash) + getPartnerId();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -750,6 +903,12 @@ public final class BaseRequestProto {
 
         deviceId_ = "";
 
+        version_ = "";
+
+        additionalInfo_ = "";
+
+        partnerId_ = 0;
+
         return this;
       }
 
@@ -781,6 +940,9 @@ public final class BaseRequestProto {
         result.mid_ = mid_;
         result.lang_ = lang_;
         result.deviceId_ = deviceId_;
+        result.version_ = version_;
+        result.additionalInfo_ = additionalInfo_;
+        result.partnerId_ = partnerId_;
         onBuilt();
         return result;
       }
@@ -855,6 +1017,17 @@ public final class BaseRequestProto {
         if (!other.getDeviceId().isEmpty()) {
           deviceId_ = other.deviceId_;
           onChanged();
+        }
+        if (!other.getVersion().isEmpty()) {
+          version_ = other.version_;
+          onChanged();
+        }
+        if (!other.getAdditionalInfo().isEmpty()) {
+          additionalInfo_ = other.additionalInfo_;
+          onChanged();
+        }
+        if (other.getPartnerId() != 0) {
+          setPartnerId(other.getPartnerId());
         }
         onChanged();
         return this;
@@ -1416,6 +1589,170 @@ public final class BaseRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object version_ = "";
+      /**
+       * <code>string version = 10;</code>
+       */
+      public java.lang.String getVersion() {
+        java.lang.Object ref = version_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          version_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string version = 10;</code>
+       */
+      public com.google.protobuf.ByteString
+          getVersionBytes() {
+        java.lang.Object ref = version_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          version_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string version = 10;</code>
+       */
+      public Builder setVersion(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        version_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 10;</code>
+       */
+      public Builder clearVersion() {
+        
+        version_ = getDefaultInstance().getVersion();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string version = 10;</code>
+       */
+      public Builder setVersionBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        version_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object additionalInfo_ = "";
+      /**
+       * <code>string additionalInfo = 11;</code>
+       */
+      public java.lang.String getAdditionalInfo() {
+        java.lang.Object ref = additionalInfo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          additionalInfo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string additionalInfo = 11;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdditionalInfoBytes() {
+        java.lang.Object ref = additionalInfo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          additionalInfo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string additionalInfo = 11;</code>
+       */
+      public Builder setAdditionalInfo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        additionalInfo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string additionalInfo = 11;</code>
+       */
+      public Builder clearAdditionalInfo() {
+        
+        additionalInfo_ = getDefaultInstance().getAdditionalInfo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string additionalInfo = 11;</code>
+       */
+      public Builder setAdditionalInfoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        additionalInfo_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int partnerId_ ;
+      /**
+       * <code>int32 partnerId = 12;</code>
+       */
+      public int getPartnerId() {
+        return partnerId_;
+      }
+      /**
+       * <code>int32 partnerId = 12;</code>
+       */
+      public Builder setPartnerId(int value) {
+        
+        partnerId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 partnerId = 12;</code>
+       */
+      public Builder clearPartnerId() {
+        
+        partnerId_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1479,13 +1816,14 @@ public final class BaseRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BaseRequest.proto\022\005fanxi\"\237\001\n\013BaseReque" +
+      "\n\021BaseRequest.proto\022\005fanxi\"\333\001\n\013BaseReque" +
       "st\022\022\n\ndeviceType\030\001 \001(\005\022\014\n\004imei\030\002 \001(\t\022\r\n\005" +
       "nonce\030\003 \001(\t\022\023\n\013deviceModel\030\004 \001(\t\022\r\n\005toke" +
       "n\030\005 \001(\t\022\016\n\006userId\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005\022\014\n\004" +
-      "lang\030\010 \001(\t\022\020\n\010deviceId\030\t \001(\tB-\n\031com.fanx" +
-      "i.service.messageB\020BaseRequestProtob\006pro" +
-      "to3"
+      "lang\030\010 \001(\t\022\020\n\010deviceId\030\t \001(\t\022\017\n\007version\030" +
+      "\n \001(\t\022\026\n\016additionalInfo\030\013 \001(\t\022\021\n\tpartner" +
+      "Id\030\014 \001(\005B-\n\031com.fanxi.service.messageB\020B" +
+      "aseRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1504,7 +1842,7 @@ public final class BaseRequestProto {
     internal_static_fanxi_BaseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BaseRequest_descriptor,
-        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", "DeviceId", });
+        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", "DeviceId", "Version", "AdditionalInfo", "PartnerId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

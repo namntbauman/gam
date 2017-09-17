@@ -117,6 +117,16 @@ public final class RestfulBaseRequestProto {
      */
     com.google.protobuf.ByteString
         getDeviceIdBytes();
+
+    /**
+     * <code>string additionalInfo = 13;</code>
+     */
+    java.lang.String getAdditionalInfo();
+    /**
+     * <code>string additionalInfo = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdditionalInfoBytes();
   }
   /**
    * Protobuf type {@code fanxi.RestfulBaseRequest}
@@ -142,6 +152,7 @@ public final class RestfulBaseRequestProto {
       mid_ = 0;
       lang_ = "";
       deviceId_ = "";
+      additionalInfo_ = "";
     }
 
     @java.lang.Override
@@ -235,6 +246,12 @@ public final class RestfulBaseRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               deviceId_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              additionalInfo_ = s;
               break;
             }
           }
@@ -568,6 +585,40 @@ public final class RestfulBaseRequestProto {
       }
     }
 
+    public static final int ADDITIONALINFO_FIELD_NUMBER = 13;
+    private volatile java.lang.Object additionalInfo_;
+    /**
+     * <code>string additionalInfo = 13;</code>
+     */
+    public java.lang.String getAdditionalInfo() {
+      java.lang.Object ref = additionalInfo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        additionalInfo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string additionalInfo = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalInfoBytes() {
+      java.lang.Object ref = additionalInfo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        additionalInfo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -616,6 +667,9 @@ public final class RestfulBaseRequestProto {
       if (!getDeviceIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, deviceId_);
       }
+      if (!getAdditionalInfoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, additionalInfo_);
+      }
     }
 
     public int getSerializedSize() {
@@ -663,6 +717,9 @@ public final class RestfulBaseRequestProto {
       if (!getDeviceIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, deviceId_);
       }
+      if (!getAdditionalInfoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, additionalInfo_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -703,6 +760,8 @@ public final class RestfulBaseRequestProto {
           .equals(other.getLang());
       result = result && getDeviceId()
           .equals(other.getDeviceId());
+      result = result && getAdditionalInfo()
+          .equals(other.getAdditionalInfo());
       return result;
     }
 
@@ -738,6 +797,8 @@ public final class RestfulBaseRequestProto {
       hash = (53 * hash) + getLang().hashCode();
       hash = (37 * hash) + DEVICEID_FIELD_NUMBER;
       hash = (53 * hash) + getDeviceId().hashCode();
+      hash = (37 * hash) + ADDITIONALINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalInfo().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -880,6 +941,8 @@ public final class RestfulBaseRequestProto {
 
         deviceId_ = "";
 
+        additionalInfo_ = "";
+
         return this;
       }
 
@@ -914,6 +977,7 @@ public final class RestfulBaseRequestProto {
         result.mid_ = mid_;
         result.lang_ = lang_;
         result.deviceId_ = deviceId_;
+        result.additionalInfo_ = additionalInfo_;
         onBuilt();
         return result;
       }
@@ -997,6 +1061,10 @@ public final class RestfulBaseRequestProto {
         }
         if (!other.getDeviceId().isEmpty()) {
           deviceId_ = other.deviceId_;
+          onChanged();
+        }
+        if (!other.getAdditionalInfo().isEmpty()) {
+          additionalInfo_ = other.additionalInfo_;
           onChanged();
         }
         onChanged();
@@ -1680,6 +1748,75 @@ public final class RestfulBaseRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object additionalInfo_ = "";
+      /**
+       * <code>string additionalInfo = 13;</code>
+       */
+      public java.lang.String getAdditionalInfo() {
+        java.lang.Object ref = additionalInfo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          additionalInfo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string additionalInfo = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdditionalInfoBytes() {
+        java.lang.Object ref = additionalInfo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          additionalInfo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string additionalInfo = 13;</code>
+       */
+      public Builder setAdditionalInfo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        additionalInfo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string additionalInfo = 13;</code>
+       */
+      public Builder clearAdditionalInfo() {
+        
+        additionalInfo_ = getDefaultInstance().getAdditionalInfo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string additionalInfo = 13;</code>
+       */
+      public Builder setAdditionalInfoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        additionalInfo_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1743,15 +1880,15 @@ public final class RestfulBaseRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\030RestfulBaseRequest.proto\022\005fanxi\"\345\001\n\022Re" +
+      "\n\030RestfulBaseRequest.proto\022\005fanxi\"\375\001\n\022Re" +
       "stfulBaseRequest\022\017\n\007version\030\001 \001(\t\022\022\n\ndev" +
       "iceType\030\002 \001(\005\022\014\n\004imei\030\003 \001(\t\022\016\n\006isRoot\030\004 " +
       "\001(\010\022\023\n\013requestTime\030\005 \001(\005\022\r\n\005nonce\030\006 \001(\t\022" +
       "\023\n\013deviceModel\030\007 \001(\t\022\022\n\nscreenSize\030\010 \001(\t" +
       "\022\022\n\nsdkVersion\030\t \001(\t\022\013\n\003mid\030\n \001(\005\022\014\n\004lan" +
-      "g\030\013 \001(\t\022\020\n\010deviceId\030\014 \001(\tB4\n\031com.fanxi.s" +
-      "ervice.messageB\027RestfulBaseRequestProtob" +
-      "\006proto3"
+      "g\030\013 \001(\t\022\020\n\010deviceId\030\014 \001(\t\022\026\n\016additionalI" +
+      "nfo\030\r \001(\tB4\n\031com.fanxi.service.messageB\027" +
+      "RestfulBaseRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1770,7 +1907,7 @@ public final class RestfulBaseRequestProto {
     internal_static_fanxi_RestfulBaseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RestfulBaseRequest_descriptor,
-        new java.lang.String[] { "Version", "DeviceType", "Imei", "IsRoot", "RequestTime", "Nonce", "DeviceModel", "ScreenSize", "SdkVersion", "Mid", "Lang", "DeviceId", });
+        new java.lang.String[] { "Version", "DeviceType", "Imei", "IsRoot", "RequestTime", "Nonce", "DeviceModel", "ScreenSize", "SdkVersion", "Mid", "Lang", "DeviceId", "AdditionalInfo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -17,4 +17,5 @@ message RestfulBaseRequest{
     int32 mid =10;
 	string lang=11;
 	string deviceId=12;
+	string additionalInfo=13;
 }
