@@ -50,6 +50,7 @@ typedef GPB_ENUM(BaseResponse_FieldNumber) {
   BaseResponse_FieldNumber_Mid = 1,
   BaseResponse_FieldNumber_Code = 2,
   BaseResponse_FieldNumber_Des = 3,
+  BaseResponse_FieldNumber_AdditionalInfo = 4,
 };
 
 @interface BaseResponse : GPBMessage
@@ -59,6 +60,8 @@ typedef GPB_ENUM(BaseResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t code;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *des;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *additionalInfo;
 
 @end
 

@@ -57,6 +57,7 @@ static GPBFileDescriptor *BetResponseRoot_FileDescriptor(void) {
 @dynamic allTotalCall;
 @dynamic uid;
 @dynamic numWhite;
+@dynamic autoTime;
 @dynamic hasCurrUser, currUser;
 @dynamic hasNextUser, nextUser;
 @dynamic refundUsersArray, refundUsersArray_Count;
@@ -67,6 +68,7 @@ typedef struct BetResponse__storage_ {
   int32_t tableIndex;
   int32_t typeTo;
   int32_t numWhite;
+  int32_t autoTime;
   BaseResponse *baseResponse;
   NSString *matchId;
   NSString *uid;
@@ -165,10 +167,19 @@ typedef struct BetResponse__storage_ {
         .dataType = GPBDataTypeInt32,
       },
       {
+        .name = "autoTime",
+        .dataTypeSpecific.className = NULL,
+        .number = BetResponse_FieldNumber_AutoTime,
+        .hasIndex = 9,
+        .offset = (uint32_t)offsetof(BetResponse__storage_, autoTime),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
+      {
         .name = "currUser",
         .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
         .number = BetResponse_FieldNumber_CurrUser,
-        .hasIndex = 9,
+        .hasIndex = 10,
         .offset = (uint32_t)offsetof(BetResponse__storage_, currUser),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
@@ -177,7 +188,7 @@ typedef struct BetResponse__storage_ {
         .name = "nextUser",
         .dataTypeSpecific.className = GPBStringifySymbol(UserTo),
         .number = BetResponse_FieldNumber_NextUser,
-        .hasIndex = 10,
+        .hasIndex = 11,
         .offset = (uint32_t)offsetof(BetResponse__storage_, nextUser),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
@@ -202,8 +213,8 @@ typedef struct BetResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\n\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000\t\014\000\013\010\000\014\010\000\r\010\000\016\000refundUser"
-        "s\000";
+        "\013\001\014\000\004\006\000\005\n\000\006\007\000\010\006\000\t\014\000\013\010\000\014\010\000\r\010\000\016\010\000\017\000refundU"
+        "sers\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

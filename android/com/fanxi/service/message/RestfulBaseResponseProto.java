@@ -37,6 +37,16 @@ public final class RestfulBaseResponseProto {
      */
     com.google.protobuf.ByteString
         getDesBytes();
+
+    /**
+     * <code>string additionalInfo = 4;</code>
+     */
+    java.lang.String getAdditionalInfo();
+    /**
+     * <code>string additionalInfo = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getAdditionalInfoBytes();
   }
   /**
    * Protobuf type {@code fanxi.RestfulBaseResponse}
@@ -53,6 +63,7 @@ public final class RestfulBaseResponseProto {
       mid_ = 0;
       code_ = 0;
       des_ = "";
+      additionalInfo_ = "";
     }
 
     @java.lang.Override
@@ -94,6 +105,12 @@ public final class RestfulBaseResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               des_ = s;
+              break;
+            }
+            case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              additionalInfo_ = s;
               break;
             }
           }
@@ -171,6 +188,40 @@ public final class RestfulBaseResponseProto {
       }
     }
 
+    public static final int ADDITIONALINFO_FIELD_NUMBER = 4;
+    private volatile java.lang.Object additionalInfo_;
+    /**
+     * <code>string additionalInfo = 4;</code>
+     */
+    public java.lang.String getAdditionalInfo() {
+      java.lang.Object ref = additionalInfo_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        additionalInfo_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string additionalInfo = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAdditionalInfoBytes() {
+      java.lang.Object ref = additionalInfo_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        additionalInfo_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -192,6 +243,9 @@ public final class RestfulBaseResponseProto {
       if (!getDesBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, des_);
       }
+      if (!getAdditionalInfoBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, additionalInfo_);
+      }
     }
 
     public int getSerializedSize() {
@@ -209,6 +263,9 @@ public final class RestfulBaseResponseProto {
       }
       if (!getDesBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, des_);
+      }
+      if (!getAdditionalInfoBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, additionalInfo_);
       }
       memoizedSize = size;
       return size;
@@ -232,6 +289,8 @@ public final class RestfulBaseResponseProto {
           == other.getCode());
       result = result && getDes()
           .equals(other.getDes());
+      result = result && getAdditionalInfo()
+          .equals(other.getAdditionalInfo());
       return result;
     }
 
@@ -248,6 +307,8 @@ public final class RestfulBaseResponseProto {
       hash = (53 * hash) + getCode();
       hash = (37 * hash) + DES_FIELD_NUMBER;
       hash = (53 * hash) + getDes().hashCode();
+      hash = (37 * hash) + ADDITIONALINFO_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalInfo().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -372,6 +433,8 @@ public final class RestfulBaseResponseProto {
 
         des_ = "";
 
+        additionalInfo_ = "";
+
         return this;
       }
 
@@ -397,6 +460,7 @@ public final class RestfulBaseResponseProto {
         result.mid_ = mid_;
         result.code_ = code_;
         result.des_ = des_;
+        result.additionalInfo_ = additionalInfo_;
         onBuilt();
         return result;
       }
@@ -446,6 +510,10 @@ public final class RestfulBaseResponseProto {
         }
         if (!other.getDes().isEmpty()) {
           des_ = other.des_;
+          onChanged();
+        }
+        if (!other.getAdditionalInfo().isEmpty()) {
+          additionalInfo_ = other.additionalInfo_;
           onChanged();
         }
         onChanged();
@@ -594,6 +662,75 @@ public final class RestfulBaseResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object additionalInfo_ = "";
+      /**
+       * <code>string additionalInfo = 4;</code>
+       */
+      public java.lang.String getAdditionalInfo() {
+        java.lang.Object ref = additionalInfo_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          additionalInfo_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string additionalInfo = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAdditionalInfoBytes() {
+        java.lang.Object ref = additionalInfo_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          additionalInfo_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string additionalInfo = 4;</code>
+       */
+      public Builder setAdditionalInfo(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        additionalInfo_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string additionalInfo = 4;</code>
+       */
+      public Builder clearAdditionalInfo() {
+        
+        additionalInfo_ = getDefaultInstance().getAdditionalInfo();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string additionalInfo = 4;</code>
+       */
+      public Builder setAdditionalInfoBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        additionalInfo_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -657,10 +794,11 @@ public final class RestfulBaseResponseProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\031RestfulBaseResponse.proto\022\005fanxi\"=\n\023Re" +
+      "\n\031RestfulBaseResponse.proto\022\005fanxi\"U\n\023Re" +
       "stfulBaseResponse\022\013\n\003mid\030\001 \001(\005\022\014\n\004code\030\002" +
-      " \001(\005\022\013\n\003des\030\003 \001(\tB5\n\031com.fanxi.service.m" +
-      "essageB\030RestfulBaseResponseProtob\006proto3"
+      " \001(\005\022\013\n\003des\030\003 \001(\t\022\026\n\016additionalInfo\030\004 \001(" +
+      "\tB5\n\031com.fanxi.service.messageB\030RestfulB" +
+      "aseResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -679,7 +817,7 @@ public final class RestfulBaseResponseProto {
     internal_static_fanxi_RestfulBaseResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RestfulBaseResponse_descriptor,
-        new java.lang.String[] { "Mid", "Code", "Des", });
+        new java.lang.String[] { "Mid", "Code", "Des", "AdditionalInfo", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

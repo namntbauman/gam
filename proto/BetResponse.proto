@@ -15,9 +15,10 @@ message BetResponse {
    int64 allTotalCall=9;
    string uid=10;
    int32 numWhite=11;
-   UserTo currUser=12;
-   UserTo nextUser=13;
-   repeated UserTo refundUsers=14;
+   int32 autoTime=12;
+   UserTo currUser=13;
+   UserTo nextUser=14;
+   repeated UserTo refundUsers=15;
    
 }
 

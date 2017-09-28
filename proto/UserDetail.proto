@@ -15,7 +15,7 @@ message UserDetail{
 	int64 cash=8;
 	int64 gold=9;
 	string facebookId=10;
-	
+	string email =11;
 }
 
 

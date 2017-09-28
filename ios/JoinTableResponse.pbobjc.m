@@ -61,6 +61,7 @@ static GPBFileDescriptor *JoinTableResponseRoot_FileDescriptor(void) {
 @dynamic ownerId;
 @dynamic timeAuto;
 @dynamic reference;
+@dynamic info;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct JoinTableResponse__storage_ {
@@ -75,6 +76,7 @@ typedef struct JoinTableResponse__storage_ {
   NSString *currTurn;
   NSString *cards;
   NSString *ownerId;
+  NSString *info;
   NSMutableArray *playersArray;
   int64_t reference;
 } JoinTableResponse__storage_;
@@ -201,6 +203,15 @@ typedef struct JoinTableResponse__storage_ {
         .offset = (uint32_t)offsetof(JoinTableResponse__storage_, reference),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "info",
+        .dataTypeSpecific.className = NULL,
+        .number = JoinTableResponse_FieldNumber_Info,
+        .hasIndex = 15,
+        .offset = (uint32_t)offsetof(JoinTableResponse__storage_, info),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "playersArray",

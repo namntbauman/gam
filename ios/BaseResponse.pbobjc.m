@@ -49,12 +49,14 @@ static GPBFileDescriptor *BaseResponseRoot_FileDescriptor(void) {
 @dynamic mid;
 @dynamic code;
 @dynamic des;
+@dynamic additionalInfo;
 
 typedef struct BaseResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t mid;
   int32_t code;
   NSString *des;
+  NSString *additionalInfo;
 } BaseResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -90,6 +92,15 @@ typedef struct BaseResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "additionalInfo",
+        .dataTypeSpecific.className = NULL,
+        .number = BaseResponse_FieldNumber_AdditionalInfo,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(BaseResponse__storage_, additionalInfo),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[BaseResponse class]
@@ -99,6 +110,11 @@ typedef struct BaseResponse__storage_ {
                                     fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
                                    storageSize:sizeof(BaseResponse__storage_)
                                          flags:GPBDescriptorInitializationFlag_None];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\001\004\016\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
     descriptor = localDescriptor;
   }

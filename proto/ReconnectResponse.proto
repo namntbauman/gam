@@ -19,7 +19,8 @@ message ReconnectResponse {
    string currUserDuty=13;
    int32 dutyType=14;
    int32 deck=15;
-   repeated Player players=16;
+   string info=16;
+   repeated Player players=17;
 }
 
 

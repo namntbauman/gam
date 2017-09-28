@@ -7,6 +7,7 @@ message BaseResponse {
     int32 mid =1;
     int32 code = 2;
     string des=3;
+	string additionalInfo=4;
 }
 
 

@@ -61,6 +61,7 @@ static GPBFileDescriptor *ReconnectResponseRoot_FileDescriptor(void) {
 @dynamic currUserDuty;
 @dynamic dutyType;
 @dynamic deck;
+@dynamic info;
 @dynamic playersArray, playersArray_Count;
 
 typedef struct ReconnectResponse__storage_ {
@@ -76,6 +77,7 @@ typedef struct ReconnectResponse__storage_ {
   NSString *cards;
   NSString *myCards;
   NSString *currUserDuty;
+  NSString *info;
   NSMutableArray *playersArray;
 } ReconnectResponse__storage_;
 
@@ -201,6 +203,15 @@ typedef struct ReconnectResponse__storage_ {
         .offset = (uint32_t)offsetof(ReconnectResponse__storage_, deck),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "info",
+        .dataTypeSpecific.className = NULL,
+        .number = ReconnectResponse_FieldNumber_Info,
+        .hasIndex = 15,
+        .offset = (uint32_t)offsetof(ReconnectResponse__storage_, info),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "playersArray",
