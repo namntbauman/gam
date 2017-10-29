@@ -58,6 +58,7 @@ typedef GPB_ENUM(UserDetail_FieldNumber) {
   UserDetail_FieldNumber_Gold = 9,
   UserDetail_FieldNumber_FacebookId = 10,
   UserDetail_FieldNumber_Email = 11,
+  UserDetail_FieldNumber_Phone = 12,
 };
 
 @interface UserDetail : GPBMessage
@@ -83,6 +84,8 @@ typedef GPB_ENUM(UserDetail_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *facebookId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *email;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
 
 @end
 

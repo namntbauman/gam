@@ -112,6 +112,16 @@ public final class UserDetailProto {
      */
     com.google.protobuf.ByteString
         getEmailBytes();
+
+    /**
+     * <code>string phone = 12;</code>
+     */
+    java.lang.String getPhone();
+    /**
+     * <code>string phone = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getPhoneBytes();
   }
   /**
    * Protobuf type {@code fanxi.UserDetail}
@@ -136,6 +146,7 @@ public final class UserDetailProto {
       gold_ = 0L;
       facebookId_ = "";
       email_ = "";
+      phone_ = "";
     }
 
     @java.lang.Override
@@ -224,6 +235,12 @@ public final class UserDetailProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               email_ = s;
+              break;
+            }
+            case 98: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              phone_ = s;
               break;
             }
           }
@@ -548,6 +565,40 @@ public final class UserDetailProto {
       }
     }
 
+    public static final int PHONE_FIELD_NUMBER = 12;
+    private volatile java.lang.Object phone_;
+    /**
+     * <code>string phone = 12;</code>
+     */
+    public java.lang.String getPhone() {
+      java.lang.Object ref = phone_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        phone_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string phone = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPhoneBytes() {
+      java.lang.Object ref = phone_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        phone_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -593,6 +644,9 @@ public final class UserDetailProto {
       if (!getEmailBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 11, email_);
       }
+      if (!getPhoneBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, phone_);
+      }
     }
 
     public int getSerializedSize() {
@@ -636,6 +690,9 @@ public final class UserDetailProto {
       if (!getEmailBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, email_);
       }
+      if (!getPhoneBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, phone_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -674,6 +731,8 @@ public final class UserDetailProto {
           .equals(other.getFacebookId());
       result = result && getEmail()
           .equals(other.getEmail());
+      result = result && getPhone()
+          .equals(other.getPhone());
       return result;
     }
 
@@ -708,6 +767,8 @@ public final class UserDetailProto {
       hash = (53 * hash) + getFacebookId().hashCode();
       hash = (37 * hash) + EMAIL_FIELD_NUMBER;
       hash = (53 * hash) + getEmail().hashCode();
+      hash = (37 * hash) + PHONE_FIELD_NUMBER;
+      hash = (53 * hash) + getPhone().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -848,6 +909,8 @@ public final class UserDetailProto {
 
         email_ = "";
 
+        phone_ = "";
+
         return this;
       }
 
@@ -881,6 +944,7 @@ public final class UserDetailProto {
         result.gold_ = gold_;
         result.facebookId_ = facebookId_;
         result.email_ = email_;
+        result.phone_ = phone_;
         onBuilt();
         return result;
       }
@@ -961,6 +1025,10 @@ public final class UserDetailProto {
         }
         if (!other.getEmail().isEmpty()) {
           email_ = other.email_;
+          onChanged();
+        }
+        if (!other.getPhone().isEmpty()) {
+          phone_ = other.phone_;
           onChanged();
         }
         onChanged();
@@ -1618,6 +1686,75 @@ public final class UserDetailProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object phone_ = "";
+      /**
+       * <code>string phone = 12;</code>
+       */
+      public java.lang.String getPhone() {
+        java.lang.Object ref = phone_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          phone_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string phone = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPhoneBytes() {
+        java.lang.Object ref = phone_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          phone_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string phone = 12;</code>
+       */
+      public Builder setPhone(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        phone_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string phone = 12;</code>
+       */
+      public Builder clearPhone() {
+        
+        phone_ = getDefaultInstance().getPhone();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string phone = 12;</code>
+       */
+      public Builder setPhoneBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        phone_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1681,13 +1818,14 @@ public final class UserDetailProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020UserDetail.proto\022\005fanxi\"\302\001\n\nUserDetail" +
+      "\n\020UserDetail.proto\022\005fanxi\"\321\001\n\nUserDetail" +
       "\022\016\n\006userId\030\001 \001(\t\022\014\n\004type\030\002 \001(\005\022\020\n\010userNa" +
       "me\030\003 \001(\t\022\023\n\013displayName\030\004 \001(\t\022\r\n\005token\030\005" +
       " \001(\t\022\016\n\006server\030\006 \001(\t\022\021\n\tavatarUrl\030\007 \001(\t\022" +
       "\014\n\004cash\030\010 \001(\003\022\014\n\004gold\030\t \001(\003\022\022\n\nfacebookI" +
-      "d\030\n \001(\t\022\r\n\005email\030\013 \001(\tB,\n\031com.fanxi.serv" +
-      "ice.messageB\017UserDetailProtob\006proto3"
+      "d\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\r\n\005phone\030\014 \001(\tB,\n" +
+      "\031com.fanxi.service.messageB\017UserDetailPr" +
+      "otob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1706,7 +1844,7 @@ public final class UserDetailProto {
     internal_static_fanxi_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_UserDetail_descriptor,
-        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", "Email", });
+        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", "Email", "Phone", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
