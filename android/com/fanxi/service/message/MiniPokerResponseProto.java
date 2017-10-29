@@ -37,9 +37,9 @@ public final class MiniPokerResponseProto {
     long getReference();
 
     /**
-     * <code>int32 wonCash = 5;</code>
+     * <code>int64 wonCash = 5;</code>
      */
-    int getWonCash();
+    long getWonCash();
 
     /**
      * <code>int32 cash = 6;</code>
@@ -84,7 +84,7 @@ public final class MiniPokerResponseProto {
     }
     private MiniPokerResponse() {
       reference_ = 0L;
-      wonCash_ = 0;
+      wonCash_ = 0L;
       cash_ = 0;
       isGold_ = false;
       cards_ = "";
@@ -137,7 +137,7 @@ public final class MiniPokerResponseProto {
             }
             case 40: {
 
-              wonCash_ = input.readInt32();
+              wonCash_ = input.readInt64();
               break;
             }
             case 48: {
@@ -220,11 +220,11 @@ public final class MiniPokerResponseProto {
     }
 
     public static final int WONCASH_FIELD_NUMBER = 5;
-    private int wonCash_;
+    private long wonCash_;
     /**
-     * <code>int32 wonCash = 5;</code>
+     * <code>int64 wonCash = 5;</code>
      */
-    public int getWonCash() {
+    public long getWonCash() {
       return wonCash_;
     }
 
@@ -316,8 +316,8 @@ public final class MiniPokerResponseProto {
       if (reference_ != 0L) {
         output.writeInt64(4, reference_);
       }
-      if (wonCash_ != 0) {
-        output.writeInt32(5, wonCash_);
+      if (wonCash_ != 0L) {
+        output.writeInt64(5, wonCash_);
       }
       if (cash_ != 0) {
         output.writeInt32(6, cash_);
@@ -349,9 +349,9 @@ public final class MiniPokerResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(4, reference_);
       }
-      if (wonCash_ != 0) {
+      if (wonCash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(5, wonCash_);
+          .computeInt64Size(5, wonCash_);
       }
       if (cash_ != 0) {
         size += com.google.protobuf.CodedOutputStream
@@ -425,7 +425,8 @@ public final class MiniPokerResponseProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getReference());
       hash = (37 * hash) + WONCASH_FIELD_NUMBER;
-      hash = (53 * hash) + getWonCash();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getWonCash());
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + getCash();
       hash = (37 * hash) + ISGOLD_FIELD_NUMBER;
@@ -564,7 +565,7 @@ public final class MiniPokerResponseProto {
         }
         reference_ = 0L;
 
-        wonCash_ = 0;
+        wonCash_ = 0L;
 
         cash_ = 0;
 
@@ -657,7 +658,7 @@ public final class MiniPokerResponseProto {
         if (other.getReference() != 0L) {
           setReference(other.getReference());
         }
-        if (other.getWonCash() != 0) {
+        if (other.getWonCash() != 0L) {
           setWonCash(other.getWonCash());
         }
         if (other.getCash() != 0) {
@@ -845,28 +846,28 @@ public final class MiniPokerResponseProto {
         return this;
       }
 
-      private int wonCash_ ;
+      private long wonCash_ ;
       /**
-       * <code>int32 wonCash = 5;</code>
+       * <code>int64 wonCash = 5;</code>
        */
-      public int getWonCash() {
+      public long getWonCash() {
         return wonCash_;
       }
       /**
-       * <code>int32 wonCash = 5;</code>
+       * <code>int64 wonCash = 5;</code>
        */
-      public Builder setWonCash(int value) {
+      public Builder setWonCash(long value) {
         
         wonCash_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 wonCash = 5;</code>
+       * <code>int64 wonCash = 5;</code>
        */
       public Builder clearWonCash() {
         
-        wonCash_ = 0;
+        wonCash_ = 0L;
         onChanged();
         return this;
       }
@@ -1110,7 +1111,7 @@ public final class MiniPokerResponseProto {
       "lBaseResponse.proto\"\260\001\n\021MiniPokerRespons" +
       "e\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.RestfulB" +
       "aseResponse\022\021\n\treference\030\004 \001(\003\022\017\n\007wonCas" +
-      "h\030\005 \001(\005\022\014\n\004cash\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\r\n" +
+      "h\030\005 \001(\003\022\014\n\004cash\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\r\n" +
       "\005cards\030\010 \001(\t\022\014\n\004type\030\t \001(\005\022\n\n\002hu\030\n \001(\003B3" +
       "\n\031com.fanxi.service.messageB\026MiniPokerRe" +
       "sponseProtob\006proto3"

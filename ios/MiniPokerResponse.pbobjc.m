@@ -58,12 +58,12 @@ static GPBFileDescriptor *MiniPokerResponseRoot_FileDescriptor(void) {
 
 typedef struct MiniPokerResponse__storage_ {
   uint32_t _has_storage_[1];
-  int32_t wonCash;
   int32_t cash;
   int32_t type;
   RestfulBaseResponse *baseResponse;
   NSString *cards;
   int64_t reference;
+  int64_t wonCash;
   int64_t hu;
 } MiniPokerResponse__storage_;
 
@@ -98,7 +98,7 @@ typedef struct MiniPokerResponse__storage_ {
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(MiniPokerResponse__storage_, wonCash),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeInt64,
       },
       {
         .name = "cash",

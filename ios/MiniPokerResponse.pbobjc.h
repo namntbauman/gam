@@ -67,7 +67,7 @@ typedef GPB_ENUM(MiniPokerResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int64_t reference;
 
-@property(nonatomic, readwrite) int32_t wonCash;
+@property(nonatomic, readwrite) int64_t wonCash;
 
 @property(nonatomic, readwrite) int32_t cash;
 
