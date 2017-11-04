@@ -122,6 +122,16 @@ public final class UserDetailProto {
      */
     com.google.protobuf.ByteString
         getPhoneBytes();
+
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    java.lang.String getSessionId();
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.UserDetail}
@@ -147,6 +157,7 @@ public final class UserDetailProto {
       facebookId_ = "";
       email_ = "";
       phone_ = "";
+      sessionId_ = "";
     }
 
     @java.lang.Override
@@ -241,6 +252,12 @@ public final class UserDetailProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               phone_ = s;
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessionId_ = s;
               break;
             }
           }
@@ -599,6 +616,40 @@ public final class UserDetailProto {
       }
     }
 
+    public static final int SESSIONID_FIELD_NUMBER = 13;
+    private volatile java.lang.Object sessionId_;
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -647,6 +698,9 @@ public final class UserDetailProto {
       if (!getPhoneBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, phone_);
       }
+      if (!getSessionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, sessionId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -693,6 +747,9 @@ public final class UserDetailProto {
       if (!getPhoneBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, phone_);
       }
+      if (!getSessionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, sessionId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -733,6 +790,8 @@ public final class UserDetailProto {
           .equals(other.getEmail());
       result = result && getPhone()
           .equals(other.getPhone());
+      result = result && getSessionId()
+          .equals(other.getSessionId());
       return result;
     }
 
@@ -769,6 +828,8 @@ public final class UserDetailProto {
       hash = (53 * hash) + getEmail().hashCode();
       hash = (37 * hash) + PHONE_FIELD_NUMBER;
       hash = (53 * hash) + getPhone().hashCode();
+      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -911,6 +972,8 @@ public final class UserDetailProto {
 
         phone_ = "";
 
+        sessionId_ = "";
+
         return this;
       }
 
@@ -945,6 +1008,7 @@ public final class UserDetailProto {
         result.facebookId_ = facebookId_;
         result.email_ = email_;
         result.phone_ = phone_;
+        result.sessionId_ = sessionId_;
         onBuilt();
         return result;
       }
@@ -1029,6 +1093,10 @@ public final class UserDetailProto {
         }
         if (!other.getPhone().isEmpty()) {
           phone_ = other.phone_;
+          onChanged();
+        }
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
           onChanged();
         }
         onChanged();
@@ -1755,6 +1823,75 @@ public final class UserDetailProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public Builder clearSessionId() {
+        
+        sessionId_ = getDefaultInstance().getSessionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1818,14 +1955,14 @@ public final class UserDetailProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020UserDetail.proto\022\005fanxi\"\321\001\n\nUserDetail" +
+      "\n\020UserDetail.proto\022\005fanxi\"\344\001\n\nUserDetail" +
       "\022\016\n\006userId\030\001 \001(\t\022\014\n\004type\030\002 \001(\005\022\020\n\010userNa" +
       "me\030\003 \001(\t\022\023\n\013displayName\030\004 \001(\t\022\r\n\005token\030\005" +
       " \001(\t\022\016\n\006server\030\006 \001(\t\022\021\n\tavatarUrl\030\007 \001(\t\022" +
       "\014\n\004cash\030\010 \001(\003\022\014\n\004gold\030\t \001(\003\022\022\n\nfacebookI" +
-      "d\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\r\n\005phone\030\014 \001(\tB,\n" +
-      "\031com.fanxi.service.messageB\017UserDetailPr" +
-      "otob\006proto3"
+      "d\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\r\n\005phone\030\014 \001(\t\022\021\n" +
+      "\tsessionId\030\r \001(\tB,\n\031com.fanxi.service.me" +
+      "ssageB\017UserDetailProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1844,7 +1981,7 @@ public final class UserDetailProto {
     internal_static_fanxi_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_UserDetail_descriptor,
-        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", "Email", "Phone", });
+        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", "Email", "Phone", "SessionId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
