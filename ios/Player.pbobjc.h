@@ -94,7 +94,7 @@ typedef GPB_ENUM(Player_FieldNumber) {
 
 @property(nonatomic, readwrite) BOOL isOwner;
 
-@property(nonatomic, readwrite) int32_t bonusMoney;
+@property(nonatomic, readwrite) int64_t bonusMoney;
 
 @end
 

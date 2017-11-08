@@ -65,7 +65,6 @@ static GPBFileDescriptor *PlayerRoot_FileDescriptor(void) {
 typedef struct Player__storage_ {
   uint32_t _has_storage_[1];
   int32_t numHand;
-  int32_t bonusMoney;
   NSString *userId;
   NSString *userName;
   NSString *avatarURL;
@@ -75,6 +74,7 @@ typedef struct Player__storage_ {
   NSString *eatingCards;
   NSString *haPhomCards;
   int64_t cash;
+  int64_t bonusMoney;
 } Player__storage_;
 
 // This method is threadsafe because it is initially called
@@ -216,7 +216,7 @@ typedef struct Player__storage_ {
         .hasIndex = 18,
         .offset = (uint32_t)offsetof(Player__storage_, bonusMoney),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeInt64,
       },
     };
     GPBDescriptor *localDescriptor =

@@ -132,6 +132,11 @@ public final class UserDetailProto {
      */
     com.google.protobuf.ByteString
         getSessionIdBytes();
+
+    /**
+     * <code>int32 numUnreadMsg = 14;</code>
+     */
+    int getNumUnreadMsg();
   }
   /**
    * Protobuf type {@code fanxi.UserDetail}
@@ -158,6 +163,7 @@ public final class UserDetailProto {
       email_ = "";
       phone_ = "";
       sessionId_ = "";
+      numUnreadMsg_ = 0;
     }
 
     @java.lang.Override
@@ -258,6 +264,11 @@ public final class UserDetailProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               sessionId_ = s;
+              break;
+            }
+            case 112: {
+
+              numUnreadMsg_ = input.readInt32();
               break;
             }
           }
@@ -650,6 +661,15 @@ public final class UserDetailProto {
       }
     }
 
+    public static final int NUMUNREADMSG_FIELD_NUMBER = 14;
+    private int numUnreadMsg_;
+    /**
+     * <code>int32 numUnreadMsg = 14;</code>
+     */
+    public int getNumUnreadMsg() {
+      return numUnreadMsg_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -701,6 +721,9 @@ public final class UserDetailProto {
       if (!getSessionIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 13, sessionId_);
       }
+      if (numUnreadMsg_ != 0) {
+        output.writeInt32(14, numUnreadMsg_);
+      }
     }
 
     public int getSerializedSize() {
@@ -750,6 +773,10 @@ public final class UserDetailProto {
       if (!getSessionIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, sessionId_);
       }
+      if (numUnreadMsg_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(14, numUnreadMsg_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -792,6 +819,8 @@ public final class UserDetailProto {
           .equals(other.getPhone());
       result = result && getSessionId()
           .equals(other.getSessionId());
+      result = result && (getNumUnreadMsg()
+          == other.getNumUnreadMsg());
       return result;
     }
 
@@ -830,6 +859,8 @@ public final class UserDetailProto {
       hash = (53 * hash) + getPhone().hashCode();
       hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
       hash = (53 * hash) + getSessionId().hashCode();
+      hash = (37 * hash) + NUMUNREADMSG_FIELD_NUMBER;
+      hash = (53 * hash) + getNumUnreadMsg();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -974,6 +1005,8 @@ public final class UserDetailProto {
 
         sessionId_ = "";
 
+        numUnreadMsg_ = 0;
+
         return this;
       }
 
@@ -1009,6 +1042,7 @@ public final class UserDetailProto {
         result.email_ = email_;
         result.phone_ = phone_;
         result.sessionId_ = sessionId_;
+        result.numUnreadMsg_ = numUnreadMsg_;
         onBuilt();
         return result;
       }
@@ -1098,6 +1132,9 @@ public final class UserDetailProto {
         if (!other.getSessionId().isEmpty()) {
           sessionId_ = other.sessionId_;
           onChanged();
+        }
+        if (other.getNumUnreadMsg() != 0) {
+          setNumUnreadMsg(other.getNumUnreadMsg());
         }
         onChanged();
         return this;
@@ -1892,6 +1929,32 @@ public final class UserDetailProto {
         onChanged();
         return this;
       }
+
+      private int numUnreadMsg_ ;
+      /**
+       * <code>int32 numUnreadMsg = 14;</code>
+       */
+      public int getNumUnreadMsg() {
+        return numUnreadMsg_;
+      }
+      /**
+       * <code>int32 numUnreadMsg = 14;</code>
+       */
+      public Builder setNumUnreadMsg(int value) {
+        
+        numUnreadMsg_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 numUnreadMsg = 14;</code>
+       */
+      public Builder clearNumUnreadMsg() {
+        
+        numUnreadMsg_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1955,14 +2018,15 @@ public final class UserDetailProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\020UserDetail.proto\022\005fanxi\"\344\001\n\nUserDetail" +
+      "\n\020UserDetail.proto\022\005fanxi\"\372\001\n\nUserDetail" +
       "\022\016\n\006userId\030\001 \001(\t\022\014\n\004type\030\002 \001(\005\022\020\n\010userNa" +
       "me\030\003 \001(\t\022\023\n\013displayName\030\004 \001(\t\022\r\n\005token\030\005" +
       " \001(\t\022\016\n\006server\030\006 \001(\t\022\021\n\tavatarUrl\030\007 \001(\t\022" +
       "\014\n\004cash\030\010 \001(\003\022\014\n\004gold\030\t \001(\003\022\022\n\nfacebookI" +
       "d\030\n \001(\t\022\r\n\005email\030\013 \001(\t\022\r\n\005phone\030\014 \001(\t\022\021\n" +
-      "\tsessionId\030\r \001(\tB,\n\031com.fanxi.service.me" +
-      "ssageB\017UserDetailProtob\006proto3"
+      "\tsessionId\030\r \001(\t\022\024\n\014numUnreadMsg\030\016 \001(\005B," +
+      "\n\031com.fanxi.service.messageB\017UserDetailP" +
+      "rotob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1981,7 +2045,7 @@ public final class UserDetailProto {
     internal_static_fanxi_UserDetail_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_UserDetail_descriptor,
-        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", "Email", "Phone", "SessionId", });
+        new java.lang.String[] { "UserId", "Type", "UserName", "DisplayName", "Token", "Server", "AvatarUrl", "Cash", "Gold", "FacebookId", "Email", "Phone", "SessionId", "NumUnreadMsg", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

@@ -129,9 +129,9 @@ public final class PlayerProto {
     boolean getIsOwner();
 
     /**
-     * <code>int32 bonusMoney = 15;</code>
+     * <code>int64 bonusMoney = 15;</code>
      */
-    int getBonusMoney();
+    long getBonusMoney();
   }
   /**
    * Protobuf type {@code fanxi.Player}
@@ -159,7 +159,7 @@ public final class PlayerProto {
       eatingCards_ = "";
       haPhomCards_ = "";
       isOwner_ = false;
-      bonusMoney_ = 0;
+      bonusMoney_ = 0L;
     }
 
     @java.lang.Override
@@ -267,7 +267,7 @@ public final class PlayerProto {
             }
             case 120: {
 
-              bonusMoney_ = input.readInt32();
+              bonusMoney_ = input.readInt64();
               break;
             }
           }
@@ -620,11 +620,11 @@ public final class PlayerProto {
     }
 
     public static final int BONUSMONEY_FIELD_NUMBER = 15;
-    private int bonusMoney_;
+    private long bonusMoney_;
     /**
-     * <code>int32 bonusMoney = 15;</code>
+     * <code>int64 bonusMoney = 15;</code>
      */
-    public int getBonusMoney() {
+    public long getBonusMoney() {
       return bonusMoney_;
     }
 
@@ -682,8 +682,8 @@ public final class PlayerProto {
       if (isOwner_ != false) {
         output.writeBool(14, isOwner_);
       }
-      if (bonusMoney_ != 0) {
-        output.writeInt32(15, bonusMoney_);
+      if (bonusMoney_ != 0L) {
+        output.writeInt64(15, bonusMoney_);
       }
     }
 
@@ -740,9 +740,9 @@ public final class PlayerProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(14, isOwner_);
       }
-      if (bonusMoney_ != 0) {
+      if (bonusMoney_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(15, bonusMoney_);
+          .computeInt64Size(15, bonusMoney_);
       }
       memoizedSize = size;
       return size;
@@ -834,7 +834,8 @@ public final class PlayerProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsOwner());
       hash = (37 * hash) + BONUSMONEY_FIELD_NUMBER;
-      hash = (53 * hash) + getBonusMoney();
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBonusMoney());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -981,7 +982,7 @@ public final class PlayerProto {
 
         isOwner_ = false;
 
-        bonusMoney_ = 0;
+        bonusMoney_ = 0L;
 
         return this;
       }
@@ -1111,7 +1112,7 @@ public final class PlayerProto {
         if (other.getIsOwner() != false) {
           setIsOwner(other.getIsOwner());
         }
-        if (other.getBonusMoney() != 0) {
+        if (other.getBonusMoney() != 0L) {
           setBonusMoney(other.getBonusMoney());
         }
         onChanged();
@@ -1848,28 +1849,28 @@ public final class PlayerProto {
         return this;
       }
 
-      private int bonusMoney_ ;
+      private long bonusMoney_ ;
       /**
-       * <code>int32 bonusMoney = 15;</code>
+       * <code>int64 bonusMoney = 15;</code>
        */
-      public int getBonusMoney() {
+      public long getBonusMoney() {
         return bonusMoney_;
       }
       /**
-       * <code>int32 bonusMoney = 15;</code>
+       * <code>int64 bonusMoney = 15;</code>
        */
-      public Builder setBonusMoney(int value) {
+      public Builder setBonusMoney(long value) {
         
         bonusMoney_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 bonusMoney = 15;</code>
+       * <code>int64 bonusMoney = 15;</code>
        */
       public Builder clearBonusMoney() {
         
-        bonusMoney_ = 0;
+        bonusMoney_ = 0L;
         onChanged();
         return this;
       }
@@ -1943,7 +1944,7 @@ public final class PlayerProto {
       "\022\021\n\tisHetTien\030\t \001(\010\022\022\n\nisObserver\030\n \001(\010\022" +
       "\024\n\014playingCards\030\013 \001(\t\022\023\n\013eatingCards\030\014 \001" +
       "(\t\022\023\n\013haPhomCards\030\r \001(\t\022\017\n\007isOwner\030\016 \001(\010" +
-      "\022\022\n\nbonusMoney\030\017 \001(\005B(\n\031com.fanxi.servic" +
+      "\022\022\n\nbonusMoney\030\017 \001(\003B(\n\031com.fanxi.servic" +
       "e.messageB\013PlayerProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

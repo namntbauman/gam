@@ -59,10 +59,12 @@ static GPBFileDescriptor *UserDetailRoot_FileDescriptor(void) {
 @dynamic email;
 @dynamic phone;
 @dynamic sessionId;
+@dynamic numUnreadMsg;
 
 typedef struct UserDetail__storage_ {
   uint32_t _has_storage_[1];
   int32_t type;
+  int32_t numUnreadMsg;
   NSString *userId;
   NSString *userName;
   NSString *displayName;
@@ -200,6 +202,15 @@ typedef struct UserDetail__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "numUnreadMsg",
+        .dataTypeSpecific.className = NULL,
+        .number = UserDetail_FieldNumber_NumUnreadMsg,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(UserDetail__storage_, numUnreadMsg),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[UserDetail class]
@@ -211,7 +222,7 @@ typedef struct UserDetail__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\001\006\000\003\010\000\004\013\000\007\007!!\000\n\n\000\r\t\000";
+        "\007\001\006\000\003\010\000\004\013\000\007\007!!\000\n\n\000\r\t\000\016\014\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
