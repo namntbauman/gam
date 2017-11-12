@@ -42,14 +42,14 @@ public final class ConfirmBuyCardResponseProto {
         getSerialBytes();
 
     /**
-     * <code>string ping = 6;</code>
+     * <code>string pin = 6;</code>
      */
-    java.lang.String getPing();
+    java.lang.String getPin();
     /**
-     * <code>string ping = 6;</code>
+     * <code>string pin = 6;</code>
      */
     com.google.protobuf.ByteString
-        getPingBytes();
+        getPinBytes();
 
     /**
      * <code>int64 gold = 7;</code>
@@ -69,7 +69,7 @@ public final class ConfirmBuyCardResponseProto {
     }
     private ConfirmBuyCardResponse() {
       serial_ = "";
-      ping_ = "";
+      pin_ = "";
       gold_ = 0L;
     }
 
@@ -120,7 +120,7 @@ public final class ConfirmBuyCardResponseProto {
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              ping_ = s;
+              pin_ = s;
               break;
             }
             case 56: {
@@ -206,34 +206,34 @@ public final class ConfirmBuyCardResponseProto {
       }
     }
 
-    public static final int PING_FIELD_NUMBER = 6;
-    private volatile java.lang.Object ping_;
+    public static final int PIN_FIELD_NUMBER = 6;
+    private volatile java.lang.Object pin_;
     /**
-     * <code>string ping = 6;</code>
+     * <code>string pin = 6;</code>
      */
-    public java.lang.String getPing() {
-      java.lang.Object ref = ping_;
+    public java.lang.String getPin() {
+      java.lang.Object ref = pin_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        ping_ = s;
+        pin_ = s;
         return s;
       }
     }
     /**
-     * <code>string ping = 6;</code>
+     * <code>string pin = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getPingBytes() {
-      java.lang.Object ref = ping_;
+        getPinBytes() {
+      java.lang.Object ref = pin_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        ping_ = b;
+        pin_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -267,8 +267,8 @@ public final class ConfirmBuyCardResponseProto {
       if (!getSerialBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 5, serial_);
       }
-      if (!getPingBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, ping_);
+      if (!getPinBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, pin_);
       }
       if (gold_ != 0L) {
         output.writeInt64(7, gold_);
@@ -287,8 +287,8 @@ public final class ConfirmBuyCardResponseProto {
       if (!getSerialBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, serial_);
       }
-      if (!getPingBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, ping_);
+      if (!getPinBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pin_);
       }
       if (gold_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -317,8 +317,8 @@ public final class ConfirmBuyCardResponseProto {
       }
       result = result && getSerial()
           .equals(other.getSerial());
-      result = result && getPing()
-          .equals(other.getPing());
+      result = result && getPin()
+          .equals(other.getPin());
       result = result && (getGold()
           == other.getGold());
       return result;
@@ -337,8 +337,8 @@ public final class ConfirmBuyCardResponseProto {
       }
       hash = (37 * hash) + SERIAL_FIELD_NUMBER;
       hash = (53 * hash) + getSerial().hashCode();
-      hash = (37 * hash) + PING_FIELD_NUMBER;
-      hash = (53 * hash) + getPing().hashCode();
+      hash = (37 * hash) + PIN_FIELD_NUMBER;
+      hash = (53 * hash) + getPin().hashCode();
       hash = (37 * hash) + GOLD_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getGold());
@@ -468,7 +468,7 @@ public final class ConfirmBuyCardResponseProto {
         }
         serial_ = "";
 
-        ping_ = "";
+        pin_ = "";
 
         gold_ = 0L;
 
@@ -500,7 +500,7 @@ public final class ConfirmBuyCardResponseProto {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.serial_ = serial_;
-        result.ping_ = ping_;
+        result.pin_ = pin_;
         result.gold_ = gold_;
         onBuilt();
         return result;
@@ -550,8 +550,8 @@ public final class ConfirmBuyCardResponseProto {
           serial_ = other.serial_;
           onChanged();
         }
-        if (!other.getPing().isEmpty()) {
-          ping_ = other.ping_;
+        if (!other.getPin().isEmpty()) {
+          pin_ = other.pin_;
           onChanged();
         }
         if (other.getGold() != 0L) {
@@ -769,71 +769,71 @@ public final class ConfirmBuyCardResponseProto {
         return this;
       }
 
-      private java.lang.Object ping_ = "";
+      private java.lang.Object pin_ = "";
       /**
-       * <code>string ping = 6;</code>
+       * <code>string pin = 6;</code>
        */
-      public java.lang.String getPing() {
-        java.lang.Object ref = ping_;
+      public java.lang.String getPin() {
+        java.lang.Object ref = pin_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          ping_ = s;
+          pin_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string ping = 6;</code>
+       * <code>string pin = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getPingBytes() {
-        java.lang.Object ref = ping_;
+          getPinBytes() {
+        java.lang.Object ref = pin_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          ping_ = b;
+          pin_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string ping = 6;</code>
+       * <code>string pin = 6;</code>
        */
-      public Builder setPing(
+      public Builder setPin(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        ping_ = value;
+        pin_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string ping = 6;</code>
+       * <code>string pin = 6;</code>
        */
-      public Builder clearPing() {
+      public Builder clearPin() {
         
-        ping_ = getDefaultInstance().getPing();
+        pin_ = getDefaultInstance().getPin();
         onChanged();
         return this;
       }
       /**
-       * <code>string ping = 6;</code>
+       * <code>string pin = 6;</code>
        */
-      public Builder setPingBytes(
+      public Builder setPinBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        ping_ = value;
+        pin_ = value;
         onChanged();
         return this;
       }
@@ -927,12 +927,12 @@ public final class ConfirmBuyCardResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\034ConfirmBuyCardResponse.proto\022\005fanxi\032\031R" +
-      "estfulBaseResponse.proto\"v\n\026ConfirmBuyCa" +
+      "estfulBaseResponse.proto\"u\n\026ConfirmBuyCa" +
       "rdResponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi" +
-      ".RestfulBaseResponse\022\016\n\006serial\030\005 \001(\t\022\014\n\004" +
-      "ping\030\006 \001(\t\022\014\n\004gold\030\007 \001(\003B8\n\031com.fanxi.se" +
-      "rvice.messageB\033ConfirmBuyCardResponsePro" +
-      "tob\006proto3"
+      ".RestfulBaseResponse\022\016\n\006serial\030\005 \001(\t\022\013\n\003" +
+      "pin\030\006 \001(\t\022\014\n\004gold\030\007 \001(\003B8\n\031com.fanxi.ser" +
+      "vice.messageB\033ConfirmBuyCardResponseProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -952,7 +952,7 @@ public final class ConfirmBuyCardResponseProto {
     internal_static_fanxi_ConfirmBuyCardResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_ConfirmBuyCardResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Serial", "Ping", "Gold", });
+        new java.lang.String[] { "BaseResponse", "Serial", "Pin", "Gold", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

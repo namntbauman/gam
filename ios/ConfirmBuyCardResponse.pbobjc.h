@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(ConfirmBuyCardResponse_FieldNumber) {
   ConfirmBuyCardResponse_FieldNumber_BaseResponse = 1,
   ConfirmBuyCardResponse_FieldNumber_Serial = 5,
-  ConfirmBuyCardResponse_FieldNumber_Ping = 6,
+  ConfirmBuyCardResponse_FieldNumber_Pin = 6,
   ConfirmBuyCardResponse_FieldNumber_Gold = 7,
 };
 
@@ -63,7 +63,7 @@ typedef GPB_ENUM(ConfirmBuyCardResponse_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *serial;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *ping;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *pin;
 
 @property(nonatomic, readwrite) int64_t gold;
 

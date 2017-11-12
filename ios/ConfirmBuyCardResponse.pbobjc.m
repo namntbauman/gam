@@ -49,14 +49,14 @@ static GPBFileDescriptor *ConfirmBuyCardResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic serial;
-@dynamic ping;
+@dynamic pin;
 @dynamic gold;
 
 typedef struct ConfirmBuyCardResponse__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseResponse *baseResponse;
   NSString *serial;
-  NSString *ping;
+  NSString *pin;
   int64_t gold;
 } ConfirmBuyCardResponse__storage_;
 
@@ -85,11 +85,11 @@ typedef struct ConfirmBuyCardResponse__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "ping",
+        .name = "pin",
         .dataTypeSpecific.className = NULL,
-        .number = ConfirmBuyCardResponse_FieldNumber_Ping,
+        .number = ConfirmBuyCardResponse_FieldNumber_Pin,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(ConfirmBuyCardResponse__storage_, ping),
+        .offset = (uint32_t)offsetof(ConfirmBuyCardResponse__storage_, pin),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
