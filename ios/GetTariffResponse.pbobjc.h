@@ -27,6 +27,7 @@
 
 CF_EXTERN_C_BEGIN
 
+@class BuyCardTariffEntity;
 @class CardTariffEntity;
 @class CardTypeEntity;
 @class RestfulBaseResponse;
@@ -59,6 +60,7 @@ typedef GPB_ENUM(GetTariffResponse_FieldNumber) {
   GetTariffResponse_FieldNumber_SmsVinaTariffsArray = 7,
   GetTariffResponse_FieldNumber_CardTariffsArray = 8,
   GetTariffResponse_FieldNumber_CardTypesArray = 9,
+  GetTariffResponse_FieldNumber_BuyCardTariffsArray = 10,
 };
 
 @interface GetTariffResponse : GPBMessage
@@ -88,6 +90,10 @@ typedef GPB_ENUM(GetTariffResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<CardTypeEntity*> *cardTypesArray;
 /** The number of items in @c cardTypesArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger cardTypesArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<BuyCardTariffEntity*> *buyCardTariffsArray;
+/** The number of items in @c buyCardTariffsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger buyCardTariffsArray_Count;
 
 @end
 

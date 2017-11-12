@@ -48,16 +48,18 @@ static GPBFileDescriptor *TransferRequestRoot_FileDescriptor(void) {
 @implementation TransferRequest
 
 @dynamic hasBaseReq, baseReq;
-@dynamic captchaToken;
-@dynamic variant;
+@dynamic phoneToken;
+@dynamic txnId;
+@dynamic otp;
 @dynamic toAccount;
 @dynamic cash;
 
 typedef struct TransferRequest__storage_ {
   uint32_t _has_storage_[1];
   BaseRequest *baseReq;
-  NSString *captchaToken;
-  NSString *variant;
+  NSString *phoneToken;
+  NSString *txnId;
+  NSString *otp;
   NSString *toAccount;
   int64_t cash;
 } TransferRequest__storage_;
@@ -78,20 +80,29 @@ typedef struct TransferRequest__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "captchaToken",
+        .name = "phoneToken",
         .dataTypeSpecific.className = NULL,
-        .number = TransferRequest_FieldNumber_CaptchaToken,
+        .number = TransferRequest_FieldNumber_PhoneToken,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(TransferRequest__storage_, captchaToken),
+        .offset = (uint32_t)offsetof(TransferRequest__storage_, phoneToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "variant",
+        .name = "txnId",
         .dataTypeSpecific.className = NULL,
-        .number = TransferRequest_FieldNumber_Variant,
+        .number = TransferRequest_FieldNumber_TxnId,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(TransferRequest__storage_, variant),
+        .offset = (uint32_t)offsetof(TransferRequest__storage_, txnId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "otp",
+        .dataTypeSpecific.className = NULL,
+        .number = TransferRequest_FieldNumber_Otp,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(TransferRequest__storage_, otp),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
@@ -99,7 +110,7 @@ typedef struct TransferRequest__storage_ {
         .name = "toAccount",
         .dataTypeSpecific.className = NULL,
         .number = TransferRequest_FieldNumber_ToAccount,
-        .hasIndex = 3,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(TransferRequest__storage_, toAccount),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
@@ -108,7 +119,7 @@ typedef struct TransferRequest__storage_ {
         .name = "cash",
         .dataTypeSpecific.className = NULL,
         .number = TransferRequest_FieldNumber_Cash,
-        .hasIndex = 4,
+        .hasIndex = 5,
         .offset = (uint32_t)offsetof(TransferRequest__storage_, cash),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
@@ -124,7 +135,7 @@ typedef struct TransferRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\007\000\n\014\000\014\t\000";
+        "\004\001\007\000\020\n\000\021\005\000\023\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

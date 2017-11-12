@@ -49,17 +49,10 @@ static GPBFileDescriptor *TransferResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic cash;
-@dynamic isGold;
-@dynamic captchaToken;
-@dynamic captcha;
-@dynamic variantArray, variantArray_Count;
 
 typedef struct TransferResponse__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseResponse *baseResponse;
-  NSString *captchaToken;
-  NSString *captcha;
-  NSMutableArray *variantArray;
   int64_t cash;
 } TransferResponse__storage_;
 
@@ -87,42 +80,6 @@ typedef struct TransferResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
-      {
-        .name = "isGold",
-        .dataTypeSpecific.className = NULL,
-        .number = TransferResponse_FieldNumber_IsGold,
-        .hasIndex = 2,
-        .offset = 3,  // Stored in _has_storage_ to save space.
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeBool,
-      },
-      {
-        .name = "captchaToken",
-        .dataTypeSpecific.className = NULL,
-        .number = TransferResponse_FieldNumber_CaptchaToken,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(TransferResponse__storage_, captchaToken),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "captcha",
-        .dataTypeSpecific.className = NULL,
-        .number = TransferResponse_FieldNumber_Captcha,
-        .hasIndex = 5,
-        .offset = (uint32_t)offsetof(TransferResponse__storage_, captcha),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "variantArray",
-        .dataTypeSpecific.className = NULL,
-        .number = TransferResponse_FieldNumber_VariantArray,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(TransferResponse__storage_, variantArray),
-        .flags = GPBFieldRepeated,
-        .dataType = GPBDataTypeString,
-      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[TransferResponse class]
@@ -134,7 +91,7 @@ typedef struct TransferResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\005\006\000\006\014\000";
+        "\001\001\014\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

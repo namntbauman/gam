@@ -50,10 +50,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(TransferRequest_FieldNumber) {
   TransferRequest_FieldNumber_BaseReq = 1,
-  TransferRequest_FieldNumber_CaptchaToken = 10,
-  TransferRequest_FieldNumber_Variant = 11,
-  TransferRequest_FieldNumber_ToAccount = 12,
-  TransferRequest_FieldNumber_Cash = 13,
+  TransferRequest_FieldNumber_PhoneToken = 16,
+  TransferRequest_FieldNumber_TxnId = 17,
+  TransferRequest_FieldNumber_Otp = 18,
+  TransferRequest_FieldNumber_ToAccount = 19,
+  TransferRequest_FieldNumber_Cash = 20,
 };
 
 @interface TransferRequest : GPBMessage
@@ -62,9 +63,11 @@ typedef GPB_ENUM(TransferRequest_FieldNumber) {
 /** Test to see if @c baseReq has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *captchaToken;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phoneToken;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *variant;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *otp;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *toAccount;
 

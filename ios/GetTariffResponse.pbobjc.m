@@ -18,6 +18,7 @@
  #import "SmsTariffEntity.pbobjc.h"
  #import "CardTariffEntity.pbobjc.h"
  #import "CardTypeEntity.pbobjc.h"
+ #import "BuyCardTariffEntity.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -57,6 +58,7 @@ static GPBFileDescriptor *GetTariffResponseRoot_FileDescriptor(void) {
 @dynamic smsVinaTariffsArray, smsVinaTariffsArray_Count;
 @dynamic cardTariffsArray, cardTariffsArray_Count;
 @dynamic cardTypesArray, cardTypesArray_Count;
+@dynamic buyCardTariffsArray, buyCardTariffsArray_Count;
 
 typedef struct GetTariffResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -67,6 +69,7 @@ typedef struct GetTariffResponse__storage_ {
   NSMutableArray *smsVinaTariffsArray;
   NSMutableArray *cardTariffsArray;
   NSMutableArray *cardTypesArray;
+  NSMutableArray *buyCardTariffsArray;
 } GetTariffResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -138,6 +141,15 @@ typedef struct GetTariffResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
+      {
+        .name = "buyCardTariffsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(BuyCardTariffEntity),
+        .number = GetTariffResponse_FieldNumber_BuyCardTariffsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(GetTariffResponse__storage_, buyCardTariffsArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[GetTariffResponse class]
@@ -149,9 +161,9 @@ typedef struct GetTariffResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\007\001\014\000\004\005\000\005\000smsViettelTariffs\000\006\000smsMobifone"
+        "\010\001\014\000\004\005\000\005\000smsViettelTariffs\000\006\000smsMobifone"
         "Tariffs\000\007\000smsVinaTariffs\000\010\000cardTariffs\000\t"
-        "\000cardTypes\000";
+        "\000cardTypes\000\n\000buyCardTariffs\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

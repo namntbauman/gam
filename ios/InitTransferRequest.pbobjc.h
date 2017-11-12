@@ -50,6 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(InitTransferRequest_FieldNumber) {
   InitTransferRequest_FieldNumber_BaseReq = 1,
+  InitTransferRequest_FieldNumber_ToAccount = 16,
+  InitTransferRequest_FieldNumber_Cash = 17,
 };
 
 @interface InitTransferRequest : GPBMessage
@@ -57,6 +59,10 @@ typedef GPB_ENUM(InitTransferRequest_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) BaseRequest *baseReq;
 /** Test to see if @c baseReq has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseReq;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *toAccount;
+
+@property(nonatomic, readwrite) int64_t cash;
 
 @end
 
