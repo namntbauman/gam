@@ -32,43 +32,24 @@ public final class InitTransferResponseProto {
     com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponseOrBuilder getBaseResponseOrBuilder();
 
     /**
-     * <code>string captchaToken = 5;</code>
+     * <code>string phoneToken = 5;</code>
      */
-    java.lang.String getCaptchaToken();
+    java.lang.String getPhoneToken();
     /**
-     * <code>string captchaToken = 5;</code>
+     * <code>string phoneToken = 5;</code>
      */
     com.google.protobuf.ByteString
-        getCaptchaTokenBytes();
+        getPhoneTokenBytes();
 
     /**
-     * <code>string captcha = 6;</code>
+     * <code>string txnId = 6;</code>
      */
-    java.lang.String getCaptcha();
+    java.lang.String getTxnId();
     /**
-     * <code>string captcha = 6;</code>
+     * <code>string txnId = 6;</code>
      */
     com.google.protobuf.ByteString
-        getCaptchaBytes();
-
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    java.util.List<java.lang.String>
-        getVariantList();
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    int getVariantCount();
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    java.lang.String getVariant(int index);
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    com.google.protobuf.ByteString
-        getVariantBytes(int index);
+        getTxnIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.InitTransferResponse}
@@ -82,9 +63,8 @@ public final class InitTransferResponseProto {
       super(builder);
     }
     private InitTransferResponse() {
-      captchaToken_ = "";
-      captcha_ = "";
-      variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      phoneToken_ = "";
+      txnId_ = "";
     }
 
     @java.lang.Override
@@ -128,22 +108,13 @@ public final class InitTransferResponseProto {
             case 42: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              captchaToken_ = s;
+              phoneToken_ = s;
               break;
             }
             case 50: {
               java.lang.String s = input.readStringRequireUtf8();
 
-              captcha_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                variant_ = new com.google.protobuf.LazyStringArrayList();
-                mutable_bitField0_ |= 0x00000008;
-              }
-              variant_.add(s);
+              txnId_ = s;
               break;
             }
           }
@@ -154,9 +125,6 @@ public final class InitTransferResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-          variant_ = variant_.getUnmodifiableView();
-        }
         makeExtensionsImmutable();
       }
     }
@@ -172,7 +140,6 @@ public final class InitTransferResponseProto {
               com.fanxi.service.message.InitTransferResponseProto.InitTransferResponse.class, com.fanxi.service.message.InitTransferResponseProto.InitTransferResponse.Builder.class);
     }
 
-    private int bitField0_;
     public static final int BASERESPONSE_FIELD_NUMBER = 1;
     private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_;
     /**
@@ -194,101 +161,72 @@ public final class InitTransferResponseProto {
       return getBaseResponse();
     }
 
-    public static final int CAPTCHATOKEN_FIELD_NUMBER = 5;
-    private volatile java.lang.Object captchaToken_;
+    public static final int PHONETOKEN_FIELD_NUMBER = 5;
+    private volatile java.lang.Object phoneToken_;
     /**
-     * <code>string captchaToken = 5;</code>
+     * <code>string phoneToken = 5;</code>
      */
-    public java.lang.String getCaptchaToken() {
-      java.lang.Object ref = captchaToken_;
+    public java.lang.String getPhoneToken() {
+      java.lang.Object ref = phoneToken_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        captchaToken_ = s;
+        phoneToken_ = s;
         return s;
       }
     }
     /**
-     * <code>string captchaToken = 5;</code>
+     * <code>string phoneToken = 5;</code>
      */
     public com.google.protobuf.ByteString
-        getCaptchaTokenBytes() {
-      java.lang.Object ref = captchaToken_;
+        getPhoneTokenBytes() {
+      java.lang.Object ref = phoneToken_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        captchaToken_ = b;
+        phoneToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
     }
 
-    public static final int CAPTCHA_FIELD_NUMBER = 6;
-    private volatile java.lang.Object captcha_;
+    public static final int TXNID_FIELD_NUMBER = 6;
+    private volatile java.lang.Object txnId_;
     /**
-     * <code>string captcha = 6;</code>
+     * <code>string txnId = 6;</code>
      */
-    public java.lang.String getCaptcha() {
-      java.lang.Object ref = captcha_;
+    public java.lang.String getTxnId() {
+      java.lang.Object ref = txnId_;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        captcha_ = s;
+        txnId_ = s;
         return s;
       }
     }
     /**
-     * <code>string captcha = 6;</code>
+     * <code>string txnId = 6;</code>
      */
     public com.google.protobuf.ByteString
-        getCaptchaBytes() {
-      java.lang.Object ref = captcha_;
+        getTxnIdBytes() {
+      java.lang.Object ref = txnId_;
       if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
                 (java.lang.String) ref);
-        captcha_ = b;
+        txnId_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
-    }
-
-    public static final int VARIANT_FIELD_NUMBER = 7;
-    private com.google.protobuf.LazyStringList variant_;
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    public com.google.protobuf.ProtocolStringList
-        getVariantList() {
-      return variant_;
-    }
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    public int getVariantCount() {
-      return variant_.size();
-    }
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    public java.lang.String getVariant(int index) {
-      return variant_.get(index);
-    }
-    /**
-     * <code>repeated string variant = 7;</code>
-     */
-    public com.google.protobuf.ByteString
-        getVariantBytes(int index) {
-      return variant_.getByteString(index);
     }
 
     private byte memoizedIsInitialized = -1;
@@ -306,14 +244,11 @@ public final class InitTransferResponseProto {
       if (baseResponse_ != null) {
         output.writeMessage(1, getBaseResponse());
       }
-      if (!getCaptchaTokenBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, captchaToken_);
+      if (!getPhoneTokenBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, phoneToken_);
       }
-      if (!getCaptchaBytes().isEmpty()) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, captcha_);
-      }
-      for (int i = 0; i < variant_.size(); i++) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, variant_.getRaw(i));
+      if (!getTxnIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, txnId_);
       }
     }
 
@@ -326,19 +261,11 @@ public final class InitTransferResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseResponse());
       }
-      if (!getCaptchaTokenBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, captchaToken_);
+      if (!getPhoneTokenBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, phoneToken_);
       }
-      if (!getCaptchaBytes().isEmpty()) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, captcha_);
-      }
-      {
-        int dataSize = 0;
-        for (int i = 0; i < variant_.size(); i++) {
-          dataSize += computeStringSizeNoTag(variant_.getRaw(i));
-        }
-        size += dataSize;
-        size += 1 * getVariantList().size();
+      if (!getTxnIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, txnId_);
       }
       memoizedSize = size;
       return size;
@@ -361,12 +288,10 @@ public final class InitTransferResponseProto {
         result = result && getBaseResponse()
             .equals(other.getBaseResponse());
       }
-      result = result && getCaptchaToken()
-          .equals(other.getCaptchaToken());
-      result = result && getCaptcha()
-          .equals(other.getCaptcha());
-      result = result && getVariantList()
-          .equals(other.getVariantList());
+      result = result && getPhoneToken()
+          .equals(other.getPhoneToken());
+      result = result && getTxnId()
+          .equals(other.getTxnId());
       return result;
     }
 
@@ -381,14 +306,10 @@ public final class InitTransferResponseProto {
         hash = (37 * hash) + BASERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getBaseResponse().hashCode();
       }
-      hash = (37 * hash) + CAPTCHATOKEN_FIELD_NUMBER;
-      hash = (53 * hash) + getCaptchaToken().hashCode();
-      hash = (37 * hash) + CAPTCHA_FIELD_NUMBER;
-      hash = (53 * hash) + getCaptcha().hashCode();
-      if (getVariantCount() > 0) {
-        hash = (37 * hash) + VARIANT_FIELD_NUMBER;
-        hash = (53 * hash) + getVariantList().hashCode();
-      }
+      hash = (37 * hash) + PHONETOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getPhoneToken().hashCode();
+      hash = (37 * hash) + TXNID_FIELD_NUMBER;
+      hash = (53 * hash) + getTxnId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -513,12 +434,10 @@ public final class InitTransferResponseProto {
           baseResponse_ = null;
           baseResponseBuilder_ = null;
         }
-        captchaToken_ = "";
+        phoneToken_ = "";
 
-        captcha_ = "";
+        txnId_ = "";
 
-        variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
         return this;
       }
 
@@ -541,21 +460,13 @@ public final class InitTransferResponseProto {
 
       public com.fanxi.service.message.InitTransferResponseProto.InitTransferResponse buildPartial() {
         com.fanxi.service.message.InitTransferResponseProto.InitTransferResponse result = new com.fanxi.service.message.InitTransferResponseProto.InitTransferResponse(this);
-        int from_bitField0_ = bitField0_;
-        int to_bitField0_ = 0;
         if (baseResponseBuilder_ == null) {
           result.baseResponse_ = baseResponse_;
         } else {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
-        result.captchaToken_ = captchaToken_;
-        result.captcha_ = captcha_;
-        if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          variant_ = variant_.getUnmodifiableView();
-          bitField0_ = (bitField0_ & ~0x00000008);
-        }
-        result.variant_ = variant_;
-        result.bitField0_ = to_bitField0_;
+        result.phoneToken_ = phoneToken_;
+        result.txnId_ = txnId_;
         onBuilt();
         return result;
       }
@@ -600,22 +511,12 @@ public final class InitTransferResponseProto {
         if (other.hasBaseResponse()) {
           mergeBaseResponse(other.getBaseResponse());
         }
-        if (!other.getCaptchaToken().isEmpty()) {
-          captchaToken_ = other.captchaToken_;
+        if (!other.getPhoneToken().isEmpty()) {
+          phoneToken_ = other.phoneToken_;
           onChanged();
         }
-        if (!other.getCaptcha().isEmpty()) {
-          captcha_ = other.captcha_;
-          onChanged();
-        }
-        if (!other.variant_.isEmpty()) {
-          if (variant_.isEmpty()) {
-            variant_ = other.variant_;
-            bitField0_ = (bitField0_ & ~0x00000008);
-          } else {
-            ensureVariantIsMutable();
-            variant_.addAll(other.variant_);
-          }
+        if (!other.getTxnId().isEmpty()) {
+          txnId_ = other.txnId_;
           onChanged();
         }
         onChanged();
@@ -643,7 +544,6 @@ public final class InitTransferResponseProto {
         }
         return this;
       }
-      private int bitField0_;
 
       private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -762,234 +662,140 @@ public final class InitTransferResponseProto {
         return baseResponseBuilder_;
       }
 
-      private java.lang.Object captchaToken_ = "";
+      private java.lang.Object phoneToken_ = "";
       /**
-       * <code>string captchaToken = 5;</code>
+       * <code>string phoneToken = 5;</code>
        */
-      public java.lang.String getCaptchaToken() {
-        java.lang.Object ref = captchaToken_;
+      public java.lang.String getPhoneToken() {
+        java.lang.Object ref = phoneToken_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          captchaToken_ = s;
+          phoneToken_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string captchaToken = 5;</code>
+       * <code>string phoneToken = 5;</code>
        */
       public com.google.protobuf.ByteString
-          getCaptchaTokenBytes() {
-        java.lang.Object ref = captchaToken_;
+          getPhoneTokenBytes() {
+        java.lang.Object ref = phoneToken_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          captchaToken_ = b;
+          phoneToken_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string captchaToken = 5;</code>
+       * <code>string phoneToken = 5;</code>
        */
-      public Builder setCaptchaToken(
+      public Builder setPhoneToken(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        captchaToken_ = value;
+        phoneToken_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string captchaToken = 5;</code>
+       * <code>string phoneToken = 5;</code>
        */
-      public Builder clearCaptchaToken() {
+      public Builder clearPhoneToken() {
         
-        captchaToken_ = getDefaultInstance().getCaptchaToken();
+        phoneToken_ = getDefaultInstance().getPhoneToken();
         onChanged();
         return this;
       }
       /**
-       * <code>string captchaToken = 5;</code>
+       * <code>string phoneToken = 5;</code>
        */
-      public Builder setCaptchaTokenBytes(
+      public Builder setPhoneTokenBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        captchaToken_ = value;
+        phoneToken_ = value;
         onChanged();
         return this;
       }
 
-      private java.lang.Object captcha_ = "";
+      private java.lang.Object txnId_ = "";
       /**
-       * <code>string captcha = 6;</code>
+       * <code>string txnId = 6;</code>
        */
-      public java.lang.String getCaptcha() {
-        java.lang.Object ref = captcha_;
+      public java.lang.String getTxnId() {
+        java.lang.Object ref = txnId_;
         if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
-          captcha_ = s;
+          txnId_ = s;
           return s;
         } else {
           return (java.lang.String) ref;
         }
       }
       /**
-       * <code>string captcha = 6;</code>
+       * <code>string txnId = 6;</code>
        */
       public com.google.protobuf.ByteString
-          getCaptchaBytes() {
-        java.lang.Object ref = captcha_;
+          getTxnIdBytes() {
+        java.lang.Object ref = txnId_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
                   (java.lang.String) ref);
-          captcha_ = b;
+          txnId_ = b;
           return b;
         } else {
           return (com.google.protobuf.ByteString) ref;
         }
       }
       /**
-       * <code>string captcha = 6;</code>
+       * <code>string txnId = 6;</code>
        */
-      public Builder setCaptcha(
+      public Builder setTxnId(
           java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
   
-        captcha_ = value;
+        txnId_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>string captcha = 6;</code>
+       * <code>string txnId = 6;</code>
        */
-      public Builder clearCaptcha() {
+      public Builder clearTxnId() {
         
-        captcha_ = getDefaultInstance().getCaptcha();
+        txnId_ = getDefaultInstance().getTxnId();
         onChanged();
         return this;
       }
       /**
-       * <code>string captcha = 6;</code>
+       * <code>string txnId = 6;</code>
        */
-      public Builder setCaptchaBytes(
+      public Builder setTxnIdBytes(
           com.google.protobuf.ByteString value) {
         if (value == null) {
     throw new NullPointerException();
   }
   checkByteStringIsUtf8(value);
         
-        captcha_ = value;
-        onChanged();
-        return this;
-      }
-
-      private com.google.protobuf.LazyStringList variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-      private void ensureVariantIsMutable() {
-        if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          variant_ = new com.google.protobuf.LazyStringArrayList(variant_);
-          bitField0_ |= 0x00000008;
-         }
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public com.google.protobuf.ProtocolStringList
-          getVariantList() {
-        return variant_.getUnmodifiableView();
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public int getVariantCount() {
-        return variant_.size();
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public java.lang.String getVariant(int index) {
-        return variant_.get(index);
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public com.google.protobuf.ByteString
-          getVariantBytes(int index) {
-        return variant_.getByteString(index);
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public Builder setVariant(
-          int index, java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureVariantIsMutable();
-        variant_.set(index, value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public Builder addVariant(
-          java.lang.String value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureVariantIsMutable();
-        variant_.add(value);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public Builder addAllVariant(
-          java.lang.Iterable<java.lang.String> values) {
-        ensureVariantIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, variant_);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public Builder clearVariant() {
-        variant_ = com.google.protobuf.LazyStringArrayList.EMPTY;
-        bitField0_ = (bitField0_ & ~0x00000008);
-        onChanged();
-        return this;
-      }
-      /**
-       * <code>repeated string variant = 7;</code>
-       */
-      public Builder addVariantBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        ensureVariantIsMutable();
-        variant_.add(value);
+        txnId_ = value;
         onChanged();
         return this;
       }
@@ -1057,12 +863,11 @@ public final class InitTransferResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032InitTransferResponse.proto\022\005fanxi\032\031Res" +
-      "tfulBaseResponse.proto\"\200\001\n\024InitTransferR" +
-      "esponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.Re" +
-      "stfulBaseResponse\022\024\n\014captchaToken\030\005 \001(\t\022" +
-      "\017\n\007captcha\030\006 \001(\t\022\017\n\007variant\030\007 \003(\tB6\n\031com" +
-      ".fanxi.service.messageB\031InitTransferResp" +
-      "onseProtob\006proto3"
+      "tfulBaseResponse.proto\"k\n\024InitTransferRe" +
+      "sponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.Res" +
+      "tfulBaseResponse\022\022\n\nphoneToken\030\005 \001(\t\022\r\n\005" +
+      "txnId\030\006 \001(\tB6\n\031com.fanxi.service.message" +
+      "B\031InitTransferResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1082,7 +887,7 @@ public final class InitTransferResponseProto {
     internal_static_fanxi_InitTransferResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_InitTransferResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "CaptchaToken", "Captcha", "Variant", });
+        new java.lang.String[] { "BaseResponse", "PhoneToken", "TxnId", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

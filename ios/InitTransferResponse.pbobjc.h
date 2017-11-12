@@ -50,9 +50,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(InitTransferResponse_FieldNumber) {
   InitTransferResponse_FieldNumber_BaseResponse = 1,
-  InitTransferResponse_FieldNumber_CaptchaToken = 5,
-  InitTransferResponse_FieldNumber_Captcha = 6,
-  InitTransferResponse_FieldNumber_VariantArray = 7,
+  InitTransferResponse_FieldNumber_PhoneToken = 5,
+  InitTransferResponse_FieldNumber_TxnId = 6,
 };
 
 @interface InitTransferResponse : GPBMessage
@@ -61,13 +60,9 @@ typedef GPB_ENUM(InitTransferResponse_FieldNumber) {
 /** Test to see if @c baseResponse has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseResponse;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *captchaToken;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *phoneToken;
 
-@property(nonatomic, readwrite, copy, null_resettable) NSString *captcha;
-
-@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *variantArray;
-/** The number of items in @c variantArray without causing the array to be created. */
-@property(nonatomic, readonly) NSUInteger variantArray_Count;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
 
 @end
 

@@ -48,16 +48,14 @@ static GPBFileDescriptor *InitTransferResponseRoot_FileDescriptor(void) {
 @implementation InitTransferResponse
 
 @dynamic hasBaseResponse, baseResponse;
-@dynamic captchaToken;
-@dynamic captcha;
-@dynamic variantArray, variantArray_Count;
+@dynamic phoneToken;
+@dynamic txnId;
 
 typedef struct InitTransferResponse__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseResponse *baseResponse;
-  NSString *captchaToken;
-  NSString *captcha;
-  NSMutableArray *variantArray;
+  NSString *phoneToken;
+  NSString *txnId;
 } InitTransferResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -76,30 +74,21 @@ typedef struct InitTransferResponse__storage_ {
         .dataType = GPBDataTypeMessage,
       },
       {
-        .name = "captchaToken",
+        .name = "phoneToken",
         .dataTypeSpecific.className = NULL,
-        .number = InitTransferResponse_FieldNumber_CaptchaToken,
+        .number = InitTransferResponse_FieldNumber_PhoneToken,
         .hasIndex = 1,
-        .offset = (uint32_t)offsetof(InitTransferResponse__storage_, captchaToken),
+        .offset = (uint32_t)offsetof(InitTransferResponse__storage_, phoneToken),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "captcha",
+        .name = "txnId",
         .dataTypeSpecific.className = NULL,
-        .number = InitTransferResponse_FieldNumber_Captcha,
+        .number = InitTransferResponse_FieldNumber_TxnId,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(InitTransferResponse__storage_, captcha),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
-        .name = "variantArray",
-        .dataTypeSpecific.className = NULL,
-        .number = InitTransferResponse_FieldNumber_VariantArray,
-        .hasIndex = GPBNoHasBit,
-        .offset = (uint32_t)offsetof(InitTransferResponse__storage_, variantArray),
-        .flags = GPBFieldRepeated,
+        .offset = (uint32_t)offsetof(InitTransferResponse__storage_, txnId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
     };
@@ -113,7 +102,7 @@ typedef struct InitTransferResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\014\000\005\014\000";
+        "\003\001\014\000\005\n\000\006\005\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
