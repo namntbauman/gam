@@ -60,6 +60,7 @@ typedef GPB_ENUM(RestfulBaseRequest_FieldNumber) {
   RestfulBaseRequest_FieldNumber_Lang = 11,
   RestfulBaseRequest_FieldNumber_DeviceId = 12,
   RestfulBaseRequest_FieldNumber_AdditionalInfo = 13,
+  RestfulBaseRequest_FieldNumber_SessionId = 14,
 };
 
 @interface RestfulBaseRequest : GPBMessage
@@ -89,6 +90,8 @@ typedef GPB_ENUM(RestfulBaseRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *deviceId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *additionalInfo;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sessionId;
 
 @end
 

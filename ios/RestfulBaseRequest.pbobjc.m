@@ -59,6 +59,7 @@ static GPBFileDescriptor *RestfulBaseRequestRoot_FileDescriptor(void) {
 @dynamic lang;
 @dynamic deviceId;
 @dynamic additionalInfo;
+@dynamic sessionId;
 
 typedef struct RestfulBaseRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -74,6 +75,7 @@ typedef struct RestfulBaseRequest__storage_ {
   NSString *lang;
   NSString *deviceId;
   NSString *additionalInfo;
+  NSString *sessionId;
 } RestfulBaseRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -199,6 +201,15 @@ typedef struct RestfulBaseRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "sessionId",
+        .dataTypeSpecific.className = NULL,
+        .number = RestfulBaseRequest_FieldNumber_SessionId,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(RestfulBaseRequest__storage_, sessionId),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[RestfulBaseRequest class]
@@ -210,7 +221,7 @@ typedef struct RestfulBaseRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\010\002\n\000\004\006\000\005\013\000\007\013\000\010\n\000\t\n\000\014\010\000\r\016\000";
+        "\t\002\n\000\004\006\000\005\013\000\007\013\000\010\n\000\t\n\000\014\010\000\r\016\000\016\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

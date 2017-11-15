@@ -122,6 +122,16 @@ public final class BaseRequestProto {
      * <code>int32 partnerId = 12;</code>
      */
     int getPartnerId();
+
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    java.lang.String getSessionId();
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    com.google.protobuf.ByteString
+        getSessionIdBytes();
   }
   /**
    * Protobuf type {@code fanxi.BaseRequest}
@@ -147,6 +157,7 @@ public final class BaseRequestProto {
       version_ = "";
       additionalInfo_ = "";
       partnerId_ = 0;
+      sessionId_ = "";
     }
 
     @java.lang.Override
@@ -241,6 +252,12 @@ public final class BaseRequestProto {
             case 96: {
 
               partnerId_ = input.readInt32();
+              break;
+            }
+            case 106: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              sessionId_ = s;
               break;
             }
           }
@@ -599,6 +616,40 @@ public final class BaseRequestProto {
       return partnerId_;
     }
 
+    public static final int SESSIONID_FIELD_NUMBER = 13;
+    private volatile java.lang.Object sessionId_;
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    public java.lang.String getSessionId() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionId_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string sessionId = 13;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSessionIdBytes() {
+      java.lang.Object ref = sessionId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sessionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -647,6 +698,9 @@ public final class BaseRequestProto {
       if (partnerId_ != 0) {
         output.writeInt32(12, partnerId_);
       }
+      if (!getSessionIdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 13, sessionId_);
+      }
     }
 
     public int getSerializedSize() {
@@ -693,6 +747,9 @@ public final class BaseRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(12, partnerId_);
       }
+      if (!getSessionIdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, sessionId_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -733,6 +790,8 @@ public final class BaseRequestProto {
           .equals(other.getAdditionalInfo());
       result = result && (getPartnerId()
           == other.getPartnerId());
+      result = result && getSessionId()
+          .equals(other.getSessionId());
       return result;
     }
 
@@ -767,6 +826,8 @@ public final class BaseRequestProto {
       hash = (53 * hash) + getAdditionalInfo().hashCode();
       hash = (37 * hash) + PARTNERID_FIELD_NUMBER;
       hash = (53 * hash) + getPartnerId();
+      hash = (37 * hash) + SESSIONID_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionId().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -909,6 +970,8 @@ public final class BaseRequestProto {
 
         partnerId_ = 0;
 
+        sessionId_ = "";
+
         return this;
       }
 
@@ -943,6 +1006,7 @@ public final class BaseRequestProto {
         result.version_ = version_;
         result.additionalInfo_ = additionalInfo_;
         result.partnerId_ = partnerId_;
+        result.sessionId_ = sessionId_;
         onBuilt();
         return result;
       }
@@ -1028,6 +1092,10 @@ public final class BaseRequestProto {
         }
         if (other.getPartnerId() != 0) {
           setPartnerId(other.getPartnerId());
+        }
+        if (!other.getSessionId().isEmpty()) {
+          sessionId_ = other.sessionId_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -1753,6 +1821,75 @@ public final class BaseRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object sessionId_ = "";
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public java.lang.String getSessionId() {
+        java.lang.Object ref = sessionId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSessionIdBytes() {
+        java.lang.Object ref = sessionId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sessionId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public Builder setSessionId(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public Builder clearSessionId() {
+        
+        sessionId_ = getDefaultInstance().getSessionId();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string sessionId = 13;</code>
+       */
+      public Builder setSessionIdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sessionId_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1816,14 +1953,15 @@ public final class BaseRequestProto {
       descriptor;
   static {
     java.lang.String[] descriptorData = {
-      "\n\021BaseRequest.proto\022\005fanxi\"\333\001\n\013BaseReque" +
+      "\n\021BaseRequest.proto\022\005fanxi\"\356\001\n\013BaseReque" +
       "st\022\022\n\ndeviceType\030\001 \001(\005\022\014\n\004imei\030\002 \001(\t\022\r\n\005" +
       "nonce\030\003 \001(\t\022\023\n\013deviceModel\030\004 \001(\t\022\r\n\005toke" +
       "n\030\005 \001(\t\022\016\n\006userId\030\006 \001(\t\022\013\n\003mid\030\007 \001(\005\022\014\n\004" +
       "lang\030\010 \001(\t\022\020\n\010deviceId\030\t \001(\t\022\017\n\007version\030" +
       "\n \001(\t\022\026\n\016additionalInfo\030\013 \001(\t\022\021\n\tpartner" +
-      "Id\030\014 \001(\005B-\n\031com.fanxi.service.messageB\020B" +
-      "aseRequestProtob\006proto3"
+      "Id\030\014 \001(\005\022\021\n\tsessionId\030\r \001(\tB-\n\031com.fanxi" +
+      ".service.messageB\020BaseRequestProtob\006prot" +
+      "o3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1842,7 +1980,7 @@ public final class BaseRequestProto {
     internal_static_fanxi_BaseRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BaseRequest_descriptor,
-        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", "DeviceId", "Version", "AdditionalInfo", "PartnerId", });
+        new java.lang.String[] { "DeviceType", "Imei", "Nonce", "DeviceModel", "Token", "UserId", "Mid", "Lang", "DeviceId", "Version", "AdditionalInfo", "PartnerId", "SessionId", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

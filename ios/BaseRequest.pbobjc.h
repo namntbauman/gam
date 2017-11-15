@@ -59,6 +59,7 @@ typedef GPB_ENUM(BaseRequest_FieldNumber) {
   BaseRequest_FieldNumber_Version = 10,
   BaseRequest_FieldNumber_AdditionalInfo = 11,
   BaseRequest_FieldNumber_PartnerId = 12,
+  BaseRequest_FieldNumber_SessionId = 13,
 };
 
 @interface BaseRequest : GPBMessage
@@ -86,6 +87,8 @@ typedef GPB_ENUM(BaseRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *additionalInfo;
 
 @property(nonatomic, readwrite) int32_t partnerId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sessionId;
 
 @end
 
