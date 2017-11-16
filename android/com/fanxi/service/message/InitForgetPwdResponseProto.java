@@ -50,6 +50,16 @@ public final class InitForgetPwdResponseProto {
      */
     com.google.protobuf.ByteString
         getTxnIdBytes();
+
+    /**
+     * <code>string url = 7;</code>
+     */
+    java.lang.String getUrl();
+    /**
+     * <code>string url = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getUrlBytes();
   }
   /**
    * Protobuf type {@code fanxi.InitForgetPwdResponse}
@@ -65,6 +75,7 @@ public final class InitForgetPwdResponseProto {
     private InitForgetPwdResponse() {
       forgetToken_ = "";
       txnId_ = "";
+      url_ = "";
     }
 
     @java.lang.Override
@@ -115,6 +126,12 @@ public final class InitForgetPwdResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               txnId_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              url_ = s;
               break;
             }
           }
@@ -229,6 +246,40 @@ public final class InitForgetPwdResponseProto {
       }
     }
 
+    public static final int URL_FIELD_NUMBER = 7;
+    private volatile java.lang.Object url_;
+    /**
+     * <code>string url = 7;</code>
+     */
+    public java.lang.String getUrl() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        url_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string url = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUrlBytes() {
+      java.lang.Object ref = url_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        url_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -250,6 +301,9 @@ public final class InitForgetPwdResponseProto {
       if (!getTxnIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, txnId_);
       }
+      if (!getUrlBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, url_);
+      }
     }
 
     public int getSerializedSize() {
@@ -266,6 +320,9 @@ public final class InitForgetPwdResponseProto {
       }
       if (!getTxnIdBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, txnId_);
+      }
+      if (!getUrlBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, url_);
       }
       memoizedSize = size;
       return size;
@@ -292,6 +349,8 @@ public final class InitForgetPwdResponseProto {
           .equals(other.getForgetToken());
       result = result && getTxnId()
           .equals(other.getTxnId());
+      result = result && getUrl()
+          .equals(other.getUrl());
       return result;
     }
 
@@ -310,6 +369,8 @@ public final class InitForgetPwdResponseProto {
       hash = (53 * hash) + getForgetToken().hashCode();
       hash = (37 * hash) + TXNID_FIELD_NUMBER;
       hash = (53 * hash) + getTxnId().hashCode();
+      hash = (37 * hash) + URL_FIELD_NUMBER;
+      hash = (53 * hash) + getUrl().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +499,8 @@ public final class InitForgetPwdResponseProto {
 
         txnId_ = "";
 
+        url_ = "";
+
         return this;
       }
 
@@ -467,6 +530,7 @@ public final class InitForgetPwdResponseProto {
         }
         result.forgetToken_ = forgetToken_;
         result.txnId_ = txnId_;
+        result.url_ = url_;
         onBuilt();
         return result;
       }
@@ -517,6 +581,10 @@ public final class InitForgetPwdResponseProto {
         }
         if (!other.getTxnId().isEmpty()) {
           txnId_ = other.txnId_;
+          onChanged();
+        }
+        if (!other.getUrl().isEmpty()) {
+          url_ = other.url_;
           onChanged();
         }
         onChanged();
@@ -799,6 +867,75 @@ public final class InitForgetPwdResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object url_ = "";
+      /**
+       * <code>string url = 7;</code>
+       */
+      public java.lang.String getUrl() {
+        java.lang.Object ref = url_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          url_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string url = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUrlBytes() {
+        java.lang.Object ref = url_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          url_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string url = 7;</code>
+       */
+      public Builder setUrl(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        url_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 7;</code>
+       */
+      public Builder clearUrl() {
+        
+        url_ = getDefaultInstance().getUrl();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string url = 7;</code>
+       */
+      public Builder setUrlBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        url_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -863,11 +1000,12 @@ public final class InitForgetPwdResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033InitForgetPwdResponse.proto\022\005fanxi\032\031Re" +
-      "stfulBaseResponse.proto\"m\n\025InitForgetPwd" +
+      "stfulBaseResponse.proto\"z\n\025InitForgetPwd" +
       "Response\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.R" +
       "estfulBaseResponse\022\023\n\013forgetToken\030\005 \001(\t\022" +
-      "\r\n\005txnId\030\006 \001(\tB7\n\031com.fanxi.service.mess" +
-      "ageB\032InitForgetPwdResponseProtob\006proto3"
+      "\r\n\005txnId\030\006 \001(\t\022\013\n\003url\030\007 \001(\tB7\n\031com.fanxi" +
+      ".service.messageB\032InitForgetPwdResponseP" +
+      "rotob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -887,7 +1025,7 @@ public final class InitForgetPwdResponseProto {
     internal_static_fanxi_InitForgetPwdResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_InitForgetPwdResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ForgetToken", "TxnId", });
+        new java.lang.String[] { "BaseResponse", "ForgetToken", "TxnId", "Url", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

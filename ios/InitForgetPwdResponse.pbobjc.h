@@ -52,6 +52,7 @@ typedef GPB_ENUM(InitForgetPwdResponse_FieldNumber) {
   InitForgetPwdResponse_FieldNumber_BaseResponse = 1,
   InitForgetPwdResponse_FieldNumber_ForgetToken = 5,
   InitForgetPwdResponse_FieldNumber_TxnId = 6,
+  InitForgetPwdResponse_FieldNumber_URL = 7,
 };
 
 @interface InitForgetPwdResponse : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(InitForgetPwdResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *forgetToken;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
 @end
 

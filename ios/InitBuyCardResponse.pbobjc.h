@@ -52,6 +52,7 @@ typedef GPB_ENUM(InitBuyCardResponse_FieldNumber) {
   InitBuyCardResponse_FieldNumber_BaseResponse = 1,
   InitBuyCardResponse_FieldNumber_PhoneToken = 5,
   InitBuyCardResponse_FieldNumber_TxnId = 6,
+  InitBuyCardResponse_FieldNumber_URL = 7,
 };
 
 @interface InitBuyCardResponse : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(InitBuyCardResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *phoneToken;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
 @end
 
