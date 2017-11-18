@@ -65,6 +65,11 @@ public final class ConfirmBuyCardRequestProto {
      * <code>int32 tariff = 15;</code>
      */
     int getTariff();
+
+    /**
+     * <code>int32 type = 16;</code>
+     */
+    int getType();
   }
   /**
    * Protobuf type {@code fanxi.ConfirmBuyCardRequest}
@@ -82,6 +87,7 @@ public final class ConfirmBuyCardRequestProto {
       phoneToken_ = "";
       txnId_ = "";
       tariff_ = 0;
+      type_ = 0;
     }
 
     @java.lang.Override
@@ -143,6 +149,11 @@ public final class ConfirmBuyCardRequestProto {
             case 120: {
 
               tariff_ = input.readInt32();
+              break;
+            }
+            case 128: {
+
+              type_ = input.readInt32();
               break;
             }
           }
@@ -300,6 +311,15 @@ public final class ConfirmBuyCardRequestProto {
       return tariff_;
     }
 
+    public static final int TYPE_FIELD_NUMBER = 16;
+    private int type_;
+    /**
+     * <code>int32 type = 16;</code>
+     */
+    public int getType() {
+      return type_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -327,6 +347,9 @@ public final class ConfirmBuyCardRequestProto {
       if (tariff_ != 0) {
         output.writeInt32(15, tariff_);
       }
+      if (type_ != 0) {
+        output.writeInt32(16, type_);
+      }
     }
 
     public int getSerializedSize() {
@@ -350,6 +373,10 @@ public final class ConfirmBuyCardRequestProto {
       if (tariff_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(15, tariff_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(16, type_);
       }
       memoizedSize = size;
       return size;
@@ -380,6 +407,8 @@ public final class ConfirmBuyCardRequestProto {
           .equals(other.getTxnId());
       result = result && (getTariff()
           == other.getTariff());
+      result = result && (getType()
+          == other.getType());
       return result;
     }
 
@@ -402,6 +431,8 @@ public final class ConfirmBuyCardRequestProto {
       hash = (53 * hash) + getTxnId().hashCode();
       hash = (37 * hash) + TARIFF_FIELD_NUMBER;
       hash = (53 * hash) + getTariff();
+      hash = (37 * hash) + TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + getType();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -534,6 +565,8 @@ public final class ConfirmBuyCardRequestProto {
 
         tariff_ = 0;
 
+        type_ = 0;
+
         return this;
       }
 
@@ -565,6 +598,7 @@ public final class ConfirmBuyCardRequestProto {
         result.phoneToken_ = phoneToken_;
         result.txnId_ = txnId_;
         result.tariff_ = tariff_;
+        result.type_ = type_;
         onBuilt();
         return result;
       }
@@ -623,6 +657,9 @@ public final class ConfirmBuyCardRequestProto {
         }
         if (other.getTariff() != 0) {
           setTariff(other.getTariff());
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
         }
         onChanged();
         return this;
@@ -999,6 +1036,32 @@ public final class ConfirmBuyCardRequestProto {
         onChanged();
         return this;
       }
+
+      private int type_ ;
+      /**
+       * <code>int32 type = 16;</code>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>int32 type = 16;</code>
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int32 type = 16;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1063,12 +1126,12 @@ public final class ConfirmBuyCardRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033ConfirmBuyCardRequest.proto\022\005fanxi\032\021Ba" +
-      "seRequest.proto\"|\n\025ConfirmBuyCardRequest" +
-      "\022#\n\007baseReq\030\001 \001(\0132\022.fanxi.BaseRequest\022\013\n" +
-      "\003otp\030\014 \001(\t\022\022\n\nphoneToken\030\r \001(\t\022\r\n\005txnId\030" +
-      "\016 \001(\t\022\016\n\006tariff\030\017 \001(\005B7\n\031com.fanxi.servi" +
-      "ce.messageB\032ConfirmBuyCardRequestProtob\006" +
-      "proto3"
+      "seRequest.proto\"\212\001\n\025ConfirmBuyCardReques" +
+      "t\022#\n\007baseReq\030\001 \001(\0132\022.fanxi.BaseRequest\022\013" +
+      "\n\003otp\030\014 \001(\t\022\022\n\nphoneToken\030\r \001(\t\022\r\n\005txnId" +
+      "\030\016 \001(\t\022\016\n\006tariff\030\017 \001(\005\022\014\n\004type\030\020 \001(\005B7\n\031" +
+      "com.fanxi.service.messageB\032ConfirmBuyCar" +
+      "dRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1088,7 +1151,7 @@ public final class ConfirmBuyCardRequestProto {
     internal_static_fanxi_ConfirmBuyCardRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_ConfirmBuyCardRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "Otp", "PhoneToken", "TxnId", "Tariff", });
+        new java.lang.String[] { "BaseReq", "Otp", "PhoneToken", "TxnId", "Tariff", "Type", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

@@ -52,10 +52,12 @@ static GPBFileDescriptor *ConfirmBuyCardRequestRoot_FileDescriptor(void) {
 @dynamic phoneToken;
 @dynamic txnId;
 @dynamic tariff;
+@dynamic type;
 
 typedef struct ConfirmBuyCardRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t tariff;
+  int32_t type;
   BaseRequest *baseReq;
   NSString *otp;
   NSString *phoneToken;
@@ -110,6 +112,15 @@ typedef struct ConfirmBuyCardRequest__storage_ {
         .number = ConfirmBuyCardRequest_FieldNumber_Tariff,
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(ConfirmBuyCardRequest__storage_, tariff),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = ConfirmBuyCardRequest_FieldNumber_Type,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(ConfirmBuyCardRequest__storage_, type),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },

@@ -54,6 +54,7 @@ typedef GPB_ENUM(ConfirmBuyCardRequest_FieldNumber) {
   ConfirmBuyCardRequest_FieldNumber_PhoneToken = 13,
   ConfirmBuyCardRequest_FieldNumber_TxnId = 14,
   ConfirmBuyCardRequest_FieldNumber_Tariff = 15,
+  ConfirmBuyCardRequest_FieldNumber_Type = 16,
 };
 
 @interface ConfirmBuyCardRequest : GPBMessage
@@ -69,6 +70,8 @@ typedef GPB_ENUM(ConfirmBuyCardRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
 
 @property(nonatomic, readwrite) int32_t tariff;
+
+@property(nonatomic, readwrite) int32_t type;
 
 @end
 
