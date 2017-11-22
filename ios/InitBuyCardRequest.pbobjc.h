@@ -51,6 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(InitBuyCardRequest_FieldNumber) {
   InitBuyCardRequest_FieldNumber_BaseReq = 1,
   InitBuyCardRequest_FieldNumber_Tariff = 15,
+  InitBuyCardRequest_FieldNumber_Type = 16,
 };
 
 @interface InitBuyCardRequest : GPBMessage
@@ -60,6 +61,8 @@ typedef GPB_ENUM(InitBuyCardRequest_FieldNumber) {
 @property(nonatomic, readwrite) BOOL hasBaseReq;
 
 @property(nonatomic, readwrite) int32_t tariff;
+
+@property(nonatomic, readwrite) int32_t type;
 
 @end
 

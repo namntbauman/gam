@@ -49,10 +49,12 @@ static GPBFileDescriptor *InitBuyCardRequestRoot_FileDescriptor(void) {
 
 @dynamic hasBaseReq, baseReq;
 @dynamic tariff;
+@dynamic type;
 
 typedef struct InitBuyCardRequest__storage_ {
   uint32_t _has_storage_[1];
   int32_t tariff;
+  int32_t type;
   BaseRequest *baseReq;
 } InitBuyCardRequest__storage_;
 
@@ -77,6 +79,15 @@ typedef struct InitBuyCardRequest__storage_ {
         .number = InitBuyCardRequest_FieldNumber_Tariff,
         .hasIndex = 1,
         .offset = (uint32_t)offsetof(InitBuyCardRequest__storage_, tariff),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = InitBuyCardRequest_FieldNumber_Type,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(InitBuyCardRequest__storage_, type),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },

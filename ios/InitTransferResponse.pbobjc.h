@@ -52,6 +52,7 @@ typedef GPB_ENUM(InitTransferResponse_FieldNumber) {
   InitTransferResponse_FieldNumber_BaseResponse = 1,
   InitTransferResponse_FieldNumber_PhoneToken = 5,
   InitTransferResponse_FieldNumber_TxnId = 6,
+  InitTransferResponse_FieldNumber_URL = 7,
 };
 
 @interface InitTransferResponse : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(InitTransferResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *phoneToken;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
 @end
 
