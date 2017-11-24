@@ -52,6 +52,7 @@ typedef GPB_ENUM(InitRewardResponse_FieldNumber) {
   InitRewardResponse_FieldNumber_BaseResponse = 1,
   InitRewardResponse_FieldNumber_Token = 5,
   InitRewardResponse_FieldNumber_TxnId = 6,
+  InitRewardResponse_FieldNumber_URL = 7,
 };
 
 @interface InitRewardResponse : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(InitRewardResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *URL;
 
 @end
 
