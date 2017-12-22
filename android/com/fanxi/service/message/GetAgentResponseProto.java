@@ -32,25 +32,25 @@ public final class GetAgentResponseProto {
     com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponseOrBuilder getBaseResponseOrBuilder();
 
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     java.util.List<com.fanxi.service.message.AgentEntityProto.AgentEntity> 
         getAgentsList();
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     com.fanxi.service.message.AgentEntityProto.AgentEntity getAgents(int index);
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     int getAgentsCount();
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     java.util.List<? extends com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder> 
         getAgentsOrBuilderList();
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder getAgentsOrBuilder(
         int index);
@@ -108,7 +108,7 @@ public final class GetAgentResponseProto {
 
               break;
             }
-            case 42: {
+            case 34: {
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 agents_ = new java.util.ArrayList<com.fanxi.service.message.AgentEntityProto.AgentEntity>();
                 mutable_bitField0_ |= 0x00000002;
@@ -165,35 +165,35 @@ public final class GetAgentResponseProto {
       return getBaseResponse();
     }
 
-    public static final int AGENTS_FIELD_NUMBER = 5;
+    public static final int AGENTS_FIELD_NUMBER = 4;
     private java.util.List<com.fanxi.service.message.AgentEntityProto.AgentEntity> agents_;
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     public java.util.List<com.fanxi.service.message.AgentEntityProto.AgentEntity> getAgentsList() {
       return agents_;
     }
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder> 
         getAgentsOrBuilderList() {
       return agents_;
     }
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     public int getAgentsCount() {
       return agents_.size();
     }
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     public com.fanxi.service.message.AgentEntityProto.AgentEntity getAgents(int index) {
       return agents_.get(index);
     }
     /**
-     * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+     * <code>repeated .fanxi.AgentEntity agents = 4;</code>
      */
     public com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder getAgentsOrBuilder(
         int index) {
@@ -216,7 +216,7 @@ public final class GetAgentResponseProto {
         output.writeMessage(1, getBaseResponse());
       }
       for (int i = 0; i < agents_.size(); i++) {
-        output.writeMessage(5, agents_.get(i));
+        output.writeMessage(4, agents_.get(i));
       }
     }
 
@@ -231,7 +231,7 @@ public final class GetAgentResponseProto {
       }
       for (int i = 0; i < agents_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, agents_.get(i));
+          .computeMessageSize(4, agents_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -671,7 +671,7 @@ public final class GetAgentResponseProto {
           com.fanxi.service.message.AgentEntityProto.AgentEntity, com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder, com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder> agentsBuilder_;
 
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public java.util.List<com.fanxi.service.message.AgentEntityProto.AgentEntity> getAgentsList() {
         if (agentsBuilder_ == null) {
@@ -681,7 +681,7 @@ public final class GetAgentResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public int getAgentsCount() {
         if (agentsBuilder_ == null) {
@@ -691,7 +691,7 @@ public final class GetAgentResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public com.fanxi.service.message.AgentEntityProto.AgentEntity getAgents(int index) {
         if (agentsBuilder_ == null) {
@@ -701,7 +701,7 @@ public final class GetAgentResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder setAgents(
           int index, com.fanxi.service.message.AgentEntityProto.AgentEntity value) {
@@ -718,7 +718,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder setAgents(
           int index, com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder builderForValue) {
@@ -732,7 +732,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder addAgents(com.fanxi.service.message.AgentEntityProto.AgentEntity value) {
         if (agentsBuilder_ == null) {
@@ -748,7 +748,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder addAgents(
           int index, com.fanxi.service.message.AgentEntityProto.AgentEntity value) {
@@ -765,7 +765,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder addAgents(
           com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder builderForValue) {
@@ -779,7 +779,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder addAgents(
           int index, com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder builderForValue) {
@@ -793,7 +793,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder addAllAgents(
           java.lang.Iterable<? extends com.fanxi.service.message.AgentEntityProto.AgentEntity> values) {
@@ -808,7 +808,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder clearAgents() {
         if (agentsBuilder_ == null) {
@@ -821,7 +821,7 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public Builder removeAgents(int index) {
         if (agentsBuilder_ == null) {
@@ -834,14 +834,14 @@ public final class GetAgentResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder getAgentsBuilder(
           int index) {
         return getAgentsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder getAgentsOrBuilder(
           int index) {
@@ -851,7 +851,7 @@ public final class GetAgentResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.AgentEntityProto.AgentEntityOrBuilder> 
            getAgentsOrBuilderList() {
@@ -862,14 +862,14 @@ public final class GetAgentResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder addAgentsBuilder() {
         return getAgentsFieldBuilder().addBuilder(
             com.fanxi.service.message.AgentEntityProto.AgentEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder addAgentsBuilder(
           int index) {
@@ -877,7 +877,7 @@ public final class GetAgentResponseProto {
             index, com.fanxi.service.message.AgentEntityProto.AgentEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.AgentEntity agents = 5;</code>
+       * <code>repeated .fanxi.AgentEntity agents = 4;</code>
        */
       public java.util.List<com.fanxi.service.message.AgentEntityProto.AgentEntity.Builder> 
            getAgentsBuilderList() {
@@ -963,7 +963,7 @@ public final class GetAgentResponseProto {
       "\n\026GetAgentResponse.proto\022\005fanxi\032\031Restful" +
       "BaseResponse.proto\032\021AgentEntity.proto\"h\n" +
       "\020GetAgentResponse\0220\n\014baseResponse\030\001 \001(\0132" +
-      "\032.fanxi.RestfulBaseResponse\022\"\n\006agents\030\005 " +
+      "\032.fanxi.RestfulBaseResponse\022\"\n\006agents\030\004 " +
       "\003(\0132\022.fanxi.AgentEntityB2\n\031com.fanxi.ser" +
       "vice.messageB\025GetAgentResponseProtob\006pro" +
       "to3"

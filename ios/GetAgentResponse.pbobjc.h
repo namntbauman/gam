@@ -51,7 +51,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(GetAgentResponse_FieldNumber) {
   GetAgentResponse_FieldNumber_BaseResponse = 1,
-  GetAgentResponse_FieldNumber_AgentsArray = 5,
+  GetAgentResponse_FieldNumber_AgentsArray = 4,
 };
 
 @interface GetAgentResponse : GPBMessage
