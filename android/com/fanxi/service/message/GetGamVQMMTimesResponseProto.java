@@ -35,6 +35,30 @@ public final class GetGamVQMMTimesResponseProto {
      * <code>int32 times = 5;</code>
      */
     int getTimes();
+
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    java.util.List<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity> 
+        getVqmmEntityList();
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity getVqmmEntity(int index);
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    int getVqmmEntityCount();
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder> 
+        getVqmmEntityOrBuilderList();
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder getVqmmEntityOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code fanxi.GetGamVQMMTimesResponse}
@@ -49,6 +73,7 @@ public final class GetGamVQMMTimesResponseProto {
     }
     private GetGamVQMMTimesResponse() {
       times_ = 0;
+      vqmmEntity_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -94,6 +119,15 @@ public final class GetGamVQMMTimesResponseProto {
               times_ = input.readInt32();
               break;
             }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                vqmmEntity_ = new java.util.ArrayList<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              vqmmEntity_.add(
+                  input.readMessage(com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -102,6 +136,9 @@ public final class GetGamVQMMTimesResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          vqmmEntity_ = java.util.Collections.unmodifiableList(vqmmEntity_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -117,6 +154,7 @@ public final class GetGamVQMMTimesResponseProto {
               com.fanxi.service.message.GetGamVQMMTimesResponseProto.GetGamVQMMTimesResponse.class, com.fanxi.service.message.GetGamVQMMTimesResponseProto.GetGamVQMMTimesResponse.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BASERESPONSE_FIELD_NUMBER = 1;
     private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_;
     /**
@@ -147,6 +185,41 @@ public final class GetGamVQMMTimesResponseProto {
       return times_;
     }
 
+    public static final int VQMMENTITY_FIELD_NUMBER = 6;
+    private java.util.List<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity> vqmmEntity_;
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    public java.util.List<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity> getVqmmEntityList() {
+      return vqmmEntity_;
+    }
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder> 
+        getVqmmEntityOrBuilderList() {
+      return vqmmEntity_;
+    }
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    public int getVqmmEntityCount() {
+      return vqmmEntity_.size();
+    }
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity getVqmmEntity(int index) {
+      return vqmmEntity_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+     */
+    public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder getVqmmEntityOrBuilder(
+        int index) {
+      return vqmmEntity_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -165,6 +238,9 @@ public final class GetGamVQMMTimesResponseProto {
       if (times_ != 0) {
         output.writeInt32(5, times_);
       }
+      for (int i = 0; i < vqmmEntity_.size(); i++) {
+        output.writeMessage(6, vqmmEntity_.get(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -179,6 +255,10 @@ public final class GetGamVQMMTimesResponseProto {
       if (times_ != 0) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(5, times_);
+      }
+      for (int i = 0; i < vqmmEntity_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(6, vqmmEntity_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -203,6 +283,8 @@ public final class GetGamVQMMTimesResponseProto {
       }
       result = result && (getTimes()
           == other.getTimes());
+      result = result && getVqmmEntityList()
+          .equals(other.getVqmmEntityList());
       return result;
     }
 
@@ -219,6 +301,10 @@ public final class GetGamVQMMTimesResponseProto {
       }
       hash = (37 * hash) + TIMES_FIELD_NUMBER;
       hash = (53 * hash) + getTimes();
+      if (getVqmmEntityCount() > 0) {
+        hash = (37 * hash) + VQMMENTITY_FIELD_NUMBER;
+        hash = (53 * hash) + getVqmmEntityList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -333,6 +419,7 @@ public final class GetGamVQMMTimesResponseProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getVqmmEntityFieldBuilder();
         }
       }
       public Builder clear() {
@@ -345,6 +432,12 @@ public final class GetGamVQMMTimesResponseProto {
         }
         times_ = 0;
 
+        if (vqmmEntityBuilder_ == null) {
+          vqmmEntity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          vqmmEntityBuilder_.clear();
+        }
         return this;
       }
 
@@ -367,12 +460,24 @@ public final class GetGamVQMMTimesResponseProto {
 
       public com.fanxi.service.message.GetGamVQMMTimesResponseProto.GetGamVQMMTimesResponse buildPartial() {
         com.fanxi.service.message.GetGamVQMMTimesResponseProto.GetGamVQMMTimesResponse result = new com.fanxi.service.message.GetGamVQMMTimesResponseProto.GetGamVQMMTimesResponse(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (baseResponseBuilder_ == null) {
           result.baseResponse_ = baseResponse_;
         } else {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
         result.times_ = times_;
+        if (vqmmEntityBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
+            vqmmEntity_ = java.util.Collections.unmodifiableList(vqmmEntity_);
+            bitField0_ = (bitField0_ & ~0x00000004);
+          }
+          result.vqmmEntity_ = vqmmEntity_;
+        } else {
+          result.vqmmEntity_ = vqmmEntityBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -420,6 +525,32 @@ public final class GetGamVQMMTimesResponseProto {
         if (other.getTimes() != 0) {
           setTimes(other.getTimes());
         }
+        if (vqmmEntityBuilder_ == null) {
+          if (!other.vqmmEntity_.isEmpty()) {
+            if (vqmmEntity_.isEmpty()) {
+              vqmmEntity_ = other.vqmmEntity_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+            } else {
+              ensureVqmmEntityIsMutable();
+              vqmmEntity_.addAll(other.vqmmEntity_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.vqmmEntity_.isEmpty()) {
+            if (vqmmEntityBuilder_.isEmpty()) {
+              vqmmEntityBuilder_.dispose();
+              vqmmEntityBuilder_ = null;
+              vqmmEntity_ = other.vqmmEntity_;
+              bitField0_ = (bitField0_ & ~0x00000004);
+              vqmmEntityBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getVqmmEntityFieldBuilder() : null;
+            } else {
+              vqmmEntityBuilder_.addAllMessages(other.vqmmEntity_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -445,6 +576,7 @@ public final class GetGamVQMMTimesResponseProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.fanxi.service.message.RestfulBaseResponseProto.RestfulBaseResponse baseResponse_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -588,6 +720,246 @@ public final class GetGamVQMMTimesResponseProto {
         onChanged();
         return this;
       }
+
+      private java.util.List<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity> vqmmEntity_ =
+        java.util.Collections.emptyList();
+      private void ensureVqmmEntityIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          vqmmEntity_ = new java.util.ArrayList<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity>(vqmmEntity_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder> vqmmEntityBuilder_;
+
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public java.util.List<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity> getVqmmEntityList() {
+        if (vqmmEntityBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(vqmmEntity_);
+        } else {
+          return vqmmEntityBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public int getVqmmEntityCount() {
+        if (vqmmEntityBuilder_ == null) {
+          return vqmmEntity_.size();
+        } else {
+          return vqmmEntityBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity getVqmmEntity(int index) {
+        if (vqmmEntityBuilder_ == null) {
+          return vqmmEntity_.get(index);
+        } else {
+          return vqmmEntityBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder setVqmmEntity(
+          int index, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity value) {
+        if (vqmmEntityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.set(index, value);
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder setVqmmEntity(
+          int index, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder builderForValue) {
+        if (vqmmEntityBuilder_ == null) {
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder addVqmmEntity(com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity value) {
+        if (vqmmEntityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.add(value);
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder addVqmmEntity(
+          int index, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity value) {
+        if (vqmmEntityBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.add(index, value);
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder addVqmmEntity(
+          com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder builderForValue) {
+        if (vqmmEntityBuilder_ == null) {
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.add(builderForValue.build());
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder addVqmmEntity(
+          int index, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder builderForValue) {
+        if (vqmmEntityBuilder_ == null) {
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder addAllVqmmEntity(
+          java.lang.Iterable<? extends com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity> values) {
+        if (vqmmEntityBuilder_ == null) {
+          ensureVqmmEntityIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, vqmmEntity_);
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder clearVqmmEntity() {
+        if (vqmmEntityBuilder_ == null) {
+          vqmmEntity_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000004);
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public Builder removeVqmmEntity(int index) {
+        if (vqmmEntityBuilder_ == null) {
+          ensureVqmmEntityIsMutable();
+          vqmmEntity_.remove(index);
+          onChanged();
+        } else {
+          vqmmEntityBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder getVqmmEntityBuilder(
+          int index) {
+        return getVqmmEntityFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder getVqmmEntityOrBuilder(
+          int index) {
+        if (vqmmEntityBuilder_ == null) {
+          return vqmmEntity_.get(index);  } else {
+          return vqmmEntityBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder> 
+           getVqmmEntityOrBuilderList() {
+        if (vqmmEntityBuilder_ != null) {
+          return vqmmEntityBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(vqmmEntity_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder addVqmmEntityBuilder() {
+        return getVqmmEntityFieldBuilder().addBuilder(
+            com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder addVqmmEntityBuilder(
+          int index) {
+        return getVqmmEntityFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.VQMMTimesEntity vqmmEntity = 6;</code>
+       */
+      public java.util.List<com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder> 
+           getVqmmEntityBuilderList() {
+        return getVqmmEntityFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder> 
+          getVqmmEntityFieldBuilder() {
+        if (vqmmEntityBuilder_ == null) {
+          vqmmEntityBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntity.Builder, com.fanxi.service.message.VQMMTimesEntityProto.VQMMTimesEntityOrBuilder>(
+                  vqmmEntity_,
+                  ((bitField0_ & 0x00000004) == 0x00000004),
+                  getParentForChildren(),
+                  isClean());
+          vqmmEntity_ = null;
+        }
+        return vqmmEntityBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -652,11 +1024,13 @@ public final class GetGamVQMMTimesResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\035GetGamVQMMTimesResponse.proto\022\005fanxi\032\031" +
-      "RestfulBaseResponse.proto\"Z\n\027GetGamVQMMT" +
-      "imesResponse\0220\n\014baseResponse\030\001 \001(\0132\032.fan" +
-      "xi.RestfulBaseResponse\022\r\n\005times\030\005 \001(\005B9\n" +
-      "\031com.fanxi.service.messageB\034GetGamVQMMTi" +
-      "mesResponseProtob\006proto3"
+      "RestfulBaseResponse.proto\032\025VQMMTimesEnti" +
+      "ty.proto\"\206\001\n\027GetGamVQMMTimesResponse\0220\n\014" +
+      "baseResponse\030\001 \001(\0132\032.fanxi.RestfulBaseRe" +
+      "sponse\022\r\n\005times\030\005 \001(\005\022*\n\nvqmmEntity\030\006 \003(" +
+      "\0132\026.fanxi.VQMMTimesEntityB9\n\031com.fanxi.s" +
+      "ervice.messageB\034GetGamVQMMTimesResponseP" +
+      "rotob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -670,14 +1044,16 @@ public final class GetGamVQMMTimesResponseProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor(),
+          com.fanxi.service.message.VQMMTimesEntityProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_GetGamVQMMTimesResponse_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_GetGamVQMMTimesResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_GetGamVQMMTimesResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Times", });
+        new java.lang.String[] { "BaseResponse", "Times", "VqmmEntity", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
+    com.fanxi.service.message.VQMMTimesEntityProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

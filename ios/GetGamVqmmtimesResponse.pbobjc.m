@@ -15,6 +15,7 @@
 
  #import "GetGamVqmmtimesResponse.pbobjc.h"
  #import "RestfulBaseResponse.pbobjc.h"
+ #import "VqmmtimesEntity.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -49,11 +50,13 @@ static GPBFileDescriptor *GetGamVqmmtimesResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic times;
+@dynamic vqmmEntityArray, vqmmEntityArray_Count;
 
 typedef struct GetGamVQMMTimesResponse__storage_ {
   uint32_t _has_storage_[1];
   int32_t times;
   RestfulBaseResponse *baseResponse;
+  NSMutableArray *vqmmEntityArray;
 } GetGamVQMMTimesResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -80,6 +83,15 @@ typedef struct GetGamVQMMTimesResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
       },
+      {
+        .name = "vqmmEntityArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(VQMMTimesEntity),
+        .number = GetGamVQMMTimesResponse_FieldNumber_VqmmEntityArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(GetGamVQMMTimesResponse__storage_, vqmmEntityArray),
+        .flags = (GPBFieldFlags)(GPBFieldRepeated | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeMessage,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[GetGamVQMMTimesResponse class]
@@ -91,7 +103,7 @@ typedef struct GetGamVQMMTimesResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\001\014\000";
+        "\002\001\014\000\006\000vqmmEntity\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
