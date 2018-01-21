@@ -50,6 +50,16 @@ public final class InitForgetPwdRequestProto {
      */
     com.google.protobuf.ByteString
         getPhoneBytes();
+
+    /**
+     * <code>string password = 22;</code>
+     */
+    java.lang.String getPassword();
+    /**
+     * <code>string password = 22;</code>
+     */
+    com.google.protobuf.ByteString
+        getPasswordBytes();
   }
   /**
    * Protobuf type {@code fanxi.InitForgetPwdRequest}
@@ -65,6 +75,7 @@ public final class InitForgetPwdRequestProto {
     private InitForgetPwdRequest() {
       userName_ = "";
       phone_ = "";
+      password_ = "";
     }
 
     @java.lang.Override
@@ -115,6 +126,12 @@ public final class InitForgetPwdRequestProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               phone_ = s;
+              break;
+            }
+            case 178: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              password_ = s;
               break;
             }
           }
@@ -229,6 +246,40 @@ public final class InitForgetPwdRequestProto {
       }
     }
 
+    public static final int PASSWORD_FIELD_NUMBER = 22;
+    private volatile java.lang.Object password_;
+    /**
+     * <code>string password = 22;</code>
+     */
+    public java.lang.String getPassword() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        password_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string password = 22;</code>
+     */
+    public com.google.protobuf.ByteString
+        getPasswordBytes() {
+      java.lang.Object ref = password_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        password_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -250,6 +301,9 @@ public final class InitForgetPwdRequestProto {
       if (!getPhoneBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 21, phone_);
       }
+      if (!getPasswordBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 22, password_);
+      }
     }
 
     public int getSerializedSize() {
@@ -266,6 +320,9 @@ public final class InitForgetPwdRequestProto {
       }
       if (!getPhoneBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, phone_);
+      }
+      if (!getPasswordBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(22, password_);
       }
       memoizedSize = size;
       return size;
@@ -292,6 +349,8 @@ public final class InitForgetPwdRequestProto {
           .equals(other.getUserName());
       result = result && getPhone()
           .equals(other.getPhone());
+      result = result && getPassword()
+          .equals(other.getPassword());
       return result;
     }
 
@@ -310,6 +369,8 @@ public final class InitForgetPwdRequestProto {
       hash = (53 * hash) + getUserName().hashCode();
       hash = (37 * hash) + PHONE_FIELD_NUMBER;
       hash = (53 * hash) + getPhone().hashCode();
+      hash = (37 * hash) + PASSWORD_FIELD_NUMBER;
+      hash = (53 * hash) + getPassword().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +499,8 @@ public final class InitForgetPwdRequestProto {
 
         phone_ = "";
 
+        password_ = "";
+
         return this;
       }
 
@@ -467,6 +530,7 @@ public final class InitForgetPwdRequestProto {
         }
         result.userName_ = userName_;
         result.phone_ = phone_;
+        result.password_ = password_;
         onBuilt();
         return result;
       }
@@ -517,6 +581,10 @@ public final class InitForgetPwdRequestProto {
         }
         if (!other.getPhone().isEmpty()) {
           phone_ = other.phone_;
+          onChanged();
+        }
+        if (!other.getPassword().isEmpty()) {
+          password_ = other.password_;
           onChanged();
         }
         onChanged();
@@ -799,6 +867,75 @@ public final class InitForgetPwdRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object password_ = "";
+      /**
+       * <code>string password = 22;</code>
+       */
+      public java.lang.String getPassword() {
+        java.lang.Object ref = password_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          password_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string password = 22;</code>
+       */
+      public com.google.protobuf.ByteString
+          getPasswordBytes() {
+        java.lang.Object ref = password_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          password_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string password = 22;</code>
+       */
+      public Builder setPassword(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        password_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 22;</code>
+       */
+      public Builder clearPassword() {
+        
+        password_ = getDefaultInstance().getPassword();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string password = 22;</code>
+       */
+      public Builder setPasswordBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        password_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -863,11 +1000,12 @@ public final class InitForgetPwdRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\032InitForgetPwdRequest.proto\022\005fanxi\032\030Res" +
-      "tfulBaseRequest.proto\"c\n\024InitForgetPwdRe" +
+      "tfulBaseRequest.proto\"u\n\024InitForgetPwdRe" +
       "quest\022*\n\007baseReq\030\001 \001(\0132\031.fanxi.RestfulBa" +
       "seRequest\022\020\n\010userName\030\024 \001(\t\022\r\n\005phone\030\025 \001" +
-      "(\tB6\n\031com.fanxi.service.messageB\031InitFor" +
-      "getPwdRequestProtob\006proto3"
+      "(\t\022\020\n\010password\030\026 \001(\tB6\n\031com.fanxi.servic" +
+      "e.messageB\031InitForgetPwdRequestProtob\006pr" +
+      "oto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -887,7 +1025,7 @@ public final class InitForgetPwdRequestProto {
     internal_static_fanxi_InitForgetPwdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_InitForgetPwdRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "UserName", "Phone", });
+        new java.lang.String[] { "BaseReq", "UserName", "Phone", "Password", });
     com.fanxi.service.message.RestfulBaseRequestProto.getDescriptor();
   }
 

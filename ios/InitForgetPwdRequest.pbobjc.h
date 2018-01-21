@@ -52,6 +52,7 @@ typedef GPB_ENUM(InitForgetPwdRequest_FieldNumber) {
   InitForgetPwdRequest_FieldNumber_BaseReq = 1,
   InitForgetPwdRequest_FieldNumber_UserName = 20,
   InitForgetPwdRequest_FieldNumber_Phone = 21,
+  InitForgetPwdRequest_FieldNumber_Password = 22,
 };
 
 @interface InitForgetPwdRequest : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(InitForgetPwdRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *userName;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *password;
 
 @end
 

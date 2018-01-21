@@ -50,12 +50,14 @@ static GPBFileDescriptor *InitForgetPwdRequestRoot_FileDescriptor(void) {
 @dynamic hasBaseReq, baseReq;
 @dynamic userName;
 @dynamic phone;
+@dynamic password;
 
 typedef struct InitForgetPwdRequest__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseRequest *baseReq;
   NSString *userName;
   NSString *phone;
+  NSString *password;
 } InitForgetPwdRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -88,6 +90,15 @@ typedef struct InitForgetPwdRequest__storage_ {
         .number = InitForgetPwdRequest_FieldNumber_Phone,
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(InitForgetPwdRequest__storage_, phone),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "password",
+        .dataTypeSpecific.className = NULL,
+        .number = InitForgetPwdRequest_FieldNumber_Password,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(InitForgetPwdRequest__storage_, password),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
