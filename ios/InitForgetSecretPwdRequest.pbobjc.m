@@ -48,10 +48,12 @@ static GPBFileDescriptor *InitForgetSecretPwdRequestRoot_FileDescriptor(void) {
 @implementation InitForgetSecretPwdRequest
 
 @dynamic hasBaseReq, baseReq;
+@dynamic secretPwd;
 
 typedef struct InitForgetSecretPwdRequest__storage_ {
   uint32_t _has_storage_[1];
   BaseRequest *baseReq;
+  NSString *secretPwd;
 } InitForgetSecretPwdRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -69,6 +71,15 @@ typedef struct InitForgetSecretPwdRequest__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
       },
+      {
+        .name = "secretPwd",
+        .dataTypeSpecific.className = NULL,
+        .number = InitForgetSecretPwdRequest_FieldNumber_SecretPwd,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(InitForgetSecretPwdRequest__storage_, secretPwd),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[InitForgetSecretPwdRequest class]
@@ -80,7 +91,7 @@ typedef struct InitForgetSecretPwdRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\001\001\007\000";
+        "\002\001\007\000\024\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

@@ -30,6 +30,16 @@ public final class InitForgetSecretPwdRequestProto {
      * <code>.fanxi.BaseRequest baseReq = 1;</code>
      */
     com.fanxi.service.message.BaseRequestProto.BaseRequestOrBuilder getBaseReqOrBuilder();
+
+    /**
+     * <code>string secretPwd = 20;</code>
+     */
+    java.lang.String getSecretPwd();
+    /**
+     * <code>string secretPwd = 20;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecretPwdBytes();
   }
   /**
    * Protobuf type {@code fanxi.InitForgetSecretPwdRequest}
@@ -43,6 +53,7 @@ public final class InitForgetSecretPwdRequestProto {
       super(builder);
     }
     private InitForgetSecretPwdRequest() {
+      secretPwd_ = "";
     }
 
     @java.lang.Override
@@ -81,6 +92,12 @@ public final class InitForgetSecretPwdRequestProto {
                 baseReq_ = subBuilder.buildPartial();
               }
 
+              break;
+            }
+            case 162: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secretPwd_ = s;
               break;
             }
           }
@@ -127,6 +144,40 @@ public final class InitForgetSecretPwdRequestProto {
       return getBaseReq();
     }
 
+    public static final int SECRETPWD_FIELD_NUMBER = 20;
+    private volatile java.lang.Object secretPwd_;
+    /**
+     * <code>string secretPwd = 20;</code>
+     */
+    public java.lang.String getSecretPwd() {
+      java.lang.Object ref = secretPwd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretPwd_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string secretPwd = 20;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecretPwdBytes() {
+      java.lang.Object ref = secretPwd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secretPwd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -142,6 +193,9 @@ public final class InitForgetSecretPwdRequestProto {
       if (baseReq_ != null) {
         output.writeMessage(1, getBaseReq());
       }
+      if (!getSecretPwdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 20, secretPwd_);
+      }
     }
 
     public int getSerializedSize() {
@@ -152,6 +206,9 @@ public final class InitForgetSecretPwdRequestProto {
       if (baseReq_ != null) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseReq());
+      }
+      if (!getSecretPwdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, secretPwd_);
       }
       memoizedSize = size;
       return size;
@@ -174,6 +231,8 @@ public final class InitForgetSecretPwdRequestProto {
         result = result && getBaseReq()
             .equals(other.getBaseReq());
       }
+      result = result && getSecretPwd()
+          .equals(other.getSecretPwd());
       return result;
     }
 
@@ -188,6 +247,8 @@ public final class InitForgetSecretPwdRequestProto {
         hash = (37 * hash) + BASEREQ_FIELD_NUMBER;
         hash = (53 * hash) + getBaseReq().hashCode();
       }
+      hash = (37 * hash) + SECRETPWD_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretPwd().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -312,6 +373,8 @@ public final class InitForgetSecretPwdRequestProto {
           baseReq_ = null;
           baseReqBuilder_ = null;
         }
+        secretPwd_ = "";
+
         return this;
       }
 
@@ -339,6 +402,7 @@ public final class InitForgetSecretPwdRequestProto {
         } else {
           result.baseReq_ = baseReqBuilder_.build();
         }
+        result.secretPwd_ = secretPwd_;
         onBuilt();
         return result;
       }
@@ -382,6 +446,10 @@ public final class InitForgetSecretPwdRequestProto {
         if (other == com.fanxi.service.message.InitForgetSecretPwdRequestProto.InitForgetSecretPwdRequest.getDefaultInstance()) return this;
         if (other.hasBaseReq()) {
           mergeBaseReq(other.getBaseReq());
+        }
+        if (!other.getSecretPwd().isEmpty()) {
+          secretPwd_ = other.secretPwd_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -525,6 +593,75 @@ public final class InitForgetSecretPwdRequestProto {
         }
         return baseReqBuilder_;
       }
+
+      private java.lang.Object secretPwd_ = "";
+      /**
+       * <code>string secretPwd = 20;</code>
+       */
+      public java.lang.String getSecretPwd() {
+        java.lang.Object ref = secretPwd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretPwd_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string secretPwd = 20;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecretPwdBytes() {
+        java.lang.Object ref = secretPwd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secretPwd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string secretPwd = 20;</code>
+       */
+      public Builder setSecretPwd(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secretPwd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secretPwd = 20;</code>
+       */
+      public Builder clearSecretPwd() {
+        
+        secretPwd_ = getDefaultInstance().getSecretPwd();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secretPwd = 20;</code>
+       */
+      public Builder setSecretPwdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secretPwd_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -589,10 +726,11 @@ public final class InitForgetSecretPwdRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n InitForgetSecretPwdRequest.proto\022\005fanx" +
-      "i\032\021BaseRequest.proto\"A\n\032InitForgetSecret" +
+      "i\032\021BaseRequest.proto\"T\n\032InitForgetSecret" +
       "PwdRequest\022#\n\007baseReq\030\001 \001(\0132\022.fanxi.Base" +
-      "RequestB<\n\031com.fanxi.service.messageB\037In" +
-      "itForgetSecretPwdRequestProtob\006proto3"
+      "Request\022\021\n\tsecretPwd\030\024 \001(\tB<\n\031com.fanxi." +
+      "service.messageB\037InitForgetSecretPwdRequ" +
+      "estProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -612,7 +750,7 @@ public final class InitForgetSecretPwdRequestProto {
     internal_static_fanxi_InitForgetSecretPwdRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_InitForgetSecretPwdRequest_descriptor,
-        new java.lang.String[] { "BaseReq", });
+        new java.lang.String[] { "BaseReq", "SecretPwd", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 

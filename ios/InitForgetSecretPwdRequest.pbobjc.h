@@ -50,6 +50,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(InitForgetSecretPwdRequest_FieldNumber) {
   InitForgetSecretPwdRequest_FieldNumber_BaseReq = 1,
+  InitForgetSecretPwdRequest_FieldNumber_SecretPwd = 20,
 };
 
 @interface InitForgetSecretPwdRequest : GPBMessage
@@ -57,6 +58,8 @@ typedef GPB_ENUM(InitForgetSecretPwdRequest_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) BaseRequest *baseReq;
 /** Test to see if @c baseReq has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseReq;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *secretPwd;
 
 @end
 
