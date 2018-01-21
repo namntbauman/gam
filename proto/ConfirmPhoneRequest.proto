@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ConfirmPhoneRequestProto";
+
+message ConfirmPhoneRequest {
+   BaseRequest baseReq=1;
+   string phone=11;
+   string otp=12;
+   string phoneToken=13;
+   string txnId=14;
+}

@@ -53,8 +53,7 @@ typedef GPB_ENUM(ConfirmForgetSecretPwdRequest_FieldNumber) {
   ConfirmForgetSecretPwdRequest_FieldNumber_ForgetToken = 15,
   ConfirmForgetSecretPwdRequest_FieldNumber_TxnId = 16,
   ConfirmForgetSecretPwdRequest_FieldNumber_Otp = 17,
-  ConfirmForgetSecretPwdRequest_FieldNumber_Phone = 18,
-  ConfirmForgetSecretPwdRequest_FieldNumber_Passwd = 19,
+  ConfirmForgetSecretPwdRequest_FieldNumber_Passwd = 18,
 };
 
 @interface ConfirmForgetSecretPwdRequest : GPBMessage
@@ -68,8 +67,6 @@ typedef GPB_ENUM(ConfirmForgetSecretPwdRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *txnId;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *otp;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *phone;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *passwd;
 

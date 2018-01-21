@@ -17,4 +17,5 @@ message BaseRequest{
 	string version=10;
 	string additionalInfo=11;
 	int32 partnerId=12;
+	string sessionId=13;
 }

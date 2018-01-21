@@ -50,11 +50,13 @@ static GPBFileDescriptor *TransferSpwdrequestRoot_FileDescriptor(void) {
 @dynamic hasBaseReq, baseReq;
 @dynamic toAccount;
 @dynamic cash;
+@dynamic secretPwd;
 
 typedef struct TransferSPWDRequest__storage_ {
   uint32_t _has_storage_[1];
   BaseRequest *baseReq;
   NSString *toAccount;
+  NSString *secretPwd;
   int64_t cash;
 } TransferSPWDRequest__storage_;
 
@@ -91,6 +93,15 @@ typedef struct TransferSPWDRequest__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
+      {
+        .name = "secretPwd",
+        .dataTypeSpecific.className = NULL,
+        .number = TransferSPWDRequest_FieldNumber_SecretPwd,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(TransferSPWDRequest__storage_, secretPwd),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[TransferSPWDRequest class]
@@ -102,7 +113,7 @@ typedef struct TransferSPWDRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\007\000\020\t\000";
+        "\003\001\007\000\020\t\000\022\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

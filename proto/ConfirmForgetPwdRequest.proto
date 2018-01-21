@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ConfirmForgetPwdRequestProto";
+
+message ConfirmForgetPwdRequest {
+   RestfulBaseRequest baseReq=1;
+   string userName=20;
+   string forgetToken= 21;
+   string txnId=22;
+   string otp=23;
+   string phone=24;
+   string passwd=25;
+}

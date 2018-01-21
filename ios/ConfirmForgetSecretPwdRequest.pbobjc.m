@@ -51,7 +51,6 @@ static GPBFileDescriptor *ConfirmForgetSecretPwdRequestRoot_FileDescriptor(void)
 @dynamic forgetToken;
 @dynamic txnId;
 @dynamic otp;
-@dynamic phone;
 @dynamic passwd;
 
 typedef struct ConfirmForgetSecretPwdRequest__storage_ {
@@ -60,7 +59,6 @@ typedef struct ConfirmForgetSecretPwdRequest__storage_ {
   NSString *forgetToken;
   NSString *txnId;
   NSString *otp;
-  NSString *phone;
   NSString *passwd;
 } ConfirmForgetSecretPwdRequest__storage_;
 
@@ -107,19 +105,10 @@ typedef struct ConfirmForgetSecretPwdRequest__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "phone",
-        .dataTypeSpecific.className = NULL,
-        .number = ConfirmForgetSecretPwdRequest_FieldNumber_Phone,
-        .hasIndex = 4,
-        .offset = (uint32_t)offsetof(ConfirmForgetSecretPwdRequest__storage_, phone),
-        .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "passwd",
         .dataTypeSpecific.className = NULL,
         .number = ConfirmForgetSecretPwdRequest_FieldNumber_Passwd,
-        .hasIndex = 5,
+        .hasIndex = 4,
         .offset = (uint32_t)offsetof(ConfirmForgetSecretPwdRequest__storage_, passwd),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,

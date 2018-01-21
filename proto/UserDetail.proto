@@ -16,6 +16,9 @@ message UserDetail{
 	int64 gold=9;
 	string facebookId=10;
 	string email =11;
+	string phone=12;
+	string sessionId=13;
+	int32 numUnreadMsg=14;
 }
 
 

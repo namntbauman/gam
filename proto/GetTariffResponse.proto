@@ -4,6 +4,7 @@ import "RestfulBaseResponse.proto";
 import "SmsTariffEntity.proto";
 import "CardTariffEntity.proto";
 import "CardTypeEntity.proto";
+import "BuyCardTariffEntity.proto";
 option java_package = "com.fanxi.service.message";
 option java_outer_classname = "GetTariffResponseProto";
 
@@ -15,6 +16,7 @@ message GetTariffResponse{
    repeated SmsTariffEntity smsVinaTariffs=7;
    repeated CardTariffEntity cardTariffs=8;
    repeated CardTypeEntity cardTypes=9;
+   repeated BuyCardTariffEntity buyCardTariffs=10;
 }
 
 

@@ -3,12 +3,10 @@ package fanxi;
 import "RestfulBaseResponse.proto";
 
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "TransferResponseProto";
+option java_outer_classname = "ConfirmPhoneResponseProto";
 
-message TransferResponse {
+message ConfirmPhoneResponse {
    RestfulBaseResponse baseResponse=1;
-   int64 cash=4;
-  
 }
 
 

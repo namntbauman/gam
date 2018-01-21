@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "ConfirmRewardRequestProto";
+
+message ConfirmRewardRequest {
+   BaseRequest baseReq=1;
+   string otp=12;
+   string token=13;
+   string txnId=14;
+   int32 itemId=15;
+}

@@ -18,4 +18,5 @@ message RestfulBaseRequest{
 	string lang=11;
 	string deviceId=12;
 	string additionalInfo=13;
+	string sessionId=14;
 }

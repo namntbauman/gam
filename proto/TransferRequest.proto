@@ -6,8 +6,12 @@ option java_outer_classname = "TransferRequestProto";
 
 message TransferRequest {
    BaseRequest baseReq=1;
-   string captchaToken=10;
-   string variant=11;
-   string toAccount=12;
-   int64 cash=13;
+  
+   
+   string phoneToken=16;
+   string txnId=17;
+   string otp=18;
+   string toAccount=19;
+   int64 cash=20;
+   
 }

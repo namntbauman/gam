@@ -52,6 +52,7 @@ typedef GPB_ENUM(TransferSPWDRequest_FieldNumber) {
   TransferSPWDRequest_FieldNumber_BaseReq = 1,
   TransferSPWDRequest_FieldNumber_ToAccount = 16,
   TransferSPWDRequest_FieldNumber_Cash = 17,
+  TransferSPWDRequest_FieldNumber_SecretPwd = 18,
 };
 
 @interface TransferSPWDRequest : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(TransferSPWDRequest_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *toAccount;
 
 @property(nonatomic, readwrite) int64_t cash;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *secretPwd;
 
 @end
 

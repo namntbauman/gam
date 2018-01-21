@@ -3,12 +3,12 @@ package fanxi;
 import "RestfulBaseResponse.proto";
 
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "TransferResponseProto";
+option java_outer_classname = "ConfirmRewardResponseProto";
 
-message TransferResponse {
+message ConfirmRewardResponse {
    RestfulBaseResponse baseResponse=1;
-   int64 cash=4;
-  
+   int64 cash=5;
+   int64 gold=6;
 }
 
 

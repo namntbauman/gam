@@ -7,7 +7,7 @@ option java_outer_classname = "MiniPokerResponseProto";
 message MiniPokerResponse {
    RestfulBaseResponse baseResponse=1;
    int64 reference=4;
-   int32 wonCash=5;
+   int64 wonCash=5;
    int32 cash=6;
    bool isGold=7;
    string cards=8;

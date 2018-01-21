@@ -45,6 +45,16 @@ public final class TransferSPWDRequestProto {
      * <code>int64 cash = 17;</code>
      */
     long getCash();
+
+    /**
+     * <code>string secretPwd = 18;</code>
+     */
+    java.lang.String getSecretPwd();
+    /**
+     * <code>string secretPwd = 18;</code>
+     */
+    com.google.protobuf.ByteString
+        getSecretPwdBytes();
   }
   /**
    * Protobuf type {@code fanxi.TransferSPWDRequest}
@@ -60,6 +70,7 @@ public final class TransferSPWDRequestProto {
     private TransferSPWDRequest() {
       toAccount_ = "";
       cash_ = 0L;
+      secretPwd_ = "";
     }
 
     @java.lang.Override
@@ -109,6 +120,12 @@ public final class TransferSPWDRequestProto {
             case 136: {
 
               cash_ = input.readInt64();
+              break;
+            }
+            case 146: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              secretPwd_ = s;
               break;
             }
           }
@@ -198,6 +215,40 @@ public final class TransferSPWDRequestProto {
       return cash_;
     }
 
+    public static final int SECRETPWD_FIELD_NUMBER = 18;
+    private volatile java.lang.Object secretPwd_;
+    /**
+     * <code>string secretPwd = 18;</code>
+     */
+    public java.lang.String getSecretPwd() {
+      java.lang.Object ref = secretPwd_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        secretPwd_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string secretPwd = 18;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSecretPwdBytes() {
+      java.lang.Object ref = secretPwd_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        secretPwd_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -219,6 +270,9 @@ public final class TransferSPWDRequestProto {
       if (cash_ != 0L) {
         output.writeInt64(17, cash_);
       }
+      if (!getSecretPwdBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 18, secretPwd_);
+      }
     }
 
     public int getSerializedSize() {
@@ -236,6 +290,9 @@ public final class TransferSPWDRequestProto {
       if (cash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(17, cash_);
+      }
+      if (!getSecretPwdBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, secretPwd_);
       }
       memoizedSize = size;
       return size;
@@ -262,6 +319,8 @@ public final class TransferSPWDRequestProto {
           .equals(other.getToAccount());
       result = result && (getCash()
           == other.getCash());
+      result = result && getSecretPwd()
+          .equals(other.getSecretPwd());
       return result;
     }
 
@@ -281,6 +340,8 @@ public final class TransferSPWDRequestProto {
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
+      hash = (37 * hash) + SECRETPWD_FIELD_NUMBER;
+      hash = (53 * hash) + getSecretPwd().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -409,6 +470,8 @@ public final class TransferSPWDRequestProto {
 
         cash_ = 0L;
 
+        secretPwd_ = "";
+
         return this;
       }
 
@@ -438,6 +501,7 @@ public final class TransferSPWDRequestProto {
         }
         result.toAccount_ = toAccount_;
         result.cash_ = cash_;
+        result.secretPwd_ = secretPwd_;
         onBuilt();
         return result;
       }
@@ -488,6 +552,10 @@ public final class TransferSPWDRequestProto {
         }
         if (other.getCash() != 0L) {
           setCash(other.getCash());
+        }
+        if (!other.getSecretPwd().isEmpty()) {
+          secretPwd_ = other.secretPwd_;
+          onChanged();
         }
         onChanged();
         return this;
@@ -726,6 +794,75 @@ public final class TransferSPWDRequestProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object secretPwd_ = "";
+      /**
+       * <code>string secretPwd = 18;</code>
+       */
+      public java.lang.String getSecretPwd() {
+        java.lang.Object ref = secretPwd_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          secretPwd_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string secretPwd = 18;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSecretPwdBytes() {
+        java.lang.Object ref = secretPwd_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          secretPwd_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string secretPwd = 18;</code>
+       */
+      public Builder setSecretPwd(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        secretPwd_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secretPwd = 18;</code>
+       */
+      public Builder clearSecretPwd() {
+        
+        secretPwd_ = getDefaultInstance().getSecretPwd();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string secretPwd = 18;</code>
+       */
+      public Builder setSecretPwdBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        secretPwd_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -790,11 +927,11 @@ public final class TransferSPWDRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\031TransferSPWDRequest.proto\022\005fanxi\032\021Base" +
-      "Request.proto\"[\n\023TransferSPWDRequest\022#\n\007" +
+      "Request.proto\"n\n\023TransferSPWDRequest\022#\n\007" +
       "baseReq\030\001 \001(\0132\022.fanxi.BaseRequest\022\021\n\ttoA" +
-      "ccount\030\020 \001(\t\022\014\n\004cash\030\021 \001(\003B5\n\031com.fanxi." +
-      "service.messageB\030TransferSPWDRequestProt" +
-      "ob\006proto3"
+      "ccount\030\020 \001(\t\022\014\n\004cash\030\021 \001(\003\022\021\n\tsecretPwd\030" +
+      "\022 \001(\tB5\n\031com.fanxi.service.messageB\030Tran" +
+      "sferSPWDRequestProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -814,7 +951,7 @@ public final class TransferSPWDRequestProto {
     internal_static_fanxi_TransferSPWDRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_TransferSPWDRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ToAccount", "Cash", });
+        new java.lang.String[] { "BaseReq", "ToAccount", "Cash", "SecretPwd", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
   }
 
