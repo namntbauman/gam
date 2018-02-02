@@ -50,12 +50,14 @@ static GPBFileDescriptor *GetInfoResponseRoot_FileDescriptor(void) {
 @dynamic hasBaseResponse, baseResponse;
 @dynamic actvMessage;
 @dynamic phoneContact;
+@dynamic facebook;
 
 typedef struct GetInfoResponse__storage_ {
   uint32_t _has_storage_[1];
   RestfulBaseResponse *baseResponse;
   NSString *actvMessage;
   NSString *phoneContact;
+  NSString *facebook;
 } GetInfoResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -89,6 +91,15 @@ typedef struct GetInfoResponse__storage_ {
         .hasIndex = 2,
         .offset = (uint32_t)offsetof(GetInfoResponse__storage_, phoneContact),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "facebook",
+        .dataTypeSpecific.className = NULL,
+        .number = GetInfoResponse_FieldNumber_Facebook,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(GetInfoResponse__storage_, facebook),
+        .flags = GPBFieldOptional,
         .dataType = GPBDataTypeString,
       },
     };

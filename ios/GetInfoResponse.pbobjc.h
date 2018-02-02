@@ -52,6 +52,7 @@ typedef GPB_ENUM(GetInfoResponse_FieldNumber) {
   GetInfoResponse_FieldNumber_BaseResponse = 1,
   GetInfoResponse_FieldNumber_ActvMessage = 5,
   GetInfoResponse_FieldNumber_PhoneContact = 6,
+  GetInfoResponse_FieldNumber_Facebook = 7,
 };
 
 @interface GetInfoResponse : GPBMessage
@@ -63,6 +64,8 @@ typedef GPB_ENUM(GetInfoResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *actvMessage;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *phoneContact;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *facebook;
 
 @end
 

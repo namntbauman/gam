@@ -50,6 +50,16 @@ public final class GetInfoResponseProto {
      */
     com.google.protobuf.ByteString
         getPhoneContactBytes();
+
+    /**
+     * <code>string facebook = 7;</code>
+     */
+    java.lang.String getFacebook();
+    /**
+     * <code>string facebook = 7;</code>
+     */
+    com.google.protobuf.ByteString
+        getFacebookBytes();
   }
   /**
    * Protobuf type {@code fanxi.GetInfoResponse}
@@ -65,6 +75,7 @@ public final class GetInfoResponseProto {
     private GetInfoResponse() {
       actvMessage_ = "";
       phoneContact_ = "";
+      facebook_ = "";
     }
 
     @java.lang.Override
@@ -115,6 +126,12 @@ public final class GetInfoResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               phoneContact_ = s;
+              break;
+            }
+            case 58: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              facebook_ = s;
               break;
             }
           }
@@ -229,6 +246,40 @@ public final class GetInfoResponseProto {
       }
     }
 
+    public static final int FACEBOOK_FIELD_NUMBER = 7;
+    private volatile java.lang.Object facebook_;
+    /**
+     * <code>string facebook = 7;</code>
+     */
+    public java.lang.String getFacebook() {
+      java.lang.Object ref = facebook_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        facebook_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string facebook = 7;</code>
+     */
+    public com.google.protobuf.ByteString
+        getFacebookBytes() {
+      java.lang.Object ref = facebook_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        facebook_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -250,6 +301,9 @@ public final class GetInfoResponseProto {
       if (!getPhoneContactBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 6, phoneContact_);
       }
+      if (!getFacebookBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 7, facebook_);
+      }
     }
 
     public int getSerializedSize() {
@@ -266,6 +320,9 @@ public final class GetInfoResponseProto {
       }
       if (!getPhoneContactBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, phoneContact_);
+      }
+      if (!getFacebookBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, facebook_);
       }
       memoizedSize = size;
       return size;
@@ -292,6 +349,8 @@ public final class GetInfoResponseProto {
           .equals(other.getActvMessage());
       result = result && getPhoneContact()
           .equals(other.getPhoneContact());
+      result = result && getFacebook()
+          .equals(other.getFacebook());
       return result;
     }
 
@@ -310,6 +369,8 @@ public final class GetInfoResponseProto {
       hash = (53 * hash) + getActvMessage().hashCode();
       hash = (37 * hash) + PHONECONTACT_FIELD_NUMBER;
       hash = (53 * hash) + getPhoneContact().hashCode();
+      hash = (37 * hash) + FACEBOOK_FIELD_NUMBER;
+      hash = (53 * hash) + getFacebook().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -438,6 +499,8 @@ public final class GetInfoResponseProto {
 
         phoneContact_ = "";
 
+        facebook_ = "";
+
         return this;
       }
 
@@ -467,6 +530,7 @@ public final class GetInfoResponseProto {
         }
         result.actvMessage_ = actvMessage_;
         result.phoneContact_ = phoneContact_;
+        result.facebook_ = facebook_;
         onBuilt();
         return result;
       }
@@ -517,6 +581,10 @@ public final class GetInfoResponseProto {
         }
         if (!other.getPhoneContact().isEmpty()) {
           phoneContact_ = other.phoneContact_;
+          onChanged();
+        }
+        if (!other.getFacebook().isEmpty()) {
+          facebook_ = other.facebook_;
           onChanged();
         }
         onChanged();
@@ -799,6 +867,75 @@ public final class GetInfoResponseProto {
         onChanged();
         return this;
       }
+
+      private java.lang.Object facebook_ = "";
+      /**
+       * <code>string facebook = 7;</code>
+       */
+      public java.lang.String getFacebook() {
+        java.lang.Object ref = facebook_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          facebook_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string facebook = 7;</code>
+       */
+      public com.google.protobuf.ByteString
+          getFacebookBytes() {
+        java.lang.Object ref = facebook_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          facebook_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string facebook = 7;</code>
+       */
+      public Builder setFacebook(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        facebook_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string facebook = 7;</code>
+       */
+      public Builder clearFacebook() {
+        
+        facebook_ = getDefaultInstance().getFacebook();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string facebook = 7;</code>
+       */
+      public Builder setFacebookBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        facebook_ = value;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -863,11 +1000,12 @@ public final class GetInfoResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\025GetInfoResponse.proto\022\005fanxi\032\031RestfulB" +
-      "aseResponse.proto\"n\n\017GetInfoResponse\0220\n\014" +
-      "baseResponse\030\001 \001(\0132\032.fanxi.RestfulBaseRe" +
-      "sponse\022\023\n\013actvMessage\030\005 \001(\t\022\024\n\014phoneCont" +
-      "act\030\006 \001(\tB1\n\031com.fanxi.service.messageB\024" +
-      "GetInfoResponseProtob\006proto3"
+      "aseResponse.proto\"\200\001\n\017GetInfoResponse\0220\n" +
+      "\014baseResponse\030\001 \001(\0132\032.fanxi.RestfulBaseR" +
+      "esponse\022\023\n\013actvMessage\030\005 \001(\t\022\024\n\014phoneCon" +
+      "tact\030\006 \001(\t\022\020\n\010facebook\030\007 \001(\tB1\n\031com.fanx" +
+      "i.service.messageB\024GetInfoResponseProtob" +
+      "\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -887,7 +1025,7 @@ public final class GetInfoResponseProto {
     internal_static_fanxi_GetInfoResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_GetInfoResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "ActvMessage", "PhoneContact", });
+        new java.lang.String[] { "BaseResponse", "ActvMessage", "PhoneContact", "Facebook", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 
