@@ -53,6 +53,7 @@ static GPBFileDescriptor *RtendRouletteResponseRoot_FileDescriptor(void) {
 @dynamic result;
 @dynamic wonMoney;
 @dynamic cash;
+@dynamic totalBet;
 
 typedef struct RTEndRouletteResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -61,6 +62,7 @@ typedef struct RTEndRouletteResponse__storage_ {
   int64_t reference;
   int64_t wonMoney;
   int64_t cash;
+  int64_t totalBet;
 } RTEndRouletteResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -123,6 +125,15 @@ typedef struct RTEndRouletteResponse__storage_ {
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt64,
       },
+      {
+        .name = "totalBet",
+        .dataTypeSpecific.className = NULL,
+        .number = RTEndRouletteResponse_FieldNumber_TotalBet,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(RTEndRouletteResponse__storage_, totalBet),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[RTEndRouletteResponse class]
@@ -134,7 +145,7 @@ typedef struct RTEndRouletteResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\005\006\000\007\010\000";
+        "\004\001\014\000\005\006\000\007\010\000\t\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

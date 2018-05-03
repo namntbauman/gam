@@ -11,6 +11,7 @@ message RTEndRouletteResponse {
    int32 result=6;
    int64 wonMoney=7;
    int64 cash=8;
+   int64 totalBet=9;
 }
 
 

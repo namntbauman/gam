@@ -55,6 +55,7 @@ typedef GPB_ENUM(RTEndRouletteResponse_FieldNumber) {
   RTEndRouletteResponse_FieldNumber_Result = 6,
   RTEndRouletteResponse_FieldNumber_WonMoney = 7,
   RTEndRouletteResponse_FieldNumber_Cash = 8,
+  RTEndRouletteResponse_FieldNumber_TotalBet = 9,
 };
 
 @interface RTEndRouletteResponse : GPBMessage
@@ -72,6 +73,8 @@ typedef GPB_ENUM(RTEndRouletteResponse_FieldNumber) {
 @property(nonatomic, readwrite) int64_t wonMoney;
 
 @property(nonatomic, readwrite) int64_t cash;
+
+@property(nonatomic, readwrite) int64_t totalBet;
 
 @end
 

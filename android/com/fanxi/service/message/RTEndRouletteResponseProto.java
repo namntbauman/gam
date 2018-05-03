@@ -55,6 +55,11 @@ public final class RTEndRouletteResponseProto {
      * <code>int64 cash = 8;</code>
      */
     long getCash();
+
+    /**
+     * <code>int64 totalBet = 9;</code>
+     */
+    long getTotalBet();
   }
   /**
    * Protobuf type {@code fanxi.RTEndRouletteResponse}
@@ -73,6 +78,7 @@ public final class RTEndRouletteResponseProto {
       result_ = 0;
       wonMoney_ = 0L;
       cash_ = 0L;
+      totalBet_ = 0L;
     }
 
     @java.lang.Override
@@ -136,6 +142,11 @@ public final class RTEndRouletteResponseProto {
             case 64: {
 
               cash_ = input.readInt64();
+              break;
+            }
+            case 72: {
+
+              totalBet_ = input.readInt64();
               break;
             }
           }
@@ -227,6 +238,15 @@ public final class RTEndRouletteResponseProto {
       return cash_;
     }
 
+    public static final int TOTALBET_FIELD_NUMBER = 9;
+    private long totalBet_;
+    /**
+     * <code>int64 totalBet = 9;</code>
+     */
+    public long getTotalBet() {
+      return totalBet_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -256,6 +276,9 @@ public final class RTEndRouletteResponseProto {
       }
       if (cash_ != 0L) {
         output.writeInt64(8, cash_);
+      }
+      if (totalBet_ != 0L) {
+        output.writeInt64(9, totalBet_);
       }
     }
 
@@ -288,6 +311,10 @@ public final class RTEndRouletteResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(8, cash_);
       }
+      if (totalBet_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, totalBet_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -319,6 +346,8 @@ public final class RTEndRouletteResponseProto {
           == other.getWonMoney());
       result = result && (getCash()
           == other.getCash());
+      result = result && (getTotalBet()
+          == other.getTotalBet());
       return result;
     }
 
@@ -347,6 +376,9 @@ public final class RTEndRouletteResponseProto {
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
+      hash = (37 * hash) + TOTALBET_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getTotalBet());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -481,6 +513,8 @@ public final class RTEndRouletteResponseProto {
 
         cash_ = 0L;
 
+        totalBet_ = 0L;
+
         return this;
       }
 
@@ -513,6 +547,7 @@ public final class RTEndRouletteResponseProto {
         result.result_ = result_;
         result.wonMoney_ = wonMoney_;
         result.cash_ = cash_;
+        result.totalBet_ = totalBet_;
         onBuilt();
         return result;
       }
@@ -571,6 +606,9 @@ public final class RTEndRouletteResponseProto {
         }
         if (other.getCash() != 0L) {
           setCash(other.getCash());
+        }
+        if (other.getTotalBet() != 0L) {
+          setTotalBet(other.getTotalBet());
         }
         onChanged();
         return this;
@@ -844,6 +882,32 @@ public final class RTEndRouletteResponseProto {
         onChanged();
         return this;
       }
+
+      private long totalBet_ ;
+      /**
+       * <code>int64 totalBet = 9;</code>
+       */
+      public long getTotalBet() {
+        return totalBet_;
+      }
+      /**
+       * <code>int64 totalBet = 9;</code>
+       */
+      public Builder setTotalBet(long value) {
+        
+        totalBet_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 totalBet = 9;</code>
+       */
+      public Builder clearTotalBet() {
+        
+        totalBet_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -908,12 +972,13 @@ public final class RTEndRouletteResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\033RTEndRouletteResponse.proto\022\005fanxi\032\022Ba" +
-      "seResponse.proto\"\225\001\n\025RTEndRouletteRespon" +
+      "seResponse.proto\"\247\001\n\025RTEndRouletteRespon" +
       "se\022)\n\014baseResponse\030\001 \001(\0132\023.fanxi.BaseRes" +
       "ponse\022\021\n\treference\030\004 \001(\003\022\016\n\006isGold\030\005 \001(\010" +
       "\022\016\n\006result\030\006 \001(\005\022\020\n\010wonMoney\030\007 \001(\003\022\014\n\004ca" +
-      "sh\030\010 \001(\003B7\n\031com.fanxi.service.messageB\032R" +
-      "TEndRouletteResponseProtob\006proto3"
+      "sh\030\010 \001(\003\022\020\n\010totalBet\030\t \001(\003B7\n\031com.fanxi." +
+      "service.messageB\032RTEndRouletteResponsePr" +
+      "otob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -933,7 +998,7 @@ public final class RTEndRouletteResponseProto {
     internal_static_fanxi_RTEndRouletteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RTEndRouletteResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Reference", "IsGold", "Result", "WonMoney", "Cash", });
+        new java.lang.String[] { "BaseResponse", "Reference", "IsGold", "Result", "WonMoney", "Cash", "TotalBet", });
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }
 
