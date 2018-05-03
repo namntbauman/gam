@@ -1,0 +1,12 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "OutRouletteRequestProto";
+
+message OutRouletteRequest {
+   BaseRequest baseReq=1;
+   bool isGold = 15;
+   int64 reference=16;
+   int32 cash=17;
+}

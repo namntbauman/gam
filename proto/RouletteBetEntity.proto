@@ -1,0 +1,13 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RouletteBetEntityProto";
+
+message RouletteBetEntity{
+	string pos=1;
+	int64 cash=2;
+}
+
+
+
