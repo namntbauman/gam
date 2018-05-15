@@ -9,6 +9,7 @@ message BetRouletteRequest {
    BaseRequest baseReq=1;
    bool isGold = 15;
    int64 reference=16;
-   repeated RouletteBetEntity bets=17;
+   int64 betMoney=17;
+   repeated RouletteBetEntity bets=18;
    
 }

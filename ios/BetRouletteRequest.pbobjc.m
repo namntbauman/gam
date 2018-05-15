@@ -51,6 +51,7 @@ static GPBFileDescriptor *BetRouletteRequestRoot_FileDescriptor(void) {
 @dynamic hasBaseReq, baseReq;
 @dynamic isGold;
 @dynamic reference;
+@dynamic betMoney;
 @dynamic betsArray, betsArray_Count;
 
 typedef struct BetRouletteRequest__storage_ {
@@ -58,6 +59,7 @@ typedef struct BetRouletteRequest__storage_ {
   BaseRequest *baseReq;
   NSMutableArray *betsArray;
   int64_t reference;
+  int64_t betMoney;
 } BetRouletteRequest__storage_;
 
 // This method is threadsafe because it is initially called
@@ -94,6 +96,15 @@ typedef struct BetRouletteRequest__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "betMoney",
+        .dataTypeSpecific.className = NULL,
+        .number = BetRouletteRequest_FieldNumber_BetMoney,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(BetRouletteRequest__storage_, betMoney),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
         .name = "betsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(RouletteBetEntity),
         .number = BetRouletteRequest_FieldNumber_BetsArray,
@@ -113,7 +124,7 @@ typedef struct BetRouletteRequest__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\002\001\007\000\017\006\000";
+        "\003\001\007\000\017\006\000\021\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
