@@ -58,7 +58,8 @@ typedef GPB_ENUM(RegRouletteResponse_FieldNumber) {
   RegRouletteResponse_FieldNumber_TimeRemaining = 8,
   RegRouletteResponse_FieldNumber_RuleTime = 9,
   RegRouletteResponse_FieldNumber_Reference = 10,
-  RegRouletteResponse_FieldNumber_BetsArray = 11,
+  RegRouletteResponse_FieldNumber_Result = 11,
+  RegRouletteResponse_FieldNumber_BetsArray = 12,
 };
 
 @interface RegRouletteResponse : GPBMessage
@@ -80,6 +81,8 @@ typedef GPB_ENUM(RegRouletteResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *ruleTime;
 
 @property(nonatomic, readwrite) int64_t reference;
+
+@property(nonatomic, readwrite) int32_t result;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<RouletteBetEntity*> *betsArray;
 /** The number of items in @c betsArray without causing the array to be created. */
