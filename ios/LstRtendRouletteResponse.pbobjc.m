@@ -50,11 +50,13 @@ static GPBFileDescriptor *LstRtendRouletteResponseRoot_FileDescriptor(void) {
 
 @dynamic hasBaseResponse, baseResponse;
 @dynamic resultsArray, resultsArray_Count;
+@dynamic uidsArray, uidsArray_Count;
 
 typedef struct LstRTEndRouletteResponse__storage_ {
   uint32_t _has_storage_[1];
   BaseResponse *baseResponse;
   NSMutableArray *resultsArray;
+  NSMutableArray *uidsArray;
 } LstRTEndRouletteResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -80,6 +82,15 @@ typedef struct LstRTEndRouletteResponse__storage_ {
         .offset = (uint32_t)offsetof(LstRTEndRouletteResponse__storage_, resultsArray),
         .flags = GPBFieldRepeated,
         .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "uidsArray",
+        .dataTypeSpecific.className = NULL,
+        .number = LstRTEndRouletteResponse_FieldNumber_UidsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(LstRTEndRouletteResponse__storage_, uidsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
       },
     };
     GPBDescriptor *localDescriptor =

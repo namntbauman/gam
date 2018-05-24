@@ -51,7 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 typedef GPB_ENUM(LstRTEndBaccaratResponse_FieldNumber) {
   LstRTEndBaccaratResponse_FieldNumber_BaseResponse = 1,
-  LstRTEndBaccaratResponse_FieldNumber_ResultsArray = 4,
+  LstRTEndBaccaratResponse_FieldNumber_UidsArray = 4,
+  LstRTEndBaccaratResponse_FieldNumber_ResultsArray = 5,
 };
 
 @interface LstRTEndBaccaratResponse : GPBMessage
@@ -59,6 +60,10 @@ typedef GPB_ENUM(LstRTEndBaccaratResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) BaseResponse *baseResponse;
 /** Test to see if @c baseResponse has been set. */
 @property(nonatomic, readwrite) BOOL hasBaseResponse;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *uidsArray;
+/** The number of items in @c uidsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger uidsArray_Count;
 
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<RTEndBaccaratResponse*> *resultsArray;
 /** The number of items in @c resultsArray without causing the array to be created. */

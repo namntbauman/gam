@@ -55,9 +55,8 @@ typedef GPB_ENUM(RTEndRouletteResponse_FieldNumber) {
   RTEndRouletteResponse_FieldNumber_IsGold = 5,
   RTEndRouletteResponse_FieldNumber_Result = 6,
   RTEndRouletteResponse_FieldNumber_Cash = 7,
-  RTEndRouletteResponse_FieldNumber_UserId = 8,
-  RTEndRouletteResponse_FieldNumber_BetMoney = 9,
-  RTEndRouletteResponse_FieldNumber_WinsArray = 10,
+  RTEndRouletteResponse_FieldNumber_BetMoney = 8,
+  RTEndRouletteResponse_FieldNumber_WinsArray = 9,
 };
 
 @interface RTEndRouletteResponse : GPBMessage
@@ -73,8 +72,6 @@ typedef GPB_ENUM(RTEndRouletteResponse_FieldNumber) {
 @property(nonatomic, readwrite) int32_t result;
 
 @property(nonatomic, readwrite) int64_t cash;
-
-@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
 
 @property(nonatomic, readwrite) int32_t betMoney;
 

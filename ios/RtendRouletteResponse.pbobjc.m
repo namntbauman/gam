@@ -53,7 +53,6 @@ static GPBFileDescriptor *RtendRouletteResponseRoot_FileDescriptor(void) {
 @dynamic isGold;
 @dynamic result;
 @dynamic cash;
-@dynamic userId;
 @dynamic betMoney;
 @dynamic winsArray, winsArray_Count;
 
@@ -62,7 +61,6 @@ typedef struct RTEndRouletteResponse__storage_ {
   int32_t result;
   int32_t betMoney;
   BaseResponse *baseResponse;
-  NSString *userId;
   NSMutableArray *winsArray;
   int64_t reference;
   int64_t cash;
@@ -120,19 +118,10 @@ typedef struct RTEndRouletteResponse__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
-        .name = "userId",
-        .dataTypeSpecific.className = NULL,
-        .number = RTEndRouletteResponse_FieldNumber_UserId,
-        .hasIndex = 6,
-        .offset = (uint32_t)offsetof(RTEndRouletteResponse__storage_, userId),
-        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
-        .dataType = GPBDataTypeString,
-      },
-      {
         .name = "betMoney",
         .dataTypeSpecific.className = NULL,
         .number = RTEndRouletteResponse_FieldNumber_BetMoney,
-        .hasIndex = 7,
+        .hasIndex = 6,
         .offset = (uint32_t)offsetof(RTEndRouletteResponse__storage_, betMoney),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
@@ -157,7 +146,7 @@ typedef struct RTEndRouletteResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\004\001\014\000\005\006\000\010\006\000\t\010\000";
+        "\003\001\014\000\005\006\000\010\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

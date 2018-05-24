@@ -54,6 +54,25 @@ public final class LstRTEndRouletteResponseProto {
      */
     com.fanxi.service.message.RTEndRouletteResponseProto.RTEndRouletteResponseOrBuilder getResultsOrBuilder(
         int index);
+
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    java.util.List<java.lang.String>
+        getUidsList();
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    int getUidsCount();
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    java.lang.String getUids(int index);
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getUidsBytes(int index);
   }
   /**
    * Protobuf type {@code fanxi.LstRTEndRouletteResponse}
@@ -68,6 +87,7 @@ public final class LstRTEndRouletteResponseProto {
     }
     private LstRTEndRouletteResponse() {
       results_ = java.util.Collections.emptyList();
+      uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
     @java.lang.Override
@@ -117,6 +137,15 @@ public final class LstRTEndRouletteResponseProto {
                   input.readMessage(com.fanxi.service.message.RTEndRouletteResponseProto.RTEndRouletteResponse.parser(), extensionRegistry));
               break;
             }
+            case 42: {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                uids_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              uids_.add(s);
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -127,6 +156,9 @@ public final class LstRTEndRouletteResponseProto {
       } finally {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           results_ = java.util.Collections.unmodifiableList(results_);
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+          uids_ = uids_.getUnmodifiableView();
         }
         makeExtensionsImmutable();
       }
@@ -200,6 +232,35 @@ public final class LstRTEndRouletteResponseProto {
       return results_.get(index);
     }
 
+    public static final int UIDS_FIELD_NUMBER = 5;
+    private com.google.protobuf.LazyStringList uids_;
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUidsList() {
+      return uids_;
+    }
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    public int getUidsCount() {
+      return uids_.size();
+    }
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    public java.lang.String getUids(int index) {
+      return uids_.get(index);
+    }
+    /**
+     * <code>repeated string uids = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUidsBytes(int index) {
+      return uids_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -218,6 +279,9 @@ public final class LstRTEndRouletteResponseProto {
       for (int i = 0; i < results_.size(); i++) {
         output.writeMessage(4, results_.get(i));
       }
+      for (int i = 0; i < uids_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, uids_.getRaw(i));
+      }
     }
 
     public int getSerializedSize() {
@@ -232,6 +296,14 @@ public final class LstRTEndRouletteResponseProto {
       for (int i = 0; i < results_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(4, results_.get(i));
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < uids_.size(); i++) {
+          dataSize += computeStringSizeNoTag(uids_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUidsList().size();
       }
       memoizedSize = size;
       return size;
@@ -256,6 +328,8 @@ public final class LstRTEndRouletteResponseProto {
       }
       result = result && getResultsList()
           .equals(other.getResultsList());
+      result = result && getUidsList()
+          .equals(other.getUidsList());
       return result;
     }
 
@@ -273,6 +347,10 @@ public final class LstRTEndRouletteResponseProto {
       if (getResultsCount() > 0) {
         hash = (37 * hash) + RESULTS_FIELD_NUMBER;
         hash = (53 * hash) + getResultsList().hashCode();
+      }
+      if (getUidsCount() > 0) {
+        hash = (37 * hash) + UIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getUidsList().hashCode();
       }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
@@ -405,6 +483,8 @@ public final class LstRTEndRouletteResponseProto {
         } else {
           resultsBuilder_.clear();
         }
+        uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
         return this;
       }
 
@@ -443,6 +523,11 @@ public final class LstRTEndRouletteResponseProto {
         } else {
           result.results_ = resultsBuilder_.build();
         }
+        if (((bitField0_ & 0x00000004) == 0x00000004)) {
+          uids_ = uids_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.uids_ = uids_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -513,6 +598,16 @@ public final class LstRTEndRouletteResponseProto {
               resultsBuilder_.addAllMessages(other.results_);
             }
           }
+        }
+        if (!other.uids_.isEmpty()) {
+          if (uids_.isEmpty()) {
+            uids_ = other.uids_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureUidsIsMutable();
+            uids_.addAll(other.uids_);
+          }
+          onChanged();
         }
         onChanged();
         return this;
@@ -897,6 +992,100 @@ public final class LstRTEndRouletteResponseProto {
         }
         return resultsBuilder_;
       }
+
+      private com.google.protobuf.LazyStringList uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureUidsIsMutable() {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+          uids_ = new com.google.protobuf.LazyStringArrayList(uids_);
+          bitField0_ |= 0x00000004;
+         }
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getUidsList() {
+        return uids_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public int getUidsCount() {
+        return uids_.size();
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public java.lang.String getUids(int index) {
+        return uids_.get(index);
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUidsBytes(int index) {
+        return uids_.getByteString(index);
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public Builder setUids(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUidsIsMutable();
+        uids_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public Builder addUids(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUidsIsMutable();
+        uids_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public Builder addAllUids(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureUidsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, uids_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public Builder clearUids() {
+        uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 5;</code>
+       */
+      public Builder addUidsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureUidsIsMutable();
+        uids_.add(value);
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -962,11 +1151,12 @@ public final class LstRTEndRouletteResponseProto {
     java.lang.String[] descriptorData = {
       "\n\036LstRTEndRouletteResponse.proto\022\005fanxi\032" +
       "\033RTEndRouletteResponse.proto\032\022BaseRespon" +
-      "se.proto\"t\n\030LstRTEndRouletteResponse\022)\n\014" +
-      "baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse\022" +
-      "-\n\007results\030\004 \003(\0132\034.fanxi.RTEndRouletteRe" +
-      "sponseB:\n\031com.fanxi.service.messageB\035Lst" +
-      "RTEndRouletteResponseProtob\006proto3"
+      "se.proto\"\202\001\n\030LstRTEndRouletteResponse\022)\n" +
+      "\014baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse" +
+      "\022-\n\007results\030\004 \003(\0132\034.fanxi.RTEndRouletteR" +
+      "esponse\022\014\n\004uids\030\005 \003(\tB:\n\031com.fanxi.servi" +
+      "ce.messageB\035LstRTEndRouletteResponseProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -987,7 +1177,7 @@ public final class LstRTEndRouletteResponseProto {
     internal_static_fanxi_LstRTEndRouletteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LstRTEndRouletteResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Results", });
+        new java.lang.String[] { "BaseResponse", "Results", "Uids", });
     com.fanxi.service.message.RTEndRouletteResponseProto.getDescriptor();
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }

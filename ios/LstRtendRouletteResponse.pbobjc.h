@@ -52,6 +52,7 @@ NS_ASSUME_NONNULL_BEGIN
 typedef GPB_ENUM(LstRTEndRouletteResponse_FieldNumber) {
   LstRTEndRouletteResponse_FieldNumber_BaseResponse = 1,
   LstRTEndRouletteResponse_FieldNumber_ResultsArray = 4,
+  LstRTEndRouletteResponse_FieldNumber_UidsArray = 5,
 };
 
 @interface LstRTEndRouletteResponse : GPBMessage
@@ -63,6 +64,10 @@ typedef GPB_ENUM(LstRTEndRouletteResponse_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<RTEndRouletteResponse*> *resultsArray;
 /** The number of items in @c resultsArray without causing the array to be created. */
 @property(nonatomic, readonly) NSUInteger resultsArray_Count;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *uidsArray;
+/** The number of items in @c uidsArray without causing the array to be created. */
+@property(nonatomic, readonly) NSUInteger uidsArray_Count;
 
 @end
 

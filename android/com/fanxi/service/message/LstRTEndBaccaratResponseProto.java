@@ -32,25 +32,44 @@ public final class LstRTEndBaccaratResponseProto {
     com.fanxi.service.message.BaseResponseProto.BaseResponseOrBuilder getBaseResponseOrBuilder();
 
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated string uids = 4;</code>
+     */
+    java.util.List<java.lang.String>
+        getUidsList();
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    int getUidsCount();
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    java.lang.String getUids(int index);
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getUidsBytes(int index);
+
+    /**
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     java.util.List<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse> 
         getResultsList();
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse getResults(int index);
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     int getResultsCount();
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     java.util.List<? extends com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder> 
         getResultsOrBuilderList();
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder getResultsOrBuilder(
         int index);
@@ -67,6 +86,7 @@ public final class LstRTEndBaccaratResponseProto {
       super(builder);
     }
     private LstRTEndBaccaratResponse() {
+      uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
       results_ = java.util.Collections.emptyList();
     }
 
@@ -109,9 +129,18 @@ public final class LstRTEndBaccaratResponseProto {
               break;
             }
             case 34: {
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-                results_ = new java.util.ArrayList<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse>();
+                uids_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
+              }
+              uids_.add(s);
+              break;
+            }
+            case 42: {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                results_ = new java.util.ArrayList<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse>();
+                mutable_bitField0_ |= 0x00000004;
               }
               results_.add(
                   input.readMessage(com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.parser(), extensionRegistry));
@@ -126,6 +155,9 @@ public final class LstRTEndBaccaratResponseProto {
             e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          uids_ = uids_.getUnmodifiableView();
+        }
+        if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
           results_ = java.util.Collections.unmodifiableList(results_);
         }
         makeExtensionsImmutable();
@@ -165,35 +197,64 @@ public final class LstRTEndBaccaratResponseProto {
       return getBaseResponse();
     }
 
-    public static final int RESULTS_FIELD_NUMBER = 4;
+    public static final int UIDS_FIELD_NUMBER = 4;
+    private com.google.protobuf.LazyStringList uids_;
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getUidsList() {
+      return uids_;
+    }
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    public int getUidsCount() {
+      return uids_.size();
+    }
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    public java.lang.String getUids(int index) {
+      return uids_.get(index);
+    }
+    /**
+     * <code>repeated string uids = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUidsBytes(int index) {
+      return uids_.getByteString(index);
+    }
+
+    public static final int RESULTS_FIELD_NUMBER = 5;
     private java.util.List<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse> results_;
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     public java.util.List<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse> getResultsList() {
       return results_;
     }
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder> 
         getResultsOrBuilderList() {
       return results_;
     }
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     public int getResultsCount() {
       return results_.size();
     }
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse getResults(int index) {
       return results_.get(index);
     }
     /**
-     * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+     * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
      */
     public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder getResultsOrBuilder(
         int index) {
@@ -215,8 +276,11 @@ public final class LstRTEndBaccaratResponseProto {
       if (baseResponse_ != null) {
         output.writeMessage(1, getBaseResponse());
       }
+      for (int i = 0; i < uids_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, uids_.getRaw(i));
+      }
       for (int i = 0; i < results_.size(); i++) {
-        output.writeMessage(4, results_.get(i));
+        output.writeMessage(5, results_.get(i));
       }
     }
 
@@ -229,9 +293,17 @@ public final class LstRTEndBaccaratResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getBaseResponse());
       }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < uids_.size(); i++) {
+          dataSize += computeStringSizeNoTag(uids_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getUidsList().size();
+      }
       for (int i = 0; i < results_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, results_.get(i));
+          .computeMessageSize(5, results_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -254,6 +326,8 @@ public final class LstRTEndBaccaratResponseProto {
         result = result && getBaseResponse()
             .equals(other.getBaseResponse());
       }
+      result = result && getUidsList()
+          .equals(other.getUidsList());
       result = result && getResultsList()
           .equals(other.getResultsList());
       return result;
@@ -269,6 +343,10 @@ public final class LstRTEndBaccaratResponseProto {
       if (hasBaseResponse()) {
         hash = (37 * hash) + BASERESPONSE_FIELD_NUMBER;
         hash = (53 * hash) + getBaseResponse().hashCode();
+      }
+      if (getUidsCount() > 0) {
+        hash = (37 * hash) + UIDS_FIELD_NUMBER;
+        hash = (53 * hash) + getUidsList().hashCode();
       }
       if (getResultsCount() > 0) {
         hash = (37 * hash) + RESULTS_FIELD_NUMBER;
@@ -399,9 +477,11 @@ public final class LstRTEndBaccaratResponseProto {
           baseResponse_ = null;
           baseResponseBuilder_ = null;
         }
+        uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
         } else {
           resultsBuilder_.clear();
         }
@@ -434,10 +514,15 @@ public final class LstRTEndBaccaratResponseProto {
         } else {
           result.baseResponse_ = baseResponseBuilder_.build();
         }
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          uids_ = uids_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.uids_ = uids_;
         if (resultsBuilder_ == null) {
-          if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          if (((bitField0_ & 0x00000004) == 0x00000004)) {
             results_ = java.util.Collections.unmodifiableList(results_);
-            bitField0_ = (bitField0_ & ~0x00000002);
+            bitField0_ = (bitField0_ & ~0x00000004);
           }
           result.results_ = results_;
         } else {
@@ -488,11 +573,21 @@ public final class LstRTEndBaccaratResponseProto {
         if (other.hasBaseResponse()) {
           mergeBaseResponse(other.getBaseResponse());
         }
+        if (!other.uids_.isEmpty()) {
+          if (uids_.isEmpty()) {
+            uids_ = other.uids_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureUidsIsMutable();
+            uids_.addAll(other.uids_);
+          }
+          onChanged();
+        }
         if (resultsBuilder_ == null) {
           if (!other.results_.isEmpty()) {
             if (results_.isEmpty()) {
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
             } else {
               ensureResultsIsMutable();
               results_.addAll(other.results_);
@@ -505,7 +600,7 @@ public final class LstRTEndBaccaratResponseProto {
               resultsBuilder_.dispose();
               resultsBuilder_ = null;
               results_ = other.results_;
-              bitField0_ = (bitField0_ & ~0x00000002);
+              bitField0_ = (bitField0_ & ~0x00000004);
               resultsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getResultsFieldBuilder() : null;
@@ -658,12 +753,106 @@ public final class LstRTEndBaccaratResponseProto {
         return baseResponseBuilder_;
       }
 
+      private com.google.protobuf.LazyStringList uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureUidsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          uids_ = new com.google.protobuf.LazyStringArrayList(uids_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getUidsList() {
+        return uids_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public int getUidsCount() {
+        return uids_.size();
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public java.lang.String getUids(int index) {
+        return uids_.get(index);
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUidsBytes(int index) {
+        return uids_.getByteString(index);
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public Builder setUids(
+          int index, java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUidsIsMutable();
+        uids_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public Builder addUids(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureUidsIsMutable();
+        uids_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public Builder addAllUids(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureUidsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, uids_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public Builder clearUids() {
+        uids_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string uids = 4;</code>
+       */
+      public Builder addUidsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureUidsIsMutable();
+        uids_.add(value);
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse> results_ =
         java.util.Collections.emptyList();
       private void ensureResultsIsMutable() {
-        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+        if (!((bitField0_ & 0x00000004) == 0x00000004)) {
           results_ = new java.util.ArrayList<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse>(results_);
-          bitField0_ |= 0x00000002;
+          bitField0_ |= 0x00000004;
          }
       }
 
@@ -671,7 +860,7 @@ public final class LstRTEndBaccaratResponseProto {
           com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder> resultsBuilder_;
 
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public java.util.List<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse> getResultsList() {
         if (resultsBuilder_ == null) {
@@ -681,7 +870,7 @@ public final class LstRTEndBaccaratResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public int getResultsCount() {
         if (resultsBuilder_ == null) {
@@ -691,7 +880,7 @@ public final class LstRTEndBaccaratResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse getResults(int index) {
         if (resultsBuilder_ == null) {
@@ -701,7 +890,7 @@ public final class LstRTEndBaccaratResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder setResults(
           int index, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse value) {
@@ -718,7 +907,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder setResults(
           int index, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder builderForValue) {
@@ -732,7 +921,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder addResults(com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse value) {
         if (resultsBuilder_ == null) {
@@ -748,7 +937,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder addResults(
           int index, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse value) {
@@ -765,7 +954,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder addResults(
           com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder builderForValue) {
@@ -779,7 +968,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder addResults(
           int index, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder builderForValue) {
@@ -793,7 +982,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder addAllResults(
           java.lang.Iterable<? extends com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse> values) {
@@ -808,12 +997,12 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder clearResults() {
         if (resultsBuilder_ == null) {
           results_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000002);
+          bitField0_ = (bitField0_ & ~0x00000004);
           onChanged();
         } else {
           resultsBuilder_.clear();
@@ -821,7 +1010,7 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public Builder removeResults(int index) {
         if (resultsBuilder_ == null) {
@@ -834,14 +1023,14 @@ public final class LstRTEndBaccaratResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder getResultsBuilder(
           int index) {
         return getResultsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder getResultsOrBuilder(
           int index) {
@@ -851,7 +1040,7 @@ public final class LstRTEndBaccaratResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder> 
            getResultsOrBuilderList() {
@@ -862,14 +1051,14 @@ public final class LstRTEndBaccaratResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder addResultsBuilder() {
         return getResultsFieldBuilder().addBuilder(
             com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder addResultsBuilder(
           int index) {
@@ -877,7 +1066,7 @@ public final class LstRTEndBaccaratResponseProto {
             index, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.RTEndBaccaratResponse results = 4;</code>
+       * <code>repeated .fanxi.RTEndBaccaratResponse results = 5;</code>
        */
       public java.util.List<com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder> 
            getResultsBuilderList() {
@@ -890,7 +1079,7 @@ public final class LstRTEndBaccaratResponseProto {
           resultsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponse.Builder, com.fanxi.service.message.RTEndBaccaratResponseProto.RTEndBaccaratResponseOrBuilder>(
                   results_,
-                  ((bitField0_ & 0x00000002) == 0x00000002),
+                  ((bitField0_ & 0x00000004) == 0x00000004),
                   getParentForChildren(),
                   isClean());
           results_ = null;
@@ -962,11 +1151,12 @@ public final class LstRTEndBaccaratResponseProto {
     java.lang.String[] descriptorData = {
       "\n\036LstRTEndBaccaratResponse.proto\022\005fanxi\032" +
       "\033RTEndBaccaratResponse.proto\032\022BaseRespon" +
-      "se.proto\"t\n\030LstRTEndBaccaratResponse\022)\n\014" +
-      "baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse\022" +
-      "-\n\007results\030\004 \003(\0132\034.fanxi.RTEndBaccaratRe" +
-      "sponseB:\n\031com.fanxi.service.messageB\035Lst" +
-      "RTEndBaccaratResponseProtob\006proto3"
+      "se.proto\"\202\001\n\030LstRTEndBaccaratResponse\022)\n" +
+      "\014baseResponse\030\001 \001(\0132\023.fanxi.BaseResponse" +
+      "\022\014\n\004uids\030\004 \003(\t\022-\n\007results\030\005 \003(\0132\034.fanxi." +
+      "RTEndBaccaratResponseB:\n\031com.fanxi.servi" +
+      "ce.messageB\035LstRTEndBaccaratResponseProt" +
+      "ob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -987,7 +1177,7 @@ public final class LstRTEndBaccaratResponseProto {
     internal_static_fanxi_LstRTEndBaccaratResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_LstRTEndBaccaratResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "Results", });
+        new java.lang.String[] { "BaseResponse", "Uids", "Results", });
     com.fanxi.service.message.RTEndBaccaratResponseProto.getDescriptor();
     com.fanxi.service.message.BaseResponseProto.getDescriptor();
   }

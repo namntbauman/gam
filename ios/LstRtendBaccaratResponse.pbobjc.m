@@ -49,11 +49,13 @@ static GPBFileDescriptor *LstRtendBaccaratResponseRoot_FileDescriptor(void) {
 @implementation LstRTEndBaccaratResponse
 
 @dynamic hasBaseResponse, baseResponse;
+@dynamic uidsArray, uidsArray_Count;
 @dynamic resultsArray, resultsArray_Count;
 
 typedef struct LstRTEndBaccaratResponse__storage_ {
   uint32_t _has_storage_[1];
   BaseResponse *baseResponse;
+  NSMutableArray *uidsArray;
   NSMutableArray *resultsArray;
 } LstRTEndBaccaratResponse__storage_;
 
@@ -71,6 +73,15 @@ typedef struct LstRTEndBaccaratResponse__storage_ {
         .offset = (uint32_t)offsetof(LstRTEndBaccaratResponse__storage_, baseResponse),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeMessage,
+      },
+      {
+        .name = "uidsArray",
+        .dataTypeSpecific.className = NULL,
+        .number = LstRTEndBaccaratResponse_FieldNumber_UidsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(LstRTEndBaccaratResponse__storage_, uidsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "resultsArray",
