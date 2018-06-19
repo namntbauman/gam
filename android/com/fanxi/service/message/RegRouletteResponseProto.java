@@ -77,25 +77,35 @@ public final class RegRouletteResponseProto {
     int getResult();
 
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>string history = 12;</code>
+     */
+    java.lang.String getHistory();
+    /**
+     * <code>string history = 12;</code>
+     */
+    com.google.protobuf.ByteString
+        getHistoryBytes();
+
+    /**
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     java.util.List<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity> 
         getBetsList();
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity getBets(int index);
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     int getBetsCount();
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     java.util.List<? extends com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder> 
         getBetsOrBuilderList();
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder getBetsOrBuilder(
         int index);
@@ -120,6 +130,7 @@ public final class RegRouletteResponseProto {
       ruleTime_ = "";
       reference_ = 0L;
       result_ = 0;
+      history_ = "";
       bets_ = java.util.Collections.emptyList();
     }
 
@@ -203,9 +214,15 @@ public final class RegRouletteResponseProto {
               break;
             }
             case 98: {
-              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              history_ = s;
+              break;
+            }
+            case 106: {
+              if (!((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
                 bets_ = new java.util.ArrayList<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity>();
-                mutable_bitField0_ |= 0x00000200;
+                mutable_bitField0_ |= 0x00000400;
               }
               bets_.add(
                   input.readMessage(com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.parser(), extensionRegistry));
@@ -219,7 +236,7 @@ public final class RegRouletteResponseProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        if (((mutable_bitField0_ & 0x00000400) == 0x00000400)) {
           bets_ = java.util.Collections.unmodifiableList(bets_);
         }
         makeExtensionsImmutable();
@@ -356,35 +373,69 @@ public final class RegRouletteResponseProto {
       return result_;
     }
 
-    public static final int BETS_FIELD_NUMBER = 12;
+    public static final int HISTORY_FIELD_NUMBER = 12;
+    private volatile java.lang.Object history_;
+    /**
+     * <code>string history = 12;</code>
+     */
+    public java.lang.String getHistory() {
+      java.lang.Object ref = history_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        history_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string history = 12;</code>
+     */
+    public com.google.protobuf.ByteString
+        getHistoryBytes() {
+      java.lang.Object ref = history_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        history_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BETS_FIELD_NUMBER = 13;
     private java.util.List<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity> bets_;
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     public java.util.List<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity> getBetsList() {
       return bets_;
     }
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     public java.util.List<? extends com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder> 
         getBetsOrBuilderList() {
       return bets_;
     }
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     public int getBetsCount() {
       return bets_.size();
     }
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity getBets(int index) {
       return bets_.get(index);
     }
     /**
-     * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+     * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
      */
     public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder getBetsOrBuilder(
         int index) {
@@ -430,8 +481,11 @@ public final class RegRouletteResponseProto {
       if (result_ != 0) {
         output.writeInt32(11, result_);
       }
+      if (!getHistoryBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 12, history_);
+      }
       for (int i = 0; i < bets_.size(); i++) {
-        output.writeMessage(12, bets_.get(i));
+        output.writeMessage(13, bets_.get(i));
       }
     }
 
@@ -475,9 +529,12 @@ public final class RegRouletteResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(11, result_);
       }
+      if (!getHistoryBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, history_);
+      }
       for (int i = 0; i < bets_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(12, bets_.get(i));
+          .computeMessageSize(13, bets_.get(i));
       }
       memoizedSize = size;
       return size;
@@ -516,6 +573,8 @@ public final class RegRouletteResponseProto {
           == other.getReference());
       result = result && (getResult()
           == other.getResult());
+      result = result && getHistory()
+          .equals(other.getHistory());
       result = result && getBetsList()
           .equals(other.getBetsList());
       return result;
@@ -552,6 +611,8 @@ public final class RegRouletteResponseProto {
           getReference());
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getResult();
+      hash = (37 * hash) + HISTORY_FIELD_NUMBER;
+      hash = (53 * hash) + getHistory().hashCode();
       if (getBetsCount() > 0) {
         hash = (37 * hash) + BETS_FIELD_NUMBER;
         hash = (53 * hash) + getBetsList().hashCode();
@@ -697,9 +758,11 @@ public final class RegRouletteResponseProto {
 
         result_ = 0;
 
+        history_ = "";
+
         if (betsBuilder_ == null) {
           bets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
         } else {
           betsBuilder_.clear();
         }
@@ -740,10 +803,11 @@ public final class RegRouletteResponseProto {
         result.ruleTime_ = ruleTime_;
         result.reference_ = reference_;
         result.result_ = result_;
+        result.history_ = history_;
         if (betsBuilder_ == null) {
-          if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          if (((bitField0_ & 0x00000400) == 0x00000400)) {
             bets_ = java.util.Collections.unmodifiableList(bets_);
-            bitField0_ = (bitField0_ & ~0x00000200);
+            bitField0_ = (bitField0_ & ~0x00000400);
           }
           result.bets_ = bets_;
         } else {
@@ -819,11 +883,15 @@ public final class RegRouletteResponseProto {
         if (other.getResult() != 0) {
           setResult(other.getResult());
         }
+        if (!other.getHistory().isEmpty()) {
+          history_ = other.history_;
+          onChanged();
+        }
         if (betsBuilder_ == null) {
           if (!other.bets_.isEmpty()) {
             if (bets_.isEmpty()) {
               bets_ = other.bets_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000400);
             } else {
               ensureBetsIsMutable();
               bets_.addAll(other.bets_);
@@ -836,7 +904,7 @@ public final class RegRouletteResponseProto {
               betsBuilder_.dispose();
               betsBuilder_ = null;
               bets_ = other.bets_;
-              bitField0_ = (bitField0_ & ~0x00000200);
+              bitField0_ = (bitField0_ & ~0x00000400);
               betsBuilder_ = 
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
                    getBetsFieldBuilder() : null;
@@ -1240,12 +1308,81 @@ public final class RegRouletteResponseProto {
         return this;
       }
 
+      private java.lang.Object history_ = "";
+      /**
+       * <code>string history = 12;</code>
+       */
+      public java.lang.String getHistory() {
+        java.lang.Object ref = history_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          history_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>string history = 12;</code>
+       */
+      public com.google.protobuf.ByteString
+          getHistoryBytes() {
+        java.lang.Object ref = history_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          history_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string history = 12;</code>
+       */
+      public Builder setHistory(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        history_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history = 12;</code>
+       */
+      public Builder clearHistory() {
+        
+        history_ = getDefaultInstance().getHistory();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string history = 12;</code>
+       */
+      public Builder setHistoryBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        history_ = value;
+        onChanged();
+        return this;
+      }
+
       private java.util.List<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity> bets_ =
         java.util.Collections.emptyList();
       private void ensureBetsIsMutable() {
-        if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        if (!((bitField0_ & 0x00000400) == 0x00000400)) {
           bets_ = new java.util.ArrayList<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity>(bets_);
-          bitField0_ |= 0x00000200;
+          bitField0_ |= 0x00000400;
          }
       }
 
@@ -1253,7 +1390,7 @@ public final class RegRouletteResponseProto {
           com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder> betsBuilder_;
 
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public java.util.List<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity> getBetsList() {
         if (betsBuilder_ == null) {
@@ -1263,7 +1400,7 @@ public final class RegRouletteResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public int getBetsCount() {
         if (betsBuilder_ == null) {
@@ -1273,7 +1410,7 @@ public final class RegRouletteResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity getBets(int index) {
         if (betsBuilder_ == null) {
@@ -1283,7 +1420,7 @@ public final class RegRouletteResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder setBets(
           int index, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity value) {
@@ -1300,7 +1437,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder setBets(
           int index, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder builderForValue) {
@@ -1314,7 +1451,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder addBets(com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity value) {
         if (betsBuilder_ == null) {
@@ -1330,7 +1467,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder addBets(
           int index, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity value) {
@@ -1347,7 +1484,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder addBets(
           com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder builderForValue) {
@@ -1361,7 +1498,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder addBets(
           int index, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder builderForValue) {
@@ -1375,7 +1512,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder addAllBets(
           java.lang.Iterable<? extends com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity> values) {
@@ -1390,12 +1527,12 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder clearBets() {
         if (betsBuilder_ == null) {
           bets_ = java.util.Collections.emptyList();
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000400);
           onChanged();
         } else {
           betsBuilder_.clear();
@@ -1403,7 +1540,7 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public Builder removeBets(int index) {
         if (betsBuilder_ == null) {
@@ -1416,14 +1553,14 @@ public final class RegRouletteResponseProto {
         return this;
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder getBetsBuilder(
           int index) {
         return getBetsFieldBuilder().getBuilder(index);
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder getBetsOrBuilder(
           int index) {
@@ -1433,7 +1570,7 @@ public final class RegRouletteResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public java.util.List<? extends com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder> 
            getBetsOrBuilderList() {
@@ -1444,14 +1581,14 @@ public final class RegRouletteResponseProto {
         }
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder addBetsBuilder() {
         return getBetsFieldBuilder().addBuilder(
             com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder addBetsBuilder(
           int index) {
@@ -1459,7 +1596,7 @@ public final class RegRouletteResponseProto {
             index, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.getDefaultInstance());
       }
       /**
-       * <code>repeated .fanxi.RouletteBetEntity bets = 12;</code>
+       * <code>repeated .fanxi.RouletteBetEntity bets = 13;</code>
        */
       public java.util.List<com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder> 
            getBetsBuilderList() {
@@ -1472,7 +1609,7 @@ public final class RegRouletteResponseProto {
           betsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
               com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntity.Builder, com.fanxi.service.message.RouletteBetEntityProto.RouletteBetEntityOrBuilder>(
                   bets_,
-                  ((bitField0_ & 0x00000200) == 0x00000200),
+                  ((bitField0_ & 0x00000400) == 0x00000400),
                   getParentForChildren(),
                   isClean());
           bets_ = null;
@@ -1544,15 +1681,15 @@ public final class RegRouletteResponseProto {
     java.lang.String[] descriptorData = {
       "\n\031RegRouletteResponse.proto\022\005fanxi\032\031Rest" +
       "fulBaseResponse.proto\032\027RouletteBetEntity" +
-      ".proto\"\375\001\n\023RegRouletteResponse\0220\n\014baseRe" +
+      ".proto\"\216\002\n\023RegRouletteResponse\0220\n\014baseRe" +
       "sponse\030\001 \001(\0132\032.fanxi.RestfulBaseResponse" +
       "\022\017\n\007yourBet\030\004 \001(\003\022\020\n\010totalBet\030\005 \001(\003\022\r\n\005s" +
       "tate\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\025\n\rtimeRemain" +
       "ing\030\010 \001(\005\022\020\n\010ruleTime\030\t \001(\t\022\021\n\treference" +
-      "\030\n \001(\003\022\016\n\006result\030\013 \001(\005\022&\n\004bets\030\014 \003(\0132\030.f" +
-      "anxi.RouletteBetEntityB5\n\031com.fanxi.serv" +
-      "ice.messageB\030RegRouletteResponseProtob\006p",
-      "roto3"
+      "\030\n \001(\003\022\016\n\006result\030\013 \001(\005\022\017\n\007history\030\014 \001(\t\022" +
+      "&\n\004bets\030\r \003(\0132\030.fanxi.RouletteBetEntityB" +
+      "5\n\031com.fanxi.service.messageB\030RegRoulett",
+      "eResponseProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1573,7 +1710,7 @@ public final class RegRouletteResponseProto {
     internal_static_fanxi_RegRouletteResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegRouletteResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "YourBet", "TotalBet", "State", "IsGold", "TimeRemaining", "RuleTime", "Reference", "Result", "Bets", });
+        new java.lang.String[] { "BaseResponse", "YourBet", "TotalBet", "State", "IsGold", "TimeRemaining", "RuleTime", "Reference", "Result", "History", "Bets", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
     com.fanxi.service.message.RouletteBetEntityProto.getDescriptor();
   }

@@ -57,6 +57,7 @@ static GPBFileDescriptor *RegRouletteResponseRoot_FileDescriptor(void) {
 @dynamic ruleTime;
 @dynamic reference;
 @dynamic result;
+@dynamic history;
 @dynamic betsArray, betsArray_Count;
 
 typedef struct RegRouletteResponse__storage_ {
@@ -66,6 +67,7 @@ typedef struct RegRouletteResponse__storage_ {
   int32_t result;
   RestfulBaseResponse *baseResponse;
   NSString *ruleTime;
+  NSString *history;
   NSMutableArray *betsArray;
   int64_t yourBet;
   int64_t totalBet;
@@ -158,6 +160,15 @@ typedef struct RegRouletteResponse__storage_ {
         .offset = (uint32_t)offsetof(RegRouletteResponse__storage_, result),
         .flags = GPBFieldOptional,
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "history",
+        .dataTypeSpecific.className = NULL,
+        .number = RegRouletteResponse_FieldNumber_History,
+        .hasIndex = 10,
+        .offset = (uint32_t)offsetof(RegRouletteResponse__storage_, history),
+        .flags = GPBFieldOptional,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "betsArray",
