@@ -54,6 +54,8 @@ static GPBFileDescriptor *BetBaccaratResponseRoot_FileDescriptor(void) {
 @dynamic tie;
 @dynamic banker;
 @dynamic bankerPair;
+@dynamic playerIns;
+@dynamic bankerIns;
 @dynamic betsArray, betsArray_Count;
 
 typedef struct BetBaccaratResponse__storage_ {
@@ -65,6 +67,8 @@ typedef struct BetBaccaratResponse__storage_ {
   int64_t tie;
   int64_t banker;
   int64_t bankerPair;
+  int64_t playerIns;
+  int64_t bankerIns;
 } BetBaccaratResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -128,6 +132,24 @@ typedef struct BetBaccaratResponse__storage_ {
         .dataType = GPBDataTypeInt64,
       },
       {
+        .name = "playerIns",
+        .dataTypeSpecific.className = NULL,
+        .number = BetBaccaratResponse_FieldNumber_PlayerIns,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(BetBaccaratResponse__storage_, playerIns),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "bankerIns",
+        .dataTypeSpecific.className = NULL,
+        .number = BetBaccaratResponse_FieldNumber_BankerIns,
+        .hasIndex = 7,
+        .offset = (uint32_t)offsetof(BetBaccaratResponse__storage_, bankerIns),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
         .name = "betsArray",
         .dataTypeSpecific.className = GPBStringifySymbol(RouletteBetEntity),
         .number = BetBaccaratResponse_FieldNumber_BetsArray,
@@ -147,7 +169,7 @@ typedef struct BetBaccaratResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\003\001\014\000\005\n\000\010\n\000";
+        "\005\001\014\000\005\n\000\010\n\000\t\t\000\n\t\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

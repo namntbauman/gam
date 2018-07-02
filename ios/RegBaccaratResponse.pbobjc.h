@@ -62,6 +62,8 @@ typedef GPB_ENUM(RegBaccaratResponse_FieldNumber) {
   RegBaccaratResponse_FieldNumber_RuleTime = 13,
   RegBaccaratResponse_FieldNumber_PlayerCards = 14,
   RegBaccaratResponse_FieldNumber_BankerCards = 15,
+  RegBaccaratResponse_FieldNumber_PlayerIns = 16,
+  RegBaccaratResponse_FieldNumber_BankerIn = 17,
 };
 
 @interface RegBaccaratResponse : GPBMessage
@@ -93,6 +95,10 @@ typedef GPB_ENUM(RegBaccaratResponse_FieldNumber) {
 @property(nonatomic, readwrite, copy, null_resettable) NSString *playerCards;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *bankerCards;
+
+@property(nonatomic, readwrite) int64_t playerIns;
+
+@property(nonatomic, readwrite) int64_t bankerIn;
 
 @end
 

@@ -110,6 +110,16 @@ public final class RegBaccaratResponseProto {
      */
     com.google.protobuf.ByteString
         getBankerCardsBytes();
+
+    /**
+     * <code>int64 playerIns = 16;</code>
+     */
+    long getPlayerIns();
+
+    /**
+     * <code>int64 bankerIn = 17;</code>
+     */
+    long getBankerIn();
   }
   /**
    * Protobuf type {@code fanxi.RegBaccaratResponse}
@@ -135,6 +145,8 @@ public final class RegBaccaratResponseProto {
       ruleTime_ = "";
       playerCards_ = "";
       bankerCards_ = "";
+      playerIns_ = 0L;
+      bankerIn_ = 0L;
     }
 
     @java.lang.Override
@@ -237,6 +249,16 @@ public final class RegBaccaratResponseProto {
               java.lang.String s = input.readStringRequireUtf8();
 
               bankerCards_ = s;
+              break;
+            }
+            case 128: {
+
+              playerIns_ = input.readInt64();
+              break;
+            }
+            case 136: {
+
+              bankerIn_ = input.readInt64();
               break;
             }
           }
@@ -491,6 +513,24 @@ public final class RegBaccaratResponseProto {
       }
     }
 
+    public static final int PLAYERINS_FIELD_NUMBER = 16;
+    private long playerIns_;
+    /**
+     * <code>int64 playerIns = 16;</code>
+     */
+    public long getPlayerIns() {
+      return playerIns_;
+    }
+
+    public static final int BANKERIN_FIELD_NUMBER = 17;
+    private long bankerIn_;
+    /**
+     * <code>int64 bankerIn = 17;</code>
+     */
+    public long getBankerIn() {
+      return bankerIn_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -541,6 +581,12 @@ public final class RegBaccaratResponseProto {
       }
       if (!getBankerCardsBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 15, bankerCards_);
+      }
+      if (playerIns_ != 0L) {
+        output.writeInt64(16, playerIns_);
+      }
+      if (bankerIn_ != 0L) {
+        output.writeInt64(17, bankerIn_);
       }
     }
 
@@ -597,6 +643,14 @@ public final class RegBaccaratResponseProto {
       if (!getBankerCardsBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, bankerCards_);
       }
+      if (playerIns_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(16, playerIns_);
+      }
+      if (bankerIn_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(17, bankerIn_);
+      }
       memoizedSize = size;
       return size;
     }
@@ -642,6 +696,10 @@ public final class RegBaccaratResponseProto {
           .equals(other.getPlayerCards());
       result = result && getBankerCards()
           .equals(other.getBankerCards());
+      result = result && (getPlayerIns()
+          == other.getPlayerIns());
+      result = result && (getBankerIn()
+          == other.getBankerIn());
       return result;
     }
 
@@ -686,6 +744,12 @@ public final class RegBaccaratResponseProto {
       hash = (53 * hash) + getPlayerCards().hashCode();
       hash = (37 * hash) + BANKERCARDS_FIELD_NUMBER;
       hash = (53 * hash) + getBankerCards().hashCode();
+      hash = (37 * hash) + PLAYERINS_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getPlayerIns());
+      hash = (37 * hash) + BANKERIN_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getBankerIn());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -834,6 +898,10 @@ public final class RegBaccaratResponseProto {
 
         bankerCards_ = "";
 
+        playerIns_ = 0L;
+
+        bankerIn_ = 0L;
+
         return this;
       }
 
@@ -873,6 +941,8 @@ public final class RegBaccaratResponseProto {
         result.ruleTime_ = ruleTime_;
         result.playerCards_ = playerCards_;
         result.bankerCards_ = bankerCards_;
+        result.playerIns_ = playerIns_;
+        result.bankerIn_ = bankerIn_;
         onBuilt();
         return result;
       }
@@ -956,6 +1026,12 @@ public final class RegBaccaratResponseProto {
         if (!other.getBankerCards().isEmpty()) {
           bankerCards_ = other.bankerCards_;
           onChanged();
+        }
+        if (other.getPlayerIns() != 0L) {
+          setPlayerIns(other.getPlayerIns());
+        }
+        if (other.getBankerIn() != 0L) {
+          setBankerIn(other.getBankerIn());
         }
         onChanged();
         return this;
@@ -1583,6 +1659,58 @@ public final class RegBaccaratResponseProto {
         onChanged();
         return this;
       }
+
+      private long playerIns_ ;
+      /**
+       * <code>int64 playerIns = 16;</code>
+       */
+      public long getPlayerIns() {
+        return playerIns_;
+      }
+      /**
+       * <code>int64 playerIns = 16;</code>
+       */
+      public Builder setPlayerIns(long value) {
+        
+        playerIns_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 playerIns = 16;</code>
+       */
+      public Builder clearPlayerIns() {
+        
+        playerIns_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private long bankerIn_ ;
+      /**
+       * <code>int64 bankerIn = 17;</code>
+       */
+      public long getBankerIn() {
+        return bankerIn_;
+      }
+      /**
+       * <code>int64 bankerIn = 17;</code>
+       */
+      public Builder setBankerIn(long value) {
+        
+        bankerIn_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>int64 bankerIn = 17;</code>
+       */
+      public Builder clearBankerIn() {
+        
+        bankerIn_ = 0L;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1647,16 +1775,17 @@ public final class RegBaccaratResponseProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\031RegBaccaratResponse.proto\022\005fanxi\032\031Rest" +
-      "fulBaseResponse.proto\"\242\002\n\023RegBaccaratRes" +
+      "fulBaseResponse.proto\"\307\002\n\023RegBaccaratRes" +
       "ponse\0220\n\014baseResponse\030\001 \001(\0132\032.fanxi.Rest" +
       "fulBaseResponse\022\r\n\005state\030\004 \001(\005\022\021\n\trefere" +
       "nce\030\005 \001(\003\022\017\n\007history\030\006 \001(\t\022\016\n\006player\030\007 \001" +
       "(\003\022\022\n\nplayerPair\030\010 \001(\003\022\013\n\003tie\030\t \001(\003\022\022\n\nb" +
       "ankerPair\030\n \001(\003\022\016\n\006banker\030\013 \001(\003\022\025\n\rtimeR" +
       "emaining\030\014 \001(\005\022\020\n\010ruleTime\030\r \001(\t\022\023\n\013play" +
-      "erCards\030\016 \001(\t\022\023\n\013bankerCards\030\017 \001(\tB5\n\031co" +
-      "m.fanxi.service.messageB\030RegBaccaratResp",
-      "onseProtob\006proto3"
+      "erCards\030\016 \001(\t\022\023\n\013bankerCards\030\017 \001(\t\022\021\n\tpl" +
+      "ayerIns\030\020 \001(\003\022\020\n\010bankerIn\030\021 \001(\003B5\n\031com.f",
+      "anxi.service.messageB\030RegBaccaratRespons" +
+      "eProtob\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1676,7 +1805,7 @@ public final class RegBaccaratResponseProto {
     internal_static_fanxi_RegBaccaratResponse_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_RegBaccaratResponse_descriptor,
-        new java.lang.String[] { "BaseResponse", "State", "Reference", "History", "Player", "PlayerPair", "Tie", "BankerPair", "Banker", "TimeRemaining", "RuleTime", "PlayerCards", "BankerCards", });
+        new java.lang.String[] { "BaseResponse", "State", "Reference", "History", "Player", "PlayerPair", "Tie", "BankerPair", "Banker", "TimeRemaining", "RuleTime", "PlayerCards", "BankerCards", "PlayerIns", "BankerIn", });
     com.fanxi.service.message.RestfulBaseResponseProto.getDescriptor();
   }
 

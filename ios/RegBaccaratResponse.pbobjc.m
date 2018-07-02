@@ -60,6 +60,8 @@ static GPBFileDescriptor *RegBaccaratResponseRoot_FileDescriptor(void) {
 @dynamic ruleTime;
 @dynamic playerCards;
 @dynamic bankerCards;
+@dynamic playerIns;
+@dynamic bankerIn;
 
 typedef struct RegBaccaratResponse__storage_ {
   uint32_t _has_storage_[1];
@@ -76,6 +78,8 @@ typedef struct RegBaccaratResponse__storage_ {
   int64_t tie;
   int64_t bankerPair;
   int64_t banker;
+  int64_t playerIns;
+  int64_t bankerIn;
 } RegBaccaratResponse__storage_;
 
 // This method is threadsafe because it is initially called
@@ -201,6 +205,24 @@ typedef struct RegBaccaratResponse__storage_ {
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeString,
       },
+      {
+        .name = "playerIns",
+        .dataTypeSpecific.className = NULL,
+        .number = RegBaccaratResponse_FieldNumber_PlayerIns,
+        .hasIndex = 13,
+        .offset = (uint32_t)offsetof(RegBaccaratResponse__storage_, playerIns),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
+      {
+        .name = "bankerIn",
+        .dataTypeSpecific.className = NULL,
+        .number = RegBaccaratResponse_FieldNumber_BankerIn,
+        .hasIndex = 14,
+        .offset = (uint32_t)offsetof(RegBaccaratResponse__storage_, bankerIn),
+        .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
+        .dataType = GPBDataTypeInt64,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[RegBaccaratResponse class]
@@ -212,7 +234,7 @@ typedef struct RegBaccaratResponse__storage_ {
                                          flags:GPBDescriptorInitializationFlag_None];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\007\001\014\000\010\n\000\n\n\000\014\r\000\r\010\000\016\013\000\017\013\000";
+        "\t\001\014\000\010\n\000\n\n\000\014\r\000\r\010\000\016\013\000\017\013\000\020\t\000\021\010\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
