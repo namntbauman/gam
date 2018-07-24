@@ -1,0 +1,12 @@
+syntax = "proto3";
+package fanxi;
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "PackageResponseProto";
+
+message PackageResponse {
+    repeated bytes data=1;
+}
+
+
+
+

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package fanxi;
+import "RTEndRouletteResponse.proto";
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "LstRTEndRouletteResponseProto";
+
+message LstRTEndRouletteResponse {
+   BaseResponse baseResponse=1;
+   repeated RTEndRouletteResponse results =4;
+   repeated string uids =5;
+}
+
+
+
+

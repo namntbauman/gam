@@ -1,0 +1,19 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RTEndBaccaratResponseProto";
+
+message RTEndBaccaratResponse {
+   BaseResponse baseResponse=1;
+   int64 reference=4;
+   bool isGold=5;
+   string playerCards=6;
+   string bankerCards=7;
+   int64 wonMoney=8;
+   int64 cash=9;
+}
+
+
+
+

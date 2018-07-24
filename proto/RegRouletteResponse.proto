@@ -14,7 +14,9 @@ message RegRouletteResponse {
    int32 timeRemaining=8;
    string ruleTime=9;
    int64 reference=10;
-   repeated RouletteBetEntity bets=11;
+   int32 result=11;
+   string history=12;
+   repeated RouletteBetEntity bets=13;
 }
 
 

@@ -1,0 +1,26 @@
+syntax = "proto3";
+package fanxi;
+import "RestfulBaseResponse.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RegBaccaratResponseProto";
+
+message RegBaccaratResponse {
+   RestfulBaseResponse baseResponse=1;
+   int32 state=4;
+   int64 reference=5;
+   string history=6;
+   int64 player=7;
+   int64 playerPair=8;
+   int64 tie=9;
+   int64 bankerPair=10;
+   int64 banker=11;
+   int32 timeRemaining=12;
+   string ruleTime=13;
+   string playerCards=14;
+   string bankerCards=15;
+   int64 playerIns=16;
+   int64 bankerIn=17;
+}
+
+
+

@@ -1,0 +1,20 @@
+syntax = "proto3";
+package fanxi;
+import "BaseResponse.proto";
+import "RouletteBetEntity.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "RTBetBaccaratResponseProto";
+
+message RTBetBaccaratResponse {
+   BaseResponse baseResponse=1;
+   int64 reference=4;
+   int64 player=5;
+   int64 playerPair=6;
+   int64 tie=7;
+   int64 banker=8;
+   int64 bankerPair=9;
+   repeated RouletteBetEntity bets=10;
+}
+
+
+

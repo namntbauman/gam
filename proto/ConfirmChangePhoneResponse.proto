@@ -2,13 +2,12 @@ syntax = "proto3";
 package fanxi;
 import "RestfulBaseResponse.proto";
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "GetInfoResponseProto";
+option java_outer_classname = "ConfirmChangePhoneResponseProto";
 
-message GetInfoResponse {
+message ConfirmChangePhoneResponse {
    RestfulBaseResponse baseResponse=1;
-   string actvMessage = 5;
-   string phoneContact=6;
-   string facebook=7;
+   
+   
 }
 
 

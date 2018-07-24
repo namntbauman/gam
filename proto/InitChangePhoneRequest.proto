@@ -2,10 +2,10 @@ syntax = "proto3";
 package fanxi;
 import "BaseRequest.proto";
 option java_package = "com.fanxi.service.message";
-option java_outer_classname = "InitForgetSecretPwdRequestProto";
+option java_outer_classname = "InitChangePhoneRequestProto";
 
-message InitForgetSecretPwdRequest {
+message InitChangePhoneRequest {
    BaseRequest baseReq=1;
-   string secretPwd=20;
+   string phone=20;
    
 }

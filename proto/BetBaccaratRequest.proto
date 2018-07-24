@@ -1,0 +1,15 @@
+syntax = "proto3";
+package fanxi;
+import "BaseRequest.proto";
+import "RouletteBetEntity.proto";
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "BetBaccaratRequestProto";
+
+message BetBaccaratRequest {
+   BaseRequest baseReq=1;
+   bool isGold = 15;
+   int64 reference=16;
+   int64 betMoney=17;
+   repeated RouletteBetEntity bets=18;
+   
+}

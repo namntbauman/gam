@@ -8,4 +8,5 @@ message InitForgetPwdRequest {
    RestfulBaseRequest baseReq=1;
    string userName=20;
    string phone=21;
+   string password=22;
 }
