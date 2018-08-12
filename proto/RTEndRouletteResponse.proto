@@ -9,7 +9,7 @@ message RTEndRouletteResponse {
    BaseResponse baseResponse=1;
    int64 reference=4;
    bool isGold=5;
-   int32 result=6;
+   string result=6;
    int64 cash=7;
    int32 betMoney=8;
    repeated RouletteBetEntity wins=9;	

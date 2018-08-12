@@ -42,9 +42,14 @@ public final class RTEndRouletteResponseProto {
     boolean getIsGold();
 
     /**
-     * <code>int32 result = 6;</code>
+     * <code>string result = 6;</code>
      */
-    int getResult();
+    java.lang.String getResult();
+    /**
+     * <code>string result = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
 
     /**
      * <code>int64 cash = 7;</code>
@@ -94,7 +99,7 @@ public final class RTEndRouletteResponseProto {
     private RTEndRouletteResponse() {
       reference_ = 0L;
       isGold_ = false;
-      result_ = 0;
+      result_ = "";
       cash_ = 0L;
       betMoney_ = 0;
       wins_ = java.util.Collections.emptyList();
@@ -148,9 +153,10 @@ public final class RTEndRouletteResponseProto {
               isGold_ = input.readBool();
               break;
             }
-            case 48: {
+            case 50: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              result_ = input.readInt32();
+              result_ = s;
               break;
             }
             case 56: {
@@ -239,12 +245,37 @@ public final class RTEndRouletteResponseProto {
     }
 
     public static final int RESULT_FIELD_NUMBER = 6;
-    private int result_;
+    private volatile java.lang.Object result_;
     /**
-     * <code>int32 result = 6;</code>
+     * <code>string result = 6;</code>
      */
-    public int getResult() {
-      return result_;
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        result_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string result = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        result_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int CASH_FIELD_NUMBER = 7;
@@ -321,8 +352,8 @@ public final class RTEndRouletteResponseProto {
       if (isGold_ != false) {
         output.writeBool(5, isGold_);
       }
-      if (result_ != 0) {
-        output.writeInt32(6, result_);
+      if (!getResultBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, result_);
       }
       if (cash_ != 0L) {
         output.writeInt64(7, cash_);
@@ -352,9 +383,8 @@ public final class RTEndRouletteResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeBoolSize(5, isGold_);
       }
-      if (result_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(6, result_);
+      if (!getResultBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, result_);
       }
       if (cash_ != 0L) {
         size += com.google.protobuf.CodedOutputStream
@@ -393,8 +423,8 @@ public final class RTEndRouletteResponseProto {
           == other.getReference());
       result = result && (getIsGold()
           == other.getIsGold());
-      result = result && (getResult()
-          == other.getResult());
+      result = result && getResult()
+          .equals(other.getResult());
       result = result && (getCash()
           == other.getCash());
       result = result && (getBetMoney()
@@ -422,7 +452,7 @@ public final class RTEndRouletteResponseProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
           getIsGold());
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getResult();
+      hash = (53 * hash) + getResult().hashCode();
       hash = (37 * hash) + CASH_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getCash());
@@ -561,7 +591,7 @@ public final class RTEndRouletteResponseProto {
 
         isGold_ = false;
 
-        result_ = 0;
+        result_ = "";
 
         cash_ = 0L;
 
@@ -667,8 +697,9 @@ public final class RTEndRouletteResponseProto {
         if (other.getIsGold() != false) {
           setIsGold(other.getIsGold());
         }
-        if (other.getResult() != 0) {
-          setResult(other.getResult());
+        if (!other.getResult().isEmpty()) {
+          result_ = other.result_;
+          onChanged();
         }
         if (other.getCash() != 0L) {
           setCash(other.getCash());
@@ -898,28 +929,71 @@ public final class RTEndRouletteResponseProto {
         return this;
       }
 
-      private int result_ ;
+      private java.lang.Object result_ = "";
       /**
-       * <code>int32 result = 6;</code>
+       * <code>string result = 6;</code>
        */
-      public int getResult() {
-        return result_;
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          result_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 result = 6;</code>
+       * <code>string result = 6;</code>
        */
-      public Builder setResult(int value) {
-        
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          result_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string result = 6;</code>
+       */
+      public Builder setResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         result_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 result = 6;</code>
+       * <code>string result = 6;</code>
        */
       public Builder clearResult() {
         
-        result_ = 0;
+        result_ = getDefaultInstance().getResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 6;</code>
+       */
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        result_ = value;
         onChanged();
         return this;
       }
@@ -1283,7 +1357,7 @@ public final class RTEndRouletteResponseProto {
       "o\"\275\001\n\025RTEndRouletteResponse\022)\n\014baseRespo" +
       "nse\030\001 \001(\0132\023.fanxi.BaseResponse\022\021\n\trefere" +
       "nce\030\004 \001(\003\022\016\n\006isGold\030\005 \001(\010\022\016\n\006result\030\006 \001(" +
-      "\005\022\014\n\004cash\030\007 \001(\003\022\020\n\010betMoney\030\010 \001(\005\022&\n\004win" +
+      "\t\022\014\n\004cash\030\007 \001(\003\022\020\n\010betMoney\030\010 \001(\005\022&\n\004win" +
       "s\030\t \003(\0132\030.fanxi.RouletteBetEntityB7\n\031com" +
       ".fanxi.service.messageB\032RTEndRouletteRes" +
       "ponseProtob\006proto3"

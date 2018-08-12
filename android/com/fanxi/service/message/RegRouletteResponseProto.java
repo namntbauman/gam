@@ -72,9 +72,14 @@ public final class RegRouletteResponseProto {
     long getReference();
 
     /**
-     * <code>int32 result = 11;</code>
+     * <code>string result = 11;</code>
      */
-    int getResult();
+    java.lang.String getResult();
+    /**
+     * <code>string result = 11;</code>
+     */
+    com.google.protobuf.ByteString
+        getResultBytes();
 
     /**
      * <code>string history = 12;</code>
@@ -129,7 +134,7 @@ public final class RegRouletteResponseProto {
       timeRemaining_ = 0;
       ruleTime_ = "";
       reference_ = 0L;
-      result_ = 0;
+      result_ = "";
       history_ = "";
       bets_ = java.util.Collections.emptyList();
     }
@@ -208,9 +213,10 @@ public final class RegRouletteResponseProto {
               reference_ = input.readInt64();
               break;
             }
-            case 88: {
+            case 90: {
+              java.lang.String s = input.readStringRequireUtf8();
 
-              result_ = input.readInt32();
+              result_ = s;
               break;
             }
             case 98: {
@@ -365,12 +371,37 @@ public final class RegRouletteResponseProto {
     }
 
     public static final int RESULT_FIELD_NUMBER = 11;
-    private int result_;
+    private volatile java.lang.Object result_;
     /**
-     * <code>int32 result = 11;</code>
+     * <code>string result = 11;</code>
      */
-    public int getResult() {
-      return result_;
+    public java.lang.String getResult() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        result_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>string result = 11;</code>
+     */
+    public com.google.protobuf.ByteString
+        getResultBytes() {
+      java.lang.Object ref = result_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        result_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     public static final int HISTORY_FIELD_NUMBER = 12;
@@ -478,8 +509,8 @@ public final class RegRouletteResponseProto {
       if (reference_ != 0L) {
         output.writeInt64(10, reference_);
       }
-      if (result_ != 0) {
-        output.writeInt32(11, result_);
+      if (!getResultBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 11, result_);
       }
       if (!getHistoryBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 12, history_);
@@ -525,9 +556,8 @@ public final class RegRouletteResponseProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt64Size(10, reference_);
       }
-      if (result_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(11, result_);
+      if (!getResultBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, result_);
       }
       if (!getHistoryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, history_);
@@ -571,8 +601,8 @@ public final class RegRouletteResponseProto {
           .equals(other.getRuleTime());
       result = result && (getReference()
           == other.getReference());
-      result = result && (getResult()
-          == other.getResult());
+      result = result && getResult()
+          .equals(other.getResult());
       result = result && getHistory()
           .equals(other.getHistory());
       result = result && getBetsList()
@@ -610,7 +640,7 @@ public final class RegRouletteResponseProto {
       hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
           getReference());
       hash = (37 * hash) + RESULT_FIELD_NUMBER;
-      hash = (53 * hash) + getResult();
+      hash = (53 * hash) + getResult().hashCode();
       hash = (37 * hash) + HISTORY_FIELD_NUMBER;
       hash = (53 * hash) + getHistory().hashCode();
       if (getBetsCount() > 0) {
@@ -756,7 +786,7 @@ public final class RegRouletteResponseProto {
 
         reference_ = 0L;
 
-        result_ = 0;
+        result_ = "";
 
         history_ = "";
 
@@ -880,8 +910,9 @@ public final class RegRouletteResponseProto {
         if (other.getReference() != 0L) {
           setReference(other.getReference());
         }
-        if (other.getResult() != 0) {
-          setResult(other.getResult());
+        if (!other.getResult().isEmpty()) {
+          result_ = other.result_;
+          onChanged();
         }
         if (!other.getHistory().isEmpty()) {
           history_ = other.history_;
@@ -1282,28 +1313,71 @@ public final class RegRouletteResponseProto {
         return this;
       }
 
-      private int result_ ;
+      private java.lang.Object result_ = "";
       /**
-       * <code>int32 result = 11;</code>
+       * <code>string result = 11;</code>
        */
-      public int getResult() {
-        return result_;
+      public java.lang.String getResult() {
+        java.lang.Object ref = result_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          result_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
       }
       /**
-       * <code>int32 result = 11;</code>
+       * <code>string result = 11;</code>
        */
-      public Builder setResult(int value) {
-        
+      public com.google.protobuf.ByteString
+          getResultBytes() {
+        java.lang.Object ref = result_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          result_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>string result = 11;</code>
+       */
+      public Builder setResult(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
         result_ = value;
         onChanged();
         return this;
       }
       /**
-       * <code>int32 result = 11;</code>
+       * <code>string result = 11;</code>
        */
       public Builder clearResult() {
         
-        result_ = 0;
+        result_ = getDefaultInstance().getResult();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>string result = 11;</code>
+       */
+      public Builder setResultBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        result_ = value;
         onChanged();
         return this;
       }
@@ -1686,7 +1760,7 @@ public final class RegRouletteResponseProto {
       "\022\017\n\007yourBet\030\004 \001(\003\022\020\n\010totalBet\030\005 \001(\003\022\r\n\005s" +
       "tate\030\006 \001(\005\022\016\n\006isGold\030\007 \001(\010\022\025\n\rtimeRemain" +
       "ing\030\010 \001(\005\022\020\n\010ruleTime\030\t \001(\t\022\021\n\treference" +
-      "\030\n \001(\003\022\016\n\006result\030\013 \001(\005\022\017\n\007history\030\014 \001(\t\022" +
+      "\030\n \001(\003\022\016\n\006result\030\013 \001(\t\022\017\n\007history\030\014 \001(\t\022" +
       "&\n\004bets\030\r \003(\0132\030.fanxi.RouletteBetEntityB" +
       "5\n\031com.fanxi.service.messageB\030RegRoulett",
       "eResponseProtob\006proto3"

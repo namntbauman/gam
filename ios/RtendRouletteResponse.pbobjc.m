@@ -58,9 +58,9 @@ static GPBFileDescriptor *RtendRouletteResponseRoot_FileDescriptor(void) {
 
 typedef struct RTEndRouletteResponse__storage_ {
   uint32_t _has_storage_[1];
-  int32_t result;
   int32_t betMoney;
   BaseResponse *baseResponse;
+  NSString *result;
   NSMutableArray *winsArray;
   int64_t reference;
   int64_t cash;
@@ -106,7 +106,7 @@ typedef struct RTEndRouletteResponse__storage_ {
         .hasIndex = 4,
         .offset = (uint32_t)offsetof(RTEndRouletteResponse__storage_, result),
         .flags = GPBFieldOptional,
-        .dataType = GPBDataTypeInt32,
+        .dataType = GPBDataTypeString,
       },
       {
         .name = "cash",

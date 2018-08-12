@@ -69,7 +69,7 @@ typedef GPB_ENUM(RTEndRouletteResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) BOOL isGold;
 
-@property(nonatomic, readwrite) int32_t result;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *result;
 
 @property(nonatomic, readwrite) int64_t cash;
 

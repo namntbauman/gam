@@ -83,7 +83,7 @@ typedef GPB_ENUM(RegRouletteResponse_FieldNumber) {
 
 @property(nonatomic, readwrite) int64_t reference;
 
-@property(nonatomic, readwrite) int32_t result;
+@property(nonatomic, readwrite, copy, null_resettable) NSString *result;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *history;
 
