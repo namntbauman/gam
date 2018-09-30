@@ -1,0 +1,14 @@
+syntax = "proto3";
+package fanxi;
+
+option java_package = "com.fanxi.service.message";
+option java_outer_classname = "XDBetEntityProto";
+
+message XDBetEntity{
+	int64 cash=1;
+	int32 typeTo =15;
+    int32 numWhite=16;
+}
+
+
+

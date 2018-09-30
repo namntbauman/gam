@@ -15,6 +15,7 @@
 
  #import "BetRequest.pbobjc.h"
  #import "BaseRequest.pbobjc.h"
+ #import "XdbetEntity.pbobjc.h"
 // @@protoc_insertion_point(imports)
 
 #pragma clang diagnostic push
@@ -55,6 +56,7 @@ static GPBFileDescriptor *BetRequestRoot_FileDescriptor(void) {
 @dynamic cash;
 @dynamic typeTo;
 @dynamic numWhite;
+@dynamic betsArray, betsArray_Count;
 
 typedef struct BetRequest__storage_ {
   uint32_t _has_storage_[1];
@@ -65,6 +67,7 @@ typedef struct BetRequest__storage_ {
   int32_t numWhite;
   BaseRequest *baseReq;
   NSString *matchId;
+  NSMutableArray *betsArray;
   int64_t cash;
 } BetRequest__storage_;
 
@@ -145,6 +148,15 @@ typedef struct BetRequest__storage_ {
         .offset = (uint32_t)offsetof(BetRequest__storage_, numWhite),
         .flags = (GPBFieldFlags)(GPBFieldOptional | GPBFieldTextFormatNameCustom),
         .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "betsArray",
+        .dataTypeSpecific.className = GPBStringifySymbol(XDBetEntity),
+        .number = BetRequest_FieldNumber_BetsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(BetRequest__storage_, betsArray),
+        .flags = GPBFieldRepeated,
+        .dataType = GPBDataTypeMessage,
       },
     };
     GPBDescriptor *localDescriptor =

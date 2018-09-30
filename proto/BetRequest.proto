@@ -1,6 +1,7 @@
 syntax = "proto3";
 package fanxi;
 import "BaseRequest.proto";
+import "XDBetEntity.proto";
 option java_package = "com.fanxi.service.message";
 option java_outer_classname = "BetRequestProto";
 
@@ -13,4 +14,5 @@ message BetRequest {
    int64 cash=14;
    int32 typeTo =15;
    int32 numWhite=16;
+   repeated XDBetEntity bets=17;
 }

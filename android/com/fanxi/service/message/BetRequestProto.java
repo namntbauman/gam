@@ -70,6 +70,30 @@ public final class BetRequestProto {
      * <code>int32 numWhite = 16;</code>
      */
     int getNumWhite();
+
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    java.util.List<com.fanxi.service.message.XDBetEntityProto.XDBetEntity> 
+        getBetsList();
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    com.fanxi.service.message.XDBetEntityProto.XDBetEntity getBets(int index);
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    int getBetsCount();
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    java.util.List<? extends com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder> 
+        getBetsOrBuilderList();
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder getBetsOrBuilder(
+        int index);
   }
   /**
    * Protobuf type {@code fanxi.BetRequest}
@@ -90,6 +114,7 @@ public final class BetRequestProto {
       cash_ = 0L;
       typeTo_ = 0;
       numWhite_ = 0;
+      bets_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -166,6 +191,15 @@ public final class BetRequestProto {
               numWhite_ = input.readInt32();
               break;
             }
+            case 138: {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                bets_ = new java.util.ArrayList<com.fanxi.service.message.XDBetEntityProto.XDBetEntity>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              bets_.add(
+                  input.readMessage(com.fanxi.service.message.XDBetEntityProto.XDBetEntity.parser(), extensionRegistry));
+              break;
+            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
@@ -174,6 +208,9 @@ public final class BetRequestProto {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+          bets_ = java.util.Collections.unmodifiableList(bets_);
+        }
         makeExtensionsImmutable();
       }
     }
@@ -189,6 +226,7 @@ public final class BetRequestProto {
               com.fanxi.service.message.BetRequestProto.BetRequest.class, com.fanxi.service.message.BetRequestProto.BetRequest.Builder.class);
     }
 
+    private int bitField0_;
     public static final int BASEREQ_FIELD_NUMBER = 1;
     private com.fanxi.service.message.BaseRequestProto.BaseRequest baseReq_;
     /**
@@ -298,6 +336,41 @@ public final class BetRequestProto {
       return numWhite_;
     }
 
+    public static final int BETS_FIELD_NUMBER = 17;
+    private java.util.List<com.fanxi.service.message.XDBetEntityProto.XDBetEntity> bets_;
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    public java.util.List<com.fanxi.service.message.XDBetEntityProto.XDBetEntity> getBetsList() {
+      return bets_;
+    }
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    public java.util.List<? extends com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder> 
+        getBetsOrBuilderList() {
+      return bets_;
+    }
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    public int getBetsCount() {
+      return bets_.size();
+    }
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    public com.fanxi.service.message.XDBetEntityProto.XDBetEntity getBets(int index) {
+      return bets_.get(index);
+    }
+    /**
+     * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+     */
+    public com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder getBetsOrBuilder(
+        int index) {
+      return bets_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -333,6 +406,9 @@ public final class BetRequestProto {
       }
       if (numWhite_ != 0) {
         output.writeInt32(16, numWhite_);
+      }
+      for (int i = 0; i < bets_.size(); i++) {
+        output.writeMessage(17, bets_.get(i));
       }
     }
 
@@ -372,6 +448,10 @@ public final class BetRequestProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(16, numWhite_);
       }
+      for (int i = 0; i < bets_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(17, bets_.get(i));
+      }
       memoizedSize = size;
       return size;
     }
@@ -407,6 +487,8 @@ public final class BetRequestProto {
           == other.getTypeTo());
       result = result && (getNumWhite()
           == other.getNumWhite());
+      result = result && getBetsList()
+          .equals(other.getBetsList());
       return result;
     }
 
@@ -436,6 +518,10 @@ public final class BetRequestProto {
       hash = (53 * hash) + getTypeTo();
       hash = (37 * hash) + NUMWHITE_FIELD_NUMBER;
       hash = (53 * hash) + getNumWhite();
+      if (getBetsCount() > 0) {
+        hash = (37 * hash) + BETS_FIELD_NUMBER;
+        hash = (53 * hash) + getBetsList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -550,6 +636,7 @@ public final class BetRequestProto {
       private void maybeForceBuilderInitialization() {
         if (com.google.protobuf.GeneratedMessageV3
                 .alwaysUseFieldBuilders) {
+          getBetsFieldBuilder();
         }
       }
       public Builder clear() {
@@ -574,6 +661,12 @@ public final class BetRequestProto {
 
         numWhite_ = 0;
 
+        if (betsBuilder_ == null) {
+          bets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+        } else {
+          betsBuilder_.clear();
+        }
         return this;
       }
 
@@ -596,6 +689,8 @@ public final class BetRequestProto {
 
       public com.fanxi.service.message.BetRequestProto.BetRequest buildPartial() {
         com.fanxi.service.message.BetRequestProto.BetRequest result = new com.fanxi.service.message.BetRequestProto.BetRequest(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         if (baseReqBuilder_ == null) {
           result.baseReq_ = baseReq_;
         } else {
@@ -608,6 +703,16 @@ public final class BetRequestProto {
         result.cash_ = cash_;
         result.typeTo_ = typeTo_;
         result.numWhite_ = numWhite_;
+        if (betsBuilder_ == null) {
+          if (((bitField0_ & 0x00000100) == 0x00000100)) {
+            bets_ = java.util.Collections.unmodifiableList(bets_);
+            bitField0_ = (bitField0_ & ~0x00000100);
+          }
+          result.bets_ = bets_;
+        } else {
+          result.bets_ = betsBuilder_.build();
+        }
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -674,6 +779,32 @@ public final class BetRequestProto {
         if (other.getNumWhite() != 0) {
           setNumWhite(other.getNumWhite());
         }
+        if (betsBuilder_ == null) {
+          if (!other.bets_.isEmpty()) {
+            if (bets_.isEmpty()) {
+              bets_ = other.bets_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+            } else {
+              ensureBetsIsMutable();
+              bets_.addAll(other.bets_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.bets_.isEmpty()) {
+            if (betsBuilder_.isEmpty()) {
+              betsBuilder_.dispose();
+              betsBuilder_ = null;
+              bets_ = other.bets_;
+              bitField0_ = (bitField0_ & ~0x00000100);
+              betsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getBetsFieldBuilder() : null;
+            } else {
+              betsBuilder_.addAllMessages(other.bets_);
+            }
+          }
+        }
         onChanged();
         return this;
       }
@@ -699,6 +830,7 @@ public final class BetRequestProto {
         }
         return this;
       }
+      private int bitField0_;
 
       private com.fanxi.service.message.BaseRequestProto.BaseRequest baseReq_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
@@ -1041,6 +1173,246 @@ public final class BetRequestProto {
         onChanged();
         return this;
       }
+
+      private java.util.List<com.fanxi.service.message.XDBetEntityProto.XDBetEntity> bets_ =
+        java.util.Collections.emptyList();
+      private void ensureBetsIsMutable() {
+        if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+          bets_ = new java.util.ArrayList<com.fanxi.service.message.XDBetEntityProto.XDBetEntity>(bets_);
+          bitField0_ |= 0x00000100;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.XDBetEntityProto.XDBetEntity, com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder, com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder> betsBuilder_;
+
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public java.util.List<com.fanxi.service.message.XDBetEntityProto.XDBetEntity> getBetsList() {
+        if (betsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(bets_);
+        } else {
+          return betsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public int getBetsCount() {
+        if (betsBuilder_ == null) {
+          return bets_.size();
+        } else {
+          return betsBuilder_.getCount();
+        }
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public com.fanxi.service.message.XDBetEntityProto.XDBetEntity getBets(int index) {
+        if (betsBuilder_ == null) {
+          return bets_.get(index);
+        } else {
+          return betsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder setBets(
+          int index, com.fanxi.service.message.XDBetEntityProto.XDBetEntity value) {
+        if (betsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBetsIsMutable();
+          bets_.set(index, value);
+          onChanged();
+        } else {
+          betsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder setBets(
+          int index, com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder builderForValue) {
+        if (betsBuilder_ == null) {
+          ensureBetsIsMutable();
+          bets_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          betsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder addBets(com.fanxi.service.message.XDBetEntityProto.XDBetEntity value) {
+        if (betsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBetsIsMutable();
+          bets_.add(value);
+          onChanged();
+        } else {
+          betsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder addBets(
+          int index, com.fanxi.service.message.XDBetEntityProto.XDBetEntity value) {
+        if (betsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureBetsIsMutable();
+          bets_.add(index, value);
+          onChanged();
+        } else {
+          betsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder addBets(
+          com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder builderForValue) {
+        if (betsBuilder_ == null) {
+          ensureBetsIsMutable();
+          bets_.add(builderForValue.build());
+          onChanged();
+        } else {
+          betsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder addBets(
+          int index, com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder builderForValue) {
+        if (betsBuilder_ == null) {
+          ensureBetsIsMutable();
+          bets_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          betsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder addAllBets(
+          java.lang.Iterable<? extends com.fanxi.service.message.XDBetEntityProto.XDBetEntity> values) {
+        if (betsBuilder_ == null) {
+          ensureBetsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, bets_);
+          onChanged();
+        } else {
+          betsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder clearBets() {
+        if (betsBuilder_ == null) {
+          bets_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000100);
+          onChanged();
+        } else {
+          betsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public Builder removeBets(int index) {
+        if (betsBuilder_ == null) {
+          ensureBetsIsMutable();
+          bets_.remove(index);
+          onChanged();
+        } else {
+          betsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder getBetsBuilder(
+          int index) {
+        return getBetsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder getBetsOrBuilder(
+          int index) {
+        if (betsBuilder_ == null) {
+          return bets_.get(index);  } else {
+          return betsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public java.util.List<? extends com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder> 
+           getBetsOrBuilderList() {
+        if (betsBuilder_ != null) {
+          return betsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(bets_);
+        }
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder addBetsBuilder() {
+        return getBetsFieldBuilder().addBuilder(
+            com.fanxi.service.message.XDBetEntityProto.XDBetEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder addBetsBuilder(
+          int index) {
+        return getBetsFieldBuilder().addBuilder(
+            index, com.fanxi.service.message.XDBetEntityProto.XDBetEntity.getDefaultInstance());
+      }
+      /**
+       * <code>repeated .fanxi.XDBetEntity bets = 17;</code>
+       */
+      public java.util.List<com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder> 
+           getBetsBuilderList() {
+        return getBetsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          com.fanxi.service.message.XDBetEntityProto.XDBetEntity, com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder, com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder> 
+          getBetsFieldBuilder() {
+        if (betsBuilder_ == null) {
+          betsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              com.fanxi.service.message.XDBetEntityProto.XDBetEntity, com.fanxi.service.message.XDBetEntityProto.XDBetEntity.Builder, com.fanxi.service.message.XDBetEntityProto.XDBetEntityOrBuilder>(
+                  bets_,
+                  ((bitField0_ & 0x00000100) == 0x00000100),
+                  getParentForChildren(),
+                  isClean());
+          bets_ = null;
+        }
+        return betsBuilder_;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -1105,12 +1477,14 @@ public final class BetRequestProto {
   static {
     java.lang.String[] descriptorData = {
       "\n\020BetRequest.proto\022\005fanxi\032\021BaseRequest.p" +
-      "roto\"\247\001\n\nBetRequest\022#\n\007baseReq\030\001 \001(\0132\022.f" +
-      "anxi.BaseRequest\022\016\n\006zoneId\030\n \001(\005\022\017\n\007leve" +
-      "lId\030\013 \001(\005\022\022\n\ntableIndex\030\014 \001(\005\022\017\n\007matchId" +
-      "\030\r \001(\t\022\014\n\004cash\030\016 \001(\003\022\016\n\006typeTo\030\017 \001(\005\022\020\n\010" +
-      "numWhite\030\020 \001(\005B,\n\031com.fanxi.service.mess" +
-      "ageB\017BetRequestProtob\006proto3"
+      "roto\032\021XDBetEntity.proto\"\311\001\n\nBetRequest\022#" +
+      "\n\007baseReq\030\001 \001(\0132\022.fanxi.BaseRequest\022\016\n\006z" +
+      "oneId\030\n \001(\005\022\017\n\007levelId\030\013 \001(\005\022\022\n\ntableInd" +
+      "ex\030\014 \001(\005\022\017\n\007matchId\030\r \001(\t\022\014\n\004cash\030\016 \001(\003\022" +
+      "\016\n\006typeTo\030\017 \001(\005\022\020\n\010numWhite\030\020 \001(\005\022 \n\004bet" +
+      "s\030\021 \003(\0132\022.fanxi.XDBetEntityB,\n\031com.fanxi" +
+      ".service.messageB\017BetRequestProtob\006proto" +
+      "3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1124,14 +1498,16 @@ public final class BetRequestProto {
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.fanxi.service.message.BaseRequestProto.getDescriptor(),
+          com.fanxi.service.message.XDBetEntityProto.getDescriptor(),
         }, assigner);
     internal_static_fanxi_BetRequest_descriptor =
       getDescriptor().getMessageTypes().get(0);
     internal_static_fanxi_BetRequest_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_fanxi_BetRequest_descriptor,
-        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Cash", "TypeTo", "NumWhite", });
+        new java.lang.String[] { "BaseReq", "ZoneId", "LevelId", "TableIndex", "MatchId", "Cash", "TypeTo", "NumWhite", "Bets", });
     com.fanxi.service.message.BaseRequestProto.getDescriptor();
+    com.fanxi.service.message.XDBetEntityProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
